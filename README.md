@@ -10,13 +10,13 @@ OrcaBox 是面向创作者与创意团队的本地素材管理器，支持图片
 
 | 平台 | 系统要求 | 安装包 |
 | --- | --- | --- |
-| macOS Apple Silicon | macOS 12.0 或更高版本 | [下载 DMG](https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.0.0/OrcaBox-1.0.0-macOS-arm64.dmg) |
-| Windows x64 | Windows 10 或 Windows 11 | [下载 EXE](https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.0.0/OrcaBox-1.0.0-Windows-x64.exe) |
+| macOS Apple Silicon | macOS 12.0 或更高版本 | [CNB 下载 DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.0.0/OrcaBox-1.0.0-macOS-arm64.dmg) |
+| Windows x64 | Windows 10 或 Windows 11 | [CNB 下载 EXE](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.0.0/OrcaBox-1.0.0-Windows-x64.exe) |
 
 完整发行页面：
 
-- [GitHub Releases](https://github.com/GarryGit888/OrcaBox-Release/releases)
-- [CNB 发行仓库](https://cnb.cool/garrykai/orcabox-release)
+- [CNB Releases（主要下载源）](https://cnb.cool/garrykai/orcabox-release/-/releases)
+- [GitHub Releases（备用镜像）](https://github.com/GarryGit888/OrcaBox-Release/releases)
 
 ## 主要能力
 

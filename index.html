@@ -191,6 +191,8 @@ a{color:inherit;text-decoration:none}
 .download-actions{display:flex;align-items:center;justify-content:center;gap:var(--s-3);flex-wrap:wrap}
 .download-meta{display:flex;align-items:center;justify-content:center;gap:var(--s-4);margin-top:var(--s-4);font-size:0.8125rem;color:var(--text-3)}
 .download-meta span{display:flex;align-items:center;gap:var(--s-1)}
+.download-mirror{display:inline-flex;margin-top:var(--s-3);font-size:0.75rem;color:var(--text-3);transition:color 0.2s}
+.download-mirror:hover{color:var(--accent)}
 
 .cta-block{text-align:center;padding:var(--s-24) 0;border-top:1px solid var(--border-subtle)}
 .cta-block .label{margin-bottom:var(--s-4)}
@@ -453,16 +455,17 @@ a{color:inherit;text-decoration:none}
       <h2 class="h2" data-i18n="dl.title">OrcaBox 1.0</h2>
       <p class="body" data-i18n="dl.desc">提供 macOS Apple Silicon 与 Windows x64 安装包。应用核心源码不在公开发行仓库中。</p>
       <div class="download-actions">
-        <a href="https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.0.0/OrcaBox-1.0.0-macOS-arm64.dmg" class="btn btn-primary btn-lg" data-i18n="dl.mac">
+        <a href="https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.0.0/OrcaBox-1.0.0-macOS-arm64.dmg" class="btn btn-primary btn-lg" data-i18n="dl.mac">
           下载 macOS DMG
         </a>
-        <a href="https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.0.0/OrcaBox-1.0.0-Windows-x64.exe" class="btn btn-secondary btn-lg" data-i18n="dl.win">
+        <a href="https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.0.0/OrcaBox-1.0.0-Windows-x64.exe" class="btn btn-secondary btn-lg" data-i18n="dl.win">
           下载 Windows EXE
         </a>
       </div>
       <div class="download-meta">
         <span>macOS 12.0+</span><span>&middot;</span><span>Apple Silicon</span><span>&middot;</span><span>Windows 10/11</span><span>&middot;</span><span data-i18n="dl.free">免费下载</span>
       </div>
+      <a href="https://github.com/GarryGit888/OrcaBox-Release/releases" target="_blank" rel="noopener noreferrer" class="download-mirror" data-i18n="dl.mirror">GitHub 备用镜像</a>
     </div>
   </div>
 </section>
@@ -532,7 +535,7 @@ const i18n={
     "w3.title":"预览与组织","w3.desc":"40+ 格式即时预览。标签、合集、评分，建立素材知识库。",
     "w4.title":"拖拽导出","w4.desc":"直拖到设计工具或浏览器。支持批量、壁纸设置、字体安装。",
     "dl.label":"下载","dl.title":"OrcaBox 1.0","dl.desc":"提供 macOS Apple Silicon 与 Windows x64 安装包。应用核心源码不在公开发行仓库中。",
-    "dl.mac":"下载 macOS DMG","dl.win":"下载 Windows EXE","dl.free":"免费下载",
+    "dl.mac":"下载 macOS DMG","dl.win":"下载 Windows EXE","dl.free":"免费下载","dl.mirror":"GitHub 备用镜像",
     "cta.label":"开始使用","cta.title":"准备好管理你的创意资产了吗？","cta.desc":"下载 OrcaBox，体验专业级本地素材管理。",
     "cta.dl":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/></svg> 下载 macOS 版",
     "cta.cnb":"CNB 发行仓库","cta.github":"GitHub 发行仓库",
@@ -574,7 +577,7 @@ const i18n={
     "w3.title":"Preview & Organize","w3.desc":"Instant preview for 40+ formats. Tags, collections, ratings — build your asset knowledge base.",
     "w4.title":"Drag & Drop Export","w4.desc":"Drag directly to design tools or browsers. Batch, wallpaper, font installation support.",
     "dl.label":"Download","dl.title":"OrcaBox 1.0","dl.desc":"Installers for macOS Apple Silicon and Windows x64. The application core source is not included in this public release repository.",
-    "dl.mac":"Download macOS DMG","dl.win":"Download Windows EXE","dl.free":"Free Download",
+    "dl.mac":"Download macOS DMG","dl.win":"Download Windows EXE","dl.free":"Free Download","dl.mirror":"GitHub mirror",
     "cta.label":"Get Started","cta.title":"Ready to manage your creative assets?","cta.desc":"Download OrcaBox and experience professional-grade local asset management.",
     "cta.dl":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/></svg> Download for macOS",
     "cta.cnb":"CNB Releases","cta.github":"GitHub Releases",
@@ -616,7 +619,7 @@ const i18n={
     "w3.title":"プレビュー＆整理","w3.desc":"40以上のフォーマットを即時プレビュー。タグ、コレクション、評価で知識ベース構築。",
     "w4.title":"ドラッグ＆ドロップ出力","w4.desc":"デザインツールやブラウザに直接ドラッグ。一括、壁紙、フォントインストール対応。",
     "dl.label":"ダウンロード","dl.title":"OrcaBox 1.0","dl.desc":"macOS Apple Silicon と Windows x64 用インストーラーを提供します。アプリのコアソースは公開リリースリポジトリに含まれません。",
-    "dl.mac":"macOS DMG をダウンロード","dl.win":"Windows EXE をダウンロード","dl.free":"無料ダウンロード",
+    "dl.mac":"macOS DMG をダウンロード","dl.win":"Windows EXE をダウンロード","dl.free":"無料ダウンロード","dl.mirror":"GitHub ミラー",
     "cta.label":"はじめよう","cta.title":"クリエイティブ資産を管理する準備はできましたか？","cta.desc":"OrcaBoxをダウンロードして、プロ級のローカルアセット管理を体験してください。",
     "cta.dl":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/></svg> macOS版をダウンロード",
     "cta.cnb":"CNB リリース","cta.github":"GitHub リリース",
@@ -658,7 +661,7 @@ const i18n={
     "w3.title":"미리보기 및 정리","w3.desc":"40개 이상의 형식 즉시 미리보기. 태그, 컬렉션, 평가로 지식 베이스 구축.",
     "w4.title":"드래그 앤 드롭","w4.desc":"디자인 도구나 브라우저로 직접 드래그. 배치, 배경화면, 폰트 설치 지원.",
     "dl.label":"다운로드","dl.title":"OrcaBox 1.0","dl.desc":"macOS Apple Silicon 및 Windows x64 설치 파일을 제공합니다. 앱 핵심 소스는 공개 릴리스 저장소에 포함되지 않습니다.",
-    "dl.mac":"macOS DMG 다운로드","dl.win":"Windows EXE 다운로드","dl.free":"무료 다운로드",
+    "dl.mac":"macOS DMG 다운로드","dl.win":"Windows EXE 다운로드","dl.free":"무료 다운로드","dl.mirror":"GitHub 미러",
     "cta.label":"시작하기","cta.title":"크리에이티브 자산을 관리할 준비가 되셨나요?","cta.desc":"OrcaBox를 다운로드하고 전문가급 로컬 자산 관리를 경험하세요.",
     "cta.dl":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/></svg> macOS용 다운로드",
     "cta.cnb":"CNB 릴리스","cta.github":"GitHub 릴리스",
