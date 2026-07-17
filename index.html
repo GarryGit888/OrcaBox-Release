@@ -41,11 +41,11 @@ body{font-family:var(--font);font-size:0.9375rem;line-height:1.6;color:var(--tex
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 
-.h1{font-size:clamp(3.5rem,11vw,8.5rem);font-weight:700;letter-spacing:-0.05em;line-height:0.94}
-.h2{font-size:clamp(1.8rem,3.5vw,2.75rem);font-weight:700;letter-spacing:-0.03em;line-height:1.12}
-.h3{font-size:clamp(1.4rem,2.5vw,1.8rem);font-weight:600;letter-spacing:-0.025em;line-height:1.2}
-.body-l{font-size:1.0625rem;line-height:1.7;color:var(--text-2);font-weight:410}
-.body{font-size:0.9375rem;line-height:1.65;color:var(--text-2);font-weight:410}
+.h1{font-size:clamp(3.5rem,11vw,8.5rem);font-weight:700;letter-spacing:-0.05em;line-height:0.94;text-wrap:balance;word-break:auto-phrase}
+.h2{font-size:clamp(1.8rem,3.5vw,2.75rem);font-weight:700;letter-spacing:-0.03em;line-height:1.12;text-wrap:balance;word-break:auto-phrase}
+.h3{font-size:clamp(1.4rem,2.5vw,1.8rem);font-weight:600;letter-spacing:-0.025em;line-height:1.2;text-wrap:balance;word-break:auto-phrase}
+.body-l{font-size:1.0625rem;line-height:1.7;color:var(--text-2);font-weight:410;text-wrap:pretty;word-break:auto-phrase}
+.body{font-size:0.9375rem;line-height:1.65;color:var(--text-2);font-weight:410;text-wrap:pretty;word-break:auto-phrase}
 .caption{font-size:0.8125rem;color:var(--text-3)}
 .label{font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent)}
 .mono{font-family:var(--font-mono);font-size:0.8125rem}
@@ -110,7 +110,7 @@ a{color:inherit;text-decoration:none}
 .hero-text{padding:6vh var(--s-4) 0;text-align:center;max-width:1300px;margin-bottom:var(--s-16);position:relative;z-index:1}
 .hero-text h1{margin-bottom:var(--s-4)}
 .hero-text h1 em{font-style:normal;color:var(--accent)}
-.hero-text .body-l{margin-bottom:var(--s-8);max-width:620px;margin-left:auto;margin-right:auto}
+.hero-text .body-l{margin-bottom:var(--s-8);max-width:none;margin-left:auto;margin-right:auto;white-space:nowrap}
 .hero-cta{display:flex;align-items:center;justify-content:center;gap:var(--s-3)}
 .hero-entrance{opacity:0;transform:translateY(48px);transition:opacity 1.2s cubic-bezier(0.16,1,0.3,1),transform 1.2s cubic-bezier(0.16,1,0.3,1)}
 .hero-entrance.show{opacity:1;transform:translateY(0)}
@@ -149,7 +149,7 @@ a{color:inherit;text-decoration:none}
 .f-card .icon{width:32px;height:32px;border-radius:var(--radius-sm);background:var(--accent-dim);display:flex;align-items:center;justify-content:center;color:var(--accent);margin-bottom:var(--s-4);transition:all 0.3s var(--ease)}
 .f-card:hover .icon{transform:scale(1.1);background:var(--accent);color:#fff}
 .f-card h4{font-size:0.9375rem;font-weight:600;letter-spacing:-0.01em;margin-bottom:var(--s-2)}
-.f-card p{font-size:0.8125rem;color:var(--text-2);line-height:1.6}
+.f-card p{font-size:0.8125rem;color:var(--text-2);line-height:1.6;text-wrap:pretty;word-break:auto-phrase}
 
 .showcase-header{text-align:center;margin-bottom:var(--s-20)}
 .showcase-header .label{margin-bottom:var(--s-4)}
@@ -182,7 +182,7 @@ a{color:inherit;text-decoration:none}
 .step:hover .step-num{border-color:var(--accent);transform:scale(1.12);box-shadow:0 0 24px var(--accent-dim)}
 .step h4{font-size:0.9375rem;font-weight:600;letter-spacing:-0.01em;margin-bottom:var(--s-2);transition:color 0.3s}
 .step:hover h4{color:var(--accent)}
-.step p{font-size:0.8125rem;color:var(--text-2);line-height:1.6}
+.step p{font-size:0.8125rem;color:var(--text-2);line-height:1.6;text-wrap:pretty;word-break:auto-phrase}
 
 .download-block{text-align:center;max-width:480px;margin:0 auto;padding:var(--s-16) 0}
 .download-block .label{margin-bottom:var(--s-4)}
@@ -207,7 +207,7 @@ a{color:inherit;text-decoration:none}
 .footer{padding:var(--s-20) 0}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:var(--s-16)}
 .footer-brand .nav-brand{margin-bottom:var(--s-3)}
-.footer-brand p{font-size:0.8125rem;color:var(--text-3);line-height:1.6;max-width:240px}
+.footer-brand p{font-size:0.8125rem;color:var(--text-3);line-height:1.6;max-width:240px;text-wrap:pretty;word-break:auto-phrase}
 .footer-col h5{font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text);margin-bottom:var(--s-4)}
 .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:var(--s-2)}
 .footer-col a{font-size:0.8125rem;color:var(--text-3);transition:color 0.15s}
@@ -249,6 +249,7 @@ a{color:inherit;text-decoration:none}
   .nav .nav-brand{font-size:0;gap:0}
   .nav-inner{padding:0 var(--s-4)}
   .hero-text h1{font-size:2.25rem;white-space:normal}
+  .hero-text .body-l{font-size:0.75rem;line-height:1.5}
   .features-grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr}
   .download-actions{padding:0 var(--s-4)}
   .download-actions .btn{width:100%;max-width:280px}
@@ -309,7 +310,7 @@ a{color:inherit;text-decoration:none}
   </div>
   <div class="hero-text">
     <h1 class="h1 hero-entrance hero-entrance-title"><span data-i18n="hero.title1">创意资产</span> <em data-i18n="hero.title2">本地智管</em></h1>
-    <p class="body-l hero-entrance hero-entrance-desc" data-i18n="hero.desc">专业本地素材管理器。直接索引磁盘文件、不复制不冗余，40+ 格式即时预览，端侧 AI 智能分析。</p>
+    <p class="body-l hero-entrance hero-entrance-desc" data-i18n="hero.desc">本地素材智管：零复制索引、40+ 格式预览、端侧 AI。</p>
     <div class="hero-cta hero-entrance hero-entrance-cta">
       <a href="#download" class="btn btn-primary btn-lg" data-i18n="hero.cta">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
@@ -511,7 +512,7 @@ const i18n={
   zh:{
     "nav.features":"功能","nav.showcase":"展示","nav.capabilities":"能力","nav.download":"下载","nav.downloadBtn":"下载",
     "hero.title1":"创意资产","hero.title2":"本地智管",
-    "hero.desc":"专业本地素材管理器。直接索引磁盘文件、不复制不冗余，40+ 格式即时预览，端侧 AI 智能分析。",
+    "hero.desc":"本地素材智管：零复制索引、40+ 格式预览、端侧 AI。",
     "hero.cta":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/><line x1=\"12\" y1=\"15\" x2=\"12\" y2=\"3\"/></svg> 免费下载 macOS 版",
     "stats.formats":"文件格式","stats.local.val":"本地索引","stats.local.desc":"不复制原文件",
     "stats.ai.val":"端侧 AI","stats.ai.desc":"数据不离开本地","stats.oss.val":"免费下载","stats.oss.desc":"公开发行",
@@ -553,7 +554,7 @@ const i18n={
   en:{
     "nav.features":"Features","nav.showcase":"Showcase","nav.capabilities":"Capabilities","nav.download":"Download","nav.downloadBtn":"Download",
     "hero.title1":"Creative Assets","hero.title2":"Managed Locally",
-    "hero.desc":"A professional local asset manager for creative teams. Index your files directly without duplication. 40+ format preview, Lottie workflow, and on-device AI analysis.",
+    "hero.desc":"Zero-copy local assets, 40+ previews, on-device AI.",
     "hero.cta":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/><line x1=\"12\" y1=\"15\" x2=\"12\" y2=\"3\"/></svg> Download for macOS",
     "stats.formats":"File Formats","stats.local.val":"Local Index","stats.local.desc":"No File Duplication",
     "stats.ai.val":"On-Device AI","stats.ai.desc":"Data Never Leaves Local","stats.oss.val":"Free Download","stats.oss.desc":"Public Releases",
@@ -595,7 +596,7 @@ const i18n={
   ja:{
     "nav.features":"機能","nav.showcase":"紹介","nav.capabilities":"能力","nav.download":"ダウンロード","nav.downloadBtn":"ダウンロード",
     "hero.title1":"クリエイティブ資産","hero.title2":"ローカル管理",
-    "hero.desc":"クリエイティブチームのためのプロ向けローカルアセットマネージャー。ファイルを複製せず直接インデックス。40以上のフォーマット対応、Lottieワークフロー、オンデバイスAI分析。",
+    "hero.desc":"ローカル素材管理：ゼロコピー、40+形式、端末内AI。",
     "hero.cta":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/><line x1=\"12\" y1=\"15\" x2=\"12\" y2=\"3\"/></svg> macOS版を無料ダウンロード",
     "stats.formats":"対応フォーマット","stats.local.val":"ローカル索引","stats.local.desc":"ファイル複製なし",
     "stats.ai.val":"端末AI","stats.ai.desc":"データは端末外に出ません","stats.oss.val":"無料ダウンロード","stats.oss.desc":"公開リリース",
@@ -637,7 +638,7 @@ const i18n={
   ko:{
     "nav.features":"기능","nav.showcase":"소개","nav.capabilities":"역량","nav.download":"다운로드","nav.downloadBtn":"다운로드",
     "hero.title1":"크리에이티브 자산","hero.title2":"로컬 관리",
-    "hero.desc":"크리에이티브 팀을 위한 전문 로컬 자산 관리자. 파일을 복제하지 않고 직접 인덱싱합니다. 40개 이상의 형식 미리보기, Lottie 워크플로, 온디바이스 AI 분석.",
+    "hero.desc":"로컬 에셋 관리: 무복제, 40+ 포맷, 온디바이스 AI.",
     "hero.cta":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/><line x1=\"12\" y1=\"15\" x2=\"12\" y2=\"3\"/></svg> macOS용 무료 다운로드",
     "stats.formats":"파일 형식","stats.local.val":"로컬 인덱스","stats.local.desc":"파일 복제 없음",
     "stats.ai.val":"온디바이스 AI","stats.ai.desc":"데이터는 로컬에 유지","stats.oss.val":"무료 다운로드","stats.oss.desc":"공개 릴리스",
