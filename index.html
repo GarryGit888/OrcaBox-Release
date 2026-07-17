@@ -191,7 +191,8 @@ a{color:inherit;text-decoration:none}
 .download-actions{display:flex;align-items:center;justify-content:center;gap:var(--s-3);flex-wrap:wrap}
 .download-meta{display:flex;align-items:center;justify-content:center;gap:var(--s-4);margin-top:var(--s-4);font-size:0.8125rem;color:var(--text-3)}
 .download-meta span{display:flex;align-items:center;gap:var(--s-1)}
-.download-mirror{display:inline-flex;margin-top:var(--s-3);font-size:0.75rem;color:var(--text-3);transition:color 0.2s}
+.download-mirror{display:inline-flex;align-items:center;gap:6px;margin-top:var(--s-3);font-size:0.75rem;color:var(--text-3);transition:color 0.2s}
+.download-mirror img{width:15px;height:15px;filter:grayscale(1) brightness(2.4)}
 .download-mirror:hover{color:var(--accent)}
 
 .cta-block{text-align:center;padding:var(--s-24) 0;border-top:1px solid var(--border-subtle)}
@@ -200,6 +201,8 @@ a{color:inherit;text-decoration:none}
 .cta-block .body-l{max-width:460px;margin:0 auto var(--s-8)}
 .cta-actions{display:flex;align-items:center;justify-content:center;gap:var(--s-3);flex-wrap:wrap}
 .btn-repository{min-width:138px}
+.btn-repository img{width:17px;height:17px;object-fit:contain}
+.btn-repository-github img{filter:grayscale(1) brightness(2.8)}
 
 .footer{padding:var(--s-20) 0}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:var(--s-16)}
@@ -243,7 +246,8 @@ a{color:inherit;text-decoration:none}
 }
 @media(max-width:640px){
   .nav-links{display:none}.hero{padding:100px var(--s-4) 0}
-  .repo-shortcuts{display:none}
+  .nav .nav-brand{font-size:0;gap:0}
+  .nav-inner{padding:0 var(--s-4)}
   .hero-text h1{font-size:2.5rem;white-space:normal}
   .features-grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr}
   .download-actions{padding:0 var(--s-4)}
@@ -465,7 +469,7 @@ a{color:inherit;text-decoration:none}
       <div class="download-meta">
         <span>macOS 12.0+</span><span>&middot;</span><span>Apple Silicon</span><span>&middot;</span><span>Windows 10/11</span><span>&middot;</span><span data-i18n="dl.free">免费下载</span>
       </div>
-      <a href="https://github.com/GarryGit888/OrcaBox-Release/releases" target="_blank" rel="noopener noreferrer" class="download-mirror" data-i18n="dl.mirror">GitHub 备用镜像</a>
+      <a href="https://github.com/GarryGit888/OrcaBox-Release/releases" target="_blank" rel="noopener noreferrer" class="download-mirror"><img src="assets/github.svg" alt=""><span data-i18n="dl.mirror">GitHub 备用镜像</span></a>
     </div>
   </div>
 </section>
@@ -480,8 +484,8 @@ a{color:inherit;text-decoration:none}
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/></svg>
         下载 macOS 版
       </a>
-      <a href="https://cnb.cool/garrykai/orcabox-release" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg btn-repository" data-i18n="cta.cnb">CNB 发行仓库</a>
-      <a href="https://github.com/GarryGit888/OrcaBox-Release" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg btn-repository" data-i18n="cta.github">GitHub 发行仓库</a>
+      <a href="https://cnb.cool/garrykai/orcabox-release" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg btn-repository"><img src="assets/cnb.svg" alt=""><span data-i18n="cta.cnb">CNB 发行仓库</span></a>
+      <a href="https://github.com/GarryGit888/OrcaBox-Release" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg btn-repository btn-repository-github"><img src="assets/github.svg" alt=""><span data-i18n="cta.github">GitHub 发行仓库</span></a>
     </div>
   </div>
 </div>
@@ -494,8 +498,8 @@ a{color:inherit;text-decoration:none}
         <p data-i18n="footer.desc">面向创意团队的专业本地索引多格式素材管理器。</p>
       </div>
       <div class="footer-col"><h5 data-i18n="footer.product">产品</h5><ul><li><a href="#features" data-i18n="footer.f1">功能</a></li><li><a href="#showcase" data-i18n="footer.f2">展示</a></li><li><a href="#capabilities" data-i18n="footer.f3">能力</a></li><li><a href="#download" data-i18n="footer.f4">下载</a></li></ul></div>
-      <div class="footer-col"><h5 data-i18n="footer.resources">资源</h5><ul><li><a href="https://github.com/GarryGit888/OrcaBox-Release#readme" target="_blank" rel="noopener noreferrer" data-i18n="footer.r1">使用说明</a></li><li><a href="https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.0.0" target="_blank" rel="noopener noreferrer" data-i18n="footer.r2">发行说明</a></li><li><a href="https://github.com/GarryGit888/OrcaBox-Release/releases" target="_blank" rel="noopener noreferrer" data-i18n="footer.r3">历史版本</a></li></ul></div>
-      <div class="footer-col"><h5 data-i18n="footer.about">发行仓库</h5><ul><li><a href="https://cnb.cool/garrykai/orcabox-release" target="_blank" rel="noopener noreferrer" data-i18n="footer.cnb">CNB 发行仓库</a></li><li><a href="https://github.com/GarryGit888/OrcaBox-Release" target="_blank" rel="noopener noreferrer" data-i18n="footer.github">GitHub 发行仓库</a></li><li><a href="https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.0.0" target="_blank" rel="noopener noreferrer" data-i18n="footer.a1">下载安装包</a></li></ul></div>
+      <div class="footer-col"><h5 data-i18n="footer.resources">资源</h5><ul><li><a href="https://cnb.cool/garrykai/orcabox-release" target="_blank" rel="noopener noreferrer" data-i18n="footer.r1">使用说明</a></li><li><a href="https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.0.0" target="_blank" rel="noopener noreferrer" data-i18n="footer.r2">发行说明</a></li><li><a href="https://cnb.cool/garrykai/orcabox-release/-/releases" target="_blank" rel="noopener noreferrer" data-i18n="footer.r3">历史版本</a></li></ul></div>
+      <div class="footer-col"><h5 data-i18n="footer.about">发行仓库</h5><ul><li><a href="https://cnb.cool/garrykai/orcabox-release" target="_blank" rel="noopener noreferrer" data-i18n="footer.cnb">CNB 发行仓库</a></li><li><a href="https://github.com/GarryGit888/OrcaBox-Release" target="_blank" rel="noopener noreferrer" data-i18n="footer.github">GitHub 发行仓库</a></li><li><a href="https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.0.0" target="_blank" rel="noopener noreferrer" data-i18n="footer.a1">下载安装包</a></li></ul></div>
     </div>
     <div class="footer-bottom"><span>&copy; 2024-2026 OrcaBox. All rights reserved.</span><span data-i18n="footer.made">Made for macOS and Windows</span></div>
   </div>

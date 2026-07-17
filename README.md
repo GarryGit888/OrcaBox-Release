@@ -4,6 +4,12 @@ OrcaBox 是面向创作者与创意团队的本地素材管理器，支持图片
 
 > 本仓库是 OrcaBox 的公开发行仓库，仅提供官网、使用说明和安装包。应用核心源代码不在此仓库中。
 
+## 官网
+
+[访问 OrcaBox 在线官网](https://garrygit888.github.io/OrcaBox-Release/)
+
+官网由 GitHub Pages 提供公开访问，页面中的主要下载按钮仍连接到 CNB Release；GitHub Release 仅作为备用镜像。
+
 ## 下载
 
 当前版本：**1.0.0**
