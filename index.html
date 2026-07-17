@@ -41,7 +41,7 @@ body{font-family:var(--font);font-size:0.9375rem;line-height:1.6;color:var(--tex
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 
-.h1{font-size:clamp(4rem,14vw,10rem);font-weight:700;letter-spacing:-0.05em;line-height:0.92}
+.h1{font-size:clamp(3.5rem,11vw,8.5rem);font-weight:700;letter-spacing:-0.05em;line-height:0.94}
 .h2{font-size:clamp(1.8rem,3.5vw,2.75rem);font-weight:700;letter-spacing:-0.03em;line-height:1.12}
 .h3{font-size:clamp(1.4rem,2.5vw,1.8rem);font-weight:600;letter-spacing:-0.025em;line-height:1.2}
 .body-l{font-size:1.0625rem;line-height:1.7;color:var(--text-2);font-weight:410}
@@ -120,8 +120,8 @@ a{color:inherit;text-decoration:none}
 .hero-shot-wrap{position:relative;width:92vw;max-width:1400px;margin:0 auto;z-index:1;overflow:visible}
 .hero-shot-wrap::before{content:'';position:absolute;inset:-16px;border-radius:calc(var(--radius-lg) + 16px);background:radial-gradient(ellipse at center,var(--accent-dim) 0%,transparent 70%);opacity:0;transition:opacity 0.5s var(--ease);pointer-events:none;z-index:0}
 .hero-shot-wrap:hover::before{opacity:1}
-.hero-shot{width:100%;border-radius:var(--radius-lg);box-shadow:var(--shadow-xl);border:1px solid var(--border-subtle);will-change:transform,opacity;transform-origin:center bottom;opacity:0;transform:translateY(160px) scale(0.88);animation:hero-float 7s ease-in-out infinite;animation-play-state:paused;transition:box-shadow 0.5s var(--ease),filter 0.5s var(--ease);position:relative;z-index:1}
-.hero-shot.ready{animation-play-state:running}
+.hero-shot{width:100%;border-radius:var(--radius-lg);box-shadow:var(--shadow-xl);border:1px solid var(--border-subtle);will-change:transform,opacity;transform-origin:center bottom;opacity:0;transform:translateY(72px) scale(0.96);transition:opacity 1s var(--ease),transform 1s var(--ease),box-shadow 0.5s var(--ease),filter 0.5s var(--ease);position:relative;z-index:1}
+.hero-shot.ready{opacity:1;transform:translateY(0) scale(1);animation:hero-float 7s ease-in-out 1s infinite}
 .hero-shot-wrap:hover .hero-shot{box-shadow:0 0 70px var(--accent-dim),0 24px 80px rgba(0,0,0,0.5);filter:brightness(1.05)}
 @keyframes hero-float{0%,100%{translate:0 0}33%{translate:0 -10px}66%{translate:0 6px}}
 @keyframes zoom-bounce{0%{transform:scale(0.95)}60%{transform:scale(1.02)}100%{transform:scale(1)}}
@@ -248,7 +248,7 @@ a{color:inherit;text-decoration:none}
   .nav-links{display:none}.hero{padding:100px var(--s-4) 0}
   .nav .nav-brand{font-size:0;gap:0}
   .nav-inner{padding:0 var(--s-4)}
-  .hero-text h1{font-size:2.5rem;white-space:normal}
+  .hero-text h1{font-size:2.25rem;white-space:normal}
   .features-grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr}
   .download-actions{padding:0 var(--s-4)}
   .download-actions .btn{width:100%;max-width:280px}
@@ -836,25 +836,15 @@ if(shots.length&&!reduced){
   },{passive:true});
 }
 
-// Hero shot scroll + float
+// Hero shot enters automatically, then keeps a subtle floating motion.
 const heroShot=document.getElementById('heroShot');
-if(heroShot&&!reduced){
-  let shotTick=false;
-  function springEase(t){return 1-Math.pow(1-t,4)}
-  window.addEventListener('scroll',()=>{
-    if(!shotTick){
-      requestAnimationFrame(()=>{
-        const raw=Math.min(Math.max(window.scrollY/700,0),1);
-        const t=springEase(raw);
-        heroShot.style.transform=`translateY(${(1-t)*160}px) scale(${0.88+t*0.12})`;
-        heroShot.style.opacity=t;
-        if(raw>0.6&&!heroShot.classList.contains('ready'))heroShot.classList.add('ready');
-        shotTick=false;
-      });
-      shotTick=true;
-    }
-  },{passive:true});
-  setTimeout(()=>{heroShot.classList.add('ready')},3000);
+if(heroShot){
+  const showHeroShot=()=>requestAnimationFrame(()=>heroShot.classList.add('ready'));
+  if(document.readyState==='complete'){
+    setTimeout(showHeroShot,reduced?0:450);
+  }else{
+    window.addEventListener('load',()=>setTimeout(showHeroShot,reduced?0:450),{once:true});
+  }
 }
 
 console.log('%cOrcaBox%c v11 %ci18n + inline zoom','font-weight:700;font-size:13px;','color:#3b82f6;font-size:11px;','color:#71717a;font-size:11px;');
