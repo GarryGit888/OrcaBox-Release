@@ -1,0 +1,15 @@
+$:
+  vscode:
+    - docker:
+        build: .ide/Dockerfile
+      services:
+        - docker
+        - name: vscode
+          options:
+            onlyPreview: true
+            launch: node server.mjs
+            keepAliveTimeout: 30m
+            daemon: true
+            backup: false
+      stages:
+        - node --check server.mjs

@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="OrcaBox — 面向创意团队的专业本地素材管理器。40+ 格式预览、Lottie 工作流、AI 分析。">
+<title>OrcaBox — 专业本地素材管理器</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;450;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px;
+  --s-6: 24px; --s-8: 32px; --s-10: 40px; --s-12: 48px;
+  --s-16: 64px; --s-20: 80px; --s-24: 96px; --s-32: 128px;
+  --font: 'Geist', -apple-system, BlinkMacSystemFont, 'Noto Sans SC', 'Noto Sans JP', 'Noto Sans KR', sans-serif;
+  --font-mono: 'Geist Mono', 'SF Mono', monospace;
+  --bg: #08080d;
+  --bg-raised: #101018;
+  --bg-subtle: #14141e;
+  --text: #e4e4e7;
+  --text-2: #9898a4;
+  --text-3: #666674;
+  --border: #27272a;
+  --border-subtle: #1c1c24;
+  --accent: #3b82f6;
+  --accent-dim: rgba(59,130,246,0.10);
+  --radius-sm: 8px; --radius-md: 12px; --radius-lg: 16px; --radius-xl: 24px;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.2);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.3);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.4);
+  --shadow-xl: 0 24px 80px rgba(0,0,0,0.5);
+  --ease: cubic-bezier(0.16,1,0.3,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;background:var(--bg);scroll-behavior:smooth}
+body{font-family:var(--font);font-size:0.9375rem;line-height:1.6;color:var(--text);background:var(--bg)}
+::selection{background:var(--accent);color:#fff}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+
+.h1{font-size:clamp(4rem,14vw,10rem);font-weight:700;letter-spacing:-0.05em;line-height:0.92}
+.h2{font-size:clamp(1.8rem,3.5vw,2.75rem);font-weight:700;letter-spacing:-0.03em;line-height:1.12}
+.h3{font-size:clamp(1.4rem,2.5vw,1.8rem);font-weight:600;letter-spacing:-0.025em;line-height:1.2}
+.body-l{font-size:1.0625rem;line-height:1.7;color:var(--text-2);font-weight:410}
+.body{font-size:0.9375rem;line-height:1.65;color:var(--text-2);font-weight:410}
+.caption{font-size:0.8125rem;color:var(--text-3)}
+.label{font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent)}
+.mono{font-family:var(--font-mono);font-size:0.8125rem}
+
+.container{max-width:1280px;margin:0 auto;padding:0 var(--s-8)}
+@media(min-width:1800px){.container{max-width:1440px}.hero-shot-wrap{max-width:1600px;width:88vw}}
+.section{padding:var(--s-32) 0;position:relative;overflow:clip}
+.section-subtle{background:var(--bg-subtle)}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;height:56px;transition:background-color 0.4s var(--ease),border-color 0.4s var(--ease),box-shadow 0.4s var(--ease)}
+.nav.active{background:color-mix(in srgb,var(--bg) 85%,transparent);border-bottom:1px solid var(--border-subtle);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px)}
+.nav-inner{max-width:1280px;margin:0 auto;height:100%;padding:0 var(--s-8);display:flex;align-items:center;justify-content:space-between}
+.nav-brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:0.9375rem;letter-spacing:-0.02em;color:var(--text)}
+.nav-brand svg{width:24px;height:24px}
+.nav-links{display:flex;align-items:center;gap:var(--s-8);list-style:none}
+.nav-links a{font-size:0.8125rem;font-weight:480;color:var(--text-2);transition:color 0.2s;position:relative;padding:4px 0}
+.nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1.5px;background:var(--accent);border-radius:1px;transition:width 0.3s var(--ease)}
+.nav-links a:hover{color:var(--text)}
+.nav-links a:hover::after{width:100%}
+.nav-actions{display:flex;align-items:center;gap:var(--s-2)}
+.repo-shortcuts{display:flex;align-items:center;gap:4px}
+.repo-link{width:34px;height:34px;border:1px solid var(--border);border-radius:var(--radius-sm);display:inline-flex;align-items:center;justify-content:center;color:var(--text-2);font-family:var(--font-mono);font-size:0.65rem;font-weight:600;transition:color 0.2s,border-color 0.2s,background-color 0.2s,transform 0.2s var(--ease)}
+.repo-link:hover{color:var(--text);border-color:var(--accent);background:var(--accent-dim);transform:translateY(-1px)}
+.repo-link:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* Language Switcher */
+.lang-switch{position:relative}
+.lang-btn{height:36px;padding:0 10px;border-radius:var(--radius-sm);border:1px solid var(--border);background:transparent;cursor:pointer;display:flex;align-items:center;gap:4px;color:var(--text-2);font-family:var(--font);font-size:0.75rem;font-weight:500;transition:all 0.15s;white-space:nowrap}
+.lang-btn:hover{color:var(--text);border-color:var(--text-3)}
+.lang-btn svg{width:14px;height:14px;transition:transform 0.2s}
+.lang-btn.open svg{transform:rotate(180deg)}
+.lang-drop{position:absolute;top:calc(100% + 6px);right:0;background:var(--bg-raised);border:1px solid var(--border);border-radius:var(--radius-sm);box-shadow:var(--shadow-md);overflow:hidden;opacity:0;visibility:hidden;transform:translateY(-4px);transition:all 0.2s var(--ease);z-index:200;min-width:100px}
+.lang-drop.show{opacity:1;visibility:visible;transform:translateY(0)}
+.lang-option{display:block;width:100%;padding:8px 14px;border:none;background:transparent;color:var(--text-2);font-family:var(--font);font-size:0.75rem;cursor:pointer;text-align:left;transition:all 0.1s;white-space:nowrap}
+.lang-option:hover{color:var(--text);background:var(--bg-subtle)}
+.lang-option.active{color:var(--accent);font-weight:600}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;height:38px;padding:0 20px;border-radius:var(--radius-sm);font-family:var(--font);font-size:0.8125rem;font-weight:500;letter-spacing:-0.01em;border:none;cursor:pointer;transition:all 0.25s var(--ease);white-space:nowrap}
+.btn-primary{background:var(--accent);color:#fff;box-shadow:0 2px 8px var(--accent-dim)}
+.btn-primary:hover{filter:brightness(1.12);transform:translateY(-2px) scale(1.02);box-shadow:0 6px 20px var(--accent-dim)}
+.btn-primary:active{transform:translateY(0) scale(0.98)}
+.btn-secondary{background:transparent;color:var(--text);border:1px solid var(--border)}
+.btn-secondary:hover{background:var(--bg-subtle);border-color:var(--accent);transform:translateY(-1px)}
+.btn-lg{height:46px;padding:0 28px;font-size:0.9375rem;border-radius:var(--radius-md)}
+
+/* HERO */
+.hero{position:relative;min-height:130vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:120px var(--s-8) 0;overflow:clip}
+.hero-bg-img{position:absolute;inset:0;z-index:0;pointer-events:none}
+.hero-bg-img::after{content:'';position:absolute;inset:0;background:var(--bg);opacity:0.90}
+.hero-bg-img img{width:100%;height:100%;object-fit:cover;display:block;filter:blur(2px) saturate(0.5)}
+.hero-floaters{position:absolute;inset:0;pointer-events:none;z-index:0}
+.floater{position:absolute;border-radius:50%;opacity:0.16;filter:blur(80px);will-change:transform}
+.floater-1{width:500px;height:500px;background:var(--accent);top:5%;left:-10%}
+.floater-2{width:350px;height:350px;background:var(--accent);bottom:10%;right:-8%;opacity:0.10}
+.floater-3{width:250px;height:250px;background:var(--accent);top:50%;left:60%;opacity:0.08}
+.floater-ring{position:absolute;border-radius:50%;border:1px solid var(--accent);opacity:0.06;will-change:transform}
+.floater-ring-1{width:300px;height:300px;top:20%;right:15%}
+.floater-ring-2{width:180px;height:180px;bottom:30%;left:10%}
+.hero-text{padding:6vh var(--s-4) 0;text-align:center;max-width:1300px;margin-bottom:var(--s-16);position:relative;z-index:1}
+.hero-text h1{margin-bottom:var(--s-4)}
+.hero-text h1 em{font-style:normal;color:var(--accent)}
+.hero-text .body-l{margin-bottom:var(--s-8);max-width:620px;margin-left:auto;margin-right:auto}
+.hero-cta{display:flex;align-items:center;justify-content:center;gap:var(--s-3)}
+.hero-entrance{opacity:0;transform:translateY(48px);transition:opacity 1.2s cubic-bezier(0.16,1,0.3,1),transform 1.2s cubic-bezier(0.16,1,0.3,1)}
+.hero-entrance.show{opacity:1;transform:translateY(0)}
+.hero-entrance-title{transition-delay:0s}
+.hero-entrance-desc{transition-delay:0.15s}
+.hero-entrance-cta{transition-delay:0.3s}
+.hero-shot-wrap{position:relative;width:92vw;max-width:1400px;margin:0 auto;z-index:1;overflow:visible}
+.hero-shot-wrap::before{content:'';position:absolute;inset:-16px;border-radius:calc(var(--radius-lg) + 16px);background:radial-gradient(ellipse at center,var(--accent-dim) 0%,transparent 70%);opacity:0;transition:opacity 0.5s var(--ease);pointer-events:none;z-index:0}
+.hero-shot-wrap:hover::before{opacity:1}
+.hero-shot{width:100%;border-radius:var(--radius-lg);box-shadow:var(--shadow-xl);border:1px solid var(--border-subtle);will-change:transform,opacity;transform-origin:center bottom;opacity:0;transform:translateY(160px) scale(0.88);animation:hero-float 7s ease-in-out infinite;animation-play-state:paused;transition:box-shadow 0.5s var(--ease),filter 0.5s var(--ease);position:relative;z-index:1}
+.hero-shot.ready{animation-play-state:running}
+.hero-shot-wrap:hover .hero-shot{box-shadow:0 0 70px var(--accent-dim),0 24px 80px rgba(0,0,0,0.5);filter:brightness(1.05)}
+@keyframes hero-float{0%,100%{translate:0 0}33%{translate:0 -10px}66%{translate:0 6px}}
+@keyframes zoom-bounce{0%{transform:scale(0.95)}60%{transform:scale(1.02)}100%{transform:scale(1)}}
+
+[data-reveal]{opacity:0;transform:translateY(36px);transition:opacity 0.8s cubic-bezier(0.25,0.46,0.45,0.94),transform 0.8s cubic-bezier(0.25,0.46,0.45,0.94)}
+[data-reveal].visible{opacity:1;transform:translateY(0)}
+[data-reveal-delay="1"]{transition-delay:0.08s}
+[data-reveal-delay="2"]{transition-delay:0.16s}
+[data-reveal-delay="3"]{transition-delay:0.24s}
+[data-reveal-delay="4"]{transition-delay:0.32s}
+[data-reveal-delay="5"]{transition-delay:0.40s}
+
+.stats{border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle)}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);max-width:1100px;margin:0 auto}
+.stat{padding:var(--s-6) var(--s-8);text-align:center;border-right:1px solid var(--border-subtle);transition:all 0.3s var(--ease);cursor:default}
+.stat:hover{background:var(--accent-dim)}
+.stat:hover .stat-val{transform:scale(1.08)}
+.stat:last-child{border-right:none}
+.stat-val{font-size:2rem;font-weight:700;letter-spacing:-0.03em;color:var(--accent);line-height:1;margin-bottom:var(--s-1);transition:transform 0.3s var(--ease)}
+.stat-label{font-size:0.8125rem;color:var(--text-3);font-weight:450}
+
+.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s-4)}
+.f-card{padding:var(--s-8);border-radius:var(--radius-lg);border:1px solid var(--border-subtle);background:var(--bg-raised);transition:all 0.4s var(--ease)}
+.f-card:hover{border-color:var(--accent);box-shadow:var(--shadow-md),0 0 30px var(--accent-dim);transform:translateY(-3px)}
+.f-card .icon{width:32px;height:32px;border-radius:var(--radius-sm);background:var(--accent-dim);display:flex;align-items:center;justify-content:center;color:var(--accent);margin-bottom:var(--s-4);transition:all 0.3s var(--ease)}
+.f-card:hover .icon{transform:scale(1.1);background:var(--accent);color:#fff}
+.f-card h4{font-size:0.9375rem;font-weight:600;letter-spacing:-0.01em;margin-bottom:var(--s-2)}
+.f-card p{font-size:0.8125rem;color:var(--text-2);line-height:1.6}
+
+.showcase-header{text-align:center;margin-bottom:var(--s-20)}
+.showcase-header .label{margin-bottom:var(--s-4)}
+.showcase-header h2{margin-bottom:var(--s-3)}
+.showcase-header .body-l{max-width:500px;margin:0 auto}
+.showcase-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--s-20);align-items:center;margin-bottom:var(--s-32)}
+.showcase-row:last-child{margin-bottom:0}
+.shot-wrap{position:relative;overflow:visible;border-radius:var(--radius-lg)}
+.shot-wrap::before{content:'';position:absolute;inset:-12px;border-radius:calc(var(--radius-lg) + 12px);background:radial-gradient(ellipse at center,var(--accent-dim) 0%,transparent 70%);opacity:0;transition:opacity 0.5s var(--ease);pointer-events:none;z-index:0}
+.shot-wrap:hover::before{opacity:1}
+.shot-wrap img{width:100%;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);border:1px solid var(--border-subtle);transition:transform 0.5s var(--ease),box-shadow 0.5s var(--ease),filter 0.5s var(--ease);position:relative;z-index:1}
+.shot-wrap:hover img{transform:scale(1.03);box-shadow:0 0 50px var(--accent-dim),0 20px 60px rgba(0,0,0,0.5);filter:brightness(1.06)}
+.showcase-info .label{margin-bottom:var(--s-3)}
+.showcase-info h3{margin-bottom:var(--s-3)}
+.showcase-info .body{margin-bottom:var(--s-6);max-width:420px}
+.tag-row{display:flex;flex-wrap:wrap;gap:var(--s-2)}
+.tag{display:inline-flex;align-items:center;height:26px;padding:0 10px;border-radius:6px;font-family:var(--font-mono);font-size:0.7rem;font-weight:500;color:var(--text-2);background:var(--bg-subtle);border:1px solid var(--border-subtle);transition:all 0.2s var(--ease);cursor:default}
+.tag:hover{color:var(--accent);border-color:var(--accent);background:var(--accent-dim);transform:translateY(-1px)}
+
+.marquee{overflow:hidden;padding:var(--s-6) 0;mask-image:linear-gradient(90deg,transparent 0%,#000 8%,#000 92%,transparent 100%)}
+.marquee-track{display:flex;gap:var(--s-2);width:max-content;animation:marquee 50s linear infinite}
+.marquee-track:hover{animation-play-state:paused}
+.m-item{display:flex;align-items:center;gap:6px;height:32px;padding:0 14px;border-radius:var(--radius-sm);border:1px solid var(--border-subtle);font-family:var(--font-mono);font-size:0.75rem;font-weight:500;color:var(--text-2);background:var(--bg-raised);white-space:nowrap;transition:all 0.25s var(--ease)}
+.m-item:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-dim);transform:translateY(-2px) scale(1.04)}
+.m-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
+
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s-8)}
+.step{text-align:center}
+.step-num{width:44px;height:44px;border-radius:var(--radius-md);border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;margin:0 auto var(--s-4);font-size:1rem;font-weight:600;color:var(--accent);background:var(--accent-dim);transition:all 0.4s var(--ease)}
+.step:hover .step-num{border-color:var(--accent);transform:scale(1.12);box-shadow:0 0 24px var(--accent-dim)}
+.step h4{font-size:0.9375rem;font-weight:600;letter-spacing:-0.01em;margin-bottom:var(--s-2);transition:color 0.3s}
+.step:hover h4{color:var(--accent)}
+.step p{font-size:0.8125rem;color:var(--text-2);line-height:1.6}
+
+.download-block{text-align:center;max-width:480px;margin:0 auto;padding:var(--s-16) 0}
+.download-block .label{margin-bottom:var(--s-4)}
+.download-block h2{margin-bottom:var(--s-3)}
+.download-block .body{margin-bottom:var(--s-8)}
+.download-actions{display:flex;align-items:center;justify-content:center;gap:var(--s-3);flex-wrap:wrap}
+.download-meta{display:flex;align-items:center;justify-content:center;gap:var(--s-4);margin-top:var(--s-4);font-size:0.8125rem;color:var(--text-3)}
+.download-meta span{display:flex;align-items:center;gap:var(--s-1)}
+
+.cta-block{text-align:center;padding:var(--s-24) 0;border-top:1px solid var(--border-subtle)}
+.cta-block .label{margin-bottom:var(--s-4)}
+.cta-block h2{margin-bottom:var(--s-3)}
+.cta-block .body-l{max-width:460px;margin:0 auto var(--s-8)}
+.cta-actions{display:flex;align-items:center;justify-content:center;gap:var(--s-3);flex-wrap:wrap}
+.btn-repository{min-width:138px}
+
+.footer{padding:var(--s-20) 0}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:var(--s-16)}
+.footer-brand .nav-brand{margin-bottom:var(--s-3)}
+.footer-brand p{font-size:0.8125rem;color:var(--text-3);line-height:1.6;max-width:240px}
+.footer-col h5{font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text);margin-bottom:var(--s-4)}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:var(--s-2)}
+.footer-col a{font-size:0.8125rem;color:var(--text-3);transition:color 0.15s}
+.footer-col a:hover{color:var(--text)}
+.footer-bottom{margin-top:var(--s-16);padding-top:var(--s-8);border-top:1px solid var(--border-subtle);display:flex;align-items:center;justify-content:space-between;font-size:0.75rem;color:var(--text-3)}
+
+/* ============================================================
+   INLINE IMAGE EXPANSION
+   ============================================================ */
+
+.showcase-row{transition:grid-template-columns 0.6s var(--ease),gap 0.6s var(--ease),margin 0.6s var(--ease)}
+.showcase-row .shot-wrap img{transition:transform 0.6s var(--ease),box-shadow 0.6s var(--ease),border-color 0.6s var(--ease),filter 0.6s var(--ease)}
+.showcase-row .showcase-info{transition:max-width 0.6s var(--ease),margin 0.6s var(--ease),text-align 0.6s var(--ease),opacity 0.4s var(--ease)}
+.showcase-row .showcase-info .body{transition:max-width 0.6s var(--ease)}
+.showcase-row .showcase-info .tag-row{transition:justify-content 0.6s var(--ease)}
+
+.showcase-row.expanded{grid-template-columns:1fr;gap:var(--s-10);margin-bottom:var(--s-24)}
+.showcase-row.expanded .shot-wrap{cursor:zoom-out}
+.showcase-row.expanded .shot-wrap img{transform:scale(1);box-shadow:0 8px 40px rgba(0,0,0,0.4);border-color:var(--accent);animation:zoom-bounce 0.6s var(--ease)}
+.showcase-row.expanded .showcase-info{max-width:640px;margin:var(--s-6) auto 0;text-align:center}
+.showcase-row.expanded .showcase-info .body{max-width:100%}
+.showcase-row.expanded .showcase-info .tag-row{justify-content:center}
+.shot-wrap{cursor:zoom-in}
+
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+@media(max-width:1024px){
+  .container{padding:0 var(--s-6)}.section{padding:var(--s-20) 0}
+  .showcase-row{grid-template-columns:1fr;gap:var(--s-12)}
+  .features-grid{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:var(--s-10)}
+  .stats-row{grid-template-columns:repeat(2,1fr)}
+  .stat{border-bottom:1px solid var(--border-subtle)}
+  .stat:nth-child(3),.stat:nth-child(4){border-bottom:none}
+  .hero-shot-wrap{max-width:100%}
+}
+@media(max-width:640px){
+  .nav-links{display:none}.hero{padding:100px var(--s-4) 0}
+  .repo-shortcuts{display:none}
+  .hero-text h1{font-size:2.5rem;white-space:normal}
+  .features-grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr}
+  .download-actions{padding:0 var(--s-4)}
+  .download-actions .btn{width:100%;max-width:280px}
+  .cta-actions{padding:0 var(--s-4)}
+  .cta-actions .btn{width:100%;max-width:280px}
+  .footer-grid{grid-template-columns:1fr;gap:var(--s-8)}
+  .footer-bottom{flex-direction:column;gap:var(--s-2);text-align:center}
+  .stats-row{grid-template-columns:repeat(2,1fr)}
+  .hero-shot-wrap{max-width:100%}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation-duration:0.01ms!important;transition-duration:0.01ms!important}
+  [data-reveal]{opacity:1!important;transform:none!important}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">
+      <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="13" stroke="currentColor" stroke-width="2"/><path d="M11 16C11 12.5 12.5 9 16 9V23C12.5 23 11 19.5 11 16Z" fill="currentColor" opacity="0.85"/><path d="M16 9c3.5 0 5 3.5 5 7s-1.5 7-5 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="18" cy="13.5" r="1.8" fill="currentColor"/></svg>
+      OrcaBox
+    </a>
+    <ul class="nav-links">
+      <li><a href="#features" data-i18n="nav.features">功能</a></li>
+      <li><a href="#showcase" data-i18n="nav.showcase">展示</a></li>
+      <li><a href="#capabilities" data-i18n="nav.capabilities">能力</a></li>
+      <li><a href="#download" data-i18n="nav.download">下载</a></li>
+    </ul>
+    <div class="nav-actions">
+      <div class="repo-shortcuts" aria-label="Code repositories">
+        <a href="https://cnb.cool/garrykai/orcabox-release" target="_blank" rel="noopener noreferrer" class="repo-link" aria-label="Open OrcaBox releases on CNB" title="CNB Release Repository">CNB</a>
+        <a href="https://github.com/GarryGit888/OrcaBox-Release" target="_blank" rel="noopener noreferrer" class="repo-link" aria-label="Open OrcaBox releases on GitHub" title="GitHub Release Repository">GH</a>
+      </div>
+      <div class="lang-switch">
+        <button class="lang-btn" id="langBtn" aria-label="Switch language">
+          <span id="langLabel">中</span>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 6 8 10 12 6"/></svg>
+        </button>
+        <div class="lang-drop" id="langDrop">
+          <button class="lang-option" data-lang="zh">🇨🇳 中文</button>
+          <button class="lang-option" data-lang="en">🇺🇸 English</button>
+          <button class="lang-option" data-lang="ja">🇯🇵 日本語</button>
+          <button class="lang-option" data-lang="ko">🇰🇷 한국어</button>
+        </div>
+      </div>
+      <a href="#download" class="btn btn-primary" data-i18n="nav.downloadBtn">下载</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero" id="hero">
+  <div class="hero-bg-img"><img src="assets/iShot_2026-06-25_13.52.45.webp" alt="" aria-hidden="true"></div>
+  <div class="hero-floaters">
+    <div class="floater floater-1"></div><div class="floater floater-2"></div><div class="floater floater-3"></div>
+    <div class="floater-ring floater-ring-1"></div><div class="floater-ring floater-ring-2"></div>
+  </div>
+  <div class="hero-text">
+    <h1 class="h1 hero-entrance hero-entrance-title"><span data-i18n="hero.title1">创意资产</span> <em data-i18n="hero.title2">本地智管</em></h1>
+    <p class="body-l hero-entrance hero-entrance-desc" data-i18n="hero.desc">专业本地素材管理器。直接索引磁盘文件、不复制不冗余，40+ 格式即时预览，端侧 AI 智能分析。</p>
+    <div class="hero-cta hero-entrance hero-entrance-cta">
+      <a href="#download" class="btn btn-primary btn-lg" data-i18n="hero.cta">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        免费下载 macOS 版
+      </a>
+    </div>
+  </div>
+  <div class="hero-shot-wrap" id="heroShotWrap">
+    <img class="hero-shot" id="heroShot" src="assets/iShot_2026-06-25_13.52.45.webp" alt="OrcaBox" loading="eager">
+  </div>
+</section>
+
+<div class="stats">
+  <div class="container">
+    <div class="stats-row">
+      <div class="stat" data-reveal><div class="stat-val">40+</div><div class="stat-label" data-i18n="stats.formats">文件格式</div></div>
+      <div class="stat" data-reveal data-reveal-delay="1"><div class="stat-val" data-i18n="stats.local.val">本地索引</div><div class="stat-label" data-i18n="stats.local.desc">不复制原文件</div></div>
+      <div class="stat" data-reveal data-reveal-delay="2"><div class="stat-val" data-i18n="stats.ai.val">端侧 AI</div><div class="stat-label" data-i18n="stats.ai.desc">数据不离开本地</div></div>
+      <div class="stat" data-reveal data-reveal-delay="3"><div class="stat-val" data-i18n="stats.oss.val">免费下载</div><div class="stat-label" data-i18n="stats.oss.desc">公开发行</div></div>
+    </div>
+  </div>
+</div>
+
+<section class="section" id="features">
+  <div class="container">
+    <div class="showcase-header" data-reveal>
+      <span class="label" data-i18n="features.label">核心能力</span>
+      <h2 class="h2" data-i18n="features.title">专为创意工作流设计</h2>
+      <p class="body-l" data-i18n="features.desc">每一项功能都围绕你的实际工作方式构建</p>
+    </div>
+    <div class="features-grid">
+      <div class="f-card" data-reveal data-reveal-delay="3"><div class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="3" y1="9" x2="21" y2="9"/></svg></div><h4 data-i18n="f1.title">本地索引 · 零冗余</h4><p data-i18n="f1.desc">直接索引磁盘原始文件，目录即组织结构，不产生任何副本。</p></div>
+      <div class="f-card" data-reveal data-reveal-delay="1"><div class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><h4 data-i18n="f2.title">FTS5 全文搜索</h4><p data-i18n="f2.desc">文件名、路径、标签多维度搜索，大库也能秒级响应。</p></div>
+      <div class="f-card" data-reveal data-reveal-delay="2"><div class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><h4 data-i18n="f3.title">实时文件监听</h4><p data-i18n="f3.desc">chokidar 文件监听，素材变更自动同步，无需手动刷新。</p></div>
+      <div class="f-card" data-reveal data-reveal-delay="3"><div class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/></svg></div><h4 data-i18n="f4.title">标签与合集</h4><p data-i18n="f4.desc">自定义标签、智能合集、评分收藏，构建素材知识库。</p></div>
+      <div class="f-card" data-reveal data-reveal-delay="1"><div class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div><h4 data-i18n="f5.title">智能播放引擎</h4><p data-i18n="f5.desc">多管线路由：浏览器直出、原生硬解、libVLC，专利格式走系统栈。</p></div>
+      <div class="f-card" data-reveal data-reveal-delay="2"><div class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/></svg></div><h4 data-i18n="f6.title">拖拽导出</h4><p data-i18n="f6.desc">直拖到设计工具或浏览器。支持批量、壁纸设置、字体安装。</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee">
+  <div class="marquee-track">
+    <span class="m-item"><span class="m-dot" style="background:#38bdf8"></span>PNG</span><span class="m-item"><span class="m-dot" style="background:#38bdf8"></span>JPG</span><span class="m-item"><span class="m-dot" style="background:#38bdf8"></span>WebP</span><span class="m-item"><span class="m-dot" style="background:#38bdf8"></span>AVIF</span><span class="m-item"><span class="m-dot" style="background:#38bdf8"></span>SVG</span><span class="m-item"><span class="m-dot" style="background:#38bdf8"></span>PSD</span><span class="m-item"><span class="m-dot" style="background:#38bdf8"></span>HEIC</span>
+    <span class="m-item"><span class="m-dot" style="background:#a78bfa"></span>MP4</span><span class="m-item"><span class="m-dot" style="background:#a78bfa"></span>MOV</span><span class="m-item"><span class="m-dot" style="background:#a78bfa"></span>MKV</span><span class="m-item"><span class="m-dot" style="background:#a78bfa"></span>WebM</span>
+    <span class="m-item"><span class="m-dot" style="background:#34d399"></span>MP3</span><span class="m-item"><span class="m-dot" style="background:#34d399"></span>WAV</span><span class="m-item"><span class="m-dot" style="background:#34d399"></span>FLAC</span>
+    <span class="m-item"><span class="m-dot" style="background:#fbbf24"></span>GLB</span><span class="m-item"><span class="m-dot" style="background:#fbbf24"></span>OBJ</span>
+    <span class="m-item"><span class="m-dot" style="background:#f472b6"></span>TTF</span><span class="m-item"><span class="m-dot" style="background:#fb923c"></span>Lottie</span>
+    <!-- Duplicate for seamless loop -->
+    <span class="m-item"><span class="m-dot" style="background:#38bdf8"></span>PNG</span><span class="m-item"><span class="m-dot" style="background:#38bdf8"></span>JPG</span><span class="m-item"><span class="m-dot" style="background:#38bdf8"></span>WebP</span><span class="m-item"><span class="m-dot" style="background:#38bdf8"></span>AVIF</span><span class="m-item"><span class="m-dot" style="background:#38bdf8"></span>SVG</span><span class="m-item"><span class="m-dot" style="background:#38bdf8"></span>PSD</span><span class="m-item"><span class="m-dot" style="background:#38bdf8"></span>HEIC</span>
+    <span class="m-item"><span class="m-dot" style="background:#a78bfa"></span>MP4</span><span class="m-item"><span class="m-dot" style="background:#a78bfa"></span>MOV</span><span class="m-item"><span class="m-dot" style="background:#a78bfa"></span>MKV</span><span class="m-item"><span class="m-dot" style="background:#a78bfa"></span>WebM</span>
+    <span class="m-item"><span class="m-dot" style="background:#34d399"></span>MP3</span><span class="m-item"><span class="m-dot" style="background:#34d399"></span>WAV</span><span class="m-item"><span class="m-dot" style="background:#34d399"></span>FLAC</span>
+    <span class="m-item"><span class="m-dot" style="background:#fbbf24"></span>GLB</span><span class="m-item"><span class="m-dot" style="background:#fbbf24"></span>OBJ</span>
+    <span class="m-item"><span class="m-dot" style="background:#f472b6"></span>TTF</span><span class="m-item"><span class="m-dot" style="background:#fb923c"></span>Lottie</span>
+  </div>
+</div>
+
+<section class="section section-subtle" id="showcase">
+  <div class="container">
+    <div class="showcase-header" data-reveal>
+      <span class="label" data-i18n="showcase.label">产品展示</span>
+      <h2 class="h2" data-i18n="showcase.title">不只是浏览器，是素材中枢</h2>
+      <p class="body-l" data-i18n="showcase.desc">图片、音频、Lottie、3D 模型全格式深度预览</p>
+    </div>
+    <div class="showcase-row">
+      <div class="shot-wrap" data-reveal><img src="assets/iShot_2026-06-25_13.54.07.webp" alt="Image Preview" loading="lazy"></div>
+      <div class="showcase-info" data-reveal data-reveal-delay="1">
+        <span class="label" data-i18n="s1.label">图片预览</span><h3 class="h3" data-i18n="s1.title">高清大图 · 沉浸预览</h3>
+        <p class="body" data-i18n="s1.desc">PSD、HEIC、WebP、AVIF、TIFF 等专业格式原生支持。内嵌色彩分析面板，查看色板分布、直方图与 EXIF 元数据。</p>
+        <div class="tag-row"><span class="tag">PSD</span><span class="tag">HEIC</span><span class="tag">WebP</span><span class="tag">AVIF</span><span class="tag">TIFF</span></div>
+      </div>
+    </div>
+    <div class="showcase-row" style="direction:rtl">
+      <div class="shot-wrap" data-reveal style="direction:ltr"><img src="assets/iShot_2026-06-25_13.56.52.webp" alt="Audio Library" loading="lazy"></div>
+      <div class="showcase-info" data-reveal data-reveal-delay="1">
+        <span class="label" data-i18n="s2.label">音频管理</span><h3 class="h3" data-i18n="s2.title">波形可视化 · 音频素材库</h3>
+        <p class="body" data-i18n="s2.desc">MP3 / WAV / FLAC / AAC 原生支持。自动生成音频波形图与频谱分析，支持播放预览与批量标签管理。</p>
+        <div class="tag-row"><span class="tag">MP3</span><span class="tag">WAV</span><span class="tag">FLAC</span><span class="tag">AAC</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="showcase-row">
+      <div class="shot-wrap" data-reveal><img src="assets/iShot_2026-06-25_13.58.38.webp" alt="Lottie" loading="lazy"></div>
+      <div class="showcase-info" data-reveal data-reveal-delay="1">
+        <span class="label" data-i18n="s3.label">Lottie 工作流</span><h3 class="h3" data-i18n="s3.title">动效资产管理</h3>
+        <p class="body" data-i18n="s3.desc">实时网格预览不降级、播放调速循环控制、JSON 与 .lottie 双格式原生解析。预取保持挂载，拒绝重挂载占位闪烁。</p>
+        <div class="tag-row"><span class="tag">JSON</span><span class="tag">.lottie</span><span class="tag" data-i18n="tag.realtime">实时预览</span><span class="tag" data-i18n="tag.grid">网格动画</span></div>
+      </div>
+    </div>
+    <div class="showcase-row" style="direction:rtl">
+      <div class="shot-wrap" data-reveal style="direction:ltr"><img src="assets/iShot_2026-06-25_13.58.04.webp" alt="3D Model" loading="lazy"></div>
+      <div class="showcase-info" data-reveal data-reveal-delay="1" style="direction:ltr">
+        <span class="label" data-i18n="s4.label">3D 模型</span><h3 class="h3" data-i18n="s4.title">交互式 3D 预览</h3>
+        <p class="body" data-i18n="s4.desc">Three.js 驱动，支持 GLB/GLTF、OBJ、FBX、USDZ。自由旋转缩放、材质预览、纹理提取。</p>
+        <div class="tag-row"><span class="tag">GLB</span><span class="tag">FBX</span><span class="tag">OBJ</span><span class="tag">USDZ</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-subtle" id="capabilities">
+  <div class="container">
+    <div class="showcase-header" data-reveal>
+      <span class="label" data-i18n="cap.label">后台引擎 & AI</span>
+      <h2 class="h2" data-i18n="cap.title">透明可见 · 端侧智能</h2>
+      <p class="body-l" data-i18n="cap.desc">后台任务实时可见。AI 基于 ONNX 本地推理，数据不上云</p>
+    </div>
+    <div class="showcase-row">
+      <div class="shot-wrap" data-reveal><img src="assets/iShot_2026-06-25_13.55.23.webp" alt="Task Center" loading="lazy"></div>
+      <div class="showcase-info" data-reveal data-reveal-delay="1">
+        <span class="label" data-i18n="t1.label">任务中心</span><h3 class="h3" data-i18n="t1.title">后台处理 · 透明可控</h3>
+        <p class="body" data-i18n="t1.desc">扫描索引、AI 标签分析、缩略图生成——所有后台任务进度一目了然。支持失败重试、批量处理、文件变更自动同步。</p>
+        <div class="tag-row"><span class="tag" data-i18n="tag.scan">扫描</span><span class="tag" data-i18n="tag.index">索引</span><span class="tag" data-i18n="tag.ai">AI 分析</span><span class="tag" data-i18n="tag.watch">文件监听</span></div>
+      </div>
+    </div>
+    <div class="features-grid" style="margin-top:var(--s-16)" data-reveal>
+      <div class="f-card"><div class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 12h8M12 8v8"/></svg></div><h4 data-i18n="ai1.title">智能标签生成</h4><p data-i18n="ai1.desc">ONNX 模型分析图片内容，自动生成描述性标签，支持批量审核应用。</p></div>
+      <div class="f-card"><div class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><h4 data-i18n="ai2.title">以图搜图</h4><p data-i18n="ai2.desc">向量嵌入视觉相似搜索，拖入参考图匹配库中风格相近的素材。</p></div>
+      <div class="f-card"><div class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 014 10"/></svg></div><h4 data-i18n="ai3.title">颜色搜索</h4><p data-i18n="ai3.desc">按主色调搜索，支持色彩配置管理与预设库，精准定位特定配色资源。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="showcase-header" data-reveal>
+      <span class="label" data-i18n="wf.label">上手即用</span>
+      <h2 class="h2" data-i18n="wf.title">四步开启高效素材管理</h2>
+    </div>
+    <div class="steps">
+      <div class="step" data-reveal><div class="step-num">1</div><h4 data-i18n="w1.title">添加源文件夹</h4><p data-i18n="w1.desc">选择磁盘上的素材目录，自动扫描索引，文件不复制不移动。</p></div>
+      <div class="step" data-reveal data-reveal-delay="1"><div class="step-num">2</div><h4 data-i18n="w2.title">自动索引</h4><p data-i18n="w2.desc">生成缩略图、提取元数据、分析色彩。实时监听变化，自动同步。</p></div>
+      <div class="step" data-reveal data-reveal-delay="2"><div class="step-num">3</div><h4 data-i18n="w3.title">预览与组织</h4><p data-i18n="w3.desc">40+ 格式即时预览。标签、合集、评分，建立素材知识库。</p></div>
+      <div class="step" data-reveal data-reveal-delay="3"><div class="step-num">4</div><h4 data-i18n="w4.title">拖拽导出</h4><p data-i18n="w4.desc">直拖到设计工具或浏览器。支持批量、壁纸设置、字体安装。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-subtle" id="download">
+  <div class="container">
+    <div class="download-block" data-reveal>
+      <span class="label" data-i18n="dl.label">下载</span>
+      <h2 class="h2" data-i18n="dl.title">OrcaBox 1.0</h2>
+      <p class="body" data-i18n="dl.desc">提供 macOS Apple Silicon 与 Windows x64 安装包。应用核心源码不在公开发行仓库中。</p>
+      <div class="download-actions">
+        <a href="https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.0.0/OrcaBox-1.0.0-macOS-arm64.dmg" class="btn btn-primary btn-lg" data-i18n="dl.mac">
+          下载 macOS DMG
+        </a>
+        <a href="https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.0.0/OrcaBox-1.0.0-Windows-x64.exe" class="btn btn-secondary btn-lg" data-i18n="dl.win">
+          下载 Windows EXE
+        </a>
+      </div>
+      <div class="download-meta">
+        <span>macOS 12.0+</span><span>&middot;</span><span>Apple Silicon</span><span>&middot;</span><span>Windows 10/11</span><span>&middot;</span><span data-i18n="dl.free">免费下载</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="cta-block">
+  <div class="container">
+    <span class="label" data-i18n="cta.label">开始使用</span>
+    <h2 class="h2" data-i18n="cta.title">准备好管理你的创意资产了吗？</h2>
+    <p class="body-l" data-i18n="cta.desc">下载 OrcaBox，体验专业级本地素材管理。</p>
+    <div class="cta-actions">
+      <a href="#download" class="btn btn-primary btn-lg" data-i18n="cta.dl">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/></svg>
+        下载 macOS 版
+      </a>
+      <a href="https://cnb.cool/garrykai/orcabox-release" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg btn-repository" data-i18n="cta.cnb">CNB 发行仓库</a>
+      <a href="https://github.com/GarryGit888/OrcaBox-Release" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg btn-repository" data-i18n="cta.github">GitHub 发行仓库</a>
+    </div>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="nav-brand"><svg viewBox="0 0 32 32" fill="none" width="22" height="22"><circle cx="16" cy="16" r="13" stroke="currentColor" stroke-width="2"/><path d="M11 16C11 12.5 12.5 9 16 9V23C12.5 23 11 19.5 11 16Z" fill="currentColor" opacity="0.85"/><path d="M16 9c3.5 0 5 3.5 5 7s-1.5 7-5 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="18" cy="13.5" r="1.8" fill="currentColor"/></svg>OrcaBox</a>
+        <p data-i18n="footer.desc">面向创意团队的专业本地索引多格式素材管理器。</p>
+      </div>
+      <div class="footer-col"><h5 data-i18n="footer.product">产品</h5><ul><li><a href="#features" data-i18n="footer.f1">功能</a></li><li><a href="#showcase" data-i18n="footer.f2">展示</a></li><li><a href="#capabilities" data-i18n="footer.f3">能力</a></li><li><a href="#download" data-i18n="footer.f4">下载</a></li></ul></div>
+      <div class="footer-col"><h5 data-i18n="footer.resources">资源</h5><ul><li><a href="https://github.com/GarryGit888/OrcaBox-Release#readme" target="_blank" rel="noopener noreferrer" data-i18n="footer.r1">使用说明</a></li><li><a href="https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.0.0" target="_blank" rel="noopener noreferrer" data-i18n="footer.r2">发行说明</a></li><li><a href="https://github.com/GarryGit888/OrcaBox-Release/releases" target="_blank" rel="noopener noreferrer" data-i18n="footer.r3">历史版本</a></li></ul></div>
+      <div class="footer-col"><h5 data-i18n="footer.about">发行仓库</h5><ul><li><a href="https://cnb.cool/garrykai/orcabox-release" target="_blank" rel="noopener noreferrer" data-i18n="footer.cnb">CNB 发行仓库</a></li><li><a href="https://github.com/GarryGit888/OrcaBox-Release" target="_blank" rel="noopener noreferrer" data-i18n="footer.github">GitHub 发行仓库</a></li><li><a href="https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.0.0" target="_blank" rel="noopener noreferrer" data-i18n="footer.a1">下载安装包</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2024-2026 OrcaBox. All rights reserved.</span><span data-i18n="footer.made">Made for macOS and Windows</span></div>
+  </div>
+</footer>
+
+<script>
+// ===== I18N TRANSLATIONS =====
+const i18n={
+  zh:{
+    "nav.features":"功能","nav.showcase":"展示","nav.capabilities":"能力","nav.download":"下载","nav.downloadBtn":"下载",
+    "hero.title1":"创意资产","hero.title2":"本地智管",
+    "hero.desc":"专业本地素材管理器。直接索引磁盘文件、不复制不冗余，40+ 格式即时预览，端侧 AI 智能分析。",
+    "hero.cta":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/><line x1=\"12\" y1=\"15\" x2=\"12\" y2=\"3\"/></svg> 免费下载 macOS 版",
+    "stats.formats":"文件格式","stats.local.val":"本地索引","stats.local.desc":"不复制原文件",
+    "stats.ai.val":"端侧 AI","stats.ai.desc":"数据不离开本地","stats.oss.val":"免费下载","stats.oss.desc":"公开发行",
+    "features.label":"核心能力","features.title":"专为创意工作流设计","features.desc":"每一项功能都围绕你的实际工作方式构建",
+    "f1.title":"本地索引 · 零冗余","f1.desc":"直接索引磁盘原始文件，目录即组织结构，不产生任何副本。",
+    "f2.title":"FTS5 全文搜索","f2.desc":"文件名、路径、标签多维度搜索，大库也能秒级响应。",
+    "f3.title":"实时文件监听","f3.desc":"chokidar 文件监听，素材变更自动同步，无需手动刷新。",
+    "f4.title":"标签与合集","f4.desc":"自定义标签、智能合集、评分收藏，构建素材知识库。",
+    "f5.title":"智能播放引擎","f5.desc":"多管线路由：浏览器直出、原生硬解、libVLC，专利格式走系统栈。",
+    "f6.title":"拖拽导出","f6.desc":"直拖到设计工具或浏览器。支持批量、壁纸设置、字体安装。",
+    "showcase.label":"产品展示","showcase.title":"不只是浏览器，是素材中枢","showcase.desc":"图片、音频、Lottie、3D 模型全格式深度预览",
+    "s1.label":"图片预览","s1.title":"高清大图 · 沉浸预览","s1.desc":"PSD、HEIC、WebP、AVIF、TIFF 等专业格式原生支持。内嵌色彩分析面板，查看色板分布、直方图与 EXIF 元数据。",
+    "s2.label":"音频管理","s2.title":"波形可视化 · 音频素材库","s2.desc":"MP3 / WAV / FLAC / AAC 原生支持。自动生成音频波形图与频谱分析，支持播放预览与批量标签管理。",
+    "s3.label":"Lottie 工作流","s3.title":"动效资产管理","s3.desc":"实时网格预览不降级、播放调速循环控制、JSON 与 .lottie 双格式原生解析。预取保持挂载，拒绝重挂载占位闪烁。",
+    "s4.label":"3D 模型","s4.title":"交互式 3D 预览","s4.desc":"Three.js 驱动，支持 GLB/GLTF、OBJ、FBX、USDZ。自由旋转缩放、材质预览、纹理提取。",
+    "cap.label":"后台引擎 & AI","cap.title":"透明可见 · 端侧智能","cap.desc":"后台任务实时可见。AI 基于 ONNX 本地推理，数据不上云",
+    "t1.label":"任务中心","t1.title":"后台处理 · 透明可控","t1.desc":"扫描索引、AI 标签分析、缩略图生成——所有后台任务进度一目了然。支持失败重试、批量处理、文件变更自动同步。",
+    "ai1.title":"智能标签生成","ai1.desc":"ONNX 模型分析图片内容，自动生成描述性标签，支持批量审核应用。",
+    "ai2.title":"以图搜图","ai2.desc":"向量嵌入视觉相似搜索，拖入参考图匹配库中风格相近的素材。",
+    "ai3.title":"颜色搜索","ai3.desc":"按主色调搜索，支持色彩配置管理与预设库，精准定位特定配色资源。",
+    "tag.scan":"扫描","tag.index":"索引","tag.ai":"AI 分析","tag.watch":"文件监听","tag.realtime":"实时预览","tag.grid":"网格动画",
+    "wf.label":"上手即用","wf.title":"四步开启高效素材管理",
+    "w1.title":"添加源文件夹","w1.desc":"选择磁盘上的素材目录，自动扫描索引，文件不复制不移动。",
+    "w2.title":"自动索引","w2.desc":"生成缩略图、提取元数据、分析色彩。实时监听变化，自动同步。",
+    "w3.title":"预览与组织","w3.desc":"40+ 格式即时预览。标签、合集、评分，建立素材知识库。",
+    "w4.title":"拖拽导出","w4.desc":"直拖到设计工具或浏览器。支持批量、壁纸设置、字体安装。",
+    "dl.label":"下载","dl.title":"OrcaBox 1.0","dl.desc":"提供 macOS Apple Silicon 与 Windows x64 安装包。应用核心源码不在公开发行仓库中。",
+    "dl.mac":"下载 macOS DMG","dl.win":"下载 Windows EXE","dl.free":"免费下载",
+    "cta.label":"开始使用","cta.title":"准备好管理你的创意资产了吗？","cta.desc":"下载 OrcaBox，体验专业级本地素材管理。",
+    "cta.dl":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/></svg> 下载 macOS 版",
+    "cta.cnb":"CNB 发行仓库","cta.github":"GitHub 发行仓库",
+    "footer.desc":"面向创意团队的专业本地索引多格式素材管理器。",
+    "footer.product":"产品","footer.resources":"资源","footer.about":"发行仓库",
+    "footer.f1":"功能","footer.f2":"展示","footer.f3":"能力","footer.f4":"下载",
+    "footer.r1":"使用说明","footer.r2":"发行说明","footer.r3":"历史版本",
+    "footer.cnb":"CNB 发行仓库","footer.github":"GitHub 发行仓库",
+    "footer.a1":"下载安装包","footer.made":"Made for macOS and Windows"
+  },
+  en:{
+    "nav.features":"Features","nav.showcase":"Showcase","nav.capabilities":"Capabilities","nav.download":"Download","nav.downloadBtn":"Download",
+    "hero.title1":"Creative Assets","hero.title2":"Managed Locally",
+    "hero.desc":"A professional local asset manager for creative teams. Index your files directly without duplication. 40+ format preview, Lottie workflow, and on-device AI analysis.",
+    "hero.cta":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/><line x1=\"12\" y1=\"15\" x2=\"12\" y2=\"3\"/></svg> Download for macOS",
+    "stats.formats":"File Formats","stats.local.val":"Local Index","stats.local.desc":"No File Duplication",
+    "stats.ai.val":"On-Device AI","stats.ai.desc":"Data Never Leaves Local","stats.oss.val":"Free Download","stats.oss.desc":"Public Releases",
+    "features.label":"Core Capabilities","features.title":"Designed for Creative Workflows","features.desc":"Every feature is built around how you actually work",
+    "f1.title":"Local Index · Zero Redundancy","f1.desc":"Index files directly on your disk. Your folder structure is your organization. Zero copies.",
+    "f2.title":"FTS5 Full-Text Search","f2.desc":"Multi-dimensional search across filenames, paths, and tags. Instant results even in large libraries.",
+    "f3.title":"Real-Time File Watch","f3.desc":"chokidar-powered file system watching. Asset changes sync automatically, no manual refresh needed.",
+    "f4.title":"Tags & Collections","f4.desc":"Custom tags, smart collections, ratings & favorites. Build your asset knowledge base.",
+    "f5.title":"Smart Playback Engine","f5.desc":"Multi-pipeline routing: browser direct, native hardware decode, libVLC. Patent formats via OS stack.",
+    "f6.title":"Drag & Drop Export","f6.desc":"Drag assets directly into design tools or browsers. Batch export, wallpaper set, font installation.",
+    "showcase.label":"Product Showcase","showcase.title":"More Than a Browser, It's Your Asset Hub","showcase.desc":"Deep preview for images, audio, Lottie, and 3D models across all formats",
+    "s1.label":"Image Preview","s1.title":"High-Res · Immersive Preview","s1.desc":"Native support for PSD, HEIC, WebP, AVIF, TIFF and more. Built-in color analysis panel with palette, histogram, and EXIF metadata.",
+    "s2.label":"Audio Management","s2.title":"Waveform Visualization · Audio Library","s2.desc":"Native MP3, WAV, FLAC, AAC support. Auto-generated waveforms and spectrum analysis with playback preview and batch tagging.",
+    "s3.label":"Lottie Workflow","s3.title":"Motion Asset Management","s3.desc":"Live grid preview without degradation, playback speed control, JSON & .lottie dual-format native parsing. Prefetched, kept mounted, no flicker.",
+    "s4.label":"3D Models","s4.title":"Interactive 3D Preview","s4.desc":"Three.js powered. Supports GLB/GLTF, OBJ, FBX, USDZ. Free rotation, zoom, material preview, and texture extraction.",
+    "cap.label":"Backend Engine & AI","cap.title":"Transparent · On-Device Intelligence","cap.desc":"All background tasks visible in real-time. AI powered by ONNX local inference, your data stays local.",
+    "t1.label":"Task Center","t1.title":"Background Processing · Full Control","t1.desc":"Scanning, AI tag analysis, thumbnail generation — all background tasks at a glance. Retry on failure, batch processing, auto file sync.",
+    "ai1.title":"Smart Tag Generation","ai1.desc":"ONNX model analyzes image content, auto-generates descriptive tags. Batch review and one-click apply.",
+    "ai2.title":"Image-to-Image Search","ai2.desc":"Vector embedding visual similarity search. Drop a reference image to find visually similar assets in your library.",
+    "ai3.title":"Color Search","ai3.desc":"Search by dominant color. Color profile management and preset libraries for precise palette matching.",
+    "tag.scan":"Scan","tag.index":"Index","tag.ai":"AI Analysis","tag.watch":"File Watch","tag.realtime":"Live Preview","tag.grid":"Grid Animation",
+    "wf.label":"Get Started","wf.title":"Four Steps to Efficient Asset Management",
+    "w1.title":"Add Source Folder","w1.desc":"Select your asset directory on disk. Auto scan and index, no files copied or moved.",
+    "w2.title":"Auto Index","w2.desc":"Generate thumbnails, extract metadata, analyze colors. Real-time file watching with auto sync.",
+    "w3.title":"Preview & Organize","w3.desc":"Instant preview for 40+ formats. Tags, collections, ratings — build your asset knowledge base.",
+    "w4.title":"Drag & Drop Export","w4.desc":"Drag directly to design tools or browsers. Batch, wallpaper, font installation support.",
+    "dl.label":"Download","dl.title":"OrcaBox 1.0","dl.desc":"Installers for macOS Apple Silicon and Windows x64. The application core source is not included in this public release repository.",
+    "dl.mac":"Download macOS DMG","dl.win":"Download Windows EXE","dl.free":"Free Download",
+    "cta.label":"Get Started","cta.title":"Ready to manage your creative assets?","cta.desc":"Download OrcaBox and experience professional-grade local asset management.",
+    "cta.dl":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/></svg> Download for macOS",
+    "cta.cnb":"CNB Releases","cta.github":"GitHub Releases",
+    "footer.desc":"Professional local-indexed multi-format asset manager for creative teams.",
+    "footer.product":"Product","footer.resources":"Resources","footer.about":"Release Repositories",
+    "footer.f1":"Features","footer.f2":"Showcase","footer.f3":"Capabilities","footer.f4":"Download",
+    "footer.r1":"User Guide","footer.r2":"Release Notes","footer.r3":"Previous Versions",
+    "footer.cnb":"CNB Releases","footer.github":"GitHub Releases",
+    "footer.a1":"Download Installers","footer.made":"Made for macOS and Windows"
+  },
+  ja:{
+    "nav.features":"機能","nav.showcase":"紹介","nav.capabilities":"能力","nav.download":"ダウンロード","nav.downloadBtn":"ダウンロード",
+    "hero.title1":"クリエイティブ資産","hero.title2":"ローカル管理",
+    "hero.desc":"クリエイティブチームのためのプロ向けローカルアセットマネージャー。ファイルを複製せず直接インデックス。40以上のフォーマット対応、Lottieワークフロー、オンデバイスAI分析。",
+    "hero.cta":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/><line x1=\"12\" y1=\"15\" x2=\"12\" y2=\"3\"/></svg> macOS版を無料ダウンロード",
+    "stats.formats":"対応フォーマット","stats.local.val":"ローカル索引","stats.local.desc":"ファイル複製なし",
+    "stats.ai.val":"端末AI","stats.ai.desc":"データは端末外に出ません","stats.oss.val":"無料ダウンロード","stats.oss.desc":"公開リリース",
+    "features.label":"コア機能","features.title":"クリエイティブワークフロー設計","features.desc":"すべての機能が実際の作業方法に基づいて構築されています",
+    "f1.title":"ローカル索引 · ゼロ冗長","f1.desc":"ディスク上のファイルを直接インデックス。フォルダ構造がそのまま組織に。コピー不要。",
+    "f2.title":"FTS5 全文検索","f2.desc":"ファイル名・パス・タグの多次元検索。大規模ライブラリでも瞬時に結果表示。",
+    "f3.title":"リアルタイム監視","f3.desc":"chokidarによるファイルシステム監視。アセット変更を自動同期、手動更新不要。",
+    "f4.title":"タグ＆コレクション","f4.desc":"カスタムタグ、スマートコレクション、評価・お気に入りでアセット知識ベースを構築。",
+    "f5.title":"スマート再生エンジン","f5.desc":"マルチパイプライン：ブラウザ直接・ネイティブHWデコード・libVLC。特許形式はOS経由。",
+    "f6.title":"ドラッグ＆ドロップ","f6.desc":"デザインツールやブラウザに直接ドラッグ。バッチ出力、壁紙設定、フォントインストール対応。",
+    "showcase.label":"製品紹介","showcase.title":"ブラウザ以上のアセットハブ","showcase.desc":"画像・音声・Lottie・3Dモデルを全フォーマットで深くプレビュー",
+    "s1.label":"画像プレビュー","s1.title":"高解像度 · 没入プレビュー","s1.desc":"PSD、HEIC、WebP、AVIF、TIFFなどにネイティブ対応。カラーパレット、ヒストグラム、EXIF分析内蔵。",
+    "s2.label":"音声管理","s2.title":"波形表示 · オーディオライブラリ","s2.desc":"MP3、WAV、FLAC、AACネイティブ対応。波形とスペクトラム自動生成、再生プレビューと一括タグ付け。",
+    "s3.label":"Lottieワークフロー","s3.title":"モーションアセット管理","s3.desc":"ライブグリッドプレビュー、再生速度制御、JSON＆.lottieデュアルフォーマット対応。プリフェッチでちらつきなし。",
+    "s4.label":"3Dモデル","s4.title":"インタラクティブ3Dプレビュー","s4.desc":"Three.js駆動。GLB/GLTF、OBJ、FBX、USDZ対応。回転・ズーム・マテリアル・テクスチャ抽出可能。",
+    "cap.label":"バックエンド＆AI","cap.title":"透過的 · 端末内インテリジェンス","cap.desc":"全バックグラウンドタスクをリアルタイム表示。ONNXローカル推論、データは端末外に出ません。",
+    "t1.label":"タスクセンター","t1.title":"バックグラウンド処理 · 完全制御","t1.desc":"スキャン、AIタグ分析、サムネイル生成——すべてのタスク進捗を一目で。リトライ、一括処理、自動同期対応。",
+    "ai1.title":"スマートタグ生成","ai1.desc":"ONNXモデルが画像内容を分析し、説明タグを自動生成。一括レビューとワンクリック適用。",
+    "ai2.title":"類似画像検索","ai2.desc":"ベクトル埋め込みによる視覚類似検索。参照画像をドロップするだけで類似アセットを検索。",
+    "ai3.title":"カラー検索","ai3.desc":"主要色で検索。カラープロファイル管理とプリセットライブラリで正確な配色マッチング。",
+    "tag.scan":"スキャン","tag.index":"索引","tag.ai":"AI分析","tag.watch":"監視","tag.realtime":"ライブ","tag.grid":"グリッド",
+    "wf.label":"はじめ方","wf.title":"4ステップで始める効率的な資産管理",
+    "w1.title":"ソースフォルダを追加","w1.desc":"ディスク上のアセットフォルダを選択。自動スキャン＆インデックス、ファイル移動不要。",
+    "w2.title":"自動インデックス","w2.desc":"サムネイル生成、メタデータ抽出、色彩分析。リアルタイム監視で自動同期。",
+    "w3.title":"プレビュー＆整理","w3.desc":"40以上のフォーマットを即時プレビュー。タグ、コレクション、評価で知識ベース構築。",
+    "w4.title":"ドラッグ＆ドロップ出力","w4.desc":"デザインツールやブラウザに直接ドラッグ。一括、壁紙、フォントインストール対応。",
+    "dl.label":"ダウンロード","dl.title":"OrcaBox 1.0","dl.desc":"macOS Apple Silicon と Windows x64 用インストーラーを提供します。アプリのコアソースは公開リリースリポジトリに含まれません。",
+    "dl.mac":"macOS DMG をダウンロード","dl.win":"Windows EXE をダウンロード","dl.free":"無料ダウンロード",
+    "cta.label":"はじめよう","cta.title":"クリエイティブ資産を管理する準備はできましたか？","cta.desc":"OrcaBoxをダウンロードして、プロ級のローカルアセット管理を体験してください。",
+    "cta.dl":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/></svg> macOS版をダウンロード",
+    "cta.cnb":"CNB リリース","cta.github":"GitHub リリース",
+    "footer.desc":"クリエイティブチームのためのプロ向けローカルインデックス・マルチフォーマットアセットマネージャー。",
+    "footer.product":"製品","footer.resources":"リソース","footer.about":"リリースリポジトリ",
+    "footer.f1":"機能","footer.f2":"紹介","footer.f3":"能力","footer.f4":"ダウンロード",
+    "footer.r1":"利用ガイド","footer.r2":"リリースノート","footer.r3":"過去のバージョン",
+    "footer.cnb":"CNB リリース","footer.github":"GitHub リリース",
+    "footer.a1":"インストーラー","footer.made":"Made for macOS and Windows"
+  },
+  ko:{
+    "nav.features":"기능","nav.showcase":"소개","nav.capabilities":"역량","nav.download":"다운로드","nav.downloadBtn":"다운로드",
+    "hero.title1":"크리에이티브 자산","hero.title2":"로컬 관리",
+    "hero.desc":"크리에이티브 팀을 위한 전문 로컬 자산 관리자. 파일을 복제하지 않고 직접 인덱싱합니다. 40개 이상의 형식 미리보기, Lottie 워크플로, 온디바이스 AI 분석.",
+    "hero.cta":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/><line x1=\"12\" y1=\"15\" x2=\"12\" y2=\"3\"/></svg> macOS용 무료 다운로드",
+    "stats.formats":"파일 형식","stats.local.val":"로컬 인덱스","stats.local.desc":"파일 복제 없음",
+    "stats.ai.val":"온디바이스 AI","stats.ai.desc":"데이터는 로컬에 유지","stats.oss.val":"무료 다운로드","stats.oss.desc":"공개 릴리스",
+    "features.label":"핵심 기능","features.title":"크리에이티브 워크플로를 위한 설계","features.desc":"모든 기능이 실제 작업 방식을 기반으로 구축되었습니다",
+    "f1.title":"로컬 인덱스 · 제로 중복","f1.desc":"디스크의 파일을 직접 인덱싱합니다. 폴더 구조가 곧 조직입니다. 복사본 없음.",
+    "f2.title":"FTS5 전체 텍스트 검색","f2.desc":"파일명, 경로, 태그 다차원 검색. 대규모 라이브러리에서도 즉시 결과.",
+    "f3.title":"실시간 파일 감시","f3.desc":"chokidar 기반 파일 시스템 감시. 자산 변경이 자동 동기화, 수동 새로고침 불필요.",
+    "f4.title":"태그 및 컬렉션","f4.desc":"커스텀 태그, 스마트 컬렉션, 평가 및 즐겨찾기로 자산 지식 베이스 구축.",
+    "f5.title":"스마트 재생 엔진","f5.desc":"멀티 파이프라인: 브라우저 직접, 네이티브 HW 디코드, libVLC. 특허 형식은 OS 경유.",
+    "f6.title":"드래그 앤 드롭 내보내기","f6.desc":"디자인 도구나 브라우저에 직접 드래그. 배치, 배경화면, 폰트 설치 지원.",
+    "showcase.label":"제품 소개","showcase.title":"브라우저 그 이상, 자산 허브","showcase.desc":"이미지, 오디오, Lottie, 3D 모델 전체 형식 딥 프리뷰",
+    "s1.label":"이미지 프리뷰","s1.title":"고해상도 · 몰입형 프리뷰","s1.desc":"PSD, HEIC, WebP, AVIF, TIFF 등 네이티브 지원. 색상 팔레트, 히스토그램, EXIF 메타데이터 분석 내장.",
+    "s2.label":"오디오 관리","s2.title":"파형 시각화 · 오디오 라이브러리","s2.desc":"MP3, WAV, FLAC, AAC 네이티브 지원. 파형과 스펙트럼 자동 생성, 재생 미리보기 및 일괄 태깅.",
+    "s3.label":"Lottie 워크플로","s3.title":"모션 자산 관리","s3.desc":"라이브 그리드 프리뷰, 재생 속도 제어, JSON & .lottie 듀얼 포맷 기본 지원. 프리페치로 깜빡임 없음.",
+    "s4.label":"3D 모델","s4.title":"인터랙티브 3D 프리뷰","s4.desc":"Three.js 기반. GLB/GLTF, OBJ, FBX, USDZ 지원. 자유 회전, 확대, 재질 미리보기, 텍스처 추출.",
+    "cap.label":"백엔드 엔진 & AI","cap.title":"투명한 · 온디바이스 인텔리전스","cap.desc":"모든 백그라운드 작업을 실시간 확인. ONNX 로컬 추론 기반 AI, 데이터는 로컬에 유지됩니다.",
+    "t1.label":"작업 센터","t1.title":"백그라운드 처리 · 완전 제어","t1.desc":"스캔, AI 태그 분석, 썸네일 생성 — 모든 작업 진행 상황을 한눈에. 실패 재시도, 일괄 처리, 자동 동기화.",
+    "ai1.title":"스마트 태그 생성","ai1.desc":"ONNX 모델이 이미지 콘텐츠를 분석하여 설명 태그를 자동 생성. 일괄 검토 및 원클릭 적용.",
+    "ai2.title":"이미지 유사 검색","ai2.desc":"벡터 임베딩 시각 유사 검색. 참조 이미지를 드롭하여 유사한 자산 검색.",
+    "ai3.title":"색상 검색","ai3.desc":"주요 색상으로 검색. 색상 프로필 관리 및 프리셋 라이브러리로 정확한 팔레트 매칭.",
+    "tag.scan":"스캔","tag.index":"인덱스","tag.ai":"AI 분석","tag.watch":"파일 감시","tag.realtime":"실시간","tag.grid":"그리드",
+    "wf.label":"시작하기","wf.title":"효율적인 자산 관리 4단계",
+    "w1.title":"소스 폴더 추가","w1.desc":"디스크에서 자산 디렉토리를 선택하세요. 자동 스캔 및 인덱싱, 파일 복사나 이동 없음.",
+    "w2.title":"자동 인덱스","w2.desc":"썸네일 생성, 메타데이터 추출, 색상 분석. 실시간 파일 감시로 자동 동기화.",
+    "w3.title":"미리보기 및 정리","w3.desc":"40개 이상의 형식 즉시 미리보기. 태그, 컬렉션, 평가로 지식 베이스 구축.",
+    "w4.title":"드래그 앤 드롭","w4.desc":"디자인 도구나 브라우저로 직접 드래그. 배치, 배경화면, 폰트 설치 지원.",
+    "dl.label":"다운로드","dl.title":"OrcaBox 1.0","dl.desc":"macOS Apple Silicon 및 Windows x64 설치 파일을 제공합니다. 앱 핵심 소스는 공개 릴리스 저장소에 포함되지 않습니다.",
+    "dl.mac":"macOS DMG 다운로드","dl.win":"Windows EXE 다운로드","dl.free":"무료 다운로드",
+    "cta.label":"시작하기","cta.title":"크리에이티브 자산을 관리할 준비가 되셨나요?","cta.desc":"OrcaBox를 다운로드하고 전문가급 로컬 자산 관리를 경험하세요.",
+    "cta.dl":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/></svg> macOS용 다운로드",
+    "cta.cnb":"CNB 릴리스","cta.github":"GitHub 릴리스",
+    "footer.desc":"크리에이티브 팀을 위한 전문 로컬 인덱스 멀티포맷 자산 관리자.",
+    "footer.product":"제품","footer.resources":"리소스","footer.about":"릴리스 저장소",
+    "footer.f1":"기능","footer.f2":"소개","footer.f3":"역량","footer.f4":"다운로드",
+    "footer.r1":"사용 안내","footer.r2":"릴리스 노트","footer.r3":"이전 버전",
+    "footer.cnb":"CNB 릴리스","footer.github":"GitHub 릴리스",
+    "footer.a1":"설치 파일 다운로드","footer.made":"Made for macOS and Windows"
+  }
+};
+
+const langLabels={zh:'中',en:'EN',ja:'日',ko:'한'};
+
+// ===== I18N ENGINE =====
+(function(){
+'use strict';
+const htmlEl=document.documentElement;
+const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+// Detect stored lang or browser lang
+function detectLang(){
+  const stored=localStorage.getItem('orcabox-lang');
+  if(stored&&i18n[stored])return stored;
+  const nav= navigator.language||'';
+  if(nav.startsWith('zh'))return'zh';
+  if(nav.startsWith('ja'))return'ja';
+  if(nav.startsWith('ko'))return'ko';
+  return'en';
+}
+let currentLang=detectLang();
+
+// UI elements
+const langBtn=document.getElementById('langBtn');
+const langLabel=document.getElementById('langLabel');
+const langDrop=document.getElementById('langDrop');
+
+// Apply translations
+function applyLang(lang){
+  currentLang=lang;
+  htmlEl.setAttribute('lang',lang==='zh'?'zh-CN':lang==='ja'?'ja-JP':lang==='ko'?'ko-KR':'en-US');
+  localStorage.setItem('orcabox-lang',lang);
+  langLabel.textContent=langLabels[lang];
+
+  // Update body font based on lang for CJK rendering
+  const cjk=lang==='zh'||lang==='ja'||lang==='ko';
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key=el.getAttribute('data-i18n');
+    if(!key||!i18n[lang][key])return;
+    const val=i18n[lang][key];
+    // If contains SVG tags, treat as innerHTML; otherwise textContent
+    if(val.startsWith('<svg')){
+      el.innerHTML=val;
+    }else{
+      el.textContent=val;
+    }
+  });
+
+  // Update active option
+  document.querySelectorAll('.lang-option').forEach(opt=>{
+    opt.classList.toggle('active',opt.getAttribute('data-lang')===lang);
+  });
+
+  // Update meta
+  const desc=i18n[lang]['hero.desc'];
+  document.querySelector('meta[name="description"]').setAttribute('content',desc);
+}
+
+// Initial apply
+applyLang(currentLang);
+
+// Lang dropdown toggle
+langBtn.addEventListener('click',e=>{
+  e.stopPropagation();
+  const open=langDrop.classList.toggle('show');
+  langBtn.classList.toggle('open',open);
+});
+
+// Close dropdown on outside click
+document.addEventListener('click',()=>{
+  langDrop.classList.remove('show');
+  langBtn.classList.remove('open');
+});
+
+// Language selection
+langDrop.querySelectorAll('.lang-option').forEach(opt=>{
+  opt.addEventListener('click',e=>{
+    e.stopPropagation();
+    applyLang(opt.getAttribute('data-lang'));
+    langDrop.classList.remove('show');
+    langBtn.classList.remove('open');
+  });
+});
+
+// Nav
+const nav=document.getElementById('nav');
+let ticking=false;
+window.addEventListener('scroll',()=>{
+  if(!ticking){requestAnimationFrame(()=>{nav.classList.toggle('active',window.scrollY>10);ticking=false});ticking=true}
+},{passive:true});
+
+// Anchor scroll
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})});
+});
+
+// Reveal
+if(!reduced){
+  const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('[data-reveal]').forEach(el=>obs.observe(el));
+}else{
+  document.querySelectorAll('[data-reveal]').forEach(el=>{el.style.opacity='1';el.style.transform='none'});
+}
+
+// Hero entrance
+if(!reduced){
+  window.addEventListener('load',()=>{
+    document.querySelectorAll('.hero-entrance').forEach(el=>requestAnimationFrame(()=>el.classList.add('show')));
+  });
+  setTimeout(()=>{
+    document.querySelectorAll('.hero-entrance').forEach(el=>el.classList.add('show'));
+  },100);
+}
+
+// ===== HERO FLOATERS — mouse-reactive glow with autonomous drift =====
+const floaters=document.querySelectorAll('.floater, .floater-ring');
+if(floaters.length&&!reduced){
+  let mx=0,my=0,targetMx=0,targetMy=0;
+  document.addEventListener('mousemove',e=>{
+    targetMx=(e.clientX/window.innerWidth-0.5)*2;
+    targetMy=(e.clientY/window.innerHeight-0.5)*2;
+  });
+  // Phase offsets for each floater's autonomous motion
+  const phases=Array.from(floaters).map(()=>Math.random()*Math.PI*2);
+  const speeds=[0.0003,0.0005,0.0004,0.00035,0.00045];
+  function animateFloaters(t){
+    mx+=(targetMx-mx)*0.015;
+    my+=(targetMy-my)*0.015;
+    floaters.forEach((el,i)=>{
+      const phase=phases[i];
+      const spd=speeds[i]||0.0004;
+      // Autonomous sinusoidal drift
+      const ax=Math.sin(t*spd+phase)*50;
+      const ay=Math.cos(t*spd*1.3+phase)*35;
+      // Mouse-reactive offset (different intensity per floater)
+      const sensitivity=0.25+i*0.15;
+      const rx=mx*60*sensitivity;
+      const ry=my*40*sensitivity;
+      el.style.transform=`translate(${ax+rx}px,${ay+ry}px)`;
+    });
+    requestAnimationFrame(animateFloaters);
+  }
+  requestAnimationFrame(animateFloaters);
+}
+
+// Showcase parallax
+const shots=document.querySelectorAll('.shot-wrap img');
+if(shots.length&&!reduced){
+  window.addEventListener('scroll',()=>{
+    requestAnimationFrame(()=>{
+      shots.forEach(img=>{
+        const rect=img.getBoundingClientRect();
+        if(rect.top<window.innerHeight&&rect.bottom>0){
+          img.style.transform=`translateY(${(rect.top+rect.height/2-window.innerHeight/2)*0.04}px)`;
+        }
+      });
+    });
+  },{passive:true});
+}
+
+// Hero shot scroll + float
+const heroShot=document.getElementById('heroShot');
+if(heroShot&&!reduced){
+  let shotTick=false;
+  function springEase(t){return 1-Math.pow(1-t,4)}
+  window.addEventListener('scroll',()=>{
+    if(!shotTick){
+      requestAnimationFrame(()=>{
+        const raw=Math.min(Math.max(window.scrollY/700,0),1);
+        const t=springEase(raw);
+        heroShot.style.transform=`translateY(${(1-t)*160}px) scale(${0.88+t*0.12})`;
+        heroShot.style.opacity=t;
+        if(raw>0.6&&!heroShot.classList.contains('ready'))heroShot.classList.add('ready');
+        shotTick=false;
+      });
+      shotTick=true;
+    }
+  },{passive:true});
+  setTimeout(()=>{heroShot.classList.add('ready')},3000);
+}
+
+console.log('%cOrcaBox%c v11 %ci18n + inline zoom','font-weight:700;font-size:13px;','color:#3b82f6;font-size:11px;','color:#71717a;font-size:11px;');
+
+// ===== INLINE IMAGE EXPANSION =====
+let expandedRow=null;
+
+document.querySelectorAll('.shot-wrap img').forEach(img=>{
+  img.addEventListener('click',e=>{
+    e.stopPropagation();
+    const row=img.closest('.showcase-row');
+    if(!row)return;
+    // If already expanded, collapse
+    if(row.classList.contains('expanded')){
+      row.classList.remove('expanded');
+      expandedRow=null;
+      return;
+    }
+    // Collapse previous
+    if(expandedRow)expandedRow.classList.remove('expanded');
+    // Expand current
+    row.classList.add('expanded');
+    expandedRow=row;
+    // Scroll into better view
+    row.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+});
+
+// Collapse on outside click
+document.addEventListener('click',e=>{
+  if(expandedRow&&!expandedRow.contains(e.target)){
+    expandedRow.classList.remove('expanded');
+    expandedRow=null;
+  }
+});
+
+// Collapse on scroll away
+let scrollTimeout;
+window.addEventListener('scroll',()=>{
+  if(!expandedRow)return;
+  clearTimeout(scrollTimeout);
+  scrollTimeout=setTimeout(()=>{
+    if(!expandedRow)return;
+    const rect=expandedRow.getBoundingClientRect();
+    if(rect.bottom<0||rect.top>window.innerHeight){
+      expandedRow.classList.remove('expanded');
+      expandedRow=null;
+    }
+  },300);
+},{passive:true});
+
+// Collapse on Esc
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'&&expandedRow){
+    expandedRow.classList.remove('expanded');
+    expandedRow=null;
+  }
+});
+})();
+</script>
+</body>
+</html>
