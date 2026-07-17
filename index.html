@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="OrcaBox — 面向创意团队的专业本地素材管理器。40+ 格式预览、Lottie 工作流、AI 分析。">
 <title>OrcaBox — 专业本地素材管理器</title>
+<link rel="icon" type="image/png" href="assets/orcabox-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;450;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -59,7 +60,7 @@ a{color:inherit;text-decoration:none}
 .nav.active{background:color-mix(in srgb,var(--bg) 85%,transparent);border-bottom:1px solid var(--border-subtle);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px)}
 .nav-inner{max-width:1280px;margin:0 auto;height:100%;padding:0 var(--s-8);display:flex;align-items:center;justify-content:space-between}
 .nav-brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:0.9375rem;letter-spacing:-0.02em;color:var(--text)}
-.nav-brand svg{width:24px;height:24px}
+.nav-brand img{width:28px;height:28px;border-radius:7px;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,0.35)}
 .nav-links{display:flex;align-items:center;gap:var(--s-8);list-style:none}
 .nav-links a{font-size:0.8125rem;font-weight:480;color:var(--text-2);transition:color 0.2s;position:relative;padding:4px 0}
 .nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1.5px;background:var(--accent);border-radius:1px;transition:width 0.3s var(--ease)}
@@ -67,7 +68,9 @@ a{color:inherit;text-decoration:none}
 .nav-links a:hover::after{width:100%}
 .nav-actions{display:flex;align-items:center;gap:var(--s-2)}
 .repo-shortcuts{display:flex;align-items:center;gap:4px}
-.repo-link{width:34px;height:34px;border:1px solid var(--border);border-radius:var(--radius-sm);display:inline-flex;align-items:center;justify-content:center;color:var(--text-2);font-family:var(--font-mono);font-size:0.65rem;font-weight:600;transition:color 0.2s,border-color 0.2s,background-color 0.2s,transform 0.2s var(--ease)}
+.repo-link{width:34px;height:34px;border:1px solid var(--border);border-radius:var(--radius-sm);display:inline-flex;align-items:center;justify-content:center;color:var(--text-2);transition:color 0.2s,border-color 0.2s,background-color 0.2s,transform 0.2s var(--ease)}
+.repo-link img{width:18px;height:18px;object-fit:contain}
+.repo-link-github img{filter:grayscale(1) brightness(2.8)}
 .repo-link:hover{color:var(--text);border-color:var(--accent);background:var(--accent-dim);transform:translateY(-1px)}
 .repo-link:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
@@ -261,7 +264,7 @@ a{color:inherit;text-decoration:none}
 <nav class="nav" id="nav">
   <div class="nav-inner">
     <a href="#" class="nav-brand">
-      <svg viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="13" stroke="currentColor" stroke-width="2"/><path d="M11 16C11 12.5 12.5 9 16 9V23C12.5 23 11 19.5 11 16Z" fill="currentColor" opacity="0.85"/><path d="M16 9c3.5 0 5 3.5 5 7s-1.5 7-5 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="18" cy="13.5" r="1.8" fill="currentColor"/></svg>
+      <img src="assets/orcabox-icon.png" alt="" width="28" height="28">
       OrcaBox
     </a>
     <ul class="nav-links">
@@ -272,8 +275,8 @@ a{color:inherit;text-decoration:none}
     </ul>
     <div class="nav-actions">
       <div class="repo-shortcuts" aria-label="Code repositories">
-        <a href="https://cnb.cool/garrykai/orcabox-release" target="_blank" rel="noopener noreferrer" class="repo-link" aria-label="Open OrcaBox releases on CNB" title="CNB Release Repository">CNB</a>
-        <a href="https://github.com/GarryGit888/OrcaBox-Release" target="_blank" rel="noopener noreferrer" class="repo-link" aria-label="Open OrcaBox releases on GitHub" title="GitHub Release Repository">GH</a>
+        <a href="https://cnb.cool/garrykai/orcabox-release" target="_blank" rel="noopener noreferrer" class="repo-link" aria-label="Open OrcaBox releases on CNB" title="CNB Release Repository"><img src="assets/cnb.svg" alt=""></a>
+        <a href="https://github.com/GarryGit888/OrcaBox-Release" target="_blank" rel="noopener noreferrer" class="repo-link repo-link-github" aria-label="Open OrcaBox releases on GitHub" title="GitHub Release Repository"><img src="assets/github.svg" alt=""></a>
       </div>
       <div class="lang-switch">
         <button class="lang-btn" id="langBtn" aria-label="Switch language">
@@ -484,7 +487,7 @@ a{color:inherit;text-decoration:none}
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="#" class="nav-brand"><svg viewBox="0 0 32 32" fill="none" width="22" height="22"><circle cx="16" cy="16" r="13" stroke="currentColor" stroke-width="2"/><path d="M11 16C11 12.5 12.5 9 16 9V23C12.5 23 11 19.5 11 16Z" fill="currentColor" opacity="0.85"/><path d="M16 9c3.5 0 5 3.5 5 7s-1.5 7-5 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="18" cy="13.5" r="1.8" fill="currentColor"/></svg>OrcaBox</a>
+        <a href="#" class="nav-brand"><img src="assets/orcabox-icon.png" alt="" width="28" height="28">OrcaBox</a>
         <p data-i18n="footer.desc">面向创意团队的专业本地索引多格式素材管理器。</p>
       </div>
       <div class="footer-col"><h5 data-i18n="footer.product">产品</h5><ul><li><a href="#features" data-i18n="footer.f1">功能</a></li><li><a href="#showcase" data-i18n="footer.f2">展示</a></li><li><a href="#capabilities" data-i18n="footer.f3">能力</a></li><li><a href="#download" data-i18n="footer.f4">下载</a></li></ul></div>
