@@ -4,11 +4,13 @@ import { createServer } from 'node:http'
 import { extname, resolve, sep } from 'node:path'
 import { fileURLToPath } from 'node:url'
 
-const root = resolve(fileURLToPath(new URL('.', import.meta.url)))
+const websiteRoot = resolve(fileURLToPath(new URL('.', import.meta.url)))
+const repositoryRoot = resolve(websiteRoot, '..')
 const port = Number.parseInt(process.env.PORT ?? '8686', 10)
 
 const contentTypes = {
   '.css': 'text/css; charset=utf-8',
+  '.gif': 'image/gif',
   '.html': 'text/html; charset=utf-8',
   '.ico': 'image/x-icon',
   '.jpeg': 'image/jpeg',
@@ -22,11 +24,38 @@ const contentTypes = {
 
 function resolveRequestPath(url) {
   const pathname = decodeURIComponent(new URL(url, 'http://localhost').pathname)
-  const relativePath = pathname === '/' ? 'index.html' : pathname.replace(/^\/+/, '')
-  const filePath = resolve(root, relativePath)
-  const rootPrefix = `${root}${sep}`
 
-  if (filePath !== root && !filePath.startsWith(rootPrefix)) {
+  if (pathname === '/' || pathname === '/index.html') {
+    return resolve(websiteRoot, 'index.html')
+  }
+
+  if (pathname === '/website' || pathname === '/website/') {
+    return resolve(websiteRoot, 'index.html')
+  }
+
+  const relativePath = pathname.replace(/^\/+/, '')
+  const websitePath = resolve(websiteRoot, relativePath)
+  const websitePrefix = `${websiteRoot}${sep}`
+
+  if (websitePath.startsWith(websitePrefix)) {
+    return websitePath
+  }
+
+  if (relativePath.startsWith('assets/')) {
+    return null
+  }
+
+  const filePath = resolve(repositoryRoot, relativePath)
+  const repositoryPrefix = `${repositoryRoot}${sep}`
+
+  if (filePath !== repositoryRoot && !filePath.startsWith(repositoryPrefix)) {
+    return null
+  }
+
+  if (
+    !filePath.startsWith(`${websiteRoot}${sep}`) &&
+    !filePath.startsWith(`${resolve(repositoryRoot, 'ui design')}${sep}`)
+  ) {
     return null
   }
 
@@ -62,8 +91,10 @@ const server = createServer(async (request, response) => {
     }
 
     const contentType = contentTypes[extname(filePath).toLowerCase()] ?? 'application/octet-stream'
+    const cacheControl = contentType.startsWith('image/') ? 'public, max-age=3600' : 'no-cache'
+
     response.writeHead(200, {
-      'Cache-Control': contentType.startsWith('image/') ? 'public, max-age=86400' : 'no-cache',
+      'Cache-Control': cacheControl,
       'Content-Length': fileStat.size,
       'Content-Type': contentType,
       'X-Content-Type-Options': 'nosniff',
@@ -82,5 +113,5 @@ const server = createServer(async (request, response) => {
 })
 
 server.listen(port, '0.0.0.0', () => {
-  console.log(`OrcaBox release website listening on http://0.0.0.0:${port}`)
+  console.log(`OrcaBox website preview listening on http://0.0.0.0:${port}`)
 })
