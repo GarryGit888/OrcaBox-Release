@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="OrcaBox — 面向创意团队的专业本地素材管理器。40+ 格式预览、Lottie 工作流、AI 分析。">
+<meta name="description" content="OrcaBox — 面向创意团队的专业本地素材管理器 40+ 格式预览 Lottie 工作流 AI 分析">
 <title>OrcaBox — 专业本地素材管理器</title>
 <link rel="icon" type="image/png" href="assets/orcabox-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -53,6 +53,7 @@ a{color:inherit;text-decoration:none}
 .container{max-width:1280px;margin:0 auto;padding:0 var(--s-8)}
 @media(min-width:1800px){.container{max-width:1440px}.hero-shot-wrap{max-width:1600px;width:88vw}}
 .section{padding:var(--s-32) 0;position:relative;overflow:clip}
+.section[id]{scroll-margin-top:72px}
 .section-subtle{background:var(--bg-subtle)}
 
 /* NAV */
@@ -95,7 +96,7 @@ a{color:inherit;text-decoration:none}
 .btn-lg{height:46px;padding:0 28px;font-size:0.9375rem;border-radius:var(--radius-md)}
 
 /* HERO */
-.hero{position:relative;min-height:130vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:120px var(--s-8) 0;overflow:clip}
+.hero{position:relative;min-height:116vh;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:106px var(--s-8) 0;overflow:clip}
 .hero-bg-img{position:absolute;inset:0;z-index:0;pointer-events:none}
 .hero-bg-img::after{content:'';position:absolute;inset:0;background:var(--bg);opacity:0.90}
 .hero-bg-img img{width:100%;height:100%;object-fit:cover;display:block;filter:blur(2px) saturate(0.5)}
@@ -107,7 +108,7 @@ a{color:inherit;text-decoration:none}
 .floater-ring{position:absolute;border-radius:50%;border:1px solid var(--accent);opacity:0.06;will-change:transform}
 .floater-ring-1{width:300px;height:300px;top:20%;right:15%}
 .floater-ring-2{width:180px;height:180px;bottom:30%;left:10%}
-.hero-text{padding:6vh var(--s-4) 0;text-align:center;max-width:1300px;margin-bottom:var(--s-16);position:relative;z-index:1}
+.hero-text{padding:4vh var(--s-4) 0;text-align:center;max-width:1320px;margin-bottom:var(--s-8);position:relative;z-index:1}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;margin-bottom:var(--s-4);padding:6px 10px;border:1px solid rgba(59,130,246,0.35);border-radius:999px;color:#b7d4ff;background:rgba(59,130,246,0.08);font-family:var(--font-mono);font-size:0.6875rem;letter-spacing:0.06em;text-transform:uppercase}
 .hero-eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:#60a5fa;box-shadow:0 0 12px rgba(96,165,250,0.9)}
 .hero-text h1{margin-bottom:var(--s-4)}
@@ -119,10 +120,10 @@ a{color:inherit;text-decoration:none}
 .hero-entrance-title{transition-delay:0s}
 .hero-entrance-desc{transition-delay:0.15s}
 .hero-entrance-cta{transition-delay:0.3s}
-.hero-shot-wrap{position:relative;width:92vw;max-width:1400px;margin:0 auto;z-index:1;overflow:visible}
+.hero-shot-wrap{position:relative;width:min(95vw,1540px);max-width:1540px;margin:0 auto;z-index:1;overflow:visible;transform:translateY(52px)}
 .hero-shot-wrap::before{content:'';position:absolute;inset:-16px;border-radius:calc(var(--radius-lg) + 16px);background:radial-gradient(ellipse at center,var(--accent-dim) 0%,transparent 70%);opacity:0;transition:opacity 0.5s var(--ease);pointer-events:none;z-index:0}
 .hero-shot-wrap:hover::before{opacity:1}
-.hero-shot{width:100%;border-radius:var(--radius-lg);box-shadow:var(--shadow-xl);border:1px solid var(--border-subtle);will-change:transform,opacity;transform-origin:center bottom;opacity:0;transform:translateY(72px) scale(0.96);transition:opacity 1s var(--ease),transform 1s var(--ease),box-shadow 0.5s var(--ease),filter 0.5s var(--ease);position:relative;z-index:1}
+.hero-shot{width:100%;border-radius:var(--radius-lg);box-shadow:var(--shadow-xl);border:1px solid var(--border-subtle);will-change:transform,opacity;transform-origin:center bottom;opacity:0;transform:translateY(56px) scale(0.965);transition:opacity 1s var(--ease),transform 1s var(--ease),box-shadow 0.5s var(--ease),filter 0.5s var(--ease);position:relative;z-index:1}
 .hero-shot.ready{opacity:1;transform:translateY(0) scale(1);animation:hero-float 7s ease-in-out 1s infinite}
 .hero-shot-wrap:hover .hero-shot{box-shadow:0 0 70px var(--accent-dim),0 24px 80px rgba(0,0,0,0.5);filter:brightness(1.05)}
 @keyframes hero-float{0%,100%{translate:0 0}33%{translate:0 -10px}66%{translate:0 6px}}
@@ -136,7 +137,7 @@ a{color:inherit;text-decoration:none}
 [data-reveal-delay="4"]{transition-delay:0.32s}
 [data-reveal-delay="5"]{transition-delay:0.40s}
 
-.stats{border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle)}
+.stats{position:relative;z-index:2;margin-top:-72px;border-top:1px solid var(--border-subtle);border-bottom:1px solid var(--border-subtle);background:rgba(8,8,13,0.72);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
 .stats-row{display:grid;grid-template-columns:repeat(4,1fr);max-width:1100px;margin:0 auto}
 .stat{padding:var(--s-6) var(--s-8);text-align:center;border-right:1px solid var(--border-subtle);transition:all 0.3s var(--ease);cursor:default}
 .stat:hover{background:var(--accent-dim)}
@@ -153,20 +154,115 @@ a{color:inherit;text-decoration:none}
 .f-card h4{font-size:0.9375rem;font-weight:600;letter-spacing:-0.01em;margin-bottom:var(--s-2)}
 .f-card p{font-size:0.8125rem;color:var(--text-2);line-height:1.6;text-wrap:pretty;word-break:auto-phrase}
 
+.feature-intro .body-l{max-width:none;white-space:nowrap}
+.feature-bento{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-auto-flow:dense;gap:var(--s-4)}
+.feature-panel{
+  --pointer-x:50%;
+  --pointer-y:50%;
+  --glow-opacity:0;
+  position:relative;
+  display:flex;
+  min-width:0;
+  flex-direction:column;
+  overflow:hidden;
+  isolation:isolate;
+  border:1px solid rgba(255,255,255,0.09);
+  border-radius:var(--radius-lg);
+  background:linear-gradient(145deg,rgba(25,25,35,0.96),rgba(12,12,18,0.98));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,0.035),0 18px 48px rgba(0,0,0,0.24);
+  transition:transform 0.4s var(--ease),box-shadow 0.4s var(--ease),border-color 0.4s var(--ease);
+}
+.feature-panel::before{
+  content:'';
+  position:absolute;
+  inset:-1px;
+  z-index:3;
+  border-radius:inherit;
+  padding:1px;
+  pointer-events:none;
+  background:
+    radial-gradient(360px circle at var(--pointer-x) var(--pointer-y),rgba(255,255,255,0.98) 0%,rgba(147,197,253,0.78) 12%,rgba(59,130,246,0.42) 28%,transparent 62%),
+    linear-gradient(145deg,rgba(255,255,255,0.16),rgba(255,255,255,0.025) 45%,rgba(59,130,246,0.16));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+  opacity:calc(0.28 + var(--glow-opacity) * 0.72);
+  transition:opacity 0.25s ease;
+}
+.feature-panel::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background:radial-gradient(420px circle at var(--pointer-x) var(--pointer-y),rgba(96,165,250,0.10),transparent 62%);
+  opacity:var(--glow-opacity);
+  transition:opacity 0.3s ease;
+}
+.feature-panel:hover{transform:translateY(-3px);border-color:rgba(96,165,250,0.24);box-shadow:inset 0 1px 0 rgba(255,255,255,0.06),0 24px 64px rgba(0,0,0,0.34),0 0 42px rgba(59,130,246,0.08)}
+.feature-panel>*{position:relative;z-index:1}
+.feature-panel-copy{padding:var(--s-8) var(--s-8) var(--s-6)}
+.feature-kicker{display:block;margin-bottom:var(--s-3);font-family:var(--font-mono);font-size:0.6875rem;font-weight:500;line-height:1.2;letter-spacing:0.08em;text-transform:uppercase;color:#7db4ff}
+.feature-panel h3{margin-bottom:var(--s-2);font-size:1.25rem;font-weight:650;line-height:1.25;letter-spacing:-0.025em;text-wrap:balance;word-break:auto-phrase}
+.feature-panel p{max-width:48ch;font-size:0.8125rem;line-height:1.65;color:var(--text-2);text-wrap:pretty;word-break:auto-phrase}
+.feature-media{position:relative;flex:none;overflow:hidden;margin:auto 18px 18px;border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius-md);background:#0b0b10;box-shadow:0 18px 42px rgba(0,0,0,0.28)}
+.feature-media::after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(255,255,255,0.04),transparent 18%);box-shadow:inset 0 1px 0 rgba(255,255,255,0.05)}
+.feature-media img{width:100%;height:100%;object-fit:cover;transition:transform 0.8s var(--ease),filter 0.5s var(--ease)}
+.feature-panel:hover .feature-media img{transform:scale(1.018);filter:brightness(1.04)}
+.feature-panel-main{grid-column:span 8;min-height:540px}
+.feature-panel-main .feature-media{height:350px}
+.feature-panel-portrait{grid-column:span 4;min-height:540px}
+.feature-panel-portrait .feature-media{height:350px}
+.feature-panel-portrait .feature-media img{object-position:50% 48%}
+.feature-panel-wide{grid-column:span 7;min-height:450px}
+.feature-panel-wide .feature-media{height:285px}
+.feature-panel-medium{grid-column:span 5;min-height:450px}
+.feature-panel-medium .feature-media{height:285px}
+.feature-panel-small{grid-column:span 6;min-height:430px}
+.feature-panel-small .feature-media{height:260px}
+.feature-panel-convert .feature-media img{object-position:50% 18%}
+.feature-panel-davinci .feature-media img{object-position:50% 14%}
+.feature-panel-text{justify-content:space-between;min-height:240px}
+.feature-panel-text .feature-panel-copy{padding-bottom:var(--s-8)}
+.feature-panel-text .tag-row{margin-top:var(--s-4)}
+.showcase-primary{grid-column:span 7;min-height:520px}
+.showcase-primary .feature-media{height:338px}
+.showcase-secondary{grid-column:span 5;min-height:520px}
+.showcase-secondary .feature-media{height:338px}
+.showcase-audio{grid-column:span 5;min-height:410px}
+.showcase-audio .feature-media{height:250px}
+.showcase-crop{grid-column:span 3;min-height:410px}
+.showcase-crop .feature-media{height:250px}
+.showcase-crop .feature-media img{object-position:50% 34%}
+.showcase-windows{grid-column:span 4;min-height:410px}
+.showcase-windows .feature-media{height:250px}
+.cap-batch{grid-column:span 7;min-height:500px}
+.cap-batch .feature-media{height:318px}
+.cap-batch .feature-media img{object-position:50% 100%}
+.cap-task{grid-column:span 5;min-height:500px}
+.cap-task .feature-media{height:318px}
+.cap-task .feature-media img{object-position:50% 8%}
+.cap-text{grid-column:span 4}
+
 .showcase-header{text-align:center;margin-bottom:var(--s-20)}
 .showcase-header .label{margin-bottom:var(--s-4)}
 .showcase-header h2{margin-bottom:var(--s-3)}
-.showcase-header .body-l{max-width:500px;margin:0 auto}
+.showcase-header .body-l{max-width:560px;margin:0 auto}
 .showcase-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--s-20);align-items:center;margin-bottom:var(--s-32)}
 .showcase-row:last-child{margin-bottom:0}
 .shot-wrap{position:relative;overflow:visible;border-radius:var(--radius-lg)}
 .shot-wrap::before{content:'';position:absolute;inset:-12px;border-radius:calc(var(--radius-lg) + 12px);background:radial-gradient(ellipse at center,var(--accent-dim) 0%,transparent 70%);opacity:0;transition:opacity 0.5s var(--ease);pointer-events:none;z-index:0}
 .shot-wrap:hover::before{opacity:1}
-.shot-wrap img{width:100%;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);border:1px solid var(--border-subtle);transition:transform 0.5s var(--ease),box-shadow 0.5s var(--ease),filter 0.5s var(--ease);position:relative;z-index:1}
-.shot-wrap:hover img{transform:scale(1.03);box-shadow:0 0 50px var(--accent-dim),0 20px 60px rgba(0,0,0,0.5);filter:brightness(1.06)}
+.shot-wrap img{--shot-offset:0px;width:100%;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);border:1px solid var(--border-subtle);transition:transform 0.5s var(--ease),box-shadow 0.5s var(--ease),filter 0.5s var(--ease);transform:translateY(var(--shot-offset));position:relative;z-index:1}
+.shot-wrap:hover img{transform:translateY(var(--shot-offset)) scale(1.03);box-shadow:0 0 50px var(--accent-dim),0 20px 60px rgba(0,0,0,0.5);filter:brightness(1.06)}
 .showcase-info .label{margin-bottom:var(--s-3)}
 .showcase-info h3{margin-bottom:var(--s-3)}
 .showcase-info .body{margin-bottom:var(--s-6);max-width:420px}
+.showcase-row-reverse{direction:rtl}
+.showcase-row-reverse .showcase-info{text-align:right}
+.showcase-row-reverse .showcase-info>*{direction:ltr}
+.showcase-row-reverse .showcase-info .body{margin-left:auto}
+.showcase-row-reverse .showcase-info .tag-row{justify-content:flex-end}
 .tag-row{display:flex;flex-wrap:wrap;gap:var(--s-2)}
 .tag{display:inline-flex;align-items:center;height:26px;padding:0 10px;border-radius:6px;font-family:var(--font-mono);font-size:0.7rem;font-weight:500;color:var(--text-2);background:var(--bg-subtle);border:1px solid var(--border-subtle);transition:all 0.2s var(--ease);cursor:default}
 .tag:hover{color:var(--accent);border-color:var(--accent);background:var(--accent-dim);transform:translateY(-1px)}
@@ -228,7 +324,7 @@ a{color:inherit;text-decoration:none}
 
 .showcase-row.expanded{grid-template-columns:1fr;gap:var(--s-10);margin-bottom:var(--s-24)}
 .showcase-row.expanded .shot-wrap{cursor:zoom-out}
-.showcase-row.expanded .shot-wrap img{transform:scale(1);box-shadow:0 8px 40px rgba(0,0,0,0.4);border-color:var(--accent);animation:zoom-bounce 0.6s var(--ease)}
+.showcase-row.expanded .shot-wrap img{transform:translateY(0) scale(1);box-shadow:0 8px 40px rgba(0,0,0,0.4);border-color:var(--accent);animation:zoom-bounce 0.6s var(--ease)}
 .showcase-row.expanded .showcase-info{max-width:640px;margin:var(--s-6) auto 0;text-align:center}
 .showcase-row.expanded .showcase-info .body{max-width:100%}
 .showcase-row.expanded .showcase-info .tag-row{justify-content:center}
@@ -252,6 +348,10 @@ a{color:inherit;text-decoration:none}
 @media(max-width:1024px){
   .container{padding:0 var(--s-6)}.section{padding:var(--s-20) 0}
   .showcase-row{grid-template-columns:1fr;gap:var(--s-12)}
+  .showcase-row-reverse{direction:ltr}
+  .showcase-row-reverse .showcase-info{text-align:left}
+  .showcase-row-reverse .showcase-info .body{margin-left:0}
+  .showcase-row-reverse .showcase-info .tag-row{justify-content:flex-start}
   .features-grid{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}
   .footer-grid{grid-template-columns:1fr 1fr;gap:var(--s-10)}
   .stats-row{grid-template-columns:repeat(2,1fr)}
@@ -260,11 +360,17 @@ a{color:inherit;text-decoration:none}
   .hero-shot-wrap{max-width:100%}
   .updates-layout{grid-template-columns:1fr;gap:var(--s-10)}
   .updates-intro{position:static}
+  .feature-panel-main{grid-column:span 12}
+  .feature-panel-portrait,.feature-panel-wide,.feature-panel-medium,.feature-panel-small{grid-column:span 6}
+  .showcase-primary,.showcase-secondary,.cap-batch,.cap-task{grid-column:span 12}
+  .showcase-audio,.showcase-crop,.showcase-windows,.cap-text{grid-column:span 6}
+  .feature-intro .body-l{white-space:normal}
 }
 @media(max-width:640px){
-  .nav-links{display:none}.hero{padding:100px var(--s-4) 0}
+  .nav-links{display:none}.hero{min-height:auto;padding:96px var(--s-4) 0}
   .nav .nav-brand{font-size:0;gap:0}
   .nav-inner{padding:0 var(--s-4)}
+  .hero-text{padding-top:var(--s-3);margin-bottom:var(--s-8)}
   .hero-text h1{font-size:2.25rem;white-space:normal}
   .hero-text .body-l{font-size:0.75rem;line-height:1.5}
   .hero-eyebrow{font-size:0.625rem}
@@ -276,9 +382,22 @@ a{color:inherit;text-decoration:none}
   .footer-grid{grid-template-columns:1fr;gap:var(--s-8)}
   .footer-bottom{flex-direction:column;gap:var(--s-2);text-align:center}
   .stats-row{grid-template-columns:repeat(2,1fr)}
-  .hero-shot-wrap{max-width:100%}
+  .stat{min-width:0;padding:var(--s-6) var(--s-3)}
+  .stat-val{font-size:clamp(1.2rem,6vw,1.65rem);overflow-wrap:anywhere}
+  .stat-label{font-size:0.72rem;line-height:1.4;overflow-wrap:anywhere}
+  .hero-shot-wrap{width:100%;max-width:100%;transform:translateY(28px)}
+  .stats{margin-top:-28px}
   .update-item{grid-template-columns:32px minmax(0,1fr);gap:var(--s-3)}
   .update-meta{grid-column:2}
+  .feature-bento{grid-template-columns:1fr;gap:var(--s-3)}
+  .feature-panel-main,.feature-panel-portrait,.feature-panel-wide,.feature-panel-medium,.feature-panel-small{grid-column:1;min-height:0}
+  .showcase-primary,.showcase-secondary,.showcase-audio,.showcase-crop,.showcase-windows,.cap-batch,.cap-task,.cap-text{grid-column:1;min-height:0}
+  .feature-panel-copy{padding:var(--s-6) var(--s-6) var(--s-4)}
+  .feature-panel h3{font-size:1.0625rem}
+  .feature-panel-main .feature-media,.feature-panel-wide .feature-media,.feature-panel-medium .feature-media,.feature-panel-small .feature-media{height:230px}
+  .feature-panel-portrait .feature-media{height:300px}
+  .showcase-primary .feature-media,.showcase-secondary .feature-media,.showcase-audio .feature-media,.showcase-crop .feature-media,.showcase-windows .feature-media,.cap-batch .feature-media,.cap-task .feature-media{height:230px}
+  .feature-media{margin:0 12px 12px}
 }
 @media(prefers-reduced-motion:reduce){
   *{animation-duration:0.01ms!important;transition-duration:0.01ms!important}
@@ -303,8 +422,8 @@ a{color:inherit;text-decoration:none}
     </ul>
     <div class="nav-actions">
       <div class="repo-shortcuts" aria-label="Code repositories">
-        <a href="https://cnb.cool/garrykai/orcabox-release" target="_blank" rel="noopener noreferrer" class="repo-link" aria-label="Open OrcaBox releases on CNB" title="CNB Release Repository"><img src="assets/cnb.svg" alt=""></a>
-        <a href="https://github.com/GarryGit888/OrcaBox-Release" target="_blank" rel="noopener noreferrer" class="repo-link repo-link-github" aria-label="Open OrcaBox releases on GitHub" title="GitHub Release Repository"><img src="assets/github.svg" alt=""></a>
+        <a href="https://cnb.cool/garrykai/orcabox-release" target="_blank" rel="noopener noreferrer" class="repo-link" aria-label="Open OrcaBox downloads on CNB" title="CNB Download"><img src="assets/cnb.svg" alt=""></a>
+        <a href="https://github.com/GarryGit888/OrcaBox-Release" target="_blank" rel="noopener noreferrer" class="repo-link repo-link-github" aria-label="Open OrcaBox backup downloads on GitHub" title="GitHub Backup Download"><img src="assets/github.svg" alt=""></a>
       </div>
       <div class="lang-switch">
         <button class="lang-btn" id="langBtn" aria-label="Switch language">
@@ -330,9 +449,9 @@ a{color:inherit;text-decoration:none}
     <div class="floater-ring floater-ring-1"></div><div class="floater-ring floater-ring-2"></div>
   </div>
   <div class="hero-text">
-    <span class="hero-eyebrow hero-entrance" data-i18n="hero.eyebrow">OrcaBox 1.0 · 本地优先</span>
+    <span class="hero-eyebrow hero-entrance" data-i18n="hero.eyebrow">OrcaBox 1.1 · 本地优先</span>
     <h1 class="h1 hero-entrance hero-entrance-title"><span data-i18n="hero.title1">创意资产</span> <em data-i18n="hero.title2">本地智管</em></h1>
-    <p class="body-l hero-entrance hero-entrance-desc" data-i18n="hero.desc">本地素材智管：零复制索引、40+ 格式预览、端侧 AI。</p>
+    <p class="body-l hero-entrance hero-entrance-desc" data-i18n="hero.desc">本地素材智管 零复制索引 40+ 格式预览 端侧 AI</p>
     <div class="hero-cta hero-entrance hero-entrance-cta">
       <a href="#download" class="btn btn-primary btn-lg" data-i18n="hero.cta">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
@@ -351,25 +470,121 @@ a{color:inherit;text-decoration:none}
       <div class="stat" data-reveal><div class="stat-val">40+</div><div class="stat-label" data-i18n="stats.formats">文件格式</div></div>
       <div class="stat" data-reveal data-reveal-delay="1"><div class="stat-val" data-i18n="stats.local.val">本地索引</div><div class="stat-label" data-i18n="stats.local.desc">不复制原文件</div></div>
       <div class="stat" data-reveal data-reveal-delay="2"><div class="stat-val" data-i18n="stats.ai.val">端侧 AI</div><div class="stat-label" data-i18n="stats.ai.desc">数据不离开本地</div></div>
-      <div class="stat" data-reveal data-reveal-delay="3"><div class="stat-val" data-i18n="stats.oss.val">免费下载</div><div class="stat-label" data-i18n="stats.oss.desc">公开发行</div></div>
+      <div class="stat" data-reveal data-reveal-delay="3"><div class="stat-val" data-i18n="stats.oss.val">免费下载</div><div class="stat-label" data-i18n="stats.oss.desc">公开下载</div></div>
     </div>
   </div>
 </div>
 
-<section class="section" id="features">
+<section class="section section-subtle" id="showcase">
   <div class="container">
     <div class="showcase-header" data-reveal>
-      <span class="label" data-i18n="features.label">核心能力</span>
-      <h2 class="h2" data-i18n="features.title">专为创意工作流设计</h2>
-      <p class="body-l" data-i18n="features.desc">每一项功能都围绕你的实际工作方式构建</p>
+      <span class="label" data-i18n="showcase.label">多格式预览</span>
+      <h2 class="h2" data-i18n="showcase.title">多格式素材 一屏预览</h2>
+      <p class="body-l" data-i18n="showcase.desc">图片、音频、动效、3D 一体预览 点击画面即可展开</p>
     </div>
-    <div class="features-grid">
-      <div class="f-card" data-reveal data-reveal-delay="3"><div class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><line x1="3" y1="9" x2="21" y2="9"/></svg></div><h4 data-i18n="f1.title">本地索引 · 零冗余</h4><p data-i18n="f1.desc">直接索引磁盘原始文件，目录即组织结构，不产生任何副本。</p></div>
-      <div class="f-card" data-reveal data-reveal-delay="1"><div class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><h4 data-i18n="f2.title">FTS5 全文搜索</h4><p data-i18n="f2.desc">文件名、路径、标签多维度搜索，大库也能秒级响应。</p></div>
-      <div class="f-card" data-reveal data-reveal-delay="2"><div class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><h4 data-i18n="f3.title">实时文件监听</h4><p data-i18n="f3.desc">chokidar 文件监听，素材变更自动同步，无需手动刷新。</p></div>
-      <div class="f-card" data-reveal data-reveal-delay="3"><div class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/></svg></div><h4 data-i18n="f4.title">标签与合集</h4><p data-i18n="f4.desc">自定义标签、智能合集、评分收藏，构建素材知识库。</p></div>
-      <div class="f-card" data-reveal data-reveal-delay="1"><div class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div><h4 data-i18n="f5.title">原文件播放</h4><p data-i18n="f5.desc">浏览器直出、原生硬解与 libVLC 路由，直接播放原始媒体，不生成视频代理。</p></div>
-      <div class="f-card" data-reveal data-reveal-delay="2"><div class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3v12"/><path d="M7 10l5 5 5-5"/><path d="M5 21h14"/></svg></div><h4 data-i18n="f6.title">浏览器快速采集</h4><p data-i18n="f6.desc">Chrome 扩展批量识别网页图片、视频、Lottie 和素材链接，再拖入本地库整理。</p></div>
+    <div class="showcase-row" data-reveal>
+      <div class="shot-wrap">
+        <img src="assets/iShot_2026-06-25_13.54.07.webp" alt="OrcaBox 图片预览" loading="lazy">
+      </div>
+      <div class="showcase-info">
+        <span class="label" data-i18n="s1.label">图片预览</span>
+        <h3 class="h3" data-i18n="s1.title">高清大图 · 沉浸预览</h3>
+        <p class="body" data-i18n="s1.desc">PSD、HEIC、WebP、AVIF、TIFF 等专业格式原生支持 内嵌色彩分析面板 查看色板分布、直方图与 EXIF 元数据</p>
+        <div class="tag-row"><span class="tag">PSD</span><span class="tag">HEIC</span><span class="tag">WebP</span><span class="tag">AVIF</span><span class="tag">TIFF</span></div>
+      </div>
+    </div>
+    <div class="showcase-row showcase-row-reverse" data-reveal data-reveal-delay="1">
+      <div class="shot-wrap">
+        <img src="assets/iShot_2026-06-25_13.56.52.webp" alt="OrcaBox 音频预览" loading="lazy">
+      </div>
+      <div class="showcase-info">
+        <span class="label" data-i18n="s2.label">音频预览</span>
+        <h3 class="h3" data-i18n="s2.title">波形可视化 · 音频素材库</h3>
+        <p class="body" data-i18n="s2.desc">MP3、WAV、FLAC、AAC 原生支持 自动生成音频波形图与频谱分析 支持播放预览与批量标签管理</p>
+        <div class="tag-row"><span class="tag">MP3</span><span class="tag">WAV</span><span class="tag">FLAC</span><span class="tag">AAC</span></div>
+      </div>
+    </div>
+    <div class="showcase-row" data-reveal>
+      <div class="shot-wrap">
+        <img src="assets/iShot_2026-06-25_13.58.38.webp" alt="OrcaBox 动效资产管理" loading="lazy">
+      </div>
+      <div class="showcase-info">
+        <span class="label" data-i18n="s3.label">动效资产管理</span>
+        <h3 class="h3" data-i18n="s3.title">实时网格预览 · 动效资产管理</h3>
+        <p class="body" data-i18n="s3.desc">实时网格预览不降级 播放调速循环控制 JSON 与 .lottie 双格式原生解析 预取保持挂载 拒绝重挂载占位闪烁</p>
+        <div class="tag-row"><span class="tag">Lottie</span><span class="tag">JSON</span><span class="tag">.lottie</span></div>
+      </div>
+    </div>
+    <div class="showcase-row showcase-row-reverse" data-reveal data-reveal-delay="1">
+      <div class="shot-wrap">
+        <img src="assets/iShot_2026-06-25_13.58.04.webp" alt="OrcaBox 交互式 3D 预览" loading="lazy">
+      </div>
+      <div class="showcase-info">
+        <span class="label" data-i18n="s4.label">交互式 3D</span>
+        <h3 class="h3" data-i18n="s4.title">交互式 3D 预览</h3>
+        <p class="body" data-i18n="s4.desc">Three.js 驱动 支持 GLB、GLTF、OBJ、FBX、USDZ 自由旋转缩放 材质预览 纹理提取</p>
+        <div class="tag-row"><span class="tag">GLB</span><span class="tag">GLTF</span><span class="tag">OBJ</span><span class="tag">USDZ</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="features">
+  <div class="container">
+    <div class="showcase-header feature-intro" data-reveal>
+      <span class="label" data-i18n="features.label">工作流新能力</span>
+      <h2 class="h2" data-i18n="features.title">让整理与创作连成一个工作流</h2>
+      <p class="body-l" data-i18n="features.desc">快速标记 灵活归集 插件扩展 一套完成</p>
+    </div>
+    <div class="feature-bento">
+      <article class="feature-panel feature-panel-main" data-glow-card data-reveal>
+        <div class="feature-panel-copy">
+          <span class="feature-kicker">Plugin Extensions</span>
+          <h3 data-i18n="f1.title">插件扩展 工作流按需生长</h3>
+          <p data-i18n="f1.desc">本地安装 统一管理 工具直接进入素材菜单</p>
+        </div>
+        <div class="feature-media"><img src="assets/plugin-center.webp" alt="OrcaBox 插件扩展菜单" loading="lazy"></div>
+      </article>
+      <article class="feature-panel feature-panel-portrait" data-glow-card data-reveal data-reveal-delay="1">
+        <div class="feature-panel-copy">
+          <span class="feature-kicker">Quick Tags</span>
+          <h3 data-i18n="f2.title">按 E 即刻完成标签</h3>
+          <p data-i18n="f2.desc">键盘选标签 批量输入 自动去重</p>
+        </div>
+        <div class="feature-media"><img src="assets/quick-tags.webp" alt="OrcaBox 快速标签输入面板" loading="lazy"></div>
+      </article>
+      <article class="feature-panel feature-panel-wide" data-glow-card data-reveal>
+        <div class="feature-panel-copy">
+          <span class="feature-kicker">Collections</span>
+          <h3 data-i18n="f3.title">跨目录归集 不移动原文件</h3>
+          <p data-i18n="f3.desc">按项目组织素材 封面 数量 顺序一目了然</p>
+        </div>
+        <div class="feature-media"><img src="assets/collections.webp" alt="OrcaBox 合集文件夹" loading="lazy"></div>
+      </article>
+      <article class="feature-panel feature-panel-medium" data-glow-card data-reveal data-reveal-delay="1">
+        <div class="feature-panel-copy">
+          <span class="feature-kicker">Smart Cutout</span>
+          <h3 data-i18n="f4.title">本地智能抠图</h3>
+          <p data-i18n="f4.desc">自动识别主体 支持阈值 羽化 手动修边</p>
+        </div>
+        <div class="feature-media"><img src="assets/smart-cutout.webp" alt="OrcaBox 智能抠图工具" loading="lazy"></div>
+      </article>
+      <article class="feature-panel feature-panel-small feature-panel-convert" data-glow-card data-reveal>
+        <div class="feature-panel-copy">
+          <span class="feature-kicker">Format Converter</span>
+          <h3 data-i18n="f5.title">常用格式一键转换</h3>
+          <p data-i18n="f5.desc">WebP、JPEG、PNG、AVIF、TIFF 批量处理</p>
+        </div>
+        <div class="feature-media"><img src="assets/image-convert.webp" alt="OrcaBox 图片格式转换插件" loading="lazy"></div>
+      </article>
+      <article class="feature-panel feature-panel-small feature-panel-davinci" data-glow-card data-reveal data-reveal-delay="1">
+        <div class="feature-panel-copy">
+          <span class="feature-kicker">DaVinci Resolve</span>
+          <h3 data-i18n="f6.title">素材直达 DaVinci Resolve</h3>
+          <p data-i18n="f6.desc">导入媒体池或当前时间线 减少软件间往返</p>
+        </div>
+        <div class="feature-media"><img src="assets/davinci-import.webp" alt="OrcaBox DaVinci Resolve 导入插件" loading="lazy"></div>
+      </article>
     </div>
   </div>
 </section>
@@ -390,72 +605,56 @@ a{color:inherit;text-decoration:none}
   </div>
 </div>
 
-<section class="section section-subtle" id="showcase">
+<section class="section" id="capabilities">
   <div class="container">
     <div class="showcase-header" data-reveal>
-      <span class="label" data-i18n="showcase.label">产品展示</span>
-      <h2 class="h2" data-i18n="showcase.title">不只是浏览器，是素材中枢</h2>
-      <p class="body-l" data-i18n="showcase.desc">图片、音频、Lottie、3D 模型全格式深度预览</p>
+      <span class="label" data-i18n="cap.label">批量操作 & 本地智能</span>
+      <h2 class="h2" data-i18n="cap.title">选中 处理 标记 全程可见</h2>
+      <p class="body-l" data-i18n="cap.desc">批量工具栏、任务中心、本地分析协同工作 处理进度始终清晰</p>
     </div>
-    <div class="showcase-row">
-      <div class="shot-wrap" data-reveal><img src="assets/iShot_2026-06-25_13.54.07.webp" alt="Image Preview" loading="lazy"></div>
-      <div class="showcase-info" data-reveal data-reveal-delay="1">
-        <span class="label" data-i18n="s1.label">图片预览</span><h3 class="h3" data-i18n="s1.title">高清大图 · 沉浸预览</h3>
-        <p class="body" data-i18n="s1.desc">PSD、HEIC、WebP、AVIF、TIFF 等专业格式原生支持。内嵌色彩分析面板，查看色板分布、直方图与 EXIF 元数据。</p>
-        <div class="tag-row"><span class="tag">PSD</span><span class="tag">HEIC</span><span class="tag">WebP</span><span class="tag">AVIF</span><span class="tag">TIFF</span></div>
-      </div>
-    </div>
-    <div class="showcase-row" style="direction:rtl">
-      <div class="shot-wrap" data-reveal style="direction:ltr"><img src="assets/iShot_2026-06-25_13.56.52.webp" alt="Audio Library" loading="lazy"></div>
-      <div class="showcase-info" data-reveal data-reveal-delay="1">
-        <span class="label" data-i18n="s2.label">音频管理</span><h3 class="h3" data-i18n="s2.title">波形可视化 · 音频素材库</h3>
-        <p class="body" data-i18n="s2.desc">MP3 / WAV / FLAC / AAC 原生支持。自动生成音频波形图与频谱分析，支持播放预览与批量标签管理。</p>
-        <div class="tag-row"><span class="tag">MP3</span><span class="tag">WAV</span><span class="tag">FLAC</span><span class="tag">AAC</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="showcase-row">
-      <div class="shot-wrap" data-reveal><img src="assets/iShot_2026-06-25_13.58.38.webp" alt="Lottie" loading="lazy"></div>
-      <div class="showcase-info" data-reveal data-reveal-delay="1">
-        <span class="label" data-i18n="s3.label">Lottie 工作流</span><h3 class="h3" data-i18n="s3.title">动效资产管理</h3>
-        <p class="body" data-i18n="s3.desc">实时网格预览不降级、播放调速循环控制、JSON 与 .lottie 双格式原生解析。预取保持挂载，拒绝重挂载占位闪烁。</p>
-        <div class="tag-row"><span class="tag">JSON</span><span class="tag">.lottie</span><span class="tag" data-i18n="tag.realtime">实时预览</span><span class="tag" data-i18n="tag.grid">网格动画</span></div>
-      </div>
-    </div>
-    <div class="showcase-row" style="direction:rtl">
-      <div class="shot-wrap" data-reveal style="direction:ltr"><img src="assets/iShot_2026-06-25_13.58.04.webp" alt="3D Model" loading="lazy"></div>
-      <div class="showcase-info" data-reveal data-reveal-delay="1" style="direction:ltr">
-        <span class="label" data-i18n="s4.label">3D 模型</span><h3 class="h3" data-i18n="s4.title">交互式 3D 预览</h3>
-        <p class="body" data-i18n="s4.desc">Three.js 驱动，支持 GLB/GLTF、OBJ、FBX、USDZ。自由旋转缩放、材质预览、纹理提取。</p>
-        <div class="tag-row"><span class="tag">GLB</span><span class="tag">FBX</span><span class="tag">OBJ</span><span class="tag">USDZ</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="section section-subtle" id="capabilities">
-  <div class="container">
-    <div class="showcase-header" data-reveal>
-      <span class="label" data-i18n="cap.label">后台引擎 & AI</span>
-      <h2 class="h2" data-i18n="cap.title">透明可见 · 端侧智能</h2>
-      <p class="body-l" data-i18n="cap.desc">后台任务实时可见。AI 基于 ONNX 本地推理，数据不上云</p>
-    </div>
-    <div class="showcase-row">
-      <div class="shot-wrap" data-reveal><img src="assets/iShot_2026-06-25_13.55.23.webp" alt="Task Center" loading="lazy"></div>
-      <div class="showcase-info" data-reveal data-reveal-delay="1">
-        <span class="label" data-i18n="t1.label">任务中心</span><h3 class="h3" data-i18n="t1.title">后台处理 · 透明可控</h3>
-        <p class="body" data-i18n="t1.desc">扫描索引、AI 标签分析、缩略图生成——所有后台任务进度一目了然。支持失败重试、批量处理、文件变更自动同步。</p>
-        <div class="tag-row"><span class="tag" data-i18n="tag.scan">扫描</span><span class="tag" data-i18n="tag.index">索引</span><span class="tag" data-i18n="tag.ai">AI 分析</span><span class="tag" data-i18n="tag.watch">文件监听</span></div>
-      </div>
-    </div>
-    <div class="features-grid" style="margin-top:var(--s-16)" data-reveal>
-      <div class="f-card"><div class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 12h8M12 8v8"/></svg></div><h4 data-i18n="ai1.title">智能标签生成</h4><p data-i18n="ai1.desc">ONNX 模型分析图片内容，自动生成描述性标签，支持批量审核应用。</p></div>
-      <div class="f-card"><div class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><h4 data-i18n="ai2.title">主色提取</h4><p data-i18n="ai2.desc">从本地素材提取主色和色板，帮助你快速确认视觉方向并筛选素材。</p></div>
-      <div class="f-card"><div class="icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 014 10"/></svg></div><h4 data-i18n="ai3.title">后台任务可控</h4><p data-i18n="ai3.desc">扫描、分析、缩略图和失败项集中管理，支持重试、批处理与文件变更同步。</p></div>
+    <div class="feature-bento">
+      <article class="feature-panel cap-batch" data-glow-card data-reveal>
+        <div class="feature-panel-copy">
+          <span class="feature-kicker">Batch Toolbar</span>
+          <h3 data-i18n="t1.title">选中素材 常用动作集中出现</h3>
+          <p data-i18n="t1.desc">收藏、评分、标签、备注与批量操作统一收在底部工具栏</p>
+          <div class="tag-row"><span class="tag">Batch</span><span class="tag">Rating</span><span class="tag">Tags</span></div>
+        </div>
+        <div class="feature-media"><img src="assets/showcase-batch-toolbar.webp" alt="OrcaBox 批量工具栏" loading="lazy"></div>
+      </article>
+      <article class="feature-panel cap-task" data-glow-card data-reveal data-reveal-delay="1">
+        <div class="feature-panel-copy">
+          <span class="feature-kicker">Task Center</span>
+          <h3 data-i18n="t2.title">后台进度透明 失败项可继续处理</h3>
+          <p data-i18n="t2.desc">扫描、索引、分析、失败重试集中可见 适合大型素材库整理</p>
+          <div class="tag-row"><span class="tag" data-i18n="tag.scan">扫描</span><span class="tag" data-i18n="tag.index">索引</span><span class="tag" data-i18n="tag.ai">AI 分析</span></div>
+        </div>
+        <div class="feature-media"><img src="assets/iShot_2026-06-25_13.55.23.webp" alt="OrcaBox 任务中心" loading="lazy"></div>
+      </article>
+      <article class="feature-panel feature-panel-text cap-text" data-glow-card data-reveal>
+        <div class="feature-panel-copy">
+          <span class="feature-kicker">Smart Tags</span>
+          <h3 data-i18n="ai1.title">智能标签审核</h3>
+          <p data-i18n="ai1.desc">本地生成候选标签 统一确认后再批量写入</p>
+          <div class="tag-row"><span class="tag">ONNX</span><span class="tag">Review</span></div>
+        </div>
+      </article>
+      <article class="feature-panel feature-panel-text cap-text" data-glow-card data-reveal data-reveal-delay="1">
+        <div class="feature-panel-copy">
+          <span class="feature-kicker">Color Intelligence</span>
+          <h3 data-i18n="ai2.title">主色与快速筛选</h3>
+          <p data-i18n="ai2.desc">提取主色板 配合颜色筛选 更快找到视觉参考</p>
+          <div class="tag-row"><span class="tag">Palette</span><span class="tag">Filter</span></div>
+        </div>
+      </article>
+      <article class="feature-panel feature-panel-text cap-text" data-glow-card data-reveal>
+        <div class="feature-panel-copy">
+          <span class="feature-kicker">Batch Notes</span>
+          <h3 data-i18n="ai3.title">批量备注与状态管理</h3>
+          <p data-i18n="ai3.desc">多选后同步补充备注、收藏、评分 保持整理连续</p>
+          <div class="tag-row"><span class="tag">Notes</span><span class="tag">Favorite</span></div>
+        </div>
+      </article>
     </div>
   </div>
 </section>
@@ -466,29 +665,29 @@ a{color:inherit;text-decoration:none}
       <div class="updates-intro" data-reveal>
         <span class="label" data-i18n="updates.label">最近更新</span>
         <h2 class="h2" data-i18n="updates.title">把素材工作流做得更顺手</h2>
-        <p class="body-l" data-i18n="updates.desc">从网页采集到本地整理，从 Lottie 动效到原文件播放，OrcaBox 正在围绕真实创作流程持续完善。</p>
-        <a href="https://cnb.cool/garrykai/orcabox-release/-/releases" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" data-i18n="updates.link">查看发行记录</a>
+        <p class="body-l" data-i18n="updates.desc">网页采集 本地整理 Lottie 动效 原文件播放 持续围绕真实创作流程完善</p>
+        <a href="releases.html" class="btn btn-secondary" data-i18n="updates.link">查看发行记录</a>
       </div>
       <div class="updates-list" data-reveal data-reveal-delay="1">
         <article class="update-item">
           <span class="update-index">01</span>
-          <div><h3 data-i18n="u1.title">浏览器快速采集</h3><p data-i18n="u1.desc">Chrome 扩展支持扫描当前页面的图片、视频、Lottie 和素材链接，减少从网页搬运素材的步骤。</p></div>
+          <div><h3 data-i18n="u1.title">浏览器快速采集</h3><p data-i18n="u1.desc">Chrome 扩展扫描当前页面的图片、视频、Lottie 与素材链接 减少网页搬运步骤</p></div>
           <span class="update-meta" data-i18n="u1.meta">生态</span>
         </article>
         <article class="update-item">
           <span class="update-index">02</span>
-          <div><h3 data-i18n="u2.title">原文件视频播放</h3><p data-i18n="u2.desc">视频预览遵循原文件优先策略，使用浏览器直出或系统原生播放，不生成视频代理文件。</p></div>
+          <div><h3 data-i18n="u2.title">原文件视频播放</h3><p data-i18n="u2.desc">浏览器直出或系统原生播放 不生成视频代理文件</p></div>
           <span class="update-meta" data-i18n="u2.meta">播放</span>
         </article>
         <article class="update-item">
           <span class="update-index">03</span>
-          <div><h3 data-i18n="u3.title">Lottie 网格保持动效</h3><p data-i18n="u3.desc">可见的 Lottie 和 JSON 素材保持稳定的实时预览，滚动和选择不会退化成占位闪烁。</p></div>
+          <div><h3 data-i18n="u3.title">Lottie 网格保持动效</h3><p data-i18n="u3.desc">可见的 Lottie 与 JSON 素材保持实时预览 滚动和选择不会出现占位闪烁</p></div>
           <span class="update-meta" data-i18n="u3.meta">动效</span>
         </article>
         <article class="update-item">
           <span class="update-index">04</span>
-          <div><h3 data-i18n="u4.title">macOS 与 Windows 发行</h3><p data-i18n="u4.desc">当前公开发行仓库只提供安装包和文档，CNB 是主要下载源，GitHub 作为备用镜像。</p></div>
-          <span class="update-meta" data-i18n="u4.meta">v1.0</span>
+          <div><h3 data-i18n="u4.title">macOS 与 Windows 安装包</h3><p data-i18n="u4.desc">CNB 提供主要下载 GitHub 提供备用下载</p></div>
+          <span class="update-meta" data-i18n="u4.meta">v1.1</span>
         </article>
       </div>
     </div>
@@ -502,10 +701,10 @@ a{color:inherit;text-decoration:none}
       <h2 class="h2" data-i18n="wf.title">四步开启高效素材管理</h2>
     </div>
     <div class="steps">
-      <div class="step" data-reveal><div class="step-num">1</div><h4 data-i18n="w1.title">添加源文件夹</h4><p data-i18n="w1.desc">选择磁盘上的素材目录，自动扫描索引，文件不复制不移动。</p></div>
-      <div class="step" data-reveal data-reveal-delay="1"><div class="step-num">2</div><h4 data-i18n="w2.title">自动索引</h4><p data-i18n="w2.desc">生成缩略图、提取元数据、分析色彩。实时监听变化，自动同步。</p></div>
-      <div class="step" data-reveal data-reveal-delay="2"><div class="step-num">3</div><h4 data-i18n="w3.title">预览与组织</h4><p data-i18n="w3.desc">40+ 格式即时预览。标签、合集、评分，建立素材知识库。</p></div>
-      <div class="step" data-reveal data-reveal-delay="3"><div class="step-num">4</div><h4 data-i18n="w4.title">拖拽导出</h4><p data-i18n="w4.desc">直拖到设计工具或浏览器。支持批量、壁纸设置、字体安装。</p></div>
+      <div class="step" data-reveal><div class="step-num">1</div><h4 data-i18n="w1.title">添加源文件夹</h4><p data-i18n="w1.desc">选择磁盘上的素材目录 自动扫描索引 文件不复制不移动</p></div>
+      <div class="step" data-reveal data-reveal-delay="1"><div class="step-num">2</div><h4 data-i18n="w2.title">自动索引</h4><p data-i18n="w2.desc">生成缩略图 提取元数据 分析色彩 实时监听变化 自动同步</p></div>
+      <div class="step" data-reveal data-reveal-delay="2"><div class="step-num">3</div><h4 data-i18n="w3.title">预览与组织</h4><p data-i18n="w3.desc">40+ 格式即时预览 标签、合集、评分 建立素材知识库</p></div>
+      <div class="step" data-reveal data-reveal-delay="3"><div class="step-num">4</div><h4 data-i18n="w4.title">拖拽导出</h4><p data-i18n="w4.desc">直拖到设计工具或浏览器 支持批量、壁纸设置、字体安装</p></div>
     </div>
   </div>
 </section>
@@ -514,20 +713,20 @@ a{color:inherit;text-decoration:none}
   <div class="container">
     <div class="download-block" data-reveal>
       <span class="label" data-i18n="dl.label">下载</span>
-      <h2 class="h2" data-i18n="dl.title">OrcaBox 1.0</h2>
-      <p class="body" data-i18n="dl.desc">提供 macOS Apple Silicon 与 Windows x64 安装包。应用核心源码不在公开发行仓库中。</p>
+      <h2 class="h2" data-i18n="dl.title">OrcaBox 1.1</h2>
+      <p class="body" data-i18n="dl.desc">提供 macOS Apple Silicon 与 Windows x64 安装包 CNB 优先提供下载</p>
       <div class="download-actions">
-        <a href="https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.0.0/OrcaBox-1.0.0-macOS-arm64.dmg" class="btn btn-primary btn-lg" data-i18n="dl.mac">
+        <a href="https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.1.0/OrcaBox-1.1.0-macOS-arm64.dmg" class="btn btn-primary btn-lg" data-i18n="dl.mac">
           下载 macOS DMG
         </a>
-        <a href="https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.0.0/OrcaBox-1.0.0-Windows-x64.exe" class="btn btn-secondary btn-lg" data-i18n="dl.win">
+        <a href="https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.1.0/OrcaBox-1.1.0-Windows-x64.exe" class="btn btn-secondary btn-lg" data-i18n="dl.win">
           下载 Windows EXE
         </a>
       </div>
       <div class="download-meta">
         <span>macOS 12.0+</span><span>&middot;</span><span>Apple Silicon</span><span>&middot;</span><span>Windows 10/11</span><span>&middot;</span><span data-i18n="dl.free">免费下载</span>
       </div>
-      <a href="https://github.com/GarryGit888/OrcaBox-Release/releases" target="_blank" rel="noopener noreferrer" class="download-mirror"><img src="assets/github.svg" alt=""><span data-i18n="dl.mirror">GitHub 备用镜像</span></a>
+      <a href="https://github.com/GarryGit888/OrcaBox-Release/releases" target="_blank" rel="noopener noreferrer" class="download-mirror"><img src="assets/github.svg" alt=""><span data-i18n="dl.mirror">GitHub 备用下载</span></a>
     </div>
   </div>
 </section>
@@ -536,14 +735,14 @@ a{color:inherit;text-decoration:none}
   <div class="container">
     <span class="label" data-i18n="cta.label">开始使用</span>
     <h2 class="h2" data-i18n="cta.title">准备好管理你的创意资产了吗？</h2>
-    <p class="body-l" data-i18n="cta.desc">下载 OrcaBox，体验专业级本地素材管理。</p>
+    <p class="body-l" data-i18n="cta.desc">下载 OrcaBox 体验专业级本地素材管理</p>
     <div class="cta-actions">
       <a href="#download" class="btn btn-primary btn-lg" data-i18n="cta.dl">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/></svg>
         下载 macOS 版
       </a>
-      <a href="https://cnb.cool/garrykai/orcabox-release" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg btn-repository"><img src="assets/cnb.svg" alt=""><span data-i18n="cta.cnb">CNB 发行仓库</span></a>
-      <a href="https://github.com/GarryGit888/OrcaBox-Release" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg btn-repository btn-repository-github"><img src="assets/github.svg" alt=""><span data-i18n="cta.github">GitHub 发行仓库</span></a>
+      <a href="https://cnb.cool/garrykai/orcabox-release" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg btn-repository"><img src="assets/cnb.svg" alt=""><span data-i18n="cta.cnb">CNB 下载</span></a>
+      <a href="https://github.com/GarryGit888/OrcaBox-Release" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg btn-repository btn-repository-github"><img src="assets/github.svg" alt=""><span data-i18n="cta.github">GitHub 备用下载</span></a>
     </div>
   </div>
 </div>
@@ -553,11 +752,11 @@ a{color:inherit;text-decoration:none}
     <div class="footer-grid">
       <div class="footer-brand">
         <a href="#" class="nav-brand"><img src="assets/orcabox-icon.png" alt="" width="28" height="28">OrcaBox</a>
-        <p data-i18n="footer.desc">面向创意团队的专业本地索引多格式素材管理器。</p>
+        <p data-i18n="footer.desc">面向创意团队的专业本地索引多格式素材管理器</p>
       </div>
       <div class="footer-col"><h5 data-i18n="footer.product">产品</h5><ul><li><a href="#features" data-i18n="footer.f1">功能</a></li><li><a href="#showcase" data-i18n="footer.f2">展示</a></li><li><a href="#capabilities" data-i18n="footer.f3">能力</a></li><li><a href="#download" data-i18n="footer.f4">下载</a></li></ul></div>
-      <div class="footer-col"><h5 data-i18n="footer.resources">资源</h5><ul><li><a href="https://cnb.cool/garrykai/orcabox-release" target="_blank" rel="noopener noreferrer" data-i18n="footer.r1">使用说明</a></li><li><a href="https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.0.0" target="_blank" rel="noopener noreferrer" data-i18n="footer.r2">发行说明</a></li><li><a href="https://cnb.cool/garrykai/orcabox-release/-/releases" target="_blank" rel="noopener noreferrer" data-i18n="footer.r3">历史版本</a></li></ul></div>
-      <div class="footer-col"><h5 data-i18n="footer.about">发行仓库</h5><ul><li><a href="https://cnb.cool/garrykai/orcabox-release" target="_blank" rel="noopener noreferrer" data-i18n="footer.cnb">CNB 发行仓库</a></li><li><a href="https://github.com/GarryGit888/OrcaBox-Release" target="_blank" rel="noopener noreferrer" data-i18n="footer.github">GitHub 发行仓库</a></li><li><a href="https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.0.0" target="_blank" rel="noopener noreferrer" data-i18n="footer.a1">下载安装包</a></li></ul></div>
+      <div class="footer-col"><h5 data-i18n="footer.resources">资源</h5><ul><li><a href="https://cnb.cool/garrykai/orcabox-release" target="_blank" rel="noopener noreferrer" data-i18n="footer.r1">使用说明</a></li><li><a href="releases.html#latest" data-i18n="footer.r2">发行说明</a></li><li><a href="releases.html#history" data-i18n="footer.r3">历史版本</a></li></ul></div>
+      <div class="footer-col"><h5 data-i18n="footer.about">下载来源</h5><ul><li><a href="https://cnb.cool/garrykai/orcabox-release" target="_blank" rel="noopener noreferrer" data-i18n="footer.cnb">CNB 下载</a></li><li><a href="https://github.com/GarryGit888/OrcaBox-Release" target="_blank" rel="noopener noreferrer" data-i18n="footer.github">GitHub 备用下载</a></li><li><a href="https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.1.0" target="_blank" rel="noopener noreferrer" data-i18n="footer.a1">下载安装包</a></li></ul></div>
     </div>
     <div class="footer-bottom"><span>&copy; 2024-2026 OrcaBox. All rights reserved.</span><span data-i18n="footer.made">Made for macOS and Windows</span></div>
   </div>
@@ -568,194 +767,202 @@ a{color:inherit;text-decoration:none}
 const i18n={
   zh:{
     "nav.features":"功能","nav.showcase":"展示","nav.capabilities":"能力","nav.updates":"更新","nav.download":"下载","nav.downloadBtn":"下载",
-    "hero.eyebrow":"OrcaBox 1.0 · 本地优先",
+    "hero.eyebrow":"OrcaBox 1.1 · 本地优先",
     "hero.title1":"创意资产","hero.title2":"本地智管",
-    "hero.desc":"本地素材智管：零复制索引、40+ 格式预览、端侧 AI。",
+    "hero.desc":"本地素材智管 零复制索引 40+ 格式预览 端侧 AI",
     "hero.cta":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/><line x1=\"12\" y1=\"15\" x2=\"12\" y2=\"3\"/></svg> 免费下载 macOS 版",
     "stats.formats":"文件格式","stats.local.val":"本地索引","stats.local.desc":"不复制原文件",
-    "stats.ai.val":"端侧 AI","stats.ai.desc":"数据不离开本地","stats.oss.val":"免费下载","stats.oss.desc":"公开发行",
-    "features.label":"核心能力","features.title":"专为创意工作流设计","features.desc":"每一项功能都围绕你的实际工作方式构建",
-    "f1.title":"本地索引 · 零冗余","f1.desc":"直接索引磁盘原始文件，目录即组织结构，不产生任何副本。",
-    "f2.title":"FTS5 全文搜索","f2.desc":"文件名、路径、标签多维度搜索，大库也能秒级响应。",
-    "f3.title":"实时文件监听","f3.desc":"chokidar 文件监听，素材变更自动同步，无需手动刷新。",
-    "f4.title":"标签与合集","f4.desc":"自定义标签、智能合集、评分收藏，构建素材知识库。",
-    "f5.title":"原文件播放","f5.desc":"浏览器直出、原生硬解与 libVLC 路由，直接播放原始媒体，不生成视频代理。",
-    "f6.title":"浏览器快速采集","f6.desc":"Chrome 扩展批量识别网页图片、视频、Lottie 和素材链接，再拖入本地库整理。",
-    "showcase.label":"产品展示","showcase.title":"不只是浏览器，是素材中枢","showcase.desc":"图片、音频、Lottie、3D 模型全格式深度预览",
-    "s1.label":"图片预览","s1.title":"高清大图 · 沉浸预览","s1.desc":"PSD、HEIC、WebP、AVIF、TIFF 等专业格式原生支持。内嵌色彩分析面板，查看色板分布、直方图与 EXIF 元数据。",
-    "s2.label":"音频管理","s2.title":"波形可视化 · 音频素材库","s2.desc":"MP3 / WAV / FLAC / AAC 原生支持。自动生成音频波形图与频谱分析，支持播放预览与批量标签管理。",
-    "s3.label":"Lottie 工作流","s3.title":"动效资产管理","s3.desc":"实时网格预览不降级、播放调速循环控制、JSON 与 .lottie 双格式原生解析。预取保持挂载，拒绝重挂载占位闪烁。",
-    "s4.label":"3D 模型","s4.title":"交互式 3D 预览","s4.desc":"Three.js 驱动，支持 GLB/GLTF、OBJ、FBX、USDZ。自由旋转缩放、材质预览、纹理提取。",
-    "cap.label":"后台引擎 & AI","cap.title":"透明可见 · 端侧智能","cap.desc":"后台任务实时可见。AI 基于 ONNX 本地推理，数据不上云",
-    "t1.label":"任务中心","t1.title":"后台处理 · 透明可控","t1.desc":"扫描索引、AI 标签分析、缩略图生成——所有后台任务进度一目了然。支持失败重试、批量处理、文件变更自动同步。",
-    "ai1.title":"智能标签生成","ai1.desc":"ONNX 模型分析图片内容，自动生成描述性标签，支持批量审核应用。",
-    "ai2.title":"主色提取","ai2.desc":"从本地素材提取主色和色板，帮助你快速确认视觉方向并筛选素材。",
-    "ai3.title":"后台任务可控","ai3.desc":"扫描、分析、缩略图和失败项集中管理，支持重试、批处理与文件变更同步。",
+    "stats.ai.val":"端侧 AI","stats.ai.desc":"数据不离开本地","stats.oss.val":"免费下载","stats.oss.desc":"公开下载",
+    "features.label":"工作流新能力","features.title":"让整理与创作连成一条工作流","features.desc":"快速标记 灵活归集 插件扩展 一套完成",
+    "f1.title":"插件扩展 工作流按需生长","f1.desc":"本地安装 统一管理 工具直接进入素材菜单",
+    "f2.title":"按 E 即刻完成标签","f2.desc":"键盘选标签 批量输入 自动去重",
+    "f3.title":"跨目录归集 不移动原文件","f3.desc":"按项目组织素材 封面 数量 顺序一目了然",
+    "f4.title":"本地智能抠图","f4.desc":"自动识别主体 支持阈值、羽化、手动修边",
+    "f5.title":"常用格式一键转换","f5.desc":"WebP、JPEG、PNG、AVIF、TIFF 批量处理",
+    "f6.title":"素材直达 DaVinci Resolve","f6.desc":"导入媒体池或当前时间线 减少软件间往返",
+    "showcase.label":"多格式预览","showcase.title":"多格式素材 一屏预览","showcase.desc":"图片、音频、动效、3D 一体预览 点击画面即可展开",
+    "s1.label":"图片预览","s1.title":"高清大图 · 沉浸预览","s1.desc":"PSD、HEIC、WebP、AVIF、TIFF 等专业格式原生支持 内嵌色彩分析面板 查看色板分布、直方图与 EXIF 元数据",
+    "s2.label":"音频预览","s2.title":"波形可视化 · 音频素材库","s2.desc":"MP3、WAV、FLAC、AAC 原生支持 自动生成音频波形图与频谱分析 支持播放预览与批量标签管理",
+    "s3.label":"动效资产管理","s3.title":"实时网格预览 · 动效资产管理","s3.desc":"实时网格预览不降级 播放调速循环控制 JSON 与 .lottie 双格式原生解析 预取保持挂载 拒绝重挂载占位闪烁",
+    "s4.label":"交互式 3D","s4.title":"交互式 3D 预览","s4.desc":"Three.js 驱动 支持 GLB、GLTF、OBJ、FBX、USDZ 自由旋转缩放 材质预览 纹理提取",
+    "s5.label":"Windows 版","s5.title":"跨平台保持同样的浏览节奏","s5.desc":"Windows 延续侧栏、瀑布流与详情面板结构 切换平台无需重新适应",
+    "cap.label":"批量操作 & 本地智能","cap.title":"选中 处理 标记 全程可见","cap.desc":"批量工具栏、任务中心、本地分析协同工作 处理进度始终清晰",
+    "t1.label":"批量工具栏","t1.title":"选中素材 常用动作集中出现","t1.desc":"收藏、评分、标签、备注与批量操作统一收在底部工具栏",
+    "t2.label":"任务中心","t2.title":"后台进度透明 失败项可继续处理","t2.desc":"扫描、索引、分析、失败重试集中可见 适合大型素材库整理",
+    "ai1.title":"智能标签审核","ai1.desc":"本地生成候选标签 统一确认后再批量写入",
+    "ai2.title":"主色与快速筛选","ai2.desc":"提取主色板 配合颜色筛选 更快找到视觉参考",
+    "ai3.title":"批量备注与状态管理","ai3.desc":"多选后同步补充备注、收藏、评分 保持整理连续",
     "tag.scan":"扫描","tag.index":"索引","tag.ai":"AI 分析","tag.watch":"文件监听","tag.realtime":"实时预览","tag.grid":"网格动画",
-    "updates.label":"最近更新","updates.title":"把素材工作流做得更顺手","updates.desc":"从网页采集到本地整理，从 Lottie 动效到原文件播放，OrcaBox 正在围绕真实创作流程持续完善。","updates.link":"查看发行记录",
-    "u1.title":"浏览器快速采集","u1.desc":"Chrome 扩展支持扫描当前页面的图片、视频、Lottie 和素材链接，减少从网页搬运素材的步骤。","u1.meta":"生态",
-    "u2.title":"原文件视频播放","u2.desc":"视频预览遵循原文件优先策略，使用浏览器直出或系统原生播放，不生成视频代理文件。","u2.meta":"播放",
-    "u3.title":"Lottie 网格保持动效","u3.desc":"可见的 Lottie 和 JSON 素材保持稳定的实时预览，滚动和选择不会退化成占位闪烁。","u3.meta":"动效",
-    "u4.title":"macOS 与 Windows 发行","u4.desc":"当前公开发行仓库只提供安装包和文档，CNB 是主要下载源，GitHub 作为备用镜像。","u4.meta":"v1.0",
+    "updates.label":"最近更新","updates.title":"把素材工作流做得更顺手","updates.desc":"网页采集 本地整理 Lottie 动效 原文件播放 持续围绕真实创作流程完善","updates.link":"查看发行记录",
+    "u1.title":"浏览器快速采集","u1.desc":"Chrome 扩展扫描当前页面的图片、视频、Lottie 与素材链接 减少网页搬运步骤","u1.meta":"生态",
+    "u2.title":"原文件视频播放","u2.desc":"浏览器直出或系统原生播放 不生成视频代理文件","u2.meta":"播放",
+    "u3.title":"Lottie 网格保持动效","u3.desc":"可见的 Lottie 与 JSON 素材保持实时预览 滚动和选择不会出现占位闪烁","u3.meta":"动效",
+    "u4.title":"macOS 与 Windows 安装包","u4.desc":"CNB 提供主要下载 GitHub 提供备用下载","u4.meta":"v1.1",
     "wf.label":"上手即用","wf.title":"四步开启高效素材管理",
-    "w1.title":"添加源文件夹","w1.desc":"选择磁盘上的素材目录，自动扫描索引，文件不复制不移动。",
-    "w2.title":"自动索引","w2.desc":"生成缩略图、提取元数据、分析色彩。实时监听变化，自动同步。",
-    "w3.title":"预览与组织","w3.desc":"40+ 格式即时预览。标签、合集、评分，建立素材知识库。",
-    "w4.title":"拖拽导出","w4.desc":"直拖到设计工具或浏览器。支持批量、壁纸设置、字体安装。",
-    "dl.label":"下载","dl.title":"OrcaBox 1.0","dl.desc":"提供 macOS Apple Silicon 与 Windows x64 安装包。应用核心源码不在公开发行仓库中。",
-    "dl.mac":"下载 macOS DMG","dl.win":"下载 Windows EXE","dl.free":"免费下载","dl.mirror":"GitHub 备用镜像",
-    "cta.label":"开始使用","cta.title":"准备好管理你的创意资产了吗？","cta.desc":"下载 OrcaBox，体验专业级本地素材管理。",
+    "w1.title":"添加源文件夹","w1.desc":"选择磁盘上的素材目录 自动扫描索引 文件不复制不移动",
+    "w2.title":"自动索引","w2.desc":"生成缩略图 提取元数据 分析色彩 实时监听变化 自动同步",
+    "w3.title":"预览与组织","w3.desc":"40+ 格式即时预览 标签、合集、评分 建立素材知识库",
+    "w4.title":"拖拽导出","w4.desc":"直拖到设计工具或浏览器 支持批量、壁纸设置、字体安装",
+    "dl.label":"下载","dl.title":"OrcaBox 1.1","dl.desc":"提供 macOS Apple Silicon 与 Windows x64 安装包 CNB 优先提供下载",
+    "dl.mac":"下载 macOS DMG","dl.win":"下载 Windows EXE","dl.free":"免费下载","dl.mirror":"GitHub 备用下载",
+    "cta.label":"开始使用","cta.title":"准备好管理你的创意资产了吗","cta.desc":"下载 OrcaBox 体验专业级本地素材管理",
     "cta.dl":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/></svg> 下载 macOS 版",
-    "cta.cnb":"CNB 发行仓库","cta.github":"GitHub 发行仓库",
-    "footer.desc":"面向创意团队的专业本地索引多格式素材管理器。",
-    "footer.product":"产品","footer.resources":"资源","footer.about":"发行仓库",
+    "cta.cnb":"CNB 下载","cta.github":"GitHub 备用下载",
+    "footer.desc":"面向创意团队的专业本地索引多格式素材管理器",
+    "footer.product":"产品","footer.resources":"资源","footer.about":"下载来源",
     "footer.f1":"功能","footer.f2":"展示","footer.f3":"能力","footer.f4":"下载",
     "footer.r1":"使用说明","footer.r2":"发行说明","footer.r3":"历史版本",
-    "footer.cnb":"CNB 发行仓库","footer.github":"GitHub 发行仓库",
+    "footer.cnb":"CNB 下载","footer.github":"GitHub 备用下载",
     "footer.a1":"下载安装包","footer.made":"Made for macOS and Windows"
   },
   en:{
     "nav.features":"Features","nav.showcase":"Showcase","nav.capabilities":"Capabilities","nav.updates":"Updates","nav.download":"Download","nav.downloadBtn":"Download",
-    "hero.eyebrow":"OrcaBox 1.0 · Local-first",
+    "hero.eyebrow":"OrcaBox 1.1 · Local-first",
     "hero.title1":"Creative Assets","hero.title2":"Managed Locally",
     "hero.desc":"Zero-copy local assets, 40+ previews, on-device AI.",
     "hero.cta":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/><line x1=\"12\" y1=\"15\" x2=\"12\" y2=\"3\"/></svg> Download for macOS",
     "stats.formats":"File Formats","stats.local.val":"Local Index","stats.local.desc":"No File Duplication",
     "stats.ai.val":"On-Device AI","stats.ai.desc":"Data Never Leaves Local","stats.oss.val":"Free Download","stats.oss.desc":"Public Releases",
-    "features.label":"Core Capabilities","features.title":"Designed for Creative Workflows","features.desc":"Every feature is built around how you actually work",
-    "f1.title":"Local Index · Zero Redundancy","f1.desc":"Index files directly on your disk. Your folder structure is your organization. Zero copies.",
-    "f2.title":"FTS5 Full-Text Search","f2.desc":"Multi-dimensional search across filenames, paths, and tags. Instant results even in large libraries.",
-    "f3.title":"Real-Time File Watch","f3.desc":"chokidar-powered file system watching. Asset changes sync automatically, no manual refresh needed.",
-    "f4.title":"Tags & Collections","f4.desc":"Custom tags, smart collections, ratings & favorites. Build your asset knowledge base.",
-    "f5.title":"Original-File Playback","f5.desc":"Browser direct, native hardware decode, and libVLC routing. Play original media without video proxy files.",
-    "f6.title":"Browser Quick Collect","f6.desc":"The Chrome extension scans images, videos, Lottie, and asset links on a page, then sends them into your local library.",
-    "showcase.label":"Product Showcase","showcase.title":"More Than a Browser, It's Your Asset Hub","showcase.desc":"Deep preview for images, audio, Lottie, and 3D models across all formats",
-    "s1.label":"Image Preview","s1.title":"High-Res · Immersive Preview","s1.desc":"Native support for PSD, HEIC, WebP, AVIF, TIFF and more. Built-in color analysis panel with palette, histogram, and EXIF metadata.",
-    "s2.label":"Audio Management","s2.title":"Waveform Visualization · Audio Library","s2.desc":"Native MP3, WAV, FLAC, AAC support. Auto-generated waveforms and spectrum analysis with playback preview and batch tagging.",
-    "s3.label":"Lottie Workflow","s3.title":"Motion Asset Management","s3.desc":"Live grid preview without degradation, playback speed control, JSON & .lottie dual-format native parsing. Prefetched, kept mounted, no flicker.",
-    "s4.label":"3D Models","s4.title":"Interactive 3D Preview","s4.desc":"Three.js powered. Supports GLB/GLTF, OBJ, FBX, USDZ. Free rotation, zoom, material preview, and texture extraction.",
-    "cap.label":"Backend Engine & AI","cap.title":"Transparent · On-Device Intelligence","cap.desc":"All background tasks visible in real-time. AI powered by ONNX local inference, your data stays local.",
-    "t1.label":"Task Center","t1.title":"Background Processing · Full Control","t1.desc":"Scanning, AI tag analysis, thumbnail generation — all background tasks at a glance. Retry on failure, batch processing, auto file sync.",
-    "ai1.title":"Smart Tag Generation","ai1.desc":"ONNX model analyzes image content, auto-generates descriptive tags. Batch review and one-click apply.",
-    "ai2.title":"Dominant Color Extraction","ai2.desc":"Extract dominant colors and palettes from local assets to confirm visual direction and filter references.",
-    "ai3.title":"Controllable Task Center","ai3.desc":"Manage scanning, analysis, thumbnails, and failures in one place with retry, batching, and file sync.",
+    "features.label":"New Workflow Tools","features.title":"Keep organizing and creating in one flow","features.desc":"Tag faster, group freely, and bring everyday tools into OrcaBox with plugins.",
+    "f1.title":"Plugins that grow with your workflow","f1.desc":"Install locally and manage centrally, right from the asset menu.",
+    "f2.title":"Press E. Tags done.","f2.desc":"Keyboard selection, batch input, and automatic deduplication.",
+    "f3.title":"Group across folders, move nothing","f3.desc":"Organize by project with clear covers, counts, and ordering.",
+    "f4.title":"Local smart cutout","f4.desc":"Detect subjects automatically, then refine thresholds, feathering, and edges.",
+    "f5.title":"Convert common formats in one step","f5.desc":"Batch WebP, JPEG, PNG, AVIF, and TIFF conversion.",
+    "f6.title":"Send assets to DaVinci Resolve","f6.desc":"Import into the media pool or current timeline with fewer handoffs.",
+    "showcase.label":"Multi-format Preview","showcase.title":"Every format in one preview flow","showcase.desc":"Images, audio, motion, and 3D stay connected in one browsing surface.",
+    "s1.label":"Image Preview","s1.title":"High-resolution immersive preview","s1.desc":"Native PSD, HEIC, WebP, AVIF, and TIFF support with palette, histogram, and EXIF inspection.",
+    "s2.label":"Audio Preview","s2.title":"Waveforms for every audio library","s2.desc":"Native MP3, WAV, FLAC, and AAC support with waveform, spectrum, playback, and batch tagging.",
+    "s3.label":"Motion Asset Management","s3.title":"Live motion assets stay live","s3.desc":"Stable Lottie and JSON previews with speed, loop, JSON, and .lottie support without placeholder flicker.",
+    "s4.label":"Interactive 3D","s4.title":"Interactive 3D preview","s4.desc":"Three.js powered GLB, GLTF, OBJ, FBX, and USDZ preview with rotation, materials, and texture extraction.",
+    "s5.label":"Windows Edition","s5.title":"The same information density, with the same rhythm","s5.desc":"Windows keeps the familiar sidebar, masonry browser, and detail panel so moving between platforms costs less.",
+    "cap.label":"Batch Actions & Local Intelligence","cap.title":"Selecting, processing, and tagging all stay visible","cap.desc":"The batch toolbar, task center, and local analysis work together without hiding progress in the background.",
+    "t1.label":"Batch Toolbar","t1.title":"Select assets and your common actions appear together","t1.desc":"Favorites, ratings, tags, notes, and batch actions live in one bottom toolbar to reduce back-and-forth.",
+    "t2.label":"Task Center","t2.title":"Background progress stays transparent, and failures can resume","t2.desc":"Scanning, indexing, analysis, and retries remain visible for long-running library cleanup.",
+    "ai1.title":"Smart tag review","ai1.desc":"Generate candidate tags locally, then confirm them in one pass before bulk writing.",
+    "ai2.title":"Color extraction and quick filtering","ai2.desc":"Pull palettes and combine them with color filters to find references faster.",
+    "ai3.title":"Batch notes and state management","ai3.desc":"Apply notes, favorites, and ratings across multi-selection without breaking flow.",
     "tag.scan":"Scan","tag.index":"Index","tag.ai":"AI Analysis","tag.watch":"File Watch","tag.realtime":"Live Preview","tag.grid":"Grid Animation",
     "updates.label":"Latest Updates","updates.title":"A smoother asset workflow","updates.desc":"From browser capture to local organization, from Lottie motion to original-file playback, OrcaBox keeps improving around real creative work.","updates.link":"View release history",
     "u1.title":"Browser Quick Collect","u1.desc":"The Chrome extension scans images, videos, Lottie, and asset links on the current page, reducing the steps between discovery and organization.","u1.meta":"Ecosystem",
     "u2.title":"Original-File Video Playback","u2.desc":"Video preview follows an original-file-first policy through browser direct playback or the native system stack, without video proxy files.","u2.meta":"Playback",
     "u3.title":"Stable Lottie Grid Preview","u3.desc":"Visible Lottie and JSON assets keep their live preview while scrolling and selecting, without placeholder flicker.","u3.meta":"Motion",
-    "u4.title":"macOS & Windows Release","u4.desc":"The public release repository provides installers and documentation. CNB is the primary source, with GitHub as a mirror.","u4.meta":"v1.0",
+    "u4.title":"macOS & Windows Installers","u4.desc":"CNB is the primary download source. GitHub provides a backup download.","u4.meta":"v1.1",
     "wf.label":"Get Started","wf.title":"Four Steps to Efficient Asset Management",
     "w1.title":"Add Source Folder","w1.desc":"Select your asset directory on disk. Auto scan and index, no files copied or moved.",
     "w2.title":"Auto Index","w2.desc":"Generate thumbnails, extract metadata, analyze colors. Real-time file watching with auto sync.",
     "w3.title":"Preview & Organize","w3.desc":"Instant preview for 40+ formats. Tags, collections, ratings — build your asset knowledge base.",
     "w4.title":"Drag & Drop Export","w4.desc":"Drag directly to design tools or browsers. Batch, wallpaper, font installation support.",
-    "dl.label":"Download","dl.title":"OrcaBox 1.0","dl.desc":"Installers for macOS Apple Silicon and Windows x64. The application core source is not included in this public release repository.",
-    "dl.mac":"Download macOS DMG","dl.win":"Download Windows EXE","dl.free":"Free Download","dl.mirror":"GitHub mirror",
+    "dl.label":"Download","dl.title":"OrcaBox 1.1","dl.desc":"Installers for macOS Apple Silicon and Windows x64. CNB is the primary download source.",
+    "dl.mac":"Download macOS DMG","dl.win":"Download Windows EXE","dl.free":"Free Download","dl.mirror":"GitHub backup download",
     "cta.label":"Get Started","cta.title":"Ready to manage your creative assets?","cta.desc":"Download OrcaBox and experience professional-grade local asset management.",
     "cta.dl":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/></svg> Download for macOS",
-    "cta.cnb":"CNB Releases","cta.github":"GitHub Releases",
+    "cta.cnb":"CNB Download","cta.github":"GitHub Backup",
     "footer.desc":"Professional local-indexed multi-format asset manager for creative teams.",
-    "footer.product":"Product","footer.resources":"Resources","footer.about":"Release Repositories",
+    "footer.product":"Product","footer.resources":"Resources","footer.about":"Download Sources",
     "footer.f1":"Features","footer.f2":"Showcase","footer.f3":"Capabilities","footer.f4":"Download",
     "footer.r1":"User Guide","footer.r2":"Release Notes","footer.r3":"Previous Versions",
-    "footer.cnb":"CNB Releases","footer.github":"GitHub Releases",
+    "footer.cnb":"CNB Download","footer.github":"GitHub Backup",
     "footer.a1":"Download Installers","footer.made":"Made for macOS and Windows"
   },
   ja:{
     "nav.features":"機能","nav.showcase":"紹介","nav.capabilities":"能力","nav.updates":"更新","nav.download":"ダウンロード","nav.downloadBtn":"ダウンロード",
-    "hero.eyebrow":"OrcaBox 1.0 · ローカル優先",
+    "hero.eyebrow":"OrcaBox 1.1 · ローカル優先",
     "hero.title1":"クリエイティブ資産","hero.title2":"ローカル管理",
     "hero.desc":"ローカル素材管理：ゼロコピー、40+形式、端末内AI。",
     "hero.cta":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/><line x1=\"12\" y1=\"15\" x2=\"12\" y2=\"3\"/></svg> macOS版を無料ダウンロード",
     "stats.formats":"対応フォーマット","stats.local.val":"ローカル索引","stats.local.desc":"ファイル複製なし",
     "stats.ai.val":"端末AI","stats.ai.desc":"データは端末外に出ません","stats.oss.val":"無料ダウンロード","stats.oss.desc":"公開リリース",
-    "features.label":"コア機能","features.title":"クリエイティブワークフロー設計","features.desc":"すべての機能が実際の作業方法に基づいて構築されています",
-    "f1.title":"ローカル索引 · ゼロ冗長","f1.desc":"ディスク上のファイルを直接インデックス。フォルダ構造がそのまま組織に。コピー不要。",
-    "f2.title":"FTS5 全文検索","f2.desc":"ファイル名・パス・タグの多次元検索。大規模ライブラリでも瞬時に結果表示。",
-    "f3.title":"リアルタイム監視","f3.desc":"chokidarによるファイルシステム監視。アセット変更を自動同期、手動更新不要。",
-    "f4.title":"タグ＆コレクション","f4.desc":"カスタムタグ、スマートコレクション、評価・お気に入りでアセット知識ベースを構築。",
-    "f5.title":"オリジナルファイル再生","f5.desc":"ブラウザ直接・ネイティブHWデコード・libVLCで原ファイルを再生。動画プロキシは生成しません。",
-    "f6.title":"ブラウザ快速収集","f6.desc":"Chrome拡張でページ上の画像、動画、Lottie、素材リンクをまとめて検出し、ローカルライブラリへ送信。",
-    "showcase.label":"製品紹介","showcase.title":"ブラウザ以上のアセットハブ","showcase.desc":"画像・音声・Lottie・3Dモデルを全フォーマットで深くプレビュー",
-    "s1.label":"画像プレビュー","s1.title":"高解像度 · 没入プレビュー","s1.desc":"PSD、HEIC、WebP、AVIF、TIFFなどにネイティブ対応。カラーパレット、ヒストグラム、EXIF分析内蔵。",
-    "s2.label":"音声管理","s2.title":"波形表示 · オーディオライブラリ","s2.desc":"MP3、WAV、FLAC、AACネイティブ対応。波形とスペクトラム自動生成、再生プレビューと一括タグ付け。",
-    "s3.label":"Lottieワークフロー","s3.title":"モーションアセット管理","s3.desc":"ライブグリッドプレビュー、再生速度制御、JSON＆.lottieデュアルフォーマット対応。プリフェッチでちらつきなし。",
-    "s4.label":"3Dモデル","s4.title":"インタラクティブ3Dプレビュー","s4.desc":"Three.js駆動。GLB/GLTF、OBJ、FBX、USDZ対応。回転・ズーム・マテリアル・テクスチャ抽出可能。",
-    "cap.label":"バックエンド＆AI","cap.title":"透過的 · 端末内インテリジェンス","cap.desc":"全バックグラウンドタスクをリアルタイム表示。ONNXローカル推論、データは端末外に出ません。",
-    "t1.label":"タスクセンター","t1.title":"バックグラウンド処理 · 完全制御","t1.desc":"スキャン、AIタグ分析、サムネイル生成——すべてのタスク進捗を一目で。リトライ、一括処理、自動同期対応。",
-    "ai1.title":"スマートタグ生成","ai1.desc":"ONNXモデルが画像内容を分析し、説明タグを自動生成。一括レビューとワンクリック適用。",
-    "ai2.title":"主要色の抽出","ai2.desc":"ローカル素材から主要色とパレットを抽出し、配色の確認や参考素材の整理に活用。",
-    "ai3.title":"制御できるタスクセンター","ai3.desc":"スキャン、分析、サムネイル、失敗項目を一元管理。リトライ、一括処理、自動同期に対応。",
+    "features.label":"新しいワークフロー","features.title":"整理と制作をひとつの流れに","features.desc":"すばやいタグ付け、柔軟なコレクション、プラグイン拡張を一つに。",
+    "f1.title":"ワークフローに合わせて広がるプラグイン","f1.desc":"ローカルで導入し、素材メニューからまとめて管理。",
+    "f2.title":"E キーですぐタグ付け","f2.desc":"キーボード選択、一括入力、自動重複除去。",
+    "f3.title":"ファイルを動かさず横断整理","f3.desc":"プロジェクト別にまとめ、表紙・件数・順序をひと目で確認。",
+    "f4.title":"ローカルスマート切り抜き","f4.desc":"被写体を自動認識し、しきい値・ぼかし・輪郭を調整。",
+    "f5.title":"主要形式をワンクリック変換","f5.desc":"WebP、JPEG、PNG、AVIF、TIFF を一括処理。",
+    "f6.title":"DaVinci Resolve へ直接送信","f6.desc":"メディアプールや現在のタイムラインへすばやく読み込み。",
+    "showcase.label":"マルチフォーマットプレビュー","showcase.title":"すべての形式を一つの流れで確認","showcase.desc":"画像、音声、モーション、3D を同じブラウズ画面で確認できます。",
+    "s1.label":"画像プレビュー","s1.title":"高解像度で没入感のある確認","s1.desc":"PSD、HEIC、WebP、AVIF、TIFF に対応し、パレット、ヒストグラム、EXIF を確認できます。",
+    "s2.label":"音声プレビュー","s2.title":"波形で音声ライブラリを確認","s2.desc":"MP3、WAV、FLAC、AAC に対応し、波形、スペクトラム、再生、一括タグ付けを行えます。",
+    "s3.label":"モーションアセット管理","s3.title":"ライブアセットをライブのまま管理","s3.desc":"Lottie と JSON のプレビューを安定表示し、速度、ループ、JSON、.lottie に対応します。",
+    "s4.label":"インタラクティブ 3D","s4.title":"インタラクティブ 3D プレビュー","s4.desc":"Three.js ベースで GLB、GLTF、OBJ、FBX、USDZ を回転、素材確認、テクスチャ抽出まで行えます。",
+    "s5.label":"Windows 版","s5.title":"同じ情報密度で、同じテンポを保つ","s5.desc":"Windows 版でもサイドバー、瀑布流、詳細パネルの構成を保ち、切り替えコストを下げます。",
+    "cap.label":"一括操作 & ローカル知能","cap.title":"選択、処理、タグ付けを常に見える形で","cap.desc":"一括ツールバー、タスクセンター、ローカル分析が連携し、進行状況を裏に隠しません。",
+    "t1.label":"一括ツールバー","t1.title":"素材を選ぶと、よく使う操作がまとまって出る","t1.desc":"お気に入り、評価、タグ、メモ、一括操作を下部ツールバーに集約し、往復を減らします。",
+    "t2.label":"タスクセンター","t2.title":"進捗は透明に、失敗項目は続きから処理","t2.desc":"スキャン、索引、分析、再試行を見える形で保ち、大きなライブラリ整理にも向きます。",
+    "ai1.title":"スマートタグの確認","ai1.desc":"候補タグをローカル生成し、一括書き込み前にまとめて確認できます。",
+    "ai2.title":"主要色抽出と高速フィルタ","ai2.desc":"色パレット抽出と色フィルタを組み合わせ、参照探しを速めます。",
+    "ai3.title":"一括メモと状態管理","ai3.desc":"複数選択したままメモ、お気に入り、評価を連続して適用できます。",
     "tag.scan":"スキャン","tag.index":"索引","tag.ai":"AI分析","tag.watch":"監視","tag.realtime":"ライブ","tag.grid":"グリッド",
     "updates.label":"最新アップデート","updates.title":"素材ワークフローをもっとスムーズに","updates.desc":"ブラウザ収集からローカル整理、Lottieモーションからオリジナル再生まで、実際の制作フローに沿って改善を続けています。","updates.link":"リリース履歴を見る",
     "u1.title":"ブラウザ快速収集","u1.desc":"Chrome拡張で現在のページから画像、動画、Lottie、素材リンクをスキャンし、収集の手順を短縮します。","u1.meta":"エコシステム",
     "u2.title":"オリジナル動画再生","u2.desc":"動画プレビューはブラウザ直接再生またはシステムネイティブ再生を使い、動画プロキシを生成しません。","u2.meta":"再生",
     "u3.title":"安定したLottieグリッド","u3.desc":"表示中のLottieとJSONはスクロールや選択中もライブプレビューを維持し、プレースホルダーのちらつきを防ぎます。","u3.meta":"モーション",
-    "u4.title":"macOS & Windows リリース","u4.desc":"公開リリースリポジトリにはインストーラーとドキュメントのみを提供。CNBを主とし、GitHubをミラーにしています。","u4.meta":"v1.0",
+    "u4.title":"macOS & Windows インストーラー","u4.desc":"CNBを主なダウンロード先とし、GitHubを予備のダウンロード先として提供します。","u4.meta":"v1.1",
     "wf.label":"はじめ方","wf.title":"4ステップで始める効率的な資産管理",
     "w1.title":"ソースフォルダを追加","w1.desc":"ディスク上のアセットフォルダを選択。自動スキャン＆インデックス、ファイル移動不要。",
     "w2.title":"自動インデックス","w2.desc":"サムネイル生成、メタデータ抽出、色彩分析。リアルタイム監視で自動同期。",
     "w3.title":"プレビュー＆整理","w3.desc":"40以上のフォーマットを即時プレビュー。タグ、コレクション、評価で知識ベース構築。",
     "w4.title":"ドラッグ＆ドロップ出力","w4.desc":"デザインツールやブラウザに直接ドラッグ。一括、壁紙、フォントインストール対応。",
-    "dl.label":"ダウンロード","dl.title":"OrcaBox 1.0","dl.desc":"macOS Apple Silicon と Windows x64 用インストーラーを提供します。アプリのコアソースは公開リリースリポジトリに含まれません。",
-    "dl.mac":"macOS DMG をダウンロード","dl.win":"Windows EXE をダウンロード","dl.free":"無料ダウンロード","dl.mirror":"GitHub ミラー",
+    "dl.label":"ダウンロード","dl.title":"OrcaBox 1.1","dl.desc":"macOS Apple Silicon と Windows x64 用インストーラーを提供します。CNBを主なダウンロード先とします。",
+    "dl.mac":"macOS DMG をダウンロード","dl.win":"Windows EXE をダウンロード","dl.free":"無料ダウンロード","dl.mirror":"GitHub 予備ダウンロード",
     "cta.label":"はじめよう","cta.title":"クリエイティブ資産を管理する準備はできましたか？","cta.desc":"OrcaBoxをダウンロードして、プロ級のローカルアセット管理を体験してください。",
     "cta.dl":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/></svg> macOS版をダウンロード",
-    "cta.cnb":"CNB リリース","cta.github":"GitHub リリース",
+    "cta.cnb":"CNB ダウンロード","cta.github":"GitHub 予備",
     "footer.desc":"クリエイティブチームのためのプロ向けローカルインデックス・マルチフォーマットアセットマネージャー。",
-    "footer.product":"製品","footer.resources":"リソース","footer.about":"リリースリポジトリ",
+    "footer.product":"製品","footer.resources":"リソース","footer.about":"ダウンロード先",
     "footer.f1":"機能","footer.f2":"紹介","footer.f3":"能力","footer.f4":"ダウンロード",
     "footer.r1":"利用ガイド","footer.r2":"リリースノート","footer.r3":"過去のバージョン",
-    "footer.cnb":"CNB リリース","footer.github":"GitHub リリース",
+    "footer.cnb":"CNB ダウンロード","footer.github":"GitHub 予備",
     "footer.a1":"インストーラー","footer.made":"Made for macOS and Windows"
   },
   ko:{
     "nav.features":"기능","nav.showcase":"소개","nav.capabilities":"역량","nav.updates":"업데이트","nav.download":"다운로드","nav.downloadBtn":"다운로드",
-    "hero.eyebrow":"OrcaBox 1.0 · 로컬 우선",
+    "hero.eyebrow":"OrcaBox 1.1 · 로컬 우선",
     "hero.title1":"크리에이티브 자산","hero.title2":"로컬 관리",
     "hero.desc":"로컬 에셋 관리: 무복제, 40+ 포맷, 온디바이스 AI.",
     "hero.cta":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/><line x1=\"12\" y1=\"15\" x2=\"12\" y2=\"3\"/></svg> macOS용 무료 다운로드",
     "stats.formats":"파일 형식","stats.local.val":"로컬 인덱스","stats.local.desc":"파일 복제 없음",
     "stats.ai.val":"온디바이스 AI","stats.ai.desc":"데이터는 로컬에 유지","stats.oss.val":"무료 다운로드","stats.oss.desc":"공개 릴리스",
-    "features.label":"핵심 기능","features.title":"크리에이티브 워크플로를 위한 설계","features.desc":"모든 기능이 실제 작업 방식을 기반으로 구축되었습니다",
-    "f1.title":"로컬 인덱스 · 제로 중복","f1.desc":"디스크의 파일을 직접 인덱싱합니다. 폴더 구조가 곧 조직입니다. 복사본 없음.",
-    "f2.title":"FTS5 전체 텍스트 검색","f2.desc":"파일명, 경로, 태그 다차원 검색. 대규모 라이브러리에서도 즉시 결과.",
-    "f3.title":"실시간 파일 감시","f3.desc":"chokidar 기반 파일 시스템 감시. 자산 변경이 자동 동기화, 수동 새로고침 불필요.",
-    "f4.title":"태그 및 컬렉션","f4.desc":"커스텀 태그, 스마트 컬렉션, 평가 및 즐겨찾기로 자산 지식 베이스 구축.",
-    "f5.title":"원본 파일 재생","f5.desc":"브라우저 직접 재생, 네이티브 하드웨어 디코드, libVLC로 원본 미디어를 재생하며 비디오 프록시를 만들지 않습니다.",
-    "f6.title":"브라우저 빠른 수집","f6.desc":"Chrome 확장으로 페이지의 이미지, 비디오, Lottie와 에셋 링크를 한 번에 스캔해 로컬 라이브러리로 보냅니다.",
-    "showcase.label":"제품 소개","showcase.title":"브라우저 그 이상, 자산 허브","showcase.desc":"이미지, 오디오, Lottie, 3D 모델 전체 형식 딥 프리뷰",
-    "s1.label":"이미지 프리뷰","s1.title":"고해상도 · 몰입형 프리뷰","s1.desc":"PSD, HEIC, WebP, AVIF, TIFF 등 네이티브 지원. 색상 팔레트, 히스토그램, EXIF 메타데이터 분석 내장.",
-    "s2.label":"오디오 관리","s2.title":"파형 시각화 · 오디오 라이브러리","s2.desc":"MP3, WAV, FLAC, AAC 네이티브 지원. 파형과 스펙트럼 자동 생성, 재생 미리보기 및 일괄 태깅.",
-    "s3.label":"Lottie 워크플로","s3.title":"모션 자산 관리","s3.desc":"라이브 그리드 프리뷰, 재생 속도 제어, JSON & .lottie 듀얼 포맷 기본 지원. 프리페치로 깜빡임 없음.",
-    "s4.label":"3D 모델","s4.title":"인터랙티브 3D 프리뷰","s4.desc":"Three.js 기반. GLB/GLTF, OBJ, FBX, USDZ 지원. 자유 회전, 확대, 재질 미리보기, 텍스처 추출.",
-    "cap.label":"백엔드 엔진 & AI","cap.title":"투명한 · 온디바이스 인텔리전스","cap.desc":"모든 백그라운드 작업을 실시간 확인. ONNX 로컬 추론 기반 AI, 데이터는 로컬에 유지됩니다.",
-    "t1.label":"작업 센터","t1.title":"백그라운드 처리 · 완전 제어","t1.desc":"스캔, AI 태그 분석, 썸네일 생성 — 모든 작업 진행 상황을 한눈에. 실패 재시도, 일괄 처리, 자동 동기화.",
-    "ai1.title":"스마트 태그 생성","ai1.desc":"ONNX 모델이 이미지 콘텐츠를 분석하여 설명 태그를 자동 생성. 일괄 검토 및 원클릭 적용.",
-    "ai2.title":"주요 색상 추출","ai2.desc":"로컬 에셋에서 주요 색상과 팔레트를 추출해 시각 방향을 확인하고 레퍼런스를 정리합니다.",
-    "ai3.title":"제어 가능한 작업 센터","ai3.desc":"스캔, 분석, 썸네일, 실패 항목을 한곳에서 관리합니다. 재시도, 일괄 처리, 자동 동기화를 지원합니다.",
+    "features.label":"새로운 워크플로","features.title":"정리와 제작을 하나의 흐름으로","features.desc":"빠른 태그, 유연한 컬렉션, 플러그인 확장을 한곳에서 사용하세요.",
+    "f1.title":"워크플로에 맞춰 확장되는 플러그인","f1.desc":"로컬 설치와 통합 관리로 도구를 에셋 메뉴에 연결합니다.",
+    "f2.title":"E 키로 바로 태그 완료","f2.desc":"키보드 선택, 일괄 입력, 자동 중복 제거.",
+    "f3.title":"원본을 옮기지 않고 폴더 간 정리","f3.desc":"프로젝트별로 모으고 표지, 개수, 순서를 한눈에 확인합니다.",
+    "f4.title":"로컬 스마트 누끼","f4.desc":"피사체를 자동 인식하고 임계값, 페더링, 가장자리를 조정합니다.",
+    "f5.title":"주요 형식을 한 번에 변환","f5.desc":"WebP, JPEG, PNG, AVIF, TIFF 일괄 처리.",
+    "f6.title":"DaVinci Resolve로 바로 전송","f6.desc":"미디어 풀이나 현재 타임라인으로 빠르게 가져옵니다.",
+    "showcase.label":"멀티 포맷 프리뷰","showcase.title":"모든 형식을 하나의 흐름으로 확인","showcase.desc":"이미지, 오디오, 모션, 3D를 같은 브라우징 화면에서 확인합니다.",
+    "s1.label":"이미지 프리뷰","s1.title":"고해상도 몰입형 프리뷰","s1.desc":"PSD, HEIC, WebP, AVIF, TIFF를 지원하며 팔레트, 히스토그램, EXIF를 확인합니다.",
+    "s2.label":"오디오 프리뷰","s2.title":"파형으로 오디오 라이브러리 확인","s2.desc":"MP3, WAV, FLAC, AAC와 파형, 스펙트럼, 재생, 일괄 태그를 지원합니다.",
+    "s3.label":"모션 에셋 관리","s3.title":"라이브 모션 에셋을 그대로 유지","s3.desc":"Lottie와 JSON 프리뷰를 안정적으로 유지하며 속도, 반복, JSON, .lottie를 지원합니다.",
+    "s4.label":"인터랙티브 3D","s4.title":"인터랙티브 3D 프리뷰","s4.desc":"Three.js 기반으로 GLB, GLTF, OBJ, FBX, USDZ의 회전, 재질, 텍스처 추출을 지원합니다.",
+    "s5.label":"Windows 버전","s5.title":"같은 정보 밀도와 같은 리듬을 유지합니다","s5.desc":"Windows에서도 익숙한 사이드바, 워터폴 브라우저, 상세 패널 구조를 유지해 전환 비용을 낮춥니다.",
+    "cap.label":"일괄 작업 & 로컬 인텔리전스","cap.title":"선택, 처리, 태깅이 모두 보이는 상태로","cap.desc":"일괄 툴바, 작업 센터, 로컬 분석이 함께 동작하며 진행 상황을 숨기지 않습니다.",
+    "t1.label":"일괄 툴바","t1.title":"에셋을 선택하면 자주 쓰는 작업이 한곳에 모입니다","t1.desc":"즐겨찾기, 평점, 태그, 메모, 일괄 작업을 하단 툴바에 모아 왕복을 줄입니다.",
+    "t2.label":"작업 센터","t2.title":"백그라운드 진행은 투명하게, 실패 항목은 이어서","t2.desc":"스캔, 인덱싱, 분석, 재시도를 계속 보이게 두어 큰 라이브러리 정리에 맞춥니다.",
+    "ai1.title":"스마트 태그 검토","ai1.desc":"후보 태그를 로컬에서 만든 뒤 일괄 기록 전에 한 번에 검토합니다.",
+    "ai2.title":"주요 색상 추출과 빠른 필터","ai2.desc":"팔레트 추출과 색상 필터를 결합해 레퍼런스 탐색을 더 빠르게 합니다.",
+    "ai3.title":"일괄 메모와 상태 관리","ai3.desc":"다중 선택 상태에서 메모, 즐겨찾기, 평점을 연속으로 적용할 수 있습니다.",
     "tag.scan":"스캔","tag.index":"인덱스","tag.ai":"AI 분석","tag.watch":"파일 감시","tag.realtime":"실시간","tag.grid":"그리드",
     "updates.label":"최근 업데이트","updates.title":"더 매끄러운 에셋 워크플로","updates.desc":"브라우저 수집부터 로컬 정리, Lottie 모션부터 원본 파일 재생까지 실제 제작 흐름을 중심으로 계속 개선합니다.","updates.link":"릴리스 기록 보기",
     "u1.title":"브라우저 빠른 수집","u1.desc":"Chrome 확장이 현재 페이지의 이미지, 비디오, Lottie와 에셋 링크를 스캔해 발견부터 정리까지의 단계를 줄입니다.","u1.meta":"생태계",
     "u2.title":"원본 파일 비디오 재생","u2.desc":"브라우저 직접 재생이나 시스템 네이티브 스택을 사용하며 비디오 프록시 파일을 생성하지 않습니다.","u2.meta":"재생",
     "u3.title":"안정적인 Lottie 그리드","u3.desc":"표시 중인 Lottie와 JSON 에셋은 스크롤과 선택 중에도 라이브 프리뷰를 유지해 플레이스홀더 깜빡임을 막습니다.","u3.meta":"모션",
-    "u4.title":"macOS & Windows 릴리스","u4.desc":"공개 릴리스 저장소에는 설치 파일과 문서만 제공합니다. CNB를 기본 소스로, GitHub를 미러로 사용합니다.","u4.meta":"v1.0",
+    "u4.title":"macOS & Windows 설치 파일","u4.desc":"CNB를 기본 다운로드로 제공하고 GitHub를 예비 다운로드로 제공합니다.","u4.meta":"v1.1",
     "wf.label":"시작하기","wf.title":"효율적인 자산 관리 4단계",
     "w1.title":"소스 폴더 추가","w1.desc":"디스크에서 자산 디렉토리를 선택하세요. 자동 스캔 및 인덱싱, 파일 복사나 이동 없음.",
     "w2.title":"자동 인덱스","w2.desc":"썸네일 생성, 메타데이터 추출, 색상 분석. 실시간 파일 감시로 자동 동기화.",
     "w3.title":"미리보기 및 정리","w3.desc":"40개 이상의 형식 즉시 미리보기. 태그, 컬렉션, 평가로 지식 베이스 구축.",
     "w4.title":"드래그 앤 드롭","w4.desc":"디자인 도구나 브라우저로 직접 드래그. 배치, 배경화면, 폰트 설치 지원.",
-    "dl.label":"다운로드","dl.title":"OrcaBox 1.0","dl.desc":"macOS Apple Silicon 및 Windows x64 설치 파일을 제공합니다. 앱 핵심 소스는 공개 릴리스 저장소에 포함되지 않습니다.",
-    "dl.mac":"macOS DMG 다운로드","dl.win":"Windows EXE 다운로드","dl.free":"무료 다운로드","dl.mirror":"GitHub 미러",
+    "dl.label":"다운로드","dl.title":"OrcaBox 1.1","dl.desc":"macOS Apple Silicon 및 Windows x64 설치 파일을 제공합니다. CNB를 기본 다운로드로 사용합니다.",
+    "dl.mac":"macOS DMG 다운로드","dl.win":"Windows EXE 다운로드","dl.free":"무료 다운로드","dl.mirror":"GitHub 예비 다운로드",
     "cta.label":"시작하기","cta.title":"크리에이티브 자산을 관리할 준비가 되셨나요?","cta.desc":"OrcaBox를 다운로드하고 전문가급 로컬 자산 관리를 경험하세요.",
     "cta.dl":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/></svg> macOS용 다운로드",
-    "cta.cnb":"CNB 릴리스","cta.github":"GitHub 릴리스",
+    "cta.cnb":"CNB 다운로드","cta.github":"GitHub 예비",
     "footer.desc":"크리에이티브 팀을 위한 전문 로컬 인덱스 멀티포맷 자산 관리자.",
-    "footer.product":"제품","footer.resources":"리소스","footer.about":"릴리스 저장소",
+    "footer.product":"제품","footer.resources":"리소스","footer.about":"다운로드 소스",
     "footer.f1":"기능","footer.f2":"소개","footer.f3":"역량","footer.f4":"다운로드",
     "footer.r1":"사용 안내","footer.r2":"릴리스 노트","footer.r3":"이전 버전",
-    "footer.cnb":"CNB 릴리스","footer.github":"GitHub 릴리스",
+    "footer.cnb":"CNB 다운로드","footer.github":"GitHub 예비",
     "footer.a1":"설치 파일 다운로드","footer.made":"Made for macOS and Windows"
   }
 };
@@ -909,13 +1116,36 @@ if(shots.length&&!reduced){
   window.addEventListener('scroll',()=>{
     requestAnimationFrame(()=>{
       shots.forEach(img=>{
+        if(img.closest('.showcase-row.expanded')){
+          img.style.setProperty('--shot-offset','0px');
+          return;
+        }
         const rect=img.getBoundingClientRect();
         if(rect.top<window.innerHeight&&rect.bottom>0){
-          img.style.transform=`translateY(${(rect.top+rect.height/2-window.innerHeight/2)*0.04}px)`;
+          img.style.setProperty('--shot-offset',`${(rect.top+rect.height/2-window.innerHeight/2)*0.04}px`);
         }
       });
     });
   },{passive:true});
+}
+
+// Pointer-following border light for feature cards.
+const glowCards=document.querySelectorAll('[data-glow-card]');
+const precisePointer=window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+if(glowCards.length&&precisePointer&&!reduced){
+  glowCards.forEach(card=>{
+    card.addEventListener('pointerenter',()=>{
+      card.style.setProperty('--glow-opacity','1');
+    });
+    card.addEventListener('pointermove',event=>{
+      const rect=card.getBoundingClientRect();
+      card.style.setProperty('--pointer-x',`${event.clientX-rect.left}px`);
+      card.style.setProperty('--pointer-y',`${event.clientY-rect.top}px`);
+    });
+    card.addEventListener('pointerleave',()=>{
+      card.style.setProperty('--glow-opacity','0');
+    });
+  });
 }
 
 // Hero shot enters automatically, then keeps a subtle floating motion.

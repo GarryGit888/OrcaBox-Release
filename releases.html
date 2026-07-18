@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OrcaBox 发行说明与历史版本</title>
+  <style>
+    :root{color-scheme:dark;--bg:#08111b;--panel:#101d2a;--line:#23384b;--text:#e9f3fb;--muted:#91a6b8;--accent:#55c7ff}
+    *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#122b3d 0,#08111b 52%);color:var(--text);font:16px/1.65 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",sans-serif}
+    a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}.shell{width:min(920px,calc(100% - 36px));margin:0 auto;padding:48px 0 80px}
+    .top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:56px}.brand{font-weight:700;font-size:20px;color:var(--text)}.back{border:1px solid var(--line);padding:7px 12px;border-radius:7px}
+    .eyebrow{color:var(--accent);font-size:13px;letter-spacing:.08em;text-transform:uppercase}.hero h1{font-size:clamp(2.2rem,6vw,4.4rem);line-height:1.05;margin:10px 0 18px;letter-spacing:-.02em}.hero p{color:var(--muted);max-width:650px;margin:0}
+    .release{margin-top:42px;background:rgba(16,29,42,.86);border:1px solid var(--line);border-radius:8px;padding:28px}.release-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;border-bottom:1px solid var(--line);padding-bottom:20px}.release h2{margin:0;font-size:28px}.date{color:var(--muted);white-space:nowrap}.summary{color:#c9d8e4;margin:20px 0 26px}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.group h3{font-size:15px;margin:0 0 8px;color:var(--accent)}.group ul{list-style:none;padding:0;margin:0}.group li{color:#d9e5ee;margin:7px 0}.group li::before{content:"+";color:var(--accent);margin-right:8px}
+    .areas{display:flex;flex-wrap:wrap;gap:7px;margin:24px 0 0}.area{border:1px solid var(--line);border-radius:5px;color:var(--muted);padding:3px 8px;font-size:13px}.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
+    .history{margin-top:56px}.history h2{font-size:22px}.history-list{display:grid;gap:14px}.history-card{border:1px solid var(--line);border-radius:7px;padding:18px}.history-card-head{display:flex;justify-content:space-between;gap:16px}.history-card h3{margin:0;font-size:18px}.history-card p{color:var(--muted);margin:8px 0 0}.history-card span{color:var(--muted);white-space:nowrap}
+    .empty{color:var(--muted);border:1px dashed var(--line);padding:20px;border-radius:7px}
+    @media(max-width:620px){.shell{width:min(100% - 24px,920px);padding-top:28px}.top{margin-bottom:38px}.release{padding:20px}.release-head{display:block}.date{display:block;margin-top:6px}.grid{grid-template-columns:1fr}.history-item{display:block}}
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <nav class="top"><a class="brand" href="index.html">OrcaBox</a><a class="back" href="index.html#updates">返回官网</a></nav>
+    <section class="hero">
+      <div class="eyebrow">Release notes</div>
+      <h1>发行说明<br>与历史版本</h1>
+      <p>记录每次版本的新增功能、体验优化、问题修复和跨平台发布信息。内容由版本发布任务从 Git 变更自动生成。</p>
+    </section>
+    <section id="latest"></section>
+    <section class="history">
+      <h2>历史版本</h2>
+      <div id="history-list" class="history-list"></div>
+    </section>
+  </main>
+  <script>
+    const latest = document.getElementById('latest')
+    const history = document.getElementById('history-list')
+    const labels = {features:'新增功能', improvements:'优化改进', fixes:'问题修复', engineering:'工程与文档'}
+    const esc = (value) => String(value ?? '')
+      .replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;')
+      .replaceAll('"','&quot;').replaceAll("'","&#039;")
+    const link = (url, label) => `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(label)}</a>`
+    const renderGroup = (key, changes) => {
+      const items = (changes || []).map((item) => `<li>${esc(item.text)}</li>`).join('')
+      return `<div class="group"><h3>${labels[key]}</h3><ul>${items || '<li>本版本无此类变更</li>'}</ul></div>`
+    }
+    fetch('releases.json', {cache:'no-store'})
+      .then((response) => response.json())
+      .then((data) => {
+        const releases = Array.isArray(data.releases) ? data.releases : []
+        const current = releases[0]
+        if (!current) {
+          latest.innerHTML = '<div class="empty">还没有发布文档。完成一次版本更新后运行 <code>npm run release:docs</code>。</div>'
+          history.innerHTML = '<div class="empty">暂无历史版本</div>'
+          return
+        }
+        latest.innerHTML = `<article id="${esc(current.tag)}" class="release">
+          <div class="release-head"><h2>${esc(current.title)}</h2><span class="date">${esc(current.date)}</span></div>
+          <p class="summary">${esc(current.summary)}</p>
+          <div class="grid">
+            ${renderGroup('features', current.categories.features)}
+            ${renderGroup('improvements', current.categories.improvements)}
+            ${renderGroup('fixes', current.categories.fixes)}
+            ${renderGroup('engineering', current.categories.engineering)}
+          </div>
+          <div class="areas">${(current.changedAreas || []).map((area) => `<span class="area">${esc(area.area)} · ${esc(area.count)} files</span>`).join('')}</div>
+          <div class="links">
+            ${link(current.links.cnbRelease, 'CNB 发行页')}
+            ${link(current.links.githubRelease, 'GitHub 备用发行页')}
+            ${link(current.links.cnb, 'CNB 源码')}
+            ${link(current.links.github, 'GitHub 源码')}
+            ${link(current.links.gitee, 'Gitee 源码')}
+          </div>
+        </article>`
+        history.innerHTML = releases.map((release) =>
+          `<article id="${esc(release.tag)}" class="history-card">
+            <div class="history-card-head"><h3>${esc(release.title)}</h3><span>${esc(release.date)}</span></div>
+            <p>${esc(release.summary)}</p>
+            <div class="links">${link(release.cnbRelease, 'CNB 发行页')} ${link(release.githubRelease, 'GitHub 备用发行页')}</div>
+          </article>`,
+        ).join('')
+      })
+      .catch(() => {
+        latest.innerHTML = '<div class="empty">发行记录暂时无法加载，请直接查看代码仓库中的 doc/release/versions/。</div>'
+      })
+  </script>
+</body>
+</html>
