@@ -2,7 +2,7 @@
 
 ## 1.1.2 - 2026-07-21
 
-完成 OrcaBox 1.1.2 macOS Apple Silicon 发布包。
+完成 OrcaBox 1.1.2 macOS Apple Silicon 与 Windows x64 发布包。
 
 ### 新增与改进
 
@@ -15,9 +15,9 @@
 ### 验证与已知说明
 
 - 94 个测试文件、719 个测试全部通过。
-- macOS DMG、ZIP 与 blockmap 均已生成并完成资源完整性检查。
+- macOS DMG、ZIP 与 Windows EXE、blockmap 均已生成并完成资源完整性检查。
 - macOS 安装包未使用 Developer ID 签名，尚未完成公证。
-- Windows 1.1.2 原生安装包需要在 Windows 主机重新构建；当前 Windows 最新包仍为 1.1.0。
+- Windows 安装包由 macOS 主机跨平台构建，未包含 Windows 系统分享原生插件；系统分享能力在该包中不可用。
 
 ## 1.0.0 - 2026-07-17
 
