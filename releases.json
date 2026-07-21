@@ -1,0 +1,153 @@
+{
+  "updatedAt": "2026-07-21",
+  "current": "1.1.2",
+  "releases": [
+    {
+      "version": "1.1.2",
+      "displayVersion": "1.1.2",
+      "date": "2026-07-21",
+      "tag": "v1.1.2",
+      "title": "OrcaBox 1.1.2",
+      "summary": "本版本围绕 新增功能、优化改进 持续完善素材管理、媒体预览与跨平台使用体验。",
+      "generatedFrom": {
+        "baseRef": "8cb0d1f01c0ead1e7d6cd52bfae54624db9576e7",
+        "branch": "1.1.2",
+        "commitCount": 4,
+        "changedFileCount": 125
+      },
+      "categories": {
+        "features": [
+          {
+            "text": "add standalone macOS Intel packaging",
+            "commit": "7c23f46",
+            "date": "2026-07-20"
+          },
+          {
+            "text": "finalize OrcaBox 1.1.0 release updates",
+            "commit": "a94241c",
+            "date": "2026-07-19"
+          }
+        ],
+        "improvements": [
+          {
+            "text": "optimize OrcaBox 1.1.0 media workflows",
+            "commit": "af1f217",
+            "date": "2026-07-18"
+          }
+        ],
+        "fixes": [],
+        "engineering": [
+          {
+            "text": "release: prepare OrcaBox 1.1.2",
+            "commit": "941328b",
+            "date": "2026-07-21"
+          }
+        ]
+      },
+      "changedAreas": [
+        {
+          "area": "src",
+          "count": 93
+        },
+        {
+          "area": "scripts",
+          "count": 11
+        },
+        {
+          "area": "doc",
+          "count": 5
+        },
+        {
+          "area": "resources",
+          "count": 5
+        },
+        {
+          "area": "website",
+          "count": 4
+        },
+        {
+          "area": ".gitignore",
+          "count": 1
+        },
+        {
+          "area": "electron-builder.mac-x64.yml",
+          "count": 1
+        },
+        {
+          "area": "electron-builder.yml",
+          "count": 1
+        },
+        {
+          "area": "extensions",
+          "count": 1
+        },
+        {
+          "area": "native",
+          "count": 1
+        },
+        {
+          "area": "package-lock.json",
+          "count": 1
+        },
+        {
+          "area": "package.json",
+          "count": 1
+        }
+      ],
+      "links": {
+        "cnb": "https://cnb.cool/garrykai/orcabox",
+        "github": "https://github.com/GarryGit888/lottiebox",
+        "gitee": "https://gitee.com/kaiyuwuu/lottiebox",
+        "cnbRelease": "https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.1.2",
+        "githubRelease": "https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.1.2"
+      }
+    },
+    {
+      "version": "1.1.0",
+      "displayVersion": "1.1",
+      "date": "2026-07-18",
+      "tag": "v1.1.0",
+      "title": "OrcaBox 1.1",
+      "summary": "本版本围绕 优化改进 持续完善素材管理、媒体预览与跨平台使用体验。",
+      "generatedFrom": {
+        "baseRef": "8cb0d1f01c0ead1e7d6cd52bfae54624db9576e7",
+        "branch": "codex/orcabox-1.1.0-development",
+        "commitCount": 1,
+        "changedFileCount": 10
+      },
+      "categories": {
+        "features": [],
+        "improvements": [
+          {
+            "text": "optimize OrcaBox 1.1.0 media workflows",
+            "commit": "af1f217",
+            "date": "2026-07-18"
+          }
+        ],
+        "fixes": [],
+        "engineering": []
+      },
+      "changedAreas": [
+        {
+          "area": "src",
+          "count": 8
+        },
+        {
+          "area": "package.json",
+          "count": 1
+        },
+        {
+          "area": "scripts",
+          "count": 1
+        }
+      ],
+      "links": {
+        "cnb": "https://cnb.cool/garrykai/orcabox",
+        "github": "https://github.com/GarryGit888/lottiebox",
+        "gitee": "https://gitee.com/kaiyuwuu/lottiebox",
+        "cnbRelease": "https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.1.0",
+        "githubRelease": "https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.1.0"
+      }
+    }
+  ]
+}

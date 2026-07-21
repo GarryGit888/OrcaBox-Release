@@ -12,12 +12,14 @@ OrcaBox 是面向创作者与创意团队的本地素材管理器，支持图片
 
 ## 下载
 
-当前版本：**1.0.0**
+当前 macOS 版本：**1.1.2**
 
 | 平台 | 系统要求 | 安装包 |
 | --- | --- | --- |
-| macOS Apple Silicon | macOS 12.0 或更高版本 | [CNB 下载 DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.0.0/OrcaBox-1.0.0-macOS-arm64.dmg) |
-| Windows x64 | Windows 10 或 Windows 11 | [CNB 下载 EXE](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.0.0/OrcaBox-1.0.0-Windows-x64.exe) |
+| macOS Apple Silicon | macOS 12.0 或更高版本 | [CNB 下载 DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.1.2/OrcaBox-1.1.2-macOS-arm64.dmg) |
+| Windows x64 | Windows 10 或 Windows 11 | [CNB 下载 EXE（1.1.0）](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.1.0/OrcaBox-1.1.0-Windows-x64.exe) |
+
+本次 `1.1.2` macOS 包已完成 Apple Silicon 构建、测试与资源完整性检查。Windows 原生打包必须在 Windows 主机执行，当前 Windows 最新可下载版本仍为 `1.1.0`。
 
 完整发行页面：
 
@@ -49,23 +51,23 @@ OrcaBox 是面向创作者与创意团队的本地素材管理器，支持图片
 ## 文件校验
 
 ```text
-OrcaBox-1.0.0-macOS-arm64.dmg
-SHA-256: 2de32e9f7229819050fab3994ce42e94e9b2e724e7a8ab38c1a8d0a7f0f10b56
+OrcaBox-1.1.2-macOS-arm64.dmg
+SHA-256: 2fe517f39b52cd8d0f68591caede9c3a295523623115adaa7274cc285cf5bfdf
 
-OrcaBox-1.0.0-Windows-x64.exe
-SHA-256: 7d0a01237a1740c585c5257fe4529332277a2ed92b3e6137cd9e3e8d8c216ce5
+OrcaBox-1.1.0-Windows-x64.exe
+SHA-256: 6c8353d6adefa4c960a148314df98bf44e42c2cee26e7a083ab49102f22864aa
 ```
 
 macOS 可使用以下命令校验：
 
 ```bash
-shasum -a 256 OrcaBox-1.0.0-macOS-arm64.dmg
+shasum -a 256 OrcaBox-1.1.2-macOS-arm64.dmg
 ```
 
 Windows PowerShell 可使用：
 
 ```powershell
-Get-FileHash .\OrcaBox-1.0.0-Windows-x64.exe -Algorithm SHA256
+Get-FileHash .\OrcaBox-1.1.0-Windows-x64.exe -Algorithm SHA256
 ```
 
 ## 仓库内容
