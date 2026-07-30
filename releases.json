@@ -1,7 +1,242 @@
 {
-  "updatedAt": "2026-07-21",
-  "current": "1.1.2",
+  "updatedAt": "2026-07-30",
+  "current": "1.2.1",
   "releases": [
+    {
+      "version": "1.2.1",
+      "displayVersion": "1.2.1",
+      "date": "2026-07-30",
+      "tag": "v1.2.1",
+      "title": "OrcaBox 1.2.1",
+      "summary": "本版本围绕 新增功能、优化改进、问题修复 持续完善素材管理、媒体预览与跨平台使用体验。",
+      "generatedFrom": {
+        "baseRef": "1.2",
+        "branch": "1.2.1",
+        "commitCount": 9,
+        "changedFileCount": 96
+      },
+      "categories": {
+        "features": [
+          {
+            "text": "ci: add Windows release packaging workflow",
+            "commit": "9e058dc",
+            "date": "2026-07-29"
+          }
+        ],
+        "improvements": [
+          {
+            "text": "Improve media preview and cross-platform playback behavior",
+            "commit": "fc5b5c3",
+            "date": "2026-07-29"
+          },
+          {
+            "text": "Improve OrcaBox desktop workflows and media handling",
+            "commit": "7720ca6",
+            "date": "2026-07-29"
+          }
+        ],
+        "fixes": [
+          {
+            "text": "define clipboard drop header locally",
+            "commit": "0baf645",
+            "date": "2026-07-29"
+          },
+          {
+            "text": "compile system share addon with current SDK",
+            "commit": "d3e37ff",
+            "date": "2026-07-29"
+          }
+        ],
+        "engineering": [
+          {
+            "text": "ci: stage LGPL Windows FFmpeg runtime",
+            "commit": "a0a6fab",
+            "date": "2026-07-29"
+          },
+          {
+            "text": "ci: use supported Windows runner for native builds",
+            "commit": "dd27729",
+            "date": "2026-07-29"
+          },
+          {
+            "text": "ci: tolerate platform optional dependencies",
+            "commit": "7da82cc",
+            "date": "2026-07-29"
+          },
+          {
+            "text": "Harden cross-platform media file operations",
+            "commit": "b002dd7",
+            "date": "2026-07-29"
+          }
+        ]
+      },
+      "changedAreas": [
+        {
+          "area": "src",
+          "count": 85
+        },
+        {
+          "area": "extensions",
+          "count": 4
+        },
+        {
+          "area": "doc",
+          "count": 2
+        },
+        {
+          "area": ".github",
+          "count": 1
+        },
+        {
+          "area": "native",
+          "count": 1
+        },
+        {
+          "area": "ORCABOX_DESIGN_SYSTEM_PROMPT.md",
+          "count": 1
+        },
+        {
+          "area": "package-lock.json",
+          "count": 1
+        },
+        {
+          "area": "package.json",
+          "count": 1
+        }
+      ],
+      "links": {
+        "cnb": "https://cnb.cool/garrykai/orcabox",
+        "github": "https://github.com/GarryGit888/Orcabox",
+        "gitee": "https://gitee.com/kaiyuwuu/lottiebox",
+        "cnbRelease": "https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.2.1",
+        "githubRelease": "https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.1"
+      }
+    },
+    {
+      "version": "1.2.0",
+      "displayVersion": "1.2",
+      "date": "2026-07-28",
+      "tag": "v1.2.0",
+      "title": "OrcaBox 1.2",
+      "summary": "本版本围绕素材网格稳定性、前后台恢复、原始视频播放和跨平台打包完整性持续完善使用体验。",
+      "generatedFrom": {
+        "baseRef": "1.1.2",
+        "branch": "1.2",
+        "commitCount": 10,
+        "changedFileCount": 254
+      },
+      "categories": {
+        "features": [
+          {
+            "text": "complete media workflow and desktop release updates",
+            "commit": "47de9ba",
+            "date": "2026-07-27"
+          },
+          {
+            "text": "finalize OrcaBox desktop workflow updates",
+            "commit": "0fbe4d4",
+            "date": "2026-07-27"
+          },
+          {
+            "text": "harden previews on slow disks and improve web/Lottie import",
+            "commit": "04e2bd6",
+            "date": "2026-07-25"
+          },
+          {
+            "text": "add app auto-update and refine preview, tags, and Resolve import",
+            "commit": "2e5e5ce",
+            "date": "2026-07-24"
+          },
+          {
+            "text": "finish FX timeline import, downloads, and undo coverage",
+            "commit": "147bf15",
+            "date": "2026-07-23"
+          },
+          {
+            "text": "expand workflows with FX library, archives, and downloads",
+            "commit": "13e0009",
+            "date": "2026-07-23"
+          },
+          {
+            "text": "improve asset workflows and desktop security",
+            "commit": "6c0b2da",
+            "date": "2026-07-22"
+          }
+        ],
+        "improvements": [],
+        "fixes": [
+          {
+            "text": "finalize asset panel drag and release links",
+            "commit": "e84c055",
+            "date": "2026-07-25"
+          },
+          {
+            "text": "prevent accidental asset panel file moves",
+            "commit": "10459bf",
+            "date": "2026-07-25"
+          },
+          {
+            "text": "align Windows window controls and shortcuts",
+            "commit": "54da887",
+            "date": "2026-07-22"
+          }
+        ],
+        "engineering": []
+      },
+      "changedAreas": [
+        {
+          "area": "src",
+          "count": 172
+        },
+        {
+          "area": "extensions",
+          "count": 5
+        },
+        {
+          "area": "plugins-dev",
+          "count": 5
+        },
+        {
+          "area": "scripts",
+          "count": 4
+        },
+        {
+          "area": "docs",
+          "count": 2
+        },
+        {
+          "area": "dev-app-update.yml",
+          "count": 1
+        },
+        {
+          "area": "electron-builder.mac-x64.yml",
+          "count": 1
+        },
+        {
+          "area": "electron-builder.yml",
+          "count": 1
+        },
+        {
+          "area": "package-lock.json",
+          "count": 1
+        },
+        {
+          "area": "package.json",
+          "count": 1
+        },
+        {
+          "area": "website",
+          "count": 1
+        }
+      ],
+      "links": {
+        "cnb": "https://cnb.cool/garrykai/orcabox",
+        "github": "https://github.com/GarryGit888/Orcabox",
+        "gitee": "https://gitee.com/kaiyuwuu/lottiebox",
+        "cnbRelease": "https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.2.0",
+        "githubRelease": "https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.0"
+      }
+    },
     {
       "version": "1.1.2",
       "displayVersion": "1.1.2",
@@ -96,7 +331,7 @@
       ],
       "links": {
         "cnb": "https://cnb.cool/garrykai/orcabox",
-        "github": "https://github.com/GarryGit888/lottiebox",
+        "github": "https://github.com/GarryGit888/Orcabox",
         "gitee": "https://gitee.com/kaiyuwuu/lottiebox",
         "cnbRelease": "https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.1.2",
         "githubRelease": "https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.1.2"
@@ -143,7 +378,7 @@
       ],
       "links": {
         "cnb": "https://cnb.cool/garrykai/orcabox",
-        "github": "https://github.com/GarryGit888/lottiebox",
+        "github": "https://github.com/GarryGit888/Orcabox",
         "gitee": "https://gitee.com/kaiyuwuu/lottiebox",
         "cnbRelease": "https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.1.0",
         "githubRelease": "https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.1.0"
