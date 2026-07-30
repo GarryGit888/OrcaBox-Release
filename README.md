@@ -6,21 +6,21 @@ OrcaBox 是面向创作者与创意团队的本地素材管理器，支持图片
 
 [访问 OrcaBox 在线官网](https://garrygit888.github.io/OrcaBox-Release/)
 
-官网由 GitHub Pages 提供公开访问，CNB 为主要下载源，GitHub Release 为备用镜像。
+官网由 GitHub Pages 提供公开访问，GitHub Release 当前提供可用下载，CNB 为同步镜像。
 
 ## OrcaBox 1.2.1 下载
 
 | 平台 | 安装包 |
 | --- | --- |
-| macOS Apple Silicon | [CNB DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.1/OrcaBox-1.2.1-arm64.dmg) |
-| Windows x64 | [CNB EXE](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.1/OrcaBox%20Setup%201.2.1.exe) |
+| macOS Apple Silicon | [GitHub DMG](https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.1/OrcaBox-1.2.1-arm64.dmg) |
+| Windows x64 | [GitHub EXE](https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.1/OrcaBox.Setup.1.2.1.exe) |
 
 完整包（macOS Intel、Portable、更新清单和校验文件）请访问：
 
 - [CNB Releases](https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.2.1)
 - [GitHub Releases](https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.1)
 
-当前 macOS 安装包为未签名测试包，首次打开可能需要在系统设置中允许打开。Windows 1.2.1 安装器已生成，但 Portable 包和完整 Windows 分发门禁尚未完成，暂按测试安装器发布。
+当前 macOS 安装包为未签名测试包，首次打开可能需要在系统设置中允许打开。Windows 1.2.1 安装器已生成，但 Portable 包和完整 Windows 分发门禁尚未完成，暂按测试安装器发布。CNB 附件镜像待补充发行权限后同步。
 
 ## 主要能力
 
