@@ -67,6 +67,7 @@
           <div class="links">
             ${link(current.links.cnbRelease, 'CNB 发行页')}
             ${link(current.links.githubRelease, 'GitHub 备用发行页')}
+            ${link(current.links.browserExtension, 'Chrome 浏览器插件')}
             ${link(current.links.cnb, 'CNB 源码')}
             ${link(current.links.github, 'GitHub 源码')}
             ${link(current.links.gitee, 'Gitee 源码')}
@@ -76,7 +77,7 @@
           `<article id="${esc(release.tag)}" class="history-card">
             <div class="history-card-head"><h3>${esc(release.title)}</h3><span>${esc(release.date)}</span></div>
             <p>${esc(release.summary)}</p>
-            <div class="links">${link(release.cnbRelease, 'CNB 发行页')} ${link(release.githubRelease, 'GitHub 备用发行页')}</div>
+            <div class="links">${link(release.cnbRelease, 'CNB 发行页')} ${link(release.githubRelease, 'GitHub 备用发行页')} ${link(release.browserExtension, 'Chrome 浏览器插件')}</div>
           </article>`,
         ).join('')
       })

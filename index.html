@@ -4,11 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="OrcaBox — 面向创意团队的专业本地素材管理器 40+ 格式预览 Lottie 工作流 AI 分析">
+<meta name="theme-color" content="#08080d">
 <title>OrcaBox — 专业本地素材管理器</title>
+<link rel="canonical" href="https://orcabox.app/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://orcabox.app/">
+<meta property="og:title" content="OrcaBox — 专业本地素材管理器">
+<meta property="og:description" content="本地素材索引 零复制直链 40+格式预览 多路径管理">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://orcabox.app/assets/product-1.2.1-hero.webp">
 <link rel="icon" type="image/png" href="assets/orcabox-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;450;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -44,8 +52,8 @@ a{color:inherit;text-decoration:none}
 .h1{font-size:clamp(3.5rem,11vw,8.5rem);font-weight:700;letter-spacing:-0.05em;line-height:0.94;text-wrap:balance;word-break:auto-phrase}
 .h2{font-size:clamp(1.8rem,3.5vw,2.75rem);font-weight:700;letter-spacing:-0.03em;line-height:1.12;text-wrap:balance;word-break:auto-phrase}
 .h3{font-size:clamp(1.4rem,2.5vw,1.8rem);font-weight:600;letter-spacing:-0.025em;line-height:1.2;text-wrap:balance;word-break:auto-phrase}
-.body-l{font-size:1.0625rem;line-height:1.7;color:var(--text-2);font-weight:410;text-wrap:pretty;word-break:auto-phrase}
-.body{font-size:0.9375rem;line-height:1.65;color:var(--text-2);font-weight:410;text-wrap:pretty;word-break:auto-phrase}
+.body-l{font-size:1.0625rem;line-height:1.7;color:var(--text-2);font-weight:400;text-wrap:pretty;word-break:auto-phrase}
+.body{font-size:0.9375rem;line-height:1.65;color:var(--text-2);font-weight:400;text-wrap:pretty;word-break:auto-phrase}
 .caption{font-size:0.8125rem;color:var(--text-3)}
 .label{font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;color:var(--accent)}
 .mono{font-family:var(--font-mono);font-size:0.8125rem}
@@ -63,10 +71,11 @@ a{color:inherit;text-decoration:none}
 .nav-brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:0.9375rem;letter-spacing:-0.02em;color:var(--text)}
 .nav-brand img{width:28px;height:28px;border-radius:7px;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,0.35)}
 .nav-links{display:flex;align-items:center;gap:var(--s-8);list-style:none}
-.nav-links a{font-size:0.8125rem;font-weight:480;color:var(--text-2);transition:color 0.2s;position:relative;padding:4px 0}
+.nav-links a{font-size:0.8125rem;font-weight:500;color:var(--text-2);transition:color 0.2s;position:relative;padding:4px 0}
 .nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1.5px;background:var(--accent);border-radius:1px;transition:width 0.3s var(--ease)}
 .nav-links a:hover{color:var(--text)}
 .nav-links a:hover::after{width:100%}
+.nav-brand:focus-visible,.nav-links a:focus-visible,.lang-btn:focus-visible,.lang-option:focus-visible,.btn:focus-visible,.download-mirror:focus-visible,.footer-col a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .nav-actions{display:flex;align-items:center;gap:var(--s-2)}
 .repo-shortcuts{display:flex;align-items:center;gap:4px}
 .repo-link{width:34px;height:34px;border:1px solid var(--border);border-radius:var(--radius-sm);display:inline-flex;align-items:center;justify-content:center;color:var(--text-2);transition:color 0.2s,border-color 0.2s,background-color 0.2s,transform 0.2s var(--ease)}
@@ -123,7 +132,7 @@ a{color:inherit;text-decoration:none}
 .hero-shot-wrap{position:relative;width:min(95vw,1540px);max-width:1540px;margin:0 auto;z-index:1;overflow:visible;transform:translateY(52px)}
 .hero-shot-wrap::before{content:'';position:absolute;inset:-16px;border-radius:calc(var(--radius-lg) + 16px);background:radial-gradient(ellipse at center,var(--accent-dim) 0%,transparent 70%);opacity:0;transition:opacity 0.5s var(--ease);pointer-events:none;z-index:0}
 .hero-shot-wrap:hover::before{opacity:1}
-.hero-shot{width:100%;border-radius:var(--radius-lg);box-shadow:var(--shadow-xl);border:1px solid var(--border-subtle);will-change:transform,opacity;transform-origin:center bottom;opacity:0;transform:translateY(56px) scale(0.965);transition:opacity 1s var(--ease),transform 1s var(--ease),box-shadow 0.5s var(--ease),filter 0.5s var(--ease);position:relative;z-index:1}
+.hero-shot{width:100%;height:auto;border-radius:var(--radius-lg);box-shadow:var(--shadow-xl);border:1px solid var(--border-subtle);will-change:transform,opacity;transform-origin:center bottom;opacity:0;transform:translateY(56px) scale(0.965);transition:opacity 1s var(--ease),transform 1s var(--ease),box-shadow 0.5s var(--ease),filter 0.5s var(--ease);position:relative;z-index:1}
 .hero-shot.ready{opacity:1;transform:translateY(0) scale(1);animation:hero-float 7s ease-in-out 1s infinite}
 .hero-shot-wrap:hover .hero-shot{box-shadow:0 0 70px var(--accent-dim),0 24px 80px rgba(0,0,0,0.5);filter:brightness(1.05)}
 @keyframes hero-float{0%,100%{translate:0 0}33%{translate:0 -10px}66%{translate:0 6px}}
@@ -144,7 +153,7 @@ a{color:inherit;text-decoration:none}
 .stat:hover .stat-val{transform:scale(1.08)}
 .stat:last-child{border-right:none}
 .stat-val{font-size:2rem;font-weight:700;letter-spacing:-0.03em;color:var(--accent);line-height:1;margin-bottom:var(--s-1);transition:transform 0.3s var(--ease)}
-.stat-label{font-size:0.8125rem;color:var(--text-3);font-weight:450}
+.stat-label{font-size:0.8125rem;color:var(--text-3);font-weight:400}
 
 .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s-4)}
 .f-card{padding:var(--s-8);border-radius:var(--radius-lg);border:1px solid var(--border-subtle);background:var(--bg-raised);transition:all 0.4s var(--ease)}
@@ -203,7 +212,7 @@ a{color:inherit;text-decoration:none}
 .feature-panel>*{position:relative;z-index:1}
 .feature-panel-copy{padding:var(--s-8) var(--s-8) var(--s-6)}
 .feature-kicker{display:block;margin-bottom:var(--s-3);font-family:var(--font-mono);font-size:0.6875rem;font-weight:500;line-height:1.2;letter-spacing:0.08em;text-transform:uppercase;color:#7db4ff}
-.feature-panel h3{margin-bottom:var(--s-2);font-size:1.25rem;font-weight:650;line-height:1.25;letter-spacing:-0.025em;text-wrap:balance;word-break:auto-phrase}
+.feature-panel h3{margin-bottom:var(--s-2);font-size:1.25rem;font-weight:600;line-height:1.25;letter-spacing:-0.025em;text-wrap:balance;word-break:auto-phrase}
 .feature-panel p{max-width:48ch;font-size:0.8125rem;line-height:1.65;color:var(--text-2);text-wrap:pretty;word-break:auto-phrase}
 .feature-media{position:relative;flex:none;overflow:hidden;margin:auto 18px 18px;border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius-md);background:#0b0b10;box-shadow:0 18px 42px rgba(0,0,0,0.28)}
 .feature-media::after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(255,255,255,0.04),transparent 18%);box-shadow:inset 0 1px 0 rgba(255,255,255,0.05)}
@@ -220,8 +229,9 @@ a{color:inherit;text-decoration:none}
 .feature-panel-medium .feature-media{height:285px}
 .feature-panel-small{grid-column:span 6;min-height:430px}
 .feature-panel-small .feature-media{height:260px}
-.feature-panel-convert .feature-media img{object-position:50% 18%}
-.feature-panel-davinci .feature-media img{object-position:50% 14%}
+.feature-panel-wide .feature-media img{object-fit:contain;padding:12px 18px;background:#0b0b10}
+.feature-panel-convert .feature-media img{object-fit:contain;object-position:center;padding:12px 18px;background:#0b0b10}
+.feature-panel-davinci .feature-media img{object-position:50% 100%}
 .feature-panel-text{justify-content:space-between;min-height:240px}
 .feature-panel-text .feature-panel-copy{padding-bottom:var(--s-8)}
 .feature-panel-text .tag-row{margin-top:var(--s-4)}
@@ -287,11 +297,24 @@ a{color:inherit;text-decoration:none}
 .download-block h2{margin-bottom:var(--s-3)}
 .download-block .body{margin-bottom:var(--s-8)}
 .download-actions{display:flex;align-items:center;justify-content:center;gap:var(--s-3);flex-wrap:wrap}
+.download-mac-group{display:flex;align-items:center;gap:var(--s-2);flex-wrap:wrap;justify-content:center}
+.download-arch{display:inline-flex;align-items:center;gap:6px;height:46px;padding:0 10px;border:1px solid var(--border);border-radius:var(--radius-md);background:var(--bg-raised);color:var(--text-2);font-size:0.75rem;white-space:nowrap}
+.download-arch select{border:0;background:transparent;color:var(--text);font:inherit;outline:0;cursor:pointer}
+.download-arch select option{background:var(--bg-raised);color:var(--text)}
+.download-detected{width:100%;margin-top:var(--s-2);font-size:0.75rem;color:var(--text-3)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .download-meta{display:flex;align-items:center;justify-content:center;gap:var(--s-4);margin-top:var(--s-4);font-size:0.8125rem;color:var(--text-3)}
-.download-meta span{display:flex;align-items:center;gap:var(--s-1)}
+.download-meta span{display:flex;align-items:center;gap:var(--s-1);white-space:nowrap}
 .download-mirror{display:inline-flex;align-items:center;gap:6px;margin-top:var(--s-3);font-size:0.75rem;color:var(--text-3);transition:color 0.2s}
 .download-mirror img{width:15px;height:15px;filter:grayscale(1) brightness(2.4)}
 .download-mirror:hover{color:var(--accent)}
+.download-extension{max-width:640px;margin:0 auto;padding:0 0 var(--s-16);text-align:center}
+.download-extension-inner{padding-top:var(--s-8);border-top:1px solid var(--border-subtle)}
+.download-extension .label{margin-bottom:var(--s-3)}
+.download-extension h3{margin-bottom:var(--s-2);font-size:1.125rem}
+.download-extension .body{max-width:520px;margin:0 auto var(--s-5);color:var(--text-2)}
+.download-extension-actions{display:flex;align-items:center;justify-content:center;gap:var(--s-3);flex-wrap:wrap}
+.download-extension-meta{margin-top:var(--s-3);font-size:0.75rem;color:var(--text-3)}
 
 .cta-block{text-align:center;padding:var(--s-24) 0;border-top:1px solid var(--border-subtle)}
 .cta-block .label{margin-bottom:var(--s-4)}
@@ -372,11 +395,15 @@ a{color:inherit;text-decoration:none}
   .nav-inner{padding:0 var(--s-4)}
   .hero-text{padding-top:var(--s-3);margin-bottom:var(--s-8)}
   .hero-text h1{font-size:2.25rem;white-space:normal}
-  .hero-text .body-l{font-size:0.75rem;line-height:1.5}
+  .hero-text .body-l{font-size:0.75rem;line-height:1.5;white-space:normal;max-width:30ch}
   .hero-eyebrow{font-size:0.625rem}
   .features-grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr}
   .download-actions{padding:0 var(--s-4)}
   .download-actions .btn{width:100%;max-width:280px}
+  .download-mac-group{width:100%;flex-direction:column}
+  .download-mac-group .btn,.download-arch{width:100%;max-width:280px}
+  .download-arch{justify-content:center}
+  .download-meta{flex-wrap:wrap;gap:var(--s-2) var(--s-3);padding:0 var(--s-4)}
   .cta-actions{padding:0 var(--s-4)}
   .cta-actions .btn{width:100%;max-width:280px}
   .footer-grid{grid-template-columns:1fr;gap:var(--s-8)}
@@ -409,7 +436,7 @@ a{color:inherit;text-decoration:none}
 
 <nav class="nav" id="nav">
   <div class="nav-inner">
-    <a href="#" class="nav-brand">
+    <a href="#hero" class="nav-brand">
       <img src="assets/orcabox-icon.png" alt="" width="28" height="28">
       OrcaBox
     </a>
@@ -422,19 +449,19 @@ a{color:inherit;text-decoration:none}
     </ul>
     <div class="nav-actions">
       <div class="repo-shortcuts" aria-label="Code repositories">
-        <a href="https://cnb.cool/garrykai/orcabox-release" target="_blank" rel="noopener noreferrer" class="repo-link" aria-label="Open OrcaBox downloads on CNB" title="CNB Download"><img src="assets/cnb.svg" alt=""></a>
+        <a href="https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.2.1" target="_blank" rel="noopener noreferrer" class="repo-link" aria-label="Open OrcaBox v1.2.1 release on CNB" title="CNB Release"><img src="assets/cnb.svg" alt=""></a>
         <a href="https://github.com/GarryGit888/OrcaBox-Release" target="_blank" rel="noopener noreferrer" class="repo-link repo-link-github" aria-label="Open OrcaBox backup downloads on GitHub" title="GitHub Backup Download"><img src="assets/github.svg" alt=""></a>
       </div>
       <div class="lang-switch">
-        <button class="lang-btn" id="langBtn" aria-label="Switch language">
+        <button class="lang-btn" id="langBtn" type="button" aria-label="Switch language" aria-haspopup="menu" aria-expanded="false" aria-controls="langDrop">
           <span id="langLabel">中</span>
           <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 6 8 10 12 6"/></svg>
         </button>
-        <div class="lang-drop" id="langDrop">
-          <button class="lang-option" data-lang="zh">🇨🇳 中文</button>
-          <button class="lang-option" data-lang="en">🇺🇸 English</button>
-          <button class="lang-option" data-lang="ja">🇯🇵 日本語</button>
-          <button class="lang-option" data-lang="ko">🇰🇷 한국어</button>
+        <div class="lang-drop" id="langDrop" role="menu" aria-label="Languages" aria-hidden="true">
+          <button class="lang-option" type="button" role="menuitem" data-lang="zh">🇨🇳 中文</button>
+          <button class="lang-option" type="button" role="menuitem" data-lang="en">🇺🇸 English</button>
+          <button class="lang-option" type="button" role="menuitem" data-lang="ja">🇯🇵 日本語</button>
+          <button class="lang-option" type="button" role="menuitem" data-lang="ko">🇰🇷 한국어</button>
         </div>
       </div>
       <a href="#download" class="btn btn-primary" data-i18n="nav.downloadBtn">下载</a>
@@ -442,6 +469,7 @@ a{color:inherit;text-decoration:none}
   </div>
 </nav>
 
+<main id="main-content">
 <section class="hero" id="hero">
   <div class="hero-bg-img"><img src="assets/product-1.2.1-hero.webp" alt="" aria-hidden="true"></div>
   <div class="hero-floaters">
@@ -449,7 +477,7 @@ a{color:inherit;text-decoration:none}
     <div class="floater-ring floater-ring-1"></div><div class="floater-ring floater-ring-2"></div>
   </div>
   <div class="hero-text">
-    <span class="hero-eyebrow hero-entrance" data-i18n="hero.eyebrow">OrcaBox 1.2.1 · 本地优先</span>
+    <span class="hero-eyebrow hero-entrance" data-i18n="hero.eyebrow">OrcaBox本地素材管家</span>
     <h1 class="h1 hero-entrance hero-entrance-title"><span data-i18n="hero.title1">为创作而生</span><br><em data-i18n="hero.title2">全能素材聚合管理</em></h1>
     <p class="body-l hero-entrance hero-entrance-desc" data-i18n="hero.desc">本地素材索引 零复制直链 40+格式预览 多路径管理</p>
     <div class="hero-cta hero-entrance hero-entrance-cta">
@@ -460,7 +488,7 @@ a{color:inherit;text-decoration:none}
     </div>
   </div>
   <div class="hero-shot-wrap" id="heroShotWrap">
-    <img class="hero-shot" id="heroShot" src="assets/product-1.2.1-hero.webp" alt="OrcaBox 1.2.1 图片壁纸预览" loading="eager">
+    <img class="hero-shot" id="heroShot" src="assets/product-1.2.1-hero.webp" alt="OrcaBox 1.2.1 图片壁纸预览" width="1800" height="1153" loading="eager" fetchpriority="high" decoding="async">
   </div>
 </section>
 
@@ -505,8 +533,8 @@ a{color:inherit;text-decoration:none}
       </div>
     </div>
     <div class="showcase-row" data-reveal>
-      <div class="shot-wrap">
-        <img src="assets/iShot_2026-06-25_13.58.38.webp" alt="OrcaBox 动效资产管理" loading="lazy">
+        <div class="shot-wrap">
+          <img src="assets/product-1.2.1-lottie.gif" alt="OrcaBox Lottie 与 JSON 动效资产实时预览" loading="lazy" decoding="async">
       </div>
       <div class="showcase-info">
         <span class="label" data-i18n="s3.label">动效资产管理</span>
@@ -580,7 +608,7 @@ a{color:inherit;text-decoration:none}
       <article class="feature-panel feature-panel-small feature-panel-davinci" data-glow-card data-reveal data-reveal-delay="1">
         <div class="feature-panel-copy">
           <span class="feature-kicker">DaVinci Resolve</span>
-          <h3 data-i18n="f6.title">素材直达 DaVinci Resolve</h3>
+          <h3 data-i18n="f6.title">素材直达剪辑软件</h3>
           <p data-i18n="f6.desc">导入媒体池或当前时间线 减少软件间往返</p>
         </div>
         <div class="feature-media"><img src="assets/product-1.2.1-timeline.webp" alt="OrcaBox 1.2.1 视频播放快速导入时间线" loading="lazy"></div>
@@ -714,19 +742,45 @@ a{color:inherit;text-decoration:none}
     <div class="download-block" data-reveal>
       <span class="label" data-i18n="dl.label">下载</span>
       <h2 class="h2" data-i18n="dl.title">OrcaBox 1.2.1</h2>
-      <p class="body" data-i18n="dl.desc">提供 macOS Apple Silicon 与 Windows x64 安装包 CNB 优先提供下载</p>
+      <p class="body" data-i18n="dl.desc">提供 Apple Silicon 与 Intel Mac、Windows x64 安装包 CNB 优先提供下载</p>
       <div class="download-actions">
-        <a href="https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.1/OrcaBox-1.2.1-arm64.dmg" class="btn btn-primary btn-lg" data-i18n="dl.mac">
-          下载 macOS DMG
-        </a>
-        <a href="https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.1/OrcaBox.Setup.1.2.1.exe" class="btn btn-secondary btn-lg" data-i18n="dl.win">
+        <div class="download-mac-group">
+          <a id="macDownload" href="https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.1/OrcaBox-1.2.1-arm64.dmg" class="btn btn-primary btn-lg" data-i18n="dl.mac">
+            下载 macOS DMG
+          </a>
+          <label class="download-arch">
+            <span class="sr-only" data-i18n="dl.archLabel">选择 Mac 芯片</span>
+            <select id="macArchSelect" aria-label="Mac architecture">
+              <option value="auto" data-i18n="dl.archAuto">自动识别</option>
+              <option value="arm64" data-i18n="dl.archArm">Apple Silicon</option>
+              <option value="x64" data-i18n="dl.archIntel">Intel</option>
+            </select>
+          </label>
+          <span id="macDetected" class="download-detected" aria-live="polite"></span>
+        </div>
+        <a href="https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.1/OrcaBox%20Setup%201.2.1.exe" class="btn btn-secondary btn-lg" data-i18n="dl.win">
           下载 Windows EXE
         </a>
       </div>
       <div class="download-meta">
-        <span>macOS 12.0+</span><span>&middot;</span><span>Apple Silicon</span><span>&middot;</span><span>Windows 10/11</span><span>&middot;</span><span data-i18n="dl.free">免费下载</span>
+        <span>macOS 12.0+</span><span>&middot;</span><span>Apple Silicon / Intel</span><span>&middot;</span><span>Windows 10/11</span><span>&middot;</span><span data-i18n="dl.free">免费下载</span>
       </div>
-      <a href="https://github.com/GarryGit888/OrcaBox-Release/releases" target="_blank" rel="noopener noreferrer" class="download-mirror"><img src="assets/github.svg" alt=""><span data-i18n="dl.mirror">GitHub 备用下载</span></a>
+      <a href="https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.2.1" target="_blank" rel="noopener noreferrer" class="download-mirror"><img src="assets/cnb.svg" alt=""><span data-i18n="dl.mirror">CNB Release 下载</span></a>
+    </div>
+    <div class="download-extension" data-reveal>
+      <div class="download-extension-inner">
+        <span class="label" data-i18n="dl.extensionLabel">浏览器插件</span>
+        <h3 data-i18n="dl.extensionTitle">OrcaBox Chrome 插件</h3>
+        <p class="body" data-i18n="dl.extensionDesc">在网页中快速收集图片、视频、Lottie 和素材链接，发送到本地 OrcaBox。</p>
+        <div class="download-extension-actions">
+          <a href="https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.1/OrcaBox-Chrome-Extension-1.2.1.zip" class="btn btn-secondary" data-i18n="dl.extensionDownload">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            下载 Chrome 插件 ZIP
+          </a>
+          <a href="https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.1" target="_blank" rel="noopener noreferrer" class="download-mirror" data-i18n="dl.extensionRelease">查看插件发行页</a>
+        </div>
+        <div class="download-extension-meta" data-i18n="dl.extensionMeta">v1.2.1 · 解压后在 Chrome 扩展程序页面加载</div>
+      </div>
     </div>
   </div>
 </section>
@@ -741,22 +795,23 @@ a{color:inherit;text-decoration:none}
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/></svg>
         下载 macOS 版
       </a>
-      <a href="https://cnb.cool/garrykai/orcabox-release" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg btn-repository"><img src="assets/cnb.svg" alt=""><span data-i18n="cta.cnb">CNB 下载</span></a>
-      <a href="https://github.com/GarryGit888/OrcaBox-Release" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg btn-repository btn-repository-github"><img src="assets/github.svg" alt=""><span data-i18n="cta.github">GitHub 备用下载</span></a>
+      <a href="https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.2.1" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg btn-repository"><img src="assets/cnb.svg" alt=""><span data-i18n="cta.cnb">CNB Release 下载</span></a>
+      <a href="https://github.com/GarryGit888/OrcaBox-Release" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg btn-repository btn-repository-github"><img src="assets/github.svg" alt=""><span data-i18n="cta.github">GitHub 下载</span></a>
     </div>
   </div>
 </div>
+</main>
 
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="#" class="nav-brand"><img src="assets/orcabox-icon.png" alt="" width="28" height="28">OrcaBox</a>
+        <a href="#hero" class="nav-brand"><img src="assets/orcabox-icon.png" alt="" width="28" height="28">OrcaBox</a>
         <p data-i18n="footer.desc">面向创意团队的专业本地索引多格式素材管理器</p>
       </div>
       <div class="footer-col"><h5 data-i18n="footer.product">产品</h5><ul><li><a href="#features" data-i18n="footer.f1">功能</a></li><li><a href="#showcase" data-i18n="footer.f2">展示</a></li><li><a href="#capabilities" data-i18n="footer.f3">能力</a></li><li><a href="#download" data-i18n="footer.f4">下载</a></li></ul></div>
       <div class="footer-col"><h5 data-i18n="footer.resources">资源</h5><ul><li><a href="https://cnb.cool/garrykai/orcabox-release" target="_blank" rel="noopener noreferrer" data-i18n="footer.r1">使用说明</a></li><li><a href="releases.html#latest" data-i18n="footer.r2">发行说明</a></li><li><a href="releases.html#history" data-i18n="footer.r3">历史版本</a></li></ul></div>
-      <div class="footer-col"><h5 data-i18n="footer.about">下载来源</h5><ul><li><a href="https://cnb.cool/garrykai/orcabox-release" target="_blank" rel="noopener noreferrer" data-i18n="footer.cnb">CNB 下载</a></li><li><a href="https://github.com/GarryGit888/OrcaBox-Release" target="_blank" rel="noopener noreferrer" data-i18n="footer.github">GitHub 备用下载</a></li><li><a href="https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.2.1" target="_blank" rel="noopener noreferrer" data-i18n="footer.a1">下载安装包</a></li></ul></div>
+      <div class="footer-col"><h5 data-i18n="footer.about">下载来源</h5><ul><li><a href="https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.2.1" target="_blank" rel="noopener noreferrer" data-i18n="footer.cnb">CNB Release 下载</a></li><li><a href="https://github.com/GarryGit888/OrcaBox-Release" target="_blank" rel="noopener noreferrer" data-i18n="footer.github">GitHub 备用下载</a></li><li><a href="https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.2.1" target="_blank" rel="noopener noreferrer" data-i18n="footer.a1">下载安装包</a></li></ul></div>
     </div>
     <div class="footer-bottom"><span>&copy; 2024-2026 OrcaBox. All rights reserved.</span><span data-i18n="footer.made">Made for macOS and Windows</span></div>
   </div>
@@ -767,7 +822,7 @@ a{color:inherit;text-decoration:none}
 const i18n={
   zh:{
     "nav.features":"功能","nav.showcase":"展示","nav.capabilities":"能力","nav.updates":"更新","nav.download":"下载","nav.downloadBtn":"下载",
-    "hero.eyebrow":"OrcaBox 1.2.1 · 本地优先",
+    "hero.eyebrow":"OrcaBox本地素材管家",
     "hero.title1":"为创作而生","hero.title2":"全能素材聚合管理",
     "hero.desc":"本地素材索引 零复制直链 40+格式预览 多路径管理",
     "hero.cta":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/><line x1=\"12\" y1=\"15\" x2=\"12\" y2=\"3\"/></svg> 免费下载",
@@ -779,7 +834,7 @@ const i18n={
     "f3.title":"跨目录归集 不移动原文件","f3.desc":"按项目组织素材 封面 数量 顺序一目了然",
     "f4.title":"本地智能抠图","f4.desc":"自动识别主体 支持阈值、羽化、手动修边",
     "f5.title":"常用格式一键转换","f5.desc":"WebP、JPEG、PNG、AVIF、TIFF 批量处理",
-    "f6.title":"素材直达 DaVinci Resolve","f6.desc":"导入媒体池或当前时间线 减少软件间往返",
+    "f6.title":"素材直达剪辑软件","f6.desc":"导入媒体池或当前时间线 减少软件间往返",
     "showcase.label":"多格式预览","showcase.title":"多格式素材 一屏预览","showcase.desc":"图片、音频、动效、3D 一体预览 点击画面即可展开",
     "s1.label":"图片预览","s1.title":"高清大图 · 沉浸预览","s1.desc":"PSD、HEIC、WebP、AVIF、TIFF 等专业格式原生支持 内嵌色彩分析面板 查看色板分布、直方图与 EXIF 元数据",
     "s2.label":"音频预览","s2.title":"波形可视化 · 音频素材库","s2.desc":"MP3、WAV、FLAC、AAC 原生支持 自动生成音频波形图与频谱分析 支持播放预览与批量标签管理",
@@ -803,21 +858,22 @@ const i18n={
     "w2.title":"自动索引","w2.desc":"生成缩略图 提取元数据 分析色彩 实时监听变化 自动同步",
     "w3.title":"预览与组织","w3.desc":"40+ 格式即时预览 标签、合集、评分 建立素材知识库",
     "w4.title":"拖拽导出","w4.desc":"直拖到设计工具或浏览器 支持批量、壁纸设置、字体安装",
-    "dl.label":"下载","dl.title":"OrcaBox 1.2.1","dl.desc":"提供 macOS Apple Silicon 与 Windows x64 安装包 CNB 优先提供下载",
-    "dl.mac":"下载 macOS DMG","dl.win":"下载 Windows EXE","dl.free":"免费下载","dl.mirror":"GitHub 备用下载",
+    "dl.label":"下载","dl.title":"OrcaBox 1.2.1","dl.desc":"提供 Apple Silicon 与 Intel Mac、Windows x64 安装包 CNB 优先提供下载",
+    "dl.extensionLabel":"浏览器插件","dl.extensionTitle":"OrcaBox Chrome 插件","dl.extensionDesc":"在网页中快速收集图片、视频、Lottie 和素材链接，发送到本地 OrcaBox。","dl.extensionDownload":"下载 Chrome 插件 ZIP","dl.extensionRelease":"查看插件发行页","dl.extensionMeta":"v1.2.1 · 解压后在 Chrome 扩展程序页面加载",
+    "dl.mac":"下载 macOS DMG","dl.win":"下载 Windows EXE","dl.free":"免费下载","dl.mirror":"CNB Release 下载","dl.archLabel":"选择 Mac 芯片","dl.archAuto":"自动识别","dl.archArm":"Apple Silicon","dl.archIntel":"Intel","dl.archDetected":"已自动选择","dl.archDefault":"默认选择","dl.archSelected":"当前选择","dl.archManual":"可手动切换",
     "cta.label":"开始使用","cta.title":"准备好管理你的创意资产了吗","cta.desc":"下载 OrcaBox 体验专业级本地素材管理",
     "cta.dl":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/></svg> 下载 macOS 版",
-    "cta.cnb":"CNB 下载","cta.github":"GitHub 备用下载",
+    "cta.cnb":"CNB Release 下载","cta.github":"GitHub 备用下载",
     "footer.desc":"面向创意团队的专业本地索引多格式素材管理器",
     "footer.product":"产品","footer.resources":"资源","footer.about":"下载来源",
     "footer.f1":"功能","footer.f2":"展示","footer.f3":"能力","footer.f4":"下载",
     "footer.r1":"使用说明","footer.r2":"发行说明","footer.r3":"历史版本",
-    "footer.cnb":"CNB 下载","footer.github":"GitHub 备用下载",
+    "footer.cnb":"CNB Release 下载","footer.github":"GitHub 备用下载",
     "footer.a1":"下载安装包","footer.made":"Made for macOS and Windows"
   },
   en:{
     "nav.features":"Features","nav.showcase":"Showcase","nav.capabilities":"Capabilities","nav.updates":"Updates","nav.download":"Download","nav.downloadBtn":"Download",
-    "hero.eyebrow":"OrcaBox 1.2.1 · Local-first",
+    "hero.eyebrow":"OrcaBox Local Asset Manager",
     "hero.title1":"Creative Assets","hero.title2":"Managed Locally",
     "hero.desc":"Zero-copy local assets, 40+ previews, on-device AI.",
     "hero.cta":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/><line x1=\"12\" y1=\"15\" x2=\"12\" y2=\"3\"/></svg> Download for macOS",
@@ -829,7 +885,7 @@ const i18n={
     "f3.title":"Group across folders, move nothing","f3.desc":"Organize by project with clear covers, counts, and ordering.",
     "f4.title":"Local smart cutout","f4.desc":"Detect subjects automatically, then refine thresholds, feathering, and edges.",
     "f5.title":"Convert common formats in one step","f5.desc":"Batch WebP, JPEG, PNG, AVIF, and TIFF conversion.",
-    "f6.title":"Send assets to DaVinci Resolve","f6.desc":"Import into the media pool or current timeline with fewer handoffs.",
+    "f6.title":"Send assets to editing software","f6.desc":"Import into the media pool or current timeline with fewer handoffs.",
     "showcase.label":"Multi-format Preview","showcase.title":"Every format in one preview flow","showcase.desc":"Images, audio, motion, and 3D stay connected in one browsing surface.",
     "s1.label":"Image Preview","s1.title":"High-resolution immersive preview","s1.desc":"Native PSD, HEIC, WebP, AVIF, and TIFF support with palette, histogram, and EXIF inspection.",
     "s2.label":"Audio Preview","s2.title":"Waveforms for every audio library","s2.desc":"Native MP3, WAV, FLAC, and AAC support with waveform, spectrum, playback, and batch tagging.",
@@ -853,21 +909,22 @@ const i18n={
     "w2.title":"Auto Index","w2.desc":"Generate thumbnails, extract metadata, analyze colors. Real-time file watching with auto sync.",
     "w3.title":"Preview & Organize","w3.desc":"Instant preview for 40+ formats. Tags, collections, ratings — build your asset knowledge base.",
     "w4.title":"Drag & Drop Export","w4.desc":"Drag directly to design tools or browsers. Batch, wallpaper, font installation support.",
-    "dl.label":"Download","dl.title":"OrcaBox 1.2.1","dl.desc":"Installers for macOS Apple Silicon and Windows x64. CNB is the primary download source.",
-    "dl.mac":"Download macOS DMG","dl.win":"Download Windows EXE","dl.free":"Free Download","dl.mirror":"GitHub backup download",
+    "dl.label":"Download","dl.title":"OrcaBox 1.2.1","dl.desc":"Installers for Apple Silicon, Intel Mac, and Windows x64. CNB is the primary download source.",
+    "dl.extensionLabel":"Browser Extension","dl.extensionTitle":"OrcaBox Chrome Extension","dl.extensionDesc":"Collect images, videos, Lottie, and asset links from the web directly into your local OrcaBox library.","dl.extensionDownload":"Download Chrome ZIP","dl.extensionRelease":"View extension release","dl.extensionMeta":"v1.2.1 · Unzip, then load the folder from Chrome Extensions",
+    "dl.mac":"Download macOS DMG","dl.win":"Download Windows EXE","dl.free":"Free Download","dl.mirror":"Download from CNB Release","dl.archLabel":"Choose Mac chip","dl.archAuto":"Auto-detect","dl.archArm":"Apple Silicon","dl.archIntel":"Intel","dl.archDetected":"Detected","dl.archDefault":"Default","dl.archSelected":"Selected","dl.archManual":"manual switch available",
     "cta.label":"Get Started","cta.title":"Ready to manage your creative assets?","cta.desc":"Download OrcaBox and experience professional-grade local asset management.",
     "cta.dl":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/></svg> Download for macOS",
-    "cta.cnb":"CNB Download","cta.github":"GitHub Backup",
+    "cta.cnb":"CNB Release Download","cta.github":"GitHub Backup Download",
     "footer.desc":"Professional local-indexed multi-format asset manager for creative teams.",
     "footer.product":"Product","footer.resources":"Resources","footer.about":"Download Sources",
     "footer.f1":"Features","footer.f2":"Showcase","footer.f3":"Capabilities","footer.f4":"Download",
     "footer.r1":"User Guide","footer.r2":"Release Notes","footer.r3":"Previous Versions",
-    "footer.cnb":"CNB Download","footer.github":"GitHub Backup",
+    "footer.cnb":"CNB Release Download","footer.github":"GitHub Backup Download",
     "footer.a1":"Download Installers","footer.made":"Made for macOS and Windows"
   },
   ja:{
     "nav.features":"機能","nav.showcase":"紹介","nav.capabilities":"能力","nav.updates":"更新","nav.download":"ダウンロード","nav.downloadBtn":"ダウンロード",
-    "hero.eyebrow":"OrcaBox 1.2.1 · ローカル優先",
+    "hero.eyebrow":"OrcaBox ローカル素材管理",
     "hero.title1":"クリエイティブ資産","hero.title2":"ローカル管理",
     "hero.desc":"ローカル素材管理：ゼロコピー、40+形式、端末内AI。",
     "hero.cta":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/><line x1=\"12\" y1=\"15\" x2=\"12\" y2=\"3\"/></svg> macOS版を無料ダウンロード",
@@ -879,7 +936,7 @@ const i18n={
     "f3.title":"ファイルを動かさず横断整理","f3.desc":"プロジェクト別にまとめ、表紙・件数・順序をひと目で確認。",
     "f4.title":"ローカルスマート切り抜き","f4.desc":"被写体を自動認識し、しきい値・ぼかし・輪郭を調整。",
     "f5.title":"主要形式をワンクリック変換","f5.desc":"WebP、JPEG、PNG、AVIF、TIFF を一括処理。",
-    "f6.title":"DaVinci Resolve へ直接送信","f6.desc":"メディアプールや現在のタイムラインへすばやく読み込み。",
+    "f6.title":"編集ソフトへ素材を直接送信","f6.desc":"メディアプールや現在のタイムラインへすばやく読み込み。",
     "showcase.label":"マルチフォーマットプレビュー","showcase.title":"すべての形式を一つの流れで確認","showcase.desc":"画像、音声、モーション、3D を同じブラウズ画面で確認できます。",
     "s1.label":"画像プレビュー","s1.title":"高解像度で没入感のある確認","s1.desc":"PSD、HEIC、WebP、AVIF、TIFF に対応し、パレット、ヒストグラム、EXIF を確認できます。",
     "s2.label":"音声プレビュー","s2.title":"波形で音声ライブラリを確認","s2.desc":"MP3、WAV、FLAC、AAC に対応し、波形、スペクトラム、再生、一括タグ付けを行えます。",
@@ -903,21 +960,22 @@ const i18n={
     "w2.title":"自動インデックス","w2.desc":"サムネイル生成、メタデータ抽出、色彩分析。リアルタイム監視で自動同期。",
     "w3.title":"プレビュー＆整理","w3.desc":"40以上のフォーマットを即時プレビュー。タグ、コレクション、評価で知識ベース構築。",
     "w4.title":"ドラッグ＆ドロップ出力","w4.desc":"デザインツールやブラウザに直接ドラッグ。一括、壁紙、フォントインストール対応。",
-    "dl.label":"ダウンロード","dl.title":"OrcaBox 1.2.1","dl.desc":"macOS Apple Silicon と Windows x64 用インストーラーを提供します。CNBを主なダウンロード先とします。",
-    "dl.mac":"macOS DMG をダウンロード","dl.win":"Windows EXE をダウンロード","dl.free":"無料ダウンロード","dl.mirror":"GitHub 予備ダウンロード",
+    "dl.label":"ダウンロード","dl.title":"OrcaBox 1.2.1","dl.desc":"Apple Silicon、Intel Mac、Windows x64 用インストーラーを提供します。CNBを主なダウンロード先とします。",
+    "dl.extensionLabel":"ブラウザ拡張","dl.extensionTitle":"OrcaBox Chrome 拡張","dl.extensionDesc":"Web ページの画像、動画、Lottie、素材リンクを OrcaBox にすばやく収集できます。","dl.extensionDownload":"Chrome 拡張 ZIP をダウンロード","dl.extensionRelease":"拡張のリリースを見る","dl.extensionMeta":"v1.2.1 · 解凍後、Chrome 拡張機能ページからフォルダを読み込み",
+    "dl.mac":"macOS DMG をダウンロード","dl.win":"Windows EXE をダウンロード","dl.free":"無料ダウンロード","dl.mirror":"CNB Release からダウンロード","dl.archLabel":"Macチップを選択","dl.archAuto":"自動判定","dl.archArm":"Apple Silicon","dl.archIntel":"Intel","dl.archDetected":"自動判定","dl.archDefault":"既定","dl.archSelected":"選択中","dl.archManual":"手動切替可能",
     "cta.label":"はじめよう","cta.title":"クリエイティブ資産を管理する準備はできましたか？","cta.desc":"OrcaBoxをダウンロードして、プロ級のローカルアセット管理を体験してください。",
     "cta.dl":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/></svg> macOS版をダウンロード",
-    "cta.cnb":"CNB ダウンロード","cta.github":"GitHub 予備",
+    "cta.cnb":"CNB Release ダウンロード","cta.github":"GitHub 予備ダウンロード",
     "footer.desc":"クリエイティブチームのためのプロ向けローカルインデックス・マルチフォーマットアセットマネージャー。",
     "footer.product":"製品","footer.resources":"リソース","footer.about":"ダウンロード先",
     "footer.f1":"機能","footer.f2":"紹介","footer.f3":"能力","footer.f4":"ダウンロード",
     "footer.r1":"利用ガイド","footer.r2":"リリースノート","footer.r3":"過去のバージョン",
-    "footer.cnb":"CNB ダウンロード","footer.github":"GitHub 予備",
+    "footer.cnb":"CNB Release ダウンロード","footer.github":"GitHub 予備ダウンロード",
     "footer.a1":"インストーラー","footer.made":"Made for macOS and Windows"
   },
   ko:{
     "nav.features":"기능","nav.showcase":"소개","nav.capabilities":"역량","nav.updates":"업데이트","nav.download":"다운로드","nav.downloadBtn":"다운로드",
-    "hero.eyebrow":"OrcaBox 1.2.1 · 로컬 우선",
+    "hero.eyebrow":"OrcaBox 로컬 에셋 관리자",
     "hero.title1":"크리에이티브 자산","hero.title2":"로컬 관리",
     "hero.desc":"로컬 에셋 관리: 무복제, 40+ 포맷, 온디바이스 AI.",
     "hero.cta":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/><line x1=\"12\" y1=\"15\" x2=\"12\" y2=\"3\"/></svg> macOS용 무료 다운로드",
@@ -929,7 +987,7 @@ const i18n={
     "f3.title":"원본을 옮기지 않고 폴더 간 정리","f3.desc":"프로젝트별로 모으고 표지, 개수, 순서를 한눈에 확인합니다.",
     "f4.title":"로컬 스마트 누끼","f4.desc":"피사체를 자동 인식하고 임계값, 페더링, 가장자리를 조정합니다.",
     "f5.title":"주요 형식을 한 번에 변환","f5.desc":"WebP, JPEG, PNG, AVIF, TIFF 일괄 처리.",
-    "f6.title":"DaVinci Resolve로 바로 전송","f6.desc":"미디어 풀이나 현재 타임라인으로 빠르게 가져옵니다.",
+    "f6.title":"편집 프로그램으로 바로 전송","f6.desc":"미디어 풀이나 현재 타임라인으로 빠르게 가져옵니다.",
     "showcase.label":"멀티 포맷 프리뷰","showcase.title":"모든 형식을 하나의 흐름으로 확인","showcase.desc":"이미지, 오디오, 모션, 3D를 같은 브라우징 화면에서 확인합니다.",
     "s1.label":"이미지 프리뷰","s1.title":"고해상도 몰입형 프리뷰","s1.desc":"PSD, HEIC, WebP, AVIF, TIFF를 지원하며 팔레트, 히스토그램, EXIF를 확인합니다.",
     "s2.label":"오디오 프리뷰","s2.title":"파형으로 오디오 라이브러리 확인","s2.desc":"MP3, WAV, FLAC, AAC와 파형, 스펙트럼, 재생, 일괄 태그를 지원합니다.",
@@ -953,16 +1011,17 @@ const i18n={
     "w2.title":"자동 인덱스","w2.desc":"썸네일 생성, 메타데이터 추출, 색상 분석. 실시간 파일 감시로 자동 동기화.",
     "w3.title":"미리보기 및 정리","w3.desc":"40개 이상의 형식 즉시 미리보기. 태그, 컬렉션, 평가로 지식 베이스 구축.",
     "w4.title":"드래그 앤 드롭","w4.desc":"디자인 도구나 브라우저로 직접 드래그. 배치, 배경화면, 폰트 설치 지원.",
-    "dl.label":"다운로드","dl.title":"OrcaBox 1.2.1","dl.desc":"macOS Apple Silicon 및 Windows x64 설치 파일을 제공합니다. CNB를 기본 다운로드로 사용합니다.",
-    "dl.mac":"macOS DMG 다운로드","dl.win":"Windows EXE 다운로드","dl.free":"무료 다운로드","dl.mirror":"GitHub 예비 다운로드",
+    "dl.label":"다운로드","dl.title":"OrcaBox 1.2.1","dl.desc":"Apple Silicon, Intel Mac, Windows x64 설치 파일을 제공합니다. CNB를 기본 다운로드로 사용합니다.",
+    "dl.extensionLabel":"브라우저 확장","dl.extensionTitle":"OrcaBox Chrome 확장","dl.extensionDesc":"웹 페이지의 이미지, 동영상, Lottie, 소재 링크를 OrcaBox 로 빠르게 수집합니다.","dl.extensionDownload":"Chrome 확장 ZIP 다운로드","dl.extensionRelease":"확장 릴리스 보기","dl.extensionMeta":"v1.2.1 · 압축 해제 후 Chrome 확장 프로그램에서 폴더 로드",
+    "dl.mac":"macOS DMG 다운로드","dl.win":"Windows EXE 다운로드","dl.free":"무료 다운로드","dl.mirror":"CNB Release 다운로드","dl.archLabel":"Mac 칩 선택","dl.archAuto":"자동 감지","dl.archArm":"Apple Silicon","dl.archIntel":"Intel","dl.archDetected":"자동 감지","dl.archDefault":"기본 선택","dl.archSelected":"현재 선택","dl.archManual":"수동 전환 가능",
     "cta.label":"시작하기","cta.title":"크리에이티브 자산을 관리할 준비가 되셨나요?","cta.desc":"OrcaBox를 다운로드하고 전문가급 로컬 자산 관리를 경험하세요.",
     "cta.dl":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/></svg> macOS용 다운로드",
-    "cta.cnb":"CNB 다운로드","cta.github":"GitHub 예비",
+    "cta.cnb":"CNB Release 다운로드","cta.github":"GitHub 예비 다운로드",
     "footer.desc":"크리에이티브 팀을 위한 전문 로컬 인덱스 멀티포맷 자산 관리자.",
     "footer.product":"제품","footer.resources":"리소스","footer.about":"다운로드 소스",
     "footer.f1":"기능","footer.f2":"소개","footer.f3":"역량","footer.f4":"다운로드",
     "footer.r1":"사용 안내","footer.r2":"릴리스 노트","footer.r3":"이전 버전",
-    "footer.cnb":"CNB 다운로드","footer.github":"GitHub 예비",
+    "footer.cnb":"CNB Release 다운로드","footer.github":"GitHub 예비 다운로드",
     "footer.a1":"설치 파일 다운로드","footer.made":"Made for macOS and Windows"
   }
 };
@@ -974,6 +1033,7 @@ const langLabels={zh:'中',en:'EN',ja:'日',ko:'한'};
 'use strict';
 const htmlEl=document.documentElement;
 const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const pageTitles={zh:'OrcaBox — 专业本地素材管理器',en:'OrcaBox — Professional Local Asset Manager',ja:'OrcaBox — プロ向けローカル素材管理',ko:'OrcaBox — 전문 로컬 에셋 관리자'};
 
 // Detect stored lang or browser lang
 function detectLang(){
@@ -991,11 +1051,42 @@ let currentLang=detectLang();
 const langBtn=document.getElementById('langBtn');
 const langLabel=document.getElementById('langLabel');
 const langDrop=document.getElementById('langDrop');
+const macArchSelect=document.getElementById('macArchSelect');
+const macDownload=document.getElementById('macDownload');
+const macDetected=document.getElementById('macDetected');
+const macDownloadUrls={
+  arm64:'https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.1/OrcaBox-1.2.1-arm64.dmg',
+  x64:'https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.1/OrcaBox-1.2.1.dmg',
+};
+let detectedMacArch='arm64';
+let macArchDetectionConfirmed=false;
+
+function updateMacDownload(arch=macArchSelect?.value||'auto',manual=arch!=='auto'){
+  if(!macArchSelect||!macDownload||!macDetected)return;
+  const resolved=arch==='auto'?detectedMacArch:arch;
+  macDownload.href=macDownloadUrls[resolved]||macDownloadUrls.arm64;
+  const label=i18n[currentLang][resolved==='x64'?'dl.archIntel':'dl.archArm'];
+  const prefix=i18n[currentLang][manual?'dl.archSelected':macArchDetectionConfirmed?'dl.archDetected':'dl.archDefault'];
+  macDetected.textContent=`${prefix} ${label} · ${i18n[currentLang]['dl.archManual']}`;
+}
+
+async function detectMacArchitecture(){
+  if(!/Mac/i.test(`${navigator.platform||''} ${navigator.userAgent||''}`))return;
+  try{
+    if(navigator.userAgentData?.getHighEntropyValues){
+      const values=await navigator.userAgentData.getHighEntropyValues(['architecture']);
+      if(/arm/i.test(values.architecture||'')){detectedMacArch='arm64';macArchDetectionConfirmed=true}
+      if(/x86|amd/i.test(values.architecture||'')){detectedMacArch='x64';macArchDetectionConfirmed=true}
+    }
+  }catch{}
+  updateMacDownload(macArchSelect?.value||'auto',macArchSelect?.value!=='auto');
+}
 
 // Apply translations
 function applyLang(lang){
   currentLang=lang;
   htmlEl.setAttribute('lang',lang==='zh'?'zh-CN':lang==='ja'?'ja-JP':lang==='ko'?'ko-KR':'en-US');
+  document.title=pageTitles[lang]||pageTitles.en;
   localStorage.setItem('orcabox-lang',lang);
   langLabel.textContent=langLabels[lang];
 
@@ -1021,22 +1112,40 @@ function applyLang(lang){
   // Update meta
   const desc=i18n[lang]['hero.desc'];
   document.querySelector('meta[name="description"]').setAttribute('content',desc);
+  document.querySelector('meta[property="og:title"]').setAttribute('content',document.title);
+  document.querySelector('meta[property="og:description"]').setAttribute('content',desc);
+  document.querySelector('meta[property="og:locale"]').setAttribute('content',lang==='zh'?'zh_CN':lang==='ja'?'ja_JP':lang==='ko'?'ko_KR':'en_US');
+  if(macArchSelect){
+    macArchSelect.setAttribute('aria-label',i18n[lang]['dl.archLabel']);
+    macArchSelect.options[0].textContent=i18n[lang]['dl.archAuto'];
+    macArchSelect.options[1].textContent=i18n[lang]['dl.archArm'];
+    macArchSelect.options[2].textContent=i18n[lang]['dl.archIntel'];
+    updateMacDownload(macArchSelect.value,macArchSelect.value!=='auto');
+  }
 }
 
 // Initial apply
 applyLang(currentLang);
+macArchSelect?.addEventListener('change',()=>updateMacDownload(macArchSelect.value,macArchSelect.value!=='auto'));
+updateMacDownload();
+void detectMacArchitecture();
 
 // Lang dropdown toggle
+function setLangDropOpen(open){
+  langDrop.classList.toggle('show',open);
+  langBtn.classList.toggle('open',open);
+  langBtn.setAttribute('aria-expanded',String(open));
+  langDrop.setAttribute('aria-hidden',String(!open));
+}
+
 langBtn.addEventListener('click',e=>{
   e.stopPropagation();
-  const open=langDrop.classList.toggle('show');
-  langBtn.classList.toggle('open',open);
+  setLangDropOpen(!langDrop.classList.contains('show'));
 });
 
 // Close dropdown on outside click
 document.addEventListener('click',()=>{
-  langDrop.classList.remove('show');
-  langBtn.classList.remove('open');
+  setLangDropOpen(false);
 });
 
 // Language selection
@@ -1044,9 +1153,15 @@ langDrop.querySelectorAll('.lang-option').forEach(opt=>{
   opt.addEventListener('click',e=>{
     e.stopPropagation();
     applyLang(opt.getAttribute('data-lang'));
-    langDrop.classList.remove('show');
-    langBtn.classList.remove('open');
+    setLangDropOpen(false);
   });
+});
+
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'&&langDrop.classList.contains('show')){
+    setLangDropOpen(false);
+    langBtn.focus();
+  }
 });
 
 // Nav
@@ -1058,7 +1173,14 @@ window.addEventListener('scroll',()=>{
 
 // Anchor scroll
 document.querySelectorAll('a[href^="#"]').forEach(a=>{
-  a.addEventListener('click',e=>{e.preventDefault();const t=document.querySelector(a.getAttribute('href'));if(t)t.scrollIntoView({behavior:'smooth',block:'start'})});
+  a.addEventListener('click',e=>{
+    const href=a.getAttribute('href');
+    if(!href||href==='#')return;
+    const t=document.querySelector(href);
+    if(!t)return;
+    e.preventDefault();
+    t.scrollIntoView({behavior:'smooth',block:'start'});
+  });
 });
 
 // Reveal
@@ -1158,8 +1280,6 @@ if(heroShot){
     window.addEventListener('load',()=>setTimeout(showHeroShot,reduced?0:450),{once:true});
   }
 }
-
-console.log('%cOrcaBox%c v11 %ci18n + inline zoom','font-weight:700;font-size:13px;','color:#3b82f6;font-size:11px;','color:#71717a;font-size:11px;');
 
 // ===== INLINE IMAGE EXPANSION =====
 let expandedRow=null;
