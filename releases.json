@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-30",
+  "updatedAt": "2026-07-31",
   "current": "1.2.1",
   "releases": [
     {
@@ -8,7 +8,7 @@
       "date": "2026-07-30",
       "tag": "v1.2.1",
       "title": "OrcaBox 1.2.1",
-      "summary": "本版本围绕 新增功能、优化改进、问题修复 持续完善素材管理、媒体预览与跨平台使用体验。",
+      "summary": "本版本重点完善原始文件媒体播放、素材文件安全操作、跨平台行为和 Windows 发布准备。",
       "generatedFrom": {
         "baseRef": "1.2",
         "branch": "1.2.1",
@@ -18,53 +18,53 @@
       "categories": {
         "features": [
           {
-            "text": "ci: add Windows release packaging workflow",
+            "text": "增加 Windows x64 安装包构建工作流",
             "commit": "9e058dc",
             "date": "2026-07-29"
           }
         ],
         "improvements": [
           {
-            "text": "Improve media preview and cross-platform playback behavior",
+            "text": "完善媒体预览和跨平台播放行为",
             "commit": "fc5b5c3",
             "date": "2026-07-29"
           },
           {
-            "text": "Improve OrcaBox desktop workflows and media handling",
+            "text": "完善桌面端素材工作流和媒体处理",
             "commit": "7720ca6",
             "date": "2026-07-29"
           }
         ],
         "fixes": [
           {
-            "text": "define clipboard drop header locally",
+            "text": "修复 Windows 剪贴板文件拖放头定义兼容性",
             "commit": "0baf645",
             "date": "2026-07-29"
           },
           {
-            "text": "compile system share addon with current SDK",
+            "text": "修复 system-share addon 与当前 Windows SDK 的编译兼容性",
             "commit": "d3e37ff",
             "date": "2026-07-29"
           }
         ],
         "engineering": [
           {
-            "text": "ci: stage LGPL Windows FFmpeg runtime",
+            "text": "在 Windows 构建阶段准备动态 LGPL FFmpeg 运行时",
             "commit": "a0a6fab",
             "date": "2026-07-29"
           },
           {
-            "text": "ci: use supported Windows runner for native builds",
+            "text": "使用支持 MSVC 原生构建的 Windows runner",
             "commit": "dd27729",
             "date": "2026-07-29"
           },
           {
-            "text": "ci: tolerate platform optional dependencies",
+            "text": "兼容 Windows 平台专用 optional dependencies",
             "commit": "7da82cc",
             "date": "2026-07-29"
           },
           {
-            "text": "Harden cross-platform media file operations",
+            "text": "加强跨平台媒体文件操作",
             "commit": "b002dd7",
             "date": "2026-07-29"
           }
@@ -109,7 +109,8 @@
         "github": "https://github.com/GarryGit888/Orcabox",
         "gitee": "https://gitee.com/kaiyuwuu/lottiebox",
         "cnbRelease": "https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.2.1",
-        "githubRelease": "https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.1"
+        "githubRelease": "https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.1",
+        "browserExtension": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.1/OrcaBox-Chrome-Extension-1.2.1.zip"
       }
     },
     {
