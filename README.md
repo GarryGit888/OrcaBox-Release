@@ -6,21 +6,22 @@ OrcaBox 是面向创作者与创意团队的本地素材管理器，支持图片
 
 [访问 OrcaBox 在线官网](https://garrygit888.github.io/OrcaBox-Release/)
 
-官网由 GitHub Pages 提供公开访问，CNB Release 提供主要下载，GitHub Release 作为备用下载。
+官网由 GitHub Pages 提供公开访问，CNB Release 与 GitHub Release 同步提供内测安装包。
 
-## OrcaBox 1.2.1 下载
+## OrcaBox 1.2.3 内测下载
 
 | 平台 | 安装包 |
 | --- | --- |
-| macOS Apple Silicon | [CNB DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.1/OrcaBox-1.2.1-arm64.dmg) |
-| Windows x64 | [CNB EXE](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.1/OrcaBox%20Setup%201.2.1.exe) |
+| macOS Apple Silicon | [CNB DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.3/OrcaBox-1.2.3-arm64.dmg) |
+| macOS Intel | [CNB DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.3/OrcaBox-1.2.3.dmg) |
+| Chrome 扩展 | [GitHub ZIP](https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.3/OrcaBox-Chrome-Extension-1.2.3.zip) |
 
-完整包（macOS Intel、Portable、更新清单和校验文件）请访问：
+ZIP 包、更新日志和 SHA-256 校验值请访问：
 
-- [CNB Releases](https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.2.1)
-- [GitHub Releases](https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.1)
+- [CNB Releases](https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.2.3)
+- [GitHub Releases](https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.3)
 
-当前 macOS 安装包为未签名测试包，首次打开可能需要在系统设置中允许打开。Windows 1.2.1 安装器与 Portable 包均已上传，仍建议按测试包使用并反馈问题。
+当前 macOS 安装包为未签名测试包，首次打开可能需要在系统设置中允许打开。Windows x64 未在 Windows + MSVC 主机完成 1.2.3 打包与实机验收，因此本版本不提供 Windows 安装器。
 
 ## 主要能力
 

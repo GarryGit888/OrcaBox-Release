@@ -1,7 +1,81 @@
 {
-  "updatedAt": "2026-07-31",
-  "current": "1.2.1",
+  "updatedAt": "2026-08-07",
+  "current": "1.2.3",
   "releases": [
+    {
+      "version": "1.2.3",
+      "displayVersion": "1.2.3",
+      "date": "2026-08-07",
+      "tag": "v1.2.3",
+      "title": "OrcaBox 1.2.3",
+      "summary": "新增可持久化无限画布，优化资料库索引、媒体预览、拖拽和 AI 按需初始化；macOS arm64 / Intel x64 内测包已生成。",
+      "generatedFrom": {
+        "baseRef": "cnb/1.2.2",
+        "branch": "1.2.3",
+        "commitCount": 1,
+        "changedFileCount": 78
+      },
+      "categories": {
+        "features": [
+          {
+            "text": "新增可持久化无限画布，支持素材引用、移动、缩放、旋转、分组、锁定和隐藏",
+            "commit": "9e62dcc",
+            "date": "2026-08-07"
+          }
+        ],
+        "improvements": [
+          {
+            "text": "优化资料库索引、源目录树、媒体预览调度、拖拽和 AI 按需初始化",
+            "commit": "9e62dcc",
+            "date": "2026-08-07"
+          }
+        ],
+        "fixes": [
+          {
+            "text": "修复工作区切换、拖拽导出和选中素材预览状态在边界场景下不同步的问题",
+            "commit": "9e62dcc",
+            "date": "2026-08-07"
+          }
+        ],
+        "engineering": [
+          {
+            "text": "release: prepare OrcaBox 1.2.3 for internal beta",
+            "commit": "9e62dcc",
+            "date": "2026-08-07"
+          }
+        ]
+      },
+      "changedAreas": [
+        {
+          "area": "src",
+          "count": 74
+        },
+        {
+          "area": "extensions",
+          "count": 1
+        },
+        {
+          "area": "icons",
+          "count": 1
+        },
+        {
+          "area": "package-lock.json",
+          "count": 1
+        },
+        {
+          "area": "package.json",
+          "count": 1
+        }
+      ],
+      "links": {
+        "cnb": "https://cnb.cool/garrykai/orcabox",
+        "github": "https://github.com/GarryGit888/Orcabox",
+        "gitee": "https://gitee.com/kaiyuwuu/lottiebox",
+        "cnbRelease": "https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.2.3",
+        "githubRelease": "https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.3",
+        "browserExtension": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.3/OrcaBox-Chrome-Extension-1.2.3.zip"
+      }
+    },
     {
       "version": "1.2.1",
       "displayVersion": "1.2.1",
