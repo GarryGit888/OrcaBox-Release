@@ -696,7 +696,7 @@ a{color:inherit;text-decoration:none}
         <span class="label" data-i18n="updates.label">最近更新</span>
         <h2 class="h2" data-i18n="updates.title">把素材工作流做得更顺手</h2>
         <p class="body-l" data-i18n="updates.desc">网页采集 本地整理 Lottie 动效 原文件播放 持续围绕真实创作流程完善</p>
-        <a href="releases.html" class="btn btn-secondary" data-i18n="updates.link">查看发行记录</a>
+        <a href="releases.html?v=1.2.3" class="btn btn-secondary" data-i18n="updates.link">查看发行记录</a>
       </div>
       <div class="updates-list" data-reveal data-reveal-delay="1">
         <article class="update-item">
@@ -744,7 +744,7 @@ a{color:inherit;text-decoration:none}
     <div class="download-block" data-reveal>
       <span class="label" data-i18n="dl.label">下载</span>
       <h2 class="h2" data-i18n="dl.title">OrcaBox 1.2.3</h2>
-      <p class="body" data-i18n="dl.desc">提供 Apple Silicon 与 Intel Mac 内测安装包，CNB 优先提供下载</p>
+      <p class="body" data-i18n="dl.desc">提供 macOS 与 Windows x64 内测安装包，CNB 优先提供下载</p>
       <div class="download-actions">
         <div class="download-mac-group">
           <a id="macDownload" href="https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.3/OrcaBox-1.2.3-arm64.dmg" class="btn btn-primary btn-lg" data-i18n="dl.mac">
@@ -760,12 +760,12 @@ a{color:inherit;text-decoration:none}
           </label>
           <span id="macDetected" class="download-detected" aria-live="polite"></span>
         </div>
-        <a href="releases.html" class="btn btn-secondary btn-lg is-pending" data-i18n="dl.win" aria-label="Windows x64 package pending">
-          Windows x64 即将提供
+        <a href="https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.3/OrcaBox.Setup.1.2.3.exe" class="btn btn-secondary btn-lg" data-i18n="dl.win" aria-label="Download Windows x64 installer">
+          下载 Windows x64
         </a>
       </div>
       <div class="download-meta">
-        <span>macOS 12.0+</span><span>&middot;</span><span>Apple Silicon / Intel</span><span>&middot;</span><span data-i18n="dl.winPending">Windows x64 即将提供</span><span>&middot;</span><span data-i18n="dl.free">免费下载</span>
+        <span>macOS 12.0+</span><span>&middot;</span><span>Apple Silicon / Intel</span><span>&middot;</span><span data-i18n="dl.winPending">Windows x64</span><span>&middot;</span><span data-i18n="dl.free">免费下载</span>
       </div>
       <a href="https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.2.3" target="_blank" rel="noopener noreferrer" class="download-mirror"><img src="assets/cnb.svg" alt=""><span data-i18n="dl.mirror">CNB Release 下载</span></a>
     </div>
@@ -812,7 +812,7 @@ a{color:inherit;text-decoration:none}
         <p data-i18n="footer.desc">面向创意团队的专业本地索引多格式素材管理器</p>
       </div>
       <div class="footer-col"><h5 data-i18n="footer.product">产品</h5><ul><li><a href="#features" data-i18n="footer.f1">功能</a></li><li><a href="#showcase" data-i18n="footer.f2">展示</a></li><li><a href="#capabilities" data-i18n="footer.f3">能力</a></li><li><a href="#download" data-i18n="footer.f4">下载</a></li></ul></div>
-      <div class="footer-col"><h5 data-i18n="footer.resources">资源</h5><ul><li><a href="https://cnb.cool/garrykai/orcabox-release" target="_blank" rel="noopener noreferrer" data-i18n="footer.r1">使用说明</a></li><li><a href="releases.html#latest" data-i18n="footer.r2">发行说明</a></li><li><a href="releases.html#history" data-i18n="footer.r3">历史版本</a></li></ul></div>
+      <div class="footer-col"><h5 data-i18n="footer.resources">资源</h5><ul><li><a href="https://cnb.cool/garrykai/orcabox-release" target="_blank" rel="noopener noreferrer" data-i18n="footer.r1">使用说明</a></li><li><a href="releases.html?v=1.2.3#latest" data-i18n="footer.r2">发行说明</a></li><li><a href="releases.html?v=1.2.3#history" data-i18n="footer.r3">历史版本</a></li></ul></div>
       <div class="footer-col"><h5 data-i18n="footer.about">下载来源</h5><ul><li><a href="https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.2.3" target="_blank" rel="noopener noreferrer" data-i18n="footer.cnb">CNB Release 下载</a></li><li><a href="https://github.com/GarryGit888/OrcaBox-Release" target="_blank" rel="noopener noreferrer" data-i18n="footer.github">GitHub 备用下载</a></li><li><a href="https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.2.3" target="_blank" rel="noopener noreferrer" data-i18n="footer.a1">下载安装包</a></li></ul></div>
     </div>
     <div class="footer-bottom"><span>&copy; 2024-2026 OrcaBox. All rights reserved.</span><span data-i18n="footer.made">Made for macOS and Windows</span></div>
@@ -860,9 +860,9 @@ const i18n={
     "w2.title":"自动索引","w2.desc":"生成缩略图 提取元数据 分析色彩 实时监听变化 自动同步",
     "w3.title":"预览与组织","w3.desc":"40+ 格式即时预览 标签、合集、评分 建立素材知识库",
     "w4.title":"拖拽导出","w4.desc":"直拖到设计工具或浏览器 支持批量、壁纸设置、字体安装",
-    "dl.label":"下载","dl.title":"OrcaBox 1.2.3","dl.desc":"提供 Apple Silicon 与 Intel Mac 内测安装包，CNB 优先提供下载",
+    "dl.label":"下载","dl.title":"OrcaBox 1.2.3","dl.desc":"提供 macOS 与 Windows x64 内测安装包，CNB 优先提供下载",
     "dl.extensionLabel":"浏览器插件","dl.extensionTitle":"OrcaBox Chrome 插件","dl.extensionDesc":"在网页中快速收集图片、视频、Lottie 和素材链接，发送到本地 OrcaBox。","dl.extensionDownload":"下载 Chrome 插件 ZIP","dl.extensionRelease":"查看插件发行页","dl.extensionMeta":"v1.2.3 · 解压后在 Chrome 扩展程序页面加载",
-    "dl.mac":"下载 macOS DMG","dl.win":"Windows x64 即将提供","dl.winPending":"Windows x64 即将提供","dl.free":"免费下载","dl.mirror":"CNB Release 下载","dl.archLabel":"选择 Mac 芯片","dl.archAuto":"自动识别","dl.archArm":"Apple Silicon","dl.archIntel":"Intel","dl.archDetected":"已自动选择","dl.archDefault":"默认选择","dl.archSelected":"当前选择","dl.archManual":"可手动切换",
+    "dl.mac":"下载 macOS DMG","dl.win":"下载 Windows x64","dl.winPending":"Windows x64","dl.free":"免费下载","dl.mirror":"CNB Release 下载","dl.archLabel":"选择 Mac 芯片","dl.archAuto":"自动识别","dl.archArm":"Apple Silicon","dl.archIntel":"Intel","dl.archDetected":"已自动选择","dl.archDefault":"默认选择","dl.archSelected":"当前选择","dl.archManual":"可手动切换",
     "cta.label":"开始使用","cta.title":"准备好管理你的创意资产了吗","cta.desc":"下载 OrcaBox 体验专业级本地素材管理",
     "cta.dl":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/></svg> 下载 macOS 版",
     "cta.cnb":"CNB Release 下载","cta.github":"GitHub 备用下载",
@@ -911,9 +911,9 @@ const i18n={
     "w2.title":"Auto Index","w2.desc":"Generate thumbnails, extract metadata, analyze colors. Real-time file watching with auto sync.",
     "w3.title":"Preview & Organize","w3.desc":"Instant preview for 40+ formats. Tags, collections, ratings — build your asset knowledge base.",
     "w4.title":"Drag & Drop Export","w4.desc":"Drag directly to design tools or browsers. Batch, wallpaper, font installation support.",
-    "dl.label":"Download","dl.title":"OrcaBox 1.2.3","dl.desc":"Internal beta installers for Apple Silicon and Intel Mac. CNB is the primary download source.",
+    "dl.label":"Download","dl.title":"OrcaBox 1.2.3","dl.desc":"Internal beta installers for macOS and Windows x64. CNB is the primary download source.",
     "dl.extensionLabel":"Browser Extension","dl.extensionTitle":"OrcaBox Chrome Extension","dl.extensionDesc":"Collect images, videos, Lottie, and asset links from the web directly into your local OrcaBox library.","dl.extensionDownload":"Download Chrome ZIP","dl.extensionRelease":"View extension release","dl.extensionMeta":"v1.2.3 · Unzip, then load the folder from Chrome Extensions",
-    "dl.mac":"Download macOS DMG","dl.win":"Windows x64 coming soon","dl.winPending":"Windows x64 coming soon","dl.free":"Free Download","dl.mirror":"Download from CNB Release","dl.archLabel":"Choose Mac chip","dl.archAuto":"Auto-detect","dl.archArm":"Apple Silicon","dl.archIntel":"Intel","dl.archDetected":"Detected","dl.archDefault":"Default","dl.archSelected":"Selected","dl.archManual":"manual switch available",
+    "dl.mac":"Download macOS DMG","dl.win":"Download Windows x64","dl.winPending":"Windows x64","dl.free":"Free Download","dl.mirror":"Download from CNB Release","dl.archLabel":"Choose Mac chip","dl.archAuto":"Auto-detect","dl.archArm":"Apple Silicon","dl.archIntel":"Intel","dl.archDetected":"Detected","dl.archDefault":"Default","dl.archSelected":"Selected","dl.archManual":"manual switch available",
     "cta.label":"Get Started","cta.title":"Ready to manage your creative assets?","cta.desc":"Download OrcaBox and experience professional-grade local asset management.",
     "cta.dl":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/></svg> Download for macOS",
     "cta.cnb":"CNB Release Download","cta.github":"GitHub Backup Download",
@@ -962,9 +962,9 @@ const i18n={
     "w2.title":"自動インデックス","w2.desc":"サムネイル生成、メタデータ抽出、色彩分析。リアルタイム監視で自動同期。",
     "w3.title":"プレビュー＆整理","w3.desc":"40以上のフォーマットを即時プレビュー。タグ、コレクション、評価で知識ベース構築。",
     "w4.title":"ドラッグ＆ドロップ出力","w4.desc":"デザインツールやブラウザに直接ドラッグ。一括、壁紙、フォントインストール対応。",
-    "dl.label":"ダウンロード","dl.title":"OrcaBox 1.2.3","dl.desc":"Apple Silicon と Intel Mac 向けの内測インストーラーです。CNBを主なダウンロード先とします。",
+    "dl.label":"ダウンロード","dl.title":"OrcaBox 1.2.3","dl.desc":"macOS と Windows x64 向けの内測インストーラーです。CNBを主なダウンロード先とします。",
     "dl.extensionLabel":"ブラウザ拡張","dl.extensionTitle":"OrcaBox Chrome 拡張","dl.extensionDesc":"Web ページの画像、動画、Lottie、素材リンクを OrcaBox にすばやく収集できます。","dl.extensionDownload":"Chrome 拡張 ZIP をダウンロード","dl.extensionRelease":"拡張のリリースを見る","dl.extensionMeta":"v1.2.3 · 解凍後、Chrome 拡張機能ページからフォルダを読み込み",
-    "dl.mac":"macOS DMG をダウンロード","dl.win":"Windows x64 は近日提供","dl.winPending":"Windows x64 は近日提供","dl.free":"無料ダウンロード","dl.mirror":"CNB Release からダウンロード","dl.archLabel":"Macチップを選択","dl.archAuto":"自動判定","dl.archArm":"Apple Silicon","dl.archIntel":"Intel","dl.archDetected":"自動判定","dl.archDefault":"既定","dl.archSelected":"選択中","dl.archManual":"手動切替可能",
+    "dl.mac":"macOS DMG をダウンロード","dl.win":"Windows x64 をダウンロード","dl.winPending":"Windows x64","dl.free":"無料ダウンロード","dl.mirror":"CNB Release からダウンロード","dl.archLabel":"Macチップを選択","dl.archAuto":"自動判定","dl.archArm":"Apple Silicon","dl.archIntel":"Intel","dl.archDetected":"自動判定","dl.archDefault":"既定","dl.archSelected":"選択中","dl.archManual":"手動切替可能",
     "cta.label":"はじめよう","cta.title":"クリエイティブ資産を管理する準備はできましたか？","cta.desc":"OrcaBoxをダウンロードして、プロ級のローカルアセット管理を体験してください。",
     "cta.dl":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/></svg> macOS版をダウンロード",
     "cta.cnb":"CNB Release ダウンロード","cta.github":"GitHub 予備ダウンロード",
@@ -1013,9 +1013,9 @@ const i18n={
     "w2.title":"자동 인덱스","w2.desc":"썸네일 생성, 메타데이터 추출, 색상 분석. 실시간 파일 감시로 자동 동기화.",
     "w3.title":"미리보기 및 정리","w3.desc":"40개 이상의 형식 즉시 미리보기. 태그, 컬렉션, 평가로 지식 베이스 구축.",
     "w4.title":"드래그 앤 드롭","w4.desc":"디자인 도구나 브라우저로 직접 드래그. 배치, 배경화면, 폰트 설치 지원.",
-    "dl.label":"다운로드","dl.title":"OrcaBox 1.2.3","dl.desc":"Apple Silicon 및 Intel Mac용 내부 베타 설치 파일입니다. CNB를 기본 다운로드로 사용합니다.",
+    "dl.label":"다운로드","dl.title":"OrcaBox 1.2.3","dl.desc":"macOS 및 Windows x64용 내부 베타 설치 파일입니다. CNB를 기본 다운로드로 사용합니다.",
     "dl.extensionLabel":"브라우저 확장","dl.extensionTitle":"OrcaBox Chrome 확장","dl.extensionDesc":"웹 페이지의 이미지, 동영상, Lottie, 소재 링크를 OrcaBox 로 빠르게 수집합니다.","dl.extensionDownload":"Chrome 확장 ZIP 다운로드","dl.extensionRelease":"확장 릴리스 보기","dl.extensionMeta":"v1.2.3 · 압축 해제 후 Chrome 확장 프로그램에서 폴더 로드",
-    "dl.mac":"macOS DMG 다운로드","dl.win":"Windows x64 준비 중","dl.winPending":"Windows x64 준비 중","dl.free":"무료 다운로드","dl.mirror":"CNB Release 다운로드","dl.archLabel":"Mac 칩 선택","dl.archAuto":"자동 감지","dl.archArm":"Apple Silicon","dl.archIntel":"Intel","dl.archDetected":"자동 감지","dl.archDefault":"기본 선택","dl.archSelected":"현재 선택","dl.archManual":"수동 전환 가능",
+    "dl.mac":"macOS DMG 다운로드","dl.win":"Windows x64 다운로드","dl.winPending":"Windows x64","dl.free":"무료 다운로드","dl.mirror":"CNB Release 다운로드","dl.archLabel":"Mac 칩 선택","dl.archAuto":"자동 감지","dl.archArm":"Apple Silicon","dl.archIntel":"Intel","dl.archDetected":"자동 감지","dl.archDefault":"기본 선택","dl.archSelected":"현재 선택","dl.archManual":"수동 전환 가능",
     "cta.label":"시작하기","cta.title":"크리에이티브 자산을 관리할 준비가 되셨나요?","cta.desc":"OrcaBox를 다운로드하고 전문가급 로컬 자산 관리를 경험하세요.",
     "cta.dl":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/></svg> macOS용 다운로드",
     "cta.cnb":"CNB Release 다운로드","cta.github":"GitHub 예비 다운로드",

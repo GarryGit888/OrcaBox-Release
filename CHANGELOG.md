@@ -5,8 +5,8 @@
 - 新增可持久化无限画布，支持素材引用、移动、缩放、旋转、分组、锁定和隐藏。
 - 优化资料库索引、源目录树、媒体预览、拖拽和 AI 按需初始化。
 - 视频预览继续使用原始文件、缩略图和胶片帧，不生成视频代理文件。
-- 发布 macOS Apple Silicon 与 Intel x64 的 DMG / ZIP 内测包，以及 Chrome 扩展 1.2.3。
-- macOS 包尚未完成 Developer ID 签名与公证；Windows x64 未发布。
+- 发布 macOS Apple Silicon 与 Intel x64 的 DMG / ZIP 内测包、Windows x64 安装器、Windows x64 免安装版，以及 Chrome 扩展 1.2.3。
+- macOS 包尚未完成 Developer ID 签名与公证；Windows x64 包为内测分发版本。
 
 ## 1.2.1 - 2026-07-30
 

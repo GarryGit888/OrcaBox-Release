@@ -14,6 +14,8 @@ OrcaBox 是面向创作者与创意团队的本地素材管理器，支持图片
 | --- | --- |
 | macOS Apple Silicon | [CNB DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.3/OrcaBox-1.2.3-arm64.dmg) |
 | macOS Intel | [CNB DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.3/OrcaBox-1.2.3.dmg) |
+| Windows x64 安装器 | [GitHub EXE](https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.3/OrcaBox.Setup.1.2.3.exe) |
+| Windows x64 免安装版 | [GitHub EXE](https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.3/OrcaBox-1.2.3-Windows-x64-Portable.exe) |
 | Chrome 扩展 | [GitHub ZIP](https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.3/OrcaBox-Chrome-Extension-1.2.3.zip) |
 
 ZIP 包、更新日志和 SHA-256 校验值请访问：
@@ -21,7 +23,7 @@ ZIP 包、更新日志和 SHA-256 校验值请访问：
 - [CNB Releases](https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.2.3)
 - [GitHub Releases](https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.3)
 
-当前 macOS 安装包为未签名测试包，首次打开可能需要在系统设置中允许打开。Windows x64 未在 Windows + MSVC 主机完成 1.2.3 打包与实机验收，因此本版本不提供 Windows 安装器。
+当前 macOS 与 Windows 安装包均为内测包。macOS 安装包尚未完成 Developer ID 签名与公证，首次打开可能需要在系统设置中允许打开；Windows x64 提供安装器与免安装版，建议从 GitHub Release 下载。
 
 ## 主要能力
 

@@ -4,6 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#08080d">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="pragma" content="no-cache">
   <title>OrcaBox 更新记录</title>
   <link rel="icon" type="image/png" href="assets/orcabox-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -536,7 +538,7 @@
 
       <div class="content-column">
         <section id="latest"></section>
-        <section class="history" aria-labelledby="history-title">
+        <section id="history" class="history" aria-labelledby="history-title">
           <div class="history-heading">
             <h2 id="history-title">全部版本</h2>
             <span>按发布日期排序</span>
@@ -610,7 +612,7 @@
       ).join('')
     }
 
-    fetch('releases.json', { cache: 'no-store' })
+    fetch('releases.json?v=1.2.3', { cache: 'no-store' })
       .then((response) => response.json())
       .then((data) => {
         const releases = Array.isArray(data.releases) ? data.releases : []
