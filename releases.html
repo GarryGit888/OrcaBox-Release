@@ -3,86 +3,655 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>OrcaBox 发行说明与历史版本</title>
+  <meta name="theme-color" content="#08080d">
+  <title>OrcaBox 更新记录</title>
+  <link rel="icon" type="image/png" href="assets/orcabox-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    :root{color-scheme:dark;--bg:#08111b;--panel:#101d2a;--line:#23384b;--text:#e9f3fb;--muted:#91a6b8;--accent:#55c7ff}
-    *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top,#122b3d 0,#08111b 52%);color:var(--text);font:16px/1.65 -apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",sans-serif}
-    a{color:var(--accent);text-decoration:none}a:hover{text-decoration:underline}.shell{width:min(920px,calc(100% - 36px));margin:0 auto;padding:48px 0 80px}
-    .top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:56px}.brand{font-weight:700;font-size:20px;color:var(--text)}.back{border:1px solid var(--line);padding:7px 12px;border-radius:7px}
-    .eyebrow{color:var(--accent);font-size:13px;letter-spacing:.08em;text-transform:uppercase}.hero h1{font-size:clamp(2.2rem,6vw,4.4rem);line-height:1.05;margin:10px 0 18px;letter-spacing:-.02em}.hero p{color:var(--muted);max-width:650px;margin:0}
-    .release{margin-top:42px;background:rgba(16,29,42,.86);border:1px solid var(--line);border-radius:8px;padding:28px}.release-head{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;border-bottom:1px solid var(--line);padding-bottom:20px}.release h2{margin:0;font-size:28px}.date{color:var(--muted);white-space:nowrap}.summary{color:#c9d8e4;margin:20px 0 26px}
-    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px}.group h3{font-size:15px;margin:0 0 8px;color:var(--accent)}.group ul{list-style:none;padding:0;margin:0}.group li{color:#d9e5ee;margin:7px 0}.group li::before{content:"+";color:var(--accent);margin-right:8px}
-    .areas{display:flex;flex-wrap:wrap;gap:7px;margin:24px 0 0}.area{border:1px solid var(--line);border-radius:5px;color:var(--muted);padding:3px 8px;font-size:13px}.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px;padding-top:20px;border-top:1px solid var(--line)}
-    .history{margin-top:56px}.history h2{font-size:22px}.history-list{display:grid;gap:14px}.history-card{border:1px solid var(--line);border-radius:7px;padding:18px}.history-card-head{display:flex;justify-content:space-between;gap:16px}.history-card h3{margin:0;font-size:18px}.history-card p{color:var(--muted);margin:8px 0 0}.history-card span{color:var(--muted);white-space:nowrap}
-    .empty{color:var(--muted);border:1px dashed var(--line);padding:20px;border-radius:7px}
-    @media(max-width:620px){.shell{width:min(100% - 24px,920px);padding-top:28px}.top{margin-bottom:38px}.release{padding:20px}.release-head{display:block}.date{display:block;margin-top:6px}.grid{grid-template-columns:1fr}.history-item{display:block}}
+    :root {
+      color-scheme: dark;
+      --font: 'Geist', -apple-system, BlinkMacSystemFont, 'Noto Sans SC', 'Noto Sans JP', 'Noto Sans KR', sans-serif;
+      --font-mono: 'Geist Mono', 'SF Mono', monospace;
+      --bg: #08080d;
+      --bg-raised: #101018;
+      --bg-subtle: #14141e;
+      --text: #e4e4e7;
+      --text-2: #9898a4;
+      --text-3: #666674;
+      --border: #27272a;
+      --border-subtle: #1c1c24;
+      --accent: #3b82f6;
+      --accent-dim: rgba(59, 130, 246, .10);
+      --accent-soft: rgba(59, 130, 246, .16);
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --shadow-md: 0 4px 16px rgba(0, 0, 0, .30);
+      --ease: cubic-bezier(.16, 1, .3, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html {
+      overflow-x: hidden;
+      background: var(--bg);
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: .9375rem;
+      line-height: 1.6;
+    }
+    ::selection { background: var(--accent); color: #fff; }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      height: 56px;
+      border-bottom: 1px solid var(--border-subtle);
+      background: color-mix(in srgb, var(--bg) 88%, transparent);
+      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px);
+    }
+    .nav-inner {
+      max-width: 1280px;
+      height: 100%;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .nav-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+      color: var(--text);
+      font-size: .9375rem;
+      font-weight: 600;
+      letter-spacing: -.02em;
+    }
+    .nav-brand img {
+      width: 28px;
+      height: 28px;
+      border-radius: 7px;
+      object-fit: cover;
+      box-shadow: 0 1px 5px rgba(0, 0, 0, .35);
+    }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .nav-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      height: 36px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 0 14px;
+      color: var(--text-2);
+      font-size: .8125rem;
+      font-weight: 500;
+      white-space: nowrap;
+      transition: color .2s, border-color .2s, background-color .2s, transform .2s var(--ease);
+    }
+    .nav-link:hover {
+      border-color: var(--accent);
+      background: var(--accent-dim);
+      color: var(--text);
+      transform: translateY(-1px);
+    }
+
+    .container {
+      width: min(100% - 64px, 1180px);
+      margin: 0 auto;
+    }
+    .hero {
+      padding: 72px 0 36px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 280px;
+      align-items: end;
+      gap: 48px;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+      border: 1px solid rgba(59, 130, 246, .35);
+      border-radius: 999px;
+      padding: 5px 10px;
+      background: rgba(59, 130, 246, .08);
+      color: #b7d4ff;
+      font-family: var(--font-mono);
+      font-size: .6875rem;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #60a5fa;
+      box-shadow: 0 0 12px rgba(96, 165, 250, .9);
+      content: "";
+    }
+    h1 {
+      max-width: 860px;
+      margin: 0;
+      color: var(--text);
+      font-size: clamp(2.4rem, 6vw, 5.8rem);
+      font-weight: 700;
+      letter-spacing: -.05em;
+      line-height: .98;
+    }
+    .hero p {
+      max-width: 660px;
+      margin: 20px 0 0;
+      color: var(--text-2);
+      font-size: 1.0625rem;
+      line-height: 1.7;
+      text-wrap: pretty;
+    }
+    .release-stat {
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      background: var(--bg-raised);
+      padding: 20px;
+    }
+    .release-stat strong {
+      display: block;
+      color: var(--text);
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: -.03em;
+    }
+    .release-stat span {
+      display: block;
+      margin-top: 3px;
+      color: var(--text-3);
+      font-size: .8125rem;
+    }
+
+    .workspace {
+      display: grid;
+      grid-template-columns: 210px minmax(0, 1fr);
+      align-items: start;
+      gap: 48px;
+      padding: 36px 0 88px;
+      min-width: 0;
+    }
+    .version-nav {
+      position: sticky;
+      top: 88px;
+      min-width: 0;
+    }
+    .section-label {
+      margin: 0 0 10px;
+      color: var(--text-3);
+      font-size: .6875rem;
+      font-weight: 600;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .version-list {
+      display: grid;
+      gap: 2px;
+      min-width: 0;
+    }
+    .version-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      min-height: 42px;
+      border-left: 2px solid transparent;
+      padding: 8px 10px;
+      color: var(--text-2);
+      transition: background-color .2s, border-color .2s, color .2s;
+    }
+    .version-item:hover {
+      background: var(--bg-raised);
+      color: var(--text);
+    }
+    .version-item.is-current {
+      border-left-color: var(--accent);
+      background: var(--accent-dim);
+      color: var(--text);
+    }
+    .version-item strong {
+      font-size: .8125rem;
+      font-weight: 600;
+    }
+    .version-item span {
+      color: var(--text-3);
+      font-family: var(--font-mono);
+      font-size: .6875rem;
+    }
+
+    .content-column,
+    .release-panel,
+    .history-card,
+    .history-card p { min-width: 0; }
+    .release-panel {
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      background: var(--bg-raised);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+    }
+    .release-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 24px;
+      align-items: start;
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 26px 28px 22px;
+    }
+    .release-head h2 {
+      margin: 0;
+      font-size: 1.6rem;
+      font-weight: 650;
+      letter-spacing: -.025em;
+      line-height: 1.2;
+    }
+    .release-head p {
+      margin: 6px 0 0;
+      color: var(--text-3);
+      font-size: .8125rem;
+    }
+    .release-date {
+      color: var(--text-2);
+      font-family: var(--font-mono);
+      font-size: .75rem;
+      white-space: nowrap;
+    }
+    .release-summary {
+      margin: 0;
+      padding: 22px 28px 0;
+      color: var(--text-2);
+      font-size: .9375rem;
+      line-height: 1.75;
+    }
+    .change-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0 28px;
+      padding: 24px 28px 28px;
+    }
+    .change-group {
+      border-top: 1px solid var(--border);
+      padding-top: 16px;
+    }
+    .change-group h3 {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 0 0 10px;
+      color: var(--text);
+      font-size: .8125rem;
+      font-weight: 600;
+    }
+    .change-group h3::before {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent);
+      content: "";
+    }
+    .change-group:nth-child(2) h3::before { background: #22c55e; }
+    .change-group:nth-child(3) h3::before { background: #f59e0b; }
+    .change-group ul {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .change-group li {
+      position: relative;
+      padding-left: 15px;
+      color: var(--text-2);
+      font-size: .875rem;
+      line-height: 1.7;
+    }
+    .change-group li::before {
+      position: absolute;
+      left: 0;
+      color: var(--text-3);
+      content: "";
+      width: 4px;
+      height: 4px;
+      border-radius: 999px;
+      background: currentColor;
+      top: .78em;
+    }
+    .release-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      border-top: 1px solid var(--border-subtle);
+      padding: 18px 28px;
+      background: rgba(20, 20, 30, .52);
+    }
+    .action-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 36px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 0 14px;
+      color: var(--text);
+      font-size: .8125rem;
+      font-weight: 500;
+      white-space: nowrap;
+      transition: background-color .2s, border-color .2s, color .2s, transform .2s var(--ease);
+    }
+    .action-link.is-primary {
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #fff;
+    }
+    .action-link:hover {
+      border-color: var(--accent);
+      background: var(--accent-dim);
+      color: var(--text);
+      transform: translateY(-1px);
+    }
+    .action-link.is-primary:hover {
+      background: #4b8df7;
+      color: #fff;
+    }
+
+    .history {
+      margin-top: 44px;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 26px;
+    }
+    .history-heading {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 12px;
+    }
+    .history-heading h2 {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 600;
+    }
+    .history-heading span {
+      color: var(--text-3);
+      font-size: .75rem;
+    }
+    .history-list {
+      display: grid;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .history-card {
+      display: grid;
+      grid-template-columns: 150px minmax(0, 1fr) auto;
+      align-items: center;
+      gap: 20px;
+      min-height: 76px;
+      border-top: 1px solid var(--border-subtle);
+      padding: 14px 4px;
+    }
+    .history-card h3 {
+      margin: 0;
+      color: var(--text);
+      font-size: .875rem;
+      font-weight: 600;
+    }
+    .history-card time {
+      display: block;
+      margin-top: 2px;
+      color: var(--text-3);
+      font-family: var(--font-mono);
+      font-size: .6875rem;
+    }
+    .history-card p {
+      margin: 0;
+      color: var(--text-2);
+      font-size: .8125rem;
+      line-height: 1.65;
+    }
+    .history-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: end;
+      gap: 8px;
+    }
+    .history-links a {
+      color: #9ec5ff;
+      font-size: .75rem;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+    .history-links a:hover { color: var(--text); }
+    .empty {
+      border: 1px dashed var(--border);
+      border-radius: var(--radius-sm);
+      padding: 18px;
+      color: var(--text-2);
+    }
+
+    @media (max-width: 900px) {
+      .container { width: min(100% - 40px, 1180px); }
+      .hero-grid { grid-template-columns: 1fr; gap: 26px; }
+      .release-stat { max-width: 320px; }
+      .workspace { grid-template-columns: 1fr; gap: 28px; }
+      .version-nav { position: static; }
+      .version-list {
+        display: flex;
+        gap: 4px;
+        overflow-x: auto;
+        padding-bottom: 4px;
+      }
+      .version-item {
+        flex: 0 0 auto;
+        border-left: 0;
+        border-bottom: 2px solid transparent;
+      }
+      .version-item.is-current { border-bottom-color: var(--accent); }
+      .change-grid { grid-template-columns: 1fr; gap: 18px; }
+      .history-card { grid-template-columns: 1fr; gap: 6px; }
+      .history-links { justify-content: start; }
+    }
+    @media (max-width: 620px) {
+      .nav-inner { padding: 0 16px; }
+      .nav-link:first-child { display: none; }
+      .container { width: min(100% - 24px, 1180px); }
+      .hero { padding: 48px 0 28px; }
+      h1 { font-size: 2.7rem; }
+      .release-head { grid-template-columns: 1fr; gap: 8px; padding: 22px 20px 18px; }
+      .release-summary { padding: 18px 20px 0; }
+      .change-grid { padding: 22px 20px; }
+      .release-actions {
+        flex-direction: column;
+        padding: 16px 20px;
+      }
+      .action-link { align-self: stretch; }
+      .history-heading { display: block; }
+      .history-heading span { display: block; margin-top: 3px; }
+      .history-card p,
+      .release-summary,
+      .change-group li { overflow-wrap: anywhere; }
+    }
   </style>
 </head>
 <body>
-  <main class="shell">
-    <nav class="top"><a class="brand" href="index.html">OrcaBox</a><a class="back" href="index.html#updates">返回官网</a></nav>
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="nav-brand" href="index.html">
+        <img src="assets/orcabox-icon.png" alt="" width="28" height="28">
+        <span>OrcaBox</span>
+      </a>
+      <div class="nav-actions">
+        <a class="nav-link" href="#latest">当前版本</a>
+        <a class="nav-link" href="index.html#updates">返回官网</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
     <section class="hero">
-      <div class="eyebrow">Release notes</div>
-      <h1>发行说明<br>与历史版本</h1>
-      <p>记录每次版本的新增功能、体验优化、问题修复和跨平台发布信息。内容由版本发布任务从 Git 变更自动生成。</p>
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Release Notes</span>
+          <h1>OrcaBox 更新记录</h1>
+          <p>查看每个版本的新增能力、体验优化、问题修复与公开下载信息。</p>
+        </div>
+        <div class="release-stat" aria-live="polite">
+          <strong id="release-count">-- 个版本</strong>
+          <span>持续维护中</span>
+        </div>
+      </div>
     </section>
-    <section id="latest"></section>
-    <section class="history">
-      <h2>历史版本</h2>
-      <div id="history-list" class="history-list"></div>
-    </section>
+
+    <div class="container workspace">
+      <aside class="version-nav" aria-label="版本导航">
+        <p class="section-label">历史版本</p>
+        <nav id="version-list" class="version-list"></nav>
+      </aside>
+
+      <div class="content-column">
+        <section id="latest"></section>
+        <section class="history" aria-labelledby="history-title">
+          <div class="history-heading">
+            <h2 id="history-title">全部版本</h2>
+            <span>按发布日期排序</span>
+          </div>
+          <div id="history-list" class="history-list"></div>
+        </section>
+      </div>
+    </div>
   </main>
+
   <script>
     const latest = document.getElementById('latest')
     const history = document.getElementById('history-list')
-    const labels = {features:'新增功能', improvements:'优化改进', fixes:'问题修复', engineering:'工程与文档'}
+    const versionList = document.getElementById('version-list')
+    const releaseCount = document.getElementById('release-count')
+
+    const groups = [
+      ['features', '新增功能'],
+      ['improvements', '体验优化'],
+      ['fixes', '问题修复'],
+    ]
+    const publicLinks = [
+      ['windowsInstaller', 'Windows x64 安装器', true],
+      ['windowsPortable', 'Windows 免安装版', false],
+      ['cnbRelease', 'CNB 下载页', false],
+      ['githubRelease', '备用下载页', false],
+      ['browserExtension', 'Chrome 浏览器插件', false],
+    ]
+
     const esc = (value) => String(value ?? '')
-      .replaceAll('&','&amp;').replaceAll('<','&lt;').replaceAll('>','&gt;')
-      .replaceAll('"','&quot;').replaceAll("'","&#039;")
-    const link = (url, label) => `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(label)}</a>`
-    const renderGroup = (key, changes) => {
-      const items = (changes || []).map((item) => `<li>${esc(item.text)}</li>`).join('')
-      return `<div class="group"><h3>${labels[key]}</h3><ul>${items || '<li>本版本无此类变更</li>'}</ul></div>`
+      .replaceAll('&', '&amp;')
+      .replaceAll('<', '&lt;')
+      .replaceAll('>', '&gt;')
+      .replaceAll('"', '&quot;')
+      .replaceAll("'", '&#039;')
+
+    const actionLink = (url, label, primary = false) => url
+      ? `<a class="action-link${primary ? ' is-primary' : ''}" href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(label)}</a>`
+      : ''
+
+    const textLink = (url, label) => url
+      ? `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(label)}</a>`
+      : ''
+
+    const renderGroup = ([key, label], categories = {}) => {
+      const items = (categories[key] || [])
+        .map((item) => `<li>${esc(item.text)}</li>`)
+        .join('')
+      return `<div class="change-group"><h3>${label}</h3><ul>${items || '<li>本版本暂无此类更新</li>'}</ul></div>`
     }
-    fetch('releases.json', {cache:'no-store'})
+
+    const renderActions = (links = {}) => publicLinks
+      .map(([key, label, primary]) => actionLink(links[key], label, primary))
+      .filter(Boolean)
+      .join('')
+
+    const renderHistoryLinks = (links = {}) => [
+      textLink(links.windowsInstaller, '安装器'),
+      textLink(links.windowsPortable, '免安装版'),
+      textLink(links.cnbRelease, '下载页'),
+      textLink(links.githubRelease, '备用下载'),
+      textLink(links.browserExtension, '插件'),
+    ].filter(Boolean).join('')
+
+    const renderVersionNav = (releases) => {
+      versionList.innerHTML = releases.map((release, index) =>
+        `<a class="version-item${index === 0 ? ' is-current' : ''}" href="#${esc(release.tag)}">
+          <strong>${esc(release.displayVersion || release.version)}</strong>
+          <span>${esc(release.date)}</span>
+        </a>`,
+      ).join('')
+    }
+
+    fetch('releases.json', { cache: 'no-store' })
       .then((response) => response.json())
       .then((data) => {
         const releases = Array.isArray(data.releases) ? data.releases : []
         const current = releases[0]
+        releaseCount.textContent = `${releases.length} 个版本`
+        renderVersionNav(releases)
+
         if (!current) {
-          latest.innerHTML = '<div class="empty">还没有发布文档。完成一次版本更新后运行 <code>npm run release:docs</code>。</div>'
-          history.innerHTML = '<div class="empty">暂无历史版本</div>'
+          latest.innerHTML = '<div class="empty">暂无发行记录。</div>'
+          history.innerHTML = '<div class="empty">暂无历史版本。</div>'
           return
         }
-        latest.innerHTML = `<article id="${esc(current.tag)}" class="release">
-          <div class="release-head"><h2>${esc(current.title)}</h2><span class="date">${esc(current.date)}</span></div>
-          <p class="summary">${esc(current.summary)}</p>
-          <div class="grid">
-            ${renderGroup('features', current.categories.features)}
-            ${renderGroup('improvements', current.categories.improvements)}
-            ${renderGroup('fixes', current.categories.fixes)}
-            ${renderGroup('engineering', current.categories.engineering)}
+
+        latest.innerHTML = `<article id="${esc(current.tag)}" class="release-panel">
+          <div class="release-head">
+            <div>
+              <h2>${esc(current.title)}</h2>
+              <p>当前公开版本</p>
+            </div>
+            <time class="release-date" datetime="${esc(current.date)}">${esc(current.date)}</time>
           </div>
-          <div class="areas">${(current.changedAreas || []).map((area) => `<span class="area">${esc(area.area)} · ${esc(area.count)} files</span>`).join('')}</div>
-          <div class="links">
-            ${link(current.links.cnbRelease, 'CNB 发行页')}
-            ${link(current.links.githubRelease, 'GitHub 备用发行页')}
-            ${link(current.links.browserExtension, 'Chrome 浏览器插件')}
-            ${link(current.links.cnb, 'CNB 源码')}
-            ${link(current.links.github, 'GitHub 源码')}
-            ${link(current.links.gitee, 'Gitee 源码')}
+          <p class="release-summary">${esc(current.summary)}</p>
+          <div class="change-grid">
+            ${groups.map((group) => renderGroup(group, current.categories)).join('')}
           </div>
+          <div class="release-actions">${renderActions(current.links) || '<span class="empty">暂无公开下载链接。</span>'}</div>
         </article>`
+
         history.innerHTML = releases.map((release) =>
           `<article id="${esc(release.tag)}" class="history-card">
-            <div class="history-card-head"><h3>${esc(release.title)}</h3><span>${esc(release.date)}</span></div>
+            <div>
+              <h3>${esc(release.title)}</h3>
+              <time datetime="${esc(release.date)}">${esc(release.date)}</time>
+            </div>
             <p>${esc(release.summary)}</p>
-            <div class="links">${link(release.cnbRelease, 'CNB 发行页')} ${link(release.githubRelease, 'GitHub 备用发行页')} ${link(release.browserExtension, 'Chrome 浏览器插件')}</div>
+            <div class="history-links">${renderHistoryLinks(release.links)}</div>
           </article>`,
         ).join('')
       })
       .catch(() => {
-        latest.innerHTML = '<div class="empty">发行记录暂时无法加载，请直接查看代码仓库中的 doc/release/versions/。</div>'
+        latest.innerHTML = '<div class="empty">发行记录暂时无法加载。</div>'
       })
   </script>
 </body>
