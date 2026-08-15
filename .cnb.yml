@@ -13,3 +13,37 @@ $:
             backup: false
       stages:
         - node --check server.mjs
+
+"v*":
+  tag_push:
+    - stages:
+        - name: Download GitHub release assets
+          script: |
+            set -eu
+            version="${CNB_BRANCH#v}"
+            mkdir -p release-assets
+            for asset in \
+              "OrcaBox-${version}-arm64.dmg" \
+              "OrcaBox-${version}-arm64.dmg.blockmap" \
+              "OrcaBox-${version}-arm64-mac.zip" \
+              "OrcaBox-${version}-arm64-mac.zip.blockmap" \
+              "OrcaBox-${version}.dmg" \
+              "OrcaBox-${version}.dmg.blockmap" \
+              "OrcaBox-${version}-mac.zip" \
+              "OrcaBox-${version}-mac.zip.blockmap" \
+              "OrcaBox-Chrome-Extension-${version}.zip" \
+              "latest-mac.yml"; do
+              curl --fail --location --retry 3 --output "release-assets/${asset}" "https://github.com/GarryGit888/OrcaBox-Release/releases/download/${CNB_BRANCH}/${asset}"
+            done
+            cp "OrcaBox-${version}-Release-Notes.md" release-assets/RELEASE_NOTES.md
+        - name: Create CNB release
+          type: git:release
+          options:
+            descriptionFromFile: release-assets/RELEASE_NOTES.md
+            preRelease: true
+            latest: true
+        - name: Upload release assets
+          image: cnbcool/attachments
+          settings:
+            attachments:
+              - release-assets/*

@@ -561,6 +561,10 @@
       ['fixes', '问题修复'],
     ]
     const publicLinks = [
+      ['macArm64Dmg', 'macOS Apple Silicon DMG', true],
+      ['macX64Dmg', 'macOS Intel DMG', false],
+      ['macArm64Zip', 'macOS Apple Silicon ZIP', false],
+      ['macX64Zip', 'macOS Intel ZIP', false],
       ['windowsInstaller', 'Windows x64 安装器', true],
       ['windowsPortable', 'Windows 免安装版', false],
       ['cnbRelease', 'CNB 下载页', false],
@@ -596,6 +600,8 @@
       .join('')
 
     const renderHistoryLinks = (links = {}) => [
+      textLink(links.macArm64Dmg, 'macOS Apple Silicon'),
+      textLink(links.macX64Dmg, 'macOS Intel'),
       textLink(links.windowsInstaller, '安装器'),
       textLink(links.windowsPortable, '免安装版'),
       textLink(links.cnbRelease, '下载页'),
@@ -612,7 +618,7 @@
       ).join('')
     }
 
-    fetch('releases.json?v=1.2.3', { cache: 'no-store' })
+    fetch('releases.json?v=1.2.4', { cache: 'no-store' })
       .then((response) => response.json())
       .then((data) => {
         const releases = Array.isArray(data.releases) ? data.releases : []

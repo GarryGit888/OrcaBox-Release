@@ -1,7 +1,143 @@
 {
-  "updatedAt": "2026-08-08",
-  "current": "1.2.3",
+  "updatedAt": "2026-08-15",
+  "current": "1.2.4",
   "releases": [
+    {
+      "version": "1.2.4",
+      "displayVersion": "1.2.4",
+      "date": "2026-08-15",
+      "tag": "v1.2.4",
+      "title": "OrcaBox 1.2.4",
+      "summary": "聚焦素材浏览与预览性能、原始媒体播放稳定性，并发布 macOS Apple Silicon / Intel 双架构内测包。",
+      "generatedFrom": {
+        "baseRef": "v1.2.3",
+        "branch": "1.2.4",
+        "commitCount": 10,
+        "changedFileCount": 155
+      },
+      "categories": {
+        "features": [
+          {
+            "text": "发布 macOS Apple Silicon（arm64）与 Intel（x64）DMG / ZIP 内测包"
+          }
+        ],
+        "improvements": [
+          {
+            "text": "优化素材网格浏览、缩略图加载与预览调度",
+            "commit": "f8e33ce",
+            "date": "2026-08-14"
+          },
+          {
+            "text": "持续使用原始媒体文件、缩略图与胶片帧进行视频预览，不生成视频代理文件",
+            "commit": "425150a",
+            "date": "2026-08-12"
+          },
+          {
+            "text": "改进选中音频播放在素材卡片、详情面板和预览工作区之间的状态同步",
+            "commit": "9f14903",
+            "date": "2026-08-11"
+          },
+          {
+            "text": "可见的 Lottie / JSON 素材保持连续实时预览",
+            "commit": "e853dab",
+            "date": "2026-08-09"
+          },
+          {
+            "text": "同步更新官网发行说明与下载入口",
+            "commit": "e061e44",
+            "date": "2026-08-08"
+          }
+        ],
+        "fixes": [
+          {
+            "text": "修复锁定文件夹状态文字在侧栏内可能换行的问题，保持单行显示",
+            "commit": "6dcd300",
+            "date": "2026-08-07"
+          }
+        ],
+        "engineering": [
+          {
+            "text": "改善原生视频播放与跨平台媒体处理稳定性",
+            "commit": "38481a5",
+            "date": "2026-08-15"
+          },
+          {
+            "text": "浏览器扩展同步至 1.2.4",
+            "commit": "e3d94a1",
+            "date": "2026-08-12"
+          },
+          {
+            "text": "macOS 双架构安装包已完成构建和校验",
+            "commit": "d229efa",
+            "date": "2026-08-09"
+          },
+          {
+            "text": "macOS 包待 Developer ID 签名与公证",
+            "commit": "7045191",
+            "date": "2026-08-08"
+          }
+        ]
+      },
+      "changedAreas": [
+        {
+          "area": "src",
+          "count": 112
+        },
+        {
+          "area": "resources",
+          "count": 9
+        },
+        {
+          "area": "doc",
+          "count": 6
+        },
+        {
+          "area": "extensions",
+          "count": 6
+        },
+        {
+          "area": "plugins-dev",
+          "count": 4
+        },
+        {
+          "area": "scripts",
+          "count": 4
+        },
+        {
+          "area": "docs",
+          "count": 3
+        },
+        {
+          "area": "website",
+          "count": 3
+        },
+        {
+          "area": "native",
+          "count": 2
+        },
+        {
+          "area": ".codex-tmp",
+          "count": 1
+        },
+        {
+          "area": ".gitignore",
+          "count": 1
+        },
+        {
+          "area": "electron.vite.config.ts",
+          "count": 1
+        }
+      ],
+      "links": {
+        "cnbRelease": "https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.2.4",
+        "githubRelease": "https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.4",
+        "macArm64Dmg": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.4/OrcaBox-1.2.4-arm64.dmg",
+        "macArm64Zip": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.4/OrcaBox-1.2.4-arm64-mac.zip",
+        "macX64Dmg": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.4/OrcaBox-1.2.4.dmg",
+        "macX64Zip": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.4/OrcaBox-1.2.4-mac.zip",
+        "browserExtension": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.4/OrcaBox-Chrome-Extension-1.2.4.zip"
+      }
+    },
     {
       "version": "1.2.3",
       "displayVersion": "1.2.3",
