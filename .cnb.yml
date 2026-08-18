@@ -20,17 +20,40 @@ main:
         - name: Fetch and verify Windows 1.2.4 assets
           image: cnbcool/default-build-env:latest
           script:
-            - set -eu
-            - mkdir -p release-assets
-            - curl -fL --retry 3 --retry-delay 2 "https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.4/OrcaBox.Setup.1.2.4.exe" -o release-assets/OrcaBox.Setup.1.2.4.exe
-            - curl -fL --retry 3 --retry-delay 2 "https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.4/OrcaBox.Setup.1.2.4.exe.blockmap" -o release-assets/OrcaBox.Setup.1.2.4.exe.blockmap
-            - curl -fL --retry 3 --retry-delay 2 "https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.4/OrcaBox-1.2.4-Windows-x64-Portable.exe" -o release-assets/OrcaBox-1.2.4-Windows-x64-Portable.exe
-            - curl -fL --retry 3 --retry-delay 2 "https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.4/latest.yml" -o release-assets/latest.yml
-            - printf '%s  %s\n' 'b9f050e0dcaba4157e3c1526e88d83065257605f7193d70d79a2bddb09f877a5' release-assets/OrcaBox.Setup.1.2.4.exe | sha256sum -c -
-            - printf '%s  %s\n' '784a03c450b6678cfbc36c738069d62967650fce1c0ac817ef11c7456d0a163e' release-assets/OrcaBox.Setup.1.2.4.exe.blockmap | sha256sum -c -
-            - printf '%s  %s\n' '5318e2e4bf91c86b2e7c9f4005564c87ee6dd911845d4888abdf0a24e721b118' release-assets/OrcaBox-1.2.4-Windows-x64-Portable.exe | sha256sum -c -
-            - test "$(sed -n '1p' release-assets/latest.yml)" = 'version: 1.2.4'
-            - test "$(sed -n '3p' release-assets/latest.yml | sed 's/^[[:space:]]*- url: //')" = 'OrcaBox.Setup.1.2.4.exe'
+            - |
+              set -eu
+              mkdir -p release-assets
+              proxy='https://ghfast.top/https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.4'
+              download_segmented() {
+                url="$1"
+                output="$2"
+                size="$3"
+                chunk=$((16 * 1024 * 1024))
+                parts="${output}.parts"
+                mkdir -p "$parts"
+                start=0
+                index=0
+                while [ "$start" -lt "$size" ]; do
+                  end=$((start + chunk - 1))
+                  if [ "$end" -ge "$size" ]; then end=$((size - 1)); fi
+                  part="$parts/$(printf '%05d' "$index")"
+                  curl -fL --retry 5 --retry-delay 2 --range "${start}-${end}" "$url" -o "$part" &
+                  start=$((end + 1))
+                  index=$((index + 1))
+                done
+                wait
+                cat "$parts"/* > "$output"
+                rm -rf "$parts"
+              }
+              download_segmented "$proxy/OrcaBox.Setup.1.2.4.exe" release-assets/OrcaBox.Setup.1.2.4.exe 301135984
+              download_segmented "$proxy/OrcaBox-1.2.4-Windows-x64-Portable.exe" release-assets/OrcaBox-1.2.4-Windows-x64-Portable.exe 300726026
+              curl -fL --retry 5 --retry-delay 2 "$proxy/OrcaBox.Setup.1.2.4.exe.blockmap" -o release-assets/OrcaBox.Setup.1.2.4.exe.blockmap
+              curl -fL --retry 5 --retry-delay 2 "$proxy/latest.yml" -o release-assets/latest.yml
+              printf '%s  %s\n' 'b9f050e0dcaba4157e3c1526e88d83065257605f7193d70d79a2bddb09f877a5' release-assets/OrcaBox.Setup.1.2.4.exe | sha256sum -c -
+              printf '%s  %s\n' '784a03c450b6678cfbc36c738069d62967650fce1c0ac817ef11c7456d0a163e' release-assets/OrcaBox.Setup.1.2.4.exe.blockmap | sha256sum -c -
+              printf '%s  %s\n' '5318e2e4bf91c86b2e7c9f4005564c87ee6dd911845d4888abdf0a24e721b118' release-assets/OrcaBox-1.2.4-Windows-x64-Portable.exe | sha256sum -c -
+              test "$(sed -n '1p' release-assets/latest.yml)" = 'version: 1.2.4'
+              test "$(sed -n '3p' release-assets/latest.yml | sed 's/^[[:space:]]*- url: //')" = 'OrcaBox.Setup.1.2.4.exe'
         - name: Refresh CNB v1.2.4 release notes
           type: git:release
           options:
