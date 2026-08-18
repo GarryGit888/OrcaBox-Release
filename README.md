@@ -14,8 +14,8 @@ OrcaBox 是面向创作者与创意团队的本地素材管理器，支持图片
 | --- | --- |
 | macOS Apple Silicon | [CNB DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.4/OrcaBox-1.2.4-arm64.dmg) / [ZIP](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.4/OrcaBox-1.2.4-arm64-mac.zip) |
 | macOS Intel | [CNB DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.4/OrcaBox-1.2.4.dmg) / [ZIP](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.4/OrcaBox-1.2.4-mac.zip) |
-| Windows x64 安装器 | [GitHub EXE](https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.3/OrcaBox.Setup.1.2.3.exe) |
-| Windows x64 免安装版 | [GitHub EXE](https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.3/OrcaBox-1.2.3-Windows-x64-Portable.exe) |
+| Windows x64 安装器 | [CNB EXE](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.4/OrcaBox.Setup.1.2.4.exe) / [GitHub EXE](https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.4/OrcaBox.Setup.1.2.4.exe) |
+| Windows x64 免安装版 | [CNB EXE](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.4/OrcaBox-1.2.4-Windows-x64-Portable.exe) / [GitHub EXE](https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.4/OrcaBox-1.2.4-Windows-x64-Portable.exe) |
 | Chrome 扩展 | [GitHub ZIP](https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.4/OrcaBox-Chrome-Extension-1.2.4.zip) |
 
 ZIP 包、更新日志和 SHA-256 校验值请访问：
@@ -23,7 +23,7 @@ ZIP 包、更新日志和 SHA-256 校验值请访问：
 - [CNB Releases](https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.2.4)
 - [GitHub Releases](https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.4)
 
-当前 macOS 1.2.4 与 Windows 1.2.3 安装包均为内测包。macOS 1.2.4 已提供 Apple Silicon 和 Intel 版本，但尚未完成 Developer ID 签名与公证，首次打开可能需要在系统设置中允许打开；Windows x64 提供安装器与免安装版，建议从 GitHub Release 下载。
+当前 macOS 与 Windows 1.2.4 安装包均为内测包。macOS 安装包尚未完成 Developer ID 签名与公证，首次打开可能需要在系统设置中允许打开；Windows x64 提供安装器与免安装版，CNB 为主下载源，GitHub 为备用下载源。
 
 ## 主要能力
 

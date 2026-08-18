@@ -6,9 +6,8 @@
 - 视频预览继续使用原始媒体文件、缩略图和胶片帧，不生成视频代理文件。
 - 改进选中音频播放在素材卡片、详情面板和预览工作区之间的状态同步。
 - 可见的 Lottie / JSON 素材保持连续实时预览。
-- 修复锁定文件夹状态文字在侧栏内可能换行的问题，保持单行显示。
-- 发布 macOS Apple Silicon 与 Intel x64 的 DMG / ZIP 内测包，以及 Chrome 扩展 1.2.4。
-- macOS 包尚未完成 Developer ID 签名与公证；Windows x64 下载继续提供 1.2.3 版本。
+- 发布 macOS Apple Silicon 与 Intel x64 的 DMG / ZIP 内测包、Windows x64 安装器与免安装版，以及 Chrome 扩展 1.2.4。
+- CNB 与 GitHub 同步 Windows 安装器、Portable 包、blockmap 和 `latest.yml` 自动更新清单。
 
 ## 1.2.3 - 2026-08-07
 

@@ -2,11 +2,12 @@
 
 发布日期：2026-08-15
 
-> 本版本聚焦素材浏览与预览性能、原始媒体播放稳定性，以及 macOS 双架构分发。
+> 本版本聚焦素材浏览与预览性能、原始媒体播放稳定性，并补齐 macOS 双架构与 Windows x64 分发。
 
 ## 发布内容
 
 - 发布 macOS Apple Silicon（arm64）与 Intel（x64）DMG / ZIP 内测包。
+- 发布 Windows x64 安装器与免安装版。
 - Chrome 浏览器扩展同步至 1.2.4。
 
 ## 优化改进
@@ -48,12 +49,19 @@
 - Intel DMG：[OrcaBox-1.2.4.dmg](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.4/OrcaBox-1.2.4.dmg)
 - Intel ZIP：[OrcaBox-1.2.4-mac.zip](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.4/OrcaBox-1.2.4-mac.zip)
 
+## Windows 安装包
+
+- Windows x64 安装器：[OrcaBox.Setup.1.2.4.exe](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.4/OrcaBox.Setup.1.2.4.exe)
+- Windows x64 免安装版：[OrcaBox-1.2.4-Windows-x64-Portable.exe](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.4/OrcaBox-1.2.4-Windows-x64-Portable.exe)
+
 SHA-256：
 
 - `OrcaBox-1.2.4-arm64.dmg`：`b2a7d236870a1425810233c12dcbc759035518dfe6f48ec4fb4d3a5916c249cc`
 - `OrcaBox-1.2.4-arm64-mac.zip`：`d63678d6dc31e5430ceb07d65874380a2bf9a3fa2777c7e6dad5931eba358a96`
 - `OrcaBox-1.2.4.dmg`：`fc5c1b87e5dbb99cf5e5257335d947ffaadd121c91d9d3b0fbdeb440a588ca41`
 - `OrcaBox-1.2.4-mac.zip`：`5f18d9376b38fff31ce60ba84d819484e2159d03dfd8891c36d4a6fc97c04705`
+- `OrcaBox.Setup.1.2.4.exe`：`b9f050e0dcaba4157e3c1526e88d83065257605f7193d70d79a2bddb09f877a5`
+- `OrcaBox-1.2.4-Windows-x64-Portable.exe`：`5318e2e4bf91c86b2e7c9f4005564c87ee6dd911845d4888abdf0a24e721b118`
 
 ## 获取更新
 

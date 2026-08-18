@@ -8,7 +8,7 @@
       "date": "2026-08-15",
       "tag": "v1.2.4",
       "title": "OrcaBox 1.2.4",
-      "summary": "聚焦素材浏览与预览性能、原始媒体播放稳定性，并发布 macOS Apple Silicon / Intel 双架构内测包。",
+      "summary": "聚焦素材浏览与预览性能、原始媒体播放稳定性，并发布 macOS 双架构与 Windows x64 内测包。",
       "generatedFrom": {
         "baseRef": "v1.2.3",
         "branch": "1.2.4",
@@ -135,6 +135,8 @@
         "macArm64Zip": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.4/OrcaBox-1.2.4-arm64-mac.zip",
         "macX64Dmg": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.4/OrcaBox-1.2.4.dmg",
         "macX64Zip": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.4/OrcaBox-1.2.4-mac.zip",
+        "windowsInstaller": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.4/OrcaBox.Setup.1.2.4.exe",
+        "windowsPortable": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.4/OrcaBox-1.2.4-Windows-x64-Portable.exe",
         "browserExtension": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.4/OrcaBox-Chrome-Extension-1.2.4.zip"
       }
     },
