@@ -618,7 +618,7 @@
       ).join('')
     }
 
-    fetch('releases.json?v=1.2.4', { cache: 'no-store' })
+    fetch('releases.json?v=1.2.5', { cache: 'no-store' })
       .then((response) => response.json())
       .then((data) => {
         const releases = Array.isArray(data.releases) ? data.releases : []

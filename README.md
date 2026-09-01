@@ -8,22 +8,22 @@ OrcaBox 是面向创作者与创意团队的本地素材管理器，支持图片
 
 官网由 GitHub Pages 提供公开访问，CNB Release 与 GitHub Release 同步提供内测安装包。
 
-## OrcaBox 1.2.4 内测下载
+## OrcaBox 1.2.5 下载
 
 | 平台 | 安装包 |
 | --- | --- |
-| macOS Apple Silicon | [CNB DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.4/OrcaBox-1.2.4-arm64.dmg) / [ZIP](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.4/OrcaBox-1.2.4-arm64-mac.zip) |
-| macOS Intel | [CNB DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.4/OrcaBox-1.2.4.dmg) / [ZIP](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.4/OrcaBox-1.2.4-mac.zip) |
-| Windows x64 安装器 | [CNB EXE](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.4/OrcaBox.Setup.1.2.4.exe) / [GitHub EXE](https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.4/OrcaBox.Setup.1.2.4.exe) |
-| Windows x64 免安装版 | [CNB EXE](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.4/OrcaBox-1.2.4-Windows-x64-Portable.exe) / [GitHub EXE](https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.4/OrcaBox-1.2.4-Windows-x64-Portable.exe) |
-| Chrome 扩展 | [GitHub ZIP](https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.4/OrcaBox-Chrome-Extension-1.2.4.zip) |
+| macOS Apple Silicon | [CNB DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.5/OrcaBox-1.2.5-arm64.dmg) / [ZIP](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.5/OrcaBox-1.2.5-arm64-mac.zip) |
+| macOS Intel | [CNB DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.5/OrcaBox-1.2.5-x64.dmg) / [ZIP](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.5/OrcaBox-1.2.5-x64-mac.zip) |
+| Windows x64 安装器 | [CNB EXE](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.5/OrcaBox-1.2.5-win-x64-Setup.exe) / [GitHub EXE](https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.5/OrcaBox-1.2.5-win-x64-Setup.exe) |
+| Windows x64 免安装版 | [CNB EXE](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.5/OrcaBox-1.2.5-win-x64-Portable.exe) / [GitHub EXE](https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.5/OrcaBox-1.2.5-win-x64-Portable.exe) |
+| Chrome 扩展 | [GitHub ZIP](https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.5/OrcaBox-Chrome-Extension-1.2.5.zip) |
 
 ZIP 包、更新日志和 SHA-256 校验值请访问：
 
-- [CNB Releases](https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.2.4)
-- [GitHub Releases](https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.4)
+- [CNB Releases](https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.2.5)
+- [GitHub Releases](https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.5)
 
-当前 macOS 与 Windows 1.2.4 安装包均为内测包。macOS 安装包尚未完成 Developer ID 签名与公证，首次打开可能需要在系统设置中允许打开；Windows x64 提供安装器与免安装版，CNB 为主下载源，GitHub 为备用下载源。
+macOS 安装包为未签名测试包，首次打开可能需要在系统设置中允许打开；Windows x64 提供安装器与免安装版，CNB 为主下载源，GitHub 为备用下载源。Windows 包已完成云端打包、分发校验和应用冒烟测试。
 
 ## 主要能力
 

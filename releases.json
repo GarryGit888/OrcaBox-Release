@@ -1,7 +1,173 @@
 {
-  "updatedAt": "2026-08-15",
-  "current": "1.2.4",
+  "updatedAt": "2026-08-31",
+  "current": "1.2.5",
   "releases": [
+    {
+      "version": "1.2.5",
+      "displayVersion": "1.2.5",
+      "date": "2026-08-31",
+      "tag": "v1.2.5",
+      "title": "OrcaBox 1.2.5",
+      "summary": "本版本围绕 新增功能、优化改进、问题修复 持续完善素材管理、媒体预览与跨平台使用体验。",
+      "generatedFrom": {
+        "baseRef": "v1.2.4",
+        "branch": "1.2.5",
+        "commitCount": 17,
+        "changedFileCount": 176
+      },
+      "categories": {
+        "features": [
+          {
+            "text": "Add packaged app runtime smoke to Windows release pipeline",
+            "commit": "efb8ef3",
+            "date": "2026-08-29"
+          },
+          {
+            "text": "添加资源卡片显示控制和质量重新分析批量处理功能",
+            "commit": "4d75d9c",
+            "date": "2026-08-22"
+          },
+          {
+            "text": "add password-authenticated folder lock removal and improve locked folder protections",
+            "commit": "b060459",
+            "date": "2026-08-18"
+          }
+        ],
+        "improvements": [
+          {
+            "text": "Optimize media preview loading and metadata workflows",
+            "commit": "12fa71c",
+            "date": "2026-08-31"
+          },
+          {
+            "text": "Improve media previews and standardize release artifacts",
+            "commit": "33d8083",
+            "date": "2026-08-28"
+          },
+          {
+            "text": "Improve media preview and synchronized asset playback",
+            "commit": "f496a4d",
+            "date": "2026-08-28"
+          },
+          {
+            "text": "Improve OrcaBox desktop workflows and media previews",
+            "commit": "22b558c",
+            "date": "2026-08-25"
+          }
+        ],
+        "fixes": [
+          {
+            "text": "Fix release artifact names to include extension dot",
+            "commit": "8243c08",
+            "date": "2026-08-29"
+          },
+          {
+            "text": "Merge worktree branch fix-display-options-bug-K1DSLK",
+            "commit": "927e1d8",
+            "date": "2026-08-22"
+          }
+        ],
+        "engineering": [
+          {
+            "text": "Harden 1.2.5 and unblock media metadata/thumbnail pipelines",
+            "commit": "c3b4f8f",
+            "date": "2026-08-29"
+          },
+          {
+            "text": "Align Windows artifact checks with standardized artifact names",
+            "commit": "6ab2b60",
+            "date": "2026-08-29"
+          },
+          {
+            "text": "Pass GitHub token via env for FFmpeg asset lookup",
+            "commit": "e032256",
+            "date": "2026-08-29"
+          },
+          {
+            "text": "Resolve FFmpeg win64-lgpl-shared asset dynamically in Windows pipeline",
+            "commit": "80f9b98",
+            "date": "2026-08-29"
+          },
+          {
+            "text": "Upgrade Electron to 43.4.1 for native macOS 26+ window styling",
+            "commit": "dc556df",
+            "date": "2026-08-29"
+          },
+          {
+            "text": "Use system default macOS traffic light position",
+            "commit": "71661dd",
+            "date": "2026-08-29"
+          },
+          {
+            "text": "sync OrcaBox 1.2.5 updates",
+            "commit": "d47f060",
+            "date": "2026-08-21"
+          },
+          {
+            "text": "Merge worktree branch code-review-opt-feedback-nIdPF5",
+            "commit": "2d2ff42",
+            "date": "2026-08-18"
+          }
+        ]
+      },
+      "changedAreas": [
+        {
+          "area": "src",
+          "count": 143
+        },
+        {
+          "area": "scripts",
+          "count": 8
+        },
+        {
+          "area": "doc",
+          "count": 5
+        },
+        {
+          "area": "extensions",
+          "count": 3
+        },
+        {
+          "area": "plugins-dev",
+          "count": 3
+        },
+        {
+          "area": ".github",
+          "count": 2
+        },
+        {
+          "area": "website",
+          "count": 2
+        },
+        {
+          "area": ".gitignore",
+          "count": 1
+        },
+        {
+          "area": "dev-app-update.yml",
+          "count": 1
+        },
+        {
+          "area": "electron-builder.mac-x64.yml",
+          "count": 1
+        },
+        {
+          "area": "electron-builder.yml",
+          "count": 1
+        },
+        {
+          "area": "index-B67Mgf6a.js",
+          "count": 1
+        }
+      ],
+      "links": {
+        "cnbRelease": "https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.2.5",
+        "githubRelease": "https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.5",
+        "windowsInstaller": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.5/OrcaBox-1.2.5-win-x64-Setup.exe",
+        "windowsPortable": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.5/OrcaBox-1.2.5-win-x64-Portable.exe",
+        "browserExtension": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.5/OrcaBox-Chrome-Extension-1.2.5.zip"
+      }
+    },
     {
       "version": "1.2.4",
       "displayVersion": "1.2.4",
