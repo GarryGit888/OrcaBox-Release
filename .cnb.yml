@@ -27,10 +27,10 @@ $:
               "OrcaBox-${version}-arm64.dmg.blockmap" \
               "OrcaBox-${version}-arm64-mac.zip" \
               "OrcaBox-${version}-arm64-mac.zip.blockmap" \
-              "OrcaBox-${version}.dmg" \
-              "OrcaBox-${version}.dmg.blockmap" \
-              "OrcaBox-${version}-mac.zip" \
-              "OrcaBox-${version}-mac.zip.blockmap" \
+              "OrcaBox-${version}-x64.dmg" \
+              "OrcaBox-${version}-x64.dmg.blockmap" \
+              "OrcaBox-${version}-x64-mac.zip" \
+              "OrcaBox-${version}-x64-mac.zip.blockmap" \
               "OrcaBox-${version}-win-x64-Setup.exe" \
               "OrcaBox-${version}-win-x64-Setup.exe.blockmap" \
               "OrcaBox-${version}-win-x64-Portable.exe" \

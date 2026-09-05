@@ -1,7 +1,100 @@
 {
-  "updatedAt": "2026-08-31",
-  "current": "1.2.5",
+  "updatedAt": "2026-09-04",
+  "current": "1.2.6",
   "releases": [
+    {
+      "version": "1.2.6",
+      "displayVersion": "1.2.6",
+      "date": "2026-09-04",
+      "tag": "v1.2.6",
+      "title": "OrcaBox 1.2.6",
+      "summary": "本版本围绕 新增功能、优化改进 持续完善素材管理、媒体预览与跨平台使用体验。",
+      "generatedFrom": {
+        "baseRef": "79e9951^",
+        "branch": "1.2.6",
+        "commitCount": 5,
+        "changedFileCount": 92
+      },
+      "categories": {
+        "features": [
+          {
+            "text": "add multi-ratio image resize canvas node",
+            "commit": "f3cb640",
+            "date": "2026-09-04"
+          },
+          {
+            "text": "complete canvas AI workflow and inspector selection",
+            "commit": "79e9951",
+            "date": "2026-09-03"
+          }
+        ],
+        "improvements": [
+          {
+            "text": "Improve media preview and asset interaction workflows",
+            "commit": "5c32f6c",
+            "date": "2026-09-04"
+          },
+          {
+            "text": "Improve asset preview and playback workflows",
+            "commit": "8458326",
+            "date": "2026-09-03"
+          }
+        ],
+        "fixes": [],
+        "engineering": [
+          {
+            "text": "Defer video probing during indexing and cache palette extraction",
+            "commit": "5db6e4f",
+            "date": "2026-09-04"
+          }
+        ]
+      },
+      "changedAreas": [
+        {
+          "area": "src",
+          "count": 80
+        },
+        {
+          "area": "extensions",
+          "count": 4
+        },
+        {
+          "area": "doc",
+          "count": 3
+        },
+        {
+          "area": "docs",
+          "count": 1
+        },
+        {
+          "area": "native",
+          "count": 1
+        },
+        {
+          "area": "ORCABOX_UI_DESIGN_SPEC.md",
+          "count": 1
+        },
+        {
+          "area": "package-lock.json",
+          "count": 1
+        },
+        {
+          "area": "package.json",
+          "count": 1
+        }
+      ],
+      "links": {
+        "cnbRelease": "https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.2.6",
+        "githubRelease": "https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.6",
+        "macArm64Dmg": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.6/OrcaBox-1.2.6-arm64.dmg",
+        "macArm64Zip": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.6/OrcaBox-1.2.6-arm64-mac.zip",
+        "macX64Dmg": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.6/OrcaBox-1.2.6-x64.dmg",
+        "macX64Zip": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.6/OrcaBox-1.2.6-x64-mac.zip",
+        "windowsInstaller": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.6/OrcaBox-1.2.6-win-x64-Setup.exe",
+        "windowsPortable": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.6/OrcaBox-1.2.6-win-x64-Portable.exe",
+        "browserExtension": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.6/OrcaBox-Chrome-Extension-1.2.6.zip"
+      }
+    },
     {
       "version": "1.2.5",
       "displayVersion": "1.2.5",
