@@ -118,6 +118,60 @@
       color: var(--text);
       transform: translateY(-1px);
     }
+    .lang-switch { position: relative; }
+    .lang-btn {
+      height: 36px;
+      padding: 0 10px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: transparent;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      color: var(--text-2);
+      font-family: var(--font);
+      font-size: .75rem;
+      font-weight: 500;
+      white-space: nowrap;
+      transition: color .15s, border-color .15s;
+    }
+    .lang-btn:hover { color: var(--text); border-color: var(--accent); }
+    .lang-btn svg { width: 14px; height: 14px; transition: transform .2s; }
+    .lang-btn.open svg { transform: rotate(180deg); }
+    .lang-drop {
+      position: absolute;
+      top: calc(100% + 6px);
+      right: 0;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: var(--bg-raised);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-4px);
+      transition: all .2s var(--ease);
+      z-index: 30;
+      min-width: 110px;
+    }
+    .lang-drop.show { opacity: 1; visibility: visible; transform: translateY(0); }
+    .lang-option {
+      display: block;
+      width: 100%;
+      padding: 8px 14px;
+      border: none;
+      background: transparent;
+      color: var(--text-2);
+      font-family: var(--font);
+      font-size: .75rem;
+      cursor: pointer;
+      text-align: left;
+      white-space: nowrap;
+      transition: all .1s;
+    }
+    .lang-option:hover { color: var(--text); background: var(--accent-dim); }
+    .lang-option.active { color: var(--accent); font-weight: 600; }
 
     .container {
       width: min(100% - 64px, 1180px);
@@ -509,8 +563,20 @@
         <span>OrcaBox</span>
       </a>
       <div class="nav-actions">
-        <a class="nav-link" href="#latest">当前版本</a>
-        <a class="nav-link" href="index.html#updates">返回官网</a>
+        <a class="nav-link" id="nav-latest" href="#latest">当前版本</a>
+        <a class="nav-link" id="nav-home" href="index.html#updates">返回官网</a>
+        <div class="lang-switch">
+          <button class="lang-btn" id="langBtn" type="button" aria-label="Switch language" aria-haspopup="menu" aria-expanded="false" aria-controls="langDrop">
+            <span id="langLabel">中</span>
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 6 8 10 12 6"/></svg>
+          </button>
+          <div class="lang-drop" id="langDrop" role="menu" aria-label="Languages" aria-hidden="true">
+            <button class="lang-option" type="button" role="menuitem" data-lang="zh">🇨🇳 中文</button>
+            <button class="lang-option" type="button" role="menuitem" data-lang="en">🇺🇸 English</button>
+            <button class="lang-option" type="button" role="menuitem" data-lang="ja">🇯🇵 日本語</button>
+            <button class="lang-option" type="button" role="menuitem" data-lang="ko">🇰🇷 한국어</button>
+          </div>
+        </div>
       </div>
     </div>
   </header>
@@ -519,20 +585,20 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <span class="eyebrow">Release Notes</span>
-          <h1>OrcaBox 更新记录</h1>
-          <p>查看每个版本的新增能力、体验优化、问题修复与公开下载信息。</p>
+          <span class="eyebrow" id="eyebrow">Release Notes</span>
+          <h1 id="hero-title">OrcaBox 更新记录</h1>
+          <p id="hero-desc">查看每个版本的新增能力、体验优化、问题修复与公开下载信息。</p>
         </div>
         <div class="release-stat" aria-live="polite">
-          <strong id="release-count">-- 个版本</strong>
-          <span>持续维护中</span>
+          <strong id="release-count">--</strong>
+          <span id="stat-note">持续维护中</span>
         </div>
       </div>
     </section>
 
     <div class="container workspace">
-      <aside class="version-nav" aria-label="版本导航">
-        <p class="section-label">历史版本</p>
+      <aside class="version-nav" id="version-nav" aria-label="版本导航">
+        <p class="section-label" id="section-label">历史版本</p>
         <nav id="version-list" class="version-list"></nav>
       </aside>
 
@@ -541,7 +607,7 @@
         <section id="history" class="history" aria-labelledby="history-title">
           <div class="history-heading">
             <h2 id="history-title">全部版本</h2>
-            <span>按发布日期排序</span>
+            <span id="history-sort">按发布日期排序</span>
           </div>
           <div id="history-list" class="history-list"></div>
         </section>
@@ -550,27 +616,211 @@
   </main>
 
   <script>
+    'use strict'
+
     const latest = document.getElementById('latest')
     const history = document.getElementById('history-list')
     const versionList = document.getElementById('version-list')
+    const versionNav = document.getElementById('version-nav')
     const releaseCount = document.getElementById('release-count')
+    const langBtn = document.getElementById('langBtn')
+    const langLabel = document.getElementById('langLabel')
+    const langDrop = document.getElementById('langDrop')
+    const langSwitch = document.querySelector('.lang-switch')
 
-    const groups = [
-      ['features', '新增功能'],
-      ['improvements', '体验优化'],
-      ['fixes', '问题修复'],
-    ]
+    const langLabels = { zh: '中', en: 'EN', ja: '日', ko: '한' }
+
+    const i18n = {
+      zh: {
+        htmlLang: 'zh-CN',
+        title: 'OrcaBox 更新记录',
+        eyebrow: '更新记录',
+        heroTitle: 'OrcaBox 更新记录',
+        heroDesc: '查看每个版本的新增能力、体验优化、问题修复与公开下载信息。',
+        navLatest: '当前版本',
+        navHome: '返回官网',
+        versionNavLabel: '版本导航',
+        sectionLabel: '历史版本',
+        statCount: (n) => `${n} 个版本`,
+        statNote: '持续维护中',
+        currentRelease: '当前公开版本',
+        allVersions: '全部版本',
+        sortedByDate: '按发布日期排序',
+        groups: { features: '新增功能', improvements: '体验优化', fixes: '问题修复' },
+        emptyGroup: '本版本暂无此类更新',
+        emptyLatest: '暂无发行记录。',
+        emptyHistory: '暂无历史版本。',
+        loadError: '发行记录暂时无法加载。',
+        noDownloads: '暂无公开下载链接。',
+        actionLinks: {
+          windowsInstaller: 'Windows x64 安装器',
+          windowsPortable: 'Windows 免安装版',
+          cnbRelease: 'CNB 下载页',
+          githubRelease: '备用下载页',
+          browserExtension: 'Chrome 浏览器插件',
+        },
+        historyLinks: {
+          windowsInstaller: '安装器',
+          windowsPortable: '免安装版',
+          cnbRelease: '下载页',
+          githubRelease: '备用下载',
+          browserExtension: '插件',
+        },
+      },
+      en: {
+        htmlLang: 'en-US',
+        title: 'OrcaBox Release Notes',
+        eyebrow: 'Release Notes',
+        heroTitle: 'OrcaBox Release Notes',
+        heroDesc: 'New capabilities, refinements, bug fixes, and public download info for every release.',
+        navLatest: 'Latest',
+        navHome: 'Back to site',
+        versionNavLabel: 'Version navigation',
+        sectionLabel: 'Version history',
+        statCount: (n) => `${n} releases`,
+        statNote: 'Actively maintained',
+        currentRelease: 'Current public release',
+        allVersions: 'All versions',
+        sortedByDate: 'Sorted by release date',
+        groups: { features: 'New Features', improvements: 'Improvements', fixes: 'Bug Fixes' },
+        emptyGroup: 'Nothing in this category for this release',
+        emptyLatest: 'No releases yet.',
+        emptyHistory: 'No previous versions.',
+        loadError: 'Release notes are temporarily unavailable.',
+        noDownloads: 'No public download links yet.',
+        actionLinks: {
+          windowsInstaller: 'Windows x64 Installer',
+          windowsPortable: 'Windows Portable',
+          cnbRelease: 'CNB Downloads',
+          githubRelease: 'Mirror Downloads',
+          browserExtension: 'Chrome Extension',
+        },
+        historyLinks: {
+          windowsInstaller: 'Installer',
+          windowsPortable: 'Portable',
+          cnbRelease: 'Downloads',
+          githubRelease: 'Mirror',
+          browserExtension: 'Extension',
+        },
+      },
+      ja: {
+        htmlLang: 'ja-JP',
+        title: 'OrcaBox 更新履歴',
+        eyebrow: '更新履歴',
+        heroTitle: 'OrcaBox 更新履歴',
+        heroDesc: '各バージョンの新機能・改善・不具合修正と公開ダウンロード情報を確認できます。',
+        navLatest: '最新バージョン',
+        navHome: '公式サイトへ',
+        versionNavLabel: 'バージョンナビゲーション',
+        sectionLabel: 'バージョン履歴',
+        statCount: (n) => `${n} 個のバージョン`,
+        statNote: 'メンテナンス継続中',
+        currentRelease: '現在の公開版',
+        allVersions: 'すべてのバージョン',
+        sortedByDate: 'リリース日順',
+        groups: { features: '新機能', improvements: '改善', fixes: '修正' },
+        emptyGroup: 'このカテゴリの更新はありません',
+        emptyLatest: 'リリース記録はまだありません。',
+        emptyHistory: '過去のバージョンはありません。',
+        loadError: 'リリース記録を読み込めませんでした。',
+        noDownloads: '公開ダウンロードリンクはまだありません。',
+        actionLinks: {
+          windowsInstaller: 'Windows x64 インストーラー',
+          windowsPortable: 'Windows ポータブル版',
+          cnbRelease: 'CNB ダウンロード',
+          githubRelease: '予備ダウンロード',
+          browserExtension: 'Chrome 拡張機能',
+        },
+        historyLinks: {
+          windowsInstaller: 'インストーラー',
+          windowsPortable: 'ポータブル版',
+          cnbRelease: 'ダウンロード',
+          githubRelease: '予備ダウンロード',
+          browserExtension: '拡張機能',
+        },
+      },
+      ko: {
+        htmlLang: 'ko-KR',
+        title: 'OrcaBox 업데이트 기록',
+        eyebrow: '업데이트 노트',
+        heroTitle: 'OrcaBox 업데이트 기록',
+        heroDesc: '버전별 새 기능, 개선 사항, 버그 수정과 공개 다운로드 정보를 확인하세요.',
+        navLatest: '최신 버전',
+        navHome: '공식 사이트로',
+        versionNavLabel: '버전 탐색',
+        sectionLabel: '버전 기록',
+        statCount: (n) => `${n}개 버전`,
+        statNote: '꾸준히 유지보수 중',
+        currentRelease: '현재 공개 버전',
+        allVersions: '전체 버전',
+        sortedByDate: '릴리스 날짜순',
+        groups: { features: '새 기능', improvements: '개선 사항', fixes: '버그 수정' },
+        emptyGroup: '이 버전에는 해당 항목이 없습니다',
+        emptyLatest: '아직 릴리스 기록이 없습니다.',
+        emptyHistory: '이전 버전이 없습니다.',
+        loadError: '릴리스 기록을 불러올 수 없습니다.',
+        noDownloads: '공개 다운로드 링크가 아직 없습니다.',
+        actionLinks: {
+          windowsInstaller: 'Windows x64 설치 파일',
+          windowsPortable: 'Windows 포터블',
+          cnbRelease: 'CNB 다운로드',
+          githubRelease: '예비 다운로드',
+          browserExtension: 'Chrome 확장 프로그램',
+        },
+        historyLinks: {
+          windowsInstaller: '설치 파일',
+          windowsPortable: '포터블',
+          cnbRelease: '다운로드',
+          githubRelease: '예비 다운로드',
+          browserExtension: '확장 프로그램',
+        },
+      },
+    }
+
+    const groupKeys = ['features', 'improvements', 'fixes']
+    // [data key, 固定标签（与语言无关）, 是否主按钮]
     const publicLinks = [
       ['macArm64Dmg', 'macOS Apple Silicon DMG', true],
       ['macX64Dmg', 'macOS Intel DMG', false],
       ['macArm64Zip', 'macOS Apple Silicon ZIP', false],
       ['macX64Zip', 'macOS Intel ZIP', false],
-      ['windowsInstaller', 'Windows x64 安装器', true],
-      ['windowsPortable', 'Windows 免安装版', false],
-      ['cnbRelease', 'CNB 下载页', false],
-      ['githubRelease', '备用下载页', false],
-      ['browserExtension', 'Chrome 浏览器插件', false],
+      ['windowsInstaller', null, true],
+      ['windowsPortable', null, false],
+      ['cnbRelease', null, false],
+      ['githubRelease', null, false],
+      ['browserExtension', null, false],
     ]
+    const historyLinkKeys = [
+      ['macArm64Dmg', 'macOS Apple Silicon'],
+      ['macX64Dmg', 'macOS Intel'],
+      ['windowsInstaller', null],
+      ['windowsPortable', null],
+      ['cnbRelease', null],
+      ['githubRelease', null],
+      ['browserExtension', null],
+    ]
+
+    let releasesData = []
+    let currentLang = detectLang()
+
+    function detectLang() {
+      const stored = localStorage.getItem('orcabox-lang')
+      if (stored && i18n[stored]) return stored
+      const nav = navigator.language || ''
+      if (nav.startsWith('zh')) return 'zh'
+      if (nav.startsWith('ja')) return 'ja'
+      if (nav.startsWith('ko')) return 'ko'
+      return 'en'
+    }
+
+    const dict = () => i18n[currentLang]
+    // 条目正文：中文用数据里的 text，其它语言用 i18n 译文，缺译文时回退 text
+    const localizedText = (item) => currentLang === 'zh'
+      ? item.text
+      : item.i18n?.[currentLang] || item.text
+    const localizedSummary = (release) => currentLang === 'zh'
+      ? release.summary
+      : release.summaryI18n?.[currentLang] || release.summary
 
     const esc = (value) => String(value ?? '')
       .replaceAll('&', '&amp;')
@@ -587,27 +837,29 @@
       ? `<a href="${esc(url)}" target="_blank" rel="noopener noreferrer">${esc(label)}</a>`
       : ''
 
-    const renderGroup = ([key, label], categories = {}) => {
+    const renderGroup = (key, categories = {}) => {
+      const d = dict()
       const items = (categories[key] || [])
-        .map((item) => `<li>${esc(item.text)}</li>`)
+        .map((item) => `<li>${esc(localizedText(item))}</li>`)
         .join('')
-      return `<div class="change-group"><h3>${label}</h3><ul>${items || '<li>本版本暂无此类更新</li>'}</ul></div>`
+      return `<div class="change-group"><h3>${d.groups[key]}</h3><ul>${items || `<li>${d.emptyGroup}</li>`}</ul></div>`
     }
 
-    const renderActions = (links = {}) => publicLinks
-      .map(([key, label, primary]) => actionLink(links[key], label, primary))
-      .filter(Boolean)
-      .join('')
+    const renderActions = (links = {}) => {
+      const d = dict()
+      return publicLinks
+        .map(([key, fallbackLabel, primary]) => actionLink(links[key], d.actionLinks[key] || fallbackLabel, primary))
+        .filter(Boolean)
+        .join('')
+    }
 
-    const renderHistoryLinks = (links = {}) => [
-      textLink(links.macArm64Dmg, 'macOS Apple Silicon'),
-      textLink(links.macX64Dmg, 'macOS Intel'),
-      textLink(links.windowsInstaller, '安装器'),
-      textLink(links.windowsPortable, '免安装版'),
-      textLink(links.cnbRelease, '下载页'),
-      textLink(links.githubRelease, '备用下载'),
-      textLink(links.browserExtension, '插件'),
-    ].filter(Boolean).join('')
+    const renderHistoryLinks = (links = {}) => {
+      const d = dict()
+      return historyLinkKeys
+        .map(([key, fallbackLabel]) => textLink(links[key], d.historyLinks[key] || fallbackLabel))
+        .filter(Boolean)
+        .join('')
+    }
 
     const renderVersionNav = (releases) => {
       versionList.innerHTML = releases.map((release, index) =>
@@ -618,48 +870,109 @@
       ).join('')
     }
 
+    const renderAll = () => {
+      const d = dict()
+      releaseCount.textContent = d.statCount(releasesData.length || '--')
+      document.getElementById('stat-note').textContent = d.statNote
+
+      if (!releasesData.length) {
+        latest.innerHTML = ''
+        history.innerHTML = ''
+        return
+      }
+
+      renderVersionNav(releasesData)
+      const current = releasesData[0]
+      latest.innerHTML = `<article id="${esc(current.tag)}" class="release-panel">
+        <div class="release-head">
+          <div>
+            <h2>${esc(current.title)}</h2>
+            <p>${esc(d.currentRelease)}</p>
+          </div>
+          <time class="release-date" datetime="${esc(current.date)}">${esc(current.date)}</time>
+        </div>
+        <p class="release-summary">${esc(localizedSummary(current))}</p>
+        <div class="change-grid">
+          ${groupKeys.map((key) => renderGroup(key, current.categories)).join('')}
+        </div>
+        <div class="release-actions">${renderActions(current.links) || `<span class="empty">${d.noDownloads}</span>`}</div>
+      </article>`
+
+      history.innerHTML = releasesData.map((release) =>
+        `<article id="${esc(release.tag)}" class="history-card">
+          <div>
+            <h3>${esc(release.title)}</h3>
+            <time datetime="${esc(release.date)}">${esc(release.date)}</time>
+          </div>
+          <p>${esc(localizedSummary(release))}</p>
+          <div class="history-links">${renderHistoryLinks(release.links)}</div>
+        </article>`,
+      ).join('')
+    }
+
+    function applyLang(lang) {
+      currentLang = lang
+      localStorage.setItem('orcabox-lang', lang)
+      const d = dict()
+      document.documentElement.setAttribute('lang', d.htmlLang)
+      document.title = d.title
+      langLabel.textContent = langLabels[lang]
+      document.getElementById('nav-latest').textContent = d.navLatest
+      document.getElementById('nav-home').textContent = d.navHome
+      document.getElementById('eyebrow').textContent = d.eyebrow
+      document.getElementById('hero-title').textContent = d.heroTitle
+      document.getElementById('hero-desc').textContent = d.heroDesc
+      document.getElementById('section-label').textContent = d.sectionLabel
+      document.getElementById('history-title').textContent = d.allVersions
+      document.getElementById('history-sort').textContent = d.sortedByDate
+      versionNav.setAttribute('aria-label', d.versionNavLabel)
+      document.querySelectorAll('.lang-option').forEach((opt) => {
+        opt.classList.toggle('active', opt.getAttribute('data-lang') === lang)
+      })
+      renderAll()
+    }
+
+    function setLangDropOpen(open) {
+      langDrop.classList.toggle('show', open)
+      langBtn.classList.toggle('open', open)
+      langBtn.setAttribute('aria-expanded', String(open))
+      langDrop.setAttribute('aria-hidden', String(!open))
+    }
+
+    langBtn.addEventListener('click', (event) => {
+      event.stopPropagation()
+      setLangDropOpen(!langDrop.classList.contains('show'))
+    })
+    langDrop.querySelectorAll('.lang-option').forEach((opt) => {
+      opt.addEventListener('click', () => {
+        setLangDropOpen(false)
+        applyLang(opt.getAttribute('data-lang'))
+      })
+    })
+    document.addEventListener('click', (event) => {
+      if (!langSwitch.contains(event.target)) setLangDropOpen(false)
+    })
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && langDrop.classList.contains('show')) {
+        setLangDropOpen(false)
+        langBtn.focus()
+      }
+    })
+
+    applyLang(currentLang)
+
     fetch('releases.json?v=1.2.6', { cache: 'no-store' })
       .then((response) => response.json())
       .then((data) => {
-        const releases = Array.isArray(data.releases) ? data.releases : []
-        const current = releases[0]
-        releaseCount.textContent = `${releases.length} 个版本`
-        renderVersionNav(releases)
-
-        if (!current) {
-          latest.innerHTML = '<div class="empty">暂无发行记录。</div>'
-          history.innerHTML = '<div class="empty">暂无历史版本。</div>'
-          return
+        releasesData = Array.isArray(data.releases) ? data.releases : []
+        renderAll()
+        if (!releasesData.length) {
+          latest.innerHTML = `<div class="empty">${dict().emptyLatest}</div>`
+          history.innerHTML = `<div class="empty">${dict().emptyHistory}</div>`
         }
-
-        latest.innerHTML = `<article id="${esc(current.tag)}" class="release-panel">
-          <div class="release-head">
-            <div>
-              <h2>${esc(current.title)}</h2>
-              <p>当前公开版本</p>
-            </div>
-            <time class="release-date" datetime="${esc(current.date)}">${esc(current.date)}</time>
-          </div>
-          <p class="release-summary">${esc(current.summary)}</p>
-          <div class="change-grid">
-            ${groups.map((group) => renderGroup(group, current.categories)).join('')}
-          </div>
-          <div class="release-actions">${renderActions(current.links) || '<span class="empty">暂无公开下载链接。</span>'}</div>
-        </article>`
-
-        history.innerHTML = releases.map((release) =>
-          `<article id="${esc(release.tag)}" class="history-card">
-            <div>
-              <h3>${esc(release.title)}</h3>
-              <time datetime="${esc(release.date)}">${esc(release.date)}</time>
-            </div>
-            <p>${esc(release.summary)}</p>
-            <div class="history-links">${renderHistoryLinks(release.links)}</div>
-          </article>`,
-        ).join('')
       })
       .catch(() => {
-        latest.innerHTML = '<div class="empty">发行记录暂时无法加载。</div>'
+        latest.innerHTML = `<div class="empty">${dict().loadError}</div>`
       })
   </script>
 </body>

@@ -18,26 +18,46 @@
       "categories": {
         "features": [
           {
-            "text": "add multi-ratio image resize canvas node",
+            "text": "新增多比例图片缩放画布节点",
             "commit": "f3cb640",
-            "date": "2026-09-04"
+            "date": "2026-09-04",
+            "i18n": {
+              "en": "Add multi-ratio image resize canvas node",
+              "ja": "複数比率の画像リサイズキャンバスノードを追加",
+              "ko": "다양한 비율의 이미지 리사이즈 캔버스 노드 추가"
+            }
           },
           {
-            "text": "complete canvas AI workflow and inspector selection",
+            "text": "完善画布 AI 工作流与检查器选中能力",
             "commit": "79e9951",
-            "date": "2026-09-03"
+            "date": "2026-09-03",
+            "i18n": {
+              "en": "Complete canvas AI workflow and inspector selection",
+              "ja": "キャンバスAIワークフローとインスペクター選択を完成",
+              "ko": "캔버스 AI 워크플로 및 인스펙터 선택 완성"
+            }
           }
         ],
         "improvements": [
           {
-            "text": "Improve media preview and asset interaction workflows",
+            "text": "优化媒体预览与素材交互流程",
             "commit": "5c32f6c",
-            "date": "2026-09-04"
+            "date": "2026-09-04",
+            "i18n": {
+              "en": "Improve media preview and asset interaction workflows",
+              "ja": "メディアプレビューとアセット操作フローを改善",
+              "ko": "미디어 미리보기 및 애셋 인터랙션 워크플로 개선"
+            }
           },
           {
-            "text": "Improve asset preview and playback workflows",
+            "text": "优化素材预览与播放流程",
             "commit": "8458326",
-            "date": "2026-09-03"
+            "date": "2026-09-03",
+            "i18n": {
+              "en": "Improve asset preview and playback workflows",
+              "ja": "アセットのプレビューと再生ワークフローを改善",
+              "ko": "애셋 미리보기 및 재생 워크플로 개선"
+            }
           }
         ],
         "fixes": [],
@@ -93,6 +113,11 @@
         "windowsInstaller": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.6/OrcaBox-1.2.6-win-x64-Setup.exe",
         "windowsPortable": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.6/OrcaBox-1.2.6-win-x64-Portable.exe",
         "browserExtension": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.6/OrcaBox-Chrome-Extension-1.2.6.zip"
+      },
+      "summaryI18n": {
+        "en": "This release keeps improving asset management, media preview, and the cross-platform experience with new features and refinements.",
+        "ja": "本リリースは新機能と改善を中心に、アセット管理・メディアプレビュー・クロスプラットフォーム体験を継続的に改善します。",
+        "ko": "이번 버전은 새 기능과 개선을 중심으로 애셋 관리, 미디어 미리보기, 크로스 플랫폼 경험을 지속적으로 개선합니다."
       }
     },
     {
@@ -111,53 +136,98 @@
       "categories": {
         "features": [
           {
-            "text": "Add packaged app runtime smoke to Windows release pipeline",
+            "text": "Windows 发布流水线新增打包版运行时冒烟验证",
             "commit": "efb8ef3",
-            "date": "2026-08-29"
+            "date": "2026-08-29",
+            "i18n": {
+              "en": "Add packaged app runtime smoke to Windows release pipeline",
+              "ja": "Windowsリリースパイプラインにパッケージアプリのランタイムスモーク検証を追加",
+              "ko": "Windows 릴리스 파이프라인에 패키징 앱 런타임 스모크 검증 추가"
+            }
           },
           {
             "text": "添加资源卡片显示控制和质量重新分析批量处理功能",
             "commit": "4d75d9c",
-            "date": "2026-08-22"
+            "date": "2026-08-22",
+            "i18n": {
+              "en": "Add asset card display controls and batch quality re-analysis",
+              "ja": "アセットカードの表示制御と品質再分析の一括処理機能を追加",
+              "ko": "애셋 카드 표시 제어 및 품질 재분석 일괄 처리 기능 추가"
+            }
           },
           {
-            "text": "add password-authenticated folder lock removal and improve locked folder protections",
+            "text": "新增密码验证解锁文件夹能力，并加强锁定文件夹保护",
             "commit": "b060459",
-            "date": "2026-08-18"
+            "date": "2026-08-18",
+            "i18n": {
+              "en": "Add password-authenticated folder lock removal and improve locked folder protections",
+              "ja": "パスワード認証によるフォルダロック解除を追加し、ロックフォルダの保護を強化",
+              "ko": "비밀번호 인증 폴더 잠금 해제 추가 및 잠긴 폴더 보호 강화"
+            }
           }
         ],
         "improvements": [
           {
-            "text": "Optimize media preview loading and metadata workflows",
+            "text": "优化媒体预览加载与元数据处理流程",
             "commit": "12fa71c",
-            "date": "2026-08-31"
+            "date": "2026-08-31",
+            "i18n": {
+              "en": "Optimize media preview loading and metadata workflows",
+              "ja": "メディアプレビューの読み込みとメタデータワークフローを最適化",
+              "ko": "미디어 미리보기 로딩 및 메타데이터 워크플로 최적화"
+            }
           },
           {
-            "text": "Improve media previews and standardize release artifacts",
+            "text": "改进媒体预览并统一发布产物命名",
             "commit": "33d8083",
-            "date": "2026-08-28"
+            "date": "2026-08-28",
+            "i18n": {
+              "en": "Improve media previews and standardize release artifacts",
+              "ja": "メディアプレビューを改善し、リリース成果物の命名を統一",
+              "ko": "미디어 미리보기 개선 및 릴리스 아티팩트 명명 표준화"
+            }
           },
           {
-            "text": "Improve media preview and synchronized asset playback",
+            "text": "改进媒体预览与素材同步播放",
             "commit": "f496a4d",
-            "date": "2026-08-28"
+            "date": "2026-08-28",
+            "i18n": {
+              "en": "Improve media preview and synchronized asset playback",
+              "ja": "メディアプレビューとアセットの同期再生を改善",
+              "ko": "미디어 미리보기 및 애셋 동기화 재생 개선"
+            }
           },
           {
-            "text": "Improve OrcaBox desktop workflows and media previews",
+            "text": "完善 OrcaBox 桌面端工作流与媒体预览",
             "commit": "22b558c",
-            "date": "2026-08-25"
+            "date": "2026-08-25",
+            "i18n": {
+              "en": "Improve OrcaBox desktop workflows and media previews",
+              "ja": "OrcaBoxデスクトップのワークフローとメディアプレビューを改善",
+              "ko": "OrcaBox 데스크톱 워크플로 및 미디어 미리보기 개선"
+            }
           }
         ],
         "fixes": [
           {
-            "text": "Fix release artifact names to include extension dot",
+            "text": "修复发布产物文件名缺少扩展名点号的问题",
             "commit": "8243c08",
-            "date": "2026-08-29"
+            "date": "2026-08-29",
+            "i18n": {
+              "en": "Fix release artifact names to include extension dot",
+              "ja": "リリース成果物のファイル名に拡張子のドットが含まれない問題を修正",
+              "ko": "릴리스 아티팩트 파일명에 확장자 점이 누락된 문제 수정"
+            }
           },
           {
-            "text": "Merge worktree branch fix-display-options-bug-K1DSLK",
+            "text": "合并显示选项修复分支（fix-display-options-bug）",
             "commit": "927e1d8",
-            "date": "2026-08-22"
+            "date": "2026-08-22",
+            "i18n": {
+              "en": "Merge display options fix branch (fix-display-options-bug)",
+              "ja": "表示オプション修正ブランチをマージ",
+              "ko": "표시 옵션 수정 브랜치 병합"
+            }
           }
         ],
         "engineering": [
@@ -259,6 +329,11 @@
         "windowsInstaller": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.5/OrcaBox-1.2.5-win-x64-Setup.exe",
         "windowsPortable": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.5/OrcaBox-1.2.5-win-x64-Portable.exe",
         "browserExtension": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.5/OrcaBox-Chrome-Extension-1.2.5.zip"
+      },
+      "summaryI18n": {
+        "en": "This release keeps improving asset management, media preview, and the cross-platform experience with new features, refinements, and bug fixes.",
+        "ja": "本リリースは新機能・改善・不具合修正を中心に、アセット管理・メディアプレビュー・クロスプラットフォーム体験を継続的に改善します。",
+        "ko": "이번 버전은 새 기능, 개선, 버그 수정을 중심으로 애셋 관리, 미디어 미리보기, 크로스 플랫폼 경험을 지속적으로 개선합니다."
       }
     },
     {
@@ -277,41 +352,76 @@
       "categories": {
         "features": [
           {
-            "text": "发布 macOS Apple Silicon（arm64）与 Intel（x64）DMG / ZIP 内测包"
+            "text": "发布 macOS Apple Silicon（arm64）与 Intel（x64）DMG / ZIP 内测包",
+            "i18n": {
+              "en": "Release macOS Apple Silicon (arm64) and Intel (x64) DMG / ZIP beta builds",
+              "ja": "macOS Apple Silicon（arm64）とIntel（x64）のDMG / ZIPベータ版を公開",
+              "ko": "macOS Apple Silicon(arm64) 및 Intel(x64) DMG / ZIP 베타 빌드 공개"
+            }
           }
         ],
         "improvements": [
           {
             "text": "优化素材网格浏览、缩略图加载与预览调度",
             "commit": "f8e33ce",
-            "date": "2026-08-14"
+            "date": "2026-08-14",
+            "i18n": {
+              "en": "Optimize asset grid browsing, thumbnail loading, and preview scheduling",
+              "ja": "アセットグリッドの閲覧・サムネイル読み込み・プレビュー制御を最適化",
+              "ko": "애셋 그리드 탐색, 썸네일 로딩, 미리보기 스케줄링 최적화"
+            }
           },
           {
             "text": "持续使用原始媒体文件、缩略图与胶片帧进行视频预览，不生成视频代理文件",
             "commit": "425150a",
-            "date": "2026-08-12"
+            "date": "2026-08-12",
+            "i18n": {
+              "en": "Video previews keep using original media files, thumbnails, and filmstrip frames — no proxy videos are generated",
+              "ja": "動画プレビューは引き続きオリジナルファイル・サムネイル・フィルムストリップフレームを使用し、プロキシ動画は生成しない",
+              "ko": "동영상 미리보기는 원본 미디어 파일·썸네일·필름스트립 프레임을 사용하며 프록시 영상을 생성하지 않음"
+            }
           },
           {
             "text": "改进选中音频播放在素材卡片、详情面板和预览工作区之间的状态同步",
             "commit": "9f14903",
-            "date": "2026-08-11"
+            "date": "2026-08-11",
+            "i18n": {
+              "en": "Improve selected-audio playback state sync across asset cards, the detail panel, and the preview workspace",
+              "ja": "選択中オーディオの再生状態をアセットカード・詳細パネル・プレビューワークスペース間で同期するよう改善",
+              "ko": "선택한 오디오 재생 상태를 애셋 카드·상세 패널·미리보기 작업 공간 간에 동기화하도록 개선"
+            }
           },
           {
             "text": "可见的 Lottie / JSON 素材保持连续实时预览",
             "commit": "e853dab",
-            "date": "2026-08-09"
+            "date": "2026-08-09",
+            "i18n": {
+              "en": "Keep continuous live previews for visible Lottie / JSON assets",
+              "ja": "表示中のLottie / JSONアセットのライブプレビューを継続的に維持",
+              "ko": "보이는 Lottie / JSON 애셋의 실시간 미리보기 지속 유지"
+            }
           },
           {
             "text": "同步更新官网发行说明与下载入口",
             "commit": "e061e44",
-            "date": "2026-08-08"
+            "date": "2026-08-08",
+            "i18n": {
+              "en": "Sync website release notes and download entries",
+              "ja": "公式サイトのリリースノートとダウンロード導線を同期更新",
+              "ko": "공식 웹사이트 릴리스 노트 및 다운로드 항목 동기화 업데이트"
+            }
           }
         ],
         "fixes": [
           {
             "text": "修复锁定文件夹状态文字在侧栏内可能换行的问题，保持单行显示",
             "commit": "6dcd300",
-            "date": "2026-08-07"
+            "date": "2026-08-07",
+            "i18n": {
+              "en": "Fix locked-folder status text wrapping in the sidebar and keep it on one line",
+              "ja": "サイドバー内でロックフォルダの状態テキストが折り返される問題を修正し、単一行表示を維持",
+              "ko": "사이드바에서 잠긴 폴더 상태 텍스트가 줄바꿈되는 문제를 수정하고 한 줄 표시 유지"
+            }
           }
         ],
         "engineering": [
@@ -397,6 +507,11 @@
         "windowsInstaller": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.4/OrcaBox.Setup.1.2.4.exe",
         "windowsPortable": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.4/OrcaBox-1.2.4-Windows-x64-Portable.exe",
         "browserExtension": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.4/OrcaBox-Chrome-Extension-1.2.4.zip"
+      },
+      "summaryI18n": {
+        "en": "Focuses on asset browsing and preview performance plus original-media playback stability, and ships macOS dual-architecture and Windows x64 beta builds.",
+        "ja": "アセットの閲覧とプレビュー性能、オリジナルメディア再生の安定性に注力し、macOS両アーキテクチャとWindows x64のベータ版を公開しました。",
+        "ko": "애셋 탐색 및 미리보기 성능과 원본 미디어 재생 안정성에 집중하고, macOS 듀얼 아키텍처 및 Windows x64 베타 빌드를 공개했습니다."
       }
     },
     {
@@ -409,17 +524,32 @@
       "categories": {
         "features": [
           {
-            "text": "新增可持久化无限画布，支持素材引用、移动、缩放、旋转、分组、锁定和隐藏"
+            "text": "新增可持久化无限画布，支持素材引用、移动、缩放、旋转、分组、锁定和隐藏",
+            "i18n": {
+              "en": "Add a persistent infinite canvas supporting asset referencing, moving, scaling, rotation, grouping, locking, and hiding",
+              "ja": "永続化できる無限キャンバスを追加（アセットの参照・移動・拡大縮小・回転・グループ化・ロック・非表示に対応）",
+              "ko": "지속 저장되는 무한 캔버스 추가(애셋 참조·이동·크기 조절·회전·그룹화·잠금·숨기기 지원)"
+            }
           }
         ],
         "improvements": [
           {
-            "text": "优化资料库索引、源目录树、媒体预览调度、拖拽和 AI 按需初始化"
+            "text": "优化资料库索引、源目录树、媒体预览调度、拖拽和 AI 按需初始化",
+            "i18n": {
+              "en": "Optimize library indexing, source directory tree, media preview scheduling, drag & drop, and on-demand AI initialization",
+              "ja": "ライブラリインデックス・ソースディレクトリツリー・メディアプレビュー制御・ドラッグ＆ドロップ・AIのオンデマンド初期化を最適化",
+              "ko": "라이브러리 인덱싱, 소스 디렉터리 트리, 미디어 미리보기 스케줄링, 드래그 앤 드롭, AI 온디맨드 초기화 최적화"
+            }
           }
         ],
         "fixes": [
           {
-            "text": "修复工作区切换、拖拽导出和选中素材预览状态在边界场景下不同步的问题"
+            "text": "修复工作区切换、拖拽导出和选中素材预览状态在边界场景下不同步的问题",
+            "i18n": {
+              "en": "Fix workspace switching, drag export, and selected-asset preview states getting out of sync in edge cases",
+              "ja": "ワークスペース切替・ドラッグ書き出し・選択アセットのプレビュー状態が特殊なケースで同期しない問題を修正",
+              "ko": "워크스페이스 전환, 드래그 내보내기, 선택 애셋 미리보기 상태가 예외적 상황에서 어긋나는 문제 수정"
+            }
           }
         ]
       },
@@ -429,6 +559,11 @@
         "windowsInstaller": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.3/OrcaBox.Setup.1.2.3.exe",
         "windowsPortable": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.3/OrcaBox-1.2.3-Windows-x64-Portable.exe",
         "browserExtension": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.3/OrcaBox-Chrome-Extension-1.2.3.zip"
+      },
+      "summaryI18n": {
+        "en": "Introduces a persistent infinite canvas, with optimized library indexing, media previews, drag & drop, and on-demand AI initialization; macOS arm64 / Intel x64 and Windows x64 beta builds are ready.",
+        "ja": "永続化できる無限キャンバスを追加し、ライブラリインデックス・メディアプレビュー・ドラッグ＆ドロップ・AIのオンデマンド初期化を最適化。macOS arm64 / Intel x64とWindows x64のベータ版を用意しました。",
+        "ko": "지속 저장되는 무한 캔버스를 추가하고 라이브러리 인덱싱, 미디어 미리보기, 드래그 앤 드롭, AI 온디맨드 초기화를 최적화했습니다. macOS arm64 / Intel x64 및 Windows x64 베타 빌드가 준비되었습니다."
       }
     },
     {
@@ -441,23 +576,48 @@
       "categories": {
         "features": [
           {
-            "text": "增加 Windows x64 安装包构建工作流"
+            "text": "增加 Windows x64 安装包构建工作流",
+            "i18n": {
+              "en": "Add a Windows x64 installer build workflow",
+              "ja": "Windows x64インストーラーのビルドワークフローを追加",
+              "ko": "Windows x64 설치 패키지 빌드 워크플로 추가"
+            }
           }
         ],
         "improvements": [
           {
-            "text": "完善媒体预览和跨平台播放行为"
+            "text": "完善媒体预览和跨平台播放行为",
+            "i18n": {
+              "en": "Refine media preview and cross-platform playback behavior",
+              "ja": "メディアプレビューとクロスプラットフォーム再生の挙動を改善",
+              "ko": "미디어 미리보기 및 크로스 플랫폼 재생 동작 개선"
+            }
           },
           {
-            "text": "完善桌面端素材工作流和媒体处理"
+            "text": "完善桌面端素材工作流和媒体处理",
+            "i18n": {
+              "en": "Refine desktop asset workflows and media processing",
+              "ja": "デスクトップのアセットワークフローとメディア処理を改善",
+              "ko": "데스크톱 애셋 워크플로 및 미디어 처리 개선"
+            }
           }
         ],
         "fixes": [
           {
-            "text": "修复 Windows 剪贴板文件拖放头定义兼容性"
+            "text": "修复 Windows 剪贴板文件拖放头定义兼容性",
+            "i18n": {
+              "en": "Fix Windows clipboard file-drop header compatibility",
+              "ja": "Windowsクリップボードのファイルドロップヘッダー定義の互換性を修正",
+              "ko": "Windows 클립보드 파일 드롭 헤더 정의 호환성 수정"
+            }
           },
           {
-            "text": "修复 system-share addon 与当前 Windows SDK 的编译兼容性"
+            "text": "修复 system-share addon 与当前 Windows SDK 的编译兼容性",
+            "i18n": {
+              "en": "Fix system-share addon compilation compatibility with the current Windows SDK",
+              "ja": "system-shareアドオンと現在のWindows SDKとのコンパイル互換性を修正",
+              "ko": "system-share 애드온과 현재 Windows SDK의 컴파일 호환성 수정"
+            }
           }
         ]
       },
@@ -465,6 +625,11 @@
         "cnbRelease": "https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.2.1",
         "githubRelease": "https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.1",
         "browserExtension": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.1/OrcaBox-Chrome-Extension-1.2.1.zip"
+      },
+      "summaryI18n": {
+        "en": "Focuses on original-file media playback, safe asset file operations, cross-platform behavior, and Windows release readiness.",
+        "ja": "オリジナルファイルのメディア再生、安全なアセットファイル操作、クロスプラットフォーム挙動、Windowsリリース準備に注力したバージョンです。",
+        "ko": "원본 파일 미디어 재생, 안전한 애셋 파일 작업, 크로스 플랫폼 동작, Windows 릴리스 준비에 중점을 둔 버전입니다."
       }
     },
     {
@@ -477,43 +642,98 @@
       "categories": {
         "features": [
           {
-            "text": "complete media workflow and desktop release updates"
+            "text": "完善媒体工作流与桌面版发布更新",
+            "i18n": {
+              "en": "Complete media workflow and desktop release updates",
+              "ja": "メディアワークフローとデスクトップリリースの更新を完成",
+              "ko": "미디어 워크플로 및 데스크톱 릴리스 업데이트 완성"
+            }
           },
           {
-            "text": "finalize OrcaBox desktop workflow updates"
+            "text": "收尾 OrcaBox 桌面端工作流更新",
+            "i18n": {
+              "en": "Finalize OrcaBox desktop workflow updates",
+              "ja": "OrcaBoxデスクトップワークフローの更新を仕上げ",
+              "ko": "OrcaBox 데스크톱 워크플로 업데이트 마무리"
+            }
           },
           {
-            "text": "harden previews on slow disks and improve web/Lottie import"
+            "text": "提升慢速磁盘上的预览稳定性，改进网页与 Lottie 导入",
+            "i18n": {
+              "en": "Harden previews on slow disks and improve web/Lottie import",
+              "ja": "低速ディスクでのプレビューを強化し、Web/Lottie取り込みを改善",
+              "ko": "느린 디스크에서의 미리보기 안정성 강화 및 웹/Lottie 가져오기 개선"
+            }
           },
           {
-            "text": "add app auto-update and refine preview, tags, and Resolve import"
+            "text": "新增应用自动更新，优化预览、标签与 Resolve 导入",
+            "i18n": {
+              "en": "Add app auto-update and refine preview, tags, and Resolve import",
+              "ja": "アプリの自動アップデートを追加し、プレビュー・タグ・Resolve取り込みを改善",
+              "ko": "앱 자동 업데이트 추가 및 미리보기·태그·Resolve 가져오기 개선"
+            }
           },
           {
-            "text": "finish FX timeline import, downloads, and undo coverage"
+            "text": "完成 FX 时间线导入、下载与撤销支持",
+            "i18n": {
+              "en": "Finish FX timeline import, downloads, and undo coverage",
+              "ja": "FXタイムライン取り込み・ダウンロード・取り消し対応を完了",
+              "ko": "FX 타임라인 가져오기, 다운로드, 실행 취소 지원 완성"
+            }
           },
           {
-            "text": "expand workflows with FX library, archives, and downloads"
+            "text": "扩展 FX 资源库、归档与下载工作流",
+            "i18n": {
+              "en": "Expand workflows with FX library, archives, and downloads",
+              "ja": "FXライブラリ・アーカイブ・ダウンロードのワークフローを拡充",
+              "ko": "FX 라이브러리, 아카이브, 다운로드 워크플로 확장"
+            }
           },
           {
-            "text": "improve asset workflows and desktop security"
+            "text": "改进素材工作流与桌面端安全性",
+            "i18n": {
+              "en": "Improve asset workflows and desktop security",
+              "ja": "アセットワークフローとデスクトップセキュリティを改善",
+              "ko": "애셋 워크플로 및 데스크톱 보안 개선"
+            }
           }
         ],
         "improvements": [],
         "fixes": [
           {
-            "text": "finalize asset panel drag and release links"
+            "text": "完善素材面板拖拽与发布下载链接",
+            "i18n": {
+              "en": "Finalize asset panel drag and release links",
+              "ja": "アセットパネルのドラッグとリリースリンクを仕上げ",
+              "ko": "애셋 패널 드래그 및 릴리스 링크 마무리"
+            }
           },
           {
-            "text": "prevent accidental asset panel file moves"
+            "text": "防止在素材面板中误移动文件",
+            "i18n": {
+              "en": "Prevent accidental file moves in the asset panel",
+              "ja": "アセットパネルでの誤ったファイル移動を防止",
+              "ko": "애셋 패널에서 실수로 파일이 이동되는 것 방지"
+            }
           },
           {
-            "text": "align Windows window controls and shortcuts"
+            "text": "对齐 Windows 窗口控制按钮与快捷键行为",
+            "i18n": {
+              "en": "Align Windows window controls and shortcuts",
+              "ja": "Windowsのウィンドウコントロールとショートカットを整合",
+              "ko": "Windows 창 컨트롤 및 단축키 일관성 정렬"
+            }
           }
         ]
       },
       "links": {
         "cnbRelease": "https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.2.0",
         "githubRelease": "https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.0"
+      },
+      "summaryI18n": {
+        "en": "Continues polishing the experience around asset grid stability, foreground/background recovery, original-video playback, and cross-platform packaging integrity.",
+        "ja": "アセットグリッドの安定性、フォアグラウンド/バックグラウンドの復帰、オリジナル動画再生、クロスプラットフォームパッケージングの完全性について体験を継続的に改善します。",
+        "ko": "애셋 그리드 안정성, 포그라운드/백그라운드 복귀, 원본 동영상 재생, 크로스 플랫폼 패키징 무결성을 중심으로 사용 경험을 지속적으로 개선합니다."
       }
     },
     {
@@ -526,15 +746,30 @@
       "categories": {
         "features": [
           {
-            "text": "add standalone macOS Intel packaging"
+            "text": "新增 macOS Intel 独立安装包构建",
+            "i18n": {
+              "en": "Add standalone macOS Intel packaging",
+              "ja": "macOS Intel専用パッケージングを追加",
+              "ko": "macOS Intel 독립 패키징 추가"
+            }
           },
           {
-            "text": "finalize OrcaBox 1.1.0 release updates"
+            "text": "完成 OrcaBox 1.1.0 发布更新",
+            "i18n": {
+              "en": "Finalize OrcaBox 1.1.0 release updates",
+              "ja": "OrcaBox 1.1.0リリースアップデートを完成",
+              "ko": "OrcaBox 1.1.0 릴리스 업데이트 완성"
+            }
           }
         ],
         "improvements": [
           {
-            "text": "optimize OrcaBox 1.1.0 media workflows"
+            "text": "优化 OrcaBox 1.1.0 媒体工作流",
+            "i18n": {
+              "en": "Optimize OrcaBox 1.1.0 media workflows",
+              "ja": "OrcaBox 1.1.0のメディアワークフローを最適化",
+              "ko": "OrcaBox 1.1.0 미디어 워크플로 최적화"
+            }
           }
         ],
         "fixes": []
@@ -542,6 +777,11 @@
       "links": {
         "cnbRelease": "https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.1.2",
         "githubRelease": "https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.1.2"
+      },
+      "summaryI18n": {
+        "en": "This release keeps improving asset management, media preview, and the cross-platform experience with new features and refinements.",
+        "ja": "本リリースは新機能と改善を中心に、アセット管理・メディアプレビュー・クロスプラットフォーム体験を継続的に改善します。",
+        "ko": "이번 버전은 새 기능과 개선을 중심으로 애셋 관리, 미디어 미리보기, 크로스 플랫폼 경험을 지속적으로 개선합니다."
       }
     },
     {
@@ -555,7 +795,12 @@
         "features": [],
         "improvements": [
           {
-            "text": "optimize OrcaBox 1.1.0 media workflows"
+            "text": "优化 OrcaBox 1.1.0 媒体工作流",
+            "i18n": {
+              "en": "Optimize OrcaBox 1.1.0 media workflows",
+              "ja": "OrcaBox 1.1.0のメディアワークフローを最適化",
+              "ko": "OrcaBox 1.1.0 미디어 워크플로 최적화"
+            }
           }
         ],
         "fixes": []
@@ -563,6 +808,11 @@
       "links": {
         "cnbRelease": "https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.1.0",
         "githubRelease": "https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.1.0"
+      },
+      "summaryI18n": {
+        "en": "This release keeps improving asset management, media preview, and the cross-platform experience with ongoing refinements.",
+        "ja": "本リリースは改善を中心に、アセット管理・メディアプレビュー・クロスプラットフォーム体験を継続的に改善します。",
+        "ko": "이번 버전은 개선을 중심으로 애셋 관리, 미디어 미리보기, 크로스 플랫폼 경험을 지속적으로 개선합니다."
       }
     }
   ]
