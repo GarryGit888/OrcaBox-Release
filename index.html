@@ -525,6 +525,45 @@ a{color:inherit;text-decoration:none}
 .footer-col a:hover{color:var(--text)}
 .footer-bottom{margin-top:var(--s-16);padding-top:var(--s-8);border-top:1px solid var(--border-subtle);display:flex;align-items:center;justify-content:space-between;font-size:0.75rem;color:var(--text-3)}
 
+/* Fixed Coffee trigger and support dialog */
+.coffee-support{position:fixed;right:max(24px,env(safe-area-inset-right));bottom:max(24px,env(safe-area-inset-bottom));z-index:850;width:54px;height:54px;padding:0;border:1px solid rgba(var(--violet-rgb),0.42);border-radius:50%;display:grid;place-items:center;color:#f5e9ff;background:linear-gradient(145deg,rgba(38,26,61,0.96),rgba(16,12,28,0.98));box-shadow:0 14px 38px rgba(0,0,0,0.48),0 0 28px rgba(var(--accent-rgb),0.22),inset 0 1px 0 rgba(var(--ov),0.16);cursor:pointer;-webkit-backdrop-filter:blur(18px) saturate(1.35);backdrop-filter:blur(18px) saturate(1.35);transition:transform 0.25s var(--ease),border-color 0.25s,box-shadow 0.25s,background-color 0.25s}
+.coffee-support::before{content:'';position:absolute;inset:5px;border-radius:50%;border:1px solid rgba(var(--ov),0.06);pointer-events:none}
+.coffee-support svg{width:23px;height:23px;filter:drop-shadow(0 2px 7px rgba(var(--accent-rgb),0.4));transition:transform 0.3s var(--ease)}
+.coffee-support:hover{transform:translateY(-3px);border-color:rgba(var(--ice-rgb),0.76);box-shadow:0 18px 44px rgba(0,0,0,0.52),0 0 34px rgba(var(--accent-rgb),0.36),inset 0 1px 0 rgba(var(--ov),0.2)}
+.coffee-support:hover svg{transform:rotate(-7deg) scale(1.06)}
+.coffee-support:active{transform:translateY(0) scale(0.95)}
+.coffee-support:focus-visible,.donation-close:focus-visible{outline:2px solid var(--ice);outline-offset:3px}
+.coffee-support[aria-expanded="true"]{border-color:rgba(var(--ice-rgb),0.8);background:linear-gradient(145deg,rgba(112,50,190,0.96),rgba(55,24,101,0.98))}
+.donation-dialog{position:fixed;inset:0;z-index:900;display:grid;place-items:center;padding:24px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity 0.28s var(--ease),visibility 0.28s}
+.donation-dialog.show{opacity:1;visibility:visible;pointer-events:auto}
+.donation-scrim{position:absolute;inset:0;border:0;background:rgba(3,4,9,0.72);-webkit-backdrop-filter:blur(9px) saturate(0.9);backdrop-filter:blur(9px) saturate(0.9);cursor:default}
+.donation-panel{position:relative;width:min(650px,calc(100vw - 32px));max-height:min(760px,calc(100dvh - 40px));overflow:auto;padding:26px;border:1px solid rgba(var(--ov),0.11);border-radius:20px;background:linear-gradient(180deg,rgba(27,27,34,0.985),rgba(11,12,17,0.99));box-shadow:0 38px 120px rgba(0,0,0,0.68),0 0 70px rgba(var(--accent-rgb),0.13),inset 0 1px 0 rgba(var(--ov),0.08);transform:translate(30px,30px) scale(0.88);transform-origin:100% 100%;transition:transform 0.38s cubic-bezier(0.2,1.34,0.36,1);scrollbar-width:thin;scrollbar-color:rgba(var(--violet-rgb),0.35) transparent}
+.donation-dialog.show .donation-panel{transform:none}
+.donation-close{position:absolute;right:14px;top:14px;width:34px;height:34px;padding:0;border:1px solid rgba(var(--ov),0.11);border-radius:50%;display:grid;place-items:center;color:var(--text-2);background:rgba(var(--ov),0.05);cursor:pointer;transition:color 0.2s,background-color 0.2s,border-color 0.2s,transform 0.2s var(--ease)}
+.donation-close:hover{color:var(--text);background:rgba(var(--ov),0.1);border-color:rgba(var(--ice-rgb),0.38);transform:rotate(5deg)}
+.donation-close svg{width:16px;height:16px}
+.donation-head{text-align:center;padding:0 36px}
+.donation-coffee{width:50px;height:50px;margin:0 auto var(--s-4);border:1px solid rgba(245,200,113,0.34);border-radius:50%;display:grid;place-items:center;color:#f5d58f;background:rgba(245,190,80,0.09);box-shadow:0 0 26px rgba(238,173,67,0.1)}
+.donation-coffee svg{width:24px;height:24px}
+.donation-head h2{font-size:1.25rem;font-weight:650;line-height:1.35;color:var(--text)}
+.donation-head p{max-width:34rem;margin:8px auto 0;font-size:0.875rem;line-height:1.65;color:var(--text-2);text-wrap:pretty}
+.donation-methods{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:20px}
+.donation-method{padding:14px;border:1px solid var(--method-border);border-radius:14px;background:var(--method-bg);opacity:0;transform:translateY(12px);transition:opacity 0.3s var(--ease),transform 0.36s var(--ease),border-color 0.2s}
+.donation-dialog.show .donation-method{opacity:1;transform:none}
+.donation-dialog.show .donation-method:nth-child(2){transition-delay:0.06s}
+.donation-method-alipay{--method-border:rgba(62,175,255,0.24);--method-bg:rgba(43,156,237,0.055);--method-color:#61bdf8}
+.donation-method-wechat{--method-border:rgba(67,206,127,0.24);--method-bg:rgba(44,190,109,0.055);--method-color:#68d59a}
+.donation-method-head{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.donation-method-mark{width:32px;height:32px;flex:none;border:1px solid color-mix(in srgb,var(--method-color) 42%,transparent);border-radius:50%;display:grid;place-items:center;color:var(--method-color);background:color-mix(in srgb,var(--method-color) 11%,transparent);font-size:0.75rem;font-weight:700}
+.donation-method-copy{min-width:0;line-height:1.25}
+.donation-method-copy strong{display:block;font-size:0.875rem;color:var(--text)}
+.donation-method-copy span{display:block;margin-top:3px;font-size:0.6875rem;color:var(--text-3)}
+.donation-qr{padding:8px;border-radius:10px;background:#fff;box-shadow:0 8px 22px rgba(0,0,0,0.17)}
+.donation-qr img{width:100%;height:auto;aspect-ratio:1;object-fit:contain;border-radius:6px}
+.donation-thanks{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:15px;color:var(--text-3);font-size:0.6875rem}
+.donation-thanks svg{width:14px;height:14px;color:#e5c078}
+body.donation-open{overflow:hidden}
+
 /* ============================================================
    INLINE IMAGE EXPANSION
    ============================================================ */
@@ -690,6 +729,16 @@ a{color:inherit;text-decoration:none}
   .wall-tile{width:200px;border-radius:14px}
   .wt-s{width:160px}
   .wt-l{width:240px}
+  .coffee-support{right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));width:50px;height:50px}
+  .donation-dialog{align-items:end;padding:12px}
+  .donation-panel{width:100%;max-height:calc(100dvh - 24px);padding:24px 16px 18px;border-radius:18px;transform:translateY(34px) scale(0.96);transform-origin:50% 100%}
+  .donation-head{padding:0 28px}
+  .donation-head h2{font-size:1.125rem}
+  .donation-methods{gap:8px}
+  .donation-method{padding:10px;border-radius:12px}
+  .donation-method-head{gap:7px;margin-bottom:9px}
+  .donation-method-mark{width:28px;height:28px;font-size:0.6875rem}
+  .donation-qr{padding:6px}
 }
 @media(prefers-reduced-motion:reduce){
   *{animation-duration:0.01ms!important;transition-duration:0.01ms!important}
@@ -1263,6 +1312,35 @@ a{color:inherit;text-decoration:none}
   </div>
 </footer>
 
+<button type="button" class="coffee-support" id="donationTrigger" aria-haspopup="dialog" aria-expanded="false" aria-controls="donationDialog" data-i18n-aria="donation.open" title="赞助 OrcaBox 开发">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 2v2M14 2v2M6 2v2"/><path d="M18 8a4 4 0 0 1 0 8h-1"/><path d="M6 8h12v9a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4Z"/></svg>
+</button>
+
+<div class="donation-dialog" id="donationDialog" aria-hidden="true">
+  <button type="button" class="donation-scrim" tabindex="-1" data-donation-close aria-label="关闭赞助窗口"></button>
+  <section class="donation-panel" id="donationPanel" role="dialog" aria-modal="true" aria-labelledby="donationTitle" aria-describedby="donationDesc" tabindex="-1">
+    <button type="button" class="donation-close" id="donationClose" data-donation-close data-i18n-aria="donation.close" aria-label="关闭">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <header class="donation-head">
+      <span class="donation-coffee" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v2M14 2v2M6 2v2"/><path d="M18 8a4 4 0 0 1 0 8h-1"/><path d="M6 8h12v9a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4Z"/></svg></span>
+      <h2 id="donationTitle" data-i18n="donation.title">赞助 OrcaBox 开发</h2>
+      <p id="donationDesc" data-i18n="donation.desc">一杯咖啡可以帮助 OrcaBox 持续维护、测试和优化。</p>
+    </header>
+    <div class="donation-methods">
+      <section class="donation-method donation-method-alipay">
+        <div class="donation-method-head"><span class="donation-method-mark" aria-hidden="true">A</span><div class="donation-method-copy"><strong data-i18n="donation.alipay">支付宝</strong><span data-i18n="donation.alipayHint">扫码赞助</span></div></div>
+        <div class="donation-qr"><img src="assets/donation-alipay.jpg" alt="支付宝赞助二维码" data-i18n-alt="donation.alipayAlt" width="1174" height="1174" loading="lazy" decoding="async" draggable="false"></div>
+      </section>
+      <section class="donation-method donation-method-wechat">
+        <div class="donation-method-head"><span class="donation-method-mark" aria-hidden="true">W</span><div class="donation-method-copy"><strong data-i18n="donation.wechat">微信</strong><span data-i18n="donation.wechatHint">谢谢支持</span></div></div>
+        <div class="donation-qr"><img src="assets/donation-wechat.jpg" alt="微信赞助二维码" data-i18n-alt="donation.wechatAlt" width="384" height="384" loading="lazy" decoding="async" draggable="false"></div>
+      </section>
+    </div>
+    <p class="donation-thanks"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 3-1.7 4.3L6 9l4.3 1.7L12 15l1.7-4.3L18 9l-4.3-1.7Z"/><path d="m19 15-.8 2.2L16 18l2.2.8L19 21l.8-2.2L22 18l-2.2-.8Z"/></svg><span data-i18n="donation.thanks">感谢每一份支持</span></p>
+  </section>
+</div>
+
 <script>
 // ===== I18N TRANSLATIONS =====
 const i18n={
@@ -1312,6 +1390,7 @@ const i18n={
     "cta.github":"GitHub 备用下载",
     "nav.developer":"开发者",
     "dev.label":"关于开发者","dev.role":"OrcaBox 开发者","dev.bio":"剪辑师 · 影视流程研究者 · Vibe Coder 专注素材管理开发与高效工作流研究","dev.wechat":"微信 · 点击复制","dev.copied":"已复制 去微信粘贴添加","dev.github":"GitHub 主页","dev.bilibili":"B 站主页","dev.xhs":"小红书","dev.hint":"微信号已隐藏 点击上方按钮即可复制",
+    "donation.open":"赞助 OrcaBox 开发","donation.close":"关闭","donation.title":"赞助 OrcaBox 开发","donation.desc":"一杯咖啡可以帮助 OrcaBox 持续维护、测试和优化。","donation.alipay":"支付宝","donation.alipayHint":"扫码赞助","donation.alipayAlt":"支付宝赞助二维码","donation.wechat":"微信","donation.wechatHint":"谢谢支持","donation.wechatAlt":"微信赞助二维码","donation.thanks":"感谢每一份支持",
     "footer.desc":"面向创意团队的专业本地索引多格式素材管理器",
     "footer.product":"产品","footer.resources":"资源","footer.about":"下载来源",
     "footer.f1":"功能","footer.f2":"展示","footer.f4":"下载",
@@ -1374,6 +1453,7 @@ const i18n={
     "cta.github":"GitHub Backup Download",
     "nav.developer":"Developer",
     "dev.label":"About the Developer","dev.role":"OrcaBox Developer","dev.bio":"Video editor · Film workflow researcher · Vibe coder, focused on asset-management development and efficient workflow research","dev.wechat":"WeChat · Click to copy","dev.copied":"Copied — paste it in WeChat","dev.github":"GitHub Profile","dev.bilibili":"Bilibili Channel","dev.xhs":"Xiaohongshu (RED)","dev.hint":"WeChat ID is hidden — click the button above to copy it",
+    "donation.open":"Sponsor OrcaBox development","donation.close":"Close","donation.title":"Sponsor OrcaBox development","donation.desc":"A coffee helps support ongoing OrcaBox maintenance, testing, and improvements.","donation.alipay":"Alipay","donation.alipayHint":"Scan to sponsor","donation.alipayAlt":"Alipay sponsorship QR code","donation.wechat":"WeChat","donation.wechatHint":"Thanks for supporting","donation.wechatAlt":"WeChat sponsorship QR code","donation.thanks":"Every bit of support helps",
     "footer.desc":"Professional local-indexed multi-format asset manager for creative teams.",
     "footer.product":"Product","footer.resources":"Resources","footer.about":"Download Sources",
     "footer.f1":"Features","footer.f2":"Showcase","footer.f4":"Download",
@@ -1436,6 +1516,7 @@ const i18n={
     "cta.github":"GitHub 予備ダウンロード",
     "nav.developer":"開発者",
     "dev.label":"開発者について","dev.role":"OrcaBox 開発者","dev.bio":"映像編集者・映像ワークフロー研究者・Vibe Coder。素材管理の開発と効率的なワークフローの研究に取り組んでいます。","dev.wechat":"WeChat · クリックでコピー","dev.copied":"コピーしました。WeChat に貼り付けて追加してください","dev.github":"GitHub プロフィール","dev.bilibili":"Bilibili チャンネル","dev.xhs":"小紅書（RED）","dev.hint":"WeChat ID は非表示です。上のボタンをクリックするとコピーされます",
+    "donation.open":"OrcaBox 開発を支援","donation.close":"閉じる","donation.title":"OrcaBox 開発を支援","donation.desc":"一杯のコーヒーが OrcaBox の継続的な保守、テスト、改善を支えます。","donation.alipay":"Alipay","donation.alipayHint":"スキャンして支援","donation.alipayAlt":"Alipay 支援用 QR コード","donation.wechat":"WeChat","donation.wechatHint":"ご支援ありがとうございます","donation.wechatAlt":"WeChat 支援用 QR コード","donation.thanks":"すべてのご支援に感謝します",
     "footer.desc":"クリエイティブチームのためのプロ向けローカルインデックス・マルチフォーマットアセットマネージャー。",
     "footer.product":"製品","footer.resources":"リソース","footer.about":"ダウンロード先",
     "footer.f1":"機能","footer.f2":"紹介","footer.f4":"ダウンロード",
@@ -1498,6 +1579,7 @@ const i18n={
     "cta.github":"GitHub 예비 다운로드",
     "nav.developer":"개발자",
     "dev.label":"개발자 소개","dev.role":"OrcaBox 개발자","dev.bio":"영상 편집자·영상 워크플로 연구자·Vibe Coder. 소재 관리 개발과 효율적인 워크플로 연구에 집중합니다.","dev.wechat":"WeChat · 클릭하여 복사","dev.copied":"복사되었습니다. WeChat에 붙여넣어 추가하세요","dev.github":"GitHub 프로필","dev.bilibili":"빌리빌리 채널","dev.xhs":"샤오홍슈(RED)","dev.hint":"WeChat ID는 숨겨져 있습니다. 위 버튼을 클릭하면 복사됩니다",
+    "donation.open":"OrcaBox 개발 후원","donation.close":"닫기","donation.title":"OrcaBox 개발 후원","donation.desc":"커피 한 잔은 OrcaBox의 지속적인 유지보수, 테스트와 개선에 도움이 됩니다.","donation.alipay":"Alipay","donation.alipayHint":"스캔하여 후원","donation.alipayAlt":"Alipay 후원 QR 코드","donation.wechat":"WeChat","donation.wechatHint":"후원해 주셔서 감사합니다","donation.wechatAlt":"WeChat 후원 QR 코드","donation.thanks":"모든 후원에 감사드립니다",
     "footer.desc":"크리에이티브 팀을 위한 전문 로컬 인덱스 멀티포맷 자산 관리자.",
     "footer.product":"제품","footer.resources":"리소스","footer.about":"다운로드 소스",
     "footer.f1":"기능","footer.f2":"소개","footer.f4":"다운로드",
@@ -1610,6 +1692,14 @@ function applyLang(lang,syncUrl=false){
     if(k&&i18n[lang][k])el.setAttribute('aria-label',i18n[lang][k]);
   });
 
+  document.querySelectorAll('[data-i18n-alt]').forEach(el=>{
+    const k=el.getAttribute('data-i18n-alt');
+    if(k&&i18n[lang][k])el.setAttribute('alt',i18n[lang][k]);
+  });
+
+  const donationTrigger=document.getElementById('donationTrigger');
+  if(donationTrigger&&i18n[lang]['donation.open'])donationTrigger.title=i18n[lang]['donation.open'];
+
   // Update active option
   document.querySelectorAll('.lang-option').forEach(opt=>{
     opt.classList.toggle('active',opt.getAttribute('data-lang')===lang);
@@ -1661,6 +1751,41 @@ if(wechatCopyBtn){
       wechatCopyBtn.classList.remove('copied');
       labelEl.textContent=i18n[currentLang]['dev.wechat']||labelEl.textContent;
     },2200);
+  });
+}
+
+// Coffee support dialog: animate from the fixed trigger and retain keyboard focus.
+const donationTrigger=document.getElementById('donationTrigger');
+const donationDialog=document.getElementById('donationDialog');
+const donationPanel=document.getElementById('donationPanel');
+const donationClose=document.getElementById('donationClose');
+let donationPreviousFocus=null;
+function setDonationOpen(open){
+  if(!donationTrigger||!donationDialog)return;
+  donationDialog.classList.toggle('show',open);
+  donationDialog.setAttribute('aria-hidden',String(!open));
+  donationTrigger.setAttribute('aria-expanded',String(open));
+  document.body.classList.toggle('donation-open',open);
+  if(open){
+    donationPreviousFocus=document.activeElement;
+    requestAnimationFrame(()=>donationClose?.focus({preventScroll:true}));
+  }else if(donationPreviousFocus instanceof HTMLElement){
+    donationPreviousFocus.focus({preventScroll:true});
+    donationPreviousFocus=null;
+  }
+}
+if(donationTrigger&&donationDialog&&donationPanel){
+  donationTrigger.addEventListener('click',()=>setDonationOpen(true));
+  donationDialog.querySelectorAll('[data-donation-close]').forEach(el=>el.addEventListener('click',()=>setDonationOpen(false)));
+  document.addEventListener('keydown',e=>{
+    if(!donationDialog.classList.contains('show'))return;
+    if(e.key==='Escape'){e.preventDefault();setDonationOpen(false);return}
+    if(e.key!=='Tab')return;
+    const focusable=[...donationPanel.querySelectorAll('button:not([disabled]),a[href],[tabindex]:not([tabindex="-1"])')];
+    if(!focusable.length)return;
+    const first=focusable[0],last=focusable[focusable.length-1];
+    if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}
+    else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}
   });
 }
 
