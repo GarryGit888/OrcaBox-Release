@@ -1,0 +1,45 @@
+name: Ephemeral release asset mirror
+
+on:
+  workflow_dispatch:
+    inputs:
+      base_url:
+        description: Temporary HTTPS source for verified public release assets
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download verified assets
+        env:
+          BASE_URL: ${{ inputs.base_url }}
+        run: |
+          set -euo pipefail
+          mkdir assets
+          for asset in \
+            OrcaBox-1.2.7-arm64.dmg \
+            OrcaBox-1.2.7-x64.dmg \
+            OrcaBox-1.2.7-win-x64-Setup.exe \
+            OrcaBox-1.2.7-win-x64-Portable.exe
+          do
+            curl --fail --location --retry 8 --retry-all-errors --retry-delay 5 \
+              --connect-timeout 30 -H 'bypass-tunnel-reminder: true' \
+              --output "assets/$asset" "$BASE_URL/$asset"
+            test -s "assets/$asset"
+          done
+      - name: Verify artifact digests
+        run: |
+          set -euo pipefail
+          test "$(sha256sum assets/OrcaBox-1.2.7-arm64.dmg | awk '{print $1}')" = 0904d0aece1a7a260c04657500ac1902d454143feb65e580dd7aa78501f25d7a
+          test "$(sha256sum assets/OrcaBox-1.2.7-x64.dmg | awk '{print $1}')" = 9198315a8059c854aabd9131b07fce9a61ba214e649116a3cf72f72dfab908e9
+          test "$(sha256sum assets/OrcaBox-1.2.7-win-x64-Setup.exe | awk '{print $1}')" = caadf99ee76157d7c8dc4258cd95f89c6be506ffb83d51da455e09c688f5bd9e
+          test "$(sha256sum assets/OrcaBox-1.2.7-win-x64-Portable.exe | awk '{print $1}')" = 3090e73a53c45411755da5d177bf3f0eec2d7bbfa24d93f569c975407b91c68f
+      - name: Publish release assets
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh release upload v1.2.7 --repo "$GITHUB_REPOSITORY" --clobber assets/*
