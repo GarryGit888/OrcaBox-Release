@@ -12,43 +12,114 @@
 <meta property="og:title" content="OrcaBox — 专业本地素材管理器">
 <meta property="og:description" content="本地素材索引 零复制直链 40+格式预览 多路径管理">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://orcabox.app/assets/product-1.2.1-hero.webp">
-<link rel="icon" type="image/png" href="assets/orcabox-icon.png">
+<meta property="og:image" content="https://orcabox.app/assets/og-image.jpg">
+<meta property="og:image:secure_url" content="https://orcabox.app/assets/og-image.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="OrcaBox 本地素材管理器界面预览">
+<meta property="og:site_name" content="OrcaBox">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="OrcaBox — 专业本地素材管理器">
+<meta name="twitter:description" content="本地素材索引 零复制直链 40+格式预览 多路径管理">
+<meta name="twitter:image" content="https://orcabox.app/assets/og-image.jpg">
+<meta name="twitter:image:alt" content="OrcaBox 本地素材管理器界面预览">
+<link rel="alternate" hreflang="zh-CN" href="https://orcabox.app/">
+<link rel="alternate" hreflang="en" href="https://orcabox.app/?lang=en">
+<link rel="alternate" hreflang="ja" href="https://orcabox.app/?lang=ja">
+<link rel="alternate" hreflang="ko" href="https://orcabox.app/?lang=ko">
+<link rel="alternate" hreflang="x-default" href="https://orcabox.app/">
+<link rel="icon" type="image/png" href="assets/orcabox-icon-192.png">
+<link rel="apple-touch-icon" href="assets/orcabox-icon-192.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "OrcaBox",
+  "applicationCategory": "MultimediaApplication",
+  "applicationSubCategory": "Digital Asset Management",
+  "operatingSystem": "macOS 12.0+, Windows 10/11 x64",
+  "softwareVersion": "1.2.6",
+  "softwareRequirements": "macOS 12.0+ 或 Windows x64",
+  "inLanguage": ["zh-CN", "en", "ja", "ko"],
+  "url": "https://orcabox.app/",
+  "description": "OrcaBox 是面向创意团队的专业本地素材管理器：本地索引不复制原文件，支持 40+ 格式预览、Lottie 动效、AI 标签与颜色筛选。",
+  "image": "https://orcabox.app/assets/og-image.jpg",
+  "screenshot": "https://orcabox.app/assets/product-1.2.1-hero.webp",
+  "downloadUrl": "https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.2.6",
+  "featureList": [
+    "40+ 素材格式预览",
+    "本地索引，不复制原文件",
+    "Lottie 与 JSON 动效实时预览",
+    "交互式 3D 模型预览",
+    "端侧 AI 智能标签与颜色筛选",
+    "批量操作与任务中心",
+    "Chrome 扩展网页采集",
+    "DaVinci Resolve 素材直达"
+  ],
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "CNY",
+    "availability": "https://schema.org/InStock"
+  },
+  "author": {
+    "@type": "Person",
+    "name": "GarryKai",
+    "url": "https://github.com/GarryGit888"
+  },
+  "sameAs": [
+    "https://github.com/GarryGit888/OrcaBox-Release",
+    "https://cnb.cool/garrykai/orcabox-release"
+  ]
+}
+</script>
 <style>
 :root {
-  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px;
+  --s-1: 4px; --s-2: 8px; --s-3: 12px; --s-4: 16px; --s-5: 20px;
   --s-6: 24px; --s-8: 32px; --s-10: 40px; --s-12: 48px;
   --s-16: 64px; --s-20: 80px; --s-24: 96px; --s-32: 128px;
   --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
   --font-mono: ui-monospace, 'SF Mono', 'Cascadia Code', Menlo, Consolas, monospace;
+  /* 叠加通道：--ov 用于表面/边框叠加，--sh 用于阴影。 */
+  --ov: 255,255,255;
+  --sh: 0,0,0;
+  --ice-rgb: 216,180,254;
+  --accent-rgb: 147,51,234;
+  --violet: #a78bfa;
+  --violet-rgb: 167,139,250;
+  --scrim: 5,7,14;
+  color-scheme: dark;
   --bg: #05070e;
   --bg-raised: #0b0f1a;
   --bg-subtle: #0d1220;
   --text: #eef2fa;
   --text-2: #a7b2c8;
-  --text-3: #667089;
+  --text-3: #757f9a;
   --text-muted: var(--text-3);
-  --border: rgba(255,255,255,0.10);
-  --border-subtle: rgba(255,255,255,0.06);
-  --accent: #4da3ff;
-  --ice: #7dd3fc;
-  --accent-dim: rgba(77,163,255,0.10);
-  --accent-grad: linear-gradient(120deg,#9be8ff 0%,#5cb8ff 34%,#0a84ff 72%,#7c8cff 100%);
-  --glass: linear-gradient(165deg, rgba(255,255,255,0.065), rgba(255,255,255,0.022) 42%, rgba(125,211,252,0.035) 100%);
+  --border: rgba(var(--ov),0.10);
+  --border-subtle: rgba(var(--ov),0.06);
+  --accent: #a855f7;
+  --ice: #d8b4fe;
+  --accent-dim: rgba(var(--accent-rgb),0.10);
+  --accent-grad: linear-gradient(120deg,#e9d5ff 0%,#c084fc 34%,#9333ea 72%,#7c3aed 100%);
+  --accent-strong-grad: linear-gradient(120deg,#a855f7 0%,#7e22ce 52%,#6d28d9 100%);
+  --glass: linear-gradient(165deg, rgba(var(--ov),0.065), rgba(var(--ov),0.022) 42%, rgba(var(--ice-rgb),0.035) 100%);
   --glass-strong: rgba(8,12,22,0.55);
   --radius-sm: 10px; --radius-md: 14px; --radius-lg: 20px; --radius-xl: 28px;
-  --shadow-sm: 0 1px 2px rgba(0,0,0,0.25);
-  --shadow-md: 0 6px 24px rgba(0,0,0,0.35);
-  --shadow-lg: 0 16px 48px rgba(0,0,0,0.45);
-  --shadow-xl: 0 32px 96px rgba(0,0,0,0.55);
+  --shadow-sm: 0 1px 2px rgba(var(--sh),0.25);
+  --shadow-md: 0 6px 24px rgba(var(--sh),0.35);
+  --shadow-lg: 0 16px 48px rgba(var(--sh),0.45);
+  --shadow-xl: 0 32px 96px rgba(var(--sh),0.55);
   --ease: cubic-bezier(0.16,1,0.3,1);
 }
+
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility;background:var(--bg);scroll-behavior:smooth;overflow-x:hidden}
 body{font-family:var(--font);font-size:0.9375rem;line-height:1.6;color:var(--text);background:var(--bg)}
 /* film grain over everything */
 body::after{content:'';position:fixed;inset:0;z-index:2000;pointer-events:none;opacity:0.032;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
-::selection{background:rgba(77,163,255,0.85);color:#fff}
+::selection{background:rgba(var(--accent-rgb),0.85);color:#fff}
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 
@@ -65,14 +136,17 @@ a{color:inherit;text-decoration:none}
 @media(min-width:1800px){.container{max-width:1440px}.hero-shot-wrap{max-width:1600px;width:88vw}}
 .section{padding:var(--s-32) 0;position:relative;overflow:clip}
 .section[id]{scroll-margin-top:96px}
-.section-subtle{background:radial-gradient(90% 70% at 50% 0%,rgba(77,163,255,0.055),transparent 72%)}
+.section-subtle{background:radial-gradient(90% 70% at 50% 0%,rgba(var(--accent-rgb),0.055),transparent 72%)}
+#showcase{margin-top:-34px;padding-top:calc(var(--s-32) + 34px);overflow:visible;isolation:isolate;background:radial-gradient(78% 240px at 50% 0%,rgba(119,54,255,0.18),rgba(92,35,221,0.08) 38%,transparent 78%),radial-gradient(90% 70% at 50% 0%,rgba(var(--accent-rgb),0.055),transparent 72%)}
+#showcase::before{content:'';position:absolute;z-index:0;top:-240px;left:-12vw;width:124vw;height:420px;pointer-events:none;background:radial-gradient(58% 80% at 50% 18%,rgba(var(--violet-rgb),0.28) 0%,rgba(var(--accent-rgb),0.15) 35%,rgba(var(--accent-rgb),0.05) 58%,transparent 80%);filter:blur(26px);opacity:0.92}
+#showcase > .container{position:relative;z-index:1}
 
 /* NAV */
 .nav{position:fixed;top:14px;left:0;right:0;z-index:100;padding:0 var(--s-4)}
-.nav-inner{max-width:1180px;margin:0 auto;height:54px;padding:0 10px 0 var(--s-4);display:flex;align-items:center;justify-content:space-between;background:rgba(9,13,22,0.55);border:1px solid rgba(255,255,255,0.09);border-radius:16px;-webkit-backdrop-filter:blur(24px) saturate(1.6);backdrop-filter:blur(24px) saturate(1.6);box-shadow:0 8px 32px rgba(0,0,0,0.25),inset 0 1px 0 rgba(255,255,255,0.06);transition:background-color 0.4s var(--ease),box-shadow 0.4s var(--ease)}
-.nav.active .nav-inner{background:rgba(8,11,20,0.78);box-shadow:0 12px 40px rgba(0,0,0,0.4),inset 0 1px 0 rgba(255,255,255,0.08)}
+.nav-inner{max-width:1180px;margin:0 auto;height:54px;padding:0 10px 0 var(--s-4);display:flex;align-items:center;justify-content:space-between;background:rgba(9,13,22,0.55);border:1px solid rgba(var(--ov),0.09);border-radius:16px;-webkit-backdrop-filter:blur(24px) saturate(1.6);backdrop-filter:blur(24px) saturate(1.6);box-shadow:0 8px 32px rgba(var(--sh),0.25),inset 0 1px 0 rgba(var(--ov),0.06);transition:background-color 0.4s var(--ease),box-shadow 0.4s var(--ease)}
+.nav.active .nav-inner{background:rgba(8,11,20,0.78);box-shadow:0 12px 40px rgba(var(--sh),0.4),inset 0 1px 0 rgba(var(--ov),0.08)}
 .nav-brand{display:flex;align-items:center;gap:10px;font-weight:600;font-size:0.9375rem;letter-spacing:-0.02em;color:var(--text)}
-.nav-brand img{width:28px;height:28px;border-radius:7px;object-fit:cover;box-shadow:0 1px 5px rgba(0,0,0,0.35)}
+.nav-brand img{width:28px;height:28px;border-radius:7px;object-fit:cover;box-shadow:0 1px 5px rgba(var(--sh),0.35)}
 .nav-links{display:flex;align-items:center;gap:var(--s-8);list-style:none}
 .nav-links a{font-size:0.8125rem;font-weight:500;color:var(--text-2);transition:color 0.2s;position:relative;padding:4px 0}
 .nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1.5px;background:var(--accent-grad);border-radius:1px;transition:width 0.3s var(--ease)}
@@ -81,38 +155,61 @@ a{color:inherit;text-decoration:none}
 .nav-brand:focus-visible,.nav-links a:focus-visible,.lang-btn:focus-visible,.lang-option:focus-visible,.btn:focus-visible,.download-mirror:focus-visible,.footer-col a:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 .nav-actions{display:flex;align-items:center;gap:var(--s-2)}
 .repo-shortcuts{display:flex;align-items:center;gap:4px}
-.repo-link{width:34px;height:34px;border:1px solid var(--border);border-radius:var(--radius-sm);display:inline-flex;align-items:center;justify-content:center;color:var(--text-2);background:rgba(255,255,255,0.03);transition:color 0.2s,border-color 0.2s,background-color 0.2s,transform 0.2s var(--ease)}
+.repo-link{width:34px;height:34px;border:1px solid var(--border);border-radius:var(--radius-sm);display:inline-flex;align-items:center;justify-content:center;color:var(--text-2);background:rgba(var(--ov),0.03);transition:color 0.2s,border-color 0.2s,background-color 0.2s,transform 0.2s var(--ease)}
 .repo-link img{width:18px;height:18px;object-fit:contain}
 .repo-link-github img{filter:grayscale(1) brightness(2.8)}
-.repo-link:hover{color:var(--text);border-color:rgba(125,211,252,0.45);background:var(--accent-dim);transform:translateY(-1px)}
+.repo-link:hover{color:var(--text);border-color:rgba(var(--ice-rgb),0.45);background:var(--accent-dim);transform:translateY(-1px)}
 .repo-link:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 
 /* Language Switcher */
 .lang-switch{position:relative}
-.lang-btn{height:36px;padding:0 10px;border-radius:var(--radius-sm);border:1px solid var(--border);background:rgba(255,255,255,0.03);cursor:pointer;display:flex;align-items:center;gap:4px;color:var(--text-2);font-family:var(--font);font-size:0.75rem;font-weight:500;transition:all 0.15s;white-space:nowrap}
-.lang-btn:hover{color:var(--text);border-color:rgba(255,255,255,0.22)}
+.lang-btn{height:36px;padding:0 10px;border-radius:var(--radius-sm);border:1px solid var(--border);background:rgba(var(--ov),0.03);cursor:pointer;display:flex;align-items:center;gap:4px;color:var(--text-2);font-family:var(--font);font-size:0.75rem;font-weight:500;transition:all 0.15s;white-space:nowrap}
+.lang-btn:hover{color:var(--text);border-color:rgba(var(--ov),0.22)}
 .lang-btn svg{width:14px;height:14px;transition:transform 0.2s}
 .lang-btn.open svg{transform:rotate(180deg)}
-.lang-drop{position:absolute;top:calc(100% + 6px);right:0;background:rgba(13,18,32,0.85);-webkit-backdrop-filter:blur(28px) saturate(1.8);backdrop-filter:blur(28px) saturate(1.8);border:1px solid var(--border);border-radius:var(--radius-sm);box-shadow:var(--shadow-md),inset 0 1px 0 rgba(255,255,255,0.08);overflow:hidden;opacity:0;visibility:hidden;transform:translateY(-4px);transition:all 0.2s var(--ease);z-index:200;min-width:100px}
+.lang-drop{position:absolute;top:calc(100% + 6px);right:0;background:rgba(13,18,32,0.85);-webkit-backdrop-filter:blur(28px) saturate(1.8);backdrop-filter:blur(28px) saturate(1.8);border:1px solid var(--border);border-radius:var(--radius-sm);box-shadow:var(--shadow-md),inset 0 1px 0 rgba(var(--ov),0.08);overflow:hidden;opacity:0;visibility:hidden;transform:translateY(-4px);transition:all 0.2s var(--ease);z-index:200;min-width:100px}
 .lang-drop.show{opacity:1;visibility:visible;transform:translateY(0)}
 .lang-option{display:block;width:100%;padding:8px 14px;border:none;background:transparent;color:var(--text-2);font-family:var(--font);font-size:0.75rem;cursor:pointer;text-align:left;transition:all 0.1s;white-space:nowrap}
-.lang-option:hover{color:var(--text);background:rgba(255,255,255,0.05)}
+.lang-option:hover{color:var(--text);background:rgba(var(--ov),0.05)}
 .lang-option.active{color:var(--ice);font-weight:600}
+/* 移动端导航（≤640px 时 .nav-links 隐藏，由这里接管） */
+.nav-toggle{display:none;width:38px;height:38px;padding:0;border-radius:var(--radius-sm);border:1px solid var(--border);background:rgba(var(--ov),0.03);cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:4px;transition:border-color 0.2s,background-color 0.2s}
+.nav-toggle span{display:block;width:16px;height:1.5px;border-radius:1px;background:var(--text-2);transition:transform 0.28s var(--ease),opacity 0.18s,background-color 0.2s}
+.nav-toggle[aria-expanded="true"]{border-color:rgba(var(--ice-rgb),0.45);background:var(--accent-dim)}
+.nav-toggle[aria-expanded="true"] span{background:var(--text)}
+.nav-toggle[aria-expanded="true"] span:nth-child(1){transform:translateY(5.5px) rotate(45deg)}
+.nav-toggle[aria-expanded="true"] span:nth-child(2){opacity:0}
+.nav-toggle[aria-expanded="true"] span:nth-child(3){transform:translateY(-5.5px) rotate(-45deg)}
+.nav-toggle:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.nav-mobile{display:none}
+@media(max-width:640px){
+  .nav-toggle{display:flex}
+  .nav-mobile{max-width:1180px;margin:8px auto 0;padding:var(--s-2);background:rgba(9,13,22,0.78);-webkit-backdrop-filter:blur(24px) saturate(1.6);backdrop-filter:blur(24px) saturate(1.6);border:1px solid rgba(var(--ov),0.09);border-radius:14px;box-shadow:0 12px 40px rgba(var(--sh),0.4);animation:nav-mobile-in 0.28s var(--ease)}
+  .nav-mobile.open{display:block}
+  .nav-mobile ul{list-style:none;display:flex;flex-direction:column}
+  .nav-mobile li+li{border-top:1px solid var(--border-subtle)}
+  .nav-mobile a{display:block;padding:13px var(--s-3);border-radius:var(--radius-sm);color:var(--text-2);font-size:0.9375rem;font-weight:500;transition:color 0.2s,background-color 0.2s}
+  .nav-mobile a:hover,.nav-mobile a:focus-visible{color:var(--text);background:rgba(var(--ov),0.05)}
+  .nav-mobile a:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+}
+@keyframes nav-mobile-in{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:translateY(0)}}
+/* 窄屏：收起仓库快捷入口（同样的链接在 CTA、页脚与移动菜单里都有），避免导航挤在一起 */
+@media(max-width:410px){.repo-shortcuts{display:none}}
 
 /* Buttons — refined glass */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;height:38px;padding:0 18px;border-radius:11px;font-family:var(--font);font-size:0.8125rem;font-weight:500;letter-spacing:-0.005em;border:1px solid transparent;cursor:pointer;transition:background-color 0.2s var(--ease),border-color 0.2s var(--ease),box-shadow 0.2s var(--ease),transform 0.2s var(--ease),filter 0.2s var(--ease);white-space:nowrap}
-.btn-primary{background:#fff;border-color:rgba(255,255,255,0.5);color:#0b0e16;box-shadow:0 1px 2px rgba(0,0,0,0.45),0 8px 24px rgba(0,0,0,0.28)}
-.btn-primary:hover{background:#e9edf5;transform:translateY(-1px);box-shadow:0 2px 4px rgba(0,0,0,0.45),0 12px 32px rgba(0,0,0,0.34)}
-.btn-primary:active{transform:translateY(0);background:#dde2ec}
-.btn-secondary{background:rgba(255,255,255,0.045);color:var(--text);border-color:rgba(255,255,255,0.12);box-shadow:inset 0 1px 0 rgba(255,255,255,0.06);-webkit-backdrop-filter:blur(20px) saturate(1.4);backdrop-filter:blur(20px) saturate(1.4)}
-.btn-secondary:hover{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.22);transform:translateY(-1px)}
+.btn-primary{background:var(--accent-strong-grad);border-color:rgba(var(--accent-rgb),0.62);color:#fff;box-shadow:0 1px 2px rgba(var(--sh),0.30),0 8px 22px rgba(var(--accent-rgb),0.26)}
+.btn-primary:hover{background:var(--accent-strong-grad);transform:translateY(-1px);filter:brightness(1.09);box-shadow:0 2px 4px rgba(var(--sh),0.32),0 12px 30px rgba(var(--accent-rgb),0.34)}
+.btn-primary:active{transform:translateY(0);background:var(--accent-strong-grad);filter:brightness(0.94)}
+.btn-secondary{background:rgba(var(--ov),0.045);color:var(--text);border-color:rgba(var(--ov),0.12);box-shadow:inset 0 1px 0 rgba(var(--ov),0.06);-webkit-backdrop-filter:blur(20px) saturate(1.4);backdrop-filter:blur(20px) saturate(1.4)}
+.btn-secondary:hover{background:rgba(var(--ov),0.08);border-color:rgba(var(--ov),0.22);transform:translateY(-1px)}
 .btn.is-pending{color:var(--text-muted);cursor:default}
-.btn.is-pending:hover{background:rgba(255,255,255,0.045);border-color:rgba(255,255,255,0.12);transform:none;filter:none}
+.btn.is-pending:hover{background:rgba(var(--ov),0.045);border-color:rgba(var(--ov),0.12);transform:none;filter:none}
 .btn-lg{height:46px;padding:0 26px;font-size:0.9375rem;border-radius:13px}
 
 /* ============ HERO — media wall + glass ============ */
-.hero{position:relative;min-height:116vh;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:106px var(--s-8) 0;overflow:clip}
-.hero-wall{position:absolute;inset:0;z-index:0;pointer-events:none}
+.hero{position:relative;min-height:116vh;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:106px var(--s-8) 0;overflow:visible}
+.hero-wall{position:absolute;inset:0;z-index:0;overflow:clip;pointer-events:none}
 .wall-row{position:absolute;left:0;right:0;overflow:hidden;display:flex}
 .wall-row-a{top:0;height:236px;-webkit-mask-image:linear-gradient(180deg,#000 60%,transparent 100%);mask-image:linear-gradient(180deg,#000 60%,transparent 100%)}
 .wall-row-b{top:272px;height:236px;-webkit-mask-image:linear-gradient(180deg,#000 52%,transparent 98%);mask-image:linear-gradient(180deg,#000 52%,transparent 98%)}
@@ -121,32 +218,32 @@ a{color:inherit;text-decoration:none}
 @keyframes wall-a{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @keyframes wall-b{from{transform:translateX(-50%)}to{transform:translateX(0)}}
 .wall-set{display:flex;gap:var(--s-4);padding-right:var(--s-4)}
-.wall-tile{flex:0 0 auto;height:100%;width:340px;border-radius:18px;overflow:hidden;position:relative;background:var(--bg-raised);border:1px solid rgba(255,255,255,0.10);box-shadow:0 18px 44px rgba(0,0,0,0.38),inset 0 1px 0 rgba(255,255,255,0.10)}
+.wall-tile{flex:0 0 auto;height:100%;width:340px;border-radius:18px;overflow:hidden;position:relative;background:var(--bg-raised);border:1px solid rgba(var(--ov),0.10);box-shadow:0 18px 44px rgba(var(--sh),0.38),inset 0 1px 0 rgba(var(--ov),0.10)}
 .wall-tile img{width:100%;height:100%;object-fit:cover;filter:saturate(1.12) brightness(0.92)}
-.wall-tile::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(255,255,255,0.06),transparent 22%);pointer-events:none}
+.wall-tile::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(var(--ov),0.06),transparent 22%);pointer-events:none}
 .wt-s{width:262px}
 .wt-l{width:430px}
-.t-grad-1{background:radial-gradient(120% 130% at 18% 12%,#7ff0e0 0%,transparent 52%),radial-gradient(130% 140% at 86% 26%,#4da3ff 0%,transparent 58%),radial-gradient(150% 130% at 50% 105%,#7c5cff 0%,transparent 62%),linear-gradient(160deg,#0b1e3f,#0a1228)}
+.t-grad-1{background:radial-gradient(120% 130% at 18% 12%,#e9d5ff 0%,transparent 52%),radial-gradient(130% 140% at 86% 26%,#a855f7 0%,transparent 58%),radial-gradient(150% 130% at 50% 105%,#6d28d9 0%,transparent 62%),linear-gradient(160deg,#21103d,#11071f)}
 .t-grad-2{background:radial-gradient(120% 130% at 20% 85%,#ff9d6c 0%,transparent 52%),radial-gradient(130% 140% at 82% 20%,#e05fa0 0%,transparent 55%),radial-gradient(140% 120% at 50% 100%,#5b3bd6 0%,transparent 62%),linear-gradient(150deg,#2a1030,#160b24)}
-.t-grad-3{background:radial-gradient(130% 140% at 22% 20%,#37d5d0 0%,transparent 55%),radial-gradient(140% 130% at 85% 80%,#1663d9 0%,transparent 60%),linear-gradient(155deg,#06202e,#071226)}
+.t-grad-3{background:radial-gradient(130% 140% at 22% 20%,#c4b5fd 0%,transparent 55%),radial-gradient(140% 130% at 85% 80%,#7c3aed 0%,transparent 60%),linear-gradient(155deg,#251044,#10071f)}
 .t-palette{display:flex}
 .t-palette i{flex:1;height:100%}
-.t-wave{display:flex;align-items:center;justify-content:center;background:linear-gradient(165deg,rgba(255,255,255,0.06),rgba(255,255,255,0.02));border:1px solid rgba(255,255,255,0.10)}
+.t-wave{display:flex;align-items:center;justify-content:center;background:linear-gradient(165deg,rgba(var(--ov),0.06),rgba(var(--ov),0.02));border:1px solid rgba(var(--ov),0.10)}
 .t-wave svg{width:78%;height:56%}
-.t-brand{display:flex;align-items:center;justify-content:center;background:linear-gradient(165deg,rgba(255,255,255,0.08),rgba(255,255,255,0.02) 60%,rgba(77,163,255,0.08))}
-.t-brand img{width:34%;height:auto;border-radius:22%;box-shadow:0 12px 40px rgba(0,0,0,0.5),0 0 60px rgba(77,163,255,0.25)}
+.t-brand{display:flex;align-items:center;justify-content:center;background:linear-gradient(165deg,rgba(var(--ov),0.08),rgba(var(--ov),0.02) 60%,rgba(var(--accent-rgb),0.08))}
+.t-brand img{width:34%;height:auto;border-radius:22%;box-shadow:0 12px 40px rgba(var(--sh),0.5),0 0 60px rgba(var(--accent-rgb),0.25)}
 .hero-aurora{position:absolute;inset:0;z-index:1}
 .hero-scrim{position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(5,7,14,0.42) 0%,rgba(5,7,14,0.68) 24%,rgba(5,7,14,0.93) 42%,var(--bg) 60%),radial-gradient(58% 36% at 50% 26%,rgba(5,7,14,0.58),transparent 76%)}
 .floater{position:absolute;border-radius:50%;opacity:0.12;filter:blur(90px);will-change:transform}
-.floater-1{width:520px;height:520px;background:#1668e3;top:4%;left:-10%}
+.floater-1{width:520px;height:520px;background:#9333ea;top:4%;left:-10%}
 .floater-2{width:360px;height:360px;background:#5b3bd6;bottom:12%;right:-8%;opacity:0.09}
-.floater-3{width:260px;height:260px;background:#0e8ea8;top:46%;left:58%;opacity:0.08}
-.floater-ring{position:absolute;border-radius:50%;border:1px solid rgba(125,211,252,0.35);opacity:0.08;will-change:transform}
+.floater-3{width:260px;height:260px;background:#a855f7;top:46%;left:58%;opacity:0.08}
+.floater-ring{position:absolute;border-radius:50%;border:1px solid rgba(var(--ice-rgb),0.35);opacity:0.08;will-change:transform}
 .floater-ring-1{width:300px;height:300px;top:20%;right:15%}
 .floater-ring-2{width:180px;height:180px;bottom:30%;left:10%}
 .hero-text{padding:4vh var(--s-4) 0;text-align:center;max-width:1320px;margin-bottom:var(--s-8);position:relative;z-index:3}
-.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;margin-bottom:var(--s-4);padding:7px 14px;border:1px solid rgba(125,211,252,0.32);border-radius:999px;color:#a8dcff;background:rgba(77,163,255,0.08);-webkit-backdrop-filter:blur(20px) saturate(1.5);backdrop-filter:blur(20px) saturate(1.5);box-shadow:inset 0 1px 0 rgba(255,255,255,0.10);font-family:var(--font-mono);font-size:0.6875rem;letter-spacing:0.06em;text-transform:uppercase}
-.hero-eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:#7dd3fc;box-shadow:0 0 12px rgba(125,211,252,0.9)}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;margin-bottom:var(--s-4);padding:7px 14px;border:1px solid rgba(var(--ice-rgb),0.32);border-radius:999px;color:#ddd6fe;background:rgba(var(--accent-rgb),0.08);-webkit-backdrop-filter:blur(20px) saturate(1.5);backdrop-filter:blur(20px) saturate(1.5);box-shadow:inset 0 1px 0 rgba(var(--ov),0.10);font-family:var(--font-mono);font-size:0.6875rem;letter-spacing:0.06em;text-transform:uppercase}
+.hero-eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--ice);box-shadow:0 0 12px rgba(var(--ice-rgb),0.9)}
 .hero-text h1{margin-bottom:var(--s-4)}
 .hero-text h1 em{font-style:normal;background:var(--accent-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero-text .body-l{margin-bottom:var(--s-8);max-width:none;margin-left:auto;margin-right:auto;white-space:nowrap}
@@ -158,11 +255,11 @@ a{color:inherit;text-decoration:none}
 .hero-entrance-desc{transition-delay:0.15s}
 .hero-entrance-cta{transition-delay:0.3s}
 .hero-shot-wrap{position:relative;width:min(95vw,1540px);max-width:1540px;margin:0 auto;z-index:2;overflow:visible;transform:translateY(52px)}
-.hero-shot-wrap::before{content:'';position:absolute;inset:-16px;border-radius:calc(var(--radius-lg) + 16px);background:radial-gradient(ellipse at center,rgba(77,163,255,0.16) 0%,transparent 70%);opacity:0;transition:opacity 0.5s var(--ease);pointer-events:none;z-index:0}
+.hero-shot-wrap::before{content:'';position:absolute;inset:-16px;border-radius:calc(var(--radius-lg) + 16px);background:radial-gradient(ellipse at center,rgba(var(--accent-rgb),0.16) 0%,transparent 70%);opacity:0;transition:opacity 0.5s var(--ease);pointer-events:none;z-index:0}
 .hero-shot-wrap:hover::before{opacity:1}
-.hero-shot{width:100%;height:auto;border-radius:var(--radius-lg);border:1px solid rgba(255,255,255,0.11);box-shadow:var(--shadow-xl);will-change:transform,opacity;transform-origin:center bottom;opacity:0;transform:translateY(56px) scale(0.965);transition:opacity 1s var(--ease),transform 1s var(--ease),box-shadow 0.5s var(--ease),filter 0.5s var(--ease);position:relative;z-index:1}
+.hero-shot{width:100%;height:auto;border-radius:var(--radius-lg);border:1px solid rgba(var(--ov),0.11);box-shadow:var(--shadow-xl);will-change:transform,opacity;transform-origin:center bottom;opacity:0;transform:translateY(56px) scale(0.965);transition:opacity 1s var(--ease),transform 1s var(--ease),box-shadow 0.5s var(--ease),filter 0.5s var(--ease);position:relative;z-index:1}
 .hero-shot.ready{opacity:1;transform:translateY(0) scale(1);animation:hero-float 7s ease-in-out 1s infinite}
-.hero-shot-wrap:hover .hero-shot{box-shadow:0 0 70px rgba(77,163,255,0.14),0 24px 80px rgba(0,0,0,0.5);filter:brightness(1.05)}
+.hero-shot-wrap:hover .hero-shot{box-shadow:0 0 70px rgba(var(--accent-rgb),0.14),0 24px 80px rgba(var(--sh),0.5);filter:brightness(1.05)}
 @keyframes hero-float{0%,100%{translate:0 0}33%{translate:0 -10px}66%{translate:0 6px}}
 @keyframes zoom-bounce{0%{transform:scale(0.95)}60%{transform:scale(1.02)}100%{transform:scale(1)}}
 
@@ -176,9 +273,9 @@ a{color:inherit;text-decoration:none}
 
 /* STATS — floating glass slab */
 .stats{position:relative;z-index:4;margin-top:-72px}
-.stats-row{display:grid;grid-template-columns:repeat(4,1fr);max-width:1100px;margin:0 auto;border-radius:var(--radius-xl);border:1px solid var(--border);background:var(--glass-strong);-webkit-backdrop-filter:blur(28px) saturate(1.7);backdrop-filter:blur(28px) saturate(1.7);box-shadow:var(--shadow-lg),inset 0 1px 0 rgba(255,255,255,0.10);overflow:hidden}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);max-width:1100px;margin:0 auto;border-radius:var(--radius-xl);border:1px solid var(--border);background:var(--glass-strong);-webkit-backdrop-filter:blur(28px) saturate(1.7);backdrop-filter:blur(28px) saturate(1.7);box-shadow:var(--shadow-lg),inset 0 1px 0 rgba(var(--ov),0.10);overflow:hidden}
 .stat{padding:var(--s-6) var(--s-8);text-align:center;border-right:1px solid var(--border-subtle);transition:all 0.3s var(--ease);cursor:default}
-.stat:hover{background:rgba(125,211,252,0.06)}
+.stat:hover{background:rgba(var(--ice-rgb),0.06)}
 .stat:hover .stat-val{transform:scale(1.08)}
 .stat:last-child{border-right:none}
 .stat-val{font-size:2rem;font-weight:700;letter-spacing:-0.03em;background:var(--accent-grad);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1;margin-bottom:var(--s-1);transition:transform 0.3s var(--ease);display:inline-block}
@@ -197,76 +294,99 @@ a{color:inherit;text-decoration:none}
   flex-direction:column;
   overflow:hidden;
   isolation:isolate;
-  border:1px solid rgba(255,255,255,0.09);
+  border:1px solid rgba(var(--violet-rgb),0.16);
   border-radius:var(--radius-lg);
-  background:linear-gradient(160deg,rgba(150,190,255,0.055),rgba(150,190,255,0.018) 40%,rgba(20,30,56,0.28) 100%);
-  box-shadow:inset 0 1px 0 rgba(255,255,255,0.07),0 18px 48px rgba(0,0,0,0.28);
+  background:linear-gradient(135deg,rgba(var(--violet-rgb),0.11) 0%,rgba(var(--violet-rgb),0.03) 30%,transparent 58%),linear-gradient(160deg,rgba(196,181,253,0.07),rgba(196,181,253,0.022) 40%,rgba(31,17,61,0.28) 100%);
+  box-shadow:inset 0 1px 0 rgba(var(--ov),0.07),0 14px 40px rgba(var(--sh),0.26);
   transition:transform 0.4s var(--ease),box-shadow 0.4s var(--ease),border-color 0.4s var(--ease);
 }
 .feature-panel::before{
   content:'';
   position:absolute;
   inset:-1px;
-  z-index:3;
+  z-index:4;
   border-radius:inherit;
   padding:1px;
   pointer-events:none;
   background:
-    radial-gradient(360px circle at var(--pointer-x) var(--pointer-y),rgba(255,255,255,0.98) 0%,rgba(190,232,255,0.8) 12%,rgba(77,163,255,0.45) 28%,transparent 62%),
-    linear-gradient(145deg,rgba(255,255,255,0.18),rgba(255,255,255,0.03) 45%,rgba(125,211,252,0.16));
+    radial-gradient(360px circle at var(--pointer-x) var(--pointer-y),rgba(255,255,255,0.9) 0%,rgba(219,205,255,0.78) 12%,rgba(var(--violet-rgb),0.55) 28%,transparent 62%),
+    linear-gradient(145deg,rgba(var(--violet-rgb),0.85) 0%,rgba(var(--violet-rgb),0.12) 36%,rgba(var(--violet-rgb),0.30) 100%);
   -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
   -webkit-mask-composite:xor;
   mask-composite:exclude;
-  opacity:calc(0.28 + var(--glow-opacity) * 0.72);
+  opacity:calc(0.34 + var(--glow-opacity) * 0.66);
   transition:opacity 0.25s ease;
 }
 .feature-panel::after{
   content:'';
   position:absolute;
   inset:0;
-  z-index:0;
+  z-index:2;
   pointer-events:none;
-  background:radial-gradient(420px circle at var(--pointer-x) var(--pointer-y),rgba(125,211,252,0.10),transparent 62%);
+  background:radial-gradient(420px circle at var(--pointer-x) var(--pointer-y),rgba(var(--violet-rgb),0.16),transparent 62%);
   opacity:var(--glow-opacity);
   transition:opacity 0.3s ease;
 }
-.feature-panel:hover{transform:translateY(-3px);border-color:rgba(125,211,252,0.26);box-shadow:inset 0 1px 0 rgba(255,255,255,0.09),0 24px 64px rgba(0,0,0,0.36),0 0 42px rgba(77,163,255,0.09)}
-.feature-panel>*{position:relative;z-index:1}
-.feature-panel-copy{padding:var(--s-8) var(--s-8) var(--s-6)}
-.feature-kicker{display:block;margin-bottom:var(--s-3);font-family:var(--font-mono);font-size:0.6875rem;font-weight:500;line-height:1.2;letter-spacing:0.08em;text-transform:uppercase;color:#8ecbff}
-.feature-panel h3{margin-bottom:var(--s-2);font-size:1.25rem;font-weight:600;line-height:1.25;letter-spacing:-0.025em;text-wrap:balance;word-break:auto-phrase}
-.feature-panel p{max-width:48ch;font-size:0.8125rem;line-height:1.65;color:var(--text-2);text-wrap:pretty;word-break:auto-phrase}
-.feature-media{position:relative;flex:none;overflow:hidden;margin:auto 18px 18px;border:1px solid rgba(255,255,255,0.09);border-radius:var(--radius-md);background:#080b14;box-shadow:0 18px 42px rgba(0,0,0,0.30),inset 0 1px 0 rgba(255,255,255,0.06)}
-.feature-media::after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(255,255,255,0.05),transparent 18%)}
+.feature-panel:hover{transform:translateY(-3px);border-color:rgba(var(--violet-rgb),0.40);box-shadow:inset 0 1px 0 rgba(var(--ov),0.09),0 20px 52px rgba(var(--sh),0.32),0 0 36px rgba(var(--violet-rgb),0.15)}
+.feature-panel-copy{
+  position:relative;
+  z-index:3;
+  padding:var(--s-5) var(--s-5) var(--s-10);
+}
+/* 标题区渐变 + 轻微模糊：底图退到背景；mask 用长羽化，过渡柔和不留硬边 */
+.feature-panel-copy::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:linear-gradient(180deg,rgba(var(--scrim),0.88) 0%,rgba(var(--scrim),0.72) 32%,rgba(var(--scrim),0.52) 56%,rgba(var(--scrim),0.3) 76%,rgba(var(--scrim),0.12) 90%,rgba(var(--scrim),0) 100%);
+  -webkit-backdrop-filter:blur(14px) saturate(1.06);
+  backdrop-filter:blur(14px) saturate(1.06);
+  -webkit-mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,0.94) 34%,rgba(0,0,0,0.78) 54%,rgba(0,0,0,0.56) 70%,rgba(0,0,0,0.34) 84%,rgba(0,0,0,0.14) 94%,transparent 100%);
+  mask-image:linear-gradient(180deg,#000 0%,rgba(0,0,0,0.94) 34%,rgba(0,0,0,0.78) 54%,rgba(0,0,0,0.56) 70%,rgba(0,0,0,0.34) 84%,rgba(0,0,0,0.14) 94%,transparent 100%);
+}
+.feature-kicker{display:block;margin-bottom:var(--s-2);font-family:var(--font-mono);font-size:0.625rem;font-weight:500;line-height:1.2;letter-spacing:0.08em;text-transform:uppercase;color:var(--violet)}
+.feature-panel h3{margin-bottom:var(--s-3);font-size:1.25rem;font-weight:600;line-height:1.3;letter-spacing:-0.02em;text-wrap:balance;word-break:auto-phrase}
+/* 副标题：胶囊底色 + 圆角，压在底图上仍易读 */
+.feature-panel p{
+  display:inline-block;
+  max-width:52ch;
+  margin:0;
+  padding:6px 13px;
+  border-radius:999px;
+  font-size:0.75rem;line-height:1.55;
+  color:var(--text-2);
+  background:rgba(var(--scrim),0.42);
+  border:1px solid rgba(var(--ov),0.14);
+  word-break:auto-phrase;
+}
+/* 截图铺满整张卡片：媒体绝对定位撑满，文案压在图上 */
+.feature-media{position:absolute;inset:0;z-index:1;overflow:hidden;background:#080b14}
 .feature-media img{width:100%;height:100%;object-fit:cover;transition:transform 0.8s var(--ease),filter 0.5s var(--ease)}
-.feature-panel:hover .feature-media img{transform:scale(1.018);filter:brightness(1.04)}
-.feature-panel-main{grid-column:span 8;min-height:540px}
-.feature-panel-main .feature-media{height:460px}
-.feature-panel-main .feature-media img{object-position:50% 20%}
-.feature-panel-portrait{grid-column:span 4;min-height:540px}
-.feature-panel-portrait .feature-media{height:460px}
-.feature-panel-wide{grid-column:span 7;min-height:450px}
-.feature-panel-wide .feature-media{height:285px}
-.feature-panel-medium{grid-column:span 5;min-height:450px}
-.feature-panel-medium .feature-media{height:285px}
-.feature-panel-small{grid-column:span 6;min-height:430px}
-.feature-panel-small .feature-media{height:260px}
-.feature-panel-wide .feature-media img{object-fit:contain;padding:12px 18px;background:#080b14}
-.feature-panel-convert .feature-media img{object-fit:contain;object-position:center;padding:12px 18px;background:#080b14}
-.feature-panel-davinci .feature-media img{object-position:50% 100%}
-.feature-panel-text{justify-content:space-between;min-height:240px}
-.feature-panel-text .feature-panel-copy{padding-bottom:var(--s-8)}
-.feature-panel-text .tag-row{margin-top:var(--s-4)}
-.cap-batch{grid-column:span 7;min-height:500px}
-.cap-batch .feature-media{height:280px}
-.cap-task{grid-column:span 5;min-height:500px}
-.cap-task .feature-media{height:280px}
-.cap-task .feature-media img{object-position:50% 8%}
-.cap-text-ai{grid-column:span 8}
-.cap-text-color{grid-column:span 4}
-.cap-text-color .feature-media{height:400px}
-.cap-text-ai .feature-media{height:400px}
-.cap-text-ai .feature-media img{object-position:50% 25%}
+.feature-panel:hover .feature-media img{transform:scale(1.03);filter:brightness(1.06)}
+/* 卡片高度：媒体铺满后由 min-height 控制，标题区渐变保证可读 */
+.feature-panel{cursor:pointer}
+.feature-panel:focus-visible{outline:2px solid var(--violet);outline-offset:3px}
+.feature-panel-main{grid-column:span 7;min-height:320px}
+.feature-panel-main .feature-media img{object-position:50% 32%}
+.feature-panel-portrait{grid-column:span 5;min-height:320px}
+.feature-panel-portrait .feature-media img{object-position:50% 40%}
+.feature-panel-wide{grid-column:span 8;min-height:300px}
+.feature-panel-medium{grid-column:span 4;min-height:300px}
+.feature-panel-medium .feature-media img{object-position:50% 38%}
+.feature-panel-small{grid-column:span 5;min-height:300px}
+.feature-panel-davinci .feature-media img{object-position:50% 62%}
+.feature-panel-convert{grid-column:span 4}
+.feature-panel-convert .feature-media img{object-position:50% 46%}
+.feature-panel-text .feature-panel-copy{padding-bottom:var(--s-6)}
+.feature-panel-text .tag-row{margin-top:var(--s-3)}
+.cap-batch{grid-column:span 5;min-height:290px}
+.cap-batch .feature-media img{object-position:50% 58%}
+.cap-task{grid-column:span 4;min-height:290px}
+.cap-task .feature-media img{object-position:50% 26%}
+.cap-text-ai{grid-column:span 3;min-height:290px}
+.cap-text-color{grid-column:span 3;min-height:290px}
+.cap-text-ai .feature-media img,.cap-text-color .feature-media img{object-position:50% 42%}
 
 .showcase-header{text-align:center;margin-bottom:var(--s-20)}
 .showcase-header .label{margin-bottom:var(--s-4)}
@@ -275,10 +395,10 @@ a{color:inherit;text-decoration:none}
 .showcase-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--s-20);align-items:center;margin-bottom:var(--s-32)}
 .showcase-row:last-child{margin-bottom:0}
 .shot-wrap{position:relative;overflow:visible;border-radius:var(--radius-lg)}
-.shot-wrap::before{content:'';position:absolute;inset:-12px;border-radius:calc(var(--radius-lg) + 12px);background:radial-gradient(ellipse at center,rgba(77,163,255,0.15) 0%,transparent 70%);opacity:0;transition:opacity 0.5s var(--ease);pointer-events:none;z-index:0}
+.shot-wrap::before{content:'';position:absolute;inset:-12px;border-radius:calc(var(--radius-lg) + 12px);background:radial-gradient(ellipse at center,rgba(var(--accent-rgb),0.15) 0%,transparent 70%);opacity:0;transition:opacity 0.5s var(--ease);pointer-events:none;z-index:0}
 .shot-wrap:hover::before{opacity:1}
-.shot-wrap img{--shot-offset:0px;width:100%;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);border:1px solid rgba(255,255,255,0.11);transition:transform 0.5s var(--ease),box-shadow 0.5s var(--ease),filter 0.5s var(--ease);transform:translateY(var(--shot-offset));position:relative;z-index:1}
-.shot-wrap:hover img{transform:translateY(var(--shot-offset)) scale(1.03);box-shadow:0 0 50px rgba(77,163,255,0.13),0 20px 60px rgba(0,0,0,0.5);filter:brightness(1.06)}
+.shot-wrap img,.shot-wrap video{--shot-offset:0px;width:100%;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);border:1px solid rgba(var(--ov),0.11);transition:transform 0.5s var(--ease),box-shadow 0.5s var(--ease),filter 0.5s var(--ease);transform:translateY(var(--shot-offset));position:relative;z-index:1;display:block}
+.shot-wrap:hover img,.shot-wrap:hover video{transform:translateY(var(--shot-offset)) scale(1.03);box-shadow:0 0 50px rgba(var(--accent-rgb),0.13),0 20px 60px rgba(var(--sh),0.5);filter:brightness(1.06)}
 .showcase-info .label{margin-bottom:var(--s-3)}
 .showcase-info h3{margin-bottom:var(--s-3)}
 .showcase-info .body{margin-bottom:var(--s-6);max-width:420px}
@@ -288,93 +408,118 @@ a{color:inherit;text-decoration:none}
 .showcase-row-reverse .showcase-info .body{margin-left:auto}
 .showcase-row-reverse .showcase-info .tag-row{justify-content:flex-end}
 .tag-row{display:flex;flex-wrap:wrap;gap:var(--s-2)}
-.tag{display:inline-flex;align-items:center;height:26px;padding:0 10px;border-radius:7px;font-family:var(--font-mono);font-size:0.7rem;font-weight:500;color:var(--text-2);background:rgba(255,255,255,0.04);border:1px solid var(--border-subtle);transition:all 0.2s var(--ease);cursor:default}
-.tag:hover{color:var(--ice);border-color:rgba(125,211,252,0.45);background:var(--accent-dim);transform:translateY(-1px)}
+.tag{display:inline-flex;align-items:center;height:26px;padding:0 10px;border-radius:7px;font-family:var(--font-mono);font-size:0.7rem;font-weight:500;color:var(--text-2);background:rgba(var(--ov),0.04);border:1px solid var(--border-subtle);transition:all 0.2s var(--ease);cursor:default}
+.tag:hover{color:var(--ice);border-color:rgba(var(--ice-rgb),0.45);background:var(--accent-dim);transform:translateY(-1px)}
 
 .marquee{overflow:hidden;padding:var(--s-6) 0;mask-image:linear-gradient(90deg,transparent 0%,#000 8%,#000 92%,transparent 100%)}
 .marquee-track{display:flex;gap:var(--s-2);width:max-content;animation:marquee 50s linear infinite}
 .marquee-track:hover{animation-play-state:paused}
-.m-item{display:flex;align-items:center;gap:6px;height:32px;padding:0 14px;border-radius:8px;border:1px solid var(--border-subtle);font-family:var(--font-mono);font-size:0.75rem;font-weight:500;color:var(--text-2);background:rgba(255,255,255,0.03);white-space:nowrap;transition:all 0.25s var(--ease)}
-.m-item:hover{border-color:rgba(125,211,252,0.45);color:var(--ice);background:var(--accent-dim);transform:translateY(-2px) scale(1.04)}
+.m-item{display:flex;align-items:center;gap:6px;height:32px;padding:0 14px;border-radius:8px;border:1px solid var(--border-subtle);font-family:var(--font-mono);font-size:0.75rem;font-weight:500;color:var(--text-2);background:rgba(var(--ov),0.03);white-space:nowrap;transition:all 0.25s var(--ease)}
+.m-item:hover{border-color:rgba(var(--ice-rgb),0.45);color:var(--ice);background:var(--accent-dim);transform:translateY(-2px) scale(1.04)}
 .m-dot{width:5px;height:5px;border-radius:50%;flex-shrink:0}
 
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s-8)}
 .step{text-align:center}
-.step-num{width:44px;height:44px;border-radius:12px;border:1px solid rgba(125,211,252,0.30);display:flex;align-items:center;justify-content:center;margin:0 auto var(--s-4);font-size:1rem;font-weight:600;background:var(--accent-grad);-webkit-background-clip:text;background-clip:text;color:transparent;box-shadow:0 0 0 1px rgba(125,211,252,0.06),0 8px 24px rgba(10,108,255,0.14),inset 0 0 12px rgba(125,211,252,0.06);transition:all 0.4s var(--ease)}
-.step:hover .step-num{transform:scale(1.12);box-shadow:0 0 0 1px rgba(125,211,252,0.2),0 12px 32px rgba(10,108,255,0.24),inset 0 0 16px rgba(125,211,252,0.1)}
-.step h4{font-size:0.9375rem;font-weight:600;letter-spacing:-0.01em;margin-bottom:var(--s-2);transition:color 0.3s}
-.step:hover h4{color:var(--ice)}
+.step-num{width:44px;height:44px;border-radius:12px;border:1px solid rgba(var(--ice-rgb),0.30);display:flex;align-items:center;justify-content:center;margin:0 auto var(--s-4);font-size:1rem;font-weight:600;background:var(--accent-grad);-webkit-background-clip:text;background-clip:text;color:transparent;box-shadow:0 0 0 1px rgba(var(--ice-rgb),0.06),0 8px 24px rgba(var(--accent-rgb),0.14),inset 0 0 12px rgba(var(--ice-rgb),0.06);transition:all 0.4s var(--ease)}
+.step:hover .step-num{transform:scale(1.12);box-shadow:0 0 0 1px rgba(var(--ice-rgb),0.2),0 12px 32px rgba(var(--accent-rgb),0.24),inset 0 0 16px rgba(var(--ice-rgb),0.1)}
+.step h3{font-size:0.9375rem;font-weight:600;letter-spacing:-0.01em;margin-bottom:var(--s-2);transition:color 0.3s}
+.step:hover h3{color:var(--ice)}
 .step p{font-size:0.8125rem;color:var(--text-2);line-height:1.6;text-wrap:pretty;word-break:auto-phrase}
 
-/* DOWNLOAD — glass stage */
-.download-block{text-align:center;max-width:560px;margin:0 auto;padding:var(--s-12) var(--s-8) var(--s-16);border-radius:var(--radius-xl);border:1px solid var(--border);background:linear-gradient(170deg,rgba(150,190,255,0.06),rgba(150,190,255,0.02) 45%,rgba(77,163,255,0.04) 100%);box-shadow:var(--shadow-lg),inset 0 1px 0 rgba(255,255,255,0.09);position:relative;overflow:hidden}
-.download-block::before{content:'';position:absolute;top:-40%;left:50%;transform:translateX(-50%);width:130%;height:80%;background:radial-gradient(ellipse at center,rgba(77,163,255,0.16),transparent 65%);pointer-events:none}
-.download-block>*{position:relative}
-.download-block .label{margin-bottom:var(--s-4)}
+/* DOWNLOAD — 去掉外框，内容依旧居中；按钮排成一行，默认不额外占高度 */
+.download-block{text-align:center;position:relative}
+.download-block .label{display:block;margin-bottom:var(--s-3)}
 .download-block h2{margin-bottom:var(--s-3)}
-.download-block .body{margin-bottom:var(--s-8)}
-.download-actions{display:flex;align-items:center;justify-content:center;gap:var(--s-3);flex-wrap:wrap}
-.download-mac-group{display:flex;align-items:center;gap:var(--s-2);flex-wrap:wrap;justify-content:center}
-.download-arch{display:inline-flex;align-items:center;gap:6px;height:46px;padding:0 12px;border:1px solid rgba(255,255,255,0.16);border-radius:11px;background:rgba(255,255,255,0.05);color:var(--text-2);font-size:0.75rem;white-space:nowrap}
-.download-arch select{border:0;background:transparent;color:var(--text);font:inherit;outline:0;cursor:pointer}
-.download-arch select option{background:var(--bg-raised);color:var(--text)}
-.download-detected{width:100%;margin-top:var(--s-2);font-size:0.75rem;color:var(--text-3)}
-.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.download-meta{display:flex;align-items:center;justify-content:center;gap:var(--s-4);margin-top:var(--s-4);font-size:0.8125rem;color:var(--text-3)}
+.download-block .body{max-width:56ch;margin:0 auto var(--s-6);color:var(--text-2)}
+.download-actions{display:flex;align-items:center;justify-content:center;gap:var(--s-2) var(--s-3);flex-wrap:wrap}
+.download-mac-group{display:flex;align-items:center;gap:var(--s-2);flex-wrap:wrap}
+/* 芯片检测提示排在按钮同行，避免多占一行高度 */
+.download-meta{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:var(--s-1) var(--s-3);margin-top:var(--s-5);font-size:0.8125rem;color:var(--text-3)}
 .download-meta span{display:flex;align-items:center;gap:var(--s-1);white-space:nowrap}
 .download-mirror{display:inline-flex;align-items:center;gap:6px;margin-top:var(--s-3);font-size:0.75rem;color:var(--text-3);transition:color 0.2s}
 .download-mirror img{width:15px;height:15px;filter:grayscale(1) brightness(2.4)}
 .download-mirror:hover{color:var(--ice)}
-.download-extension{max-width:640px;margin:0 auto;padding:0 0 var(--s-16);text-align:center}
-.download-extension-inner{padding-top:var(--s-8);border-top:1px solid var(--border-subtle)}
-.download-extension .label{margin-bottom:var(--s-3)}
-.download-extension h3{margin-bottom:var(--s-2);font-size:1.125rem}
-.download-extension .body{max-width:520px;margin:0 auto var(--s-5);color:var(--text-2)}
-.download-extension-actions{display:flex;align-items:center;justify-content:center;gap:var(--s-3);flex-wrap:wrap}
-.download-extension-meta{margin-top:var(--s-3);font-size:0.75rem;color:var(--text-3)}
+/* 其他下载渠道：与主按钮拉开层级，做成同一行的次级文字链接 */
+.download-channels{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:var(--s-2) var(--s-8);margin-top:var(--s-6)}
+.download-channels .download-mirror{margin-top:0}
+.download-channels .download-mirror img{opacity:0.75;transition:opacity 0.2s}
+.download-channels .download-mirror:hover img{opacity:1}
+/* 浏览器插件：与上方同一套居中版式，用一条分隔线区分主次 */
+.download-extension{text-align:center}
+.download-extension-inner{padding-top:var(--s-10);border-top:1px solid var(--border-subtle)}
+.download-extension .label{display:block;margin-bottom:var(--s-3)}
+.download-extension h3{margin-bottom:var(--s-3);font-size:1.375rem}
+.download-extension .body{max-width:56ch;margin:0 auto var(--s-6);color:var(--text-2)}
+.download-extension-actions{display:flex;align-items:center;justify-content:center;gap:var(--s-4);flex-wrap:wrap}
+.download-extension-meta{margin-top:var(--s-4);font-size:0.75rem;color:var(--text-3)}
 
-.cta-block{text-align:center;padding:var(--s-24) 0;border-top:1px solid var(--border-subtle);position:relative;overflow:hidden}
-.cta-block::before{content:'';position:absolute;top:-30%;left:50%;transform:translateX(-50%);width:90%;height:70%;background:radial-gradient(ellipse at center,rgba(77,163,255,0.10),transparent 65%);pointer-events:none}
-.cta-block .label{margin-bottom:var(--s-4)}
-.cta-block h2{margin-bottom:var(--s-3)}
-.cta-block .body-l{max-width:460px;margin:0 auto var(--s-8)}
-.cta-actions{display:flex;align-items:center;justify-content:center;gap:var(--s-3);flex-wrap:wrap}
-.btn-repository{min-width:138px}
-.btn-repository img{width:17px;height:17px;object-fit:contain}
-.btn-repository-github img{filter:grayscale(1) brightness(2.8)}
+/* PRICING — 三栏玻璃定价卡 + 背景大字水印（颜色全部走 --ov/--ice 通道，明暗主题自动适配） */
+.pricing-stage{position:relative}
+.pricing-watermark{position:absolute;left:50%;top:clamp(-90px,-6vw,-40px);transform:translateX(-50%);font-size:clamp(5.5rem,15vw,12.5rem);font-weight:700;letter-spacing:-0.05em;line-height:1;color:var(--text);opacity:0.05;pointer-events:none;user-select:none;white-space:nowrap;z-index:0}
+.pricing-grid{position:relative;z-index:1;display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s-4);max-width:1080px;margin:0 auto;align-items:stretch}
+.price-card{position:relative;display:flex;flex-direction:column;padding:var(--s-8) var(--s-6) var(--s-6);border-radius:24px;border:1px solid rgba(var(--ov),0.10);background:linear-gradient(170deg,rgba(var(--ov),0.065),rgba(var(--ov),0.015) 55%,rgba(var(--ice-rgb),0.045));-webkit-backdrop-filter:blur(22px) saturate(1.4);backdrop-filter:blur(22px) saturate(1.4);box-shadow:inset 0 1px 0 rgba(var(--ov),0.07),0 18px 48px rgba(var(--sh),0.28);transition:transform 0.4s var(--ease),box-shadow 0.4s var(--ease),border-color 0.4s var(--ease)}
+.price-card:hover{transform:translateY(-4px);border-color:rgba(var(--ice-rgb),0.30);box-shadow:inset 0 1px 0 rgba(var(--ov),0.09),0 26px 64px rgba(var(--sh),0.36),0 0 42px rgba(var(--accent-rgb),0.10)}
+.price-card-featured{border-color:rgba(var(--ice-rgb),0.34);background:linear-gradient(170deg,rgba(var(--ice-rgb),0.10),rgba(var(--ov),0.03) 55%,rgba(var(--accent-rgb),0.07));box-shadow:inset 0 1px 0 rgba(var(--ov),0.10),0 22px 56px rgba(var(--sh),0.32),0 0 56px rgba(var(--accent-rgb),0.12)}
+.price-card-featured:hover{border-color:rgba(var(--ice-rgb),0.50);box-shadow:inset 0 1px 0 rgba(var(--ov),0.12),0 26px 64px rgba(var(--sh),0.38),0 0 64px rgba(var(--accent-rgb),0.16)}
+.price-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);padding:5px 14px;border-radius:999px;font-size:0.6875rem;font-weight:600;letter-spacing:0.04em;color:#fff;background:var(--accent-grad);border:1px solid rgba(var(--ice-rgb),0.45);box-shadow:0 8px 22px rgba(var(--accent-rgb),0.32);white-space:nowrap}
+/* 深色模式下标题渐变起点较浅，价格徽标改用深字以保证对比度。 */
+.price-badge{color:#08111f}
+.price-name{font-size:1rem;font-weight:600;color:var(--text-2);letter-spacing:-0.01em;margin-bottom:var(--s-2)}
+.price-val{display:flex;align-items:baseline;gap:7px;margin-bottom:var(--s-3)}
+.price-num{font-size:clamp(2rem,3vw,2.6rem);font-weight:700;letter-spacing:-0.03em;line-height:1;color:var(--text)}
+.price-per{font-size:0.8125rem;color:var(--text-3);white-space:nowrap}
+.price-desc{font-size:0.8125rem;line-height:1.6;color:var(--text-3);margin-bottom:var(--s-6);text-wrap:pretty;word-break:auto-phrase}
+.price-list{list-style:none;display:flex;flex-direction:column;gap:var(--s-3);margin-bottom:var(--s-8);flex:1}
+.price-list li{display:flex;align-items:flex-start;gap:10px;font-size:0.8125rem;color:var(--text-2);line-height:1.55;text-wrap:pretty;word-break:auto-phrase}
+.price-check{flex:none;width:21px;height:21px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;background:rgba(var(--ov),0.10);border:1px solid rgba(var(--ov),0.16);color:var(--text);margin-top:1px}
+.price-check svg{width:10px;height:10px}
+.price-btn{width:100%;height:44px;border-radius:999px}
+.price-btn[disabled]{opacity:0.55;cursor:default;pointer-events:none}
+@media(max-width:1024px){
+  .pricing-grid{grid-template-columns:1fr;max-width:460px}
+  .pricing-watermark{opacity:0.035}
+}
 
-/* DEVELOPER — about & contact */
-.dev-card{max-width:640px;margin:0 auto;padding:var(--s-12) var(--s-8) var(--s-10);border-radius:var(--radius-xl);border:1px solid var(--border);background:linear-gradient(170deg,rgba(150,190,255,0.06),rgba(150,190,255,0.02) 45%,rgba(77,163,255,0.04) 100%);box-shadow:var(--shadow-lg),inset 0 1px 0 rgba(255,255,255,0.09);position:relative;overflow:hidden;text-align:center}
-.dev-card::before{content:'';position:absolute;top:-40%;left:50%;transform:translateX(-50%);width:130%;height:80%;background:radial-gradient(ellipse at center,rgba(77,163,255,0.14),transparent 65%);pointer-events:none}
-.dev-card>*{position:relative}
-.dev-avatar{width:76px;height:76px;margin:0 auto var(--s-6);border-radius:50%;padding:3px;background:var(--accent-grad);box-shadow:0 12px 32px rgba(10,108,255,0.25)}
-.dev-avatar img{width:100%;height:100%;border-radius:50%;background:var(--bg-raised)}
-.dev-card .label{margin-bottom:var(--s-3)}
-.dev-name{display:flex;align-items:baseline;justify-content:center;gap:var(--s-3);flex-wrap:wrap;margin-bottom:var(--s-2)}
-.dev-name h3{font-size:1.5rem;font-weight:700;letter-spacing:-0.02em}
-.dev-role{font-size:0.75rem;font-weight:600;color:var(--ice);padding:4px 10px;border-radius:999px;border:1px solid rgba(125,211,252,0.28);background:rgba(125,211,252,0.08);letter-spacing:0.02em;white-space:nowrap}
-.dev-bio{max-width:420px;margin:0 auto var(--s-6)}
-.dev-links{display:flex;align-items:center;justify-content:center;gap:var(--s-3);flex-wrap:wrap}
-.dev-chip{display:inline-flex;align-items:center;gap:8px;height:42px;padding:0 16px;border-radius:12px;border:1px solid rgba(255,255,255,0.14);background:rgba(255,255,255,0.05);color:var(--text-2);font-size:0.8125rem;font-weight:500;font-family:inherit;line-height:1;cursor:pointer;transition:all 0.25s var(--ease)}
+/* DEVELOPER — 左头像 + 右介绍；不用卡片框，整体左对齐，靠字重与字号拉开主次 */
+.dev-card{display:grid;grid-template-columns:132px minmax(0,680px);gap:var(--s-8) var(--s-12);align-items:start;position:relative;width:min(100%,860px);margin:0 auto;text-align:left}
+.dev-avatar{width:132px;height:132px;flex:none;border-radius:50%;padding:0;background:transparent;box-shadow:none;overflow:hidden}
+.dev-avatar img{width:100%;height:100%;border-radius:50%;background:transparent;object-fit:cover;display:block}
+.dev-main{position:relative;min-width:0}
+/* 用一条上下渐隐的竖线分隔两栏，取代原来的卡片边框 */
+.dev-main::before{content:'';position:absolute;left:calc(var(--s-6) * -1);top:4px;bottom:4px;width:1px;background:linear-gradient(180deg,transparent,rgba(var(--ov),0.16) 14%,rgba(var(--ov),0.16) 72%,transparent)}
+.dev-main .label{display:block;margin-bottom:var(--s-3)}
+.dev-name{display:flex;flex-direction:column;align-items:flex-start;gap:var(--s-4);margin-bottom:var(--s-6)}
+.dev-name h3{font-size:clamp(2rem,4vw,3.25rem);font-weight:700;letter-spacing:-0.04em;line-height:1}
+.dev-role{font-size:0.75rem;font-weight:600;color:var(--ice);padding:5px 11px;border-radius:999px;border:1px solid rgba(var(--ice-rgb),0.28);background:rgba(var(--ice-rgb),0.08);letter-spacing:0.02em;white-space:nowrap}
+.dev-bio{max-width:58ch;font-size:1.0625rem;line-height:1.75;color:var(--text-2);margin:0 0 var(--s-8)}
+.dev-links{display:flex;align-items:center;gap:var(--s-3);flex-wrap:wrap}
+.dev-chip{display:inline-flex;align-items:center;gap:8px;height:42px;padding:0 16px;border-radius:12px;border:1px solid rgba(var(--ov),0.14);background:rgba(var(--ov),0.05);color:var(--text-2);font-size:0.8125rem;font-weight:500;font-family:inherit;line-height:1;cursor:pointer;transition:all 0.25s var(--ease)}
 .dev-chip svg,.dev-chip img{width:16px;height:16px;flex:none}
 .dev-chip img{filter:grayscale(1) brightness(2.6)}
-.dev-chip:hover{color:var(--text);border-color:rgba(125,211,252,0.45);background:rgba(125,211,252,0.08);transform:translateY(-1px);box-shadow:0 8px 20px rgba(10,108,255,0.14)}
+.dev-chip:hover{color:var(--text);border-color:rgba(var(--ice-rgb),0.45);background:rgba(var(--ice-rgb),0.08);transform:translateY(-1px);box-shadow:0 8px 20px rgba(var(--accent-rgb),0.14)}
 .dev-chip:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.dev-chip.copied{color:var(--ice);border-color:rgba(125,211,252,0.55);background:rgba(125,211,252,0.12)}
+.dev-chip.copied{color:var(--ice);border-color:rgba(var(--ice-rgb),0.55);background:rgba(var(--ice-rgb),0.12)}
 .dev-hint{margin-top:var(--s-4)}
-@media(max-width:640px){.dev-card{padding:var(--s-8) var(--s-4) var(--s-8)}.dev-links{flex-direction:column}.dev-chip{width:100%;max-width:280px;justify-content:center}}
+@media(max-width:640px){
+  /* 窄屏改为上下结构：头像一行，介绍左对齐接在下面 */
+  .dev-card{width:100%;grid-template-columns:1fr;gap:var(--s-8)}
+  .dev-avatar{width:104px;height:104px;border-radius:50%}
+  .dev-avatar img{border-radius:50%}
+  .dev-main::before{display:none}
+  .dev-name h3{font-size:2.25rem}
+}
 
 .footer{padding:var(--s-20) 0}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:var(--s-16)}
 .footer-brand .nav-brand{margin-bottom:var(--s-3)}
 .footer-brand p{font-size:0.8125rem;color:var(--text-3);line-height:1.6;max-width:240px;text-wrap:pretty;word-break:auto-phrase}
 .footer-social{display:flex;align-items:center;gap:var(--s-3);margin-top:var(--s-6)}
-.social-icon{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--border);border-radius:var(--radius-sm);color:var(--text-2);background:rgba(255,255,255,0.03);transition:color 0.2s,border-color 0.2s,background-color 0.2s,transform 0.2s var(--ease)}
+.social-icon{display:inline-flex;align-items:center;justify-content:center;width:40px;height:40px;border:1px solid var(--border);border-radius:var(--radius-sm);color:var(--text-2);background:rgba(var(--ov),0.03);transition:color 0.2s,border-color 0.2s,background-color 0.2s,transform 0.2s var(--ease)}
 .social-icon svg,.social-icon img{width:22px;height:22px}
 .social-icon img{object-fit:contain;filter:grayscale(1) brightness(2.4)}
-.social-icon:hover{color:var(--text);border-color:rgba(125,211,252,0.45);background:rgba(125,211,252,0.08);transform:translateY(-2px)}
+.social-icon:hover{color:var(--text);border-color:rgba(var(--ice-rgb),0.45);background:rgba(var(--ice-rgb),0.08);transform:translateY(-2px)}
 .social-icon:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.footer-col h5{font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text);margin-bottom:var(--s-4)}
+.footer-col h3{font-size:0.75rem;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:var(--text);margin-bottom:var(--s-4)}
 .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:var(--s-2)}
 .footer-col a{font-size:0.8125rem;color:var(--text-3);transition:color 0.15s}
 .footer-col a:hover{color:var(--text)}
@@ -385,14 +530,14 @@ a{color:inherit;text-decoration:none}
    ============================================================ */
 
 .showcase-row{transition:grid-template-columns 0.6s var(--ease),gap 0.6s var(--ease),margin 0.6s var(--ease)}
-.showcase-row .shot-wrap img{transition:transform 0.6s var(--ease),box-shadow 0.6s var(--ease),border-color 0.6s var(--ease),filter 0.6s var(--ease)}
+.showcase-row .shot-wrap img,.showcase-row .shot-wrap video{transition:transform 0.6s var(--ease),box-shadow 0.6s var(--ease),border-color 0.6s var(--ease),filter 0.6s var(--ease)}
 .showcase-row .showcase-info{transition:max-width 0.6s var(--ease),margin 0.6s var(--ease),text-align 0.6s var(--ease),opacity 0.4s var(--ease)}
 .showcase-row .showcase-info .body{transition:max-width 0.6s var(--ease)}
 .showcase-row .showcase-info .tag-row{transition:justify-content 0.6s var(--ease)}
 
 .showcase-row.expanded{grid-template-columns:1fr;gap:var(--s-10);margin-bottom:var(--s-24)}
 .showcase-row.expanded .shot-wrap{cursor:zoom-out}
-.showcase-row.expanded .shot-wrap img{transform:translateY(0) scale(1);box-shadow:0 8px 40px rgba(0,0,0,0.4);border-color:rgba(125,211,252,0.55);animation:zoom-bounce 0.6s var(--ease)}
+.showcase-row.expanded .shot-wrap img,.showcase-row.expanded .shot-wrap video{transform:translateY(0) scale(1);box-shadow:0 8px 40px rgba(var(--sh),0.4);border-color:rgba(var(--ice-rgb),0.55);animation:zoom-bounce 0.6s var(--ease)}
 .showcase-row.expanded .showcase-info{max-width:640px;margin:var(--s-6) auto 0;text-align:center}
 .showcase-row.expanded .showcase-info .body{max-width:100%}
 .showcase-row.expanded .showcase-info .tag-row{justify-content:center}
@@ -415,26 +560,51 @@ a{color:inherit;text-decoration:none}
 
 /* SEARCH DEMO — code-rendered search palette */
 .search-demo{padding:0 0 var(--s-32)}
-.search-stage{position:relative;height:clamp(280px,36vw,400px);border-radius:var(--radius-xl);border:1px solid var(--border);overflow:hidden;background:#05070e;box-shadow:var(--shadow-lg),inset 0 1px 0 rgba(255,255,255,0.06)}
+.search-stage{position:relative;height:clamp(280px,36vw,400px);border-radius:var(--radius-xl);border:1px solid var(--border);overflow:hidden;background:#05070e;box-shadow:var(--shadow-lg),inset 0 1px 0 rgba(var(--ov),0.06)}
+/* Hero 底部环境光：横向拉满，并由统计面板直接承接。 */
+.hero-bottom-glow{
+  position:absolute;
+  left:50%;
+  bottom:-180px;
+  transform:translateX(-50%);
+  width:100vw;
+  height:clamp(720px,76vw,1240px);
+  max-width:none;
+  overflow:hidden;
+  background:radial-gradient(68% 140% at 50% 76%,rgba(118,46,255,0.58) 0%,rgba(89,32,222,0.34) 32%,rgba(23,10,68,0.16) 60%,transparent 82%);
+  -webkit-mask-image:linear-gradient(180deg,transparent 0%,rgba(0,0,0,0.34) 18%,#000 43%,rgba(0,0,0,0.82) 61%,rgba(0,0,0,0.34) 80%,transparent 100%);
+  mask-image:linear-gradient(180deg,transparent 0%,rgba(0,0,0,0.34) 18%,#000 43%,rgba(0,0,0,0.82) 61%,rgba(0,0,0,0.34) 80%,transparent 100%);
+  pointer-events:none;
+  z-index:1;
+}
+.hero-bottom-glow img{
+  width:100%;
+  height:100%;
+  max-width:none;
+  object-fit:fill;
+  opacity:0.94;
+  filter:blur(12px) saturate(1.08);
+  mix-blend-mode:screen;
+}
 .search-stage-bg{position:absolute;inset:-40px;display:flex;gap:var(--s-4);align-items:center;opacity:0.55}
 .search-stage-bg img{flex:0 0 46%;width:46%;border-radius:12px;filter:blur(26px) brightness(0.42) saturate(0.85);transform:scale(1.08)}
 .search-stage::after{content:'';position:absolute;inset:0;background:radial-gradient(80% 90% at 50% 50%,rgba(5,7,14,0.25),rgba(5,7,14,0.78) 84%)}
-.search-card{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);width:min(640px,78%);background:rgba(20,22,28,0.92);border:1px solid rgba(255,255,255,0.09);border-radius:20px;box-shadow:0 30px 80px rgba(0,0,0,0.6),inset 0 1px 0 rgba(255,255,255,0.07);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);padding:16px 18px 18px}
+.search-card{position:absolute;z-index:2;left:50%;top:50%;transform:translate(-50%,-50%);width:min(640px,78%);background:rgba(20,22,28,0.92);border:1px solid rgba(var(--ov),0.09);border-radius:20px;box-shadow:0 30px 80px rgba(var(--sh),0.6),inset 0 1px 0 rgba(var(--ov),0.07);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);padding:16px 18px 18px}
 .search-card-head{display:flex;align-items:center;gap:9px;margin-bottom:13px;color:#c6cad4}
 .search-card-head .ic{width:15px;height:15px;flex:none}
 .search-card-title{font-size:0.8125rem;font-weight:600;color:#e8eaef;letter-spacing:0.01em}
 .search-card-head .ic-close{margin-left:auto;width:13px;height:13px;color:#8f95a3}
-.search-field{position:relative;display:flex;align-items:center;gap:10px;height:52px;padding:0 14px;border-radius:12px;background:rgba(10,12,16,0.9);border:1px solid rgba(124,111,247,0.42);box-shadow:0 0 0 1px rgba(124,111,247,0.12),0 8px 28px rgba(0,0,0,0.35)}
+.search-field{position:relative;display:flex;align-items:center;gap:10px;height:52px;padding:0 14px;border-radius:12px;background:rgba(10,12,16,0.9);border:1px solid rgba(124,111,247,0.42);box-shadow:0 0 0 1px rgba(124,111,247,0.12),0 8px 28px rgba(var(--sh),0.35)}
 .search-field-ic{display:flex;align-items:center;gap:3px;color:#aeb4c2}
 .search-field-ic svg{width:14px;height:14px}
 .search-text{display:flex;align-items:center;font-size:0.9375rem;color:#dfe3ea;white-space:nowrap;overflow:hidden}
-.search-text .dim{color:#6d7382}
+.search-text .dim{color:#858b9a}
 .caret{display:inline-block;width:1.5px;height:18px;margin:0 3px;background:#8b7bff;animation:caret-blink 1.15s steps(2) infinite}
 @keyframes caret-blink{50%{opacity:0}}
 .search-count{margin-left:auto;font-size:0.6875rem;color:#8f95a3;font-family:var(--font-mono);flex:none;opacity:0;transition:opacity .3s var(--ease)}
 .search-card.results .search-count{opacity:1}
 .search-card.typing .search-text .ph{display:none}
-.search-card.typing .search-field{border-color:rgba(139,123,255,0.6);box-shadow:0 0 0 1px rgba(139,123,255,0.2),0 8px 28px rgba(0,0,0,0.35)}
+.search-card.typing .search-field{border-color:rgba(139,123,255,0.6);box-shadow:0 0 0 1px rgba(139,123,255,0.2),0 8px 28px rgba(var(--sh),0.35)}
 .search-results{display:flex;flex-direction:column;gap:6px;margin-top:10px;opacity:0;transform:translateY(6px);transition:opacity .35s var(--ease),transform .35s var(--ease)}
 .search-results.show{opacity:1;transform:none}
 .search-row{display:flex;align-items:center;gap:10px;height:40px;padding:0 10px;border-radius:9px;border:1px solid transparent;opacity:0;transform:translateY(4px);transition:opacity .3s var(--ease),transform .3s var(--ease),border-color .25s,background-color .25s}
@@ -446,15 +616,15 @@ a{color:inherit;text-decoration:none}
 .rthumb{width:28px;height:28px;border-radius:6px;flex:none}
 .rt-dune{background:radial-gradient(70% 60% at 60% 30%,rgba(255,236,200,0.9),transparent 70%),linear-gradient(180deg,#f0cd9e,#8a5730)}
 .rt-gold{background:radial-gradient(70% 60% at 40% 30%,rgba(255,214,170,0.95),transparent 72%),linear-gradient(180deg,#e8a33d,#7c4b24)}
-.rt-road{background:radial-gradient(60% 50% at 65% 35%,rgba(190,225,255,0.8),transparent 70%),linear-gradient(180deg,#16406c,#071323)}
+.rt-road{background:radial-gradient(60% 50% at 65% 35%,rgba(221,214,254,0.82),transparent 70%),linear-gradient(180deg,#4c1d95,#160b31)}
 .rname{font-family:var(--font-mono);font-size:0.75rem;color:#c3c9d6;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.rchip{margin-left:auto;flex:none;height:16px;padding:0 6px;border-radius:4px;font-family:var(--font-mono);font-size:0.625rem;color:#8f95a3;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center}
-.search-underline{position:absolute;left:10px;right:10px;bottom:-1px;height:2px;border-radius:2px;background:linear-gradient(90deg,rgba(244,114,182,0.9),rgba(139,123,255,0.9),rgba(96,165,250,0.9),rgba(52,211,153,0.85));background-size:200% 100%;filter:blur(0.4px);opacity:0.85;animation:search-sheen 5s linear infinite}
+.rchip{margin-left:auto;flex:none;height:16px;padding:0 6px;border-radius:4px;font-family:var(--font-mono);font-size:0.625rem;color:#8f95a3;background:rgba(var(--ov),0.06);border:1px solid rgba(var(--ov),0.08);display:flex;align-items:center}
+.search-underline{position:absolute;left:10px;right:10px;bottom:-1px;height:2px;border-radius:2px;background:linear-gradient(90deg,rgba(244,114,182,0.9),rgba(139,123,255,0.9),rgba(196,181,253,0.9),rgba(52,211,153,0.85));background-size:200% 100%;filter:blur(0.4px);opacity:0.85;animation:search-sheen 5s linear infinite}
 @keyframes search-sheen{to{background-position:200% 0}}
 @media(max-width:640px){.search-stage{height:250px}.search-text .dim{display:none}.search-card{width:88%;padding:12px 14px 14px}.search-field{height:44px}.search-text{font-size:0.8125rem}}
 
 @media(max-width:1024px){
-  .container{padding:0 var(--s-6)}.section{padding:var(--s-20) 0}
+  .container{padding:0 var(--s-6)}.section{padding:var(--s-20) 0}#showcase{margin-top:-118px;padding-top:calc(var(--s-20) + 118px)}#showcase::before{top:-168px;height:320px;filter:blur(22px)}
   .showcase-row{grid-template-columns:1fr;gap:var(--s-12)}
   .showcase-row-reverse{direction:ltr}
   .showcase-row-reverse .showcase-info{text-align:left}
@@ -469,9 +639,8 @@ a{color:inherit;text-decoration:none}
   .updates-layout{grid-template-columns:1fr;gap:var(--s-10)}
   .updates-intro{position:static}
   .feature-panel-main{grid-column:span 12}
-  .feature-panel-portrait,.feature-panel-wide,.feature-panel-medium,.feature-panel-small{grid-column:span 6}
-  .cap-batch,.cap-task{grid-column:span 12}
-  .cap-text{grid-column:span 6}
+  .feature-panel-portrait,.feature-panel-wide,.feature-panel-medium,.feature-panel-small,.cap-batch,.cap-text{grid-column:span 6}
+  .cap-task{grid-column:span 12}
   .feature-intro .body-l{white-space:normal}
   .wall-row-a{height:190px}
   .wall-row-b{height:200px}
@@ -480,42 +649,42 @@ a{color:inherit;text-decoration:none}
   .wt-l{width:350px}
 }
 @media(max-width:640px){
-  .nav-links{display:none}.hero{min-height:auto;padding:96px var(--s-4) 0}
+  .nav-links{display:none}.hero{min-height:auto;padding:96px var(--s-4) 0}.hero-bottom-glow{bottom:-132px;height:610px}#showcase{margin-top:-118px;padding-top:calc(var(--s-20) + 118px)}#showcase::before{top:-134px;height:264px;filter:blur(18px)}
   .nav .nav-brand{font-size:0;gap:0}
   .nav-inner{padding:0 8px 0 var(--s-3);border-radius:14px}
   .hero-text{padding-top:var(--s-3);margin-bottom:var(--s-8)}
   .hero-text h1{font-size:2.5rem;white-space:normal}
-  .hero-text .body-l{font-size:0.75rem;line-height:1.5;white-space:normal;max-width:30ch}
-  .hero-eyebrow{font-size:0.625rem}
+  .hero-text .body-l{font-size:0.875rem;line-height:1.5;white-space:normal;max-width:30ch}
+  .hero-eyebrow{font-size:0.75rem}
   .steps{grid-template-columns:1fr}
-  .download-block{padding:var(--s-8) var(--s-4) var(--s-10)}
-  .download-actions{padding:0 var(--s-4)}
-  .download-actions .btn{width:100%;max-width:280px}
-  .download-mac-group{width:100%;flex-direction:column}
-  .download-mac-group .btn,.download-arch{width:100%;max-width:280px}
-  .download-arch{justify-content:center}
-  .download-meta{flex-wrap:wrap;gap:var(--s-2) var(--s-3);padding:0 var(--s-4)}
-  .cta-actions{padding:0 var(--s-4)}
-  .cta-actions .btn{width:100%;max-width:280px}
+  /* 下载动作：窄屏压到两行内（mac 按钮+芯片一行、Windows 一行），避免占太多高度 */
+  .download-actions{flex-direction:column;align-items:stretch;gap:var(--s-2)}
+  .download-mac-group{gap:var(--s-2)}
+  .download-mac-group .btn{flex:1 1 auto;padding:0 12px;gap:5px}
+  .download-mac-group .btn svg{width:15px;height:15px}
+  .download-actions > .btn{width:100%}
+  .download-extension-actions .btn{width:100%}
   .footer-grid{grid-template-columns:1fr;gap:var(--s-8)}
   .footer-bottom{flex-direction:column;gap:var(--s-2);text-align:center}
   .stats-row{grid-template-columns:repeat(2,1fr)}
   .stat{min-width:0;padding:var(--s-6) var(--s-3)}
   .stat-val{font-size:clamp(1.2rem,6vw,1.65rem);overflow-wrap:anywhere}
   .stat-label{font-size:0.72rem;line-height:1.4;overflow-wrap:anywhere}
+  /* 移动端点击目标：文字型链接此前只有 16-19px 高，触摸不好点 */
+  .download-mirror{padding:10px 0;margin-top:var(--s-2)}
+  .footer-col a{display:inline-block;padding:9px 0}
+  .repo-link{width:38px;height:38px}
+  .lang-btn{height:38px}
   .hero-shot-wrap{width:100%;max-width:100%;transform:translateY(28px)}
   .stats{margin-top:-28px}
   .update-item{grid-template-columns:32px minmax(0,1fr);gap:var(--s-3)}
   .update-meta{grid-column:2}
-  .feature-bento{grid-template-columns:1fr;gap:var(--s-3)}
-  .feature-panel-main,.feature-panel-portrait,.feature-panel-wide,.feature-panel-medium,.feature-panel-small{grid-column:1;min-height:0}
-  .cap-batch,.cap-task,.cap-text{grid-column:1;min-height:0}
-  .feature-panel-copy{padding:var(--s-6) var(--s-6) var(--s-4)}
-  .feature-panel h3{font-size:1.0625rem}
-  .feature-panel-main .feature-media,.feature-panel-wide .feature-media,.feature-panel-medium .feature-media,.feature-panel-small .feature-media{height:230px}
-  .feature-panel-portrait .feature-media{height:300px}
-  .cap-batch .feature-media,.cap-task .feature-media{height:230px}
-  .feature-media{margin:0 12px 12px}
+   .feature-bento{grid-template-columns:1fr;gap:var(--s-3)}
+   .feature-panel-main,.feature-panel-portrait,.feature-panel-wide,.feature-panel-medium,.feature-panel-small{grid-column:1;min-height:250px}
+   .cap-batch,.cap-task,.cap-text{grid-column:1;min-height:250px}
+   .feature-panel-copy{padding:var(--s-5) var(--s-5) var(--s-7)}
+   .feature-panel h3{font-size:1.125rem}
+   .feature-media{position:absolute}
   .wall-row-a{height:130px}
   .wall-row-b{display:none}
   .wall-tile{width:200px;border-radius:14px}
@@ -527,21 +696,44 @@ a{color:inherit;text-decoration:none}
   [data-reveal]{opacity:1!important;transform:none!important}
   .wall-track,.marquee-track,.caret,.search-underline{animation:none!important}
 }
+/* 图片灯箱：点击工作流卡片查看完整截图 */
+.lightbox{position:fixed;inset:0;z-index:3000;display:flex;align-items:center;justify-content:center;padding:var(--s-8);background:rgba(3,5,10,0.84);-webkit-backdrop-filter:blur(20px) saturate(1.4);backdrop-filter:blur(20px) saturate(1.4);opacity:0;visibility:hidden;transition:opacity 0.26s var(--ease),visibility 0.26s}
+.lightbox.show{opacity:1;visibility:visible}
+.lightbox-figure{margin:0;max-width:min(1160px,94vw);display:flex;flex-direction:column;align-items:center;gap:var(--s-3);transform:scale(0.965) translateY(8px);transition:transform 0.26s var(--ease)}
+.lightbox.show .lightbox-figure{transform:none}
+.lightbox-figure img{max-width:100%;max-height:76vh;object-fit:contain;border-radius:var(--radius-md);box-shadow:0 40px 120px rgba(0,0,0,0.62)}
+.lightbox-figure figcaption{font-size:0.8125rem;color:var(--text-2);text-align:center;max-width:70ch}
+.lightbox-close{position:absolute;top:var(--s-6);right:var(--s-6);width:44px;height:44px;padding:0;border-radius:999px;border:1px solid rgba(var(--ov),0.18);background:rgba(var(--ov),0.08);color:var(--text);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;transition:color 0.2s,border-color 0.2s,background-color 0.2s}
+.lightbox-close svg{width:18px;height:18px}
+.lightbox-close:hover{border-color:rgba(var(--violet-rgb),0.5);background:rgba(var(--violet-rgb),0.14)}
+.lightbox-close:focus-visible{outline:2px solid var(--violet);outline-offset:2px}
 </style>
 </head>
 <body>
 
+<!-- 图片灯箱：点击工作流卡片查看完整截图 -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="OrcaBox screenshot preview" aria-hidden="true" tabindex="-1">
+  <button class="lightbox-close" id="lightboxClose" type="button" aria-label="Close">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+  </button>
+  <figure class="lightbox-figure">
+    <img id="lightboxImg" alt="">
+    <figcaption id="lightboxCap"></figcaption>
+  </figure>
+</div>
+
+
 <nav class="nav" id="nav">
   <div class="nav-inner">
     <a href="#hero" class="nav-brand">
-      <img src="assets/orcabox-icon.png" alt="" width="28" height="28">
+      <img src="assets/orcabox-icon-192.png" alt="" width="28" height="28">
       OrcaBox
     </a>
     <ul class="nav-links">
       <li><a href="#features" data-i18n="nav.features">功能</a></li>
       <li><a href="#showcase" data-i18n="nav.showcase">展示</a></li>
-      <li><a href="#capabilities" data-i18n="nav.capabilities">能力</a></li>
       <li><a href="#updates" data-i18n="nav.updates">更新</a></li>
+      <li><a href="#pricing" data-i18n="nav.pricing">定价</a></li>
       <li><a href="#download" data-i18n="nav.download">下载</a></li>
       <li><a href="#developer" data-i18n="nav.developer">开发者</a></li>
     </ul>
@@ -563,7 +755,20 @@ a{color:inherit;text-decoration:none}
         </div>
       </div>
       <a href="#download" class="btn btn-primary" data-i18n="nav.downloadBtn">下载</a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="打开导航菜单" data-i18n-aria="nav.menu" aria-expanded="false" aria-controls="navMobile">
+        <span></span><span></span><span></span>
+      </button>
     </div>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <ul>
+      <li><a href="#features" data-i18n="nav.features">功能</a></li>
+      <li><a href="#showcase" data-i18n="nav.showcase">展示</a></li>
+      <li><a href="#updates" data-i18n="nav.updates">更新</a></li>
+      <li><a href="#pricing" data-i18n="nav.pricing">定价</a></li>
+      <li><a href="#download" data-i18n="nav.download">下载</a></li>
+      <li><a href="#developer" data-i18n="nav.developer">开发者</a></li>
+    </ul>
   </div>
 </nav>
 
@@ -573,44 +778,44 @@ a{color:inherit;text-decoration:none}
     <div class="wall-row wall-row-a">
       <div class="wall-track">
         <div class="wall-set">
-          <div class="wall-tile wt-s"><img src="assets/product-1.2.1-image.webp" alt="" decoding="async" style="object-position:52% 26%"></div>
+          <div class="wall-tile wt-s"><img fetchpriority="low" src="assets/product-1.2.1-image-sm.webp" alt="" decoding="async" style="object-position:52% 26%"></div>
           <div class="wall-tile t-grad-1"></div>
-          <div class="wall-tile"><img src="assets/showcase-image-browser.webp" alt="" decoding="async" style="object-position:58% 22%"></div>
+          <div class="wall-tile"><img fetchpriority="low" src="assets/showcase-image-browser-sm.webp" alt="" decoding="async" style="object-position:58% 22%"></div>
           <div class="wall-tile wt-s t-palette"><i style="background:#d95763"></i><i style="background:#e8a33d"></i><i style="background:#3fae7a"></i><i style="background:#3f7ad9"></i><i style="background:#8a63d2"></i></div>
-          <div class="wall-tile wt-l"><img src="assets/collections.webp" alt="" decoding="async" style="object-position:50% 15%"></div>
+          <div class="wall-tile wt-l"><img fetchpriority="low" src="assets/collections-sm.webp" alt="" decoding="async" style="object-position:50% 15%"></div>
           <div class="wall-tile t-grad-2"></div>
-          <div class="wall-tile"><img src="assets/showcase-audio-browser.webp" alt="" decoding="async" style="object-position:50% 30%"></div>
+          <div class="wall-tile"><img fetchpriority="low" src="assets/showcase-audio-browser-sm.webp" alt="" decoding="async" style="object-position:50% 30%"></div>
         </div>
         <div class="wall-set">
-          <div class="wall-tile wt-s"><img src="assets/product-1.2.1-image.webp" alt="" decoding="async" style="object-position:52% 26%"></div>
+          <div class="wall-tile wt-s"><img fetchpriority="low" src="assets/product-1.2.1-image-sm.webp" alt="" decoding="async" style="object-position:52% 26%"></div>
           <div class="wall-tile t-grad-1"></div>
-          <div class="wall-tile"><img src="assets/showcase-image-browser.webp" alt="" decoding="async" style="object-position:58% 22%"></div>
+          <div class="wall-tile"><img fetchpriority="low" src="assets/showcase-image-browser-sm.webp" alt="" decoding="async" style="object-position:58% 22%"></div>
           <div class="wall-tile wt-s t-palette"><i style="background:#d95763"></i><i style="background:#e8a33d"></i><i style="background:#3fae7a"></i><i style="background:#3f7ad9"></i><i style="background:#8a63d2"></i></div>
-          <div class="wall-tile wt-l"><img src="assets/collections.webp" alt="" decoding="async" style="object-position:50% 15%"></div>
+          <div class="wall-tile wt-l"><img fetchpriority="low" src="assets/collections-sm.webp" alt="" decoding="async" style="object-position:50% 15%"></div>
           <div class="wall-tile t-grad-2"></div>
-          <div class="wall-tile"><img src="assets/showcase-audio-browser.webp" alt="" decoding="async" style="object-position:50% 30%"></div>
+          <div class="wall-tile"><img fetchpriority="low" src="assets/showcase-audio-browser-sm.webp" alt="" decoding="async" style="object-position:50% 30%"></div>
         </div>
       </div>
     </div>
     <div class="wall-row wall-row-b">
       <div class="wall-track">
         <div class="wall-set">
-          <div class="wall-tile"><img src="assets/product-1.2.1-audio.webp" alt="" decoding="async" style="object-position:60% 30%"></div>
-          <div class="wall-tile wt-s t-wave"><svg viewBox="0 0 120 60" fill="none" aria-hidden="true"><defs><linearGradient id="wg" x1="0" y1="0" x2="120" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#7dd3fc"/><stop offset="1" stop-color="#4da3ff"/></linearGradient></defs><g fill="url(#wg)"><rect x="2" y="24" width="3" height="12" rx="1.5"/><rect x="8" y="20" width="3" height="20" rx="1.5"/><rect x="14" y="15" width="3" height="30" rx="1.5"/><rect x="20" y="19" width="3" height="22" rx="1.5"/><rect x="26" y="11" width="3" height="38" rx="1.5"/><rect x="32" y="6" width="3" height="48" rx="1.5"/><rect x="38" y="15" width="3" height="30" rx="1.5"/><rect x="44" y="8" width="3" height="44" rx="1.5"/><rect x="50" y="18" width="3" height="24" rx="1.5"/><rect x="56" y="13" width="3" height="34" rx="1.5"/><rect x="62" y="22" width="3" height="16" rx="1.5"/><rect x="68" y="17" width="3" height="26" rx="1.5"/><rect x="74" y="25" width="3" height="10" rx="1.5"/><rect x="80" y="20" width="3" height="20" rx="1.5"/><rect x="86" y="23" width="3" height="14" rx="1.5"/><rect x="92" y="18" width="3" height="24" rx="1.5"/><rect x="98" y="24" width="3" height="12" rx="1.5"/><rect x="104" y="21" width="3" height="18" rx="1.5"/></g></svg></div>
-          <div class="wall-tile wt-l"><img src="assets/product-1.2.1-3d.webp" alt="" decoding="async" style="object-position:50% 25%"></div>
+          <div class="wall-tile"><img fetchpriority="low" src="assets/product-1.2.1-audio-sm.webp" alt="" decoding="async" style="object-position:60% 30%"></div>
+          <div class="wall-tile wt-s t-wave"><svg viewBox="0 0 120 60" fill="none" aria-hidden="true"><defs><linearGradient id="wg" x1="0" y1="0" x2="120" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#e9d5ff"/><stop offset="1" stop-color="#9333ea"/></linearGradient></defs><g fill="url(#wg)"><rect x="2" y="24" width="3" height="12" rx="1.5"/><rect x="8" y="20" width="3" height="20" rx="1.5"/><rect x="14" y="15" width="3" height="30" rx="1.5"/><rect x="20" y="19" width="3" height="22" rx="1.5"/><rect x="26" y="11" width="3" height="38" rx="1.5"/><rect x="32" y="6" width="3" height="48" rx="1.5"/><rect x="38" y="15" width="3" height="30" rx="1.5"/><rect x="44" y="8" width="3" height="44" rx="1.5"/><rect x="50" y="18" width="3" height="24" rx="1.5"/><rect x="56" y="13" width="3" height="34" rx="1.5"/><rect x="62" y="22" width="3" height="16" rx="1.5"/><rect x="68" y="17" width="3" height="26" rx="1.5"/><rect x="74" y="25" width="3" height="10" rx="1.5"/><rect x="80" y="20" width="3" height="20" rx="1.5"/><rect x="86" y="23" width="3" height="14" rx="1.5"/><rect x="92" y="18" width="3" height="24" rx="1.5"/><rect x="98" y="24" width="3" height="12" rx="1.5"/><rect x="104" y="21" width="3" height="18" rx="1.5"/></g></svg></div>
+          <div class="wall-tile wt-l"><img fetchpriority="low" src="assets/product-1.2.1-3d-sm.webp" alt="" decoding="async" style="object-position:50% 25%"></div>
           <div class="wall-tile wt-s t-grad-3"></div>
-          <div class="wall-tile"><img src="assets/product-1.2.1-collections.webp" alt="" decoding="async" style="object-position:50% 20%"></div>
-          <div class="wall-tile wt-s t-brand"><img src="assets/orcabox-icon.png" alt="" decoding="async"></div>
-          <div class="wall-tile"><img src="assets/showcase-video-browser.webp" alt="" decoding="async" style="object-position:50% 30%"></div>
+          <div class="wall-tile"><img fetchpriority="low" src="assets/product-1.2.1-collections-sm.webp" alt="" decoding="async" style="object-position:50% 20%"></div>
+          <div class="wall-tile wt-s t-brand"><img fetchpriority="low" src="assets/orcabox-icon-192.png" alt="" decoding="async"></div>
+          <div class="wall-tile"><img fetchpriority="low" src="assets/showcase-video-browser-sm.webp" alt="" decoding="async" style="object-position:50% 30%"></div>
         </div>
         <div class="wall-set">
-          <div class="wall-tile"><img src="assets/product-1.2.1-audio.webp" alt="" decoding="async" style="object-position:60% 30%"></div>
+          <div class="wall-tile"><img fetchpriority="low" src="assets/product-1.2.1-audio-sm.webp" alt="" decoding="async" style="object-position:60% 30%"></div>
           <div class="wall-tile wt-s t-wave"><svg viewBox="0 0 120 60" fill="none" aria-hidden="true"><g fill="url(#wg)"><rect x="2" y="24" width="3" height="12" rx="1.5"/><rect x="8" y="20" width="3" height="20" rx="1.5"/><rect x="14" y="15" width="3" height="30" rx="1.5"/><rect x="20" y="19" width="3" height="22" rx="1.5"/><rect x="26" y="11" width="3" height="38" rx="1.5"/><rect x="32" y="6" width="3" height="48" rx="1.5"/><rect x="38" y="15" width="3" height="30" rx="1.5"/><rect x="44" y="8" width="3" height="44" rx="1.5"/><rect x="50" y="18" width="3" height="24" rx="1.5"/><rect x="56" y="13" width="3" height="34" rx="1.5"/><rect x="62" y="22" width="3" height="16" rx="1.5"/><rect x="68" y="17" width="3" height="26" rx="1.5"/><rect x="74" y="25" width="3" height="10" rx="1.5"/><rect x="80" y="20" width="3" height="20" rx="1.5"/><rect x="86" y="23" width="3" height="14" rx="1.5"/><rect x="92" y="18" width="3" height="24" rx="1.5"/><rect x="98" y="24" width="3" height="12" rx="1.5"/><rect x="104" y="21" width="3" height="18" rx="1.5"/></g></svg></div>
-          <div class="wall-tile wt-l"><img src="assets/product-1.2.1-3d.webp" alt="" decoding="async" style="object-position:50% 25%"></div>
+          <div class="wall-tile wt-l"><img fetchpriority="low" src="assets/product-1.2.1-3d-sm.webp" alt="" decoding="async" style="object-position:50% 25%"></div>
           <div class="wall-tile wt-s t-grad-3"></div>
-          <div class="wall-tile"><img src="assets/product-1.2.1-collections.webp" alt="" decoding="async" style="object-position:50% 20%"></div>
-          <div class="wall-tile wt-s t-brand"><img src="assets/orcabox-icon.png" alt="" decoding="async"></div>
-          <div class="wall-tile"><img src="assets/showcase-video-browser.webp" alt="" decoding="async" style="object-position:50% 30%"></div>
+          <div class="wall-tile"><img fetchpriority="low" src="assets/product-1.2.1-collections-sm.webp" alt="" decoding="async" style="object-position:50% 20%"></div>
+          <div class="wall-tile wt-s t-brand"><img fetchpriority="low" src="assets/orcabox-icon-192.png" alt="" decoding="async"></div>
+          <div class="wall-tile"><img fetchpriority="low" src="assets/showcase-video-browser-sm.webp" alt="" decoding="async" style="object-position:50% 30%"></div>
         </div>
       </div>
     </div>
@@ -620,9 +825,12 @@ a{color:inherit;text-decoration:none}
     </div>
     <div class="hero-scrim"></div>
   </div>
+  <div class="hero-bottom-glow" aria-hidden="true">
+    <img src="assets/hero-bottom-glow.png" alt="" width="735" height="475" decoding="async">
+  </div>
   <div class="hero-text">
     <span class="hero-eyebrow hero-entrance" data-i18n="hero.eyebrow">OrcaBox本地素材管家</span>
-    <h1 class="h1 hero-entrance hero-entrance-title"><span data-i18n="hero.title1">为创作而生</span><br><em data-i18n="hero.title2">全能素材聚合管理</em></h1>
+    <h1 class="h1 hero-entrance hero-entrance-title"><span data-i18n="hero.title1">为创作而生</span><br><em data-i18n="hero.title2">数媒资产聚合管理</em></h1>
     <p class="body-l hero-entrance hero-entrance-desc" data-i18n="hero.desc">本地素材索引 零复制直链 40+格式预览 多路径管理</p>
     <div class="hero-cta hero-entrance hero-entrance-cta">
       <a href="#download" class="btn btn-primary btn-lg" data-i18n="hero.cta">
@@ -633,7 +841,7 @@ a{color:inherit;text-decoration:none}
     <p class="hero-version hero-entrance hero-entrance-cta" data-i18n="hero.version">v1.2.6 · macOS 12+ 与 Windows x64 · 免费下载</p>
   </div>
   <div class="hero-shot-wrap" id="heroShotWrap">
-    <img class="hero-shot" id="heroShot" src="assets/product-1.2.1-hero.webp" alt="OrcaBox 1.2.6 图片壁纸预览" width="1800" height="1153" loading="eager" fetchpriority="high" decoding="async">
+    <img class="hero-shot" id="heroShot" src="assets/product-1.2.7-hero.webp" alt="OrcaBox 1.2.7 视频素材库预览" width="2560" height="1641" loading="eager" fetchpriority="high" decoding="async">
   </div>
 </section>
 
@@ -679,7 +887,10 @@ a{color:inherit;text-decoration:none}
     </div>
     <div class="showcase-row" data-reveal>
       <div class="shot-wrap">
-        <img src="assets/product-1.2.1-lottie.gif" alt="OrcaBox Lottie 与 JSON 动效资产实时预览" loading="lazy" decoding="async">
+        <video id="lottieShot" width="720" height="480" poster="assets/product-1.2.1-lottie-poster.webp" autoplay muted loop playsinline preload="metadata" aria-label="OrcaBox Lottie 与 JSON 动效资产实时预览">
+          <source src="assets/product-1.2.1-lottie.webm" type="video/webm">
+          <source src="assets/product-1.2.1-lottie.mp4" type="video/mp4">
+        </video>
       </div>
       <div class="showcase-info">
         <span class="label" data-i18n="s3.label">动效资产管理</span>
@@ -774,50 +985,6 @@ a{color:inherit;text-decoration:none}
         </div>
         <div class="feature-media"><img src="assets/smart-cutout.webp" alt="OrcaBox 智能抠图工具" loading="lazy"></div>
       </article>
-      <article class="feature-panel feature-panel-small feature-panel-convert" data-glow-card data-reveal>
-        <div class="feature-panel-copy">
-          <span class="feature-kicker">Format Converter</span>
-          <h3 data-i18n="f5.title">常用格式一键转换</h3>
-          <p data-i18n="f5.desc">WebP、JPEG、PNG、AVIF、TIFF 批量处理</p>
-        </div>
-        <div class="feature-media"><img src="assets/image-convert.webp" alt="OrcaBox 图片格式转换插件" loading="lazy"></div>
-      </article>
-      <article class="feature-panel feature-panel-small feature-panel-davinci" data-glow-card data-reveal data-reveal-delay="1">
-        <div class="feature-panel-copy">
-          <span class="feature-kicker">DaVinci Resolve</span>
-          <h3 data-i18n="f6.title">素材直达剪辑软件</h3>
-          <p data-i18n="f6.desc">导入媒体池或当前时间线 减少软件间往返</p>
-        </div>
-        <div class="feature-media"><img src="assets/product-1.2.1-timeline.webp" alt="OrcaBox 1.2.6 视频播放快速导入时间线" loading="lazy"></div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<div class="marquee">
-  <div class="marquee-track">
-    <span class="m-item"><span class="m-dot" style="background:#38bdf8"></span>PNG</span><span class="m-item"><span class="m-dot" style="background:#38bdf8"></span>JPG</span><span class="m-item"><span class="m-dot" style="background:#38bdf8"></span>WebP</span><span class="m-item"><span class="m-dot" style="background:#38bdf8"></span>AVIF</span><span class="m-item"><span class="m-dot" style="background:#38bdf8"></span>SVG</span><span class="m-item"><span class="m-dot" style="background:#38bdf8"></span>PSD</span><span class="m-item"><span class="m-dot" style="background:#38bdf8"></span>HEIC</span>
-    <span class="m-item"><span class="m-dot" style="background:#a78bfa"></span>MP4</span><span class="m-item"><span class="m-dot" style="background:#a78bfa"></span>MOV</span><span class="m-item"><span class="m-dot" style="background:#a78bfa"></span>MKV</span><span class="m-item"><span class="m-dot" style="background:#a78bfa"></span>WebM</span>
-    <span class="m-item"><span class="m-dot" style="background:#34d399"></span>MP3</span><span class="m-item"><span class="m-dot" style="background:#34d399"></span>WAV</span><span class="m-item"><span class="m-dot" style="background:#34d399"></span>FLAC</span>
-    <span class="m-item"><span class="m-dot" style="background:#fbbf24"></span>GLB</span><span class="m-item"><span class="m-dot" style="background:#fbbf24"></span>OBJ</span>
-    <span class="m-item"><span class="m-dot" style="background:#f472b6"></span>TTF</span><span class="m-item"><span class="m-dot" style="background:#fb923c"></span>Lottie</span>
-    <!-- Duplicate for seamless loop -->
-    <span class="m-item"><span class="m-dot" style="background:#38bdf8"></span>PNG</span><span class="m-item"><span class="m-dot" style="background:#38bdf8"></span>JPG</span><span class="m-item"><span class="m-dot" style="background:#38bdf8"></span>WebP</span><span class="m-item"><span class="m-dot" style="background:#38bdf8"></span>AVIF</span><span class="m-item"><span class="m-dot" style="background:#38bdf8"></span>SVG</span><span class="m-item"><span class="m-dot" style="background:#38bdf8"></span>PSD</span><span class="m-item"><span class="m-dot" style="background:#38bdf8"></span>HEIC</span>
-    <span class="m-item"><span class="m-dot" style="background:#a78bfa"></span>MP4</span><span class="m-item"><span class="m-dot" style="background:#a78bfa"></span>MOV</span><span class="m-item"><span class="m-dot" style="background:#a78bfa"></span>MKV</span><span class="m-item"><span class="m-dot" style="background:#a78bfa"></span>WebM</span>
-    <span class="m-item"><span class="m-dot" style="background:#34d399"></span>MP3</span><span class="m-item"><span class="m-dot" style="background:#34d399"></span>WAV</span><span class="m-item"><span class="m-dot" style="background:#34d399"></span>FLAC</span>
-    <span class="m-item"><span class="m-dot" style="background:#fbbf24"></span>GLB</span><span class="m-item"><span class="m-dot" style="background:#fbbf24"></span>OBJ</span>
-    <span class="m-item"><span class="m-dot" style="background:#f472b6"></span>TTF</span><span class="m-item"><span class="m-dot" style="background:#fb923c"></span>Lottie</span>
-  </div>
-</div>
-
-<section class="section" id="capabilities">
-  <div class="container">
-    <div class="showcase-header" data-reveal>
-      <span class="label" data-i18n="cap.label">批量操作 & 本地智能</span>
-      <h2 class="h2" data-i18n="cap.title">选中 处理 标记 全程可见</h2>
-      <p class="body-l" data-i18n="cap.desc">批量工具栏、任务中心、本地分析协同工作 处理进度始终清晰</p>
-    </div>
-    <div class="feature-bento">
       <article class="feature-panel cap-batch" data-glow-card data-reveal>
         <div class="feature-panel-copy">
           <span class="feature-kicker">Batch Toolbar</span>
@@ -845,6 +1012,22 @@ a{color:inherit;text-decoration:none}
         </div>
         <div class="feature-media"><img src="assets/ai-tag-review.webp" alt="OrcaBox AI 智能标签生成" width="1200" height="838" loading="lazy" decoding="async"></div>
       </article>
+      <article class="feature-panel feature-panel-small feature-panel-davinci" data-glow-card data-reveal data-reveal-delay="1">
+        <div class="feature-panel-copy">
+          <span class="feature-kicker">DaVinci Resolve</span>
+          <h3 data-i18n="f6.title">素材直达剪辑软件</h3>
+          <p data-i18n="f6.desc">导入媒体池或当前时间线 减少软件间往返</p>
+        </div>
+        <div class="feature-media"><img src="assets/product-1.2.1-timeline.webp" alt="OrcaBox 1.2.6 视频播放快速导入时间线" loading="lazy"></div>
+      </article>
+      <article class="feature-panel feature-panel-small feature-panel-convert" data-glow-card data-reveal>
+        <div class="feature-panel-copy">
+          <span class="feature-kicker">Format Converter</span>
+          <h3 data-i18n="f5.title">常用格式一键转换</h3>
+          <p data-i18n="f5.desc">WebP、JPEG、PNG、AVIF、TIFF 批量处理</p>
+        </div>
+        <div class="feature-media"><img src="assets/image-convert.webp" alt="OrcaBox 图片格式转换插件" loading="lazy"></div>
+      </article>
       <article class="feature-panel feature-panel-text cap-text cap-text-color" data-glow-card data-reveal data-reveal-delay="1">
         <div class="feature-panel-copy">
           <span class="feature-kicker">Color Intelligence</span>
@@ -857,6 +1040,23 @@ a{color:inherit;text-decoration:none}
     </div>
   </div>
 </section>
+
+<div class="marquee">
+  <div class="marquee-track">
+    <span class="m-item"><span class="m-dot" style="background:#a855f7"></span>PNG</span><span class="m-item"><span class="m-dot" style="background:#a855f7"></span>JPG</span><span class="m-item"><span class="m-dot" style="background:#a855f7"></span>WebP</span><span class="m-item"><span class="m-dot" style="background:#a855f7"></span>AVIF</span><span class="m-item"><span class="m-dot" style="background:#a855f7"></span>SVG</span><span class="m-item"><span class="m-dot" style="background:#a855f7"></span>PSD</span><span class="m-item"><span class="m-dot" style="background:#a855f7"></span>HEIC</span>
+    <span class="m-item"><span class="m-dot" style="background:#a78bfa"></span>MP4</span><span class="m-item"><span class="m-dot" style="background:#a78bfa"></span>MOV</span><span class="m-item"><span class="m-dot" style="background:#a78bfa"></span>MKV</span><span class="m-item"><span class="m-dot" style="background:#a78bfa"></span>WebM</span>
+    <span class="m-item"><span class="m-dot" style="background:#34d399"></span>MP3</span><span class="m-item"><span class="m-dot" style="background:#34d399"></span>WAV</span><span class="m-item"><span class="m-dot" style="background:#34d399"></span>FLAC</span>
+    <span class="m-item"><span class="m-dot" style="background:#fbbf24"></span>GLB</span><span class="m-item"><span class="m-dot" style="background:#fbbf24"></span>OBJ</span>
+    <span class="m-item"><span class="m-dot" style="background:#f472b6"></span>TTF</span><span class="m-item"><span class="m-dot" style="background:#fb923c"></span>Lottie</span>
+    <!-- Duplicate for seamless loop -->
+    <span class="m-item"><span class="m-dot" style="background:#a855f7"></span>PNG</span><span class="m-item"><span class="m-dot" style="background:#a855f7"></span>JPG</span><span class="m-item"><span class="m-dot" style="background:#a855f7"></span>WebP</span><span class="m-item"><span class="m-dot" style="background:#a855f7"></span>AVIF</span><span class="m-item"><span class="m-dot" style="background:#a855f7"></span>SVG</span><span class="m-item"><span class="m-dot" style="background:#a855f7"></span>PSD</span><span class="m-item"><span class="m-dot" style="background:#a855f7"></span>HEIC</span>
+    <span class="m-item"><span class="m-dot" style="background:#a78bfa"></span>MP4</span><span class="m-item"><span class="m-dot" style="background:#a78bfa"></span>MOV</span><span class="m-item"><span class="m-dot" style="background:#a78bfa"></span>MKV</span><span class="m-item"><span class="m-dot" style="background:#a78bfa"></span>WebM</span>
+    <span class="m-item"><span class="m-dot" style="background:#34d399"></span>MP3</span><span class="m-item"><span class="m-dot" style="background:#34d399"></span>WAV</span><span class="m-item"><span class="m-dot" style="background:#34d399"></span>FLAC</span>
+    <span class="m-item"><span class="m-dot" style="background:#fbbf24"></span>GLB</span><span class="m-item"><span class="m-dot" style="background:#fbbf24"></span>OBJ</span>
+    <span class="m-item"><span class="m-dot" style="background:#f472b6"></span>TTF</span><span class="m-item"><span class="m-dot" style="background:#fb923c"></span>Lottie</span>
+  </div>
+</div>
+
 
 <section class="section" id="updates">
   <div class="container">
@@ -888,7 +1088,8 @@ a{color:inherit;text-decoration:none}
           <div><h3 data-i18n="u4.title">macOS 与 Windows 安装包</h3><p data-i18n="u4.desc">CNB 提供主要下载 GitHub 提供备用下载</p></div>
           <span class="update-meta" data-i18n="u4.meta">v1.2.6</span>
         </article>
-      </div>
+
+    </div>
     </div>
   </div>
 </section>
@@ -900,10 +1101,68 @@ a{color:inherit;text-decoration:none}
       <h2 class="h2" data-i18n="wf.title">四步开启高效素材管理</h2>
     </div>
     <div class="steps">
-      <div class="step" data-reveal><div class="step-num">1</div><h4 data-i18n="w1.title">添加源文件夹</h4><p data-i18n="w1.desc">选择磁盘上的素材目录 自动扫描索引 文件不复制不移动</p></div>
-      <div class="step" data-reveal data-reveal-delay="1"><div class="step-num">2</div><h4 data-i18n="w2.title">自动索引</h4><p data-i18n="w2.desc">生成缩略图 提取元数据 分析色彩 实时监听变化 自动同步</p></div>
-      <div class="step" data-reveal data-reveal-delay="2"><div class="step-num">3</div><h4 data-i18n="w3.title">预览与组织</h4><p data-i18n="w3.desc">40+ 格式即时预览 标签、合集、评分 建立素材知识库</p></div>
-      <div class="step" data-reveal data-reveal-delay="3"><div class="step-num">4</div><h4 data-i18n="w4.title">拖拽导出</h4><p data-i18n="w4.desc">直拖到设计工具或浏览器 支持批量、壁纸设置、字体安装</p></div>
+      <div class="step" data-reveal><div class="step-num">1</div><h3 data-i18n="w1.title">添加源文件夹</h3><p data-i18n="w1.desc">选择磁盘上的素材目录 自动扫描索引 文件不复制不移动</p></div>
+      <div class="step" data-reveal data-reveal-delay="1"><div class="step-num">2</div><h3 data-i18n="w2.title">自动索引</h3><p data-i18n="w2.desc">生成缩略图 提取元数据 分析色彩 实时监听变化 自动同步</p></div>
+      <div class="step" data-reveal data-reveal-delay="2"><div class="step-num">3</div><h3 data-i18n="w3.title">预览与组织</h3><p data-i18n="w3.desc">40+ 格式即时预览 标签、合集、评分 建立素材知识库</p></div>
+      <div class="step" data-reveal data-reveal-delay="3"><div class="step-num">4</div><h3 data-i18n="w4.title">拖拽导出</h3><p data-i18n="w4.desc">直拖到设计工具或浏览器 支持批量、壁纸设置、字体安装</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-subtle" id="pricing">
+  <div class="container">
+    <div class="pricing-stage">
+      <div class="pricing-watermark" aria-hidden="true">Pricing</div>
+      <div class="showcase-header" data-reveal>
+        <span class="label" data-i18n="pricing.label">定价</span>
+        <h2 class="h2" data-i18n="pricing.title">选择适合你的方案</h2>
+        <p class="body-l" data-i18n="pricing.desc">免费开始 需要更多时再升级</p>
+      </div>
+      <div class="pricing-grid" data-reveal data-reveal-delay="1">
+        <!-- 1. Free -->
+        <article class="price-card">
+          <h3 class="price-name" data-i18n="pricing.free.name">Free 免费使用</h3>
+          <div class="price-val"><span class="price-num">¥0</span></div>
+          <p class="price-desc" data-i18n="pricing.free.desc">个人创作者起步首选 软件本体完整免费</p>
+          <ul class="price-list">
+            <li><span class="price-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pricing.free.f1">软件本体免费</span></li>
+            <li><span class="price-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pricing.free.f2">无限制本地索引</span></li>
+            <li><span class="price-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pricing.free.f3">本地 AI 模型能力</span></li>
+            <li><span class="price-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pricing.free.f4">支持远端 API 接口</span></li>
+            <li><span class="price-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pricing.free.f5">内置 AI 画布</span></li>
+            <li><span class="price-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pricing.free.f6">内置插件免费</span></li>
+            <li><span class="price-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pricing.free.f7">自愿赞助 Coffee</span></li>
+          </ul>
+          <a href="#download" class="btn btn-primary price-btn" data-i18n="pricing.free.cta">立即使用</a>
+        </article>
+        <!-- 2. 开发伙伴计划（主推） -->
+        <article class="price-card price-card-featured">
+          <span class="price-badge" data-i18n="pricing.badge">交个朋友价</span>
+          <h3 class="price-name" data-i18n="pricing.dev.name">开发伙伴计划</h3>
+          <div class="price-val"><span class="price-num">¥59.9</span><span class="price-per" data-i18n="pricing.dev.per">/ 永久</span></div>
+          <p class="price-desc" data-i18n="pricing.dev.desc">一次买断 与开发者共建插件生态</p>
+          <ul class="price-list">
+            <li><span class="price-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pricing.dev.f1">软件本体永久使用</span></li>
+            <li><span class="price-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pricing.dev.f2">无限制文件索引</span></li>
+            <li><span class="price-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pricing.dev.f3">本地 AI 模型能力</span></li>
+            <li><span class="price-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pricing.dev.f4">支持远端 API 接口</span></li>
+            <li><span class="price-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pricing.dev.f5">免费版所有功能</span></li>
+            <li><span class="price-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pricing.dev.f6">获取插件共创权益</span></li>
+            <li><span class="price-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pricing.dev.f7">插件生态共建</span></li>
+          </ul>
+          <a href="#developer" class="btn btn-primary price-btn" data-i18n="pricing.dev.cta">联系开发者</a>
+        </article>
+        <!-- 3. 暂定占位：内容后续补充 -->
+        <article class="price-card">
+          <h3 class="price-name" data-i18n="pricing.pro.name">Pro 敬请期待</h3>
+          <div class="price-val"><span class="price-num">¥—</span></div>
+          <p class="price-desc" data-i18n="pricing.pro.desc">第三档方案规划中 欢迎向开发者提建议</p>
+          <ul class="price-list">
+            <li><span class="price-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pricing.pro.f1">更多权益规划中</span></li>
+          </ul>
+          <button type="button" class="btn btn-secondary price-btn" disabled data-i18n="pricing.pro.cta">敬请期待</button>
+        </article>
+      </div>
     </div>
   </div>
 </section>
@@ -920,24 +1179,18 @@ a{color:inherit;text-decoration:none}
             <svg width="17" height="17" viewBox="0 0 814 1000" fill="currentColor" aria-hidden="true"><path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76.5 0-103.7 40.8-165.9 40.8s-105.6-57-155.5-127C46.7 790.7 0 663 0 541.8c0-194.4 126.4-297.5 250.8-297.5 66.1 0 121.2 43.4 162.7 43.4 39.5 0 101.1-46 176.3-46 28.5 0 130.9 2.6 198.3 99.2zm-234-181.5c31.1-36.9 53.1-88.1 53.1-139.3 0-7.1-.6-14.3-1.9-20.1-50.6 1.9-110.8 33.7-147.1 75.8-28.5 32.4-55.1 83.6-55.1 135.5 0 7.8 1.3 15.6 1.9 18.1 3.2.6 8.4 1.3 13.6 1.3 45.4 0 102.5-30.4 135.5-71.3z"/></svg>
             <span data-i18n="dl.mac">下载 macOS DMG</span>
           </a>
-          <label class="download-arch">
-            <span class="sr-only" data-i18n="dl.archLabel">选择 Mac 芯片</span>
-            <select id="macArchSelect" aria-label="Mac architecture">
-              <option value="auto" data-i18n="dl.archAuto">自动识别</option>
-              <option value="arm64" data-i18n="dl.archArm">Apple Silicon</option>
-              <option value="x64" data-i18n="dl.archIntel">Intel</option>
-            </select>
-          </label>
-          <span id="macDetected" class="download-detected" aria-live="polite"></span>
         </div>
         <a href="https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.6/OrcaBox-1.2.6-win-x64-Setup.exe" class="btn btn-secondary btn-lg" data-i18n="dl.win" aria-label="Download Windows x64 installer">
           下载 Windows x64
         </a>
       </div>
       <div class="download-meta">
-        <span>macOS 12.0+</span><span>&middot;</span><span>Apple Silicon / Intel</span><span>&middot;</span><span data-i18n="dl.winPending">Windows x64</span><span>&middot;</span><span data-i18n="dl.free">免费下载</span>
+        <span>macOS 12.0+</span><span>&middot;</span><span>Apple Silicon / Intel</span><span>&middot;</span><span data-i18n="dl.free">免费下载</span>
       </div>
-      <a href="https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.2.6" target="_blank" rel="noopener noreferrer" class="download-mirror"><img src="assets/cnb.svg" alt=""><span data-i18n="dl.mirror">CNB Release 下载</span></a>
+      <div class="download-channels">
+        <a href="https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.2.6" target="_blank" rel="noopener noreferrer" class="download-mirror"><img src="assets/cnb.svg" alt=""><span data-i18n="dl.mirror">CNB Release 下载</span></a>
+        <a href="https://github.com/GarryGit888/OrcaBox-Release" target="_blank" rel="noopener noreferrer" class="download-mirror"><img src="assets/github.svg" alt=""><span data-i18n="cta.github">GitHub 备用下载</span></a>
+      </div>
     </div>
     <div class="download-extension" data-reveal>
       <div class="download-extension-inner">
@@ -945,9 +1198,9 @@ a{color:inherit;text-decoration:none}
         <h3 data-i18n="dl.extensionTitle">OrcaBox Chrome 插件</h3>
         <p class="body" data-i18n="dl.extensionDesc">在网页中快速收集图片、视频、Lottie 和素材链接，发送到本地 OrcaBox。</p>
         <div class="download-extension-actions">
-          <a href="https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.6/OrcaBox-Chrome-Extension-1.2.6.zip" class="btn btn-secondary" data-i18n="dl.extensionDownload">
+          <a href="https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.6/OrcaBox-Chrome-Extension-1.2.6.zip" class="btn btn-secondary">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            下载 Chrome 插件 ZIP
+            <span data-i18n="dl.extensionDownload">下载 Chrome 插件 ZIP</span>
           </a>
           <a href="https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.6" target="_blank" rel="noopener noreferrer" class="download-mirror" data-i18n="dl.extensionRelease">查看插件发行页</a>
         </div>
@@ -957,46 +1210,33 @@ a{color:inherit;text-decoration:none}
   </div>
 </section>
 
-<div class="cta-block">
-  <div class="container">
-    <span class="label" data-i18n="cta.label">开始使用</span>
-    <h2 class="h2" data-i18n="cta.title">准备好管理你的创意资产了吗？</h2>
-    <p class="body-l" data-i18n="cta.desc">下载 OrcaBox 体验专业级本地素材管理</p>
-    <div class="cta-actions">
-      <a href="#download" class="btn btn-primary btn-lg" data-i18n="cta.dl">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/></svg>
-        下载 macOS 版
-      </a>
-      <a href="https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.2.6" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg btn-repository"><img src="assets/cnb.svg" alt=""><span data-i18n="cta.cnb">CNB Release 下载</span></a>
-      <a href="https://github.com/GarryGit888/OrcaBox-Release" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-lg btn-repository btn-repository-github"><img src="assets/github.svg" alt=""><span data-i18n="cta.github">GitHub 下载</span></a>
-    </div>
-  </div>
-</div>
 <section class="section" id="developer">
   <div class="container">
     <div class="dev-card" data-reveal>
       <div class="dev-avatar"><img src="assets/garry-avatar.webp" alt="GarryKai" width="256" height="256" loading="lazy" decoding="async"></div>
-      <span class="label" data-i18n="dev.label">关于开发者</span>
-      <div class="dev-name"><h3>GarryKai</h3><span class="dev-role" data-i18n="dev.role">OrcaBox 开发者</span></div>
-      <p class="body dev-bio" data-i18n="dev.bio">剪辑师 · 影视流程研究者 · Vibe Coder 专注素材管理开发与高效工作流研究</p>
-      <div class="dev-links">
-        <button type="button" class="dev-chip" id="wechatCopy" aria-label="Copy WeChat ID to clipboard">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 3.5C4.9 3.5 2 6.1 2 9.2c0 1.7.9 3.3 2.3 4.3L3.7 16.5l3-1.4c.6.2 1.2.3 1.8.3"/><path d="M22 13.7c0-2.6-2.5-4.7-5.5-4.7S11 11.1 11 13.7s2.5 4.7 5.5 4.7c.6 0 1.2-.1 1.7-.2L21 19.5l-.6-2.2c1-.9 1.6-2.1 1.6-3.6z"/><path d="M6.5 8.8h.01M10.5 8.8h.01M14.5 13.5h.01M18.5 13.5h.01"/></svg>
-          <span data-i18n="dev.wechat">微信 · 点击复制</span>
-        </button>
-        <a class="dev-chip" href="https://github.com/GarryGit888" target="_blank" rel="noopener noreferrer" aria-label="GarryKai on GitHub">
-          <img src="assets/github.svg" alt=""><span data-i18n="dev.github">GitHub 主页</span>
-        </a>
-        <a class="dev-chip" href="https://space.bilibili.com/11074718" target="_blank" rel="noopener noreferrer" aria-label="GarryKai on Bilibili">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.5 3.5 10 6.5M16.5 3.5 14 6.5"/><rect x="3" y="6.5" width="18" height="13" rx="3.5"/><path d="M8.5 11.5v2.5M15.5 11.5v2.5"/></svg>
-          <span data-i18n="dev.bilibili">B 站主页</span>
-        </a>
-        <a class="dev-chip" href="https://www.xiaohongshu.com/user/profile/600255b20000000001004b60" target="_blank" rel="noopener noreferrer" aria-label="GarryKai on Xiaohongshu">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.5" fill="#ff2442"/><text x="12" y="16.3" text-anchor="middle" font-size="11.5" font-weight="700" fill="#fff" font-family="-apple-system,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif">红</text></svg>
-          <span data-i18n="dev.xhs">小红书</span>
-        </a>
+      <div class="dev-main">
+        <span class="label" data-i18n="dev.label">关于开发者</span>
+        <div class="dev-name"><h3>GarryKai</h3><span class="dev-role" data-i18n="dev.role">OrcaBox 开发者</span></div>
+        <p class="body dev-bio" data-i18n="dev.bio">剪辑师 · 影视流程研究者 · Vibe Coder 专注素材管理开发与高效工作流研究</p>
+        <div class="dev-links">
+          <button type="button" class="dev-chip" id="wechatCopy" aria-label="Copy WeChat ID to clipboard">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8.5 3.5C4.9 3.5 2 6.1 2 9.2c0 1.7.9 3.3 2.3 4.3L3.7 16.5l3-1.4c.6.2 1.2.3 1.8.3"/><path d="M22 13.7c0-2.6-2.5-4.7-5.5-4.7S11 11.1 11 13.7s2.5 4.7 5.5 4.7c.6 0 1.2-.1 1.7-.2L21 19.5l-.6-2.2c1-.9 1.6-2.1 1.6-3.6z"/><path d="M6.5 8.8h.01M10.5 8.8h.01M14.5 13.5h.01M18.5 13.5h.01"/></svg>
+            <span data-i18n="dev.wechat">微信 · 点击复制</span>
+          </button>
+          <a class="dev-chip" href="https://github.com/GarryGit888" target="_blank" rel="noopener noreferrer" aria-label="GarryKai on GitHub">
+            <img src="assets/github.svg" alt=""><span data-i18n="dev.github">GitHub 主页</span>
+          </a>
+          <a class="dev-chip" href="https://space.bilibili.com/11074718" target="_blank" rel="noopener noreferrer" aria-label="GarryKai on Bilibili">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.5 3.5 10 6.5M16.5 3.5 14 6.5"/><rect x="3" y="6.5" width="18" height="13" rx="3.5"/><path d="M8.5 11.5v2.5M15.5 11.5v2.5"/></svg>
+            <span data-i18n="dev.bilibili">B 站主页</span>
+          </a>
+          <a class="dev-chip" href="https://www.xiaohongshu.com/user/profile/600255b20000000001004b60" target="_blank" rel="noopener noreferrer" aria-label="GarryKai on Xiaohongshu">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.5" fill="#ff2442"/><text x="12" y="16.3" text-anchor="middle" font-size="11.5" font-weight="700" fill="#fff" font-family="-apple-system,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif">红</text></svg>
+            <span data-i18n="dev.xhs">小红书</span>
+          </a>
+        </div>
+        <p class="caption dev-hint" data-i18n="dev.hint">微信号已隐藏 点击上方按钮即可复制</p>
       </div>
-      <p class="caption dev-hint" data-i18n="dev.hint">微信号已隐藏 点击上方按钮即可复制</p>
     </div>
   </div>
 </section>
@@ -1006,7 +1246,7 @@ a{color:inherit;text-decoration:none}
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="#hero" class="nav-brand"><img src="assets/orcabox-icon.png" alt="" width="28" height="28">OrcaBox</a>
+        <a href="#hero" class="nav-brand"><img src="assets/orcabox-icon-192.png" alt="" width="28" height="28">OrcaBox</a>
         <p data-i18n="footer.desc">面向创意团队的专业本地索引多格式素材管理器</p>
         <div class="footer-social">
           <a href="https://cnb.cool/garrykai" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GarryKai on CNB" title="CNB"><img src="assets/cnb.svg" alt=""></a>
@@ -1015,9 +1255,9 @@ a{color:inherit;text-decoration:none}
           <a href="https://www.xiaohongshu.com/user/profile/600255b20000000001004b60" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GarryKai on Xiaohongshu" title="小红书"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5.5" fill="#ff2442"/><text x="12" y="16.3" text-anchor="middle" font-size="11.5" font-weight="700" fill="#fff" font-family="-apple-system,'PingFang SC','Hiragino Sans GB','Microsoft YaHei',sans-serif">红</text></svg></a>
         </div>
       </div>
-      <div class="footer-col"><h5 data-i18n="footer.product">产品</h5><ul><li><a href="#features" data-i18n="footer.f1">功能</a></li><li><a href="#showcase" data-i18n="footer.f2">展示</a></li><li><a href="#capabilities" data-i18n="footer.f3">能力</a></li><li><a href="#download" data-i18n="footer.f4">下载</a></li></ul></div>
-      <div class="footer-col"><h5 data-i18n="footer.resources">资源</h5><ul><li><a href="https://cnb.cool/garrykai/orcabox-release" target="_blank" rel="noopener noreferrer" data-i18n="footer.r1">使用说明</a></li><li><a href="releases.html?v=1.2.6#latest" data-i18n="footer.r2">发行说明</a></li><li><a href="releases.html?v=1.2.6#history" data-i18n="footer.r3">历史版本</a></li></ul></div>
-      <div class="footer-col"><h5 data-i18n="footer.about">下载来源</h5><ul><li><a href="https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.2.6" target="_blank" rel="noopener noreferrer" data-i18n="footer.cnb">CNB Release 下载</a></li><li><a href="https://github.com/GarryGit888/OrcaBox-Release" target="_blank" rel="noopener noreferrer" data-i18n="footer.github">GitHub 备用下载</a></li><li><a href="https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.2.6" target="_blank" rel="noopener noreferrer" data-i18n="footer.a1">下载安装包</a></li></ul></div>
+      <div class="footer-col"><h3 data-i18n="footer.product">产品</h3><ul><li><a href="#features" data-i18n="footer.f1">功能</a></li><li><a href="#showcase" data-i18n="footer.f2">展示</a></li><li><a href="#pricing" data-i18n="nav.pricing">定价</a></li><li><a href="#download" data-i18n="footer.f4">下载</a></li></ul></div>
+      <div class="footer-col"><h3 data-i18n="footer.resources">资源</h3><ul><li><a href="https://cnb.cool/garrykai/orcabox-release" target="_blank" rel="noopener noreferrer" data-i18n="footer.r1">使用说明</a></li><li><a href="releases.html?v=1.2.6#latest" data-i18n="footer.r2">发行说明</a></li><li><a href="releases.html?v=1.2.6#history" data-i18n="footer.r3">历史版本</a></li></ul></div>
+      <div class="footer-col"><h3 data-i18n="footer.about">下载来源</h3><ul><li><a href="https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.2.6" target="_blank" rel="noopener noreferrer" data-i18n="footer.cnb">CNB Release 下载</a></li><li><a href="https://github.com/GarryGit888/OrcaBox-Release" target="_blank" rel="noopener noreferrer" data-i18n="footer.github">GitHub 备用下载</a></li><li><a href="https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.2.6" target="_blank" rel="noopener noreferrer" data-i18n="footer.a1">下载安装包</a></li></ul></div>
     </div>
     <div class="footer-bottom"><span>&copy; 2024-2026 OrcaBox. All rights reserved.</span><span data-i18n="footer.made">Made for macOS and Windows</span></div>
   </div>
@@ -1027,9 +1267,9 @@ a{color:inherit;text-decoration:none}
 // ===== I18N TRANSLATIONS =====
 const i18n={
   zh:{
-    "nav.features":"功能","nav.showcase":"展示","nav.capabilities":"能力","nav.updates":"更新","nav.download":"下载","nav.downloadBtn":"下载",
+    "nav.features":"功能","nav.showcase":"展示","nav.updates":"更新","nav.download":"下载","nav.downloadBtn":"下载","nav.menu":"打开导航菜单","lightbox.close":"关闭预览",
     "hero.eyebrow":"OrcaBox本地素材管家",
-    "hero.title1":"为创作而生","hero.title2":"全能素材聚合管理",
+    "hero.title1":"为创作而生","hero.title2":"数媒资产聚合管理",
     "hero.desc":"本地素材索引 零复制直链 40+格式预览 多路径管理",
     "hero.cta":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/><line x1=\"12\" y1=\"15\" x2=\"12\" y2=\"3\"/></svg> 免费下载",
     "hero.version":"v1.2.6 · macOS 12+ 与 Windows x64 · 免费下载",
@@ -1048,14 +1288,14 @@ const i18n={
     "s2.label":"音频预览","s2.title":"波形可视化 · 音频素材库","s2.desc":"MP3、WAV、FLAC、AAC 原生支持 自动生成音频波形图与频谱分析 支持播放预览与批量标签管理",
     "s3.label":"动效资产管理","s3.title":"实时网格预览 · 动效资产管理","s3.desc":"实时网格预览不降级 播放调速循环控制 JSON 与 .lottie 双格式原生解析 预取保持挂载 拒绝重挂载占位闪烁",
     "s4.label":"交互式 3D","s4.title":"交互式 3D 预览","s4.desc":"Three.js 驱动 支持 GLB、GLTF、OBJ、FBX、USDZ 自由旋转缩放 材质预览 纹理提取",
-    "s5.label":"Windows 版","s5.title":"跨平台保持同样的浏览节奏","s5.desc":"Windows 延续侧栏、瀑布流与详情面板结构 切换平台无需重新适应",
+
     "cap.label":"批量操作 & 本地智能","cap.title":"选中 处理 标记 全程可见","cap.desc":"批量工具栏、任务中心、本地分析协同工作 处理进度始终清晰",
-    "t1.label":"批量工具栏","t1.title":"选中素材 常用动作集中出现","t1.desc":"收藏、评分、标签、备注与批量操作统一收在底部工具栏",
-    "t2.label":"任务中心","t2.title":"后台进度透明 失败项可继续处理","t2.desc":"扫描、索引、分析、失败重试集中可见 适合大型素材库整理",
+    "t1.title":"选中素材 常用动作集中出现","t1.desc":"收藏、评分、标签、备注与批量操作统一收在底部工具栏",
+    "t2.title":"后台进度透明 失败项可继续处理","t2.desc":"扫描、索引、分析、失败重试集中可见 适合大型素材库整理",
     "ai1.title":"AI智能标签","ai1.desc":"支持本地视觉模型分析画面，写入标签",
     "ai2.title":"主色与快速筛选","ai2.desc":"提取主色板 配合颜色筛选 更快找到视觉参考",
-    "ai3.title":"批量备注与状态管理","ai3.desc":"多选后同步补充备注、收藏、评分 保持整理连续",
-    "tag.scan":"扫描","tag.index":"索引","tag.ai":"AI 分析","tag.watch":"文件监听","tag.realtime":"实时预览","tag.grid":"网格动画",
+
+    "tag.scan":"扫描","tag.index":"索引","tag.ai":"AI 分析",
     "updates.label":"最近更新","updates.title":"把素材工作流做得更顺手","updates.desc":"网页采集 本地整理 Lottie 动效 原文件播放 持续围绕真实创作流程完善","updates.link":"查看发行记录",
     "u1.title":"浏览器快速采集","u1.desc":"Chrome 扩展扫描当前页面的图片、视频、Lottie 与素材链接 减少网页搬运步骤","u1.meta":"生态",
     "u2.title":"原文件视频播放","u2.desc":"浏览器直出或系统原生播放 不生成视频代理文件","u2.meta":"播放",
@@ -1066,23 +1306,30 @@ const i18n={
     "w2.title":"自动索引","w2.desc":"生成缩略图 提取元数据 分析色彩 实时监听变化 自动同步",
     "w3.title":"预览与组织","w3.desc":"40+ 格式即时预览 标签、合集、评分 建立素材知识库",
     "w4.title":"拖拽导出","w4.desc":"直拖到设计工具或浏览器 支持批量、壁纸设置、字体安装",
-    "dl.label":"下载","dl.title":"OrcaBox 1.2.6","dl.desc":"macOS 与 Windows 1.2.6 安装包现已提供，CNB 提供统一下载",
+    "dl.label":"下载","dl.title":"OrcaBox 1.2.6","dl.desc":"macOS 与 Windows 安装包现已提供，选择对应版本即可下载",
     "dl.extensionLabel":"浏览器插件","dl.extensionTitle":"OrcaBox Chrome 插件","dl.extensionDesc":"在网页中快速收集图片、视频、Lottie 和素材链接，发送到本地 OrcaBox。","dl.extensionDownload":"下载 Chrome 插件 ZIP","dl.extensionRelease":"查看插件发行页","dl.extensionMeta":"v1.2.6 · 解压后在 Chrome 扩展程序页面加载",
-    "dl.mac":"下载 macOS DMG","dl.win":"下载 Windows x64","dl.winPending":"Windows x64 v1.2.6","dl.free":"免费下载","dl.mirror":"CNB Release 下载","dl.archLabel":"选择 Mac 芯片","dl.archAuto":"自动识别","dl.archArm":"Apple Silicon","dl.archIntel":"Intel","dl.archDetected":"已自动选择","dl.archDefault":"默认选择","dl.archSelected":"当前选择","dl.archManual":"可手动切换",
-    "cta.label":"开始使用","cta.title":"准备好管理你的创意资产了吗","cta.desc":"下载 OrcaBox 体验专业级本地素材管理",
-    "cta.dl":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/></svg> 下载 macOS 版",
-    "cta.cnb":"CNB Release 下载","cta.github":"GitHub 备用下载",
+    "dl.mac":"下载 macOS DMG","dl.win":"下载 Windows x64","dl.free":"免费下载","dl.mirror":"CNB Release 下载",
+    "cta.github":"GitHub 备用下载",
     "nav.developer":"开发者",
     "dev.label":"关于开发者","dev.role":"OrcaBox 开发者","dev.bio":"剪辑师 · 影视流程研究者 · Vibe Coder 专注素材管理开发与高效工作流研究","dev.wechat":"微信 · 点击复制","dev.copied":"已复制 去微信粘贴添加","dev.github":"GitHub 主页","dev.bilibili":"B 站主页","dev.xhs":"小红书","dev.hint":"微信号已隐藏 点击上方按钮即可复制",
     "footer.desc":"面向创意团队的专业本地索引多格式素材管理器",
     "footer.product":"产品","footer.resources":"资源","footer.about":"下载来源",
-    "footer.f1":"功能","footer.f2":"展示","footer.f3":"能力","footer.f4":"下载",
+    "footer.f1":"功能","footer.f2":"展示","footer.f4":"下载",
     "footer.r1":"使用说明","footer.r2":"发行说明","footer.r3":"历史版本",
     "footer.cnb":"CNB Release 下载","footer.github":"GitHub 备用下载",
-    "footer.a1":"下载安装包","footer.made":"Made for macOS and Windows"
+    "footer.a1":"下载安装包","footer.made":"Made for macOS and Windows",
+    "nav.pricing":"定价",
+    "pricing.label":"定价","pricing.title":"选择适合你的方案","pricing.desc":"免费开始 需要更多时再升级",
+    "pricing.free.name":"Free 免费使用","pricing.free.desc":"个人创作者起步首选 软件本体完整免费",
+    "pricing.free.f1":"软件本体免费","pricing.free.f2":"无限制本地索引","pricing.free.f3":"本地 AI 模型能力","pricing.free.f4":"支持远端 API 接口","pricing.free.f5":"内置 AI 画布","pricing.free.f6":"内置插件免费","pricing.free.f7":"自愿赞助 Coffee",
+    "pricing.free.cta":"立即使用",
+    "pricing.badge":"交个朋友价","pricing.dev.name":"开发伙伴计划","pricing.dev.per":"/ 永久","pricing.dev.desc":"一次买断 与开发者共建插件生态",
+    "pricing.dev.f1":"软件本体永久使用","pricing.dev.f2":"无限制文件索引","pricing.dev.f3":"本地 AI 模型能力","pricing.dev.f4":"支持远端 API 接口","pricing.dev.f5":"免费版所有功能","pricing.dev.f6":"获取插件共创权益","pricing.dev.f7":"插件生态共建",
+    "pricing.dev.cta":"联系开发者",
+    "pricing.pro.name":"Pro 敬请期待","pricing.pro.desc":"第三档方案规划中 欢迎向开发者提建议","pricing.pro.f1":"更多权益规划中","pricing.pro.cta":"敬请期待"
   },
   en:{
-    "nav.features":"Features","nav.showcase":"Showcase","nav.capabilities":"Capabilities","nav.updates":"Updates","nav.download":"Download","nav.downloadBtn":"Download",
+    "nav.features":"Features","nav.showcase":"Showcase","nav.updates":"Updates","nav.download":"Download","nav.downloadBtn":"Download","nav.menu":"Open navigation menu","lightbox.close":"Close preview",
     "hero.eyebrow":"OrcaBox Local Asset Manager",
     "hero.title1":"Creative Assets","hero.title2":"Managed Locally",
     "hero.desc":"Zero-copy local assets, 40+ previews, on-device AI.",
@@ -1103,14 +1350,14 @@ const i18n={
     "s2.label":"Audio Preview","s2.title":"Waveforms for every audio library","s2.desc":"Native MP3, WAV, FLAC, and AAC support with waveform, spectrum, playback, and batch tagging.",
     "s3.label":"Motion Asset Management","s3.title":"Live motion assets stay live","s3.desc":"Stable Lottie and JSON previews with speed, loop, JSON, and .lottie support without placeholder flicker.",
     "s4.label":"Interactive 3D","s4.title":"Interactive 3D preview","s4.desc":"Three.js powered GLB, GLTF, OBJ, FBX, and USDZ preview with rotation, materials, and texture extraction.",
-    "s5.label":"Windows Edition","s5.title":"The same information density, with the same rhythm","s5.desc":"Windows keeps the familiar sidebar, masonry browser, and detail panel so moving between platforms costs less.",
+
     "cap.label":"Batch Actions & Local Intelligence","cap.title":"Selecting, processing, and tagging all stay visible","cap.desc":"The batch toolbar, task center, and local analysis work together without hiding progress in the background.",
-    "t1.label":"Batch Toolbar","t1.title":"Select assets and your common actions appear together","t1.desc":"Favorites, ratings, tags, notes, and batch actions live in one bottom toolbar to reduce back-and-forth.",
-    "t2.label":"Task Center","t2.title":"Background progress stays transparent, and failures can resume","t2.desc":"Scanning, indexing, analysis, and retries remain visible for long-running library cleanup.",
+    "t1.title":"Select assets and your common actions appear together","t1.desc":"Favorites, ratings, tags, notes, and batch actions live in one bottom toolbar to reduce back-and-forth.",
+    "t2.title":"Background progress stays transparent, and failures can resume","t2.desc":"Scanning, indexing, analysis, and retries remain visible for long-running library cleanup.",
     "ai1.title":"AI Smart Tags","ai1.desc":"On-device vision models analyze your footage and write tags.",
     "ai2.title":"Color extraction and quick filtering","ai2.desc":"Pull palettes and combine them with color filters to find references faster.",
-    "ai3.title":"Batch notes and state management","ai3.desc":"Apply notes, favorites, and ratings across multi-selection without breaking flow.",
-    "tag.scan":"Scan","tag.index":"Index","tag.ai":"AI Analysis","tag.watch":"File Watch","tag.realtime":"Live Preview","tag.grid":"Grid Animation",
+
+    "tag.scan":"Scan","tag.index":"Index","tag.ai":"AI Analysis",
     "updates.label":"Latest Updates","updates.title":"A smoother asset workflow","updates.desc":"From browser capture to local organization, from Lottie motion to original-file playback, OrcaBox keeps improving around real creative work.","updates.link":"View release history",
     "u1.title":"Browser Quick Collect","u1.desc":"The Chrome extension scans images, videos, Lottie, and asset links on the current page, reducing the steps between discovery and organization.","u1.meta":"Ecosystem",
     "u2.title":"Original-File Video Playback","u2.desc":"Video preview follows an original-file-first policy through browser direct playback or the native system stack, without video proxy files.","u2.meta":"Playback",
@@ -1121,23 +1368,30 @@ const i18n={
     "w2.title":"Auto Index","w2.desc":"Generate thumbnails, extract metadata, analyze colors. Real-time file watching with auto sync.",
     "w3.title":"Preview & Organize","w3.desc":"Instant preview for 40+ formats. Tags, collections, ratings — build your asset knowledge base.",
     "w4.title":"Drag & Drop Export","w4.desc":"Drag directly to design tools or browsers. Batch, wallpaper, font installation support.",
-    "dl.label":"Download","dl.title":"OrcaBox 1.2.6","dl.desc":"macOS and Windows 1.2.6 installers are now available. CNB provides one unified download source.",
+    "dl.label":"Download","dl.title":"OrcaBox 1.2.6","dl.desc":"macOS and Windows installers are ready — pick the build for your machine.",
     "dl.extensionLabel":"Browser Extension","dl.extensionTitle":"OrcaBox Chrome Extension","dl.extensionDesc":"Collect images, videos, Lottie, and asset links from the web directly into your local OrcaBox library.","dl.extensionDownload":"Download Chrome ZIP","dl.extensionRelease":"View extension release","dl.extensionMeta":"v1.2.6 · Unzip, then load the folder from Chrome Extensions",
-    "dl.mac":"Download macOS DMG","dl.win":"Download Windows x64","dl.winPending":"Windows x64 v1.2.6","dl.free":"Free Download","dl.mirror":"Download from CNB Release","dl.archLabel":"Choose Mac chip","dl.archAuto":"Auto-detect","dl.archArm":"Apple Silicon","dl.archIntel":"Intel","dl.archDetected":"Detected","dl.archDefault":"Default","dl.archSelected":"Selected","dl.archManual":"manual switch available",
-    "cta.label":"Get Started","cta.title":"Ready to manage your creative assets?","cta.desc":"Download OrcaBox and experience professional-grade local asset management.",
-    "cta.dl":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/></svg> Download for macOS",
-    "cta.cnb":"CNB Release Download","cta.github":"GitHub Backup Download",
+    "dl.mac":"Download macOS DMG","dl.win":"Download Windows x64","dl.free":"Free Download","dl.mirror":"Download from CNB Release",
+    "cta.github":"GitHub Backup Download",
     "nav.developer":"Developer",
     "dev.label":"About the Developer","dev.role":"OrcaBox Developer","dev.bio":"Video editor · Film workflow researcher · Vibe coder, focused on asset-management development and efficient workflow research","dev.wechat":"WeChat · Click to copy","dev.copied":"Copied — paste it in WeChat","dev.github":"GitHub Profile","dev.bilibili":"Bilibili Channel","dev.xhs":"Xiaohongshu (RED)","dev.hint":"WeChat ID is hidden — click the button above to copy it",
     "footer.desc":"Professional local-indexed multi-format asset manager for creative teams.",
     "footer.product":"Product","footer.resources":"Resources","footer.about":"Download Sources",
-    "footer.f1":"Features","footer.f2":"Showcase","footer.f3":"Capabilities","footer.f4":"Download",
+    "footer.f1":"Features","footer.f2":"Showcase","footer.f4":"Download",
     "footer.r1":"User Guide","footer.r2":"Release Notes","footer.r3":"Previous Versions",
     "footer.cnb":"CNB Release Download","footer.github":"GitHub Backup Download",
-    "footer.a1":"Download Installers","footer.made":"Made for macOS and Windows"
+    "footer.a1":"Download Installers","footer.made":"Made for macOS and Windows",
+    "nav.pricing":"Pricing",
+    "pricing.label":"Pricing","pricing.title":"Pick the plan that fits you","pricing.desc":"Start free, upgrade when you need more.",
+    "pricing.free.name":"Free","pricing.free.desc":"Everything you need to get started — the full app, completely free.",
+    "pricing.free.f1":"Full app for free","pricing.free.f2":"Unlimited local indexing","pricing.free.f3":"On-device AI models","pricing.free.f4":"Remote API support","pricing.free.f5":"Built-in AI canvas","pricing.free.f6":"Built-in plugins included","pricing.free.f7":"Optional Coffee donation",
+    "pricing.free.cta":"Get Started",
+    "pricing.badge":"Friendly Price","pricing.dev.name":"Dev Partner Program","pricing.dev.per":"/ lifetime","pricing.dev.desc":"One-time purchase — build the plugin ecosystem with the developer.",
+    "pricing.dev.f1":"Lifetime local license","pricing.dev.f2":"Unlimited file indexing","pricing.dev.f3":"On-device AI models","pricing.dev.f4":"Remote API support","pricing.dev.f5":"Everything in Free","pricing.dev.f6":"Plugin co-creation perks","pricing.dev.f7":"Shape the plugin ecosystem",
+    "pricing.dev.cta":"Contact the Developer",
+    "pricing.pro.name":"Pro · Coming soon","pricing.pro.desc":"The third tier is being planned — suggestions are welcome.","pricing.pro.f1":"More perks in planning","pricing.pro.cta":"Coming Soon"
   },
   ja:{
-    "nav.features":"機能","nav.showcase":"紹介","nav.capabilities":"能力","nav.updates":"更新","nav.download":"ダウンロード","nav.downloadBtn":"ダウンロード",
+    "nav.features":"機能","nav.showcase":"紹介","nav.updates":"更新","nav.download":"ダウンロード","nav.downloadBtn":"ダウンロード","nav.menu":"ナビゲーションメニューを開く","lightbox.close":"プレビューを閉じる",
     "hero.eyebrow":"OrcaBox ローカル素材管理",
     "hero.title1":"クリエイティブ資産","hero.title2":"ローカル管理",
     "hero.desc":"ローカル素材管理：ゼロコピー、40+形式、端末内AI。",
@@ -1158,14 +1412,14 @@ const i18n={
     "s2.label":"音声プレビュー","s2.title":"波形で音声ライブラリを確認","s2.desc":"MP3、WAV、FLAC、AAC に対応し、波形、スペクトラム、再生、一括タグ付けを行えます。",
     "s3.label":"モーションアセット管理","s3.title":"ライブアセットをライブのまま管理","s3.desc":"Lottie と JSON のプレビューを安定表示し、速度、ループ、JSON、.lottie に対応します。",
     "s4.label":"インタラクティブ 3D","s4.title":"インタラクティブ 3D プレビュー","s4.desc":"Three.js ベースで GLB、GLTF、OBJ、FBX、USDZ を回転、素材確認、テクスチャ抽出まで行えます。",
-    "s5.label":"Windows 版","s5.title":"同じ情報密度で、同じテンポを保つ","s5.desc":"Windows 版でもサイドバー、瀑布流、詳細パネルの構成を保ち、切り替えコストを下げます。",
+
     "cap.label":"一括操作 & ローカル知能","cap.title":"選択、処理、タグ付けを常に見える形で","cap.desc":"一括ツールバー、タスクセンター、ローカル分析が連携し、進行状況を裏に隠しません。",
-    "t1.label":"一括ツールバー","t1.title":"素材を選ぶと、よく使う操作がまとまって出る","t1.desc":"お気に入り、評価、タグ、メモ、一括操作を下部ツールバーに集約し、往復を減らします。",
-    "t2.label":"タスクセンター","t2.title":"進捗は透明に、失敗項目は続きから処理","t2.desc":"スキャン、索引、分析、再試行を見える形で保ち、大きなライブラリ整理にも向きます。",
+    "t1.title":"素材を選ぶと、よく使う操作がまとまって出る","t1.desc":"お気に入り、評価、タグ、メモ、一括操作を下部ツールバーに集約し、往復を減らします。",
+    "t2.title":"進捗は透明に、失敗項目は続きから処理","t2.desc":"スキャン、索引、分析、再試行を見える形で保ち、大きなライブラリ整理にも向きます。",
     "ai1.title":"AIスマートタグ","ai1.desc":"ローカルの視覚モデルが画面を分析し、タグを書き込みます。",
     "ai2.title":"主要色抽出と高速フィルタ","ai2.desc":"色パレット抽出と色フィルタを組み合わせ、参照探しを速めます。",
-    "ai3.title":"一括メモと状態管理","ai3.desc":"複数選択したままメモ、お気に入り、評価を連続して適用できます。",
-    "tag.scan":"スキャン","tag.index":"索引","tag.ai":"AI分析","tag.watch":"監視","tag.realtime":"ライブ","tag.grid":"グリッド",
+
+    "tag.scan":"スキャン","tag.index":"索引","tag.ai":"AI分析",
     "updates.label":"最新アップデート","updates.title":"素材ワークフローをもっとスムーズに","updates.desc":"ブラウザ収集からローカル整理、Lottieモーションからオリジナル再生まで、実際の制作フローに沿って改善を続けています。","updates.link":"リリース履歴を見る",
     "u1.title":"ブラウザ快速収集","u1.desc":"Chrome拡張で現在のページから画像、動画、Lottie、素材リンクをスキャンし、収集の手順を短縮します。","u1.meta":"エコシステム",
     "u2.title":"オリジナル動画再生","u2.desc":"動画プレビューはブラウザ直接再生またはシステムネイティブ再生を使い、動画プロキシを生成しません。","u2.meta":"再生",
@@ -1176,23 +1430,30 @@ const i18n={
     "w2.title":"自動インデックス","w2.desc":"サムネイル生成、メタデータ抽出、色彩分析。リアルタイム監視で自動同期。",
     "w3.title":"プレビュー＆整理","w3.desc":"40以上のフォーマットを即時プレビュー。タグ、コレクション、評価で知識ベース構築。",
     "w4.title":"ドラッグ＆ドロップ出力","w4.desc":"デザインツールやブラウザに直接ドラッグ。一括、壁紙、フォントインストール対応。",
-    "dl.label":"ダウンロード","dl.title":"OrcaBox 1.2.6","dl.desc":"macOS と Windows 1.2.6 のインストーラーを公開しました。CNBからまとめてダウンロードできます。",
+    "dl.label":"ダウンロード","dl.title":"OrcaBox 1.2.6","dl.desc":"macOS と Windows のインストーラーをご用意しています。お使いの環境に合わせてお選びください。",
     "dl.extensionLabel":"ブラウザ拡張","dl.extensionTitle":"OrcaBox Chrome 拡張","dl.extensionDesc":"Web ページの画像、動画、Lottie、素材リンクを OrcaBox にすばやく収集できます。","dl.extensionDownload":"Chrome 拡張 ZIP をダウンロード","dl.extensionRelease":"拡張のリリースを見る","dl.extensionMeta":"v1.2.6 · 解凍後、Chrome 拡張機能ページからフォルダを読み込み",
-    "dl.mac":"macOS DMG をダウンロード","dl.win":"Windows x64 をダウンロード","dl.winPending":"Windows x64 v1.2.6","dl.free":"無料ダウンロード","dl.mirror":"CNB Release からダウンロード","dl.archLabel":"Macチップを選択","dl.archAuto":"自動判定","dl.archArm":"Apple Silicon","dl.archIntel":"Intel","dl.archDetected":"自動判定","dl.archDefault":"既定","dl.archSelected":"選択中","dl.archManual":"手動切替可能",
-    "cta.label":"はじめよう","cta.title":"クリエイティブ資産を管理する準備はできましたか？","cta.desc":"OrcaBoxをダウンロードして、プロ級のローカルアセット管理を体験してください。",
-    "cta.dl":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/></svg> macOS版をダウンロード",
-    "cta.cnb":"CNB Release ダウンロード","cta.github":"GitHub 予備ダウンロード",
+    "dl.mac":"macOS DMG をダウンロード","dl.win":"Windows x64 をダウンロード","dl.free":"無料ダウンロード","dl.mirror":"CNB Release からダウンロード",
+    "cta.github":"GitHub 予備ダウンロード",
     "nav.developer":"開発者",
     "dev.label":"開発者について","dev.role":"OrcaBox 開発者","dev.bio":"映像編集者・映像ワークフロー研究者・Vibe Coder。素材管理の開発と効率的なワークフローの研究に取り組んでいます。","dev.wechat":"WeChat · クリックでコピー","dev.copied":"コピーしました。WeChat に貼り付けて追加してください","dev.github":"GitHub プロフィール","dev.bilibili":"Bilibili チャンネル","dev.xhs":"小紅書（RED）","dev.hint":"WeChat ID は非表示です。上のボタンをクリックするとコピーされます",
     "footer.desc":"クリエイティブチームのためのプロ向けローカルインデックス・マルチフォーマットアセットマネージャー。",
     "footer.product":"製品","footer.resources":"リソース","footer.about":"ダウンロード先",
-    "footer.f1":"機能","footer.f2":"紹介","footer.f3":"能力","footer.f4":"ダウンロード",
+    "footer.f1":"機能","footer.f2":"紹介","footer.f4":"ダウンロード",
     "footer.r1":"利用ガイド","footer.r2":"リリースノート","footer.r3":"過去のバージョン",
     "footer.cnb":"CNB Release ダウンロード","footer.github":"GitHub 予備ダウンロード",
-    "footer.a1":"インストーラー","footer.made":"Made for macOS and Windows"
+    "footer.a1":"インストーラー","footer.made":"Made for macOS and Windows",
+    "nav.pricing":"料金",
+    "pricing.label":"料金プラン","pricing.title":"自分に合ったプランを選ぼう","pricing.desc":"無料で始めて、必要になったらアップグレード。",
+    "pricing.free.name":"Free 無料","pricing.free.desc":"個人クリエイターの最初の選択。アプリ本体は完全無料です。",
+    "pricing.free.f1":"アプリ本体が無料","pricing.free.f2":"無制限のローカル索引","pricing.free.f3":"ローカル AI モデル","pricing.free.f4":"リモート API 対応","pricing.free.f5":"内蔵 AI キャンバス","pricing.free.f6":"内蔵プラグイン無料","pricing.free.f7":"任意の Coffee 支援",
+    "pricing.free.cta":"今すぐ使う",
+    "pricing.badge":"お友達価格","pricing.dev.name":"開発パートナープラン","pricing.dev.per":"/ 永久","pricing.dev.desc":"買い切りで、開発者とプラグインエコシステムを一緒に育てる。",
+    "pricing.dev.f1":"ローカル永久ライセンス","pricing.dev.f2":"無制限のファイル索引","pricing.dev.f3":"ローカル AI モデル","pricing.dev.f4":"リモート API 対応","pricing.dev.f5":"Free の全機能","pricing.dev.f6":"プラグイン共創特典","pricing.dev.f7":"プラグインエコシステムの共建",
+    "pricing.dev.cta":"開発者に連絡",
+    "pricing.pro.name":"Pro ·近日公開","pricing.pro.desc":"第 3 のプランは検討中です。ご意見を歓迎します。","pricing.pro.f1":"さらなる特典を検討中","pricing.pro.cta":"近日公開"
   },
   ko:{
-    "nav.features":"기능","nav.showcase":"소개","nav.capabilities":"역량","nav.updates":"업데이트","nav.download":"다운로드","nav.downloadBtn":"다운로드",
+    "nav.features":"기능","nav.showcase":"소개","nav.updates":"업데이트","nav.download":"다운로드","nav.downloadBtn":"다운로드","nav.menu":"내비게이션 메뉴 열기","lightbox.close":"미리보기 닫기",
     "hero.eyebrow":"OrcaBox 로컬 에셋 관리자",
     "hero.title1":"크리에이티브 자산","hero.title2":"로컬 관리",
     "hero.desc":"로컬 에셋 관리: 무복제, 40+ 포맷, 온디바이스 AI.",
@@ -1213,14 +1474,14 @@ const i18n={
     "s2.label":"오디오 프리뷰","s2.title":"파형으로 오디오 라이브러리 확인","s2.desc":"MP3, WAV, FLAC, AAC와 파형, 스펙트럼, 재생, 일괄 태그를 지원합니다.",
     "s3.label":"모션 에셋 관리","s3.title":"라이브 모션 에셋을 그대로 유지","s3.desc":"Lottie와 JSON 프리뷰를 안정적으로 유지하며 속도, 반복, JSON, .lottie를 지원합니다.",
     "s4.label":"인터랙티브 3D","s4.title":"인터랙티브 3D 프리뷰","s4.desc":"Three.js 기반으로 GLB, GLTF, OBJ, FBX, USDZ의 회전, 재질, 텍스처 추출을 지원합니다.",
-    "s5.label":"Windows 버전","s5.title":"같은 정보 밀도와 같은 리듬을 유지합니다","s5.desc":"Windows에서도 익숙한 사이드바, 워터폴 브라우저, 상세 패널 구조를 유지해 전환 비용을 낮춥니다.",
+
     "cap.label":"일괄 작업 & 로컬 인텔리전스","cap.title":"선택, 처리, 태깅이 모두 보이는 상태로","cap.desc":"일괄 툴바, 작업 센터, 로컬 분석이 함께 동작하며 진행 상황을 숨기지 않습니다.",
-    "t1.label":"일괄 툴바","t1.title":"에셋을 선택하면 자주 쓰는 작업이 한곳에 모입니다","t1.desc":"즐겨찾기, 평점, 태그, 메모, 일괄 작업을 하단 툴바에 모아 왕복을 줄입니다.",
-    "t2.label":"작업 센터","t2.title":"백그라운드 진행은 투명하게, 실패 항목은 이어서","t2.desc":"스캔, 인덱싱, 분석, 재시도를 계속 보이게 두어 큰 라이브러리 정리에 맞춥니다.",
+    "t1.title":"에셋을 선택하면 자주 쓰는 작업이 한곳에 모입니다","t1.desc":"즐겨찾기, 평점, 태그, 메모, 일괄 작업을 하단 툴바에 모아 왕복을 줄입니다.",
+    "t2.title":"백그라운드 진행은 투명하게, 실패 항목은 이어서","t2.desc":"스캔, 인덱싱, 분석, 재시도를 계속 보이게 두어 큰 라이브러리 정리에 맞춥니다.",
     "ai1.title":"AI 스마트 태그","ai1.desc":"온디바이스 비전 모델이 화면을 분석하여 태그를 작성합니다.",
     "ai2.title":"주요 색상 추출과 빠른 필터","ai2.desc":"팔레트 추출과 색상 필터를 결합해 레퍼런스 탐색을 더 빠르게 합니다.",
-    "ai3.title":"일괄 메모와 상태 관리","ai3.desc":"다중 선택 상태에서 메모, 즐겨찾기, 평점을 연속으로 적용할 수 있습니다.",
-    "tag.scan":"스캔","tag.index":"인덱스","tag.ai":"AI 분석","tag.watch":"파일 감시","tag.realtime":"실시간","tag.grid":"그리드",
+
+    "tag.scan":"스캔","tag.index":"인덱스","tag.ai":"AI 분석",
     "updates.label":"최근 업데이트","updates.title":"더 매끄러운 에셋 워크플로","updates.desc":"브라우저 수집부터 로컬 정리, Lottie 모션부터 원본 파일 재생까지 실제 제작 흐름을 중심으로 계속 개선합니다.","updates.link":"릴리스 기록 보기",
     "u1.title":"브라우저 빠른 수집","u1.desc":"Chrome 확장이 현재 페이지의 이미지, 비디오, Lottie와 에셋 링크를 스캔해 발견부터 정리까지의 단계를 줄입니다.","u1.meta":"생태계",
     "u2.title":"원본 파일 비디오 재생","u2.desc":"브라우저 직접 재생이나 시스템 네이티브 스택을 사용하며 비디오 프록시 파일을 생성하지 않습니다.","u2.meta":"재생",
@@ -1231,20 +1492,27 @@ const i18n={
     "w2.title":"자동 인덱스","w2.desc":"썸네일 생성, 메타데이터 추출, 색상 분석. 실시간 파일 감시로 자동 동기화.",
     "w3.title":"미리보기 및 정리","w3.desc":"40개 이상의 형식 즉시 미리보기. 태그, 컬렉션, 평가로 지식 베이스 구축.",
     "w4.title":"드래그 앤 드롭","w4.desc":"디자인 도구나 브라우저로 직접 드래그. 배치, 배경화면, 폰트 설치 지원.",
-    "dl.label":"다운로드","dl.title":"OrcaBox 1.2.6","dl.desc":"macOS 및 Windows 1.2.6 설치 파일을 제공합니다. CNB에서 통합 다운로드를 제공합니다.",
+    "dl.label":"다운로드","dl.title":"OrcaBox 1.2.6","dl.desc":"macOS 및 Windows 설치 파일을 제공합니다. 사용 환경에 맞는 버전을 선택하세요.",
     "dl.extensionLabel":"브라우저 확장","dl.extensionTitle":"OrcaBox Chrome 확장","dl.extensionDesc":"웹 페이지의 이미지, 동영상, Lottie, 소재 링크를 OrcaBox 로 빠르게 수집합니다.","dl.extensionDownload":"Chrome 확장 ZIP 다운로드","dl.extensionRelease":"확장 릴리스 보기","dl.extensionMeta":"v1.2.6 · 압축 해제 후 Chrome 확장 프로그램에서 폴더 로드",
-    "dl.mac":"macOS DMG 다운로드","dl.win":"Windows x64 다운로드","dl.winPending":"Windows x64 v1.2.6","dl.free":"무료 다운로드","dl.mirror":"CNB Release 다운로드","dl.archLabel":"Mac 칩 선택","dl.archAuto":"자동 감지","dl.archArm":"Apple Silicon","dl.archIntel":"Intel","dl.archDetected":"자동 감지","dl.archDefault":"기본 선택","dl.archSelected":"현재 선택","dl.archManual":"수동 전환 가능",
-    "cta.label":"시작하기","cta.title":"크리에이티브 자산을 관리할 준비가 되셨나요?","cta.desc":"OrcaBox를 다운로드하고 전문가급 로컬 자산 관리를 경험하세요.",
-    "cta.dl":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/></svg> macOS용 다운로드",
-    "cta.cnb":"CNB Release 다운로드","cta.github":"GitHub 예비 다운로드",
+    "dl.mac":"macOS DMG 다운로드","dl.win":"Windows x64 다운로드","dl.free":"무료 다운로드","dl.mirror":"CNB Release 다운로드",
+    "cta.github":"GitHub 예비 다운로드",
     "nav.developer":"개발자",
     "dev.label":"개발자 소개","dev.role":"OrcaBox 개발자","dev.bio":"영상 편집자·영상 워크플로 연구자·Vibe Coder. 소재 관리 개발과 효율적인 워크플로 연구에 집중합니다.","dev.wechat":"WeChat · 클릭하여 복사","dev.copied":"복사되었습니다. WeChat에 붙여넣어 추가하세요","dev.github":"GitHub 프로필","dev.bilibili":"빌리빌리 채널","dev.xhs":"샤오홍슈(RED)","dev.hint":"WeChat ID는 숨겨져 있습니다. 위 버튼을 클릭하면 복사됩니다",
     "footer.desc":"크리에이티브 팀을 위한 전문 로컬 인덱스 멀티포맷 자산 관리자.",
     "footer.product":"제품","footer.resources":"리소스","footer.about":"다운로드 소스",
-    "footer.f1":"기능","footer.f2":"소개","footer.f3":"역량","footer.f4":"다운로드",
+    "footer.f1":"기능","footer.f2":"소개","footer.f4":"다운로드",
     "footer.r1":"사용 안내","footer.r2":"릴리스 노트","footer.r3":"이전 버전",
     "footer.cnb":"CNB Release 다운로드","footer.github":"GitHub 예비 다운로드",
-    "footer.a1":"설치 파일 다운로드","footer.made":"Made for macOS and Windows"
+    "footer.a1":"설치 파일 다운로드","footer.made":"Made for macOS and Windows",
+    "nav.pricing":"요금",
+    "pricing.label":"요금제","pricing.title":"나에게 맞는 플랜 선택","pricing.desc":"무료로 시작하고, 필요할 때 업그레이드하세요.",
+    "pricing.free.name":"Free 무료","pricing.free.desc":"개인 크리에이터의 첫 선택. 앱 본체는 완전 무료입니다.",
+    "pricing.free.f1":"앱 본체 무료","pricing.free.f2":"무제한 로컬 인덱싱","pricing.free.f3":"로컬 AI 모델","pricing.free.f4":"원격 API 지원","pricing.free.f5":"내장 AI 캔버스","pricing.free.f6":"내장 플러그인 무료","pricing.free.f7":"자발적 Coffee 후원",
+    "pricing.free.cta":"바로 사용하기",
+    "pricing.badge":"단독 특별가","pricing.dev.name":"개발 파트너 프로그램","pricing.dev.per":"/ 평생","pricing.dev.desc":"일회성 구매로 개발자와 함께 플러그인 생태계를 만들어 가세요.",
+    "pricing.dev.f1":"평생 로컬 라이선스","pricing.dev.f2":"무제한 파일 인덱싱","pricing.dev.f3":"로컬 AI 모델","pricing.dev.f4":"원격 API 지원","pricing.dev.f5":"Free의 모든 기능","pricing.dev.f6":"플러그인 공동 제작 혜택","pricing.dev.f7":"플러그인 생태계 공동 구축",
+    "pricing.dev.cta":"개발자에게 문의",
+    "pricing.pro.name":"Pro · 곧 공개","pricing.pro.desc":"세 번째 플랜은 준비 중입니다. 의견을 환영합니다.","pricing.pro.f1":"더 많은 혜택 준비 중","pricing.pro.cta":"곧 공개"
   }
 };
 
@@ -1259,6 +1527,11 @@ const pageTitles={zh:'OrcaBox — 专业本地素材管理器',en:'OrcaBox — P
 
 // Detect stored lang or browser lang
 function detectLang(){
+  // URL 参数优先：让语言版本可分享，也便于搜索引擎抓取（配合 hreflang）
+  try{
+    const urlLang=new URLSearchParams(window.location.search).get('lang');
+    if(urlLang&&i18n[urlLang])return urlLang;
+  }catch{}
   const stored=localStorage.getItem('orcabox-lang');
   if(stored&&i18n[stored])return stored;
   const nav= navigator.language||'';
@@ -1273,57 +1546,68 @@ let currentLang=detectLang();
 const langBtn=document.getElementById('langBtn');
 const langLabel=document.getElementById('langLabel');
 const langDrop=document.getElementById('langDrop');
-const macArchSelect=document.getElementById('macArchSelect');
 const macDownload=document.getElementById('macDownload');
-const macDetected=document.getElementById('macDetected');
 const macDownloadUrls={
   arm64:'https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.6/OrcaBox-1.2.6-arm64.dmg',
   x64:'https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.6/OrcaBox-1.2.6-x64.dmg',
 };
 let detectedMacArch='arm64';
-let macArchDetectionConfirmed=false;
 
-function updateMacDownload(arch=macArchSelect?.value||'auto',manual=arch!=='auto'){
-  if(!macArchSelect||!macDownload||!macDetected)return;
-  const resolved=arch==='auto'?detectedMacArch:arch;
-  macDownload.href=macDownloadUrls[resolved]||macDownloadUrls.arm64;
-  const label=i18n[currentLang][resolved==='x64'?'dl.archIntel':'dl.archArm'];
-  const prefix=i18n[currentLang][manual?'dl.archSelected':macArchDetectionConfirmed?'dl.archDetected':'dl.archDefault'];
-  macDetected.textContent=`${prefix} ${label} · ${i18n[currentLang]['dl.archManual']}`;
-}
-
+// macOS 安装包：按芯片静默选择 arm64 / x64（无 UI 提示）
 async function detectMacArchitecture(){
-  if(!/Mac/i.test(`${navigator.platform||''} ${navigator.userAgent||''}`))return;
+  if(!macDownload||!/Mac/i.test(`${navigator.platform||''} ${navigator.userAgent||''}`))return;
   try{
     if(navigator.userAgentData?.getHighEntropyValues){
       const values=await navigator.userAgentData.getHighEntropyValues(['architecture']);
-      if(/arm/i.test(values.architecture||'')){detectedMacArch='arm64';macArchDetectionConfirmed=true}
-      if(/x86|amd/i.test(values.architecture||'')){detectedMacArch='x64';macArchDetectionConfirmed=true}
+      if(/arm/i.test(values.architecture||''))detectedMacArch='arm64';
+      if(/x86|amd/i.test(values.architecture||''))detectedMacArch='x64';
     }
   }catch{}
-  updateMacDownload(macArchSelect?.value||'auto',macArchSelect?.value!=='auto');
+  macDownload.href=macDownloadUrls[detectedMacArch]||macDownloadUrls.arm64;
 }
 
 // Apply translations
-function applyLang(lang){
+function applyLang(lang,syncUrl=false){
   currentLang=lang;
   htmlEl.setAttribute('lang',lang==='zh'?'zh-CN':lang==='ja'?'ja-JP':lang==='ko'?'ko-KR':'en-US');
   document.title=pageTitles[lang]||pageTitles.en;
   localStorage.setItem('orcabox-lang',lang);
   langLabel.textContent=langLabels[lang];
 
+  // 用户主动切换语言时把语言写回 URL，使分享链接与 hreflang 对应（自动识别不污染 URL）
+  if(syncUrl){
+    try{
+      const u=new URL(window.location.href);
+      if(lang==='zh')u.searchParams.delete('lang');else u.searchParams.set('lang',lang);
+      window.history.replaceState(null,'',u.pathname+u.search+u.hash);
+    }catch{}
+  }
+
   // Update body font based on lang for CJK rendering
-  const cjk=lang==='zh'||lang==='ja'||lang==='ko';
   document.querySelectorAll('[data-i18n]').forEach(el=>{
     const key=el.getAttribute('data-i18n');
     if(!key||!i18n[lang][key])return;
     const val=i18n[lang][key];
-    // If contains SVG tags, treat as innerHTML; otherwise textContent
+    // If contains SVG tags, treat as innerHTML; otherwise write text safely
     if(val.startsWith('<svg')){
       el.innerHTML=val;
+    }else if(el.children.length){
+      // 元素内含图标（<svg>/<img>）时只改写文本节点，避免 textContent 把图标抹掉
+      let written=false;
+      [...el.childNodes].forEach(n=>{
+        if(n.nodeType!==3)return;
+        if(!written){n.nodeValue=val;written=true}else{n.remove()}
+      });
+      if(!written)el.appendChild(document.createTextNode(val));
     }else{
       el.textContent=val;
     }
+  });
+
+  // 需要随语言切换的 aria-label
+  document.querySelectorAll('[data-i18n-aria]').forEach(el=>{
+    const k=el.getAttribute('data-i18n-aria');
+    if(k&&i18n[lang][k])el.setAttribute('aria-label',i18n[lang][k]);
   });
 
   // Update active option
@@ -1337,18 +1621,10 @@ function applyLang(lang){
   document.querySelector('meta[property="og:title"]').setAttribute('content',document.title);
   document.querySelector('meta[property="og:description"]').setAttribute('content',desc);
   document.querySelector('meta[property="og:locale"]').setAttribute('content',lang==='zh'?'zh_CN':lang==='ja'?'ja_JP':lang==='ko'?'ko_KR':'en_US');
-  if(macArchSelect){
-    macArchSelect.setAttribute('aria-label',i18n[lang]['dl.archLabel']);
-    macArchSelect.options[0].textContent=i18n[lang]['dl.archAuto'];
-    macArchSelect.options[1].textContent=i18n[lang]['dl.archArm'];
-    updateMacDownload(macArchSelect.value,macArchSelect.value!=='auto');
-  }
 }
 
 // Initial apply
 applyLang(currentLang);
-macArchSelect?.addEventListener('change',()=>updateMacDownload(macArchSelect.value,macArchSelect.value!=='auto'));
-updateMacDownload();
 void detectMacArchitecture();
 
 // Developer WeChat click-to-copy — ID kept encoded so it never renders as page text
@@ -1410,7 +1686,7 @@ document.addEventListener('click',()=>{
 langDrop.querySelectorAll('.lang-option').forEach(opt=>{
   opt.addEventListener('click',e=>{
     e.stopPropagation();
-    applyLang(opt.getAttribute('data-lang'));
+    applyLang(opt.getAttribute('data-lang'),true);
     setLangDropOpen(false);
   });
 });
@@ -1542,7 +1818,7 @@ if(heroShot){
 // ===== INLINE IMAGE EXPANSION =====
 let expandedRow=null;
 
-document.querySelectorAll('.shot-wrap img').forEach(img=>{
+document.querySelectorAll('.shot-wrap img, .shot-wrap video').forEach(img=>{
   img.addEventListener('click',e=>{
     e.stopPropagation();
     const row=img.closest('.showcase-row');
@@ -1594,6 +1870,65 @@ document.addEventListener('keydown',e=>{
   }
 });
 
+// ===== 展示图键盘可达（此前放大交互只有鼠标可用） =====
+const shotMedia=document.querySelectorAll('.shot-wrap img, .shot-wrap video');
+const syncShotA11y=()=>{
+  shotMedia.forEach(el=>{
+    const row=el.closest('.showcase-row');
+    el.setAttribute('aria-expanded',String(!!row&&row.classList.contains('expanded')));
+  });
+};
+shotMedia.forEach(el=>{
+  el.setAttribute('role','button');
+  el.setAttribute('tabindex','0');
+  el.setAttribute('aria-expanded','false');
+  el.addEventListener('keydown',e=>{
+    if(e.key==='Enter'||e.key===' '){e.preventDefault();el.click()}
+  });
+  el.addEventListener('click',()=>setTimeout(syncShotA11y,0));
+});
+
+// ===== MOBILE NAV — 窄屏下接管被隐藏的导航链接 =====
+const navToggle=document.getElementById('navToggle');
+const navMobile=document.getElementById('navMobile');
+function setNavMobileOpen(open){
+  if(!navToggle||!navMobile)return;
+  navMobile.classList.toggle('open',open);
+  navToggle.setAttribute('aria-expanded',String(open));
+}
+if(navToggle&&navMobile){
+  navToggle.addEventListener('click',e=>{
+    e.stopPropagation();
+    setLangDropOpen(false);
+    setNavMobileOpen(!navMobile.classList.contains('open'));
+  });
+  navMobile.addEventListener('click',e=>e.stopPropagation());
+  navMobile.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setNavMobileOpen(false)));
+  document.addEventListener('click',()=>setNavMobileOpen(false));
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape'&&navMobile.classList.contains('open')){setNavMobileOpen(false);navToggle.focus()}
+  });
+  window.matchMedia('(min-width:641px)').addEventListener('change',m=>{if(m.matches)setNavMobileOpen(false)});
+}
+
+// ===== LOTTIE SHOWCASE VIDEO — play in view, pause off view =====
+const lottieShot=document.getElementById('lottieShot');
+if(lottieShot){
+  let lottieInView=false;
+  const syncLottie=()=>{
+    if(reduced||document.hidden||!lottieInView){lottieShot.pause();return}
+    const p=lottieShot.play();
+    if(p&&p.catch)p.catch(()=>{});
+  };
+  if(reduced){
+    lottieShot.removeAttribute('autoplay');
+    lottieShot.pause();
+  }else{
+    new IntersectionObserver(es=>{lottieInView=es[0].isIntersecting;syncLottie()},{threshold:0.25}).observe(lottieShot);
+    document.addEventListener('visibilitychange',syncLottie);
+  }
+}
+
 // ===== SEARCH DEMO — looped typing / results / selection animation =====
 const demoCard=document.querySelector('.search-card');
 if(demoCard){
@@ -1635,7 +1970,50 @@ if(demoCard){
     new MutationObserver(()=>playDemo()).observe(htmlEl,{attributes:true,attributeFilter:['lang']});
   }
 }
+
+// ===== 工作流卡片：点击查看完整截图 =====
+const lightbox=document.getElementById('lightbox');
+if(lightbox){
+  const lbImg=document.getElementById('lightboxImg');
+  const lbCap=document.getElementById('lightboxCap');
+  const lbClose=document.getElementById('lightboxClose');
+  let lbSource=null;
+  const lbLabel=()=>(i18n[currentLang]||{})['lightbox.close']||'Close';
+  function openLightbox(card){
+    const img=card.querySelector('.feature-media img');
+    if(!img)return;
+    lbImg.src=img.currentSrc||img.src;
+    lbImg.alt=img.alt||'';
+    const t=card.querySelector('h3');
+    lbCap.textContent=t?t.textContent:'';
+    lbClose.setAttribute('aria-label',lbLabel());
+    lbSource=card;
+    lightbox.classList.add('show');
+    lightbox.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+    setTimeout(()=>lightbox.focus({preventScroll:true}),60);
+  }
+  function closeLightbox(){
+    lightbox.classList.remove('show');
+    lightbox.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+    if(lbSource&&document.contains(lbSource))lbSource.focus();
+    lbSource=null;
+  }
+  document.querySelectorAll('.feature-bento > .feature-panel').forEach(card=>{
+    card.setAttribute('role','button');
+    card.setAttribute('tabindex','0');
+    card.addEventListener('click',()=>openLightbox(card));
+    card.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();openLightbox(card)}});
+  });
+  lbClose.addEventListener('click',closeLightbox);
+  lightbox.addEventListener('click',e=>{if(e.target===lightbox)closeLightbox()});
+  document.addEventListener('keydown',e=>{
+    if(e.key==='Escape'&&lightbox.classList.contains('show'))closeLightbox();
+  });
+}
 })();
 </script>
+
 </body>
 </html>

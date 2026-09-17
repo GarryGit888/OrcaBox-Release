@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /$
+Allow: /index.html
+Allow: /releases.html
+Allow: /assets/
+Disallow: /api/
+Disallow: /feedback-assets/
+Disallow: /server.mjs
+Disallow: /*.test.mjs$
+Disallow: /Dockerfile.feedback
+
+Sitemap: https://orcabox.app/sitemap.xml
