@@ -11,13 +11,13 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/当前版本-v1.2.6-7C6FF7?style=flat-square" alt="Version 1.2.6">
+  <img src="https://img.shields.io/badge/当前版本-v1.2.7-7C6FF7?style=flat-square" alt="Version 1.2.7">
   <img src="https://img.shields.io/badge/macOS-12%2B-111318?style=flat-square&logo=apple" alt="macOS 12+">
   <img src="https://img.shields.io/badge/Windows-10%2F11_x64-111318?style=flat-square&logo=windows11" alt="Windows 10/11 x64">
   <img src="https://img.shields.io/badge/Local--first-Data_stays_local-1F9D75?style=flat-square" alt="Local-first">
 </p>
 
-<p align="center"><a href="https://garrygit888.github.io/OrcaBox-Release/">产品官网</a> · <a href="https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.2.6">CNB 下载</a> · <a href="https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.6">GitHub 下载</a> · <a href="./OrcaBox-1.2.6-Release-Notes.md">更新说明</a> · <a href="https://github.com/GarryGit888/OrcaBox-Release/issues">问题反馈</a></p>
+<p align="center"><a href="https://garrygit888.github.io/OrcaBox-Release/">产品官网</a> · <a href="https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.2.7">CNB 下载</a> · <a href="https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.7">GitHub 下载</a> · <a href="./OrcaBox-1.2.7-Release-Notes.md">更新说明</a> · <a href="https://github.com/GarryGit888/OrcaBox-Release/issues">问题反馈</a></p>
 
 <img src="./assets/product-1.2.7-hero.webp" width="100%" alt="OrcaBox 本地素材库主界面">
 
@@ -72,14 +72,14 @@ OrcaBox 面向剪辑师、设计师、动效师、摄影师和创意团队。添
 3. 等待本地索引完成，通过搜索、筛选、标签和合集开始整理。
 4. 按需启用 AI、浏览器采集、格式处理或剪辑软件联动功能。
 
-## 下载 OrcaBox 1.2.6
+## 下载 OrcaBox 1.2.7
 
 | 平台 | 主下载 | 备用下载 |
 | --- | --- | --- |
-| macOS Apple Silicon | [DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.6/OrcaBox-1.2.6-arm64.dmg) / [ZIP](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.6/OrcaBox-1.2.6-arm64-mac.zip) | [GitHub Release](https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.6) |
-| macOS Intel | [DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.6/OrcaBox-1.2.6-x64.dmg) / [ZIP](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.6/OrcaBox-1.2.6-x64-mac.zip) | [GitHub Release](https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.6) |
-| Windows x64 | [安装器](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.6/OrcaBox-1.2.6-win-x64-Setup.exe) / [免安装版](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.6/OrcaBox-1.2.6-win-x64-Portable.exe) | [GitHub Release](https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.6) |
-| Chrome 扩展 | [ZIP](https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.6/OrcaBox-Chrome-Extension-1.2.6.zip) | [发行页](https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.6) |
+| macOS Apple Silicon | [DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.7/OrcaBox-1.2.7-arm64.dmg) | [GitHub Release](https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.7) |
+| macOS Intel | [DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.7/OrcaBox-1.2.7-x64.dmg) | [GitHub Release](https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.7) |
+| Windows x64 | [安装器](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.7/OrcaBox-1.2.7-win-x64-Setup.exe) / [免安装版](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.7/OrcaBox-1.2.7-win-x64-Portable.exe) | [GitHub Release](https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.7) |
+| Chrome 扩展 | [ZIP](https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.7/OrcaBox-Chrome-Extension-1.2.7.zip) | [发行页](https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.7) |
 
 > macOS 当前提供未签名测试包，首次启动时可能需要在“系统设置 - 隐私与安全性”中确认打开。请从上方官方发行页下载，并核对发行页中的校验信息。
 

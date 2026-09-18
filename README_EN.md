@@ -9,8 +9,8 @@
   <a href="./README_JA.md"><img src="https://img.shields.io/badge/日本語-2B2F38?style=for-the-badge&labelColor=15171C" alt="日本語"></a>
   <a href="./README_KO.md"><img src="https://img.shields.io/badge/한국어-2B2F38?style=for-the-badge&labelColor=15171C" alt="한국어"></a>
 </p>
-<p align="center"><img src="https://img.shields.io/badge/Release-v1.2.6-7C6FF7?style=flat-square" alt="Version 1.2.6"> <img src="https://img.shields.io/badge/macOS-12%2B-111318?style=flat-square&logo=apple" alt="macOS 12+"> <img src="https://img.shields.io/badge/Windows-10%2F11_x64-111318?style=flat-square&logo=windows11" alt="Windows 10/11 x64"> <img src="https://img.shields.io/badge/Local--first-Data_stays_local-1F9D75?style=flat-square" alt="Local-first"></p>
-<p align="center"><a href="https://garrygit888.github.io/OrcaBox-Release/">Website</a> · <a href="https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.2.6">CNB Download</a> · <a href="https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.6">GitHub Download</a> · <a href="./OrcaBox-1.2.6-Release-Notes.md">Release Notes</a> · <a href="https://github.com/GarryGit888/OrcaBox-Release/issues">Feedback</a></p>
+<p align="center"><img src="https://img.shields.io/badge/Release-v1.2.7-7C6FF7?style=flat-square" alt="Version 1.2.7"> <img src="https://img.shields.io/badge/macOS-12%2B-111318?style=flat-square&logo=apple" alt="macOS 12+"> <img src="https://img.shields.io/badge/Windows-10%2F11_x64-111318?style=flat-square&logo=windows11" alt="Windows 10/11 x64"> <img src="https://img.shields.io/badge/Local--first-Data_stays_local-1F9D75?style=flat-square" alt="Local-first"></p>
+<p align="center"><a href="https://garrygit888.github.io/OrcaBox-Release/">Website</a> · <a href="https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.2.7">CNB Download</a> · <a href="https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.7">GitHub Download</a> · <a href="./OrcaBox-1.2.7-Release-Notes.EN.md">Release Notes</a> · <a href="https://github.com/GarryGit888/OrcaBox-Release/issues">Feedback</a></p>
 
 <img src="./assets/product-1.2.7-hero.webp" width="100%" alt="OrcaBox local asset library">
 
@@ -64,14 +64,14 @@ Capabilities vary by format, operating system, and local media runtime. Video pr
 3. Let the local index complete, then organize with search, filters, tags, and collections.
 4. Enable AI, browser capture, conversion, or editor integrations when needed.
 
-## Download OrcaBox 1.2.6
+## Download OrcaBox 1.2.7
 
 | Platform | Primary download | Mirror |
 | --- | --- | --- |
-| macOS Apple Silicon | [DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.6/OrcaBox-1.2.6-arm64.dmg) / [ZIP](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.6/OrcaBox-1.2.6-arm64-mac.zip) | [GitHub Release](https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.6) |
-| macOS Intel | [DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.6/OrcaBox-1.2.6-x64.dmg) / [ZIP](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.6/OrcaBox-1.2.6-x64-mac.zip) | [GitHub Release](https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.6) |
-| Windows x64 | [Installer](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.6/OrcaBox-1.2.6-win-x64-Setup.exe) / [Portable](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.6/OrcaBox-1.2.6-win-x64-Portable.exe) | [GitHub Release](https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.6) |
-| Chrome extension | [ZIP](https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.6/OrcaBox-Chrome-Extension-1.2.6.zip) | [Release page](https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.6) |
+| macOS Apple Silicon | [DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.7/OrcaBox-1.2.7-arm64.dmg) | [GitHub Release](https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.7) |
+| macOS Intel | [DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.7/OrcaBox-1.2.7-x64.dmg) | [GitHub Release](https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.7) |
+| Windows x64 | [Installer](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.7/OrcaBox-1.2.7-win-x64-Setup.exe) / [Portable](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.7/OrcaBox-1.2.7-win-x64-Portable.exe) | [GitHub Release](https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.7) |
+| Chrome extension | [ZIP](https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.7/OrcaBox-Chrome-Extension-1.2.7.zip) | [Release page](https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.7) |
 
 > Current macOS packages are unsigned test builds. On first launch, macOS may require approval in System Settings > Privacy & Security. Download only from the official release pages above and verify checksums when available.
 

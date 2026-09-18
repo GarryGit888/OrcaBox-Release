@@ -1,7 +1,425 @@
 {
-  "updatedAt": "2026-09-04",
-  "current": "1.2.6",
+  "updatedAt": "2026-09-18",
+  "current": "1.2.7",
   "releases": [
+    {
+      "version": "1.2.7",
+      "displayVersion": "1.2.7",
+      "date": "2026-09-18",
+      "tag": "v1.2.7",
+      "title": "OrcaBox 1.2.7",
+      "summary": "本版本围绕 新增功能、优化改进、问题修复 持续完善素材管理、媒体预览与跨平台使用体验。",
+      "generatedFrom": {
+        "baseRef": "v1.2.6",
+        "branch": "1.2.7",
+        "commitCount": 67,
+        "changedFileCount": 365
+      },
+      "categories": {
+        "features": [
+          {
+            "text": "add developer partner commercialization plan",
+            "commit": "83a8540",
+            "date": "2026-09-18"
+          },
+          {
+            "text": "refresh purple landing page",
+            "commit": "6fb9306",
+            "date": "2026-09-17"
+          },
+          {
+            "text": "Live 图卡片动效缩略图，对齐 GIF 悬停/自动播放语义",
+            "commit": "f563ba2",
+            "date": "2026-09-17"
+          },
+          {
+            "text": "优化本地模型管理并移除内置评测模型配置",
+            "commit": "ab225f8",
+            "date": "2026-09-14"
+          },
+          {
+            "text": "字幕规范单行与VAD切窗 任务中心AI进度统一 浏览器导入内容去重",
+            "commit": "7903fb9",
+            "date": "2026-09-13"
+          },
+          {
+            "text": "新增开发者介绍板块 页脚社交链接与产品截图更新",
+            "commit": "7ca1010",
+            "date": "2026-09-13"
+          },
+          {
+            "text": "为 AI 标签审核面板添加键盘快捷键",
+            "commit": "2151bcf",
+            "date": "2026-09-12"
+          },
+          {
+            "text": "修复损坏的依赖锁并新增 Electron 镜像下载脚本",
+            "commit": "e580cd5",
+            "date": "2026-09-12"
+          },
+          {
+            "text": "台词/导演板/AI 链路可靠性批次",
+            "commit": "55f05c5",
+            "date": "2026-09-12"
+          },
+          {
+            "text": "描述生成帧数选项与批量分析串行化",
+            "commit": "b6e5a5b",
+            "date": "2026-09-12"
+          },
+          {
+            "text": "文本文档选择复制与全局快捷键保护",
+            "commit": "d6b2964",
+            "date": "2026-09-12"
+          },
+          {
+            "text": "画布 AI 参考图与 AI 标签队列徽章修复",
+            "commit": "293b583",
+            "date": "2026-09-12"
+          },
+          {
+            "text": "接入 Silero VAD 语音活动检测以对齐转写分段",
+            "commit": "1e95ac2",
+            "date": "2026-09-11"
+          },
+          {
+            "text": "新增本地 Qwen3-ASR 语音识别与字幕编辑增强",
+            "commit": "bafe859",
+            "date": "2026-09-11"
+          },
+          {
+            "text": "台词工作台、Chinese-CLIP 语义索引与本地推理拆分",
+            "commit": "5ed9581",
+            "date": "2026-09-10"
+          },
+          {
+            "text": "新增派生产物热缓存与卷内镜像，文件缺失时透明回退",
+            "commit": "ad64868",
+            "date": "2026-09-08"
+          },
+          {
+            "text": "新增架构评审、深度代码审查与 AI 语义搜索方案文档",
+            "commit": "cd22fb3",
+            "date": "2026-09-05"
+          },
+          {
+            "text": "Windows decode fallback for HEIC/DDS/ICNS/TGA + async text thumbnails",
+            "commit": "fc85ce8",
+            "date": "2026-09-05"
+          },
+          {
+            "text": "port DaVinci Resolve integration and verify mpv runtime",
+            "commit": "3a2c870",
+            "date": "2026-09-05"
+          }
+        ],
+        "improvements": [
+          {
+            "text": "Improve media preview, playback, and cross-platform asset handling",
+            "commit": "8a46843",
+            "date": "2026-09-17"
+          },
+          {
+            "text": "EXIF 前缀读取与扩展导入索引进度",
+            "commit": "ae81bd0",
+            "date": "2026-09-12"
+          },
+          {
+            "text": "Improve asset preview and cross-platform playback behavior",
+            "commit": "a71952a",
+            "date": "2026-09-09"
+          },
+          {
+            "text": "Improve media preview and cross-platform playback behavior",
+            "commit": "ba1cd07",
+            "date": "2026-09-09"
+          },
+          {
+            "text": "Improve media preview handling and cross-platform playback behavior",
+            "commit": "a428439",
+            "date": "2026-09-06"
+          }
+        ],
+        "fixes": [
+          {
+            "text": "include multi-architecture update blockmaps",
+            "commit": "a511df5",
+            "date": "2026-09-18"
+          },
+          {
+            "text": "restore staged media runtime permissions",
+            "commit": "92946ad",
+            "date": "2026-09-18"
+          },
+          {
+            "text": "restore macOS Electron runtime before packaging",
+            "commit": "3d11b13",
+            "date": "2026-09-18"
+          },
+          {
+            "text": "complete optional CSS dependency graph",
+            "commit": "46a4003",
+            "date": "2026-09-18"
+          },
+          {
+            "text": "load staged libVLC during addon validation",
+            "commit": "ed4502e",
+            "date": "2026-09-18"
+          },
+          {
+            "text": "enforce Intel Electron runtime",
+            "commit": "e3b82d0",
+            "date": "2026-09-18"
+          },
+          {
+            "text": "restore Electron for Intel packaging",
+            "commit": "0d65bfb",
+            "date": "2026-09-18"
+          },
+          {
+            "text": "gate release upload through environment",
+            "commit": "34fb62d",
+            "date": "2026-09-18"
+          },
+          {
+            "text": "retain verified Windows release payload",
+            "commit": "17d41f6",
+            "date": "2026-09-18"
+          },
+          {
+            "text": "raise heap limit for Windows package build",
+            "commit": "dc90072",
+            "date": "2026-09-18"
+          },
+          {
+            "text": "install Electron runtime before Windows addon validation",
+            "commit": "1b954ab",
+            "date": "2026-09-18"
+          },
+          {
+            "text": "support flat llama runtime archives",
+            "commit": "f2b2e54",
+            "date": "2026-09-18"
+          },
+          {
+            "text": "preserve all llama runtime libraries",
+            "commit": "367ae58",
+            "date": "2026-09-18"
+          },
+          {
+            "text": "prepare Windows AI runtime",
+            "commit": "862b6ad",
+            "date": "2026-09-18"
+          },
+          {
+            "text": "allow Intel macOS package without arm runner",
+            "commit": "6448005",
+            "date": "2026-09-18"
+          },
+          {
+            "text": "renew pinned Windows FFmpeg runtime",
+            "commit": "5d7e471",
+            "date": "2026-09-18"
+          },
+          {
+            "text": "ship DMG-only macOS updates",
+            "commit": "e399b9e",
+            "date": "2026-09-18"
+          },
+          {
+            "text": "修复 Live 图点击后动效不显示的渲染层容错缺陷",
+            "commit": "42b8a89",
+            "date": "2026-09-17"
+          },
+          {
+            "text": "修复 libmpv 加载与打包资源，优化 macOS 图标",
+            "commit": "e4c8829",
+            "date": "2026-09-16"
+          },
+          {
+            "text": "打包版媒体宿主优先使用应用自带二进制",
+            "commit": "649d6c8",
+            "date": "2026-09-12"
+          },
+          {
+            "text": "audio retention for fallback path, shared Lottie cache, region error boundaries",
+            "commit": "7750bc6",
+            "date": "2026-09-05"
+          },
+          {
+            "text": "corruption recovery, credential hygiene, query hardening",
+            "commit": "ce635aa",
+            "date": "2026-09-05"
+          },
+          {
+            "text": "converge IPC entry points (plugins, LUT, diagnostics, HEIC)",
+            "commit": "c444a17",
+            "date": "2026-09-05"
+          },
+          {
+            "text": "per-launch token for asset:// and plugin:// protocols",
+            "commit": "450a42d",
+            "date": "2026-09-05"
+          },
+          {
+            "text": "gate debounced handlers on root generation, not watcher presence",
+            "commit": "3bb1e83",
+            "date": "2026-09-05"
+          },
+          {
+            "text": "hygiene fixes from the 1.2.6 deep review",
+            "commit": "f8c2d49",
+            "date": "2026-09-05"
+          },
+          {
+            "text": "exception-safe background work across library switches",
+            "commit": "9460c58",
+            "date": "2026-09-05"
+          },
+          {
+            "text": "export libraries through SQLite's online backup API",
+            "commit": "432c4ca",
+            "date": "2026-09-05"
+          },
+          {
+            "text": "reclaim preview artifacts on every delete path and speed up source-root removal",
+            "commit": "1d6e7de",
+            "date": "2026-09-05"
+          },
+          {
+            "text": "release preview-owned audio snapshot on teardown",
+            "commit": "71fcae8",
+            "date": "2026-09-05"
+          },
+          {
+            "text": "SSRF-guard main-process fetches of web-supplied URLs",
+            "commit": "6962a1a",
+            "date": "2026-09-05"
+          },
+          {
+            "text": "survive selection-sized queries by capping binds",
+            "commit": "176e7b9",
+            "date": "2026-09-05"
+          },
+          {
+            "text": "require explicit install consent and pin Windows FFmpeg runtime",
+            "commit": "6eacca0",
+            "date": "2026-09-05"
+          }
+        ],
+        "engineering": [
+          {
+            "text": "publish v1.2.7",
+            "commit": "45e05a6",
+            "date": "2026-09-18"
+          },
+          {
+            "text": "补充 AI 分析徽章与选区清空解耦的回归测试",
+            "commit": "3f32245",
+            "date": "2026-09-12"
+          },
+          {
+            "text": "stop tracking local Mimosa scan state",
+            "commit": "9c99528",
+            "date": "2026-09-09"
+          },
+          {
+            "text": "ignore local eval model weight binaries",
+            "commit": "d04c77f",
+            "date": "2026-09-08"
+          },
+          {
+            "text": "switch NSIS installer to assisted wizard with selectable install path",
+            "commit": "2e141b0",
+            "date": "2026-09-08"
+          },
+          {
+            "text": "enforce public channel synchronization",
+            "commit": "fbf2f21",
+            "date": "2026-09-05"
+          },
+          {
+            "text": "drop unmaintained linux packaging target",
+            "commit": "4aff9d5",
+            "date": "2026-09-05"
+          },
+          {
+            "text": "mock the online backup API in the export test",
+            "commit": "2b77e25",
+            "date": "2026-09-05"
+          },
+          {
+            "text": "branch 1.2.7 and bump version to 1.2.7",
+            "commit": "ed9219a",
+            "date": "2026-09-05"
+          },
+          {
+            "text": "finalize v1.2.6 platform assets",
+            "commit": "c1f14f9",
+            "date": "2026-09-05"
+          }
+        ]
+      },
+      "changedAreas": [
+        {
+          "area": "src",
+          "count": 261
+        },
+        {
+          "area": "website",
+          "count": 30
+        },
+        {
+          "area": "docs",
+          "count": 18
+        },
+        {
+          "area": "scripts",
+          "count": 17
+        },
+        {
+          "area": "doc",
+          "count": 10
+        },
+        {
+          "area": "resources",
+          "count": 6
+        },
+        {
+          "area": ".github",
+          "count": 3
+        },
+        {
+          "area": "plugins-dev",
+          "count": 3
+        },
+        {
+          "area": "extensions",
+          "count": 2
+        },
+        {
+          "area": "native",
+          "count": 2
+        },
+        {
+          "area": ".gitignore",
+          "count": 1
+        },
+        {
+          "area": ".v2c",
+          "count": 1
+        }
+      ],
+      "links": {
+        "cnbRelease": "https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.2.7",
+        "githubRelease": "https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.7",
+        "macArm64Dmg": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.7/OrcaBox-1.2.7-arm64.dmg",
+        "macX64Dmg": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.7/OrcaBox-1.2.7-x64.dmg",
+        "windowsInstaller": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.7/OrcaBox-1.2.7-win-x64-Setup.exe",
+        "windowsPortable": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.7/OrcaBox-1.2.7-win-x64-Portable.exe",
+        "browserExtension": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.7/OrcaBox-Chrome-Extension-1.2.7.zip"
+      }
+    },
     {
       "version": "1.2.6",
       "displayVersion": "1.2.6",
