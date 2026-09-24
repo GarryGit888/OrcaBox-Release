@@ -8,7 +8,7 @@
       "date": "2026-09-24",
       "tag": "v1.2.8",
       "title": "OrcaBox 1.2.8",
-      "summary": "本版本围绕 新增功能、优化改进、问题修复 持续完善素材管理、媒体预览与跨平台使用体验。",
+      "summary": "macOS 1.2.8 现已发布，包含 Apple Silicon 与 Intel 安装包；Windows x64 安装包准备中，稍后同步更新。",
       "generatedFrom": {
         "baseRef": "v1.2.7",
         "branch": "1.2.8",
@@ -175,8 +175,8 @@
         "githubRelease": "https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.8",
         "macArm64Dmg": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.8/OrcaBox-1.2.8-arm64.dmg",
         "macX64Dmg": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.8/OrcaBox-1.2.8-x64.dmg",
-        "windowsInstaller": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.8/OrcaBox-1.2.8-win-x64-Setup.exe",
-        "windowsPortable": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.8/OrcaBox-1.2.8-win-x64-Portable.exe",
+        "windowsInstaller": "https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.8",
+        "windowsPortable": "https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.8",
         "browserExtension": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.8/OrcaBox-Chrome-Extension-1.2.8.zip"
       }
     },
