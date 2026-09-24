@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "mimosa-hook-status/v1",
+  "recordedAt": "2026-09-13T01:05:16.006Z",
+  "sessionId": "sess_62aa786e-44f2-4ea5-9a0c-bc2bfd9fc132",
+  "event": "PostToolUse",
+  "toolName": "Edit",
+  "file": "/Users/wukaiyu/.zcode/cli/memories/projects/orcabox-90c37935dfa0078b/memory/MEMORY.md",
+  "outcome": "clear",
+  "coverage": "complete",
+  "findingCount": 0,
+  "durationMs": 3,
+  "hostState": "hook_complete",
+  "reportHint": ".mimosa/reports/"
+}

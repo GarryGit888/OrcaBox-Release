@@ -1,7 +1,185 @@
 {
-  "updatedAt": "2026-09-18",
-  "current": "1.2.7",
+  "updatedAt": "2026-09-24",
+  "current": "1.2.8",
   "releases": [
+    {
+      "version": "1.2.8",
+      "displayVersion": "1.2.8",
+      "date": "2026-09-24",
+      "tag": "v1.2.8",
+      "title": "OrcaBox 1.2.8",
+      "summary": "macOS 1.2.8 现已发布，包含 Apple Silicon 与 Intel 安装包；Windows x64 安装包准备中，稍后同步更新。",
+      "generatedFrom": {
+        "baseRef": "v1.2.7",
+        "branch": "1.2.8",
+        "commitCount": 19,
+        "changedFileCount": 183
+      },
+      "categories": {
+        "features": [
+          {
+            "text": "add official user guide and release sync checks",
+            "commit": "3b6eafa",
+            "date": "2026-09-23"
+          },
+          {
+            "text": "organize DaVinci media pool imports",
+            "commit": "b1bf528",
+            "date": "2026-09-23"
+          },
+          {
+            "text": "新增批量音频识别与标签写入、BPM 数值列及存量标签清洗",
+            "commit": "d37e82b",
+            "date": "2026-09-21"
+          },
+          {
+            "text": "支持音频素材的本地音频分析与音乐画像",
+            "commit": "a2dba23",
+            "date": "2026-09-20"
+          },
+          {
+            "text": "网格滚轮缩放平滑过渡并支持媒体类型感知的后台分析调度",
+            "commit": "1fd6199",
+            "date": "2026-09-19"
+          }
+        ],
+        "improvements": [
+          {
+            "text": "Improve asset preview and playback workflows",
+            "commit": "fe8e868",
+            "date": "2026-09-22"
+          },
+          {
+            "text": "Improve image preview transitions and adjacent asset prefetching",
+            "commit": "68c92da",
+            "date": "2026-09-22"
+          },
+          {
+            "text": "Improve asset previews and cross-platform playback behavior",
+            "commit": "bec5f55",
+            "date": "2026-09-22"
+          },
+          {
+            "text": "Improve asset preview and desktop workflows",
+            "commit": "5d64e9e",
+            "date": "2026-09-20"
+          },
+          {
+            "text": "移除文件夹/合集卡片内素材封面弹出动效",
+            "commit": "bca0ab2",
+            "date": "2026-09-20"
+          },
+          {
+            "text": "Improve media preview and playback behavior",
+            "commit": "3452ebf",
+            "date": "2026-09-18"
+          },
+          {
+            "text": "Improve media previews and playback synchronization",
+            "commit": "b828a82",
+            "date": "2026-09-18"
+          }
+        ],
+        "fixes": [
+          {
+            "text": "preserve Xiaohongshu note content during browser imports",
+            "commit": "8a3a71a",
+            "date": "2026-09-23"
+          },
+          {
+            "text": "fit native video viewport against live decoder geometry",
+            "commit": "9d9698a",
+            "date": "2026-09-19"
+          },
+          {
+            "text": "stabilize Windows settings and local model loading",
+            "commit": "b4c1ab9",
+            "date": "2026-09-18"
+          },
+          {
+            "text": "publish CNB through native tags",
+            "commit": "a233c95",
+            "date": "2026-09-18"
+          }
+        ],
+        "engineering": [
+          {
+            "text": "align DaVinci Windows audit and feedback listeners",
+            "commit": "dca620d",
+            "date": "2026-09-23"
+          },
+          {
+            "text": "start 1.2.8 development",
+            "commit": "b3e5b70",
+            "date": "2026-09-18"
+          },
+          {
+            "text": "synchronize multilingual download channels",
+            "commit": "3817402",
+            "date": "2026-09-18"
+          }
+        ]
+      },
+      "changedAreas": [
+        {
+          "area": "src",
+          "count": 149
+        },
+        {
+          "area": "doc",
+          "count": 7
+        },
+        {
+          "area": "scripts",
+          "count": 7
+        },
+        {
+          "area": "website",
+          "count": 7
+        },
+        {
+          "area": ".github",
+          "count": 2
+        },
+        {
+          "area": "extensions",
+          "count": 2
+        },
+        {
+          "area": "resources",
+          "count": 2
+        },
+        {
+          "area": ".githooks",
+          "count": 1
+        },
+        {
+          "area": ".workbuddy",
+          "count": 1
+        },
+        {
+          "area": "AGENTS.md",
+          "count": 1
+        },
+        {
+          "area": "docs",
+          "count": 1
+        },
+        {
+          "area": "native",
+          "count": 1
+        }
+      ],
+      "links": {
+        "cnbRelease": "https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.2.8",
+        "githubRelease": "https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.8",
+        "macArm64Dmg": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.8/OrcaBox-1.2.8-arm64.dmg",
+        "macX64Dmg": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.8/OrcaBox-1.2.8-x64.dmg",
+        "windowsInstaller": "https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.8",
+        "windowsPortable": "https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.2.8",
+        "browserExtension": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.8/OrcaBox-Chrome-Extension-1.2.8.zip"
+      }
+    },
     {
       "version": "1.2.7",
       "displayVersion": "1.2.7",

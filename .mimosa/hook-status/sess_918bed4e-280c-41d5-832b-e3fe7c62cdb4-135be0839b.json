@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "mimosa-hook-status/v1",
+  "recordedAt": "2026-09-12T16:49:35.002Z",
+  "sessionId": "sess_918bed4e-280c-41d5-832b-e3fe7c62cdb4",
+  "event": "PostToolUse",
+  "toolName": "Write",
+  "file": "/Users/wukaiyu/Documents/03 Coding/OrcaBox/tmp/check-orcabox-site.py",
+  "outcome": "inconclusive",
+  "coverage": "partial",
+  "findingCount": 0,
+  "durationMs": 3,
+  "hostState": "hook_complete",
+  "reportHint": ".mimosa/reports/"
+}
