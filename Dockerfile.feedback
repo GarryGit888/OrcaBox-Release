@@ -1,0 +1,20 @@
+FROM node:20-alpine
+
+WORKDIR /app
+
+COPY website/server.mjs ./server.mjs
+COPY website/feedback-format.mjs ./feedback-format.mjs
+COPY website/index.html ./index.html
+COPY website/releases.html ./releases.html
+COPY website/docs.html ./docs.html
+COPY website/releases.json ./releases.json
+COPY website/robots.txt ./robots.txt
+COPY website/sitemap.xml ./sitemap.xml
+COPY website/assets ./assets
+
+ENV NODE_ENV=production
+ENV PORT=10000
+
+EXPOSE 10000
+
+CMD ["node", "server.mjs"]

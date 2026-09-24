@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08090f">
+  <meta name="description" content="OrcaBox 官方文档：从创建资料库、导入素材到多格式预览、搜索整理、网页收藏、AI 与插件工作流的完整使用说明。">
+  <link rel="canonical" href="https://orcabox.app/docs.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="OrcaBox 文档 · 使用说明">
+  <meta property="og:description" content="了解 OrcaBox 的资料库、素材预览、搜索整理、网页收藏和创作工作流。">
+  <meta property="og:url" content="https://orcabox.app/docs.html">
+  <meta property="og:image" content="https://orcabox.app/assets/og-image.jpg">
+  <title>文档 · OrcaBox 使用说明</title>
+  <link rel="icon" type="image/png" href="assets/orcabox-icon-192.png">
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg: #08090f;
+      --surface: #10131c;
+      --line: #292d3a;
+      --line-soft: #1e222d;
+      --text: #eef0f6;
+      --muted: #a7adbc;
+      --quiet: #747d91;
+      --accent: #b9a3ff;
+      --accent-bg: #211a38;
+      --green: #a4d5c0;
+      --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Microsoft YaHei", sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { background: var(--bg); scroll-behavior: smooth; }
+    body { margin: 0; color: var(--text); background: var(--bg); font: 15px/1.75 var(--font); }
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+    button { cursor: pointer; }
+    img { display: block; max-width: 100%; height: auto; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+    ::selection { background: #765bb0; color: #fff; }
+    .topbar { position: sticky; top: 0; z-index: 20; background: rgba(8,9,15,.92); backdrop-filter: blur(16px); border-bottom: 1px solid var(--line-soft); }
+    .topbar-inner { max-width: 1320px; height: 62px; margin: auto; padding: 0 32px; display: flex; align-items: center; gap: 30px; }
+    .brand { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; white-space: nowrap; }
+    .brand img { width: 28px; height: 28px; border-radius: 7px; }
+    .brand span { color: var(--quiet); font-weight: 400; }
+    .topnav { margin-left: auto; display: flex; align-items: center; gap: 26px; font-size: 13px; color: var(--muted); }
+    .topnav a:hover, .topnav .current { color: var(--text); }
+    .topnav .download { padding: 6px 12px; border: 1px solid #59477e; border-radius: 6px; color: #e2d5ff; }
+    .topnav .download:hover { background: var(--accent-bg); }
+    .intro { border-bottom: 1px solid var(--line-soft); }
+    .intro-inner { max-width: 1320px; margin: auto; padding: 52px 32px 42px; display: grid; grid-template-columns: minmax(0, 1fr) 350px; gap: 60px; align-items: end; }
+    .eyebrow { color: var(--accent); font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { margin: 10px 0 14px; font-size: clamp(36px, 4.5vw, 62px); line-height: 1.15; letter-spacing: 0; }
+    .intro p { max-width: 65ch; margin: 0; color: var(--muted); font-size: 16px; }
+    .version-note { margin-top: 20px; color: var(--quiet); font-size: 12px; }
+    .version-note a { color: var(--accent); }
+    .search-wrap { position: relative; }
+    .search-wrap svg { position: absolute; top: 50%; left: 14px; transform: translateY(-50%); color: var(--quiet); }
+    #doc-search { width: 100%; height: 46px; padding: 0 42px; border: 1px solid #3a3e4b; border-radius: 6px; outline: none; background: var(--surface); color: var(--text); font-size: 14px; }
+    #doc-search:focus { border-color: var(--accent); }
+    #doc-search::placeholder { color: var(--quiet); }
+    .clear-search { position: absolute; top: 9px; right: 8px; width: 28px; height: 28px; border: 0; background: transparent; color: var(--muted); font-size: 18px; line-height: 1; }
+    .clear-search[hidden] { display: none; }
+    .search-results { position: absolute; top: calc(100% + 6px); left: 0; right: 0; z-index: 30; max-height: 360px; overflow-y: auto; padding: 5px; background: #151824; border: 1px solid var(--line); border-radius: 6px; box-shadow: 0 16px 45px #0009; }
+    .search-results[hidden] { display: none; }
+    .search-results a { display: block; padding: 8px 10px; border-radius: 4px; font-size: 13px; }
+    .search-results a:hover, .search-results a:focus-visible { background: var(--accent-bg); }
+    .search-results small { display: block; color: var(--quiet); font-size: 11px; line-height: 1.5; }
+    .search-empty { padding: 12px; color: var(--muted); font-size: 13px; }
+    .layout { max-width: 1320px; margin: auto; padding: 0 32px 100px; display: grid; grid-template-columns: 224px minmax(0, 760px); gap: clamp(38px, 6vw, 100px); }
+    .sidebar { position: sticky; top: 88px; align-self: start; max-height: calc(100vh - 108px); overflow-y: auto; padding: 30px 0; font-size: 13px; scrollbar-width: thin; scrollbar-color: transparent transparent; }
+    .sidebar:hover { scrollbar-color: transparent transparent; }
+    .sidebar h2 { margin: 0 0 8px 11px; color: var(--quiet); font-size: 11px; font-weight: 600; letter-spacing: .06em; }
+    .sidebar h2:not(:first-child) { margin-top: 26px; }
+    .sidebar a { display: block; padding: 5px 11px; border-left: 2px solid transparent; color: var(--muted); line-height: 1.5; }
+    .sidebar a:hover, .sidebar a.active { color: var(--text); background: #171723; border-left-color: var(--accent); }
+    .sidebar .sub-link { display: none; padding-left: 24px; font-size: 12px; color: var(--quiet); }
+    .sidebar .sub-link.is-open { display: block; }
+    html, .sidebar, .search-results { scrollbar-width: thin; scrollbar-color: transparent transparent; }
+    html.is-scrolling, .sidebar.is-scrolling, .search-results.is-scrolling { scrollbar-color: #8874b8 transparent; }
+    html::-webkit-scrollbar, .sidebar::-webkit-scrollbar, .search-results::-webkit-scrollbar { width: 4px; height: 4px; }
+    html::-webkit-scrollbar-thumb, .sidebar::-webkit-scrollbar-thumb, .search-results::-webkit-scrollbar-thumb { background: transparent; border-radius: 4px; }
+    html.is-scrolling::-webkit-scrollbar-thumb, .sidebar.is-scrolling::-webkit-scrollbar-thumb, .search-results.is-scrolling::-webkit-scrollbar-thumb { background: #8874b8; }
+    .content { min-width: 0; }
+    .doc-section { padding-top: 56px; scroll-margin-top: 74px; }
+    .doc-section + .doc-section { margin-top: 40px; border-top: 1px solid var(--line-soft); }
+    .section-index { color: var(--accent); font: 600 11px/1.5 ui-monospace, monospace; letter-spacing: .08em; }
+    .content h2 { margin: 6px 0 12px; font-size: 29px; line-height: 1.3; }
+    .content h3 { margin: 30px 0 8px; font-size: 18px; line-height: 1.4; }
+    .content h3[id] { scroll-margin-top: 82px; }
+    .content p { margin: 8px 0 16px; color: var(--muted); }
+    .content strong { color: var(--text); }
+    .content a:not(.inline-button) { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+    .content ul, .content ol { padding-left: 22px; margin: 12px 0 20px; color: var(--muted); }
+    .content li { padding-left: 3px; margin: 7px 0; }
+    .content li::marker { color: var(--accent); }
+    .lead { font-size: 16px; }
+    .callout { margin: 20px 0; padding: 14px 18px; border-left: 2px solid var(--accent); background: #171625; color: var(--muted); }
+    .callout p { margin: 0; }
+    .callout.warning { border-color: #e5b576; background: #231e1b; }
+    .doc-shot { width: 100%; height: auto; object-fit: contain; margin: 24px 0 8px; border: 1px solid var(--line); border-radius: 6px; }
+    .caption { color: var(--quiet); font-size: 12px; }
+    .inline-button { display: inline-flex; align-items: center; gap: 8px; margin-top: 12px; padding: 8px 14px; border: 1px solid #59477e; border-radius: 6px; color: #e2d5ff; font-size: 13px; }
+    .inline-button:hover { background: var(--accent-bg); }
+    .faq { border-top: 1px solid var(--line-soft); }
+    .faq details { border-bottom: 1px solid var(--line-soft); padding: 15px 0; }
+    .faq summary { cursor: pointer; font-weight: 600; }
+    .faq details p { margin: 10px 0 0; }
+    .bottom { border-top: 1px solid var(--line-soft); color: var(--quiet); font-size: 12px; }
+    .bottom-inner { max-width: 1320px; margin: auto; padding: 26px 32px; display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .bottom a { color: var(--muted); margin-left: 18px; }
+    .bottom a:hover { color: var(--text); }
+    @media (max-width: 900px) {
+      .intro-inner { grid-template-columns: 1fr; gap: 24px; }
+      .search-wrap { max-width: 520px; }
+      .layout { grid-template-columns: 180px minmax(0, 1fr); gap: 28px; }
+    }
+    @media (max-width: 680px) {
+      .topbar-inner { padding: 0 18px; gap: 12px; }
+      .topnav { gap: 12px; font-size: 12px; }
+      .topnav .updates { display: none; }
+      .intro-inner { padding: 38px 20px 32px; }
+      .layout { display: block; padding: 0 20px 72px; }
+      .sidebar { position: static; max-height: none; display: flex; gap: 8px; overflow-x: auto; padding: 14px 0; border-bottom: 1px solid var(--line-soft); white-space: nowrap; }
+      .sidebar h2 { display: none; }
+      .sidebar a { display: inline-block; padding: 6px 10px; border: 1px solid var(--line); border-radius: 4px; }
+      .sidebar a.active { border-color: var(--accent); }
+      .sidebar .sub-link.is-open { display: none; }
+      .doc-section { padding-top: 42px; }
+      .doc-section + .doc-section { margin-top: 24px; }
+      .bottom-inner { padding: 24px 20px; }
+      .bottom a:first-child { margin-left: 0; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html" aria-label="OrcaBox 官网"><img src="assets/orcabox-icon-192.png" alt=""><b>OrcaBox</b><span>/ 文档</span></a>
+      <nav class="topnav" aria-label="站点导航">
+        <a class="current" href="docs.html" aria-current="page">文档</a>
+        <a class="updates" href="releases.html">更新记录</a>
+        <a href="index.html">官网</a>
+        <a class="download" href="index.html#download">下载</a>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <div class="intro">
+      <div class="intro-inner">
+        <div>
+          <span class="eyebrow">OrcaBox / Guide</span>
+          <h1>文档</h1>
+          <p>从建立第一个资料库，到检索、预览、整理和取用素材。按你正在做的事查阅，不必从头读到尾。</p>
+          <div class="version-note">面向 macOS 与 Windows 桌面版 · <span id="version-label">以当前公开版本为准</span> · <a href="releases.html">查看版本变更</a></div>
+        </div>
+        <div class="search-wrap" role="search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg>
+          <input id="doc-search" type="search" placeholder="搜索文档，例如：标签、视频、插件" aria-label="搜索文档" autocomplete="off" aria-controls="search-results" aria-expanded="false">
+          <button class="clear-search" id="clear-search" type="button" aria-label="清除搜索" hidden>×</button>
+          <div class="search-results" id="search-results" role="listbox" hidden></div>
+        </div>
+      </div>
+    </div>
+    <div class="layout">
+      <nav class="sidebar" aria-label="文档目录">
+        <h2>开始使用</h2>
+        <a href="#overview">产品概览</a><a href="#install">下载与安装</a><a href="#start">首次建立资料库</a><a href="#browse">浏览与导入</a>
+        <h2>功能模块</h2>
+        <a href="#search">搜索与筛选</a><a href="#preview">多格式预览</a><a href="#organize">标签与合集</a><a href="#sources">来源目录</a><a href="#web">网页收藏与采集</a><a href="#ai">本地 AI</a><a href="#plugins">插件与创作工具</a><a href="#tasks">任务与审查</a><a href="#settings">设置与快捷键</a>
+        <h2>参考</h2>
+        <a href="#faq">常见问题</a><a href="#updates">版本与反馈</a>
+      </nav>
+      <div class="content">
+        <section class="doc-section" id="overview" data-search="介绍 产品 本地 素材">
+          <span class="section-index">01 / 开始使用</span><h2>产品概览</h2>
+          <p class="lead">OrcaBox 是面向创作者的本地素材管理工具。它把分散在磁盘、项目文件夹和网页中的内容汇总到一个资料库里，方便预览、检索、分类和送往其他创作软件。</p>
+          <h3 id="overview-library">资料库与原文件</h3>
+          <p>资料库保存<strong>索引、缩略图、标签等管理数据</strong>；添加来源文件夹时不会把原文件复制到资料库。需要直接导入或移动文件时，请留意相应操作的目标目录与确认提示。</p>
+          <h3 id="overview-workspace">主界面分区</h3>
+          <p>左侧切换来源、合集和管理模块；中间浏览素材；点选后在右侧查看详情。双击素材可打开独立预览。</p>
+          <img class="doc-shot" src="assets/product-1.2.7-hero.webp" alt="OrcaBox 素材库界面，左侧为来源导航，中间为素材网格" width="2560" height="1641" loading="lazy">
+          <div class="caption">主界面：左侧切换来源与管理模块，中间浏览素材，右侧查看所选素材详情。</div>
+        </section>
+        <section class="doc-section" id="install" data-search="安装 下载 mac windows 更新">
+          <span class="section-index">02 / 开始使用</span><h2>下载与安装</h2>
+          <h3 id="install-download">选择安装包</h3>
+          <ol>
+            <li>在<a href="index.html#download">官网下载区</a>选择适合设备的安装包：macOS Apple Silicon / Intel，或 Windows x64 安装器 / 免安装版。</li>
+            <li>从 CNB 主下载源获取文件；遇到下载问题可使用 GitHub 备用源。</li>
+            <li>安装并启动 OrcaBox。首次使用按下一节建立资料库；已有资料库则选择“打开已有资料库”。</li>
+          </ol>
+          <h3 id="install-update">检查更新</h3>
+          <div class="callout"><p>更新入口位于应用内“设置 → 概览 → 关于与更新”，也可从右下角“帮助与支持”检查更新。macOS 更新通过下载 DMG 手动安装；Windows 按应用内更新提示操作。</p></div>
+        </section>
+        <section class="doc-section" id="start" data-search="新建 创建 资料库 来源 文件夹 扫描 索引">
+          <span class="section-index">03 / 开始使用</span><h2>首次建立资料库</h2>
+          <h3 id="start-create">创建独立资料库</h3>
+          <p>先准备一个独立的空文件夹，存放索引、缩略图和缓存；不要选磁盘根目录或原始素材文件夹。在欢迎界面点“创建资料库”，指定这个空文件夹。已有资料库则点“打开已有资料库”，选择包含 <code>data/library.db</code> 的目录。</p>
+          <h3 id="start-sources">添加素材来源</h3>
+          <p>从左侧“来源文件夹”添加存放图片、视频、音频或工程文件的目录，可以添加多个磁盘上的路径。此时建立索引，不复制原文件。</p>
+          <h3 id="start-scan">等待扫描与切换资料库</h3>
+          <p>后台扫描后会显示素材、元数据和缩略图。首次索引较慢时，可先查看任务状态；左上角的资料库名称可用于切换资料库。</p>
+          <div class="callout warning"><p>切换资料库只切换当前索引，不移动原始素材。移动磁盘未连接时，先重新连接来源磁盘，再打开资料库或刷新来源。</p></div>
+        </section>
+        <section class="doc-section" id="browse" data-search="网格 列表 排序 拖拽 导出 批量 右键">
+          <span class="section-index">04 / 开始使用</span><h2>浏览、选择与导入</h2>
+          <h3 id="browse-layout">浏览方式</h3>
+          <p>“全部素材”汇总各来源；左侧来源树可聚焦具体目录。顶部可切换网格/列表、布局密度、排序、筛选和分组。图片卡片按原图方向和宽高比显示，长图不会被裁切或压缩变形。</p>
+          <h3 id="browse-select">选择与批量操作</h3>
+          <p>点选素材查看详情；多选后底部出现批量工具栏，可统一收藏、标记已处理、添加标签或合集、批量重命名、复制名称/路径、导出、刷新缩略图或移入回收站。先核对选中数量；重命名与移入回收站会影响原文件。</p>
+          <img class="doc-shot" src="assets/docs-batch-toolbar.png" alt="选中多项素材后出现的底部批量操作工具栏" width="1852" height="738" loading="lazy">
+          <div class="caption">底部批量工具栏：先确认选中数量，再执行对应操作。</div>
+          <h3 id="browse-use">预览与取用</h3>
+          <p>双击打开独立预览。右键菜单可按素材类型提供复制路径、在其他应用打开、导出、重命名等操作；也可按目标软件支持情况拖拽素材。macOS 可使用“共享”打开系统共享面板；Windows 版该入口目前标记为“开发中”，暂时请使用“复制到剪贴板”后粘贴到目标应用。</p>
+          <h3 id="browse-import">导入与移动文件</h3>
+          <p>添加来源目录只建立索引。把本地文件导入已有来源，或移动素材到其他目录，是文件操作；执行前核对目标路径、同名文件处理和确认提示。</p>
+        </section>
+        <section class="doc-section" id="search" data-search="检索 关键词 词库 过滤 颜色 智能文件夹">
+          <span class="section-index">05 / 功能模块</span><h2>搜索与筛选</h2>
+          <h3 id="search-keywords">关键词与条件</h3>
+          <p>在顶部搜索框查找文件名、标签和素材信息；输入 <strong>/</strong> 可打开词库。筛选面板可按类型、扩展名、收藏、评分、颜色和标签缩小范围，清空条件后恢复完整结果。</p>
+          <h3 id="search-color">按颜色查找</h3>
+          <p>图片、GIF 或视频代表帧完成颜色分析后，可在颜色面板选择色相、亮度区域或输入色值，查找相近颜色。</p>
+          <img class="doc-shot" src="assets/docs-color-filter.png" alt="OrcaBox 颜色筛选面板" width="788" height="952" loading="lazy">
+          <div class="caption">颜色筛选：选择色相与亮度区域，或输入具体色值。</div>
+          <h3 id="search-saved">保存为智能文件夹</h3>
+          <p>设好搜索词和筛选条件后，在搜索中心使用“保存当前搜索”。保存的搜索会作为智能文件夹供以后调用；改变条件时请重新保存需要保留的组合。</p>
+        </section>
+        <section class="doc-section" id="preview" data-search="图片 视频 音频 波形 lottie 3d 字体 文档 pdf psd">
+          <span class="section-index">06 / 功能模块</span><h2>多格式预览</h2>
+          <p>双击素材进入预览；是否可用以及具体控制项取决于格式和系统环境。下面是主要预览类型：</p>
+          <h3 id="preview-images">图片与设计文件</h3>
+          <p>打开 PNG、JPEG、WebP、AVIF、HEIC、PSD、TIFF 等图像，可按格式查看缩放、色板、直方图及元数据；部分图片还提供裁剪和处理工具。文件损坏或系统不支持解码时，预览可能不可用。</p>
+          <h3 id="preview-video">视频与时间点标记</h3>
+          <p>视频预览直接使用原文件或系统/原生媒体运行时；可查看胶片条、将当前帧设为封面，并在播放位置添加标记，从标记列表跳回对应时间码。不会为播放生成视频代理文件；具体编解码能力取决于系统与可用运行时。</p>
+          <img class="doc-shot" src="assets/docs-video-markers.png" alt="视频播放器中显示多个带时间码的标记" width="1532" height="1152" loading="lazy">
+          <div class="caption">标记列表保存时间码，适合回到要复查的镜头。</div>
+          <h3 id="preview-audio">音频波形与试听</h3>
+          <p>音频网格显示波形；点选后可在卡片和右侧详情试听，双击进入独立预览。已选音频播放时，鼠标离开卡片不会自动暂停；切换这些预览区域会延续播放位置，不会同时播放多个声音。显式暂停、取消选择或切换播放对象时停止。</p>
+          <img class="doc-shot" src="assets/docs-audio-grid.png" alt="音频素材网格中的波形与右侧详情" width="4514" height="2884" loading="lazy">
+          <div class="caption">音频网格：波形帮助快速辨认节奏与声音片段。</div>
+          <h3 id="preview-motion">Lottie 动效</h3>
+          <p>JSON 和 .lottie 动效在可见素材网格中实时播放；打开独立预览可调整播放速度和循环。动画能否完整显示取决于资源内容。</p>
+          <h3 id="preview-models">3D 模型</h3>
+          <p>GLB、GLTF、OBJ、FBX、USDZ 等模型可交互查看。材质、纹理和外部依赖是否齐全，取决于模型文件及其关联资源。</p>
+          <h3 id="preview-fonts">字体预览</h3>
+          <p>打开字体素材可切换预览、长文本、字形表与元数据，核对字形效果和文件信息后再用于设计项目。</p>
+          <img class="doc-shot" src="assets/docs-font-preview.png" alt="字体预览面板展示不同字号的字形与右侧字体信息" width="3436" height="2086" loading="lazy">
+          <div class="caption">字体预览：同一面板中查看字形、字号和基础信息。</div>
+          <h3 id="preview-documents">文档与代码</h3>
+          <p>PDF、文本、Markdown 和代码文件可从素材列表进入查看；可读内容与显示方式随格式而异，需要修改源文件时请在相应编辑器中打开。</p>
+        </section>
+        <section class="doc-section" id="organize" data-search="收藏 评分 标签 合集 备注 重复 文件 回收站">
+          <span class="section-index">07 / 功能模块</span><h2>标签、合集与素材整理</h2>
+          <h3 id="organize-metadata">收藏、标签与备注</h3>
+          <p>选中素材后，可在详情中设置收藏、评分、标签和备注；多选适合统一添加标签或收藏。“标签管理”集中维护已有标签。</p>
+          <h3 id="organize-collections">合集</h3>
+          <p>把不同来源的素材放进同一合集，方便按项目查看，不要求移动原文件。可从左侧合集入口回到已整理的内容。</p>
+          <img class="doc-shot" src="assets/product-1.2.1-collections.webp" alt="OrcaBox 合集与来源目录视图" width="1800" height="843" loading="lazy">
+          <h3 id="organize-views">常用整理视图</h3>
+          <p>左侧的收藏、最近新增和重复文件等入口，分别帮助查找常用、近期和可能重复的素材；处理重复项前请逐个核对文件。</p>
+          <h3 id="organize-bin">回收站与恢复</h3>
+          <p>移入回收站会把原文件放入对应来源根目录下的 OrcaBox 隐藏回收目录，不只是移除索引。到回收站可恢复所选、永久删除或清空；永久删除前请确认要保留的文件。</p>
+        </section>
+        <section class="doc-section" id="sources" data-search="目录 来源 磁盘 重新扫描 丢失 锁定 自动标签">
+          <span class="section-index">08 / 功能模块</span><h2>来源目录管理</h2>
+          <h3 id="sources-tree">连接与浏览目录</h3>
+          <p>“来源文件夹”可以连接多个磁盘和项目路径。展开左侧目录树，进入子文件夹浏览；资料库数据与这些原始目录分开保存。</p>
+          <h3 id="sources-manage">目录菜单与自动标签</h3>
+          <p>右键来源或子目录可按位置使用自动标签、移动目录、隐藏或锁定等管理项。设置自动标签后，该目录中的新增素材可沿用约定分类；移动目录会改变文件路径，操作前请确认目标位置。</p>
+          <p>右键文件夹还可置顶，或按名称排序当前子层级及全部子层级；置顶项优先显示。排序与置顶只改变左侧目录树的显示顺序，不会移动或修改原文件。</p>
+          <h3 id="sources-rescan">重扫、重新分析与丢失文件</h3>
+          <p>目录菜单可重新扫描文件或重新分析素材。素材显示丢失时，先检查移动磁盘和原路径；需要排除某个目录时，区分“移除来源”与“移除索引并排除扫描”，按菜单提示确认影响范围。</p>
+        </section>
+        <section class="doc-section" id="web" data-search="网页 书签 浏览器 chrome 扩展 采集 导入">
+          <span class="section-index">09 / 功能模块</span><h2>网页收藏与浏览器采集</h2>
+          <h3 id="web-bookmarks">保存网页链接</h3>
+          <p>把网页链接拖入 OrcaBox 或使用网页收藏入口，集中保留网页标题、来源与预览信息；收藏可按文件夹整理。网页收藏与下载本地文件并不是同一件事。</p>
+          <h3 id="web-extension">连接 Chrome 扩展</h3>
+          <p>可选的 <strong>Chrome 扩展</strong>用于扫描当前页面中的图片、视频、Lottie 与素材链接，再发送给本地 OrcaBox。到<a href="index.html#download">官网下载区</a>取得扩展 ZIP，解压后从 Chrome 扩展程序页面加载，并保持桌面应用运行。</p>
+          <h3 id="web-xiaohongshu">导入小红书笔记</h3>
+          <p>采集小红书笔记时，可在浏览器扩展中选择当前笔记并发送到 OrcaBox；也可在电脑端“粘贴链接导入”中粘贴从手机复制的小红书分享文本（包括 <code>xhslink.cn</code> 短链接）。成功获取的素材会保存到目标导入目录；通过浏览器扩展采集时，笔记标题、作者、话题、正文及原文链接另存为该目录下的 <code>note.md</code>。不会改动网页原内容。受页面登录、资源权限或链接失效影响，部分素材可能无法下载，完成后请核对导入结果。</p>
+          <div class="callout"><p>采集网页内容前，请确认你有权保存和使用相应素材；网页资源可能因登录状态、来源限制或链接失效而无法获取。</p></div>
+        </section>
+        <section class="doc-section" id="ai" data-search="ai 智能标签 描述 模型 语义 本地 画布">
+          <span class="section-index">10 / 功能模块</span><h2>本地 AI 与颜色分析</h2>
+          <h3 id="ai-models">准备本地模型</h3>
+          <p>在“设置”的本地模型中心准备所需模型，再对支持的素材运行 AI 标签、描述或相关索引任务。模型下载、运行速度和支持能力取决于设备及所选模型。</p>
+          <h3 id="ai-review">标签与结果审查</h3>
+          <p>AI 分析结果可在审查界面核对，再用于分类和检索；不要把自动生成的标签当作人工确认的事实。</p>
+          <img class="doc-shot" src="assets/ai-tag-review.webp" alt="OrcaBox AI 标签审查界面" width="1200" height="838" loading="lazy">
+          <h3 id="ai-description">生成图片描述</h3>
+          <p>选中图片后，可在右侧详情的“AI 描述”点击“生成”。HEIC/HEIF 画面在 macOS 或 Windows 上通过系统图片解码后送入模型；Windows 可能需要安装 HEIF 图像扩展。若系统无法读取损坏或不受支持的文件，界面会显示原因，可将原图另存为 JPG/PNG 后重试。生成的描述独立保存，不修改原图或手写注释。</p>
+          <h3 id="ai-color">颜色分析与远端能力</h3>
+          <p>颜色提取和相似颜色检索可帮助寻找视觉参考。</p>
+        </section>
+        <section class="doc-section" id="plugins" data-search="插件 达芬奇 davinci 时间线 媒体池">
+          <span class="section-index">11 / 功能模块</span><h2>插件与创作工具</h2>
+          <h3 id="plugins-center">插件中心</h3>
+          <p>从<strong>插件中心</strong>查看和管理已安装工具。插件可把操作接入素材菜单或独立面板，具体入口和权限以插件界面为准；安装第三方插件前确认来源与授权范围。</p>
+          <img class="doc-shot" src="assets/docs-plugin-center.png" alt="OrcaBox 插件中心显示已启用插件及其入口" width="2424" height="1642" loading="lazy">
+          <div class="caption">插件中心：查看启用状态、插件能力及可用入口。</div>
+          <h3 id="plugins-davinci">DaVinci Resolve 工作流</h3>
+          <p>选择素材后，通过对应插件送入媒体池或时间线。操作前启动 DaVinci Resolve，并在插件设置中确认目标项目和位置。</p>
+        </section>
+        <section class="doc-section" id="tasks" data-search="任务 中心 队列 审查 失败 重试 扫描 回收">
+          <span class="section-index">12 / 功能模块</span><h2>任务中心与素材审查</h2>
+          <h3 id="tasks-progress">扫描与导入队列</h3>
+          <p>左侧“任务中心”汇总导入、扫描和分析状态；导入队列显示批量任务进度。大量文件首次索引可能需要等待，不必重复添加来源。</p>
+          <h3 id="tasks-failures">失败与丢失项</h3>
+          <p>失败项可按界面提示重试或检查来源文件。预览缺失时先看任务状态、磁盘连接和文件格式，再对来源重新扫描或分析。</p>
+          <h3 id="tasks-review">素材审查台</h3>
+          <p>在素材审查台集中核对待处理的素材信息和分析结果，再决定是否采用或继续调整。</p>
+        </section>
+        <section class="doc-section" id="settings" data-search="设置 更新 快捷键 帮助 新手 引导 mac ctrl">
+          <span class="section-index">13 / 功能模块</span><h2>设置、帮助与快捷键</h2>
+          <h3 id="settings-preferences">资料库与偏好设置</h3>
+          <p>从左下角进入“设置”，管理资料库、外观及模型等选项；“概览 → 关于与更新”可检查当前版本。</p>
+          <h3 id="settings-network">网络代理与网页素材导入</h3>
+          <p>在“设置 → 网络”选择“系统”（默认）、“直连”或“手动代理”。手动代理填写无需账号密码的 <code>http://主机:端口</code> 或 <code>socks5://主机:端口</code>，点击“保存并启用”。此设置仅用于网页链接、剪贴板、浏览器扩展的素材导入，以及网络视频下载插件；不会改变系统代理、AI 接口、软件更新或本地文件预览。macOS 和 Windows 均可使用。关闭代理后可选择“直连”再重试；网络连接重置、地区访问限制和登录要求仍可能导致失败。</p>
+          <p>Pinterest 可粘贴公开 Pin 页面或图片直链，Instagram 可粘贴公开帖子或 Reel 链接；若页面不提供可下载的媒体，请在浏览器登录后重试，或使用网络视频下载插件并选择浏览器登录态。导入会把下载的素材副本保存到资料库的导入目录，不会修改网站或本地原文件。</p>
+          <h3 id="settings-help">帮助与支持</h3>
+          <p>右下角“帮助与支持”可重启交互式新手引导、打开快捷键面板、检查更新或提交反馈。</p>
+          <h3 id="settings-shortcuts">快捷键</h3>
+          <p>macOS 常用 <strong>⌘</strong>，Windows 常用 <strong>Ctrl</strong>。右键菜单显示当前平台的快捷键；具体组合可在快捷键面板查看和自定义。</p>
+        </section>
+        <section class="doc-section" id="faq" data-search="常见问题 疑问 故障 资料库 视频 代理">
+          <span class="section-index">14 / 参考</span><h2>常见问题</h2>
+          <div class="faq">
+            <details><summary>添加来源会复制、移动我的原文件吗？</summary><p>不会。添加来源建立的是索引。只有你主动执行导入、移动、重命名、删除等文件操作时，才会按界面提示改变文件。</p></details>
+            <details><summary>资料库与来源文件夹能是同一个目录吗？</summary><p>不建议，也不应把装有素材的普通目录当作已有资料库打开。使用独立空目录保存资料库数据，再添加素材目录作为来源。</p></details>
+            <details><summary>换电脑或移动磁盘断开后找不到素材？</summary><p>先确认原磁盘已连接且路径仍可访问。资料库记录的是来源路径；路径变化后需要在应用里重新连接或管理来源。</p></details>
+            <details><summary>视频播放会生成代理视频吗？</summary><p>不会。视频预览使用原文件的浏览器直出或系统/原生播放路径；允许生成静态缩略图、胶片帧等预览信息，但不会为播放制作转码视频代理。</p></details>
+            <details><summary>AI 功能必须联网吗？</summary><p>本地模型任务可在模型准备好后于设备上运行；模型下载可能需要网络。远端 AI 端点属于单独配置的功能，是否联网取决于你的设置。</p></details>
+            <details><summary>如何查看当前版本具体改了什么？</summary><p>请打开<a href="releases.html">更新记录</a>；功能使用方式以本文档为准，版本差异以发行记录为准。</p></details>
+          </div>
+        </section>
+        <section class="doc-section" id="updates" data-search="更新 发行 反馈 联系">
+          <span class="section-index">15 / 参考</span><h2>版本与反馈</h2>
+          <h3 id="updates-release">版本变化</h3>
+          <p>功能入口与可用性可能随版本调整。本文档说明当前用法；新增、优化和问题修复请查看<a href="releases.html">发行记录</a>。</p>
+          <a class="inline-button" href="releases.html">查看更新记录 <span aria-hidden="true">→</span></a>
+          <h3 id="updates-feedback">提交反馈</h3>
+          <p>遇到文档未覆盖的问题，可从应用内“帮助与支持 → 反馈建议”提交重现步骤、系统版本和素材格式。</p>
+        </section>
+      </div>
+    </div>
+  </main>
+  <footer class="bottom"><div class="bottom-inner"><span>© 2024-2026 OrcaBox · 文档随产品维护</span><div><a href="index.html">官网</a><a href="releases.html">更新记录</a><a href="index.html#download">下载</a></div></div></footer>
+  <script>
+    const input = document.getElementById('doc-search')
+    const results = document.getElementById('search-results')
+    const clear = document.getElementById('clear-search')
+    const sections = [...document.querySelectorAll('.doc-section')]
+    const sidebar = document.querySelector('.sidebar')
+    for (const section of sections) {
+      const parentLink = sidebar.querySelector(`a[href="#${section.id}"]`)
+      let previousLink = parentLink
+      for (const heading of section.querySelectorAll('h3[id]')) {
+        const link = document.createElement('a')
+        link.href = '#' + heading.id
+        link.className = 'sub-link'
+        link.textContent = heading.textContent
+        previousLink.after(link)
+        previousLink = link
+      }
+    }
+    const links = [...sidebar.querySelectorAll('a')]
+    const targets = sections.flatMap(section => [section, ...section.querySelectorAll('h3[id]')])
+    const scrollTimers = new WeakMap()
+    function onScroll(target) {
+      target.classList.add('is-scrolling')
+      clearTimeout(scrollTimers.get(target))
+      scrollTimers.set(target, setTimeout(() => target.classList.remove('is-scrolling'), 850))
+    }
+    window.addEventListener('scroll', () => onScroll(document.documentElement), { passive: true })
+    for (const element of [document.querySelector('.sidebar'), results]) {
+      element.addEventListener('scroll', () => onScroll(element), { passive: true })
+    }
+    function closeResults() {
+      results.hidden = true
+      input.setAttribute('aria-expanded', 'false')
+    }
+    function search() {
+      const query = input.value.trim().toLocaleLowerCase()
+      clear.hidden = !query
+      if (!query) { closeResults(); return }
+      const matches = []
+      for (const section of sections) {
+        const chapter = section.querySelector('h2').textContent
+        if ((chapter + ' ' + section.dataset.search).toLocaleLowerCase().includes(query)) {
+          matches.push({ id: section.id, title: chapter, excerpt: section.querySelector('p')?.textContent, rank: chapter.toLocaleLowerCase().includes(query) ? 0 : 3 })
+        }
+        for (const heading of section.querySelectorAll('h3[id]')) {
+          let text = heading.textContent
+          let next = heading.nextElementSibling
+          while (next && next.tagName !== 'H3') {
+            text += ' ' + next.textContent
+            next = next.nextElementSibling
+          }
+          if (text.toLocaleLowerCase().includes(query)) {
+            matches.push({ id: heading.id, title: chapter + ' / ' + heading.textContent, excerpt: text.slice(heading.textContent.length).trim(), rank: heading.textContent.toLocaleLowerCase().includes(query) ? 1 : 2 })
+          }
+        }
+        if (section.id === 'faq' && section.textContent.toLocaleLowerCase().includes(query) && !matches.some(match => match.id === 'faq')) {
+          matches.push({ id: section.id, title: chapter, excerpt: '查看相关问题与解答', rank: 2 })
+        }
+      }
+      matches.sort((a, b) => a.rank - b.rank)
+      results.replaceChildren()
+      if (!matches.length) {
+        const empty = document.createElement('div')
+        empty.className = 'search-empty'
+        empty.textContent = '没有找到相关内容，请试试其他关键词。'
+        results.append(empty)
+      }
+      for (const match of matches.slice(0, 12)) {
+        const a = document.createElement('a')
+        a.href = '#' + match.id
+        a.setAttribute('role', 'option')
+        a.textContent = match.title
+        const small = document.createElement('small')
+        small.textContent = match.excerpt?.slice(0, 58) ?? ''
+        a.append(small)
+        results.append(a)
+      }
+      results.hidden = false
+      input.setAttribute('aria-expanded', 'true')
+    }
+    input.addEventListener('input', search)
+    input.addEventListener('focus', search)
+    input.addEventListener('keydown', event => {
+      if (event.key === 'Escape') { closeResults(); input.blur() }
+      if (event.key === 'Enter' && !results.hidden) results.querySelector('a')?.click()
+    })
+    clear.addEventListener('click', () => { input.value = ''; closeResults(); clear.hidden = true; input.focus() })
+    results.addEventListener('click', event => { if (event.target.closest('a')) closeResults() })
+    document.addEventListener('click', event => { if (!event.target.closest('.search-wrap')) closeResults() })
+    function updateActive() {
+      const current = [...targets].reverse().find(target => target.getBoundingClientRect().top <= 118) ?? sections[0]
+      const section = current.closest('.doc-section')
+      links.forEach(link => {
+        const isSubLink = link.classList.contains('sub-link')
+        link.classList.toggle('is-open', isSubLink && link.hash && section.contains(document.getElementById(link.hash.slice(1))))
+        link.classList.toggle('active', link.hash === '#' + current.id || (!isSubLink && current !== section && link.hash === '#' + section.id))
+      })
+    }
+    window.addEventListener('scroll', updateActive, { passive: true })
+    window.addEventListener('hashchange', () => requestAnimationFrame(updateActive))
+    updateActive()
+    fetch('releases.json', { cache: 'no-store' })
+      .then(response => { if (!response.ok) throw new Error('unavailable'); return response.json() })
+      .then(data => { if (data.current) document.getElementById('version-label').textContent = '当前公开版 v' + data.current })
+      .catch(() => {})
+  </script>
+</body>
+</html>

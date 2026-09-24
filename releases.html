@@ -536,6 +536,7 @@
     @media (max-width: 620px) {
       .nav-inner { padding: 0 16px; }
       .nav-link:first-child { display: none; }
+      #nav-home { display: none; }
       .container { width: min(100% - 24px, 1180px); }
       .hero { padding: 48px 0 28px; }
       h1 { font-size: 2.7rem; }
@@ -564,6 +565,7 @@
       </a>
       <div class="nav-actions">
         <a class="nav-link" id="nav-latest" href="#latest">当前版本</a>
+        <a class="nav-link" id="nav-docs" href="docs.html">使用文档</a>
         <a class="nav-link" id="nav-home" href="index.html#updates">返回官网</a>
         <div class="lang-switch">
           <button class="lang-btn" id="langBtn" type="button" aria-label="Switch language" aria-haspopup="menu" aria-expanded="false" aria-controls="langDrop">
@@ -638,6 +640,7 @@
         heroTitle: 'OrcaBox 更新记录',
         heroDesc: '查看每个版本的新增能力、体验优化、问题修复与公开下载信息。',
         navLatest: '当前版本',
+        navDocs: '使用文档',
         navHome: '返回官网',
         versionNavLabel: '版本导航',
         sectionLabel: '历史版本',
@@ -674,6 +677,7 @@
         heroTitle: 'OrcaBox Release Notes',
         heroDesc: 'New capabilities, refinements, bug fixes, and public download info for every release.',
         navLatest: 'Latest',
+        navDocs: 'Docs (中文)',
         navHome: 'Back to site',
         versionNavLabel: 'Version navigation',
         sectionLabel: 'Version history',
@@ -710,6 +714,7 @@
         heroTitle: 'OrcaBox 更新履歴',
         heroDesc: '各バージョンの新機能・改善・不具合修正と公開ダウンロード情報を確認できます。',
         navLatest: '最新バージョン',
+        navDocs: '利用ガイド（中国語）',
         navHome: '公式サイトへ',
         versionNavLabel: 'バージョンナビゲーション',
         sectionLabel: 'バージョン履歴',
@@ -746,6 +751,7 @@
         heroTitle: 'OrcaBox 업데이트 기록',
         heroDesc: '버전별 새 기능, 개선 사항, 버그 수정과 공개 다운로드 정보를 확인하세요.',
         navLatest: '최신 버전',
+        navDocs: '사용 안내 (중국어)',
         navHome: '공식 사이트로',
         versionNavLabel: '버전 탐색',
         sectionLabel: '버전 기록',
@@ -918,6 +924,7 @@
       document.title = d.title
       langLabel.textContent = langLabels[lang]
       document.getElementById('nav-latest').textContent = d.navLatest
+      document.getElementById('nav-docs').textContent = d.navDocs
       document.getElementById('nav-home').textContent = d.navHome
       document.getElementById('eyebrow').textContent = d.eyebrow
       document.getElementById('hero-title').textContent = d.heroTitle
@@ -961,7 +968,7 @@
 
     applyLang(currentLang)
 
-    fetch('releases.json?v=1.2.7', { cache: 'no-store' })
+    fetch('releases.json?v=1.2.8', { cache: 'no-store' })
       .then((response) => response.json())
       .then((data) => {
         releasesData = Array.isArray(data.releases) ? data.releases : []
