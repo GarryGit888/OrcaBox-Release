@@ -1,0 +1,49 @@
+$:
+  vscode:
+    - docker:
+        build: .ide/Dockerfile
+      services:
+        - docker
+        - name: vscode
+          options:
+            onlyPreview: true
+            launch: node server.mjs
+            keepAliveTimeout: 30m
+            daemon: true
+            backup: false
+      stages:
+        - node --check server.mjs
+
+"v*":
+  tag_push:
+    - stages:
+        - name: Download GitHub release assets
+          script: |
+            set -eu
+            version="${CNB_BRANCH#v}"
+            mkdir -p release-assets
+            for asset in \
+              "OrcaBox-${version}-arm64.dmg" \
+              "OrcaBox-${version}-arm64.dmg.blockmap" \
+              "OrcaBox-${version}-x64.dmg" \
+              "OrcaBox-${version}-x64.dmg.blockmap" \
+              "OrcaBox-${version}-win-x64-Setup.exe" \
+              "OrcaBox-${version}-win-x64-Setup.exe.blockmap" \
+              "OrcaBox-${version}-win-x64-Portable.exe" \
+              "latest.yml" \
+              "latest-mac.yml" \
+              "OrcaBox-Chrome-Extension-${version}.zip"; do
+              curl --fail --location --retry 3 --output "release-assets/${asset}" "https://github.com/GarryGit888/OrcaBox-Release/releases/download/${CNB_BRANCH}/${asset}"
+            done
+            cp "OrcaBox-${version}-Release-Notes.md" release-assets/RELEASE_NOTES.md
+        - name: Create CNB release
+          type: git:release
+          options:
+            descriptionFromFile: release-assets/RELEASE_NOTES.md
+            preRelease: false
+            latest: true
+        - name: Upload release assets
+          image: cnbcool/attachments
+          settings:
+            attachments:
+              - release-assets/*
