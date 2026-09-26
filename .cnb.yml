@@ -34,7 +34,10 @@ $:
               "latest-mac.yml"; do
               curl --fail --location --retry 3 --output "release-assets/${asset}" "https://github.com/GarryGit888/OrcaBox-Release/releases/download/${CNB_BRANCH}/${asset}"
             done
-            cp "OrcaBox-${version}-Release-Notes.md" release-assets/RELEASE_NOTES.md
+            notes="OrcaBox-${version}-Release-Notes.md"
+            test -s "${notes}"
+            grep -Fq "OrcaBox ${version}" "${notes}"
+            cp "${notes}" release-assets/RELEASE_NOTES.md
         - name: Create CNB release
           type: git:release
           options:
