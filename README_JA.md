@@ -57,7 +57,6 @@ OrcaBox は映像編集者、デザイナー、モーションアーティスト
 | macOS Apple Silicon | [DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.8/OrcaBox-1.2.8-arm64.dmg) |
 | macOS Intel | [DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.8/OrcaBox-1.2.8-x64.dmg) |
 | Windows x64 | [インストーラー](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.8/OrcaBox-1.2.8-win-x64-Setup.exe) / [ポータブル版](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.8/OrcaBox-1.2.8-win-x64-Portable.exe) |
-| Chrome 拡張 | [ZIP](https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.8/OrcaBox-Chrome-Extension-1.2.8.zip) |
 
 ## 使用言語と技術スタック
 

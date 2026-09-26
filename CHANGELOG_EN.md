@@ -8,6 +8,9 @@
 - macOS ships separate Apple Silicon and Intel DMGs. macOS ZIP files are no longer published. The current packages are unsigned and may require approval in Privacy & Security on first launch.
 - Windows x64 installer and portable builds are available. The installer is per-user by default and permits a custom directory.
 
+ZIP files are no longer published. The current packages are unsigned and may require approval in Privacy & Security on first launch.
+- Windows x64 installer and portable builds are available. The installer is per-user by default and permits a custom directory.
+
 ## Earlier releases
 
 See the CNB release history for earlier versions.

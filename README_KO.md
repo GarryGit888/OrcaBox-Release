@@ -57,7 +57,6 @@ OrcaBox는 영상 편집자, 디자이너, 모션 아티스트, 사진가와 크
 | macOS Apple Silicon | [DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.8/OrcaBox-1.2.8-arm64.dmg) |
 | macOS Intel | [DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.8/OrcaBox-1.2.8-x64.dmg) |
 | Windows x64 | [설치 프로그램](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.8/OrcaBox-1.2.8-win-x64-Setup.exe) / [포터블](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.2.8/OrcaBox-1.2.8-win-x64-Portable.exe) |
-| Chrome 확장 | [ZIP](https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.2.8/OrcaBox-Chrome-Extension-1.2.8.zip) |
 
 ## 개발 언어와 기술 스택
 
