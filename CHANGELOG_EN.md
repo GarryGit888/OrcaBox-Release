@@ -8,6 +8,12 @@
 - macOS ships separate Apple Silicon and Intel DMGs; matching ZIP packages are retained as the in-app automatic updater payload. The current packages are unsigned and may require approval in Privacy & Security on first launch.
 - Windows x64 installer and portable builds are available. The installer is per-user by default and permits a custom directory.
 
+ZIP payloads — no more manual DMG downloads.
+- Fixed the Windows settings window caption Close button not responding to clicks.
+- Extension status changes now push instantly to Settings; the update feed gains dual-architecture merge and pre-publish validation tooling.
+- macOS ships separate Apple Silicon and Intel DMGs; matching ZIP packages are retained as the in-app automatic updater payload. The current packages are unsigned and may require approval in Privacy & Security on first launch.
+- Windows x64 installer and portable builds are available. The installer is per-user by default and permits a custom directory.
+
 ## 1.2.8 - 2026-09-26
 
 - Improves generation checks for library background work. Refresh, analyze, and scan requests made while long audio is decoding or loading can no longer replace the active folder with stale root-state results.
