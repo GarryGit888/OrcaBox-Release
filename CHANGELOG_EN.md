@@ -1,5 +1,13 @@
 # Release Notes
 
+## 1.3.0 - 2026-10-01
+
+- Video review workflow: frame-by-frame timeline, point/box/brush/arrow/text markers, multi-version feedback with DaVinci Resolve sync.
+- Reworked Windows auxiliary panel window buttons: settings keeps only Close, other panels get Close + Minimize, maximize is gone everywhere.
+- MKV/Matroska and similar formats now play embedded in-app on Windows instead of opening a separate player window.
+- macOS ships separate Apple Silicon and Intel DMGs; matching ZIP packages are retained as the in-app automatic updater payload. The current packages are unsigned and may require approval in Privacy & Security on first launch.
+- Windows x64 installer and portable builds are available. The installer is per-user by default and permits a custom directory.
+
 ## 1.2.9 - 2026-09-30
 
 - Full in-app auto-update on macOS: once a new version is detected it downloads and installs in-app with differential downloads and architecture-matched ZIP payloads — no more manual DMG downloads.

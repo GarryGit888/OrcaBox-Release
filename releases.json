@@ -1,7 +1,107 @@
 {
-  "updatedAt": "2026-09-30",
-  "current": "1.2.9",
+  "updatedAt": "2026-10-01",
+  "current": "1.3.0",
   "releases": [
+    {
+      "version": "1.3.0",
+      "displayVersion": "1.3",
+      "date": "2026-10-01",
+      "tag": "v1.3.0",
+      "title": "OrcaBox 1.3",
+      "summary": "OrcaBox 1.3.0 新增视频审阅工作流与诊断包导出，Windows 独立面板窗口按钮与 MKV 内嵌播放全面修复，三平台同步更新。",
+      "generatedFrom": {
+        "baseRef": "9fffff6f",
+        "branch": "1.3.0",
+        "commitCount": 9,
+        "changedFileCount": 56
+      },
+      "categories": {
+        "features": [
+          {
+            "text": "视频审阅工作流：时间线逐帧、点/框/画笔/箭头/文本标记、多版本意见管理与 DaVinci Resolve 同步",
+            "commit": "73f5a3c3",
+            "date": "2026-09-30"
+          },
+          {
+            "text": "诊断包导出：一键收集播放与窗口运行诊断信息，便于远程排查",
+            "commit": "73f5a3c3",
+            "date": "2026-09-30"
+          }
+        ],
+        "improvements": [],
+        "fixes": [
+          {
+            "text": "Windows 独立面板窗口按钮重构：设置面板只保留关闭，其他面板关闭+最小化，全部不再显示最大化，且点击稳定可响应",
+            "commit": "52a133a4",
+            "date": "2026-10-01"
+          },
+          {
+            "text": "Windows 上 MKV/Matroska 等格式改为应用内嵌原生播放，不再弹出独立播放器窗口",
+            "commit": "5d05883a",
+            "date": "2026-10-01"
+          }
+        ],
+        "engineering": [
+          {
+            "text": "MKV native embedded playback on Windows in user guide",
+            "commit": "6ca53fb",
+            "date": "2026-10-01"
+          },
+          {
+            "text": "start 1.3.0 development",
+            "commit": "ef4b162",
+            "date": "2026-09-30"
+          }
+        ]
+      },
+      "changedAreas": [
+        {
+          "area": "src",
+          "count": 38
+        },
+        {
+          "area": "offline",
+          "count": 6
+        },
+        {
+          "area": "doc",
+          "count": 3
+        },
+        {
+          "area": "scripts",
+          "count": 3
+        },
+        {
+          "area": ".github",
+          "count": 2
+        },
+        {
+          "area": "extensions",
+          "count": 1
+        },
+        {
+          "area": "package-lock.json",
+          "count": 1
+        },
+        {
+          "area": "package.json",
+          "count": 1
+        },
+        {
+          "area": "website",
+          "count": 1
+        }
+      ],
+      "links": {
+        "cnbRelease": "https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.3.0",
+        "githubRelease": "https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.3.0",
+        "macArm64Dmg": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.0/OrcaBox-1.3.0-arm64.dmg",
+        "macX64Dmg": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.0/OrcaBox-1.3.0-x64.dmg",
+        "windowsInstaller": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.0/OrcaBox-1.3.0-win-x64-Setup.exe",
+        "windowsPortable": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.0/OrcaBox-1.3.0-win-x64-Portable.exe",
+        "browserExtension": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.3.0/OrcaBox-Chrome-Extension-1.3.0.zip"
+      }
+    },
     {
       "version": "1.2.9",
       "displayVersion": "1.2.9",
