@@ -3,6 +3,102 @@
   "current": "1.3.0",
   "releases": [
     {
+      "version": "1.3.1",
+      "displayVersion": "1.3.1",
+      "date": "2026-10-03",
+      "tag": "v1.3.1",
+      "title": "OrcaBox 1.3.1",
+      "summary": "OrcaBox 1.3.1 新增详情面板信息卡显示设置与应用内「新增功能」引导，网格滚轮滚动更跟手，原生播放黑屏与模型下载进度问题全面修复，三平台同步更新。",
+      "generatedFrom": {
+        "baseRef": "7ba0b6a9",
+        "branch": "1.3.1",
+        "commitCount": 21,
+        "changedFileCount": 45
+      },
+      "categories": {
+        "features": [
+          {
+            "text": "详情面板信息卡显示设置：单选的信息卡区域可一键隐藏或恢复，多选时各批量卡片可单独开关（设置 → 浏览 → 详情面板卡片）",
+            "commit": "47e2f3e6",
+            "date": "2026-10-03"
+          },
+          {
+            "text": "应用内「新增功能」引导：更新后帮助按钮出现气泡引导与角标，「帮助与支持」菜单新增入口，以可翻页的功能卡片介绍每次更新",
+            "commit": "bfd7623c",
+            "date": "2026-10-03"
+          }
+        ],
+        "improvements": [
+          {
+            "text": "资源网格鼠标滚轮改为线性直接滚动：视口与滚轮等速移动，快速滚动更跟手；触控板与键盘导航行为不变",
+            "commit": "7c0ae290",
+            "date": "2026-10-03"
+          },
+          {
+            "text": "识别总览轮询复用识别快照，减少重复推理调用",
+            "commit": "e73f6cd6",
+            "date": "2026-10-03"
+          },
+          {
+            "text": "诊断包新增性能埋点，补充播放与窗口链路的性能观测数据",
+            "commit": "824d7f16",
+            "date": "2026-10-03"
+          }
+        ],
+        "fixes": [
+          {
+            "text": "原生播放自愈：macOS 原生链路加载停滞时自动回退浏览器引擎继续播放并可在恢复后切回；Windows 监测 mpv 视频表面存活状态，修复黑屏后仍占用播放路由的问题",
+            "commit": "f49a1653",
+            "date": "2026-10-03"
+          },
+          {
+            "text": "模型下载：多文件进度聚合显示，切换下载源不再静默清零；向更深层级扫描识别手动放入的模型，避免重复下载",
+            "commit": "78e35f76",
+            "date": "2026-10-03"
+          }
+        ],
+        "engineering": [
+          {
+            "text": "版本号与更新配置同步至 1.3.1，Chrome 扩展 manifest 同步升级",
+            "commit": "689f6ead",
+            "date": "2026-10-03"
+          },
+          {
+            "text": "续期 Windows FFmpeg 运行时锁定清单（上游滚动构建哈希更新）",
+            "commit": "2067c995",
+            "date": "2026-10-03"
+          }
+        ]
+      },
+      "changedAreas": [
+        {
+          "area": "src",
+          "count": 41
+        },
+        {
+          "area": "scripts",
+          "count": 2
+        },
+        {
+          "area": "website",
+          "count": 1
+        },
+        {
+          "area": "doc",
+          "count": 1
+        }
+      ],
+      "links": {
+        "cnbRelease": "https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.3.1",
+        "githubRelease": "https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.3.1",
+        "macArm64Dmg": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.1/OrcaBox-1.3.1-arm64.dmg",
+        "macX64Dmg": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.1/OrcaBox-1.3.1-x64.dmg",
+        "windowsInstaller": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.1/OrcaBox-1.3.1-win-x64-Setup.exe",
+        "windowsPortable": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.1/OrcaBox-1.3.1-win-x64-Portable.exe",
+        "browserExtension": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.3.1/OrcaBox-Chrome-Extension-1.3.1.zip"
+      }
+    },
+    {
       "version": "1.3.0",
       "displayVersion": "1.3",
       "date": "2026-10-01",
