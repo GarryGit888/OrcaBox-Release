@@ -1,5 +1,13 @@
 # Release Notes
 
+## 1.3.2 - 2026-10-04
+
+- macOS in-app update fix: the final swap no longer depends on the system updater signature gate — the app re-verifies the update hash and swaps itself with rollback protection.
+- In-app "What's new" guide: after an update, the help button shows a bubble and badge, with paged feature cards describing each release.
+- Inspector card visibility settings, the in-app what's-new guide, linear grid wheel scrolling, native playback self-healing, and model download fixes all ship in this version.
+- macOS ships separate Apple Silicon and Intel DMGs; matching ZIP packages are retained as the in-app automatic updater payload. The current packages are unsigned and may require approval in Privacy & Security on first launch.
+- Windows x64 installer and portable builds are available. The installer is per-user by default and permits a custom directory.
+
 ## 1.3.1 - 2026-10-04
 
 - Inspector card visibility settings: hide or restore the single-selection info card block with one switch; multi-selection batch cards can each be toggled separately (Settings > Browse > Inspector panel cards).

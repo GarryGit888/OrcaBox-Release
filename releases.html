@@ -968,7 +968,7 @@
 
     applyLang(currentLang)
 
-    fetch('releases.json?v=1.3.1', { cache: 'no-store' })
+    fetch('releases.json?v=1.3.2', { cache: 'no-store' })
       .then((response) => response.json())
       .then((data) => {
         releasesData = Array.isArray(data.releases) ? data.releases : []
