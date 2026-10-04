@@ -1,6 +1,6 @@
 # Release Notes
 
-## 1.3.1 - 2026-10-03
+## 1.3.1 - 2026-10-04
 
 - Inspector card visibility settings: hide or restore the single-selection info card block with one switch; multi-selection batch cards can each be toggled separately (Settings > Browse > Inspector panel cards).
 - In-app "What's new" guide: after an update, the help button shows a bubble and badge, with paged feature cards describing each release.
@@ -8,6 +8,9 @@
 - Native playback self-healing: stalled loading falls back to the browser engine automatically and can switch back once recovered; Windows mpv black-surface routing is fixed.
 - Model downloads: aggregated multi-file progress that no longer resets when switching mirrors; manually placed models are detected correctly.
 - macOS ships separate Apple Silicon and Intel DMGs; matching ZIP packages are retained as the in-app automatic updater payload. The current packages are unsigned and may require approval in Privacy & Security on first launch.
+- Windows x64 installer and portable builds are available. The installer is per-user by default and permits a custom directory.
+
+ZIP packages are retained as the in-app automatic updater payload. The current packages are unsigned and may require approval in Privacy & Security on first launch.
 - Windows x64 installer and portable builds are available. The installer is per-user by default and permits a custom directory.
 
 ## 1.3.0 - 2026-10-01

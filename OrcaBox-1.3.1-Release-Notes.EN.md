@@ -1,6 +1,6 @@
 # OrcaBox 1.3.1 Release Notes
 
-Release date: 2026-10-03
+Release date: 2026-10-04
 
 ## What's new
 
