@@ -9,8 +9,8 @@
   <a href="./README_JA.md"><img src="https://img.shields.io/badge/日本語-2B2F38?style=for-the-badge&labelColor=15171C" alt="日本語"></a>
   <a href="./README_KO.md"><img src="https://img.shields.io/badge/한국어-7C6FF7?style=for-the-badge&labelColor=15171C" alt="한국어"></a>
 </p>
-<p align="center"><img src="https://img.shields.io/badge/Release-v1.3.2-7C6FF7?style=flat-square" alt="Version 1.3.2"> <img src="https://img.shields.io/badge/macOS-12%2B-111318?style=flat-square&logo=apple" alt="macOS 12+"> <img src="https://img.shields.io/badge/Windows-10%2F11_x64-111318?style=flat-square&logo=windows11" alt="Windows 10/11 x64"> <img src="https://img.shields.io/badge/Local--first-Data_stays_local-1F9D75?style=flat-square" alt="Local-first"></p>
-<p align="center"><a href="https://garrygit888.github.io/OrcaBox-Release/">공식 웹사이트</a> · <a href="https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.3.2">CNB 다운로드</a> · <a href="https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.3.2">GitHub 다운로드</a> · <a href="./OrcaBox-1.3.2-Release-Notes.KO.md">릴리스 노트</a></p>
+<p align="center"><img src="https://img.shields.io/badge/Release-v1.3.3-7C6FF7?style=flat-square" alt="Version 1.3.3"> <img src="https://img.shields.io/badge/macOS-12%2B-111318?style=flat-square&logo=apple" alt="macOS 12+"> <img src="https://img.shields.io/badge/Windows-10%2F11_x64-111318?style=flat-square&logo=windows11" alt="Windows 10/11 x64"> <img src="https://img.shields.io/badge/Local--first-Data_stays_local-1F9D75?style=flat-square" alt="Local-first"></p>
+<p align="center"><a href="https://garrygit888.github.io/OrcaBox-Release/">공식 웹사이트</a> · <a href="https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.3.3">CNB 다운로드</a> · <a href="https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.3.3">GitHub 다운로드</a> · <a href="./OrcaBox-1.3.3-Release-Notes.KO.md">릴리스 노트</a></p>
 
 <img src="./assets/product-1.2.7-hero.webp" width="100%" alt="OrcaBox 로컬 에셋 라이브러리">
 
@@ -54,9 +54,9 @@ OrcaBox는 영상 편집자, 디자이너, 모션 아티스트, 사진가와 크
 
 | 플랫폼 | 다운로드 |
 | --- | --- |
-| macOS Apple Silicon | [DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.2/OrcaBox-1.3.2-arm64.dmg) |
-| macOS Intel | [DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.2/OrcaBox-1.3.2-x64.dmg) |
-| Windows x64 | [설치 프로그램](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.2/OrcaBox-1.3.2-win-x64-Setup.exe) / [포터블](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.2/OrcaBox-1.3.2-win-x64-Portable.exe) |
+| macOS Apple Silicon | [DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.3/OrcaBox-1.3.3-arm64.dmg) |
+| macOS Intel | [DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.3/OrcaBox-1.3.3-x64.dmg) |
+| Windows x64 | [설치 프로그램](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.3/OrcaBox-1.3.3-win-x64-Setup.exe) / [포터블](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.3/OrcaBox-1.3.3-win-x64-Portable.exe) |
 
 ## 개발 언어와 기술 스택
 

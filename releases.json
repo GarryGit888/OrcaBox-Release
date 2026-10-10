@@ -1,7 +1,126 @@
 {
-  "updatedAt": "2026-10-01",
-  "current": "1.3.0",
+  "updatedAt": "2026-10-10",
+  "current": "1.3.3",
   "releases": [
+    {
+      "version": "1.3.3",
+      "displayVersion": "1.3.3",
+      "date": "2026-10-10",
+      "tag": "v1.3.3",
+      "title": "OrcaBox 1.3.3",
+      "summary": "OrcaBox 1.3.3 为「移动资源 / 移动文件夹」新增可交互目标路径栏，集中修复 Windows 包视频缩略图无法生成、内嵌 AI 推理引擎启动即退出两个高影响缺陷，并带来大资料库性能优化与播放回退增强。",
+      "generatedFrom": {
+        "baseRef": "c6d74f46",
+        "branch": "1.3.3",
+        "commitCount": 7,
+        "changedFileCount": 50
+      },
+      "categories": {
+        "features": [
+          {
+            "text": "移动目标路径栏：「移动资源 / 移动文件夹」对话框顶部显示完整目标路径，点任意上级段直达目标层级并清空搜索，长路径自动滚动跟随",
+            "commit": "6948be0b",
+            "date": "2026-10-10"
+          }
+        ],
+        "improvements": [
+          {
+            "text": "大库性能优化批次：修复打开资料库后的界面冻结（活动源聚合改 TTL 快照），任务中心识别轮询复用目录扫描快照",
+            "commit": "55f8bbcd",
+            "date": "2026-10-09"
+          },
+          {
+            "text": "推理引擎启动诊断增强：启动失败报错附带退出码与具体原因（缺运行库 / macOS 隔离属性指引）",
+            "commit": "6948be0b",
+            "date": "2026-10-10"
+          }
+        ],
+        "fixes": [
+          {
+            "text": "Windows 视频缩略图修复：更换内置 FFmpeg 运行时并校验共享 DLL 完整性，MP4/MOV/MKV 缩略图、胶片条与封面帧恢复生成",
+            "commit": "6948be0b",
+            "date": "2026-10-10"
+          },
+          {
+            "text": "Windows 内嵌 AI 推理修复：补齐 llama.dll/ggml.dll/mtmd.dll 运行库（1.2.9–1.3.2 的 Windows 包均受影响），打包与分发门禁新增 DLL 闭包校验",
+            "commit": "6948be0b",
+            "date": "2026-10-10"
+          },
+          {
+            "text": "Windows 原生播放异常（有声无画）自动回退内置播放器，与 macOS 行为一致",
+            "commit": "6948be0b",
+            "date": "2026-10-10"
+          },
+          {
+            "text": "微信拖出文件导入：拖拽期锁定恢复线路更完整；达芬奇导入：反向 DNS 挂起给出可行动诊断而非误报未运行",
+            "commit": "412f2ba6",
+            "date": "2026-10-10"
+          }
+        ],
+        "engineering": [
+          {
+            "text": "版本号、Chrome 扩展 manifest、发行说明与官网指引同步至 1.3.3",
+            "commit": "3858064",
+            "date": "2026-10-09"
+          }
+        ]
+      },
+      "changedAreas": [
+        {
+          "area": "src",
+          "count": 37
+        },
+        {
+          "area": "scripts",
+          "count": 4
+        },
+        {
+          "area": ".github",
+          "count": 1
+        },
+        {
+          "area": ".gitignore",
+          "count": 1
+        },
+        {
+          "area": "doc",
+          "count": 1
+        },
+        {
+          "area": "docs",
+          "count": 1
+        },
+        {
+          "area": "extensions",
+          "count": 1
+        },
+        {
+          "area": "package-lock.json",
+          "count": 1
+        },
+        {
+          "area": "package.json",
+          "count": 1
+        },
+        {
+          "area": "resources",
+          "count": 1
+        },
+        {
+          "area": "website",
+          "count": 1
+        }
+      ],
+      "links": {
+        "cnbRelease": "https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.3.3",
+        "githubRelease": "https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.3.3",
+        "macArm64Dmg": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.3/OrcaBox-1.3.3-arm64.dmg",
+        "macX64Dmg": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.3/OrcaBox-1.3.3-x64.dmg",
+        "windowsInstaller": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.3/OrcaBox-1.3.3-win-x64-Setup.exe",
+        "windowsPortable": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.3/OrcaBox-1.3.3-win-x64-Portable.exe",
+        "browserExtension": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.3.3/OrcaBox-Chrome-Extension-1.3.3.zip"
+      }
+    },
     {
       "version": "1.3.2",
       "displayVersion": "1.3.2",

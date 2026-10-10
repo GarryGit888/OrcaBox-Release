@@ -9,8 +9,8 @@
   <a href="./README_JA.md"><img src="https://img.shields.io/badge/日本語-7C6FF7?style=for-the-badge&labelColor=15171C" alt="日本語"></a>
   <a href="./README_KO.md"><img src="https://img.shields.io/badge/한국어-2B2F38?style=for-the-badge&labelColor=15171C" alt="한국어"></a>
 </p>
-<p align="center"><img src="https://img.shields.io/badge/Release-v1.3.2-7C6FF7?style=flat-square" alt="Version 1.3.2"> <img src="https://img.shields.io/badge/macOS-12%2B-111318?style=flat-square&logo=apple" alt="macOS 12+"> <img src="https://img.shields.io/badge/Windows-10%2F11_x64-111318?style=flat-square&logo=windows11" alt="Windows 10/11 x64"> <img src="https://img.shields.io/badge/Local--first-Data_stays_local-1F9D75?style=flat-square" alt="Local-first"></p>
-<p align="center"><a href="https://garrygit888.github.io/OrcaBox-Release/">公式サイト</a> · <a href="https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.3.2">CNB ダウンロード</a> · <a href="https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.3.2">GitHub ダウンロード</a> · <a href="./OrcaBox-1.3.2-Release-Notes.JA.md">リリースノート</a></p>
+<p align="center"><img src="https://img.shields.io/badge/Release-v1.3.3-7C6FF7?style=flat-square" alt="Version 1.3.3"> <img src="https://img.shields.io/badge/macOS-12%2B-111318?style=flat-square&logo=apple" alt="macOS 12+"> <img src="https://img.shields.io/badge/Windows-10%2F11_x64-111318?style=flat-square&logo=windows11" alt="Windows 10/11 x64"> <img src="https://img.shields.io/badge/Local--first-Data_stays_local-1F9D75?style=flat-square" alt="Local-first"></p>
+<p align="center"><a href="https://garrygit888.github.io/OrcaBox-Release/">公式サイト</a> · <a href="https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.3.3">CNB ダウンロード</a> · <a href="https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.3.3">GitHub ダウンロード</a> · <a href="./OrcaBox-1.3.3-Release-Notes.JA.md">リリースノート</a></p>
 
 <img src="./assets/product-1.2.7-hero.webp" width="100%" alt="OrcaBox ローカル素材ライブラリ">
 
@@ -54,9 +54,9 @@ OrcaBox は映像編集者、デザイナー、モーションアーティスト
 
 | プラットフォーム | ダウンロード |
 | --- | --- |
-| macOS Apple Silicon | [DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.2/OrcaBox-1.3.2-arm64.dmg) |
-| macOS Intel | [DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.2/OrcaBox-1.3.2-x64.dmg) |
-| Windows x64 | [インストーラー](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.2/OrcaBox-1.3.2-win-x64-Setup.exe) / [ポータブル版](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.2/OrcaBox-1.3.2-win-x64-Portable.exe) |
+| macOS Apple Silicon | [DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.3/OrcaBox-1.3.3-arm64.dmg) |
+| macOS Intel | [DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.3/OrcaBox-1.3.3-x64.dmg) |
+| Windows x64 | [インストーラー](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.3/OrcaBox-1.3.3-win-x64-Setup.exe) / [ポータブル版](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.3/OrcaBox-1.3.3-win-x64-Portable.exe) |
 
 ## 使用言語と技術スタック
 
