@@ -4,9 +4,10 @@ Release date: 2026-10-12
 
 ## What's new
 
-- Move target breadcrumb bar: the Move Assets / Move Folder dialogs show the full destination trail — click any parent segment to jump there and clear search; long trails auto-scroll.
-- Windows fixes: videos missing thumbnails (bundled FFmpeg lacked a filter argument) and the embedded AI engine exiting at startup (missing llama.dll/ggml.dll/mtmd.dll) are resolved; Windows builds 1.2.9–1.3.2 were affected.
-- Windows native playback stalls (audio with a frozen picture) now fall back to the built-in player automatically; large-library scroll freezes fixed; WeChat drag-in imports and DaVinci Resolve diagnostics improved.
+- Move panel scrolling stability: move progress now lives in a dedicated store with the progress bar subscribing locally, so scrolling the Move Assets / Move Folder panels on large libraries no longer flickers the whole window.
+- Middle-button scrolling no longer zooms the asset grid (MX thumb-wheel zoom is unchanged).
+- Intel Mac auto-update fix: when the bundle swap is blocked, the updater no longer silently falls back to the system updater, which can never validate an unsigned build — it keeps the verified payload and states the concrete reason with DMG guidance.
+- DaVinci import diagnostics: when reverse-DNS lookups hang, the plugin shows the cause and fix instead of a misleading "Resolve is not running"; the What's-new version dropdown can select older releases again.
 
 ## Download and installation
 
