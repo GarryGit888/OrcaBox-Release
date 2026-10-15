@@ -1,7 +1,121 @@
 {
-  "updatedAt": "2026-10-12",
-  "current": "1.3.4",
+  "updatedAt": "2026-10-15",
+  "current": "1.3.5",
   "releases": [
+    {
+      "version": "1.3.5",
+      "displayVersion": "1.3.5",
+      "date": "2026-10-15",
+      "tag": "v1.3.5",
+      "title": "OrcaBox 1.3.5",
+      "summary": "新增 Lightroom/Bridge 星级同步、图片反推提示词与会话素材采集，并优化自定义批量重命名与 HTML 预览隔离。",
+      "generatedFrom": {
+        "baseRef": "0419faba",
+        "branch": "1.3.5",
+        "commitCount": 3,
+        "changedFileCount": 75
+      },
+      "categories": {
+        "features": [
+          {
+            "text": "打通 Lightroom 与 Bridge 星级评分同步",
+            "commit": "44ef811",
+            "date": "2026-10-15"
+          },
+          {
+            "text": "图片反推提示词支持中文、英文、反向词和 JSON 结果",
+            "commit": "c5972a1",
+            "date": "2026-10-15"
+          },
+          {
+            "text": "浏览器扩展支持经过授权的当前会话素材获取",
+            "commit": "c5972a1",
+            "date": "2026-10-15"
+          }
+        ],
+        "improvements": [
+          {
+            "text": "自定义标签组合批量重命名，支持拖拽排序和文件夹名称",
+            "commit": "c5972a1",
+            "date": "2026-10-15"
+          },
+          {
+            "text": "加强 HTML 预览隔离、AI 请求和大资料库处理",
+            "commit": "c5972a1",
+            "date": "2026-10-15"
+          }
+        ],
+        "fixes": [
+          {
+            "text": "support Ctrl+Y in transcript workbench",
+            "commit": "e3bcb02",
+            "date": "2026-10-14"
+          }
+        ],
+        "engineering": [
+          {
+            "text": "完善 1.3.5 素材管理与跨平台工作流",
+            "commit": "c5972a1",
+            "date": "2026-10-15"
+          }
+        ]
+      },
+      "changedAreas": [
+        {
+          "area": "src",
+          "count": 60
+        },
+        {
+          "area": "extensions",
+          "count": 5
+        },
+        {
+          "area": "docs",
+          "count": 2
+        },
+        {
+          "area": ".github",
+          "count": 1
+        },
+        {
+          "area": "electron-builder.mac-x64.yml",
+          "count": 1
+        },
+        {
+          "area": "electron-builder.yml",
+          "count": 1
+        },
+        {
+          "area": "package-lock.json",
+          "count": 1
+        },
+        {
+          "area": "package.json",
+          "count": 1
+        },
+        {
+          "area": "resources",
+          "count": 1
+        },
+        {
+          "area": "scripts",
+          "count": 1
+        },
+        {
+          "area": "website",
+          "count": 1
+        }
+      ],
+      "links": {
+        "cnbRelease": "https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.3.5",
+        "githubRelease": "https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.3.5",
+        "macArm64Dmg": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.5/OrcaBox-1.3.5-arm64.dmg",
+        "macX64Dmg": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.5/OrcaBox-1.3.5-x64.dmg",
+        "windowsInstaller": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.5/OrcaBox-1.3.5-win-x64-Setup.exe",
+        "windowsPortable": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.5/OrcaBox-1.3.5-win-x64-Portable.exe",
+        "browserExtension": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.3.5/OrcaBox-Chrome-Extension-1.3.5.zip"
+      }
+    },
     {
       "version": "1.3.4",
       "displayVersion": "1.3.4",
