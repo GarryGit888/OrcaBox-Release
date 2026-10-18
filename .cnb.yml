@@ -36,7 +36,7 @@ $:
               "OrcaBox-${version}-win-x64-Portable.exe" \
               "latest.yml" \
               "latest-mac.yml"; do
-              curl --fail --location --retry 3 --output "release-assets/${asset}" "https://github.com/GarryGit888/OrcaBox-Release/releases/download/${CNB_BRANCH}/${asset}"
+              curl --fail --location --retry 3 --output "release-assets/${asset}" "https://ghproxy.net/https://github.com/GarryGit888/OrcaBox-Release/releases/download/${CNB_BRANCH}/${asset}"
             done
             notes="OrcaBox-${version}-Release-Notes.md"
             test -s "${notes}"
