@@ -1,5 +1,14 @@
 # Release Notes
 
+## 1.3.7 - 2026-10-19
+
+- Lightroom and Bridge rating sync: OrcaBox keeps ratings aligned with both creative tools through XMP metadata.
+- Reverse image prompts: generate Chinese, English, negative-prompt, and JSON views with quality hints, editable saving, and privacy guidance.
+- The browser extension can use the current browser session only after the user selects materials, with host-permission, size, and verification-page limits; HTML pages are never saved as assets.
+- Batch rename now uses draggable custom labels, with stronger HTML preview isolation, AI request handling, and large-library processing.
+- macOS ships separate Apple Silicon and Intel DMGs; matching ZIP packages are retained as the in-app automatic updater payload. The current packages are unsigned and may require approval in Privacy & Security on first launch.
+- Windows x64 installer and portable builds are available. The installer is per-user by default and permits a custom directory. If you see "推理引擎无法启动", please report the full error text including the exit code.
+
 ## 1.3.6 - 2026-10-18
 
 - Lightroom and Bridge rating sync: OrcaBox keeps ratings aligned with both creative tools through XMP metadata.
