@@ -303,6 +303,28 @@
       font-size: .6875rem;
     }
 
+    .withdrawn-badge {
+      display: inline-block;
+      margin-right: 10px;
+      padding: 2px 10px;
+      border-radius: 999px;
+      font-size: .6875rem;
+      font-weight: 600;
+      background: rgba(251, 146, 60, .16);
+      color: #fdba74;
+      border: 1px solid rgba(251, 146, 60, .35);
+      vertical-align: middle;
+    }
+    .withdrawn-notice {
+      margin: 12px 0 0;
+      padding: 12px 16px;
+      border-radius: 12px;
+      background: rgba(251, 146, 60, .08);
+      border: 1px solid rgba(251, 146, 60, .28);
+      color: var(--text-2);
+      font-size: .875rem;
+      line-height: 1.7;
+    }
     .content-column,
     .release-panel,
     .history-card,
@@ -655,6 +677,8 @@
         emptyHistory: '暂无历史版本。',
         loadError: '发行记录暂时无法加载。',
         noDownloads: '暂无公开下载链接。',
+        withdrawnBadge: '已暂时撤离',
+        withdrawnNotice: '因 AI 打包发布流程出错，该版本存在若干功能缺失与新增 BUG，安装包已全部从公开渠道撤下，将随 1.3.7 修复后重新发布。',
         actionLinks: {
           windowsInstaller: 'Windows x64 安装器',
           windowsPortable: 'Windows 免安装版',
@@ -692,6 +716,8 @@
         emptyHistory: 'No previous versions.',
         loadError: 'Release notes are temporarily unavailable.',
         noDownloads: 'No public download links yet.',
+        withdrawnBadge: 'Temporarily withdrawn',
+        withdrawnNotice: 'Due to an error in the AI packaging and release pipeline, this version ships with several missing features and new bugs. All installers have been pulled from public channels and will return fixed with 1.3.7.',
         actionLinks: {
           windowsInstaller: 'Windows x64 Installer',
           windowsPortable: 'Windows Portable',
@@ -729,6 +755,8 @@
         emptyHistory: '過去のバージョンはありません。',
         loadError: 'リリース記録を読み込めませんでした。',
         noDownloads: '公開ダウンロードリンクはまだありません。',
+        withdrawnBadge: '一時的に公開取り下げ',
+        withdrawnNotice: 'AI によるパッケージング／リリース工程の不備により、このバージョンには機能の欠落と新たな不具合があるため、インストーラーをすべて取り下げました。修正版は 1.3.7 で再提供します。',
         actionLinks: {
           windowsInstaller: 'Windows x64 インストーラー',
           windowsPortable: 'Windows ポータブル版',
@@ -766,6 +794,8 @@
         emptyHistory: '이전 버전이 없습니다.',
         loadError: '릴리스 기록을 불러올 수 없습니다.',
         noDownloads: '공개 다운로드 링크가 아직 없습니다.',
+        withdrawnBadge: '임시 철수',
+        withdrawnNotice: 'AI 패키징·릴리스 과정의 오류로 이 버전에는 기능 누락과 새로운 버그가 있어 설치 파일을 모두 철수했습니다. 수정된 버전은 1.3.7에서 다시 제공됩니다.',
         actionLinks: {
           windowsInstaller: 'Windows x64 설치 파일',
           windowsPortable: 'Windows 포터블',
@@ -867,6 +897,10 @@
         .join('')
     }
 
+    const withdrawnHtml = (release) => release.withdrawn
+      ? `<p class="withdrawn-notice"><span class="withdrawn-badge">${esc(dict().withdrawnBadge)}</span>${esc(dict().withdrawnNotice)}</p>`
+      : ''
+
     const renderVersionNav = (releases) => {
       versionList.innerHTML = releases.map((release, index) =>
         `<a class="version-item${index === 0 ? ' is-current' : ''}" href="#${esc(release.tag)}">
@@ -898,6 +932,7 @@
           <time class="release-date" datetime="${esc(current.date)}">${esc(current.date)}</time>
         </div>
         <p class="release-summary">${esc(localizedSummary(current))}</p>
+        ${withdrawnHtml(current)}
         <div class="change-grid">
           ${groupKeys.map((key) => renderGroup(key, current.categories)).join('')}
         </div>
@@ -911,6 +946,7 @@
             <time datetime="${esc(release.date)}">${esc(release.date)}</time>
           </div>
           <p>${esc(localizedSummary(release))}</p>
+          ${withdrawnHtml(release)}
           <div class="history-links">${renderHistoryLinks(release.links)}</div>
         </article>`,
       ).join('')
@@ -968,7 +1004,7 @@
 
     applyLang(currentLang)
 
-    fetch('releases.json?v=1.3.6', { cache: 'no-store' })
+    fetch('releases.json?v=1.3.5', { cache: 'no-store' })
       .then((response) => response.json())
       .then((data) => {
         releasesData = Array.isArray(data.releases) ? data.releases : []
