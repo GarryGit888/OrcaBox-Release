@@ -203,7 +203,7 @@
           <p>后台扫描后会显示素材、元数据和缩略图。首次索引较慢时，可先查看任务状态；左上角的资料库名称可用于切换资料库。</p>
           <div class="callout warning"><p>切换资料库只切换当前索引，不移动原始素材。移动磁盘未连接时，先重新连接来源磁盘，再打开资料库或刷新来源。</p></div>
         </section>
-        <section class="doc-section" id="browse" data-search="网格 列表 排序 拖拽 导出 批量 右键 详情 卡片 信息卡 隐藏">
+        <section class="doc-section" id="browse" data-search="网格 列表 排序 拖拽 导出 批量 右键 详情 卡片 信息卡 隐藏 卡其 背景色 文档">
           <span class="section-index">04 / 开始使用</span><h2>浏览、选择与导入</h2>
           <h3 id="browse-layout">浏览方式</h3>
           <p>“全部素材”汇总各来源；左侧来源树可聚焦具体目录。顶部可切换网格/列表、布局密度、排序、筛选和分组。图片卡片按原图方向和宽高比显示，长图不会被裁切或压缩变形。</p>
@@ -215,6 +215,8 @@
           <p>选中多个素材后打开“批量重命名”，在“自定义”中点击或拖动标签组成命名顺序。可使用原文件名、文件夹名称、序号、下划线和自定义文字；标签放入命名格式区域后可继续拖动调整顺序，也可单独移除。序号支持设置起始值和位数，另有“查找替换”方式可批量替换原文件名中的文字。预览会显示新旧文件名，扩展名会自动保留；确认后会直接修改原文件名，重名冲突会跳过。</p>
           <h3 id="browse-inspector-cards">详情面板信息卡</h3>
           <p>点选素材后，右侧详情顶部会显示类型、尺寸、格式、体积等信息卡；多选素材时，详情面板会改为显示汇总统计、批量操作、选择概览、AI 描述、批量标签和批量备注卡片。进入“设置 → 浏览 → 详情面板卡片”，可以隐藏或重新打开这些板块：单选的信息卡区域作为整体一键隐藏或显示，多选的各卡片可单独控制。关闭后对应板块立即从详情面板消失，重新打开即恢复。此设置只影响界面显示，不修改素材与原文件；macOS 与 Windows 行为一致。</p>
+          <h3 id="browse-document-card-palette">文档卡片背景色</h3>
+          <p>Markdown、TXT 等文字素材在网格和右侧详情中的卡片默认跟随当前主题（深色主题黑底浅字、浅色主题白底深字）。进入“设置 → 界面外观 → 卡片背景色”，可以从几组淡雅浅色底（卡其纸、米杏、亚麻灰）或深色底（石墨、纯黑）中挑选；卡片内的正文、链接、引用与代码底色会随所选配色一起切换，设置立即生效并自动保存，网格卡片与详情卡片同步更新。此设置只影响界面显示，不修改素材内容与原文件；macOS 与 Windows 行为一致。</p>
           <h3 id="browse-use">预览与取用</h3>
           <p>双击打开独立预览。右键菜单可按素材类型提供复制路径、在其他应用打开、导出、重命名等操作；也可按目标软件支持情况拖拽素材。macOS 可使用“共享”打开系统共享面板；Windows 版该入口目前标记为“开发中”，暂时请使用“复制到剪贴板”后粘贴到目标应用。</p>
           <h3 id="browse-import">导入与移动文件</h3>
@@ -263,7 +265,8 @@
           <h3 id="organize-metadata">收藏、标签与备注</h3>
           <p>选中素材后，可在详情中设置收藏、评分、标签和备注；多选适合统一添加标签或收藏。“标签管理”集中维护已有标签。评分默认保存在 OrcaBox 资料库中；如需与 Lightroom Classic / Bridge 互通，可到“设置 → 浏览 → Adobe 评分”开启同步。</p>
           <h3 id="organize-adobe-ratings">Lightroom / Bridge 星级评分同步</h3>
-          <p>开启“与 Lightroom / Bridge 同步星级评分”后，OrcaBox 会检查现有 XMP 星级：已存在的 XMP 评分导入资料库；没有 XMP 评分但 OrcaBox 已有星级的图片，会把星级写入支持的图片元数据或同名 RAW <code>.xmp</code> 旁车文件。此后在 OrcaBox 修改评分会写回 XMP；Lightroom / Bridge 修改 XMP 后，OrcaBox 会通过来源文件监听更新评分。RAW 旁车需与原图处于同一目录并使用相同文件名。支持情况取决于图片格式是否可由 ExifTool 写入 XMP；视频、音频和其他素材仍只在 OrcaBox 中评分。开启同步可能修改原图片或旁车文件，请先备份重要素材；macOS 与 Windows 使用相同的同步行为。</p>
+          <p>开启“与 Lightroom / Bridge 同步星级评分”后，OrcaBox 会检查现有 XMP 星级：已存在的 XMP 评分导入资料库；没有 XMP 评分但 OrcaBox 已有星级的图片，会把星级写入支持的图片元数据或同名 RAW <code>.xmp</code> 旁车文件。此后在 OrcaBox 修改评分会写回 XMP；Lightroom / Bridge 修改 XMP 后，OrcaBox 会通过来源文件监听更新评分。RAW 旁车需与原图处于同一目录并使用相同文件名；同一目录下存在同名 RAW + JPEG（双卡槽相机）时，旁车评分会应用到 RAW 文件。支持情况取决于图片格式是否可由 ExifTool 写入 XMP；视频、音频和其他素材仍只在 OrcaBox 中评分。开启同步可能修改原图片或旁车文件，请先备份重要素材；macOS 与 Windows 使用相同的同步行为。</p>
+          <p><strong>Lightroom 侧的前提：</strong>Lightroom Classic 默认把评分只保存在目录（Catalog）数据库里，需要在「目录设置 → 元数据」勾选“自动将更改写入 XMP”后，评分才会写入文件，OrcaBox 才能读到；Bridge 会即时把评分写入 XMP，无需额外设置。反过来，在 Lightroom 中已经导入过的照片，读取 OrcaBox 或 Bridge 写入的新评分需要执行「元数据 → 从文件读取元数据」，Lightroom 不会自动重读外部修改过的文件。</p>
           <h3 id="organize-collections">合集</h3>
           <p>把不同来源的素材放进同一合集，方便按项目查看，不要求移动原文件。可从左侧合集入口回到已整理的内容。</p>
           <img class="doc-shot" src="assets/product-1.2.1-collections.webp" alt="OrcaBox 合集与来源目录视图" width="1800" height="843" loading="lazy">
@@ -317,6 +320,7 @@
           <span class="section-index">11 / 功能模块</span><h2>插件与创作工具</h2>
           <h3 id="plugins-center">插件中心</h3>
           <p>从<strong>插件中心</strong>查看和管理已安装工具。插件可把操作接入素材菜单或独立面板，具体入口和权限以插件界面为准；安装第三方插件前确认来源与授权范围。</p>
+          <p>安装包中会随附「网络视频下载」插件（0.3.0），首次启动时自动准备好，可直接使用。它与自行安装的插件完全一致：可以在插件中心停用或卸载，也可以替换为自己更新或修改过的版本；OrcaBox 不会把它当作内置插件，也不会覆盖你已安装的版本。</p>
           <img class="doc-shot" src="assets/docs-plugin-center.png" alt="OrcaBox 插件中心显示已启用插件及其入口" width="2424" height="1642" loading="lazy">
           <div class="caption">插件中心：查看启用状态、插件能力及可用入口。</div>
           <h3 id="plugins-davinci">DaVinci Resolve 工作流</h3>
