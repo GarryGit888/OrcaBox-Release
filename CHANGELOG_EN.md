@@ -15,6 +15,9 @@ ZIP packages are retained as the in-app automatic updater payload. The current p
 ZIP packages are retained as the in-app automatic updater payload. The current packages are unsigned and may require approval in Privacy & Security on first launch.
 - Windows x64 installer and portable builds are available. The installer is per-user by default and permits a custom directory. If you see "推理引擎无法启动", please report the full error text including the exit code.
 
+ZIP packages are retained as the in-app automatic updater payload. The current packages are unsigned and may require approval in Privacy & Security on first launch.
+- Windows x64 installer and portable builds are available. The installer is per-user by default and permits a custom directory. If you see "推理引擎无法启动", please report the full error text including the exit code.
+
 ## 1.3.6 - 2026-10-18
 
 - Lightroom and Bridge rating sync: OrcaBox keeps ratings aligned with both creative tools through XMP metadata.

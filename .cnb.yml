@@ -22,6 +22,29 @@ $:
             set -eu
             version="${CNB_BRANCH#v}"
             mkdir -p release-assets
+            # Mirror availability changes over time (ghproxy.net started
+            # returning 502 for every asset). Try direct GitHub first, then
+            # each mirror in turn, and only fail once every channel is out.
+            base_urls="
+            https://github.com/GarryGit888/OrcaBox-Release/releases/download/${CNB_BRANCH}
+            https://gh-proxy.com/https://github.com/GarryGit888/OrcaBox-Release/releases/download/${CNB_BRANCH}
+            https://ghfast.top/https://github.com/GarryGit888/OrcaBox-Release/releases/download/${CNB_BRANCH}
+            https://ghproxy.net/https://github.com/GarryGit888/OrcaBox-Release/releases/download/${CNB_BRANCH}
+            "
+            fetch() {
+              asset="$1"
+              out="release-assets/${asset}"
+              if [ -s "${out}" ]; then return 0; fi
+              for base in ${base_urls}; do
+                if curl --fail --location --retry 2 --retry-delay 2 --connect-timeout 20 --max-time 1800 --output "${out}.part" "${base}/${asset}"; then
+                  mv "${out}.part" "${out}"
+                  return 0
+                fi
+                rm -f "${out}.part"
+                echo "mirror failed for ${asset}: ${base}" >&2
+              done
+              return 1
+            }
             for asset in \
               "OrcaBox-${version}-arm64.dmg" \
               "OrcaBox-${version}-arm64.dmg.blockmap" \
@@ -35,8 +58,9 @@ $:
               "OrcaBox-${version}-win-x64-Setup.exe.blockmap" \
               "OrcaBox-${version}-win-x64-Portable.exe" \
               "latest.yml" \
-              "latest-mac.yml"; do
-              curl --fail --location --retry 3 --output "release-assets/${asset}" "https://ghproxy.net/https://github.com/GarryGit888/OrcaBox-Release/releases/download/${CNB_BRANCH}/${asset}"
+              "latest-mac.yml" \
+              "OrcaBox-${version}-Release-Notes.md"; do
+              fetch "${asset}"
             done
             notes="OrcaBox-${version}-Release-Notes.md"
             test -s "${notes}"
