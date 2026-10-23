@@ -1,6 +1,6 @@
 <p align="center"><img src="./assets/orcabox-icon.png" width="104" alt="OrcaBox icon"></p>
 <h1 align="center">OrcaBox</h1>
-<p align="center"><strong>为创作者打造的本地优先多格式素材管理器</strong></p>
+<p align="center"><strong>为Everyone打造的本地优先多格式素材管理器</strong></p>
 <p align="center">不搬动原文件，把分散在磁盘、移动硬盘和项目目录中的素材整理成可搜索、可预览、可复用的创作资料库。</p>
 
 <p align="center">
