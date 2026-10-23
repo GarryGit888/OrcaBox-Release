@@ -19,7 +19,6 @@
 
 <p align="center"><a href="https://garrygit888.github.io/OrcaBox-Release/">产品官网</a> · <a href="https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.3.8">CNB 下载</a> · <a href="https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.3.8">GitHub 下载</a> · <a href="./OrcaBox-1.3.8-Release-Notes.md">更新说明</a> · <a href="https://github.com/GarryGit888/OrcaBox-Release/issues">问题反馈</a></p>
 
-> ⚠️ **1.3.6 已暂时撤离**：因 AI 打包发布流程出错，该版本存在若干功能缺失与新增 BUG，所有安装包已从公开渠道撤下，将随 1.3.7 修复后重新发布。当前请下载 1.3.5；1.3.6 版本说明仅作留存查阅。
 
 <img src="./assets/product-1.2.7-hero.webp" width="100%" alt="OrcaBox 本地素材库主界面">
 

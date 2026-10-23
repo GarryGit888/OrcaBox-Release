@@ -12,7 +12,6 @@
 <p align="center"><img src="https://img.shields.io/badge/Release-v1.3.8-7C6FF7?style=flat-square" alt="Version 1.3.8"> <img src="https://img.shields.io/badge/macOS-12%2B-111318?style=flat-square&logo=apple" alt="macOS 12+"> <img src="https://img.shields.io/badge/Windows-10%2F11_x64-111318?style=flat-square&logo=windows11" alt="Windows 10/11 x64"> <img src="https://img.shields.io/badge/Local--first-Data_stays_local-1F9D75?style=flat-square" alt="Local-first"></p>
 <p align="center"><a href="https://garrygit888.github.io/OrcaBox-Release/">Website</a> · <a href="https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.3.8">CNB Download</a> · <a href="https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.3.8">GitHub Download</a> · <a href="./OrcaBox-1.3.8-Release-Notes.EN.md">Release Notes</a> · <a href="https://github.com/GarryGit888/OrcaBox-Release/issues">Feedback</a></p>
 
-> ⚠️ **1.3.6 has been temporarily withdrawn**: an error in the AI packaging and release pipeline left this version with several missing features and new bugs. All installers have been pulled from public channels and will return fixed with 1.3.7. Please download 1.3.5 for now; the 1.3.6 release notes are kept for reference.
 
 <img src="./assets/product-1.2.7-hero.webp" width="100%" alt="OrcaBox local asset library">
 
