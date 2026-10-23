@@ -1,7 +1,435 @@
 {
-  "updatedAt": "2026-10-19",
-  "current": "1.3.5",
+  "updatedAt": "2026-10-23",
+  "current": "1.3.8",
   "releases": [
+    {
+      "version": "1.3.8",
+      "displayVersion": "1.3.8",
+      "date": "2026-10-23",
+      "tag": "v1.3.8",
+      "title": "OrcaBox 1.3.8",
+      "summary": "本版本围绕 新增功能、优化改进、问题修复 持续完善素材管理、媒体预览与跨平台使用体验。",
+      "generatedFrom": {
+        "baseRef": "main",
+        "branch": "codex/1.3.8",
+        "commitCount": 69,
+        "changedFileCount": 207
+      },
+      "categories": {
+        "features": [
+          {
+            "text": "应用级账号登录（小红书/抖音）与小红书笔记批量导入收尾",
+            "commit": "4326570",
+            "date": "2026-10-23"
+          },
+          {
+            "text": "页签居中固定并放大，切换加丝滑动指示器与内容过渡",
+            "commit": "9ca16e9",
+            "date": "2026-10-23"
+          },
+          {
+            "text": "支持标准笔记链接整篇批量导入并更新 1.3.8 文档与公告",
+            "commit": "5b33bee",
+            "date": "2026-10-22"
+          },
+          {
+            "text": "优化媒体播放路由与小红书批量导入探测",
+            "commit": "68e917b",
+            "date": "2026-10-22"
+          },
+          {
+            "text": "内置 Pinterest 以图搜图插件（识图/看板/搜索/缩放大图）",
+            "commit": "39dd5e0",
+            "date": "2026-10-22"
+          },
+          {
+            "text": "评分改星形并迁入属性基础行，详情栏移除收藏",
+            "commit": "2bb422a",
+            "date": "2026-10-22"
+          },
+          {
+            "text": "HTML 预览支持复制排版（含图片）到公众号",
+            "commit": "4374160",
+            "date": "2026-10-22"
+          },
+          {
+            "text": "全屏播放沉浸式控件（渐隐+悬浮）",
+            "commit": "6b3a7e4",
+            "date": "2026-10-22"
+          },
+          {
+            "text": "打通抖音下载——页面级 aweme 解析 + 多分辨率直连",
+            "commit": "8dc7254",
+            "date": "2026-10-21"
+          },
+          {
+            "text": "卡片显示下载目录并支持一键在目录中打开",
+            "commit": "998b371",
+            "date": "2026-10-21"
+          },
+          {
+            "text": "队列卡片支持逐条选择下载分辨率",
+            "commit": "5fc0ea4",
+            "date": "2026-10-21"
+          },
+          {
+            "text": "安装包随附网络视频下载插件（非内置，可停用/卸载/替换）",
+            "commit": "0102571",
+            "date": "2026-10-19"
+          },
+          {
+            "text": "恢复未提交批次——文档卡片背景色、详情面板折叠记忆、RAW 优先评分同步",
+            "commit": "20730d8",
+            "date": "2026-10-19"
+          },
+          {
+            "text": "添加 sourceRoots 命名空间的中文标签",
+            "commit": "4ffab52",
+            "date": "2026-10-19"
+          },
+          {
+            "text": "读取 soniclab 等第三方音频元数据，AI 中文名/描述/标签直达属性面板与标签系统",
+            "commit": "44052ee",
+            "date": "2026-10-18"
+          },
+          {
+            "text": "补充 1.3.6 新增功能引导与发行说明",
+            "commit": "9583e42",
+            "date": "2026-10-18"
+          },
+          {
+            "text": "锁定文件夹支持解锁浏览后右键立即重新锁定",
+            "commit": "9095c62",
+            "date": "2026-10-18"
+          },
+          {
+            "text": "升级插件为独立面板窗口并支持解析器兜底下载",
+            "commit": "224c043",
+            "date": "2026-10-17"
+          },
+          {
+            "text": "支持自定义下载目标目录并优化窗口标题栏",
+            "commit": "9df45da",
+            "date": "2026-10-17"
+          },
+          {
+            "text": "插件面板新增下载目录快捷选择行",
+            "commit": "9dacfe6",
+            "date": "2026-10-17"
+          },
+          {
+            "text": "下载器升级为独立审阅式面板窗口",
+            "commit": "9073e92",
+            "date": "2026-10-17"
+          },
+          {
+            "text": "yt-dlp 缺失时自动供给官方构建",
+            "commit": "eea0b49",
+            "date": "2026-10-17"
+          },
+          {
+            "text": "扩展口语化查询变体并将音频纳入 AI 批量分析",
+            "commit": "ca44151",
+            "date": "2026-10-17"
+          },
+          {
+            "text": "打通 Lightroom 与 Bridge 星级评分同步",
+            "commit": "44ef811",
+            "date": "2026-10-15"
+          }
+        ],
+        "improvements": [
+          {
+            "text": "来源目录选择器改为增量加载并对齐侧栏排序",
+            "commit": "e9431ae",
+            "date": "2026-10-20"
+          },
+          {
+            "text": "库上下文/健康汇总等重聚合 IPC 先让出一拍事件循环",
+            "commit": "e2ab002",
+            "date": "2026-10-19"
+          },
+          {
+            "text": "库上下文改子聚合快照 + light 快照廉价签名，消除反射性全表重算",
+            "commit": "a56e15d",
+            "date": "2026-10-19"
+          },
+          {
+            "text": "语义索引覆盖率查询加 TTL 缓存并放宽空闲轮询",
+            "commit": "e92501b",
+            "date": "2026-10-17"
+          }
+        ],
+        "fixes": [
+          {
+            "text": "识图空结果自动重试，空态区分限流并给重试入口",
+            "commit": "a3fdd08",
+            "date": "2026-10-23"
+          },
+          {
+            "text": "HTML 卡片缩略图不再吞掉双击与拖拽",
+            "commit": "564fbd0",
+            "date": "2026-10-22"
+          },
+          {
+            "text": "字幕按语义断句+按词/字符上限收敛，并对齐真实语音",
+            "commit": "8857b2a",
+            "date": "2026-10-21"
+          },
+          {
+            "text": "卡片选分辨率后按所选档位下载 + 同步抖音文档",
+            "commit": "d651406",
+            "date": "2026-10-21"
+          },
+          {
+            "text": "修复 YouTube 4K（VP9+Opus）无法预览与播放",
+            "commit": "400c267",
+            "date": "2026-10-21"
+          },
+          {
+            "text": "修复 YouTube 无进度，并为队列加上重新下载",
+            "commit": "45754e7",
+            "date": "2026-10-20"
+          },
+          {
+            "text": "恢复网络视频下载插件的独立窗口入口",
+            "commit": "99ad8fe",
+            "date": "2026-10-20"
+          },
+          {
+            "text": "CNB 镜像流水线改用多通道回退下载",
+            "commit": "726cae3",
+            "date": "2026-10-19"
+          },
+          {
+            "text": "上下文子快照补廉价签名失效，jobs 改为实时读取",
+            "commit": "fabfc4d",
+            "date": "2026-10-19"
+          },
+          {
+            "text": "扫描链路韧性补强——目录快照心跳 + watcher 增量管线挂死防护",
+            "commit": "913788f",
+            "date": "2026-10-19"
+          },
+          {
+            "text": "根治扫描队列冻结——exiftool ASAR 丢二进制永挂 + 扫描泵单槽看门狗",
+            "commit": "82c7c50",
+            "date": "2026-10-19"
+          },
+          {
+            "text": "1.3.6 补记模型下载断点续传修复",
+            "commit": "51627a6",
+            "date": "2026-10-19"
+          },
+          {
+            "text": "修复模型下载断点续传失效，中断后从原进度继续而非重头下载",
+            "commit": "bed6ab8",
+            "date": "2026-10-18"
+          },
+          {
+            "text": "审查加固——readPersistedMediaProbe 补齐 external_audio 三列 SELECT，tags 解析加防御",
+            "commit": "ed4d679",
+            "date": "2026-10-18"
+          },
+          {
+            "text": "外部音频元数据三列迁移错挂在 v3 永不执行，挪至 v52 并 bump 库版本",
+            "commit": "84eb6b7",
+            "date": "2026-10-18"
+          },
+          {
+            "text": "媒体进程改用非登录 shell，规避损坏的 .profile 拖垮视频帧管线",
+            "commit": "ee2d279",
+            "date": "2026-10-18"
+          },
+          {
+            "text": "免版税编码跳过 AVPlayer 回退并对齐 probe 编码集",
+            "commit": "addc6ea",
+            "date": "2026-10-17"
+          },
+          {
+            "text": "VP9/AV1/VP8 MP4 直读浏览器播放，下载优先 H.264",
+            "commit": "a0d0309",
+            "date": "2026-10-17"
+          },
+          {
+            "text": "libVLC 预热移出主线程并加超时生命周期锁",
+            "commit": "05da26c",
+            "date": "2026-10-17"
+          },
+          {
+            "text": "修复小红书 SSR 解析断链并补齐 Instagram 粘贴导入",
+            "commit": "eca02c6",
+            "date": "2026-10-17"
+          },
+          {
+            "text": "修复 AI 标签分析阻塞并提升长图缩略图清晰度",
+            "commit": "dee6a56",
+            "date": "2026-10-16"
+          },
+          {
+            "text": "support Ctrl+Y in transcript workbench",
+            "commit": "e3bcb02",
+            "date": "2026-10-14"
+          }
+        ],
+        "engineering": [
+          {
+            "text": "1.3.8 发行说明补充 Pinterest 以图搜图插件条目",
+            "commit": "ba0f35f",
+            "date": "2026-10-22"
+          },
+          {
+            "text": "tune(video): 全屏控件自动隐藏改为 2 秒",
+            "commit": "8d3e29d",
+            "date": "2026-10-22"
+          },
+          {
+            "text": "1.3.7 物料同步——卡片背景色/折叠记忆/随包插件写入发行记录",
+            "commit": "94d1bd4",
+            "date": "2026-10-19"
+          },
+          {
+            "text": "官网升级至 1.3.7，移除 1.3.6 撤离公告",
+            "commit": "1635dbf",
+            "date": "2026-10-19"
+          },
+          {
+            "text": "guide 补充扫描队列自动恢复与评分同步超时说明",
+            "commit": "0791a4e",
+            "date": "2026-10-19"
+          },
+          {
+            "text": "1.3.7 发布物料",
+            "commit": "420a5d2",
+            "date": "2026-10-19"
+          },
+          {
+            "text": "1.3.6 暂时撤离——公开下载回退 1.3.5，下载页与发行记录标注撤离公告",
+            "commit": "03aa503",
+            "date": "2026-10-19"
+          },
+          {
+            "text": "1.3.6 发布物料——guide 补网络视频下载面板章节并收录 1.3.6 条目",
+            "commit": "196beb5",
+            "date": "2026-10-19"
+          },
+          {
+            "text": "修正 media-playback 会话断言并保持 sourceRoots 不对插件公开",
+            "commit": "59d3aa6",
+            "date": "2026-10-18"
+          },
+          {
+            "text": "ci(cnb): 镜像流水线下载改走 ghproxy 加速",
+            "commit": "938af25",
+            "date": "2026-10-18"
+          },
+          {
+            "text": "v1.3.6 补充获取更新章节",
+            "commit": "5904f49",
+            "date": "2026-10-18"
+          },
+          {
+            "text": "同步浏览器扩展版本号至 1.3.6",
+            "commit": "7643cb5",
+            "date": "2026-10-18"
+          },
+          {
+            "text": "补记风格提交至 blame 豁免清单",
+            "commit": "bf8a381",
+            "date": "2026-10-17"
+          },
+          {
+            "text": "统一 1.3.6 涉及文件回仓库单引号风格并锁定 Prettier 配置",
+            "commit": "7676859",
+            "date": "2026-10-17"
+          },
+          {
+            "text": "版本号升至 1.3.6",
+            "commit": "efb49e3",
+            "date": "2026-10-17"
+          },
+          {
+            "text": "记录 1.3.5 CNB 完整发布与旧版更新检查验收",
+            "commit": "7db7dad",
+            "date": "2026-10-16"
+          },
+          {
+            "text": "完善 1.3.5 发布门禁与公开文案",
+            "commit": "5963cda",
+            "date": "2026-10-15"
+          },
+          {
+            "text": "发布 1.3.5 版本文档",
+            "commit": "7ddc531",
+            "date": "2026-10-15"
+          },
+          {
+            "text": "完善 1.3.5 素材管理与跨平台工作流",
+            "commit": "c5972a1",
+            "date": "2026-10-15"
+          }
+        ]
+      },
+      "changedAreas": [
+        {
+          "area": "src",
+          "count": 165
+        },
+        {
+          "area": "doc",
+          "count": 7
+        },
+        {
+          "area": "scripts",
+          "count": 7
+        },
+        {
+          "area": "extensions",
+          "count": 5
+        },
+        {
+          "area": "plugins-dev",
+          "count": 4
+        },
+        {
+          "area": "resources",
+          "count": 4
+        },
+        {
+          "area": "website",
+          "count": 4
+        },
+        {
+          "area": "docs",
+          "count": 2
+        },
+        {
+          "area": ".git-blame-ignore-revs",
+          "count": 1
+        },
+        {
+          "area": ".github",
+          "count": 1
+        },
+        {
+          "area": ".prettierrc.json",
+          "count": 1
+        },
+        {
+          "area": "electron-builder.mac-x64.yml",
+          "count": 1
+        }
+      ],
+      "links": {
+        "cnbRelease": "https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.3.8",
+        "githubRelease": "https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.3.8",
+        "macArm64Dmg": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.8/OrcaBox-1.3.8-arm64.dmg",
+        "macX64Dmg": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.8/OrcaBox-1.3.8-x64.dmg",
+        "windowsInstaller": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.8/OrcaBox-1.3.8-win-x64-Setup.exe",
+        "windowsPortable": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.8/OrcaBox-1.3.8-win-x64-Portable.exe",
+        "browserExtension": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.3.8/OrcaBox-Chrome-Extension-1.3.8.zip"
+      }
+    },
     {
       "version": "1.3.7",
       "displayVersion": "1.3.7",
@@ -92,120 +520,6 @@
       "links": {
         "cnb": "https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.3.7",
         "github": "https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.3.7"
-      }
-    },
-    {
-      "version": "1.3.5",
-      "displayVersion": "1.3.5",
-      "date": "2026-10-15",
-      "tag": "v1.3.5",
-      "title": "OrcaBox 1.3.5",
-      "summary": "新增 Lightroom/Bridge 星级同步、图片反推提示词与会话素材采集，并优化自定义批量重命名与 HTML 预览隔离。",
-      "generatedFrom": {
-        "baseRef": "0419faba",
-        "branch": "1.3.5",
-        "commitCount": 3,
-        "changedFileCount": 75
-      },
-      "categories": {
-        "features": [
-          {
-            "text": "打通 Lightroom 与 Bridge 星级评分同步",
-            "commit": "44ef811",
-            "date": "2026-10-15"
-          },
-          {
-            "text": "图片反推提示词支持中文、英文、反向词和 JSON 结果",
-            "commit": "c5972a1",
-            "date": "2026-10-15"
-          },
-          {
-            "text": "浏览器扩展支持经过授权的当前会话素材获取",
-            "commit": "c5972a1",
-            "date": "2026-10-15"
-          }
-        ],
-        "improvements": [
-          {
-            "text": "自定义标签组合批量重命名，支持拖拽排序和文件夹名称",
-            "commit": "c5972a1",
-            "date": "2026-10-15"
-          },
-          {
-            "text": "加强 HTML 预览隔离、AI 请求和大资料库处理",
-            "commit": "c5972a1",
-            "date": "2026-10-15"
-          }
-        ],
-        "fixes": [
-          {
-            "text": "support Ctrl+Y in transcript workbench",
-            "commit": "e3bcb02",
-            "date": "2026-10-14"
-          }
-        ],
-        "engineering": [
-          {
-            "text": "完善 1.3.5 素材管理与跨平台工作流",
-            "commit": "c5972a1",
-            "date": "2026-10-15"
-          }
-        ]
-      },
-      "changedAreas": [
-        {
-          "area": "src",
-          "count": 60
-        },
-        {
-          "area": "extensions",
-          "count": 5
-        },
-        {
-          "area": "docs",
-          "count": 2
-        },
-        {
-          "area": ".github",
-          "count": 1
-        },
-        {
-          "area": "electron-builder.mac-x64.yml",
-          "count": 1
-        },
-        {
-          "area": "electron-builder.yml",
-          "count": 1
-        },
-        {
-          "area": "package-lock.json",
-          "count": 1
-        },
-        {
-          "area": "package.json",
-          "count": 1
-        },
-        {
-          "area": "resources",
-          "count": 1
-        },
-        {
-          "area": "scripts",
-          "count": 1
-        },
-        {
-          "area": "website",
-          "count": 1
-        }
-      ],
-      "links": {
-        "cnbRelease": "https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.3.5",
-        "githubRelease": "https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.3.5",
-        "macArm64Dmg": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.5/OrcaBox-1.3.5-arm64.dmg",
-        "macX64Dmg": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.5/OrcaBox-1.3.5-x64.dmg",
-        "windowsInstaller": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.5/OrcaBox-1.3.5-win-x64-Setup.exe",
-        "windowsPortable": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.5/OrcaBox-1.3.5-win-x64-Portable.exe",
-        "browserExtension": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.3.5/OrcaBox-Chrome-Extension-1.3.5.zip"
       }
     },
     {
@@ -333,6 +647,120 @@
       "links": {
         "cnbRelease": "https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.3.6",
         "githubRelease": "https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.3.6"
+      }
+    },
+    {
+      "version": "1.3.5",
+      "displayVersion": "1.3.5",
+      "date": "2026-10-15",
+      "tag": "v1.3.5",
+      "title": "OrcaBox 1.3.5",
+      "summary": "新增 Lightroom/Bridge 星级同步、图片反推提示词与会话素材采集，并优化自定义批量重命名与 HTML 预览隔离。",
+      "generatedFrom": {
+        "baseRef": "0419faba",
+        "branch": "1.3.5",
+        "commitCount": 3,
+        "changedFileCount": 75
+      },
+      "categories": {
+        "features": [
+          {
+            "text": "打通 Lightroom 与 Bridge 星级评分同步",
+            "commit": "44ef811",
+            "date": "2026-10-15"
+          },
+          {
+            "text": "图片反推提示词支持中文、英文、反向词和 JSON 结果",
+            "commit": "c5972a1",
+            "date": "2026-10-15"
+          },
+          {
+            "text": "浏览器扩展支持经过授权的当前会话素材获取",
+            "commit": "c5972a1",
+            "date": "2026-10-15"
+          }
+        ],
+        "improvements": [
+          {
+            "text": "自定义标签组合批量重命名，支持拖拽排序和文件夹名称",
+            "commit": "c5972a1",
+            "date": "2026-10-15"
+          },
+          {
+            "text": "加强 HTML 预览隔离、AI 请求和大资料库处理",
+            "commit": "c5972a1",
+            "date": "2026-10-15"
+          }
+        ],
+        "fixes": [
+          {
+            "text": "support Ctrl+Y in transcript workbench",
+            "commit": "e3bcb02",
+            "date": "2026-10-14"
+          }
+        ],
+        "engineering": [
+          {
+            "text": "完善 1.3.5 素材管理与跨平台工作流",
+            "commit": "c5972a1",
+            "date": "2026-10-15"
+          }
+        ]
+      },
+      "changedAreas": [
+        {
+          "area": "src",
+          "count": 60
+        },
+        {
+          "area": "extensions",
+          "count": 5
+        },
+        {
+          "area": "docs",
+          "count": 2
+        },
+        {
+          "area": ".github",
+          "count": 1
+        },
+        {
+          "area": "electron-builder.mac-x64.yml",
+          "count": 1
+        },
+        {
+          "area": "electron-builder.yml",
+          "count": 1
+        },
+        {
+          "area": "package-lock.json",
+          "count": 1
+        },
+        {
+          "area": "package.json",
+          "count": 1
+        },
+        {
+          "area": "resources",
+          "count": 1
+        },
+        {
+          "area": "scripts",
+          "count": 1
+        },
+        {
+          "area": "website",
+          "count": 1
+        }
+      ],
+      "links": {
+        "cnbRelease": "https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.3.5",
+        "githubRelease": "https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.3.5",
+        "macArm64Dmg": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.5/OrcaBox-1.3.5-arm64.dmg",
+        "macX64Dmg": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.5/OrcaBox-1.3.5-x64.dmg",
+        "windowsInstaller": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.5/OrcaBox-1.3.5-win-x64-Setup.exe",
+        "windowsPortable": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.5/OrcaBox-1.3.5-win-x64-Portable.exe",
+        "browserExtension": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.3.5/OrcaBox-Chrome-Extension-1.3.5.zip"
       }
     },
     {
