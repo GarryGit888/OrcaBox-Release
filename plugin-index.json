@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-23T14:23:51.420Z",
+  "plugins": [
+    {
+      "id": "com.orcabox.image-compare",
+      "name": {
+        "zh": "图像对比工具",
+        "en": "Image Compare"
+      },
+      "description": {
+        "zh": "在独立面板中并排、滑杆、叠加或差异对比多张图片",
+        "en": "Compare multiple images side by side, with wipe, overlay, or difference views in a standalone panel"
+      },
+      "version": "1.0.0",
+      "author": "OrcaBox",
+      "minAppVersion": "1.3.9",
+      "downloadUrl": "https://cnb.cool/garrykai/orcabox-release/-/git/raw/main/plugin-packages/com.orcabox.image-compare-v1.0.0.zip",
+      "mirrorDownloadUrl": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/plugins-1.3.9/com.orcabox.image-compare-v1.0.0.zip",
+      "sha256": "8e85c04155c3d30a172e7d05de183356c3d395743486ce772983a4db825dc615",
+      "sizeBytes": 108376
+    },
+    {
+      "id": "com.orcabox.network-video-downloader",
+      "name": {
+        "zh": "网络视频下载",
+        "en": "Network Video Downloader"
+      },
+      "description": {
+        "zh": "通过桌面链接或移动端分享链接下载常见平台的视频或音频，以独立面板窗口运行",
+        "en": "Download video or audio from common platforms using desktop or mobile share links, in a standalone panel window"
+      },
+      "version": "0.3.0",
+      "author": "OrcaBox",
+      "minAppVersion": "1.3.6",
+      "downloadUrl": "https://cnb.cool/garrykai/orcabox-release/-/git/raw/main/plugin-packages/com.orcabox.network-video-downloader-v0.3.0.zip",
+      "mirrorDownloadUrl": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/plugins-1.3.9/com.orcabox.network-video-downloader-v0.3.0.zip",
+      "sha256": "4a23ecf6c303b5bd629055bf962b48346aaf30c658b3f008aee217fc44546bd5",
+      "sizeBytes": 111402
+    }
+  ]
+}
