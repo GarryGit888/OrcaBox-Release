@@ -28,14 +28,57 @@ OrcaBox is built for editors, designers, motion artists, photographers, and crea
 
 ## Highlights
 
-- Local indexing across internal disks, external drives, mapped storage, and multiple project roots.
+- Local indexing across internal disks, external drives, mapped storage, and multiple project roots, with file watching and incremental indexing built in.
 - 40+ preview formats for images, media, motion, 3D, fonts, documents, and creative projects.
-- Search and filters for keywords, file type, rating, tags, color, dates, and folders.
-- Collections, smart folders, favorites, ratings, notes, tags, and batch tools.
-- On-device AI for visual analysis, smart tags, and color-assisted discovery, with optional user-configured remote APIs.
-- Stable live Lottie previews, audio waveforms, and synchronized playback surfaces.
-- Plugin management, browser capture, conversion tools, and DaVinci Resolve handoff.
+- Search and filters for keywords, file type, rating, tags, color, dates, and folders — plus AI semantic search that finds assets from a plain-language description.
+- Collections, smart folders, favorites, ratings, notes, tags, batch rename, and batch move tools.
+- On-device AI for visual analysis, smart tags, semantic retrieval, and subtitle generation, with optional user-configured remote APIs.
+- Live Lottie previews, persistent Live Photo motion, and continuous audio waveforms.
+- Plugin Center with workflow-scoped capabilities: network video downloading, Pinterest visual search, song recognition, web capture, and DaVinci Resolve / Lightroom / Bridge integrations.
 - Desktop builds for Apple Silicon, Intel Mac, and Windows x64.
+
+## Recent Releases Highlights
+
+Everything below has shipped in v1.3.4 – v1.3.8. See the [release notes](./OrcaBox-1.3.8-Release-Notes.EN.md) for full details.
+
+**Web asset capture**
+
+- **Network video downloader** — A standalone frosted-glass panel: batch-paste YouTube / Bilibili / Douyin / Xiaohongshu / Instagram links to download. Pick the resolution per card, land files in the system folder, a custom folder, or any source folder, and they join the library automatically. The download engine installs and verifies itself; resumable downloads, link re-resolution, and 4K original-quality downloads are supported.
+- **Xiaohongshu note import** — Paste a full note link and import every image and Live Photo in the note at once, with mobile and desktop resolution paths backing each other up.
+- **In-app account logins** — Sign in to Xiaohongshu / Douyin from Settings. Xiaohongshu imports save watermark-free originals and gain access to private notes; Douyin unlocks login-only videos and higher quality tiers. Credentials live in OrcaBox's own isolated partitions and never touch your system browser.
+
+**AI organization & retrieval**
+
+- **On-device smart tags** — Local visual analysis generates tags and descriptions in batches; review and write them back without an internet connection.
+- **Semantic search** — Find assets by describing the scene in plain language. The vector index is fully local, ideal for large libraries that haven't been tagged yet.
+- **AI plugin builder** — Describe a plugin in one sentence and generate it, with a built-in API reference, code preview, and draft management.
+
+**Playback & preview**
+
+- **Immersive fullscreen playback** — The title bar, toolbar, and timeline fade away together, and the picture smoothly takes the whole window; the header melts into the picture with a progressive blur, with identical feel across browser-direct and native backends.
+- **Original-file playback** — 4K VP9 + Opus, HEVC, ProRes, MKV and more play through browser-direct or the OS media stack (AVPlayer / libVLC / mpv). No proxy video files are ever generated for preview.
+- **Always-alive motion** — Lottie / JSON assets keep playing live in the grid, with persistent Live Photo motion and continuous audio waveforms.
+
+**Subtitles & transcript workbench**
+
+- **Local smart subtitles** — Speech recognition generates subtitles, merges fragments, and snaps cue boundaries onto real pauses in the waveform. English lines break on word counts (8 words per line by default) while Chinese, Japanese, and Korean use character counts; export to SRT / VTT in one click.
+
+**Creative tool integrations**
+
+- **DaVinci Resolve import** — Jump straight to the current project and bring selected assets in with one click.
+- **Lightroom / Bridge rating sync** — Ratings align bidirectionally through XMP metadata, so cross-tool curation never means rating twice.
+
+## Plugins & Extensions
+
+OrcaBox ships with a Plugin Center where capabilities are enabled around your workflow. Built-in plugins include:
+
+| Plugin | What it does |
+| --- | --- |
+| Network video downloader | Batch-download YouTube / Bilibili / Douyin / Xiaohongshu / Instagram links in a standalone panel with resolution picking and resume support |
+| Pinterest visual search | Find visually similar images from any library image; masonry browsing, zoomable detail, boards and keyword search, downloads auto-sorted into board folders |
+| Song recognition | Multi-point sampling recognizes the music you are playing; results and cover art land in the library |
+| AI plugin builder | Generate custom plugins from natural language, with an API reference, code preview, and draft management |
+| Web capture | Drag web images and content straight into the library |
 
 ## Product Tour
 
@@ -63,7 +106,7 @@ Capabilities vary by format, operating system, and local media runtime. Video pr
 1. Download the build that matches your operating system and processor.
 2. Add one or more source folders. Original files are not copied or moved.
 3. Let the local index complete, then organize with search, filters, tags, and collections.
-4. Enable AI, browser capture, conversion, or editor integrations when needed.
+4. Enable AI, web capture, video downloading, Pinterest visual search, or editor integrations when needed.
 
 ## Download OrcaBox 1.3.8
 
