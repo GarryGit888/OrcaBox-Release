@@ -448,6 +448,10 @@ a{color:inherit;text-decoration:none}
 .download-channels .download-mirror{margin-top:0}
 .download-channels .download-mirror img{opacity:0.75;transition:opacity 0.2s}
 .download-channels .download-mirror:hover img{opacity:1}
+/* 下载信任信息：更新方式与本地优先，与镜像链接同一层级 */
+.download-trust{display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:var(--s-1) var(--s-5);margin-top:var(--s-4);font-size:0.75rem;color:var(--text-3)}
+.download-trust > span{display:inline-flex;align-items:center;gap:6px}
+.download-trust svg{width:13px;height:13px;color:var(--ice);flex:none}
 /* 浏览器插件：与上方同一套居中版式，用一条分隔线区分主次 */
 .download-extension{text-align:center}
 .download-extension-inner{padding-top:var(--s-10);border-top:1px solid var(--border-subtle)}
@@ -604,6 +608,10 @@ body.donation-open{overflow:hidden}
 
 /* SEARCH DEMO — code-rendered search palette */
 .search-demo{padding:0 0 var(--s-32)}
+.search-demo-head{display:flex;flex-direction:column;align-items:center;gap:var(--s-2);margin-bottom:var(--s-5);text-align:center}
+.search-demo-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border-radius:999px;border:1px solid rgba(var(--ice-rgb),0.28);background:rgba(var(--accent-rgb),0.07);color:#ddd6fe;font-family:var(--font-mono);font-size:0.6875rem;letter-spacing:0.08em;text-transform:uppercase}
+.search-demo-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--ice);box-shadow:0 0 10px rgba(var(--ice-rgb),0.9)}
+.search-demo-head p{font-size:0.8125rem;color:var(--text-2)}
 .search-stage{position:relative;height:clamp(280px,36vw,400px);border-radius:var(--radius-xl);border:1px solid var(--border);overflow:hidden;background:#05070e;box-shadow:var(--shadow-lg),inset 0 1px 0 rgba(var(--ov),0.06)}
 /* Hero 底部环境光：横向拉满，并由统计面板直接承接。 */
 .hero-bottom-glow{
@@ -648,6 +656,7 @@ body.donation-open{overflow:hidden}
 .search-count{margin-left:auto;font-size:0.6875rem;color:#8f95a3;font-family:var(--font-mono);flex:none;opacity:0;transition:opacity .3s var(--ease)}
 .search-card.results .search-count{opacity:1}
 .search-card.typing .search-text .ph{display:none}
+.search-card.typing .search-text .dim{display:none}
 .search-card.typing .search-field{border-color:rgba(139,123,255,0.6);box-shadow:0 0 0 1px rgba(139,123,255,0.2),0 8px 28px rgba(var(--sh),0.35)}
 .search-results{display:flex;flex-direction:column;gap:6px;margin-top:10px;opacity:0;transform:translateY(6px);transition:opacity .35s var(--ease),transform .35s var(--ease)}
 .search-results.show{opacity:1;transform:none}
@@ -726,7 +735,7 @@ body.donation-open{overflow:hidden}
    .feature-bento{grid-template-columns:1fr;gap:var(--s-3)}
    .feature-panel-main,.feature-panel-portrait,.feature-panel-wide,.feature-panel-medium,.feature-panel-small{grid-column:1;min-height:250px}
    .cap-batch,.cap-task,.cap-text{grid-column:1;min-height:250px}
-   .feature-panel-copy{padding:var(--s-5) var(--s-5) var(--s-7)}
+   .feature-panel-copy{padding:var(--s-5) var(--s-5) var(--s-6)}
    .feature-panel h3{font-size:1.125rem}
    .feature-media{position:absolute}
   .wall-row-a{height:130px}
@@ -887,7 +896,7 @@ body.donation-open{overflow:hidden}
   <div class="hero-text">
     <span class="hero-eyebrow hero-entrance" data-i18n="hero.eyebrow">OrcaBox本地素材管家</span>
     <h1 class="h1 hero-entrance hero-entrance-title"><span data-i18n="hero.title1">为创作而生</span><br><em data-i18n="hero.title2">数媒资产聚合管理</em></h1>
-    <p class="body-l hero-entrance hero-entrance-desc" data-i18n="hero.desc">本地素材索引 零复制直链 40+格式预览 多路径管理</p>
+    <p class="body-l hero-entrance hero-entrance-desc" data-i18n="hero.desc">本地素材索引、零复制直链、40+ 格式预览，多路径管理</p>
     <div class="hero-cta hero-entrance hero-entrance-cta">
       <a href="#download" class="btn btn-primary btn-lg" data-i18n="hero.cta">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
@@ -971,6 +980,10 @@ body.donation-open{overflow:hidden}
 
 <section class="section search-demo">
   <div class="container">
+    <div class="search-demo-head" data-reveal>
+      <span class="search-demo-badge" data-i18n="search.demoLabel">界面演示</span>
+      <p data-i18n="search.demoNote">以下是搜索面板的演示动画，不能实际输入</p>
+    </div>
     <div class="search-stage" data-reveal aria-hidden="true">
       <div class="search-stage-bg">
         <img src="assets/showcase-image-browser.webp" alt="" loading="lazy" decoding="async">
@@ -1157,10 +1170,10 @@ body.donation-open{overflow:hidden}
       <h2 class="h2" data-i18n="wf.title">四步开启高效素材管理</h2>
     </div>
     <div class="steps">
-      <div class="step" data-reveal><div class="step-num">1</div><h3 data-i18n="w1.title">添加源文件夹</h3><p data-i18n="w1.desc">选择磁盘上的素材目录 自动扫描索引 文件不复制不移动</p></div>
-      <div class="step" data-reveal data-reveal-delay="1"><div class="step-num">2</div><h3 data-i18n="w2.title">自动索引</h3><p data-i18n="w2.desc">生成缩略图 提取元数据 分析色彩 实时监听变化 自动同步</p></div>
-      <div class="step" data-reveal data-reveal-delay="2"><div class="step-num">3</div><h3 data-i18n="w3.title">预览与组织</h3><p data-i18n="w3.desc">40+ 格式即时预览 标签、合集、评分 建立素材知识库</p></div>
-      <div class="step" data-reveal data-reveal-delay="3"><div class="step-num">4</div><h3 data-i18n="w4.title">拖拽导出</h3><p data-i18n="w4.desc">直拖到设计工具或浏览器 支持批量、壁纸设置、字体安装</p></div>
+      <div class="step" data-reveal><div class="step-num">1</div><h3 data-i18n="w1.title">添加源文件夹</h3><p data-i18n="w1.desc">选择磁盘上的素材目录，自动扫描索引；文件不复制、不移动。</p></div>
+      <div class="step" data-reveal data-reveal-delay="1"><div class="step-num">2</div><h3 data-i18n="w2.title">自动索引</h3><p data-i18n="w2.desc">生成缩略图、提取元数据、分析色彩；实时监听变化，自动同步。</p></div>
+      <div class="step" data-reveal data-reveal-delay="2"><div class="step-num">3</div><h3 data-i18n="w3.title">预览与组织</h3><p data-i18n="w3.desc">40+ 格式即时预览；标签、合集、评分，建立素材知识库。</p></div>
+      <div class="step" data-reveal data-reveal-delay="3"><div class="step-num">4</div><h3 data-i18n="w4.title">拖拽导出</h3><p data-i18n="w4.desc">直拖到设计工具或浏览器；支持批量、壁纸设置、字体安装。</p></div>
     </div>
   </div>
 </section>
@@ -1249,6 +1262,11 @@ body.donation-open{overflow:hidden}
       <div class="download-channels">
         <a href="https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.3.8" target="_blank" rel="noopener noreferrer" class="download-mirror"><img src="assets/cnb.svg" alt=""><span data-i18n="dl.mirror">CNB Release 下载</span></a>
         <a href="https://github.com/GarryGit888/OrcaBox-Release" target="_blank" rel="noopener noreferrer" class="download-mirror"><img src="assets/github.svg" alt=""><span data-i18n="cta.github">GitHub 备用下载</span></a>
+      </div>
+      <div class="download-trust">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="dl.trustUpdate">应用内自动更新，差分下载</span></span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="dl.trustLocal">素材只索引，不复制原文件</span></span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="dl.trustChannels">CNB 与 GitHub 同版发布</span></span>
       </div>
     </div>
     <div class="download-extension" data-reveal>
@@ -1358,10 +1376,10 @@ const i18n={
     "nav.features":"功能","nav.showcase":"展示","nav.docs":"文档","nav.updates":"更新","nav.download":"下载","nav.downloadBtn":"下载","nav.menu":"打开导航菜单","lightbox.close":"关闭预览",
     "hero.eyebrow":"OrcaBox本地素材管家",
     "hero.title1":"为创作而生","hero.title2":"数媒资产聚合管理",
-    "hero.desc":"本地素材索引 零复制直链 40+格式预览 多路径管理",
+    "hero.desc":"本地素材索引、零复制直链、40+ 格式预览，多路径管理",
     "hero.cta":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/><line x1=\"12\" y1=\"15\" x2=\"12\" y2=\"3\"/></svg> 免费下载",
     "hero.version":"v1.3.8 · macOS 12+ 与 Windows x64 已发布",
-    "search.title":"搜索素材","search.placeholder":"搜索素材...","search.hint":"（输入 / 打开词库）","search.count":"3项","search.query":"日落",
+    "search.title":"搜索素材","search.placeholder":"搜索素材...","search.hint":"（输入 / 打开词库）","search.count":"3项","search.query":"日落","search.demoLabel":"界面演示","search.demoNote":"以下是搜索面板的演示动画，不能实际输入",
     "stats.formats":"文件格式","stats.local.val":"本地索引","stats.local.desc":"不复制原文件",
     "stats.ai.val":"端侧 AI","stats.ai.desc":"数据不离开本地","stats.oss.val":"免费下载","stats.oss.desc":"公开下载",
     "features.label":"工作流新能力","features.title":"让整理与创作连成一条工作流","features.desc":"快速标记 灵活归集 插件扩展 一套完成",
@@ -1390,13 +1408,14 @@ const i18n={
     "u3.title":"Lottie 网格保持动效","u3.desc":"可见的 Lottie 与 JSON 素材保持实时预览 滚动和选择不会出现占位闪烁","u3.meta":"动效",
     "u4.title":"macOS 与 Windows 1.3.8 安装包","u4.desc":"Apple Silicon、Intel 与 Windows x64 安装包均已提供","u4.meta":"v1.3.8",
     "wf.label":"上手即用","wf.title":"四步开启高效素材管理",
-    "w1.title":"添加源文件夹","w1.desc":"选择磁盘上的素材目录 自动扫描索引 文件不复制不移动",
-    "w2.title":"自动索引","w2.desc":"生成缩略图 提取元数据 分析色彩 实时监听变化 自动同步",
-    "w3.title":"预览与组织","w3.desc":"40+ 格式即时预览 标签、合集、评分 建立素材知识库",
-    "w4.title":"拖拽导出","w4.desc":"直拖到设计工具或浏览器 支持批量、壁纸设置、字体安装",
+    "w1.title":"添加源文件夹","w1.desc":"选择磁盘上的素材目录，自动扫描索引；文件不复制、不移动。",
+    "w2.title":"自动索引","w2.desc":"生成缩略图、提取元数据、分析色彩；实时监听变化，自动同步。",
+    "w3.title":"预览与组织","w3.desc":"40+ 格式即时预览；标签、合集、评分，建立素材知识库。",
+    "w4.title":"拖拽导出","w4.desc":"直拖到设计工具或浏览器；支持批量、壁纸设置、字体安装。",
     "dl.label":"下载","dl.title":"OrcaBox 1.3.8","dl.desc":"macOS 与 Windows x64 安装包均已提供",
     "dl.extensionLabel":"浏览器插件","dl.extensionTitle":"OrcaBox Chrome 插件","dl.extensionDesc":"在网页中快速收集图片、视频、Lottie 和素材链接，发送到本地 OrcaBox。","dl.extensionDownload":"下载 Chrome 插件 ZIP","dl.extensionRelease":"查看插件发行页","dl.extensionMeta":"v1.3.8 · 解压后在 Chrome 扩展程序页面加载",
     "dl.mac":"下载 macOS DMG","dl.win":"下载 Windows x64","dl.free":"免费下载","dl.mirror":"CNB Release 下载",
+    "dl.trustUpdate":"应用内自动更新，差分下载","dl.trustLocal":"素材只索引，不复制原文件","dl.trustChannels":"CNB 与 GitHub 同版发布",
     "cta.github":"GitHub 备用下载",
     "nav.developer":"开发者",
     "dev.label":"关于开发者","dev.role":"OrcaBox 开发者","dev.bio":"剪辑师 · 影视流程研究者 · Vibe Coder 专注素材管理开发与高效工作流研究","dev.wechat":"微信 · 点击复制","dev.copied":"已复制 去微信粘贴添加","dev.github":"GitHub 主页","dev.bilibili":"B 站主页","dev.xhs":"小红书","dev.hint":"微信号已隐藏 点击上方按钮即可复制",
@@ -1424,7 +1443,7 @@ const i18n={
     "hero.desc":"Zero-copy local assets, 40+ previews, on-device AI.",
     "hero.cta":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/><line x1=\"12\" y1=\"15\" x2=\"12\" y2=\"3\"/></svg> Download for macOS",
     "hero.version":"v1.3.8 · macOS 12+ & Windows x64 · Free download",
-    "search.title":"Search Assets","search.placeholder":"Search assets...","search.hint":"(type / to open thesaurus)","search.count":"3 items","search.query":"sunset",
+    "search.title":"Search Assets","search.placeholder":"Search assets...","search.hint":"(type / to open thesaurus)","search.count":"3 items","search.query":"sunset","search.demoLabel":"UI Demo","search.demoNote":"A visual demo of the search panel — not an interactive input.",
     "stats.formats":"File Formats","stats.local.val":"Local Index","stats.local.desc":"No File Duplication",
     "stats.ai.val":"On-Device AI","stats.ai.desc":"Data Never Leaves Local","stats.oss.val":"Free Download","stats.oss.desc":"Public Releases",
     "features.label":"New Workflow Tools","features.title":"Keep organizing and creating in one flow","features.desc":"Tag faster, group freely, and bring everyday tools into OrcaBox with plugins.",
@@ -1460,6 +1479,7 @@ const i18n={
     "dl.label":"Download","dl.title":"OrcaBox 1.3.8","dl.desc":"macOS and Windows installers are ready — pick the build for your machine.",
     "dl.extensionLabel":"Browser Extension","dl.extensionTitle":"OrcaBox Chrome Extension","dl.extensionDesc":"Collect images, videos, Lottie, and asset links from the web directly into your local OrcaBox library.","dl.extensionDownload":"Download Chrome ZIP","dl.extensionRelease":"View extension release","dl.extensionMeta":"v1.3.8 · Unzip, then load the folder from Chrome Extensions",
     "dl.mac":"Download macOS DMG","dl.win":"Download Windows x64","dl.free":"Free Download","dl.mirror":"Download from CNB Release",
+    "dl.trustUpdate":"In-app auto-update with delta downloads","dl.trustLocal":"Index only — original files stay untouched","dl.trustChannels":"Same release on CNB and GitHub",
     "cta.github":"GitHub Backup Download",
     "nav.developer":"Developer",
     "dev.label":"About the Developer","dev.role":"OrcaBox Developer","dev.bio":"Video editor · Film workflow researcher · Vibe coder, focused on asset-management development and efficient workflow research","dev.wechat":"WeChat · Click to copy","dev.copied":"Copied — paste it in WeChat","dev.github":"GitHub Profile","dev.bilibili":"Bilibili Channel","dev.xhs":"Xiaohongshu (RED)","dev.hint":"WeChat ID is hidden — click the button above to copy it",
@@ -1487,7 +1507,7 @@ const i18n={
     "hero.desc":"ローカル素材管理：ゼロコピー、40+形式、端末内AI。",
     "hero.cta":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/><line x1=\"12\" y1=\"15\" x2=\"12\" y2=\"3\"/></svg> macOS版を無料ダウンロード",
     "hero.version":"v1.3.8 · macOS 12+ / Windows x64 · 無料ダウンロード",
-    "search.title":"素材を検索","search.placeholder":"素材を検索...","search.hint":"（入力 / 類語辞書を開く）","search.count":"3件","search.query":"夕焼け",
+    "search.title":"素材を検索","search.placeholder":"素材を検索...","search.hint":"（入力 / 類語辞書を開く）","search.count":"3件","search.query":"夕焼け","search.demoLabel":"UI デモ","search.demoNote":"検索パネルのイメージです。実際の入力欄ではありません。",
     "stats.formats":"対応フォーマット","stats.local.val":"ローカル索引","stats.local.desc":"ファイル複製なし",
     "stats.ai.val":"端末AI","stats.ai.desc":"データは端末外に出ません","stats.oss.val":"無料ダウンロード","stats.oss.desc":"公開リリース",
     "features.label":"新しいワークフロー","features.title":"整理と制作をひとつの流れに","features.desc":"すばやいタグ付け、柔軟なコレクション、プラグイン拡張を一つに。",
@@ -1523,6 +1543,7 @@ const i18n={
     "dl.label":"ダウンロード","dl.title":"OrcaBox 1.3.8","dl.desc":"macOS と Windows のインストーラーをご用意しています。お使いの環境に合わせてお選びください。",
     "dl.extensionLabel":"ブラウザ拡張","dl.extensionTitle":"OrcaBox Chrome 拡張","dl.extensionDesc":"Web ページの画像、動画、Lottie、素材リンクを OrcaBox にすばやく収集できます。","dl.extensionDownload":"Chrome 拡張 ZIP をダウンロード","dl.extensionRelease":"拡張のリリースを見る","dl.extensionMeta":"v1.3.8 · 解凍後、Chrome 拡張機能ページからフォルダを読み込み",
     "dl.mac":"macOS DMG をダウンロード","dl.win":"Windows x64 をダウンロード","dl.free":"無料ダウンロード","dl.mirror":"CNB Release からダウンロード",
+    "dl.trustUpdate":"アプリ内自動更新（差分ダウンロード）","dl.trustLocal":"素材は索引のみ、元ファイルは変更しません","dl.trustChannels":"CNB と GitHub で同一版を公開",
     "cta.github":"GitHub 予備ダウンロード",
     "nav.developer":"開発者",
     "dev.label":"開発者について","dev.role":"OrcaBox 開発者","dev.bio":"映像編集者・映像ワークフロー研究者・Vibe Coder。素材管理の開発と効率的なワークフローの研究に取り組んでいます。","dev.wechat":"WeChat · クリックでコピー","dev.copied":"コピーしました。WeChat に貼り付けて追加してください","dev.github":"GitHub プロフィール","dev.bilibili":"Bilibili チャンネル","dev.xhs":"小紅書（RED）","dev.hint":"WeChat ID は非表示です。上のボタンをクリックするとコピーされます",
@@ -1550,7 +1571,7 @@ const i18n={
     "hero.desc":"로컬 에셋 관리: 무복제, 40+ 포맷, 온디바이스 AI.",
     "hero.cta":"<svg width=\"16\" height=\"16\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\"><path d=\"M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4\"/><polyline points=\"7 10 12 15 17 10\"/><line x1=\"12\" y1=\"15\" x2=\"12\" y2=\"3\"/></svg> macOS용 무료 다운로드",
     "hero.version":"v1.3.8 · macOS 12+ / Windows x64 · 무료 다운로드",
-    "search.title":"소재 검색","search.placeholder":"소재 검색...","search.hint":"(입력 / 시소러스 열기)","search.count":"3개","search.query":"노을",
+    "search.title":"소재 검색","search.placeholder":"소재 검색...","search.hint":"(입력 / 시소러스 열기)","search.count":"3개","search.query":"노을","search.demoLabel":"UI 데모","search.demoNote":"검색 패널 예시이며 실제 입력란이 아닙니다.",
     "stats.formats":"파일 형식","stats.local.val":"로컬 인덱스","stats.local.desc":"파일 복제 없음",
     "stats.ai.val":"온디바이스 AI","stats.ai.desc":"데이터는 로컬에 유지","stats.oss.val":"무료 다운로드","stats.oss.desc":"공개 릴리스",
     "features.label":"새로운 워크플로","features.title":"정리와 제작을 하나의 흐름으로","features.desc":"빠른 태그, 유연한 컬렉션, 플러그인 확장을 한곳에서 사용하세요.",
@@ -1586,6 +1607,7 @@ const i18n={
     "dl.label":"다운로드","dl.title":"OrcaBox 1.3.8","dl.desc":"macOS 및 Windows 설치 파일을 제공합니다. 사용 환경에 맞는 버전을 선택하세요.",
     "dl.extensionLabel":"브라우저 확장","dl.extensionTitle":"OrcaBox Chrome 확장","dl.extensionDesc":"웹 페이지의 이미지, 동영상, Lottie, 소재 링크를 OrcaBox 로 빠르게 수집합니다.","dl.extensionDownload":"Chrome 확장 ZIP 다운로드","dl.extensionRelease":"확장 릴리스 보기","dl.extensionMeta":"v1.3.8 · 압축 해제 후 Chrome 확장 프로그램에서 폴더 로드",
     "dl.mac":"macOS DMG 다운로드","dl.win":"Windows x64 다운로드","dl.free":"무료 다운로드","dl.mirror":"CNB Release 다운로드",
+    "dl.trustUpdate":"앱 내 자동 업데이트, 차분 다운로드","dl.trustLocal":"소재는 색인만, 원본 파일은 그대로","dl.trustChannels":"CNB와 GitHub에 동일 버전 배포",
     "cta.github":"GitHub 예비 다운로드",
     "nav.developer":"개발자",
     "dev.label":"개발자 소개","dev.role":"OrcaBox 개발자","dev.bio":"영상 편집자·영상 워크플로 연구자·Vibe Coder. 소재 관리 개발과 효율적인 워크플로 연구에 집중합니다.","dev.wechat":"WeChat · 클릭하여 복사","dev.copied":"복사되었습니다. WeChat에 붙여넣어 추가하세요","dev.github":"GitHub 프로필","dev.bilibili":"빌리빌리 채널","dev.xhs":"샤오홍슈(RED)","dev.hint":"WeChat ID는 숨겨져 있습니다. 위 버튼을 클릭하면 복사됩니다",

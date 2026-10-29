@@ -538,7 +538,7 @@
       links.forEach(link => {
         const isSubLink = link.classList.contains('sub-link')
         link.classList.toggle('is-open', isSubLink && link.hash && section.contains(document.getElementById(link.hash.slice(1))))
-        link.classList.toggle('active', link.hash === '#' + current.id || (!isSubLink && current !== section && link.hash === '#' + section.id))
+        link.classList.toggle('active', link.hash === '#' + current.id)
       })
     }
     window.addEventListener('scroll', updateActive, { passive: true })
