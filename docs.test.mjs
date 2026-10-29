@@ -11,7 +11,8 @@ const releases = read('website/releases.html')
 
 test('the public guide has navigable, unique sections and substantive modules', () => {
   const sectionIds = [...docs.matchAll(/<section class="doc-section" id="([^"]+)"/g)].map((match) => match[1])
-  const sidebarIds = [...docs.matchAll(/<a href="#([^"]+)"/g)].map((match) => match[1])
+  const sidebar = docs.match(/<nav class="sidebar"[\s\S]*?<\/nav>/)?.[0] ?? ''
+  const sidebarIds = [...sidebar.matchAll(/<a href="#([^"]+)"/g)].map((match) => match[1])
   const subsectionIds = [...docs.matchAll(/<h3 id="([^"]+)">([^<]+)<\/h3>/g)].map((match) => match[1])
   assert.equal(sectionIds.length, 15)
   assert.deepEqual(sidebarIds, sectionIds)

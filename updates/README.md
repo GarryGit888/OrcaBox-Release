@@ -26,10 +26,12 @@ npm run update:prepare
 - `OrcaBox Setup <version>.exe.blockmap`
 
 ### macOS
-- `latest-mac.yml`（用于检测新版和展示发行说明）
-- `OrcaBox-<version>-arm64.dmg`
-- `OrcaBox-<version>-x64.dmg`
-- macOS 客户端发现新版后会打开 CNB 发行页；DMG 需要用户完成拖拽安装，不能作为应用内静默更新载荷
+- `latest-mac.yml`（必须同时包含 arm64 与 x64 的 ZIP 更新条目）
+- `OrcaBox-<version>-arm64-mac.zip`（Apple Silicon 自动更新载荷）
+- `OrcaBox-<version>-x64-mac.zip`（Intel 自动更新载荷）
+- `OrcaBox-<version>-arm64.dmg`（Apple Silicon 人工安装包）
+- `OrcaBox-<version>-x64.dmg`（Intel 人工安装包）
+- macOS 自动更新通过 ZIP 下载、校验并重启安装；DMG 只用于手动首次安装或异常恢复，不得作为 `latest-mac.yml` 的唯一更新载荷
 
 ## 校验
 
@@ -44,6 +46,7 @@ npm run update:prepare
 
 - 启动约 20 秒后静默检查；之后每 6 小时检查一次
 - 有更新时侧栏「设置」右侧显示更新图标
-- Windows 用户点击后下载；完成后弹窗「立即重启 / 稍后」
-- macOS 用户点击后打开 CNB 的 DMG 下载页并手动完成安装
+- Windows 用户点击后下载 NSIS 安装器；完成后弹窗「立即重启 / 稍后」
+- macOS 用户点击后下载与当前架构匹配的 ZIP；完成后弹窗「立即重启 / 稍后」
+- 下载使用 blockmap 差分更新；CNB 关闭多段 Range 请求以保证稳定性
 - 设置 → 概览 顶部也有「关于与更新」面板（手动检查 / 下载 / 重启）
