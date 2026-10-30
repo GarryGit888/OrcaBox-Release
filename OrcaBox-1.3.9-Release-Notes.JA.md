@@ -1,0 +1,32 @@
+# OrcaBox 1.3.9 リリースノート
+
+リリース日: 2026-10-30
+
+## 主な更新
+
+- 视频 LUT 调色：视频预览顶部工具栏新增 LUT 弹层，直接加载 .cube 文件实时套色，附强度滑条、批量套用与达芬奇式缩略图面板。
+- 照片 AI 语义蒙版：一键识别画面主体生成选区，新增颜色范围与明度范围蒙版按取样自动扩展；蒙版编辑升级为三层渲染管线，拖参数实时刷新。
+- AI 打标签批量化：详情栏点击即可打标，多选批量识别在后台运行、切换选中不中断，网格卡片显示进度徽标；设置中可调置信度阈值（默认 95%），低于阈值的候选标签不自动写入。
+- Pinterest 区域框选识图：大图查看器拖出矩形选区即可只搜局部相似；瀑布流显示「已采集」去重角标，采集自动回链来源并按看板分类，右栏支持滚动无限加载与色系筛选。
+- 照片调色插件批次：磨皮等人像精修能力上线，插件中心支持远程安装，台词工作台提供独立窗口。
+- 图像对比工具：插件中心新增并排/滑动对比两种查看方式。
+- 调色引擎 GPU 加速：显影预览接入 WebGL2，滑杆拖拽即时出图，大图也能实时刷新；调色面板重构为 Camera Raw 式右侧竖栏（调整/预设/蒙版/人像/裁剪/修复/液化）。
+- 预设体系：预设分组「热门 / 我的」，我的预设本地保存并带参数缩略图；按 C 直接进入图片裁剪工具。
+
+## ダウンロードとインストール
+
+- CNB を主なダウンロード先とし、GitHub Release を予備のダウンロード先として提供します。
+- Windows x64 では、インストール先を選べるインストーラーとポータブル版を提供します。
+- [CNB](https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.3.9)
+- [GitHub Release](https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.3.9)
+
+## プラットフォームについて
+
+- macOS では Apple Silicon 用と Intel 用の DMG を提供します。対応する ZIP はアプリ内自動更新の載荷として保持します。現在のパッケージは未署名のため、初回起動時に「プライバシーとセキュリティ」で許可が必要になる場合があります。
+- Windows x64 ではインストーラーとポータブル版を提供します。インストーラーは既定でユーザー単位のインストールで、保存先を変更できます。
+
+| Platform | Download |
+| --- | --- |
+| macOS Apple Silicon | [DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.9/OrcaBox-1.3.9-arm64.dmg) / [Updater ZIP](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.9/OrcaBox-1.3.9-arm64-mac.zip) |
+| macOS Intel | [DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.9/OrcaBox-1.3.9-x64.dmg) / [Updater ZIP](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.9/OrcaBox-1.3.9-x64-mac.zip) |
+| Windows x64 | [Installer](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.9/OrcaBox-1.3.9-win-x64-Setup.exe) / [Portable](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.3.9/OrcaBox-1.3.9-win-x64-Portable.exe) |
