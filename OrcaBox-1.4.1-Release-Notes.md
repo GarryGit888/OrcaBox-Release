@@ -31,12 +31,12 @@
 | 截图附带 | 当前窗口截图，可删除或补充 | 当前窗口截图，可删除或补充 |
 | 超大图片缩略图 | 独立低并发队列，原生解码 | 独立低并发队列，原生解码 |
 | 表格封面 | 缓存优先，PDF 预览复用 | 缓存优先，PDF 预览复用 |
-| 当前发布版本 | 1.4.1 Apple Silicon / Intel 双架构 | 1.4.0，1.4.1 Windows 包正在 Windows 主机打包 |
-| 自动更新 | DMG 人工安装 + 双架构 ZIP 更新载荷 | 暂由 1.4.0 `latest.yml` 与安装器继续服务；1.4.1 Windows 包完成后同步升级 |
+| 当前发布版本 | 1.4.1 Apple Silicon / Intel 双架构 | 1.4.1 Windows x64 |
+| 自动更新 | DMG 人工安装 + 双架构 ZIP 更新载荷 | NSIS 安装器 + blockmap（Portable 为手动下载，不参与更新） |
 
 - 反馈面板、缩略图调度与音频详情栏均为共享渲染层/主进程逻辑，macOS 与 Windows 同步生效；本次未引入平台专属分支。
-- macOS 双架构包已发布；Windows x64 继续使用 1.4.0 安装器和更新 feed，1.4.1 Windows 包正在 Windows 主机打包发布。
-- 实际构建产物、签名状态与验收结果以 `doc/release/builds/v1.4.1-2026-11-02.md` 为准；Windows 1.4.1 资产将在原生门禁完成后补充到同一版本发行页。
+- macOS 双架构与 Windows x64 安装包均已构建；Windows 产物通过 Windows 主机原生分发门禁。
+- macOS 与 Windows 的构建产物、签名状态及验收结果分别见 `doc/release/builds/v1.4.1-2026-11-02.md` 与 `doc/release/builds/v1.4.1-2026-11-03.md`。
 
 ## 反馈与已知问题
 
@@ -54,6 +54,6 @@
 | --- | --- |
 | macOS Apple Silicon | [DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.1-arm64.dmg) / [自动更新 ZIP](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.1-arm64-mac.zip) |
 | macOS Intel | [DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.1-x64.dmg) / [自动更新 ZIP](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.1-x64-mac.zip) |
-| Windows x64（当前 1.4.0） | [安装器](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.0-win-x64-Setup.exe) / [免安装版](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.0-win-x64-Portable.exe) |
+| Windows x64 | [安装器](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.1-win-x64-Setup.exe) / [免安装版](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.1-win-x64-Portable.exe) |
 
-macOS 应用内更新通过 `latest-mac.yml`（arm64 / x64 ZIP）；Windows 暂继续读取 1.4.0 `latest.yml`（NSIS + blockmap），待 1.4.1 Windows 构建完成后更新。DMG 与 Portable 是人工安装渠道，不是自动更新载荷。
+macOS 应用内更新通过 `latest-mac.yml`（arm64 / x64 ZIP）；Windows 应用内更新通过 `latest.yml`（NSIS + blockmap）。DMG 与 Portable 是人工安装渠道，不是自动更新载荷。

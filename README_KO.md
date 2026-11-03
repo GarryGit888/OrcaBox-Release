@@ -35,7 +35,7 @@ OrcaBox는 영상 편집자, 디자이너, 모션 아티스트, 사진가와 크
 - 온디바이스 AI 기반 시각 분석, 스마트 태그와 색상 검색, 선택형 원격 API 연결.
 - 안정적인 Lottie 라이브 미리보기, 오디오 파형과 연속 재생.
 - 플러그인 관리, 브라우저 수집, 변환 도구와 DaVinci Resolve 연동.
-- Apple Silicon, Intel Mac, Windows x64를 지원합니다. 1.4.1 macOS 패키지는 두 아키텍처 모두 출시되었고, Windows 1.4.1은 패키징 중이라 현재 1.4.0을 제공합니다.
+- Apple Silicon, Intel Mac, Windows x64를 지원합니다. 1.4.1 패키지는 macOS 두 아키텍처와 Windows x64 모두 출시되었습니다.
 
 ## 최근 주요 업데이트
 
@@ -81,7 +81,7 @@ OrcaBox는 영상 편집자, 디자이너, 모션 아티스트, 사진가와 크
 | --- | --- |
 | macOS Apple Silicon | [DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.1-arm64.dmg) |
 | macOS Intel | [DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.1-x64.dmg) |
-| Windows x64 (현재 v1.4.0) | [설치 프로그램](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.0-win-x64-Setup.exe) / [포터블](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.0-win-x64-Portable.exe) |
+| Windows x64 | [설치 프로그램](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.1-win-x64-Setup.exe) / [포터블](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.1-win-x64-Portable.exe) |
 
 ## 개발 언어와 기술 스택
 

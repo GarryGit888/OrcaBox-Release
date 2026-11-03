@@ -16,17 +16,17 @@
 ## ダウンロードとインストール
 
 - CNB を主なダウンロード先とし、GitHub Release を予備のダウンロード先として提供します。
-- Windows x64 1.4.1 は Windows ホストでビルド中です。現在は 1.4.0 を提供しています。
+- Windows x64 1.4.1 は NSIS インストーラーとポータブル版で提供します。
 - [CNB](https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.4.1)
 - [GitHub Release](https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.4.1)
 
 ## プラットフォームについて
 
 - macOS では Apple Silicon 用と Intel 用の DMG を提供します。対応する ZIP はアプリ内自動更新の載荷として保持します。現在のパッケージは未署名のため、初回起動時に「プライバシーとセキュリティ」で許可が必要になる場合があります。
-- Windows 1.4.1 のビルド中も、現在の安定版 1.4.0 のインストーラーとポータブル版を利用できます。
+- Windows 1.4.1 の NSIS インストーラーと blockmap は自動更新に、ポータブル版は手動ダウンロードに使用します。
 
 | Platform | Download |
 | --- | --- |
 | macOS Apple Silicon | [DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.1-arm64.dmg) / [Updater ZIP](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.1-arm64-mac.zip) |
 | macOS Intel | [DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.1-x64.dmg) / [Updater ZIP](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.1-x64-mac.zip) |
-| Windows x64（現在 v1.4.0） | [Installer](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.0-win-x64-Setup.exe) / [Portable](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.0-win-x64-Portable.exe) |
+| Windows x64 | [Installer](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.1-win-x64-Setup.exe) / [Portable](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.1-win-x64-Portable.exe) |

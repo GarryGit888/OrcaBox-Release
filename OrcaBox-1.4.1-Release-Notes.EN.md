@@ -16,17 +16,17 @@ Release date: 2026-11-02
 ## Download and installation
 
 - CNB is the primary download source. GitHub Release remains the backup source.
-- Windows x64 remains on version 1.4.0 while the 1.4.1 package is being built on a Windows host.
+- Windows x64 1.4.1 is available as both the NSIS installer and portable build.
 - [CNB](https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.4.1)
 - [GitHub Release](https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.4.1)
 
 ## Platform notes
 
 - macOS ships separate Apple Silicon and Intel DMGs; matching ZIP packages are retained as the in-app automatic updater payload. The current packages are unsigned and may require approval in Privacy & Security on first launch.
-- The current Windows 1.4.0 installer and portable build remain available during packaging of 1.4.1.
+- The Windows 1.4.1 NSIS installer and blockmap power in-app updates; the portable build is a manual download.
 
 | Platform | Download |
 | --- | --- |
 | macOS Apple Silicon | [DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.1-arm64.dmg) / [Updater ZIP](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.1-arm64-mac.zip) |
 | macOS Intel | [DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.1-x64.dmg) / [Updater ZIP](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.1-x64-mac.zip) |
-| Windows x64 (current: 1.4.0) | [Installer](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.0-win-x64-Setup.exe) / [Portable](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.0-win-x64-Portable.exe) |
+| Windows x64 | [Installer](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.1-win-x64-Setup.exe) / [Portable](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.1-win-x64-Portable.exe) |

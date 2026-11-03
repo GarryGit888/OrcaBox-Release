@@ -35,11 +35,11 @@ OrcaBox is built for editors, designers, motion artists, photographers, and crea
 - On-device AI for visual analysis, smart tags, semantic retrieval, and subtitle generation, with optional user-configured remote APIs.
 - Live Lottie previews, persistent Live Photo motion, and continuous audio waveforms.
 - Plugin Center with workflow-scoped capabilities: network video downloading, Pinterest visual search, song recognition, web capture, and DaVinci Resolve / Lightroom / Bridge integrations.
-- Desktop support for Apple Silicon, Intel Mac, and Windows x64. The 1.4.1 packages are available for macOS; Windows 1.4.0 remains available while 1.4.1 is being packaged.
+- Desktop support for Apple Silicon, Intel Mac, and Windows x64. The 1.4.1 packages are available for Apple Silicon, Intel Mac, and Windows x64.
 
 ## Recent Releases Highlights
 
-OrcaBox supports macOS and Windows. Version 1.4.1 is now available for both Mac architectures; Windows remains on 1.4.0 while its 1.4.1 package is being built. See the [release notes](./OrcaBox-1.4.1-Release-Notes.EN.md) for full details.
+OrcaBox supports macOS and Windows. Version 1.4.1 is now available for both Mac architectures and Windows x64. See the [release notes](./OrcaBox-1.4.1-Release-Notes.EN.md) for full details.
 
 **Web asset capture**
 
@@ -114,7 +114,7 @@ Capabilities vary by format, operating system, and local media runtime. Video pr
 | --- | --- | --- |
 | macOS Apple Silicon | [DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.1-arm64.dmg) | [GitHub Release](https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.4.1) |
 | macOS Intel | [DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.1-x64.dmg) | [GitHub Release](https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.4.1) |
-| Windows x64 (current: v1.4.0) | [Installer](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.0-win-x64-Setup.exe) / [Portable](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.0-win-x64-Portable.exe) | [GitHub Release](https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.4.1) |
+| Windows x64 | [Installer](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.1-win-x64-Setup.exe) / [Portable](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.1-win-x64-Portable.exe) | [GitHub Release](https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.4.1) |
 
 > Current macOS packages are unsigned test builds. On first launch, macOS may require approval in System Settings > Privacy & Security. Download only from the official release pages above and verify checksums when available.
 

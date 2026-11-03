@@ -42,11 +42,11 @@ OrcaBox 面向剪辑师、设计师、动效师、摄影师和创意团队。添
 - **端侧 AI**：在本机进行视觉分析、智能标签、语义检索和字幕生成，也可按需连接用户配置的远端 API。
 - **动态素材体验**：Lottie / JSON 动效保持实时预览，Live 图常驻动效，音频支持波形与连续播放。
 - **插件与创作联动**：插件中心按工作流启用能力；网页采集、网络视频下载、Pinterest 识图、听歌识曲等插件即装即用；DaVinci Resolve 一键导入、Lightroom / Bridge 星级同步。
-- **跨平台桌面端**：支持 macOS Apple Silicon、macOS Intel 和 Windows x64；当前 1.4.1 已发布 macOS 双架构，Windows 1.4.0 继续可用，1.4.1 Windows 包正在打包。
+- **跨平台桌面端**：支持 macOS Apple Silicon、macOS Intel 和 Windows x64；当前 1.4.1 已覆盖 macOS 双架构与 Windows x64。
 
 ## 近期重磅更新
 
-以下产品能力持续支持 macOS 与 Windows；本次 1.4.1 已发布 macOS 双架构，Windows 暂继续使用 1.4.0，完整变更见 [更新说明](./OrcaBox-1.4.1-Release-Notes.md)。
+以下产品能力持续支持 macOS 与 Windows；本次 1.4.1 已覆盖 macOS 双架构与 Windows x64，完整变更见 [更新说明](./OrcaBox-1.4.1-Release-Notes.md)。
 
 **网络素材采集**
 
@@ -122,7 +122,7 @@ OrcaBox 内置插件中心，能力按工作流启用，常用内置插件包括
 | --- | --- | --- |
 | macOS Apple Silicon | [DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.1-arm64.dmg) | [GitHub Release](https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.4.1) |
 | macOS Intel | [DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.1-x64.dmg) | [GitHub Release](https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.4.1) |
-| Windows x64（当前 v1.4.0） | [安装器](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.0-win-x64-Setup.exe) / [免安装版](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.0-win-x64-Portable.exe) | [GitHub Release](https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.4.1) |
+| Windows x64 | [安装器](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.1-win-x64-Setup.exe) / [免安装版](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.1-win-x64-Portable.exe) | [GitHub Release](https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.4.1) |
 
 > macOS 当前提供未签名测试包，首次启动时可能需要在“系统设置 - 隐私与安全性”中确认打开。请从上方官方发行页下载，并核对发行页中的校验信息。
 

@@ -8,7 +8,7 @@
       "date": "2026-11-02",
       "tag": "v1.4.1",
       "title": "OrcaBox 1.4.1",
-      "summary": "OrcaBox 1.4.1 macOS Apple Silicon 与 Intel 版本现已发布；Windows x64 1.4.1 正在打包，当前继续提供 1.4.0。",
+      "summary": "OrcaBox 1.4.1 全平台发布：macOS Apple Silicon / Intel 与 Windows x64 均已提供。",
       "generatedFrom": {
         "baseRef": "v1.4.0",
         "branch": "1.4.1",
@@ -87,19 +87,19 @@
         }
       ],
       "summaryI18n": {
-        "en": "OrcaBox 1.4.1 is now available for Apple Silicon and Intel Macs. Windows x64 1.4.1 is being packaged; version 1.4.0 remains available.",
-        "ja": "OrcaBox 1.4.1 の macOS 版（Apple Silicon / Intel）を公開しました。Windows x64 版はビルド中のため、現在は 1.4.0 を提供しています。",
-        "ko": "OrcaBox 1.4.1 macOS 버전(Apple Silicon / Intel)이 출시되었습니다. Windows x64 1.4.1은 패키징 중이며 현재 1.4.0을 제공합니다."
+        "en": "OrcaBox 1.4.1 is available for Apple Silicon, Intel Mac, and Windows x64.",
+        "ja": "OrcaBox 1.4.1 は Apple Silicon、Intel Mac、Windows x64 向けに公開されました。",
+        "ko": "OrcaBox 1.4.1은 Apple Silicon, Intel Mac, Windows x64용으로 출시되었습니다."
       },
       "links": {
         "cnbRelease": "https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.4.1",
         "githubRelease": "https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.4.1",
         "macArm64Dmg": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.1-arm64.dmg",
         "macX64Dmg": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.1-x64.dmg",
-        "windowsInstaller": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.0-win-x64-Setup.exe",
-        "windowsPortable": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.0-win-x64-Portable.exe",
+        "windowsInstaller": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.1-win-x64-Setup.exe",
+        "windowsPortable": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.1-win-x64-Portable.exe",
         "browserExtension": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.4.1/OrcaBox-Chrome-Extension-1.4.1.zip",
-        "windowsVersion": "1.4.0"
+        "windowsVersion": "1.4.1"
       }
     },
     {
