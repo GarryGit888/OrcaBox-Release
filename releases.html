@@ -881,18 +881,30 @@
       return `<div class="change-group"><h3>${d.groups[key]}</h3><ul>${items || `<li>${d.emptyGroup}</li>`}</ul></div>`
     }
 
-    const renderActions = (links = {}) => {
+    const renderActions = (links = {}, release = {}) => {
       const d = dict()
       return publicLinks
-        .map(([key, fallbackLabel, primary]) => actionLink(links[key], d.actionLinks[key] || fallbackLabel, primary))
+        .map(([key, fallbackLabel, primary]) => {
+          const label = d.actionLinks[key] || fallbackLabel
+          const versionedLabel = release.windowsVersion && key.startsWith('windows')
+            ? `${label} (v${release.windowsVersion})`
+            : label
+          return actionLink(links[key], versionedLabel, primary)
+        })
         .filter(Boolean)
         .join('')
     }
 
-    const renderHistoryLinks = (links = {}) => {
+    const renderHistoryLinks = (links = {}, release = {}) => {
       const d = dict()
       return historyLinkKeys
-        .map(([key, fallbackLabel]) => textLink(links[key], d.historyLinks[key] || fallbackLabel))
+        .map(([key, fallbackLabel]) => {
+          const label = d.historyLinks[key] || fallbackLabel
+          const versionedLabel = release.windowsVersion && key.startsWith('windows')
+            ? `${label} (v${release.windowsVersion})`
+            : label
+          return textLink(links[key], versionedLabel)
+        })
         .filter(Boolean)
         .join('')
     }
@@ -936,7 +948,7 @@
         <div class="change-grid">
           ${groupKeys.map((key) => renderGroup(key, current.categories)).join('')}
         </div>
-        <div class="release-actions">${renderActions(current.links) || `<span class="empty">${d.noDownloads}</span>`}</div>
+        <div class="release-actions">${renderActions(current.links, current) || `<span class="empty">${d.noDownloads}</span>`}</div>
       </article>`
 
       history.innerHTML = releasesData.map((release) =>
@@ -947,7 +959,7 @@
           </div>
           <p>${esc(localizedSummary(release))}</p>
           ${withdrawnHtml(release)}
-          <div class="history-links">${renderHistoryLinks(release.links)}</div>
+          <div class="history-links">${renderHistoryLinks(release.links, release)}</div>
         </article>`,
       ).join('')
     }
@@ -1004,7 +1016,7 @@
 
     applyLang(currentLang)
 
-    fetch('releases.json?v=1.4.0b', { cache: 'no-store' })
+    fetch('releases.json?v=1.4.1b', { cache: 'no-store' })
       .then((response) => response.json())
       .then((data) => {
         releasesData = Array.isArray(data.releases) ? data.releases : []

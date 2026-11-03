@@ -9,8 +9,8 @@
   <a href="./README_JA.md"><img src="https://img.shields.io/badge/日本語-2B2F38?style=for-the-badge&labelColor=15171C" alt="日本語"></a>
   <a href="./README_KO.md"><img src="https://img.shields.io/badge/한국어-2B2F38?style=for-the-badge&labelColor=15171C" alt="한국어"></a>
 </p>
-<p align="center"><img src="https://img.shields.io/badge/Release-v1.4.0-7C6FF7?style=flat-square" alt="Version 1.4.0"> <img src="https://img.shields.io/badge/macOS-12%2B-111318?style=flat-square&logo=apple" alt="macOS 12+"> <img src="https://img.shields.io/badge/Windows-10%2F11_x64-111318?style=flat-square&logo=windows11" alt="Windows 10/11 x64"> <img src="https://img.shields.io/badge/Local--first-Data_stays_local-1F9D75?style=flat-square" alt="Local-first"></p>
-<p align="center"><a href="https://garrygit888.github.io/OrcaBox-Release/">Website</a> · <a href="https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.4.0">CNB Download</a> · <a href="https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.4.0">GitHub Download</a> · <a href="./OrcaBox-1.4.0-Release-Notes.EN.md">Release Notes</a> · <a href="https://github.com/GarryGit888/OrcaBox-Release/issues">Feedback</a></p>
+<p align="center"><img src="https://img.shields.io/badge/Release-v1.4.1-7C6FF7?style=flat-square" alt="Version 1.4.1"> <img src="https://img.shields.io/badge/macOS-12%2B-111318?style=flat-square&logo=apple" alt="macOS 12+"> <img src="https://img.shields.io/badge/Windows-10%2F11_x64-111318?style=flat-square&logo=windows11" alt="Windows 10/11 x64"> <img src="https://img.shields.io/badge/Local--first-Data_stays_local-1F9D75?style=flat-square" alt="Local-first"></p>
+<p align="center"><a href="https://garrygit888.github.io/OrcaBox-Release/">Website</a> · <a href="https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.4.1">CNB Download</a> · <a href="https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.4.1">GitHub Download</a> · <a href="./OrcaBox-1.4.1-Release-Notes.EN.md">Release Notes</a> · <a href="https://github.com/GarryGit888/OrcaBox-Release/issues">Feedback</a></p>
 
 
 <img src="./assets/product-1.2.7-hero.webp" width="100%" alt="OrcaBox local asset library">
@@ -35,11 +35,11 @@ OrcaBox is built for editors, designers, motion artists, photographers, and crea
 - On-device AI for visual analysis, smart tags, semantic retrieval, and subtitle generation, with optional user-configured remote APIs.
 - Live Lottie previews, persistent Live Photo motion, and continuous audio waveforms.
 - Plugin Center with workflow-scoped capabilities: network video downloading, Pinterest visual search, song recognition, web capture, and DaVinci Resolve / Lightroom / Bridge integrations.
-- Desktop builds for Apple Silicon, Intel Mac, and Windows x64.
+- Desktop support for Apple Silicon, Intel Mac, and Windows x64. The 1.4.1 packages are available for macOS; Windows 1.4.0 remains available while 1.4.1 is being packaged.
 
 ## Recent Releases Highlights
 
-Everything below has shipped in v1.4.0 – v1.4.0. See the [release notes](./OrcaBox-1.4.0-Release-Notes.EN.md) for full details.
+OrcaBox supports macOS and Windows. Version 1.4.1 is now available for both Mac architectures; Windows remains on 1.4.0 while its 1.4.1 package is being built. See the [release notes](./OrcaBox-1.4.1-Release-Notes.EN.md) for full details.
 
 **Web asset capture**
 
@@ -108,13 +108,13 @@ Capabilities vary by format, operating system, and local media runtime. Video pr
 3. Let the local index complete, then organize with search, filters, tags, and collections.
 4. Enable AI, web capture, video downloading, Pinterest visual search, or editor integrations when needed.
 
-## Download OrcaBox 1.4.0
+## Download OrcaBox 1.4.1
 
 | Platform | Primary download | Mirror |
 | --- | --- | --- |
-| macOS Apple Silicon | [DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.0/OrcaBox-1.4.0-arm64.dmg) | [GitHub Release](https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.4.0) |
-| macOS Intel | [DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.0/OrcaBox-1.4.0-x64.dmg) | [GitHub Release](https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.4.0) |
-| Windows x64 | [Installer](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.0/OrcaBox-1.4.0-win-x64-Setup.exe) / [Portable](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.0/OrcaBox-1.4.0-win-x64-Portable.exe) | [GitHub Release](https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.4.0) |
+| macOS Apple Silicon | [DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.1-arm64.dmg) | [GitHub Release](https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.4.1) |
+| macOS Intel | [DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.1-x64.dmg) | [GitHub Release](https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.4.1) |
+| Windows x64 (current: v1.4.0) | [Installer](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.0-win-x64-Setup.exe) / [Portable](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.0-win-x64-Portable.exe) | [GitHub Release](https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.4.1) |
 
 > Current macOS packages are unsigned test builds. On first launch, macOS may require approval in System Settings > Privacy & Security. Download only from the official release pages above and verify checksums when available.
 

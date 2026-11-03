@@ -1,7 +1,107 @@
 {
-  "updatedAt": "2026-10-31",
-  "current": "1.4.0",
+  "updatedAt": "2026-11-03",
+  "current": "1.4.1",
   "releases": [
+    {
+      "version": "1.4.1",
+      "displayVersion": "1.4.1",
+      "date": "2026-11-02",
+      "tag": "v1.4.1",
+      "title": "OrcaBox 1.4.1",
+      "summary": "OrcaBox 1.4.1 macOS Apple Silicon 与 Intel 版本现已发布；Windows x64 1.4.1 正在打包，当前继续提供 1.4.0。",
+      "generatedFrom": {
+        "baseRef": "v1.4.0",
+        "branch": "1.4.1",
+        "commitCount": 7,
+        "changedFileCount": 34
+      },
+      "categories": {
+        "features": [
+          {
+            "text": "新增独立反馈面板与 Issue 同步",
+            "commit": "ab1c1ae",
+            "date": "2026-11-02"
+          }
+        ],
+        "improvements": [
+          {
+            "text": "优化超大图片缩略图调度",
+            "commit": "2831ee8",
+            "date": "2026-11-02"
+          }
+        ],
+        "fixes": [
+          {
+            "text": "修复表格缩略图缓存未优先加载",
+            "commit": "34d1f31",
+            "date": "2026-11-02"
+          },
+          {
+            "text": "修复反馈面板提交失败",
+            "commit": "160f723",
+            "date": "2026-11-02"
+          },
+          {
+            "text": "修复插件安装与服务生命周期",
+            "commit": "85f2386",
+            "date": "2026-11-02"
+          },
+          {
+            "text": "合并音频属性栏重复的 AI 识别页签",
+            "commit": "319b18a",
+            "date": "2026-11-02"
+          }
+        ],
+        "engineering": [
+          {
+            "text": "调试：记录开发环境 CSP 配置",
+            "commit": "623c849",
+            "date": "2026-11-02"
+          }
+        ]
+      },
+      "changedAreas": [
+        {
+          "area": "src",
+          "count": 25
+        },
+        {
+          "area": "website",
+          "count": 5
+        },
+        {
+          "area": "extensions",
+          "count": 1
+        },
+        {
+          "area": "package-lock.json",
+          "count": 1
+        },
+        {
+          "area": "package.json",
+          "count": 1
+        },
+        {
+          "area": "render.yaml",
+          "count": 1
+        }
+      ],
+      "summaryI18n": {
+        "en": "OrcaBox 1.4.1 is now available for Apple Silicon and Intel Macs. Windows x64 1.4.1 is being packaged; version 1.4.0 remains available.",
+        "ja": "OrcaBox 1.4.1 の macOS 版（Apple Silicon / Intel）を公開しました。Windows x64 版はビルド中のため、現在は 1.4.0 を提供しています。",
+        "ko": "OrcaBox 1.4.1 macOS 버전(Apple Silicon / Intel)이 출시되었습니다. Windows x64 1.4.1은 패키징 중이며 현재 1.4.0을 제공합니다."
+      },
+      "links": {
+        "cnbRelease": "https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.4.1",
+        "githubRelease": "https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.4.1",
+        "macArm64Dmg": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.1-arm64.dmg",
+        "macX64Dmg": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.1-x64.dmg",
+        "windowsInstaller": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.0-win-x64-Setup.exe",
+        "windowsPortable": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.0-win-x64-Portable.exe",
+        "browserExtension": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.4.1/OrcaBox-Chrome-Extension-1.4.1.zip",
+        "windowsVersion": "1.4.0"
+      }
+    },
     {
       "version": "1.4.0",
       "displayVersion": "1.4",
