@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-23T14:23:51.420Z",
+  "generatedAt": "2026-11-04T06:45:55.550Z",
   "plugins": [
     {
       "id": "com.orcabox.image-compare",
@@ -12,13 +12,13 @@
         "zh": "在独立面板中并排、滑杆、叠加或差异对比多张图片",
         "en": "Compare multiple images side by side, with wipe, overlay, or difference views in a standalone panel"
       },
-      "version": "1.0.0",
+      "version": "1.0.1",
       "author": "OrcaBox",
       "minAppVersion": "1.3.9",
-      "downloadUrl": "https://cnb.cool/garrykai/orcabox-release/-/git/raw/main/plugin-packages/com.orcabox.image-compare-v1.0.0.zip",
-      "mirrorDownloadUrl": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/plugins-1.3.9/com.orcabox.image-compare-v1.0.0.zip",
-      "sha256": "8e85c04155c3d30a172e7d05de183356c3d395743486ce772983a4db825dc615",
-      "sizeBytes": 108376
+      "downloadUrl": "https://cnb.cool/garrykai/orcabox-release/-/git/raw/main/plugin-packages/com.orcabox.image-compare-v1.0.1.zip",
+      "mirrorDownloadUrl": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/plugins-1.4.2/com.orcabox.image-compare-v1.0.1.zip",
+      "sha256": "39fba37a753e515dbb3df7637695a5d8ca369623a49bc21e77461ed5be1ed601",
+      "sizeBytes": 108368
     },
     {
       "id": "com.orcabox.network-video-downloader",
@@ -30,13 +30,31 @@
         "zh": "通过桌面链接或移动端分享链接下载常见平台的视频或音频，以独立面板窗口运行",
         "en": "Download video or audio from common platforms using desktop or mobile share links, in a standalone panel window"
       },
-      "version": "0.3.0",
+      "version": "0.3.1",
       "author": "OrcaBox",
       "minAppVersion": "1.3.6",
-      "downloadUrl": "https://cnb.cool/garrykai/orcabox-release/-/git/raw/main/plugin-packages/com.orcabox.network-video-downloader-v0.3.0.zip",
-      "mirrorDownloadUrl": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/plugins-1.3.9/com.orcabox.network-video-downloader-v0.3.0.zip",
-      "sha256": "4a23ecf6c303b5bd629055bf962b48346aaf30c658b3f008aee217fc44546bd5",
-      "sizeBytes": 111402
+      "downloadUrl": "https://cnb.cool/garrykai/orcabox-release/-/git/raw/main/plugin-packages/com.orcabox.network-video-downloader-v0.3.1.zip",
+      "mirrorDownloadUrl": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/plugins-1.4.2/com.orcabox.network-video-downloader-v0.3.1.zip",
+      "sha256": "7fdd47844bd3a7428e5295d972e1d774d4759b366dcfbc3266bb59b8b57d944f",
+      "sizeBytes": 113662
+    },
+    {
+      "id": "com.orcabox.photo-adjust",
+      "name": {
+        "zh": "照片调色",
+        "en": "Photo Develop"
+      },
+      "description": {
+        "zh": "复刻 Lightroom 工作流的照片调色面板，支持单图、多图和非破坏性导出",
+        "en": "A Lightroom-inspired photo develop panel with single-image, batch selection, and non-destructive exports"
+      },
+      "version": "1.0.1",
+      "author": "OrcaBox",
+      "minAppVersion": "1.3.9",
+      "downloadUrl": "https://cnb.cool/garrykai/orcabox-release/-/git/raw/main/plugin-packages/com.orcabox.photo-adjust-v1.0.1.zip",
+      "mirrorDownloadUrl": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/plugins-1.4.2/com.orcabox.photo-adjust-v1.0.1.zip",
+      "sha256": "70fdce856a27d7773852feff0ca620161d7bb9dc2d1906fb875c92e45cc068ab",
+      "sizeBytes": 376621
     }
   ]
 }
