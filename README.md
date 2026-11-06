@@ -17,7 +17,7 @@
   <img src="https://img.shields.io/badge/Local--first-Data_stays_local-1F9D75?style=flat-square" alt="Local-first">
 </p>
 
-<p align="center"><a href="https://garrygit888.github.io/OrcaBox-Release/">产品官网</a> · <a href="https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.4.1">CNB 下载</a> · <a href="https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.4.1">GitHub 下载</a> · <a href="./OrcaBox-1.4.1-Release-Notes.md">更新说明</a> · <a href="https://github.com/GarryGit888/OrcaBox-Release/issues">问题反馈</a></p>
+<p align="center"><a href="https://garrygit888.github.io/OrcaBox-Release/">产品官网</a> · <a href="https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.4.1">CNB 下载</a> · <a href="https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.4.1">GitHub 下载</a> · <a href="./docs/release-notes/OrcaBox-1.4.1-Release-Notes.md">更新说明</a> · <a href="https://github.com/GarryGit888/OrcaBox-Release/issues">问题反馈</a></p>
 
 
 <img src="./assets/product-1.2.7-hero.webp" width="100%" alt="OrcaBox 本地素材库主界面">
@@ -46,7 +46,7 @@ OrcaBox 面向剪辑师、设计师、动效师、摄影师和创意团队。添
 
 ## 近期重磅更新
 
-以下产品能力持续支持 macOS 与 Windows；本次 1.4.1 已覆盖 macOS 双架构与 Windows x64，完整变更见 [更新说明](./OrcaBox-1.4.1-Release-Notes.md)。
+以下产品能力持续支持 macOS 与 Windows；本次 1.4.1 已覆盖 macOS 双架构与 Windows x64，完整变更见 [更新说明](./docs/release-notes/OrcaBox-1.4.1-Release-Notes.md)。
 
 **网络素材采集**
 

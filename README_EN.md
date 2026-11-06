@@ -10,7 +10,7 @@
   <a href="./README_KO.md"><img src="https://img.shields.io/badge/한국어-2B2F38?style=for-the-badge&labelColor=15171C" alt="한국어"></a>
 </p>
 <p align="center"><img src="https://img.shields.io/badge/Release-v1.4.1-7C6FF7?style=flat-square" alt="Version 1.4.1"> <img src="https://img.shields.io/badge/macOS-12%2B-111318?style=flat-square&logo=apple" alt="macOS 12+"> <img src="https://img.shields.io/badge/Windows-10%2F11_x64-111318?style=flat-square&logo=windows11" alt="Windows 10/11 x64"> <img src="https://img.shields.io/badge/Local--first-Data_stays_local-1F9D75?style=flat-square" alt="Local-first"></p>
-<p align="center"><a href="https://garrygit888.github.io/OrcaBox-Release/">Website</a> · <a href="https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.4.1">CNB Download</a> · <a href="https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.4.1">GitHub Download</a> · <a href="./OrcaBox-1.4.1-Release-Notes.EN.md">Release Notes</a> · <a href="https://github.com/GarryGit888/OrcaBox-Release/issues">Feedback</a></p>
+<p align="center"><a href="https://garrygit888.github.io/OrcaBox-Release/">Website</a> · <a href="https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.4.1">CNB Download</a> · <a href="https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.4.1">GitHub Download</a> · <a href="./docs/release-notes/OrcaBox-1.4.1-Release-Notes.EN.md">Release Notes</a> · <a href="https://github.com/GarryGit888/OrcaBox-Release/issues">Feedback</a></p>
 
 
 <img src="./assets/product-1.2.7-hero.webp" width="100%" alt="OrcaBox local asset library">
@@ -39,7 +39,7 @@ OrcaBox is built for editors, designers, motion artists, photographers, and crea
 
 ## Recent Releases Highlights
 
-OrcaBox supports macOS and Windows. Version 1.4.1 is now available for both Mac architectures and Windows x64. See the [release notes](./OrcaBox-1.4.1-Release-Notes.EN.md) for full details.
+OrcaBox supports macOS and Windows. Version 1.4.1 is now available for both Mac architectures and Windows x64. See the [release notes](./docs/release-notes/OrcaBox-1.4.1-Release-Notes.EN.md) for full details.
 
 **Web asset capture**
 
