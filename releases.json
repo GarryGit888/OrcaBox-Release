@@ -1,14 +1,202 @@
 {
-  "updatedAt": "2026-11-03",
-  "current": "1.4.1",
+  "updatedAt": "2026-11-08",
+  "current": "1.4.2",
   "releases": [
+    {
+      "version": "1.4.2",
+      "displayVersion": "1.4.2",
+      "date": "2026-11-07",
+      "tag": "v1.4.2",
+      "title": "OrcaBox 1.4.2",
+      "summary": "OrcaBox 1.4.2 现已发布 macOS（Apple Silicon / Intel）与 Windows x64 版本；macOS 为修复来源目录子文件夹封面显示问题的重打包版本。",
+      "generatedFrom": {
+        "baseRef": "v1.4.1",
+        "branch": "1.4.2",
+        "commitCount": 61,
+        "changedFileCount": 289
+      },
+      "categories": {
+        "features": [
+          {
+            "text": "新增图片批量裁剪插件（AI 主角中心 + 统一比例）",
+            "commit": "4eaf6f0",
+            "date": "2026-11-07"
+          },
+          {
+            "text": "新增 Shift+空格 插件快速搜索",
+            "commit": "89bf873",
+            "date": "2026-11-07"
+          },
+          {
+            "text": "资产库图标与显示名称可自定义",
+            "commit": "7ab5b26",
+            "date": "2026-11-07"
+          },
+          {
+            "text": "AI 打标签与描述可切换云端模型",
+            "commit": "3babc3a",
+            "date": "2026-11-07"
+          }
+        ],
+        "improvements": [
+          {
+            "text": "通知改为堆叠卡组与悬停交互",
+            "commit": "76dd51f",
+            "date": "2026-11-07"
+          },
+          {
+            "text": "模型与用量面板改版（悬浮玻璃侧栏 + 渐进模糊 + 图表视图）",
+            "commit": "18d4bf8",
+            "date": "2026-11-07"
+          },
+          {
+            "text": "侧栏底部改为单行三段布局并精简更新入口",
+            "commit": "cc6b72e",
+            "date": "2026-11-07"
+          },
+          {
+            "text": "优化文件监听增量刷新性能",
+            "commit": "cbaca0f",
+            "date": "2026-11-07"
+          },
+          {
+            "text": "优化启动骨架屏的加载动效",
+            "commit": "ab7e506",
+            "date": "2026-11-07"
+          }
+        ],
+        "fixes": [
+          {
+            "text": "修复 DOCX 等文档误归为工程",
+            "commit": "69e20af",
+            "date": "2026-11-07"
+          },
+          {
+            "text": "修复云端 AI 标签识别与写入链路",
+            "commit": "4a88bf2",
+            "date": "2026-11-07"
+          },
+          {
+            "text": "修复插件入口静默失败与 AI 端点路径逃逸",
+            "commit": "d292271",
+            "date": "2026-11-07"
+          },
+          {
+            "text": "修复来源目录子文件夹卡片封面不显示（macOS 重打包）",
+            "commit": "e182887",
+            "date": "2026-11-08"
+          },
+          {
+            "text": "修复 Windows 资料库路径显示与独立面板标题栏融合",
+            "commit": "5105db0",
+            "date": "2026-11-08"
+          }
+        ],
+        "engineering": [
+          {
+            "text": "补齐 1.4.2 发版合规：打包配置、官网指南与新增功能记录",
+            "commit": "ef4fd01",
+            "date": "2026-11-07"
+          }
+        ]
+      },
+      "changedAreas": [
+        {
+          "area": "src",
+          "count": 210
+        },
+        {
+          "area": "marketing",
+          "count": 32
+        },
+        {
+          "area": "plugins-dev",
+          "count": 12
+        },
+        {
+          "area": "resources",
+          "count": 9
+        },
+        {
+          "area": "scripts",
+          "count": 7
+        },
+        {
+          "area": "doc",
+          "count": 5
+        },
+        {
+          "area": "docs",
+          "count": 2
+        },
+        {
+          "area": "website",
+          "count": 2
+        },
+        {
+          "area": ".git-blame-ignore-revs",
+          "count": 1
+        },
+        {
+          "area": ".github",
+          "count": 1
+        },
+        {
+          "area": ".zcode",
+          "count": 1
+        },
+        {
+          "area": "AGENTS.md",
+          "count": 1
+        },
+        {
+          "area": "electron-builder.mac-x64.yml",
+          "count": 1
+        },
+        {
+          "area": "electron-builder.yml",
+          "count": 1
+        },
+        {
+          "area": "extensions",
+          "count": 1
+        },
+        {
+          "area": "native",
+          "count": 1
+        },
+        {
+          "area": "package-lock.json",
+          "count": 1
+        },
+        {
+          "area": "package.json",
+          "count": 1
+        }
+      ],
+      "summaryI18n": {
+        "en": "OrcaBox 1.4.2 is now available for macOS (Apple Silicon and Intel) and Windows x64. The macOS build is the repacked release that fixes source-folder cover previews.",
+        "ja": "OrcaBox 1.4.2 の macOS 版（Apple Silicon / Intel）と Windows x64 版を公開しました。macOS はソースフォルダーのカバー表示を修正した再パッケージ版です。",
+        "ko": "OrcaBox 1.4.2 macOS(Apple Silicon / Intel)와 Windows x64 버전이 출시되었습니다. macOS는 소스 폴더 커버 표시를 수정한 재패키징 버전입니다."
+      },
+      "links": {
+        "cnbRelease": "https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.4.2",
+        "githubRelease": "https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.4.2",
+        "macArm64Dmg": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.2/OrcaBox-1.4.2-arm64.dmg",
+        "macX64Dmg": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.2/OrcaBox-1.4.2-x64.dmg",
+        "windowsInstaller": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.2/OrcaBox-1.4.2-win-x64-Setup.exe",
+        "windowsPortable": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.2/OrcaBox-1.4.2-win-x64-Portable.exe",
+        "browserExtension": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.4.2/OrcaBox-Chrome-Extension-1.4.2.zip",
+        "windowsVersion": "1.4.2"
+      }
+    },
     {
       "version": "1.4.1",
       "displayVersion": "1.4.1",
       "date": "2026-11-02",
       "tag": "v1.4.1",
       "title": "OrcaBox 1.4.1",
-      "summary": "OrcaBox 1.4.1 全平台发布：macOS Apple Silicon / Intel 与 Windows x64 均已提供。",
+      "summary": "OrcaBox 1.4.1 macOS Apple Silicon 与 Intel 版本现已发布；Windows x64 1.4.1 正在打包，当前继续提供 1.4.0。",
       "generatedFrom": {
         "baseRef": "v1.4.0",
         "branch": "1.4.1",
@@ -87,19 +275,19 @@
         }
       ],
       "summaryI18n": {
-        "en": "OrcaBox 1.4.1 is available for Apple Silicon, Intel Mac, and Windows x64.",
-        "ja": "OrcaBox 1.4.1 は Apple Silicon、Intel Mac、Windows x64 向けに公開されました。",
-        "ko": "OrcaBox 1.4.1은 Apple Silicon, Intel Mac, Windows x64용으로 출시되었습니다."
+        "en": "OrcaBox 1.4.1 is now available for Apple Silicon and Intel Macs. Windows x64 1.4.1 is being packaged; version 1.4.0 remains available.",
+        "ja": "OrcaBox 1.4.1 の macOS 版（Apple Silicon / Intel）を公開しました。Windows x64 版はビルド中のため、現在は 1.4.0 を提供しています。",
+        "ko": "OrcaBox 1.4.1 macOS 버전(Apple Silicon / Intel)이 출시되었습니다. Windows x64 1.4.1은 패키징 중이며 현재 1.4.0을 제공합니다."
       },
       "links": {
         "cnbRelease": "https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.4.1",
         "githubRelease": "https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.4.1",
         "macArm64Dmg": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.1-arm64.dmg",
         "macX64Dmg": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.1-x64.dmg",
-        "windowsInstaller": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.1-win-x64-Setup.exe",
-        "windowsPortable": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.1-win-x64-Portable.exe",
+        "windowsInstaller": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.0-win-x64-Setup.exe",
+        "windowsPortable": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.1/OrcaBox-1.4.0-win-x64-Portable.exe",
         "browserExtension": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.4.1/OrcaBox-Chrome-Extension-1.4.1.zip",
-        "windowsVersion": "1.4.1"
+        "windowsVersion": "1.4.0"
       }
     },
     {
@@ -1431,11 +1619,6 @@
           {
             "text": "Windows 原生播放异常（有声无画）自动回退内置播放器，与 macOS 行为一致",
             "commit": "6948be0b",
-            "date": "2026-10-10"
-          },
-          {
-            "text": "微信拖出文件导入：拖拽期锁定恢复线路更完整；达芬奇导入：反向 DNS 挂起给出可行动诊断而非误报未运行",
-            "commit": "412f2ba6",
             "date": "2026-10-10"
           }
         ],
