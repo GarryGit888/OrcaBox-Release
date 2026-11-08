@@ -13,6 +13,9 @@
 - macOS ships separate Apple Silicon and Intel DMGs; matching ZIP packages are retained as the in-app automatic updater payload. The current packages are unsigned and may require approval in Privacy & Security on first launch.
 - Windows x64 installer and portable builds are available. The installer is per-user by default and permits a custom directory. If you see "推理引擎无法启动", please report the full error text including the exit code.
 
+ZIP packages are retained as the in-app automatic updater payload. The current packages are unsigned and may require approval in Privacy & Security on first launch.
+- Windows x64 installer and portable builds are available. The installer is per-user by default and permits a custom directory. If you see "推理引擎无法启动", please report the full error text including the exit code.
+
 ## 1.4.1 - 2026-11-02
 
 - 独立反馈面板：从「帮助与支持 → 反馈建议」打开应用内面板，选择反馈类型、填写描述，并自动附带当前窗口截图（可删除或补充图片）。
