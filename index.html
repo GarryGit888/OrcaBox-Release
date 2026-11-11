@@ -209,7 +209,7 @@ a{color:inherit;text-decoration:none}
 .btn-lg{height:46px;padding:0 26px;font-size:0.9375rem;border-radius:13px}
 
 /* ============ HERO — media wall + glass ============ */
-.hero{position:relative;min-height:116vh;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:106px var(--s-8) 0;overflow:visible}
+.hero{position:relative;min-height:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:106px var(--s-8) 0;overflow:visible}
 .hero-wall{position:absolute;inset:0;z-index:0;overflow:clip;pointer-events:none}
 .wall-row{position:absolute;left:0;right:0;overflow:hidden;display:flex}
 .wall-row-a{top:0;height:236px;-webkit-mask-image:linear-gradient(180deg,#000 60%,transparent 100%);mask-image:linear-gradient(180deg,#000 60%,transparent 100%)}
@@ -221,6 +221,8 @@ a{color:inherit;text-decoration:none}
 .wall-set{display:flex;gap:var(--s-4);padding-right:var(--s-4)}
 .wall-tile{flex:0 0 auto;height:100%;width:340px;border-radius:18px;overflow:hidden;position:relative;background:var(--bg-raised);border:1px solid rgba(var(--ov),0.10);box-shadow:0 18px 44px rgba(var(--sh),0.38),inset 0 1px 0 rgba(var(--ov),0.10)}
 .wall-tile img{width:100%;height:100%;object-fit:cover;filter:saturate(1.12) brightness(0.92)}
+.wall-tile img[data-src]{opacity:0;transition:opacity .35s var(--ease)}
+.wall-tile img[data-src].wall-loaded{opacity:1}
 .wall-tile::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(var(--ov),0.06),transparent 22%);pointer-events:none}
 .wt-s{width:262px}
 .wt-l{width:430px}
@@ -242,7 +244,7 @@ a{color:inherit;text-decoration:none}
 .floater-ring{position:absolute;border-radius:50%;border:1px solid rgba(var(--ice-rgb),0.35);opacity:0.08;will-change:transform}
 .floater-ring-1{width:300px;height:300px;top:20%;right:15%}
 .floater-ring-2{width:180px;height:180px;bottom:30%;left:10%}
-.hero-text{padding:4vh var(--s-4) 0;text-align:center;max-width:1320px;margin-bottom:var(--s-8);position:relative;z-index:3}
+.hero-text{width:100%;align-self:stretch;padding:4vh var(--s-4) 0;text-align:center;max-width:1320px;margin:0 auto var(--s-8);position:relative;z-index:3}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;margin-bottom:var(--s-4);padding:7px 14px;border:1px solid rgba(var(--ice-rgb),0.32);border-radius:999px;color:#ddd6fe;background:rgba(var(--accent-rgb),0.08);-webkit-backdrop-filter:blur(20px) saturate(1.5);backdrop-filter:blur(20px) saturate(1.5);box-shadow:inset 0 1px 0 rgba(var(--ov),0.10);font-family:var(--font-mono);font-size:0.6875rem;letter-spacing:0.06em;text-transform:uppercase}
 .hero-eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--ice);box-shadow:0 0 12px rgba(var(--ice-rgb),0.9)}
 .hero-text h1{margin-bottom:var(--s-4)}
@@ -255,7 +257,7 @@ a{color:inherit;text-decoration:none}
 .hero-entrance-title{transition-delay:0s}
 .hero-entrance-desc{transition-delay:0.15s}
 .hero-entrance-cta{transition-delay:0.3s}
-.hero-shot-wrap{position:relative;width:min(95vw,1540px);max-width:1540px;margin:0 auto;z-index:2;overflow:visible;transform:translateY(52px)}
+.hero-shot-wrap{position:relative;align-self:center;width:min(95vw,1540px);max-width:1540px;margin-inline:auto;z-index:2;overflow:visible;transform:translateY(52px)}
 .hero-shot-wrap::before{content:'';position:absolute;inset:-16px;border-radius:calc(var(--radius-lg) + 16px);background:radial-gradient(ellipse at center,rgba(var(--accent-rgb),0.16) 0%,transparent 70%);opacity:0;transition:opacity 0.5s var(--ease);pointer-events:none;z-index:0}
 .hero-shot-wrap:hover::before{opacity:1}
 .hero-shot{width:100%;height:auto;border-radius:var(--radius-lg);border:1px solid rgba(var(--ov),0.11);box-shadow:var(--shadow-xl);will-change:transform,opacity;transform-origin:center bottom;opacity:0;transform:translateY(56px) scale(0.965);transition:opacity 1s var(--ease),transform 1s var(--ease),box-shadow 0.5s var(--ease),filter 0.5s var(--ease);position:relative;z-index:1}
@@ -273,7 +275,7 @@ a{color:inherit;text-decoration:none}
 [data-reveal-delay="5"]{transition-delay:0.40s}
 
 /* STATS — floating glass slab */
-.stats{position:relative;z-index:4;margin-top:-72px}
+.stats{position:relative;z-index:4;margin-top:clamp(-36px,-3vw,-20px)}
 .stats-row{display:grid;grid-template-columns:repeat(4,1fr);max-width:1100px;margin:0 auto;border-radius:var(--radius-xl);border:1px solid var(--border);background:var(--glass-strong);-webkit-backdrop-filter:blur(28px) saturate(1.7);backdrop-filter:blur(28px) saturate(1.7);box-shadow:var(--shadow-lg),inset 0 1px 0 rgba(var(--ov),0.10);overflow:hidden}
 .stat{padding:var(--s-6) var(--s-8);text-align:center;border-right:1px solid var(--border-subtle);transition:all 0.3s var(--ease);cursor:default}
 .stat:hover{background:rgba(var(--ice-rgb),0.06)}
@@ -398,7 +400,7 @@ a{color:inherit;text-decoration:none}
 .shot-wrap{position:relative;overflow:visible;border-radius:var(--radius-lg)}
 .shot-wrap::before{content:'';position:absolute;inset:-12px;border-radius:calc(var(--radius-lg) + 12px);background:radial-gradient(ellipse at center,rgba(var(--accent-rgb),0.15) 0%,transparent 70%);opacity:0;transition:opacity 0.5s var(--ease);pointer-events:none;z-index:0}
 .shot-wrap:hover::before{opacity:1}
-.shot-wrap img,.shot-wrap video{--shot-offset:0px;width:100%;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);border:1px solid rgba(var(--ov),0.11);transition:transform 0.5s var(--ease),box-shadow 0.5s var(--ease),filter 0.5s var(--ease);transform:translateY(var(--shot-offset));position:relative;z-index:1;display:block}
+.shot-wrap img,.shot-wrap video{--shot-offset:0px;width:100%;height:auto;border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);border:1px solid rgba(var(--ov),0.11);transition:transform 0.5s var(--ease),box-shadow 0.5s var(--ease),filter 0.5s var(--ease);transform:translateY(var(--shot-offset));position:relative;z-index:1;display:block}
 .shot-wrap:hover img,.shot-wrap:hover video{transform:translateY(var(--shot-offset)) scale(1.03);box-shadow:0 0 50px rgba(var(--accent-rgb),0.13),0 20px 60px rgba(var(--sh),0.5);filter:brightness(1.06)}
 .showcase-info .label{margin-bottom:var(--s-3)}
 .showcase-info h3{margin-bottom:var(--s-3)}
@@ -701,6 +703,19 @@ body.donation-open{overflow:hidden}
   .wt-s{width:220px}
   .wt-l{width:350px}
 }
+/* 1080p 常见浏览器窗口的可视高度略低于屏幕高度，压缩首屏纵向留白并按视口高度收敛产品图。 */
+@media(min-width:1025px) and (max-height:1080px){
+  .container{max-width:1200px}
+  .nav-inner{max-width:1200px}
+  .hero{min-height:0;padding-top:78px}
+  .hero-text{padding-top:0;margin-bottom:20px}
+  .hero-eyebrow{margin-bottom:12px}
+  .hero-text h1{font-size:clamp(3.5rem,6.1vw,5.5rem);margin-bottom:12px}
+  .hero-text .body-l{margin-bottom:20px}
+  .hero-version{margin-top:12px}
+  .hero-shot-wrap{width:min(88vw,1200px,calc((100vh - 100px) * 1.56));max-width:1200px;transform:translateY(24px)}
+  .stats{margin-top:clamp(-36px,-3vw,-20px)}
+}
 @media(max-width:640px){
   .nav-links{display:none}.hero{min-height:auto;padding:96px var(--s-4) 0}.hero-bottom-glow{bottom:-132px;height:610px}#showcase{margin-top:-118px;padding-top:calc(var(--s-20) + 118px)}#showcase::before{top:-134px;height:264px;filter:blur(18px)}
   .nav .nav-brand{font-size:0;gap:0}
@@ -843,44 +858,44 @@ body.donation-open{overflow:hidden}
     <div class="wall-row wall-row-a">
       <div class="wall-track">
         <div class="wall-set">
-          <div class="wall-tile wt-s"><img fetchpriority="low" src="assets/product-1.2.1-image-sm.webp" alt="" decoding="async" style="object-position:52% 26%"></div>
+          <div class="wall-tile wt-s"><img fetchpriority="low" data-src="assets/product-1.2.1-image-sm.webp" alt="" width="880" height="587" decoding="async" style="object-position:52% 26%"></div>
           <div class="wall-tile t-grad-1"></div>
-          <div class="wall-tile"><img fetchpriority="low" src="assets/showcase-image-browser-sm.webp" alt="" decoding="async" style="object-position:58% 22%"></div>
+          <div class="wall-tile"><img fetchpriority="low" data-src="assets/showcase-image-browser-sm.webp" alt="" width="880" height="565" decoding="async" style="object-position:58% 22%"></div>
           <div class="wall-tile wt-s t-palette"><i style="background:#d95763"></i><i style="background:#e8a33d"></i><i style="background:#3fae7a"></i><i style="background:#3f7ad9"></i><i style="background:#8a63d2"></i></div>
-          <div class="wall-tile wt-l"><img fetchpriority="low" src="assets/collections-sm.webp" alt="" decoding="async" style="object-position:50% 15%"></div>
+          <div class="wall-tile wt-l"><img fetchpriority="low" data-src="assets/collections-sm.webp" alt="" width="880" height="587" decoding="async" style="object-position:50% 15%"></div>
           <div class="wall-tile t-grad-2"></div>
-          <div class="wall-tile"><img fetchpriority="low" src="assets/showcase-audio-browser-sm.webp" alt="" decoding="async" style="object-position:50% 30%"></div>
+          <div class="wall-tile"><img fetchpriority="low" data-src="assets/showcase-audio-browser-sm.webp" alt="" width="880" height="565" decoding="async" style="object-position:50% 30%"></div>
         </div>
         <div class="wall-set">
-          <div class="wall-tile wt-s"><img fetchpriority="low" src="assets/product-1.2.1-image-sm.webp" alt="" decoding="async" style="object-position:52% 26%"></div>
+          <div class="wall-tile wt-s"><img fetchpriority="low" data-src="assets/product-1.2.1-image-sm.webp" alt="" width="880" height="587" decoding="async" style="object-position:52% 26%"></div>
           <div class="wall-tile t-grad-1"></div>
-          <div class="wall-tile"><img fetchpriority="low" src="assets/showcase-image-browser-sm.webp" alt="" decoding="async" style="object-position:58% 22%"></div>
+          <div class="wall-tile"><img fetchpriority="low" data-src="assets/showcase-image-browser-sm.webp" alt="" width="880" height="565" decoding="async" style="object-position:58% 22%"></div>
           <div class="wall-tile wt-s t-palette"><i style="background:#d95763"></i><i style="background:#e8a33d"></i><i style="background:#3fae7a"></i><i style="background:#3f7ad9"></i><i style="background:#8a63d2"></i></div>
-          <div class="wall-tile wt-l"><img fetchpriority="low" src="assets/collections-sm.webp" alt="" decoding="async" style="object-position:50% 15%"></div>
+          <div class="wall-tile wt-l"><img fetchpriority="low" data-src="assets/collections-sm.webp" alt="" width="880" height="587" decoding="async" style="object-position:50% 15%"></div>
           <div class="wall-tile t-grad-2"></div>
-          <div class="wall-tile"><img fetchpriority="low" src="assets/showcase-audio-browser-sm.webp" alt="" decoding="async" style="object-position:50% 30%"></div>
+          <div class="wall-tile"><img fetchpriority="low" data-src="assets/showcase-audio-browser-sm.webp" alt="" width="880" height="565" decoding="async" style="object-position:50% 30%"></div>
         </div>
       </div>
     </div>
     <div class="wall-row wall-row-b">
       <div class="wall-track">
         <div class="wall-set">
-          <div class="wall-tile"><img fetchpriority="low" src="assets/product-1.2.1-audio-sm.webp" alt="" decoding="async" style="object-position:60% 30%"></div>
+          <div class="wall-tile"><img fetchpriority="low" data-src="assets/product-1.2.1-audio-sm.webp" alt="" width="880" height="564" decoding="async" style="object-position:60% 30%"></div>
           <div class="wall-tile wt-s t-wave"><svg viewBox="0 0 120 60" fill="none" aria-hidden="true"><defs><linearGradient id="wg" x1="0" y1="0" x2="120" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#e9d5ff"/><stop offset="1" stop-color="#9333ea"/></linearGradient></defs><g fill="url(#wg)"><rect x="2" y="24" width="3" height="12" rx="1.5"/><rect x="8" y="20" width="3" height="20" rx="1.5"/><rect x="14" y="15" width="3" height="30" rx="1.5"/><rect x="20" y="19" width="3" height="22" rx="1.5"/><rect x="26" y="11" width="3" height="38" rx="1.5"/><rect x="32" y="6" width="3" height="48" rx="1.5"/><rect x="38" y="15" width="3" height="30" rx="1.5"/><rect x="44" y="8" width="3" height="44" rx="1.5"/><rect x="50" y="18" width="3" height="24" rx="1.5"/><rect x="56" y="13" width="3" height="34" rx="1.5"/><rect x="62" y="22" width="3" height="16" rx="1.5"/><rect x="68" y="17" width="3" height="26" rx="1.5"/><rect x="74" y="25" width="3" height="10" rx="1.5"/><rect x="80" y="20" width="3" height="20" rx="1.5"/><rect x="86" y="23" width="3" height="14" rx="1.5"/><rect x="92" y="18" width="3" height="24" rx="1.5"/><rect x="98" y="24" width="3" height="12" rx="1.5"/><rect x="104" y="21" width="3" height="18" rx="1.5"/></g></svg></div>
-          <div class="wall-tile wt-l"><img fetchpriority="low" src="assets/product-1.2.1-3d-sm.webp" alt="" decoding="async" style="object-position:50% 25%"></div>
+          <div class="wall-tile wt-l"><img fetchpriority="low" data-src="assets/product-1.2.1-3d-sm.webp" alt="" width="880" height="587" decoding="async" style="object-position:50% 25%"></div>
           <div class="wall-tile wt-s t-grad-3"></div>
-          <div class="wall-tile"><img fetchpriority="low" src="assets/product-1.2.1-collections-sm.webp" alt="" decoding="async" style="object-position:50% 20%"></div>
-          <div class="wall-tile wt-s t-brand"><img fetchpriority="low" src="assets/orcabox-icon-192.png" alt="" decoding="async"></div>
-          <div class="wall-tile"><img fetchpriority="low" src="assets/showcase-video-browser-sm.webp" alt="" decoding="async" style="object-position:50% 30%"></div>
+          <div class="wall-tile"><img fetchpriority="low" data-src="assets/product-1.2.1-collections-sm.webp" alt="" width="880" height="412" decoding="async" style="object-position:50% 20%"></div>
+          <div class="wall-tile wt-s t-brand"><img fetchpriority="low" data-src="assets/orcabox-icon-192.png" alt="" width="192" height="192" decoding="async"></div>
+          <div class="wall-tile"><img fetchpriority="low" data-src="assets/showcase-video-browser-sm.webp" alt="" width="880" height="565" decoding="async" style="object-position:50% 30%"></div>
         </div>
         <div class="wall-set">
-          <div class="wall-tile"><img fetchpriority="low" src="assets/product-1.2.1-audio-sm.webp" alt="" decoding="async" style="object-position:60% 30%"></div>
+          <div class="wall-tile"><img fetchpriority="low" data-src="assets/product-1.2.1-audio-sm.webp" alt="" width="880" height="564" decoding="async" style="object-position:60% 30%"></div>
           <div class="wall-tile wt-s t-wave"><svg viewBox="0 0 120 60" fill="none" aria-hidden="true"><g fill="url(#wg)"><rect x="2" y="24" width="3" height="12" rx="1.5"/><rect x="8" y="20" width="3" height="20" rx="1.5"/><rect x="14" y="15" width="3" height="30" rx="1.5"/><rect x="20" y="19" width="3" height="22" rx="1.5"/><rect x="26" y="11" width="3" height="38" rx="1.5"/><rect x="32" y="6" width="3" height="48" rx="1.5"/><rect x="38" y="15" width="3" height="30" rx="1.5"/><rect x="44" y="8" width="3" height="44" rx="1.5"/><rect x="50" y="18" width="3" height="24" rx="1.5"/><rect x="56" y="13" width="3" height="34" rx="1.5"/><rect x="62" y="22" width="3" height="16" rx="1.5"/><rect x="68" y="17" width="3" height="26" rx="1.5"/><rect x="74" y="25" width="3" height="10" rx="1.5"/><rect x="80" y="20" width="3" height="20" rx="1.5"/><rect x="86" y="23" width="3" height="14" rx="1.5"/><rect x="92" y="18" width="3" height="24" rx="1.5"/><rect x="98" y="24" width="3" height="12" rx="1.5"/><rect x="104" y="21" width="3" height="18" rx="1.5"/></g></svg></div>
-          <div class="wall-tile wt-l"><img fetchpriority="low" src="assets/product-1.2.1-3d-sm.webp" alt="" decoding="async" style="object-position:50% 25%"></div>
+          <div class="wall-tile wt-l"><img fetchpriority="low" data-src="assets/product-1.2.1-3d-sm.webp" alt="" width="880" height="587" decoding="async" style="object-position:50% 25%"></div>
           <div class="wall-tile wt-s t-grad-3"></div>
-          <div class="wall-tile"><img fetchpriority="low" src="assets/product-1.2.1-collections-sm.webp" alt="" decoding="async" style="object-position:50% 20%"></div>
-          <div class="wall-tile wt-s t-brand"><img fetchpriority="low" src="assets/orcabox-icon-192.png" alt="" decoding="async"></div>
-          <div class="wall-tile"><img fetchpriority="low" src="assets/showcase-video-browser-sm.webp" alt="" decoding="async" style="object-position:50% 30%"></div>
+          <div class="wall-tile"><img fetchpriority="low" data-src="assets/product-1.2.1-collections-sm.webp" alt="" width="880" height="412" decoding="async" style="object-position:50% 20%"></div>
+          <div class="wall-tile wt-s t-brand"><img fetchpriority="low" data-src="assets/orcabox-icon-192.png" alt="" width="192" height="192" decoding="async"></div>
+          <div class="wall-tile"><img fetchpriority="low" data-src="assets/showcase-video-browser-sm.webp" alt="" width="880" height="565" decoding="async" style="object-position:50% 30%"></div>
         </div>
       </div>
     </div>
@@ -891,7 +906,7 @@ body.donation-open{overflow:hidden}
     <div class="hero-scrim"></div>
   </div>
   <div class="hero-bottom-glow" aria-hidden="true">
-    <img src="assets/hero-bottom-glow.png" alt="" width="735" height="475" decoding="async">
+    <img src="assets/hero-bottom-glow.png" alt="" width="735" height="475" loading="lazy" fetchpriority="low" decoding="async">
   </div>
   <div class="hero-text">
     <span class="hero-eyebrow hero-entrance" data-i18n="hero.eyebrow">OrcaBox本地素材管家</span>
@@ -930,7 +945,7 @@ body.donation-open{overflow:hidden}
     </div>
     <div class="showcase-row" data-reveal>
       <div class="shot-wrap">
-        <img src="assets/product-1.2.1-image.webp" alt="OrcaBox 1.4.2 图片素材预览" loading="lazy">
+        <img src="assets/product-1.2.1-image.webp" alt="OrcaBox 1.4.2 图片素材预览" width="1800" height="1200" loading="lazy" decoding="async">
       </div>
       <div class="showcase-info">
         <span class="label" data-i18n="s1.label">图片预览</span>
@@ -941,7 +956,7 @@ body.donation-open{overflow:hidden}
     </div>
     <div class="showcase-row showcase-row-reverse" data-reveal data-reveal-delay="1">
       <div class="shot-wrap">
-        <img src="assets/product-1.2.1-audio.webp" alt="OrcaBox 1.4.2 音效库音频预览" loading="lazy">
+        <img src="assets/product-1.2.1-audio.webp" alt="OrcaBox 1.4.2 音效库音频预览" width="1800" height="1153" loading="lazy" decoding="async">
       </div>
       <div class="showcase-info">
         <span class="label" data-i18n="s2.label">音频预览</span>
@@ -952,9 +967,9 @@ body.donation-open{overflow:hidden}
     </div>
     <div class="showcase-row" data-reveal>
       <div class="shot-wrap">
-        <video id="lottieShot" width="720" height="480" poster="assets/product-1.2.1-lottie-poster.webp" autoplay muted loop playsinline preload="metadata" aria-label="OrcaBox Lottie 与 JSON 动效资产实时预览">
-          <source src="assets/product-1.2.1-lottie.webm" type="video/webm">
-          <source src="assets/product-1.2.1-lottie.mp4" type="video/mp4">
+        <video id="lottieShot" width="720" height="480" poster="assets/product-1.2.1-lottie-poster.webp" muted loop playsinline preload="none" aria-label="OrcaBox Lottie 与 JSON 动效资产实时预览">
+          <source data-src="assets/product-1.2.1-lottie.webm" type="video/webm">
+          <source data-src="assets/product-1.2.1-lottie.mp4" type="video/mp4">
         </video>
       </div>
       <div class="showcase-info">
@@ -966,7 +981,7 @@ body.donation-open{overflow:hidden}
     </div>
     <div class="showcase-row showcase-row-reverse" data-reveal data-reveal-delay="1">
       <div class="shot-wrap">
-        <img src="assets/product-1.2.1-3d.webp" alt="OrcaBox 1.4.2 交互式 3D 预览" loading="lazy">
+        <img src="assets/product-1.2.1-3d.webp" alt="OrcaBox 1.4.2 交互式 3D 预览" width="1800" height="1200" loading="lazy" decoding="async">
       </div>
       <div class="showcase-info">
         <span class="label" data-i18n="s4.label">交互式 3D</span>
@@ -986,8 +1001,8 @@ body.donation-open{overflow:hidden}
     </div>
     <div class="search-stage" data-reveal aria-hidden="true">
       <div class="search-stage-bg">
-        <img src="assets/showcase-image-browser.webp" alt="" loading="lazy" decoding="async">
-        <img src="assets/product-1.2.1-audio.webp" alt="" loading="lazy" decoding="async">
+        <img src="assets/showcase-image-browser.webp" alt="" width="1600" height="1027" loading="lazy" decoding="async">
+        <img src="assets/product-1.2.1-audio.webp" alt="" width="1800" height="1153" loading="lazy" decoding="async">
       </div>
       <div class="search-card">
         <div class="search-card-head">
@@ -1044,7 +1059,7 @@ body.donation-open{overflow:hidden}
           <h3 data-i18n="f3.title">跨目录归集 不移动原文件</h3>
           <p data-i18n="f3.desc">按项目组织素材 封面 数量 顺序一目了然</p>
         </div>
-        <div class="feature-media"><img src="assets/product-1.2.1-collections.webp" alt="OrcaBox 1.4.2 文件夹设计与合集管理" loading="lazy"></div>
+        <div class="feature-media"><img src="assets/product-1.2.1-collections.webp" alt="OrcaBox 1.4.2 文件夹设计与合集管理" width="1800" height="843" loading="lazy" decoding="async"></div>
       </article>
       <article class="feature-panel feature-panel-medium" data-glow-card data-reveal data-reveal-delay="1">
         <div class="feature-panel-copy">
@@ -1052,7 +1067,7 @@ body.donation-open{overflow:hidden}
           <h3 data-i18n="f4.title">本地智能抠图</h3>
           <p data-i18n="f4.desc">自动识别主体 支持阈值 羽化 手动修边</p>
         </div>
-        <div class="feature-media"><img src="assets/smart-cutout.webp" alt="OrcaBox 智能抠图工具" loading="lazy"></div>
+        <div class="feature-media"><img src="assets/smart-cutout.webp" alt="OrcaBox 智能抠图工具" width="1400" height="895" loading="lazy" decoding="async"></div>
       </article>
       <article class="feature-panel cap-batch" data-glow-card data-reveal>
         <div class="feature-panel-copy">
@@ -1070,7 +1085,7 @@ body.donation-open{overflow:hidden}
           <p data-i18n="t2.desc">扫描、索引、分析、失败重试集中可见 适合大型素材库整理</p>
           <div class="tag-row"><span class="tag" data-i18n="tag.scan">扫描</span><span class="tag" data-i18n="tag.index">索引</span><span class="tag" data-i18n="tag.ai">AI 分析</span></div>
         </div>
-        <div class="feature-media"><img src="assets/iShot_2026-06-25_13.55.23.webp" alt="OrcaBox 任务中心" loading="lazy"></div>
+        <div class="feature-media"><img src="assets/iShot_2026-06-25_13.55.23.webp" alt="OrcaBox 任务中心" width="2200" height="1309" loading="lazy" decoding="async"></div>
       </article>
       <article class="feature-panel feature-panel-text cap-text cap-text-ai" data-glow-card data-reveal>
         <div class="feature-panel-copy">
@@ -1087,7 +1102,7 @@ body.donation-open{overflow:hidden}
           <h3 data-i18n="f6.title">素材直达剪辑软件</h3>
           <p data-i18n="f6.desc">导入媒体池或当前时间线 减少软件间往返</p>
         </div>
-        <div class="feature-media"><img src="assets/product-1.2.1-timeline.webp" alt="OrcaBox 1.4.2 视频播放快速导入时间线" loading="lazy"></div>
+        <div class="feature-media"><img src="assets/product-1.2.1-timeline.webp" alt="OrcaBox 1.4.2 视频播放快速导入时间线" width="1800" height="1153" loading="lazy" decoding="async"></div>
       </article>
       <article class="feature-panel feature-panel-small feature-panel-convert" data-glow-card data-reveal>
         <div class="feature-panel-copy">
@@ -1095,7 +1110,7 @@ body.donation-open{overflow:hidden}
           <h3 data-i18n="f5.title">常用格式一键转换</h3>
           <p data-i18n="f5.desc">WebP、JPEG、PNG、AVIF、TIFF 批量处理</p>
         </div>
-        <div class="feature-media"><img src="assets/image-convert.webp" alt="OrcaBox 图片格式转换插件" loading="lazy"></div>
+        <div class="feature-media"><img src="assets/image-convert.webp" alt="OrcaBox 图片格式转换插件" width="1000" height="1019" loading="lazy" decoding="async"></div>
       </article>
       <article class="feature-panel feature-panel-text cap-text cap-text-color" data-glow-card data-reveal data-reveal-delay="1">
         <div class="feature-panel-copy">
@@ -1232,7 +1247,7 @@ body.donation-open{overflow:hidden}
             <li><span class="price-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pricing.pro.f3">字幕审校与口播交付模板扩展包</span></li>
             <li><span class="price-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="pricing.pro.f4">本大版本内的修复与兼容更新</span></li>
           </ul>
-          <button type="button" class="btn btn-secondary price-btn" disabled data-i18n="pricing.pro.cta">规划中</button>
+          <button type="button" class="btn btn-secondary price-btn" disabled data-i18n="pricing.pro.cta">即将推出</button>
         </article>
       </div>
     </div>
@@ -1434,7 +1449,7 @@ const i18n={
     "pricing.badge":"交个朋友价","pricing.dev.name":"开发伙伴计划","pricing.dev.per":"/ 永久","pricing.dev.desc":"¥88 一次买断 与开发者共建插件生态",
     "pricing.dev.f1":"软件本体永久使用","pricing.dev.f2":"无限制文件索引","pricing.dev.f3":"本地 AI 模型能力","pricing.dev.f4":"支持远端 API 接口","pricing.dev.f5":"免费版所有功能","pricing.dev.f6":"获取插件共创权益","pricing.dev.f7":"插件生态共建",
     "pricing.dev.cta":"联系开发者",
-    "pricing.pro.name":"Pro 专业工作流套件","pricing.pro.per":"/ 当前大版本永久使用","pricing.pro.desc":"¥188 一次性购买专业创作交付工作流扩展套件 当前仍在规划","pricing.pro.f1":"规划：动效资产批量替换与版本差异检查扩展包","pricing.pro.f2":"规划：视频交付规格检查与输出模板扩展包","pricing.pro.f3":"规划：字幕审校与口播交付模板扩展包","pricing.pro.f4":"本大版本内的修复与兼容更新","pricing.pro.cta":"规划中"
+    "pricing.pro.name":"Pro 专业工作流套件","pricing.pro.per":"/ 当前大版本永久使用","pricing.pro.desc":"¥188 一次性购买专业创作交付工作流扩展套件 当前仍在规划","pricing.pro.f1":"规划：动效资产批量替换与版本差异检查扩展包","pricing.pro.f2":"规划：视频交付规格检查与输出模板扩展包","pricing.pro.f3":"规划：字幕审校与口播交付模板扩展包","pricing.pro.f4":"本大版本内的修复与兼容更新","pricing.pro.cta":"即将推出"
   },
   en:{
     "nav.features":"Features","nav.showcase":"Showcase","nav.docs":"Docs (中文)","nav.updates":"Updates","nav.download":"Download","nav.downloadBtn":"Download","nav.menu":"Open navigation menu","lightbox.close":"Close preview",
@@ -1498,7 +1513,7 @@ const i18n={
     "pricing.badge":"Friendly Price","pricing.dev.name":"Dev Partner Program","pricing.dev.per":"/ lifetime","pricing.dev.desc":"¥88 one-time purchase — build the plugin ecosystem with the developer.",
     "pricing.dev.f1":"Lifetime local license","pricing.dev.f2":"Unlimited file indexing","pricing.dev.f3":"On-device AI models","pricing.dev.f4":"Remote API support","pricing.dev.f5":"Everything in Free","pricing.dev.f6":"Plugin co-creation perks","pricing.dev.f7":"Shape the plugin ecosystem",
     "pricing.dev.cta":"Contact the Developer",
-    "pricing.pro.name":"Pro · Professional Workflow Suite","pricing.pro.per":"/ current major version, lifetime use","pricing.pro.desc":"¥188 one-time for a professional creative-delivery workflow suite. Planned.","pricing.pro.f1":"Planned: motion asset batch replacement and version-diff workflow pack","pricing.pro.f2":"Planned: video delivery checks and output-template workflow pack","pricing.pro.f3":"Planned: subtitle review and talking-head delivery-template workflow pack","pricing.pro.f4":"Fixes and compatibility updates within this major version","pricing.pro.cta":"Planned"
+    "pricing.pro.name":"Pro · Professional Workflow Suite","pricing.pro.per":"/ current major version, lifetime use","pricing.pro.desc":"¥188 one-time for a professional creative-delivery workflow suite. Planned.","pricing.pro.f1":"Planned: motion asset batch replacement and version-diff workflow pack","pricing.pro.f2":"Planned: video delivery checks and output-template workflow pack","pricing.pro.f3":"Planned: subtitle review and talking-head delivery-template workflow pack","pricing.pro.f4":"Fixes and compatibility updates within this major version","pricing.pro.cta":"Coming soon"
   },
   ja:{
     "nav.features":"機能","nav.showcase":"紹介","nav.docs":"文書（中国語）","nav.updates":"更新","nav.download":"ダウンロード","nav.downloadBtn":"ダウンロード","nav.menu":"ナビゲーションメニューを開く","lightbox.close":"プレビューを閉じる",
@@ -1562,7 +1577,7 @@ const i18n={
     "pricing.badge":"お友達価格","pricing.dev.name":"開発パートナープラン","pricing.dev.per":"/ 永久","pricing.dev.desc":"¥88 の買い切りで、開発者とプラグインエコシステムを一緒に育てる。",
     "pricing.dev.f1":"ローカル永久ライセンス","pricing.dev.f2":"無制限のファイル索引","pricing.dev.f3":"ローカル AI モデル","pricing.dev.f4":"リモート API 対応","pricing.dev.f5":"Free の全機能","pricing.dev.f6":"プラグイン共創特典","pricing.dev.f7":"プラグインエコシステムの共建",
     "pricing.dev.cta":"開発者に連絡",
-    "pricing.pro.name":"Pro · プロ向けワークフローセット","pricing.pro.per":"/ 現行メジャーバージョン永久利用","pricing.pro.desc":"プロ向け制作・納品ワークフロー拡張セット。¥188 買い切りで準備中です。","pricing.pro.f1":"予定：モーション素材の一括置換とバージョン差分確認","pricing.pro.f2":"予定：動画納品仕様チェックと出力テンプレート","pricing.pro.f3":"予定：字幕校正とトーク動画納品テンプレート","pricing.pro.f4":"現行メジャーバージョン内の修正と互換性更新","pricing.pro.cta":"準備中"
+    "pricing.pro.name":"Pro · プロ向けワークフローセット","pricing.pro.per":"/ 現行メジャーバージョン永久利用","pricing.pro.desc":"プロ向け制作・納品ワークフロー拡張セット。¥188 買い切りで準備中です。","pricing.pro.f1":"予定：モーション素材の一括置換とバージョン差分確認","pricing.pro.f2":"予定：動画納品仕様チェックと出力テンプレート","pricing.pro.f3":"予定：字幕校正とトーク動画納品テンプレート","pricing.pro.f4":"現行メジャーバージョン内の修正と互換性更新","pricing.pro.cta":"近日公開"
   },
   ko:{
     "nav.features":"기능","nav.showcase":"소개","nav.docs":"문서 (중국어)","nav.updates":"업데이트","nav.download":"다운로드","nav.downloadBtn":"다운로드","nav.menu":"내비게이션 메뉴 열기","lightbox.close":"미리보기 닫기",
@@ -1626,7 +1641,7 @@ const i18n={
     "pricing.badge":"단독 특별가","pricing.dev.name":"개발 파트너 프로그램","pricing.dev.per":"/ 평생","pricing.dev.desc":"¥88 일회성 구매로 개발자와 함께 플러그인 생태계를 만들어 가세요.",
     "pricing.dev.f1":"평생 로컬 라이선스","pricing.dev.f2":"무제한 파일 인덱싱","pricing.dev.f3":"로컬 AI 모델","pricing.dev.f4":"원격 API 지원","pricing.dev.f5":"Free의 모든 기능","pricing.dev.f6":"플러그인 공동 제작 혜택","pricing.dev.f7":"플러그인 생태계 공동 구축",
     "pricing.dev.cta":"개발자에게 문의",
-    "pricing.pro.name":"Pro · 전문가 워크플로 번들","pricing.pro.per":"/ 현재 메이저 버전 영구 사용","pricing.pro.desc":"전문 제작 및 납품 워크플로 확장 번들입니다. ¥188 일회성 구매로 준비 중입니다.","pricing.pro.f1":"예정: 모션 에셋 일괄 교체 및 버전 차이 검토","pricing.pro.f2":"예정: 영상 납품 규격 검사 및 출력 템플릿","pricing.pro.f3":"예정: 자막 검수 및 토킹헤드 납품 템플릿","pricing.pro.f4":"현재 메이저 버전 내 수정 및 호환성 업데이트","pricing.pro.cta":"준비 중"
+    "pricing.pro.name":"Pro · 전문가 워크플로 번들","pricing.pro.per":"/ 현재 메이저 버전 영구 사용","pricing.pro.desc":"전문 제작 및 납품 워크플로 확장 번들입니다. ¥188 일회성 구매로 준비 중입니다.","pricing.pro.f1":"예정: 모션 에셋 일괄 교체 및 버전 차이 검토","pricing.pro.f2":"예정: 영상 납품 규격 검사 및 출력 템플릿","pricing.pro.f3":"예정: 자막 검수 및 토킹헤드 납품 템플릿","pricing.pro.f4":"현재 메이저 버전 내 수정 및 호환성 업데이트","pricing.pro.cta":"출시 예정"
   }
 };
 
@@ -1965,6 +1980,22 @@ if(glowCards.length&&precisePointer&&!reduced){
 const heroShot=document.getElementById('heroShot');
 if(heroShot){
   const showHeroShot=()=>requestAnimationFrame(()=>heroShot.classList.add('ready'));
+  const loadWallImages=()=>{
+    try{
+      document.querySelectorAll('.hero-wall img[data-src]').forEach(img=>{
+        img.addEventListener('load',()=>img.classList.add('wall-loaded'),{once:true});
+        img.addEventListener('error',()=>img.classList.add('wall-loaded'),{once:true});
+        img.src=img.dataset.src;
+        delete img.dataset.src;
+      });
+    }catch(error){console.warn('[OrcaBox] Hero wall images could not be loaded:',error)}
+  };
+  const scheduleWallImages=()=>{
+    if('requestIdleCallback'in window)window.requestIdleCallback(loadWallImages,{timeout:1800});
+    else window.setTimeout(loadWallImages,900);
+  };
+  if(heroShot.complete&&heroShot.naturalWidth)scheduleWallImages();
+  else heroShot.addEventListener('load',scheduleWallImages,{once:true});
   if(document.readyState==='complete'){
     setTimeout(showHeroShot,reduced?0:450);
   }else{
@@ -2072,8 +2103,21 @@ if(navToggle&&navMobile){
 const lottieShot=document.getElementById('lottieShot');
 if(lottieShot){
   let lottieInView=false;
+  let lottieSourcesLoaded=false;
+  const loadLottieSources=()=>{
+    if(lottieSourcesLoaded)return;
+    lottieSourcesLoaded=true;
+    try{
+      lottieShot.querySelectorAll('source[data-src]').forEach(source=>{
+        source.src=source.dataset.src;
+        delete source.dataset.src;
+      });
+      lottieShot.load();
+    }catch(error){console.warn('[OrcaBox] Lottie showcase could not be loaded:',error)}
+  };
   const syncLottie=()=>{
     if(reduced||document.hidden||!lottieInView){lottieShot.pause();return}
+    loadLottieSources();
     const p=lottieShot.play();
     if(p&&p.catch)p.catch(()=>{});
   };
