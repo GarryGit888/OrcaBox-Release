@@ -8,7 +8,7 @@
       "date": "2026-11-19",
       "tag": "v1.4.3",
       "title": "OrcaBox 1.4.3",
-      "summary": "OrcaBox 1.4.3 现已发布 macOS（Apple Silicon 与 Intel）和 Windows x64。本版本重点修复素材浏览的滚动与加载体验：快速滚动不再出现空白、滚回来的素材不再重新加载、滚动停稳不再闪屏、鼠标滚轮恢复原生顺滑；HTML 素材与来源目录的子文件夹封面加载明显加快。同时新增「媒体文案提取」插件与素材面板回到顶部按钮，并加快 Office 文档预览。",
+      "summary": "OrcaBox 1.4.3 现已发布 macOS（Apple Silicon 与 Intel）和 Windows x64。本版本重点修复素材浏览的滚动与加载体验：快速滚动不再出现空白、滚回来的素材不再重新加载、滚动停稳不再闪屏、鼠标滚轮恢复原生顺滑；HTML 素材与来源目录的子文件夹封面加载明显加快。同时新增素材面板回到顶部按钮，并加快 Office 文档预览。",
       "generatedFrom": {
         "baseRef": "v1.4.2",
         "branch": "1.4.3",
@@ -17,11 +17,6 @@
       },
       "categories": {
         "features": [
-          {
-            "text": "新增「媒体文案提取」外部插件：音视频批量转文字稿，可单独指定本次使用的语音识别模型",
-            "commit": "cd1b49f",
-            "date": "2026-11-07"
-          },
           {
             "text": "素材面板回到顶部按钮：快速上滑时出现在底部居中，静止约 1.5 秒自动隐藏",
             "commit": "00c1b3f",
@@ -165,9 +160,9 @@
         "windowsVersion": "1.4.3"
       },
       "summaryI18n": {
-        "en": "OrcaBox 1.4.3 is now available for macOS (Apple Silicon and Intel) and Windows x64. This release focuses on how browsing feels: fast flings never go blank, assets you already saw no longer reload on scroll-back, settling no longer flashes, and mouse-wheel scrolling is native again. HTML assets and source-folder covers load far faster. Also new: a Media Copywriting plugin and a back-to-top button, plus faster Office previews.",
-        "ja": "OrcaBox 1.4.3 を macOS（Apple Silicon / Intel）と Windows x64 向けに公開しました。高速スクロール時の空白、スクロールバック時の再読み込み、停止時のちらつきを解消し、マウスホイールはネイティブスクロールに戻しました。HTML 素材とソースフォルダーのカバー読み込みも大幅に高速化。メディア文字起こしプラグインとトップへ戻るボタンを追加し、Office プレビューも高速化しました。",
-        "ko": "OrcaBox 1.4.3이 macOS(Apple Silicon / Intel)와 Windows x64용으로 출시되었습니다. 빠른 스크롤 시 빈 화면, 되돌아올 때 재로딩, 멈출 때 깜빡임을 해결했고 마우스 휠은 네이티브 스크롤로 복귀했습니다. HTML 자산과 소스 폴더 커버 로딩도 크게 빨라졌습니다. 미디어 텍스트 추출 플러그인과 맨 위로 버튼이 추가되었고 Office 미리보기도 빨라졌습니다."
+        "en": "OrcaBox 1.4.3 is now available for macOS (Apple Silicon and Intel) and Windows x64. This release focuses on how browsing feels: fast flings never go blank, assets you already saw no longer reload on scroll-back, settling no longer flashes, and mouse-wheel scrolling is native again. HTML assets and source-folder covers load far faster. Also new: a back-to-top button, plus faster Office previews.",
+        "ja": "OrcaBox 1.4.3 を macOS（Apple Silicon / Intel）と Windows x64 向けに公開しました。高速スクロール時の空白、スクロールバック時の再読み込み、停止時のちらつきを解消し、マウスホイールはネイティブスクロールに戻しました。HTML 素材とソースフォルダーのカバー読み込みも大幅に高速化。トップへ戻るボタンを追加し、Office プレビューも高速化しました。",
+        "ko": "OrcaBox 1.4.3이 macOS(Apple Silicon / Intel)와 Windows x64용으로 출시되었습니다. 빠른 스크롤 시 빈 화면, 되돌아올 때 재로딩, 멈출 때 깜빡임을 해결했고 마우스 휠은 네이티브 스크롤로 복귀했습니다. HTML 자산과 소스 폴더 커버 로딩도 크게 빨라졌습니다. 맨 위로 버튼을 추가했고 Office 미리보기도 빨라졌습니다."
       }
     },
     {
