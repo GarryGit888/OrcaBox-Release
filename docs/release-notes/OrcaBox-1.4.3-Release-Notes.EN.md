@@ -1,0 +1,32 @@
+# OrcaBox 1.4.3 Release Notes
+
+Release date: 2026-11-19
+
+## What's new
+
+- 媒体文案提取插件：新的外部插件把音视频里的口播内容转成文字稿。
+- 素材面板回到顶部按钮：快速向上滚动时，素材面板底部居中会出现回到顶部按钮，点击直接回到列表顶部；静止约 1.5 秒后自动隐藏，不遮挡内容。
+- 素材卡片名称更完整：卡片名称现在会显示文件扩展名并按可用宽度自适应换行（最多两行），长文件名不再被无提示地截断。
+- 代码类素材彩色预览：代码文件的卡片预览带语法着色，浏览时更容易区分文件类型。
+- Office 文档预览加速：Excel、Word、PowerPoint 的预览文件按需生成并缓存，重复打开同一文档明显更快；组件下载与预览状态提示更清楚。
+- 来源文件夹卡片：卡片按面板宽度自适应排列，数量多时不再挤压；文件夹磨砂与斜切边缘表现更自然；文件夹内切换子目录的响应速度提升。
+- 文件夹搜索记录最近访问：在文件夹选择与搜索中会记住最近访问位置，减少重复定位。
+- 大素材库启动更快：优化了启动阶段的查询与后台任务调度，素材量很大的库启动等待更短，后台索引不再与界面争抢。
+
+## Download and installation
+
+- CNB is the primary download source. GitHub Release remains the backup source.
+- Windows x64 includes an installer with a selectable installation directory and a portable build.
+- [CNB](https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.4.3)
+- [GitHub Release](https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.4.3)
+
+## Platform notes
+
+- macOS ships separate Apple Silicon and Intel DMGs; matching ZIP packages are retained as the in-app automatic updater payload. The current packages are unsigned and may require approval in Privacy & Security on first launch.
+- Windows x64 installer and portable builds are available. The installer is per-user by default and permits a custom directory. If you see "推理引擎无法启动", please report the full error text including the exit code.
+
+| Platform | Download |
+| --- | --- |
+| macOS Apple Silicon | [DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.3/OrcaBox-1.4.3-arm64.dmg) / [Updater ZIP](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.3/OrcaBox-1.4.3-arm64-mac.zip) |
+| macOS Intel | [DMG](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.3/OrcaBox-1.4.3-x64.dmg) / [Updater ZIP](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.3/OrcaBox-1.4.3-x64-mac.zip) |
+| Windows x64 | [Installer](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.3/OrcaBox-1.4.3-win-x64-Setup.exe) / [Portable](https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.3/OrcaBox-1.4.3-win-x64-Portable.exe) |
