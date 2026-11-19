@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-04T06:45:55.550Z",
+  "generatedAt": "2026-11-19T01:57:18.091Z",
   "plugins": [
     {
       "id": "com.orcabox.image-compare",
@@ -55,6 +55,25 @@
       "mirrorDownloadUrl": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/plugins-1.4.2/com.orcabox.photo-adjust-v1.0.1.zip",
       "sha256": "70fdce856a27d7773852feff0ca620161d7bb9dc2d1906fb875c92e45cc068ab",
       "sizeBytes": 376621
+    },
+    {
+      "id": "com.orcabox.text-image-filter",
+      "name": {
+        "zh": "文本筛图",
+        "en": "Text Photo Filter"
+      },
+      "description": {
+        "zh": "从聊天文本提取文件名和编号，在当前来源文件夹筛图、复制选片或批量评分。",
+        "en": "Match photo filenames and numbers from pasted text, filter the grid, copy picks, or rate them in bulk."
+      },
+      "version": "1.0.0",
+      "author": "OrcaBox",
+      "icon": "ListChecks",
+      "minAppVersion": "1.4.3",
+      "downloadUrl": "https://cnb.cool/garrykai/orcabox-release/-/git/raw/main/plugin-packages/com.orcabox.text-image-filter-v1.0.0.zip",
+      "mirrorDownloadUrl": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/plugins-1.4.3/com.orcabox.text-image-filter-v1.0.0.zip",
+      "sha256": "c08e00e64847d3e2a2ef7df1226bc7283a43c43c138714e9ddf4102e0aaa8685",
+      "sizeBytes": 106747
     }
   ]
 }
