@@ -3,6 +3,8 @@ Allow: /$
 Allow: /index.html
 Allow: /releases.html
 Allow: /docs.html
+Allow: /plugin-development.html
+Allow: /plugin-development.md
 Allow: /assets/
 Disallow: /api/
 Disallow: /feedback-assets/

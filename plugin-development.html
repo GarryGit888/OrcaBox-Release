@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08090f">
+  <meta name="description" content="OrcaBox 第三方插件开发指南：API v1 能力、权限、插件清单、生命周期、构建和校验。">
+  <link rel="canonical" href="https://orcabox.app/plugin-development.html">
+  <title>插件开发指南 · OrcaBox</title>
+  <link rel="icon" type="image/png" href="assets/orcabox-icon-192.png">
+  <style>
+    :root { color-scheme: dark; --bg: #08090f; --surface: #10131c; --line: #292d3a; --text: #eef0f6; --muted: #a7adbc; --quiet: #747d91; --accent: #b9a3ff; --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Microsoft YaHei", sans-serif; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.75 var(--font); }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .topbar { position: sticky; top: 0; background: #08090fee; backdrop-filter: blur(16px); border-bottom: 1px solid #1e222d; }
+    .topbar-inner { max-width: 1080px; height: 62px; margin: auto; padding: 0 24px; display: flex; align-items: center; gap: 12px; }
+    .brand { display: flex; align-items: center; gap: 9px; color: var(--text); font-weight: 700; }
+    .brand img { width: 28px; height: 28px; border-radius: 7px; }
+    .brand span { color: var(--quiet); font-weight: 400; }
+    nav { display: flex; gap: 22px; margin-left: auto; color: var(--muted); font-size: 13px; }
+    main { max-width: 820px; margin: 0 auto; padding: 58px 24px 96px; }
+    .eyebrow { color: var(--accent); font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
+    h1 { margin: 10px 0 12px; font-size: 42px; line-height: 1.2; letter-spacing: 0; }
+    .lead { max-width: 68ch; color: var(--muted); font-size: 17px; }
+    .download { display: inline-flex; align-items: center; min-height: 40px; margin-top: 12px; padding: 0 14px; border: 1px solid #59477e; border-radius: 6px; color: #e2d5ff; }
+    section { margin-top: 42px; padding-top: 28px; border-top: 1px solid var(--line); }
+    h2 { margin: 0 0 12px; font-size: 23px; letter-spacing: 0; }
+    p { color: var(--muted); }
+    ul, ol { padding-left: 23px; color: var(--muted); }
+    li + li { margin-top: 8px; }
+    code { padding: 2px 5px; border: 1px solid #292d3a; border-radius: 4px; background: #11141d; color: #e4dcff; font: .92em ui-monospace, SFMono-Regular, Menlo, monospace; }
+    .callout { margin-top: 18px; padding: 14px 16px; border-left: 3px solid var(--accent); background: #12131c; }
+    .callout p { margin: 0; }
+    footer { border-top: 1px solid #1e222d; padding: 22px 24px; color: var(--quiet); text-align: center; font-size: 12px; }
+    @media (max-width: 620px) { .topbar-inner { padding: 0 16px; } nav { gap: 12px; font-size: 12px; } main { padding: 42px 18px 72px; } h1 { font-size: 34px; } }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html"><img src="assets/orcabox-icon-192.png" alt=""><b>OrcaBox</b><span>/ 插件开发</span></a>
+      <nav aria-label="站点导航"><a href="docs.html">使用文档</a><a href="releases.html">更新记录</a><a href="index.html">官网</a></nav>
+    </div>
+  </header>
+  <main>
+    <span class="eyebrow">OrcaBox / Developer Guide</span>
+    <h1>第三方插件开发指南</h1>
+    <p class="lead">OrcaBox 插件 API v1 让独立插件项目通过受权限控制的公开接口接入素材库工作流。完整指南包含插件清单、代码示例、类型入口、权限列表、生命周期、构建和校验说明。</p>
+    <a class="download" href="plugin-development.md" download>下载完整 Markdown 指南</a>
+
+    <section>
+      <h2>当前可开发的能力</h2>
+      <ul>
+        <li>注册 Inspector 面板，并读取当前选中的素材。</li>
+        <li>注册工具栏动作、素材右键菜单、插件命令和快捷键。</li>
+        <li>注册自定义格式预览，并通过插件私有存储、日志和事件总线管理状态。</li>
+        <li>按权限调用公开素材、预览、文件选择、剪贴板、导入和用户主动下载 API。</li>
+      </ul>
+      <p>插件以包含 <code>plugin.json</code> 和构建后 <code>main.js</code> 的独立目录安装，通过默认导出的 <code>activate(ctx)</code> 注册能力。停用、卸载和重载时，OrcaBox 清理插件注册；插件应在 <code>deactivate(ctx)</code> 中清理自己的定时器和订阅。</p>
+    </section>
+
+    <section>
+      <h2>独立面板的支持状态</h2>
+      <div class="callout"><p>公开 API v1 暂不支持第三方插件创建独立窗口。manifest 中写入 <code>location: "window"</code>，或调用 <code>ctx.registerPanel()</code>，都不会自动创建窗口；注册函数只登记渲染组件。</p></div>
+      <p>需要界面的第三方插件目前应使用 <code>location: "inspector"</code>。专用插件的 <code>openXxxWindow</code> IPC、窗口组件和插件 ID 白名单属于宿主内部集成，不是第三方插件 API。独立面板需要 OrcaBox 宿主提供通用窗口宿主、权限校验、窗口生命周期和跨平台验证后才可作为公开能力使用。</p>
+    </section>
+
+    <section>
+      <h2>开始开发</h2>
+      <ol>
+        <li>为插件选择唯一 ID，并在 <code>plugin.json</code> 中声明名称、版本、入口、能力和实际所需权限。</li>
+        <li>在入口中默认导出 <code>activate(ctx)</code>，只注册 manifest 已声明的能力。</li>
+        <li>使用 OrcaBox 公开类型入口编写 UI，并通过 <code>ctx.api</code> 调用能力；不要访问 Node、Electron、内部 IPC 或任意文件路径。</li>
+        <li>构建为 ESM，将 <code>plugin.json</code>、<code>main.js</code> 和资源放在同一插件目录。</li>
+        <li>运行插件校验器，再从插件中心本地安装并测试声明的入口和权限。</li>
+      </ol>
+      <p>支持平台、最低 OrcaBox 版本和依赖要求应写入清单或插件说明。插件卸载会移除插件文件及其私有设置；插件不得把资产库 API 当作任意文件系统权限。</p>
+    </section>
+
+    <section>
+      <h2>完整 API 与校验命令</h2>
+      <p>公开接口和构建配置会随 API 版本演进。请以完整指南和当前 OrcaBox SDK 类型为准，不要依赖插件中心内部接口。</p>
+      <pre><code>npm run validate:plugin -- --plugin=/absolute/path/to/plugin</code></pre>
+      <p><a href="plugin-development.md">打开完整插件开发契约（Markdown）</a> · <a href="docs.html#plugins">返回插件使用说明</a></p>
+    </section>
+  </main>
+  <footer>OrcaBox 插件开发指南 · 以当前公开 API 与发布版本为准</footer>
+</body>
+</html>
