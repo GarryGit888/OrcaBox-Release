@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-19T01:57:18.091Z",
+  "generatedAt": "2026-11-27T04:17:53.783Z",
   "plugins": [
     {
       "id": "com.orcabox.image-compare",
@@ -74,6 +74,24 @@
       "mirrorDownloadUrl": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/plugins-1.4.3/com.orcabox.text-image-filter-v1.0.0.zip",
       "sha256": "c08e00e64847d3e2a2ef7df1226bc7283a43c43c138714e9ddf4102e0aaa8685",
       "sizeBytes": 106747
+    },
+    {
+      "id": "com.orcabox.jigsaw",
+      "name": {
+        "zh": "拼图图",
+        "en": "Jigsaw Studio"
+      },
+      "description": {
+        "zh": "将多张图片拼成网格拼图或纵横长图，并自定义画布样式与导出质量。",
+        "en": "Combine images into grid collages or long strips with customizable canvas styling and export quality."
+      },
+      "version": "1.0.14",
+      "author": "OrcaBox",
+      "minAppVersion": "1.4.4",
+      "downloadUrl": "https://cnb.cool/garrykai/orcabox-release/-/git/raw/main/plugin-packages/com.orcabox.jigsaw-v1.0.14.zip",
+      "mirrorDownloadUrl": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/plugins-1.4.3/com.orcabox.jigsaw-v1.0.14.zip",
+      "sha256": "9edffd958a3791b9a870dd6c2df6432fa8ca75367513676e69ed99d0f9c53118",
+      "sizeBytes": 120375
     }
   ]
 }

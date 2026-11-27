@@ -1,0 +1,19 @@
+{
+  "apiVersion": 1,
+  "id": "com.orcabox.jigsaw",
+  "name": { "zh": "拼图图", "en": "Jigsaw Studio" },
+  "version": "1.0.14",
+  "description": {
+    "zh": "将多张图片拼成网格拼图或纵横长图，并自定义画布样式与导出质量。",
+    "en": "Combine images into grid collages or long strips with customizable canvas styling and export quality."
+  },
+  "author": "OrcaBox",
+  "icon": "icon.svg",
+  "main": "main.js",
+  "capabilities": [
+    { "type": "toolbar-action", "actionId": "open-jigsaw", "label": { "zh": "拼图图", "en": "Jigsaw Studio" }, "icon": "icon.svg", "order": 216 },
+    { "type": "context-menu", "itemId": "jigsaw-selected-images", "target": "asset", "label": { "zh": "拼图图", "en": "Jigsaw Studio" }, "icon": "icon.svg", "order": 50 }
+  ],
+  "permissions": ["fs-read", "fs-write"],
+  "minAppVersion": "1.4.4"
+}
