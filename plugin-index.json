@@ -1,7 +1,25 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-27T04:17:53.783Z",
+  "generatedAt": "2026-11-27T08:38:16.390Z",
   "plugins": [
+    {
+      "id": "com.orcabox.image-batch-crop",
+      "name": {
+        "zh": "图片批量裁剪",
+        "en": "Image Batch Crop"
+      },
+      "description": {
+        "zh": "在独立面板中把多张图片统一裁剪成同一比例，可用 AI 视觉模型定位每张图的主角中心，输出无损原图副本",
+        "en": "Batch-crop multiple images to one ratio in a standalone panel, with AI vision to locate each photo's subject center"
+      },
+      "version": "1.0.0",
+      "author": "OrcaBox",
+      "minAppVersion": "1.4.2",
+      "downloadUrl": "https://cnb.cool/garrykai/orcabox-release/-/git/raw/main/plugin-packages/com.orcabox.image-batch-crop-v1.0.0.zip",
+      "mirrorDownloadUrl": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/plugins-1.4.4/com.orcabox.image-batch-crop-v1.0.0.zip",
+      "sha256": "ebb01dc34ffc6aed108c2a25170ad4233fcf87eef0133241de2a93513444c5b1",
+      "sizeBytes": 112755
+    },
     {
       "id": "com.orcabox.image-compare",
       "name": {
@@ -16,9 +34,45 @@
       "author": "OrcaBox",
       "minAppVersion": "1.3.9",
       "downloadUrl": "https://cnb.cool/garrykai/orcabox-release/-/git/raw/main/plugin-packages/com.orcabox.image-compare-v1.0.1.zip",
-      "mirrorDownloadUrl": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/plugins-1.4.2/com.orcabox.image-compare-v1.0.1.zip",
+      "mirrorDownloadUrl": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/plugins-1.4.4/com.orcabox.image-compare-v1.0.1.zip",
       "sha256": "39fba37a753e515dbb3df7637695a5d8ca369623a49bc21e77461ed5be1ed601",
       "sizeBytes": 108368
+    },
+    {
+      "id": "com.orcabox.jigsaw",
+      "name": {
+        "zh": "拼图图",
+        "en": "Jigsaw Studio"
+      },
+      "description": {
+        "zh": "将多张图片拼成网格拼图或纵横长图，并自定义画布样式与导出质量。",
+        "en": "Combine images into grid collages or long strips with customizable canvas styling and export quality."
+      },
+      "version": "1.0.14",
+      "author": "OrcaBox",
+      "minAppVersion": "1.4.4",
+      "downloadUrl": "https://cnb.cool/garrykai/orcabox-release/-/git/raw/main/plugin-packages/com.orcabox.jigsaw-v1.0.14.zip",
+      "mirrorDownloadUrl": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/plugins-1.4.4/com.orcabox.jigsaw-v1.0.14.zip",
+      "sha256": "c4754503345fd79a5a26746dbfe85b32f3e2eacb28fd756362659271c9c0d3ff",
+      "sizeBytes": 121404
+    },
+    {
+      "id": "com.orcabox.media-copywriting",
+      "name": {
+        "zh": "音视频文案提取",
+        "en": "Media Copywriting"
+      },
+      "description": {
+        "zh": "对单个或多个音视频运行语音识别提取文本，AI 语法校准并组织成文案，支持润色、扩写、改写，一键复制或导出 .txt 到素材所在目录，以独立面板窗口运行",
+        "en": "Run speech recognition on one or more audio/video assets, proofread and organize the transcript into copy with AI, polish, expand or rewrite it, then copy it or export a .txt next to the source file, in a standalone panel window"
+      },
+      "version": "1.0.0",
+      "author": "OrcaBox",
+      "minAppVersion": "1.4.2",
+      "downloadUrl": "https://cnb.cool/garrykai/orcabox-release/-/git/raw/main/plugin-packages/com.orcabox.media-copywriting-v1.0.0.zip",
+      "mirrorDownloadUrl": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/plugins-1.4.4/com.orcabox.media-copywriting-v1.0.0.zip",
+      "sha256": "4352f1509519a32815f94de7d5d0e03f2f551fb76e4cd2171257dd1648882189",
+      "sizeBytes": 112119
     },
     {
       "id": "com.orcabox.network-video-downloader",
@@ -34,7 +88,7 @@
       "author": "OrcaBox",
       "minAppVersion": "1.3.6",
       "downloadUrl": "https://cnb.cool/garrykai/orcabox-release/-/git/raw/main/plugin-packages/com.orcabox.network-video-downloader-v0.3.1.zip",
-      "mirrorDownloadUrl": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/plugins-1.4.2/com.orcabox.network-video-downloader-v0.3.1.zip",
+      "mirrorDownloadUrl": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/plugins-1.4.4/com.orcabox.network-video-downloader-v0.3.1.zip",
       "sha256": "7fdd47844bd3a7428e5295d972e1d774d4759b366dcfbc3266bb59b8b57d944f",
       "sizeBytes": 113662
     },
@@ -52,46 +106,9 @@
       "author": "OrcaBox",
       "minAppVersion": "1.3.9",
       "downloadUrl": "https://cnb.cool/garrykai/orcabox-release/-/git/raw/main/plugin-packages/com.orcabox.photo-adjust-v1.0.1.zip",
-      "mirrorDownloadUrl": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/plugins-1.4.2/com.orcabox.photo-adjust-v1.0.1.zip",
+      "mirrorDownloadUrl": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/plugins-1.4.4/com.orcabox.photo-adjust-v1.0.1.zip",
       "sha256": "70fdce856a27d7773852feff0ca620161d7bb9dc2d1906fb875c92e45cc068ab",
       "sizeBytes": 376621
-    },
-    {
-      "id": "com.orcabox.text-image-filter",
-      "name": {
-        "zh": "文本筛图",
-        "en": "Text Photo Filter"
-      },
-      "description": {
-        "zh": "从聊天文本提取文件名和编号，在当前来源文件夹筛图、复制选片或批量评分。",
-        "en": "Match photo filenames and numbers from pasted text, filter the grid, copy picks, or rate them in bulk."
-      },
-      "version": "1.0.0",
-      "author": "OrcaBox",
-      "icon": "ListChecks",
-      "minAppVersion": "1.4.3",
-      "downloadUrl": "https://cnb.cool/garrykai/orcabox-release/-/git/raw/main/plugin-packages/com.orcabox.text-image-filter-v1.0.0.zip",
-      "mirrorDownloadUrl": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/plugins-1.4.3/com.orcabox.text-image-filter-v1.0.0.zip",
-      "sha256": "c08e00e64847d3e2a2ef7df1226bc7283a43c43c138714e9ddf4102e0aaa8685",
-      "sizeBytes": 106747
-    },
-    {
-      "id": "com.orcabox.jigsaw",
-      "name": {
-        "zh": "拼图图",
-        "en": "Jigsaw Studio"
-      },
-      "description": {
-        "zh": "将多张图片拼成网格拼图或纵横长图，并自定义画布样式与导出质量。",
-        "en": "Combine images into grid collages or long strips with customizable canvas styling and export quality."
-      },
-      "version": "1.0.14",
-      "author": "OrcaBox",
-      "minAppVersion": "1.4.4",
-      "downloadUrl": "https://cnb.cool/garrykai/orcabox-release/-/git/raw/main/plugin-packages/com.orcabox.jigsaw-v1.0.14.zip",
-      "mirrorDownloadUrl": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/plugins-1.4.3/com.orcabox.jigsaw-v1.0.14.zip",
-      "sha256": "9edffd958a3791b9a870dd6c2df6432fa8ca75367513676e69ed99d0f9c53118",
-      "sizeBytes": 120375
     }
   ]
 }
