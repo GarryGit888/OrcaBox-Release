@@ -1,7 +1,685 @@
 {
-  "updatedAt": "2026-11-19",
-  "current": "1.4.3",
+  "updatedAt": "2026-11-27",
+  "current": "1.4.4",
   "releases": [
+    {
+      "version": "1.4.4",
+      "displayVersion": "1.4.4",
+      "date": "2026-11-27",
+      "tag": "v1.4.4",
+      "title": "OrcaBox 1.4.4",
+      "summary": "本版本围绕 新增功能、优化改进、问题修复 持续完善素材管理、媒体预览与跨平台使用体验。",
+      "generatedFrom": {
+        "baseRef": "v1.4.2",
+        "branch": "1.4.4",
+        "commitCount": 119,
+        "changedFileCount": 471
+      },
+      "categories": {
+        "features": [
+          {
+            "text": "支持右键批量旋转素材",
+            "commit": "70ab853",
+            "date": "2026-11-25"
+          },
+          {
+            "text": "增强网页备注与阅读整理",
+            "commit": "42da217",
+            "date": "2026-11-24"
+          },
+          {
+            "text": "add film response controls",
+            "commit": "3612e9f",
+            "date": "2026-11-21"
+          },
+          {
+            "text": "支持来源目录拖拽排序并完善 Affinity 预览",
+            "commit": "b03fbd1",
+            "date": "2026-11-20"
+          },
+          {
+            "text": "新增主题高亮色自定义与紧凑主题布局",
+            "commit": "731748d",
+            "date": "2026-11-20"
+          },
+          {
+            "text": "添加折叠导航流体提示",
+            "commit": "67250ac",
+            "date": "2026-11-20"
+          },
+          {
+            "text": "优化画布选择弹层与添加节点菜单",
+            "commit": "ff54d8a",
+            "date": "2026-11-17"
+          },
+          {
+            "text": "添加回到顶部按钮，快速向上滚动时显示在素材面板底部居中",
+            "commit": "00c1b3f",
+            "date": "2026-11-12"
+          },
+          {
+            "text": "add notes to Windows update feed",
+            "commit": "6633361",
+            "date": "2026-11-08"
+          },
+          {
+            "text": "新增媒体文案插件及 ASR 模型指定功能",
+            "commit": "cd1b49f",
+            "date": "2026-11-07"
+          },
+          {
+            "text": "use plugin icons for Windows auxiliary windows",
+            "commit": "76c4cf4",
+            "date": "2026-11-07"
+          }
+        ],
+        "improvements": [
+          {
+            "text": "优化来源文件夹卡片玻璃质感与动效",
+            "commit": "72a3573",
+            "date": "2026-11-26"
+          },
+          {
+            "text": "优化素材搜索、预览与任务处理",
+            "commit": "a25e896",
+            "date": "2026-11-25"
+          },
+          {
+            "text": "优化素材预览转场与全屏背景动效",
+            "commit": "bdd01d5",
+            "date": "2026-11-25"
+          },
+          {
+            "text": "调整顶部网格缩放滑杆样式",
+            "commit": "8bfd36b",
+            "date": "2026-11-24"
+          },
+          {
+            "text": "优化来源文件夹磨砂玻璃质感",
+            "commit": "4324e78",
+            "date": "2026-11-23"
+          },
+          {
+            "text": "优化听歌识曲本地曲库回退",
+            "commit": "227c984",
+            "date": "2026-11-20"
+          },
+          {
+            "text": "优化回收站主题标签对比度",
+            "commit": "4d269b3",
+            "date": "2026-11-20"
+          },
+          {
+            "text": "优化多选素材牌组切换效果",
+            "commit": "bcdc516",
+            "date": "2026-11-20"
+          },
+          {
+            "text": "优化 3D 模型预览与贴图加载",
+            "commit": "d8a6f7f",
+            "date": "2026-11-19"
+          },
+          {
+            "text": "优化侧栏展开收起交互",
+            "commit": "2f07757",
+            "date": "2026-11-19"
+          },
+          {
+            "text": "优化大型资料库切换与缩略图加载",
+            "commit": "5cb4d37",
+            "date": "2026-11-18"
+          },
+          {
+            "text": "调整深色素材与详情面板底色",
+            "commit": "b15a14a",
+            "date": "2026-11-17"
+          },
+          {
+            "text": "优化素材浏览与预览性能",
+            "commit": "6a3b1a8",
+            "date": "2026-11-17"
+          },
+          {
+            "text": "优化大库启动与素材浏览性能",
+            "commit": "54ecd40",
+            "date": "2026-11-16"
+          },
+          {
+            "text": "优化启动与浏览性能：减少主线程同步 IO 与全表聚合",
+            "commit": "6b8d18b",
+            "date": "2026-11-16"
+          },
+          {
+            "text": "优化素材浏览：滚动流畅度与各类素材的加载速度",
+            "commit": "f7f15fb",
+            "date": "2026-11-15"
+          },
+          {
+            "text": "优化素材滚动浏览与预览加载",
+            "commit": "931d457",
+            "date": "2026-11-13"
+          },
+          {
+            "text": "优化预览设置与浏览布局",
+            "commit": "ba0759b",
+            "date": "2026-11-12"
+          },
+          {
+            "text": "优化文件夹切换的响应速度",
+            "commit": "f04c501",
+            "date": "2026-11-12"
+          },
+          {
+            "text": "优化文件夹磨砂与斜切边缘效果",
+            "commit": "d085a56",
+            "date": "2026-11-12"
+          },
+          {
+            "text": "优化多选详情、素材网格与新手引导的渲染开销",
+            "commit": "873e1ae",
+            "date": "2026-11-12"
+          },
+          {
+            "text": "加速 Office 文档预览加载",
+            "commit": "357779d",
+            "date": "2026-11-12"
+          },
+          {
+            "text": "优化封面加载占位符设计",
+            "commit": "ef39333",
+            "date": "2026-11-11"
+          },
+          {
+            "text": "refine: 素材卡片选中边框从 2px 细化为 1.5px",
+            "commit": "882a221",
+            "date": "2026-11-11"
+          },
+          {
+            "text": "优化来源文件夹卡片自适应布局",
+            "commit": "41c7b1d",
+            "date": "2026-11-11"
+          },
+          {
+            "text": "优化 AI 画布生成产物命名",
+            "commit": "eab4b3e",
+            "date": "2026-11-11"
+          },
+          {
+            "text": "优化文件夹搜索并记录最近访问",
+            "commit": "b6eff35",
+            "date": "2026-11-11"
+          },
+          {
+            "text": "优化素材卡片名称并预览彩色代码",
+            "commit": "a3a0d86",
+            "date": "2026-11-10"
+          },
+          {
+            "text": "优化浅色主题与音频预览界面",
+            "commit": "689f126",
+            "date": "2026-11-09"
+          },
+          {
+            "text": "优化大素材库启动与后台查询",
+            "commit": "963c2a2",
+            "date": "2026-11-09"
+          },
+          {
+            "text": "优化来源目录加载与任务中心",
+            "commit": "33fed4c",
+            "date": "2026-11-09"
+          }
+        ],
+        "fixes": [
+          {
+            "text": "修复资源库切换面板磨砂模糊与矮窗口高度自适应",
+            "commit": "db7c122",
+            "date": "2026-11-27"
+          },
+          {
+            "text": "修复拼图图保存与目录选择",
+            "commit": "128a7da",
+            "date": "2026-11-27"
+          },
+          {
+            "text": "完善拼图图插件并修复AI标签显示",
+            "commit": "14bda19",
+            "date": "2026-11-27"
+          },
+          {
+            "text": "修复大素材库滚回顶部卡死，优化文件夹操作与大库浏览性能",
+            "commit": "4297f28",
+            "date": "2026-11-26"
+          },
+          {
+            "text": "sync Chrome extension version for 1.4.4",
+            "commit": "3379a23",
+            "date": "2026-11-25"
+          },
+          {
+            "text": "延后大型素材库上下文加载",
+            "commit": "06ad728",
+            "date": "2026-11-25"
+          },
+          {
+            "text": "修复字体文件夹封面显示",
+            "commit": "f0f99b2",
+            "date": "2026-11-24"
+          },
+          {
+            "text": "修复主题切换面板英文预设名称裁剪",
+            "commit": "c5ac9c6",
+            "date": "2026-11-24"
+          },
+          {
+            "text": "修复浏览来源目录定位",
+            "commit": "ce38222",
+            "date": "2026-11-24"
+          },
+          {
+            "text": "修复浏览来源目录定位",
+            "commit": "4187566",
+            "date": "2026-11-23"
+          },
+          {
+            "text": "落地 1.4.4 全面审查修复批次与资产网格滚动优化",
+            "commit": "b5ec063",
+            "date": "2026-11-21"
+          },
+          {
+            "text": "修复 HEIC 图片文字编辑并优化文本对齐吸附",
+            "commit": "fc0b393",
+            "date": "2026-11-20"
+          },
+          {
+            "text": "修复图片批量裁剪的 HEIC 导出与运行状态",
+            "commit": "930671e",
+            "date": "2026-11-20"
+          },
+          {
+            "text": "修复 MXF 原片预览启动卡顿",
+            "commit": "bef7dbf",
+            "date": "2026-11-19"
+          },
+          {
+            "text": "修复素材搜索目录范围",
+            "commit": "587a670",
+            "date": "2026-11-19"
+          },
+          {
+            "text": "修复 HTML 卡片预览内容显示",
+            "commit": "fd3eeb7",
+            "date": "2026-11-19"
+          },
+          {
+            "text": "修复超高分辨率视频裁剪导出失败",
+            "commit": "f625fc9",
+            "date": "2026-11-18"
+          },
+          {
+            "text": "统一说明提示悬停延迟",
+            "commit": "40bf0b6",
+            "date": "2026-11-18"
+          },
+          {
+            "text": "修复素材删除目标并优化模型计价输入",
+            "commit": "259b0bd",
+            "date": "2026-11-17"
+          },
+          {
+            "text": "修复来源目录同步清理已删除素材",
+            "commit": "e09ca3c",
+            "date": "2026-11-17"
+          },
+          {
+            "text": "修复原生视频拖拽后播放竞态",
+            "commit": "e0a759d",
+            "date": "2026-11-17"
+          },
+          {
+            "text": "修复视频预览切换错位与播放源串用",
+            "commit": "13c8ffd",
+            "date": "2026-11-16"
+          },
+          {
+            "text": "修复网页收藏封面缓存与缩略图显示",
+            "commit": "2f829cc",
+            "date": "2026-11-13"
+          },
+          {
+            "text": "修复视频预览卡顿并更新设置界面",
+            "commit": "1606f05",
+            "date": "2026-11-13"
+          },
+          {
+            "text": "修复视频悬停预览在难解码或慢盘素材上卡住",
+            "commit": "fa701c4",
+            "date": "2026-11-12"
+          },
+          {
+            "text": "修复编码器探测、书签查询与临时目录的残留问题",
+            "commit": "38a02bb",
+            "date": "2026-11-12"
+          },
+          {
+            "text": "修复语音识别与 AI 擦除后台进程的失败恢复",
+            "commit": "afeaa02",
+            "date": "2026-11-12"
+          },
+          {
+            "text": "修复外置硬盘素材监听恢复",
+            "commit": "4803b22",
+            "date": "2026-11-12"
+          },
+          {
+            "text": "修复素材拖拽导入状态残留",
+            "commit": "53c2009",
+            "date": "2026-11-12"
+          },
+          {
+            "text": "修复任务中心返回全部素材卡顿",
+            "commit": "5e61988",
+            "date": "2026-11-12"
+          },
+          {
+            "text": "修复全部素材面板刷新闪烁",
+            "commit": "2a0ac99",
+            "date": "2026-11-12"
+          },
+          {
+            "text": "优化来源文件夹卡片与封面稳定性",
+            "commit": "42edd85",
+            "date": "2026-11-12"
+          },
+          {
+            "text": "将正在更新结果提示移至素材面板右下角，复选框改为扁平样式",
+            "commit": "1dc7de1",
+            "date": "2026-11-11"
+          },
+          {
+            "text": "将“正在更新结果”提示移至顶部工具栏，避免遮挡显示子文件夹内容开关",
+            "commit": "b8d0088",
+            "date": "2026-11-11"
+          },
+          {
+            "text": "修复官网首页布局与图片比例",
+            "commit": "f1bdade",
+            "date": "2026-11-11"
+          },
+          {
+            "text": "修复拖拽导入与画布多选拖放链路",
+            "commit": "d41b40c",
+            "date": "2026-11-10"
+          },
+          {
+            "text": "修复反推面板状态恢复",
+            "commit": "9b5b065",
+            "date": "2026-11-10"
+          },
+          {
+            "text": "修复 AI 标签中英文界面切换",
+            "commit": "b797424",
+            "date": "2026-11-10"
+          },
+          {
+            "text": "修复批量裁剪导出格式判断",
+            "commit": "1999d3b",
+            "date": "2026-11-09"
+          },
+          {
+            "text": "修复资源库启动加载竞态",
+            "commit": "6d4fff9",
+            "date": "2026-11-09"
+          },
+          {
+            "text": "记录 1.4.2 macOS 修复重打包",
+            "commit": "9a26d4b",
+            "date": "2026-11-08"
+          },
+          {
+            "text": "记录 1.4.2 macOS 修复重打包",
+            "commit": "64b926e",
+            "date": "2026-11-08"
+          },
+          {
+            "text": "polish library path and panel surfaces",
+            "commit": "5105db0",
+            "date": "2026-11-08"
+          },
+          {
+            "text": "修复子文件夹卡片封面发虚与占位遮挡",
+            "commit": "e182887",
+            "date": "2026-11-07"
+          },
+          {
+            "text": "allow Windows Open With launch",
+            "commit": "96b59ca",
+            "date": "2026-11-07"
+          },
+          {
+            "text": "blend shortcuts panel caption controls",
+            "commit": "fd9e9ea",
+            "date": "2026-11-07"
+          },
+          {
+            "text": "resolve Windows Open With applications",
+            "commit": "d6ca1df",
+            "date": "2026-11-07"
+          },
+          {
+            "text": "blend Windows panel caption controls",
+            "commit": "8f9d170",
+            "date": "2026-11-07"
+          },
+          {
+            "text": "keep Windows folder cover cards crisp",
+            "commit": "cf40f0f",
+            "date": "2026-11-07"
+          },
+          {
+            "text": "keep Windows folder cover cards crisp",
+            "commit": "b498857",
+            "date": "2026-11-07"
+          }
+        ],
+        "engineering": [
+          {
+            "text": "准备1.4.4发布文档与插件包",
+            "commit": "376d1b2",
+            "date": "2026-11-27"
+          },
+          {
+            "text": "发布插件开发指南",
+            "commit": "db68226",
+            "date": "2026-11-27"
+          },
+          {
+            "text": "提高资产库切换面板不透明度",
+            "commit": "d78cf7c",
+            "date": "2026-11-26"
+          },
+          {
+            "text": "完善预览播放并接入脚本镜头 Agent",
+            "commit": "eef37e7",
+            "date": "2026-11-26"
+          },
+          {
+            "text": "补齐视频预览波形时间线模块的未跟踪源文件",
+            "commit": "e6e10a2",
+            "date": "2026-11-25"
+          },
+          {
+            "text": "小红书笔记导入默认保存无水印图片",
+            "commit": "b56bc4d",
+            "date": "2026-11-25"
+          },
+          {
+            "text": "统一来源文件夹数量标签样式",
+            "commit": "6660e4e",
+            "date": "2026-11-24"
+          },
+          {
+            "text": "提交当前全部未提交改动",
+            "commit": "5505167",
+            "date": "2026-11-24"
+          },
+          {
+            "text": "打通抖音图文(图集)导入：aweme-detail解析器提取图集+账号分区优先+批量导入",
+            "commit": "d64d666",
+            "date": "2026-11-21"
+          },
+          {
+            "text": "固定音频试听全局音量",
+            "commit": "ed773e7",
+            "date": "2026-11-20"
+          },
+          {
+            "text": "提交当前未提交的裁切与预览改动",
+            "commit": "9c2ed61",
+            "date": "2026-11-20"
+          },
+          {
+            "text": "修正 1.4.3 发布文案",
+            "commit": "20ca6b1",
+            "date": "2026-11-19"
+          },
+          {
+            "text": "发布 OrcaBox 1.4.3 双平台安装包",
+            "commit": "e913955",
+            "date": "2026-11-19"
+          },
+          {
+            "text": "完善插件发现与工作区面板能力",
+            "commit": "da9a165",
+            "date": "2026-11-19"
+          },
+          {
+            "text": "完善视频裁剪与转码的导出保护和批量操作",
+            "commit": "4ed901f",
+            "date": "2026-11-18"
+          },
+          {
+            "text": "忽略本地安装验证和内部打包产物",
+            "commit": "33bb141",
+            "date": "2026-11-18"
+          },
+          {
+            "text": "清理旧版界面设计截图",
+            "commit": "adaa6a6",
+            "date": "2026-11-18"
+          },
+          {
+            "text": "发布 1.4.3：手写发行说明、What's New 条目与官网文案",
+            "commit": "05ad2a7",
+            "date": "2026-11-16"
+          },
+          {
+            "text": "下载器：yt-dlp 自动安装失败时回报脱敏后的真实原因",
+            "commit": "8d8d2c9",
+            "date": "2026-11-15"
+          },
+          {
+            "text": "提交当前全部未提交修改",
+            "commit": "02e3f69",
+            "date": "2026-11-12"
+          },
+          {
+            "text": "素材卡片文件名显示扩展名并自适应换行",
+            "commit": "6a17995",
+            "date": "2026-11-10"
+          },
+          {
+            "text": "完善 AI 素材处理与媒体预览链路",
+            "commit": "95cb5a7",
+            "date": "2026-11-10"
+          },
+          {
+            "text": "同步应用版本至 1.4.3",
+            "commit": "d308213",
+            "date": "2026-11-09"
+          },
+          {
+            "text": "刷新发行记录页 releases.json 缓存键",
+            "commit": "4a502b0",
+            "date": "2026-11-08"
+          },
+          {
+            "text": "官网更新为 macOS 与 Windows 1.4.2 双平台",
+            "commit": "7060b59",
+            "date": "2026-11-08"
+          },
+          {
+            "text": "记录 Windows 1.4.2 资产已补齐到 CNB",
+            "commit": "d28bce7",
+            "date": "2026-11-08"
+          },
+          {
+            "text": "record Windows 1.4.2 package",
+            "commit": "a0fc45a",
+            "date": "2026-11-08"
+          }
+        ]
+      },
+      "changedAreas": [
+        {
+          "area": "src",
+          "count": 404
+        },
+        {
+          "area": "plugins-dev",
+          "count": 12
+        },
+        {
+          "area": "website",
+          "count": 10
+        },
+        {
+          "area": "doc",
+          "count": 8
+        },
+        {
+          "area": "scripts",
+          "count": 7
+        },
+        {
+          "area": "ui design",
+          "count": 7
+        },
+        {
+          "area": "backup",
+          "count": 4
+        },
+        {
+          "area": ".agents",
+          "count": 3
+        },
+        {
+          "area": "docs",
+          "count": 3
+        },
+        {
+          "area": ".github",
+          "count": 2
+        },
+        {
+          "area": ".gitignore",
+          "count": 1
+        },
+        {
+          "area": ".zcode",
+          "count": 1
+        }
+      ],
+      "links": {
+        "cnbRelease": "https://cnb.cool/garrykai/orcabox-release/-/releases/tag/v1.4.4",
+        "githubRelease": "https://github.com/GarryGit888/OrcaBox-Release/releases/tag/v1.4.4",
+        "macArm64Dmg": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.4/OrcaBox-1.4.4-arm64.dmg",
+        "macX64Dmg": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.4/OrcaBox-1.4.4-x64.dmg",
+        "windowsInstaller": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.4/OrcaBox-1.4.4-win-x64-Setup.exe",
+        "windowsPortable": "https://cnb.cool/garrykai/orcabox-release/-/releases/download/v1.4.4/OrcaBox-1.4.4-win-x64-Portable.exe",
+        "browserExtension": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/v1.4.4/OrcaBox-Chrome-Extension-1.4.4.zip"
+      }
+    },
     {
       "version": "1.4.3",
       "displayVersion": "1.4.3",
