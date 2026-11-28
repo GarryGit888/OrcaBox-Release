@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-11-28T05:24:32.548Z",
+  "generatedAt": "2026-11-28T11:43:35.127Z",
   "plugins": [
     {
       "id": "com.orcabox.image-batch-crop",
@@ -48,13 +48,13 @@
         "zh": "将多张图片拼成网格拼图或纵横长图，并自定义画布样式与导出质量。",
         "en": "Combine images into grid collages or long strips with customizable canvas styling and export quality."
       },
-      "version": "1.0.16",
+      "version": "1.0.17",
       "author": "OrcaBox",
       "minAppVersion": "1.4.4",
-      "downloadUrl": "https://cnb.cool/garrykai/orcabox-release/-/git/raw/main/plugin-packages/com.orcabox.jigsaw-v1.0.16.zip",
-      "mirrorDownloadUrl": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/plugins-1.4.4/com.orcabox.jigsaw-v1.0.16.zip",
-      "sha256": "cf8e657007ed1009b93cc7dd4a2bf00771752c346245a40d69173acbb44f36f9",
-      "sizeBytes": 125035
+      "downloadUrl": "https://cnb.cool/garrykai/orcabox-release/-/git/raw/main/plugin-packages/com.orcabox.jigsaw-v1.0.17.zip",
+      "mirrorDownloadUrl": "https://github.com/GarryGit888/OrcaBox-Release/releases/download/plugins-1.4.4/com.orcabox.jigsaw-v1.0.17.zip",
+      "sha256": "e4a146b1b401006e19b786db5d058b1b8e6d7b675e16a65cf5c342f4518cd842",
+      "sizeBytes": 126824
     },
     {
       "id": "com.orcabox.media-copywriting",
